@@ -14,16 +14,18 @@ Orden de trabajo:
 2. Comprobar O Val como holdout: Monte do Castro, Quintá, A Pedreira y Vilasuso.
 3. Resolver Pena Grande/Lagoa como conflicto castro/cercado neolítico.
 4. Usar `pba_geocoding_candidates`, si existe, para geocodificar/reconciliar filas sin coordenadas.
-5. Geocodificar manualmente o descartar lo que siga bloqueado tras PBA.
-6. Ajustar buffers de 120 m a croa/muralla/recinto cuando sea visible.
-7. Aceptar negativos solo si PNOA/LiDAR no muestra forma arqueológica plausible.
-8. Dibujar positivos revisados en `labels_reviewed`.
-9. Dibujar negativos aceptados en `negative_areas_reviewed`.
-10. Añadir coordenadas corregidas en `geocoded_sites_reviewed`.
-11. Marcar decisiones en `site_review_decisions` y `negative_review_decisions`.
+5. Usar `remaining_equivalence_candidates`, si existe, para decidir posibles duplicados de filas clásicas bloqueadas.
+6. Geocodificar manualmente o descartar lo que siga bloqueado tras PBA.
+7. Ajustar buffers de 120 m a croa/muralla/recinto cuando sea visible.
+8. Aceptar negativos solo si PNOA/LiDAR no muestra forma arqueológica plausible.
+9. Dibujar positivos revisados en `labels_reviewed`.
+10. Dibujar negativos aceptados en `negative_areas_reviewed`.
+11. Añadir coordenadas corregidas en `geocoded_sites_reviewed`.
+12. Marcar decisiones en `site_review_decisions` y `negative_review_decisions`.
 
 Los buffers generados no son etiquetas finales.
 Los puntos PBA son candidatos oficiales de localización/reconciliación; tampoco son etiquetas finales.
+Los puntos de equivalencia posible solo sirven para decidir si una fila clásica debe fusionarse o descartarse frente a un registro más fuerte.
 
 ## Campos recomendados
 
@@ -61,6 +63,12 @@ make pba-review
 ```
 
 Ese comando consulta el PBA/Xunta, actualiza `reports/pba_catalog_unlock.md` y regenera el paquete QGIS con `pba_geocoding_candidates`.
+
+Segunda pasada de bloqueos:
+
+`reports/remaining_geocoding_source_audit.md`
+
+Su capa QGIS asociada, si existe, es `remaining_equivalence_candidates`.
 
 ## Después de revisar
 

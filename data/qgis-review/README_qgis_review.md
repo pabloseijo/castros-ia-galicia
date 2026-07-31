@@ -13,6 +13,7 @@ Paquete ligero para abrir en QGIS y pasar del inventario de puntos a etiquetas r
 - `positive_seed_buffers_120m.geojson`: 48 buffers provisionales de positivos train/val/test/test_o_val.
 - `tile_windows_512m.geojson`: 48 ventanas candidatas para futuros recortes raster.
 - `pba_geocoding_candidates.geojson`: 17 candidatos oficiales PBA para revisión de geocodificación.
+- `remaining_equivalence_candidates.geojson`: 2 equivalencias posibles de la segunda pasada para revisar manualmente.
 - `hard_negative_candidates.geojson`: 160 negativos difíciles generados para revisión.
 - `trasancos_aoi.geojson`: caja de trabajo del MVP.
 - `qgis_review_tasks.tsv`: cola completa de revisión.
@@ -24,6 +25,7 @@ Paquete ligero para abrir en QGIS y pasar del inventario de puntos a etiquetas r
 - positive_seed_buffers_120m: 48
 - tile_windows_512m: 48
 - pba_geocoding_candidates: 17
+- remaining_equivalence_candidates: 2
 - hard_negative_candidates: 160
 - trasancos_aoi: 1
 - qgis_review_tasks: 125
@@ -34,10 +36,11 @@ Paquete ligero para abrir en QGIS y pasar del inventario de puntos a etiquetas r
 1. Abrir `castros_trasancos_qgis_review.gpkg` en QGIS.
 2. Cargar PNOA/IGN como mapa base y, cuando estén descargados, hillshade/MSRM LiDAR.
 3. Si existe `pba_geocoding_candidates`, usarla para resolver geocodificación en `geocoded_sites_reviewed`; no copiarla como etiqueta final.
-4. Resolver primero `P0`: O Val, conflictos tipológicos y filas sin coordenadas.
-5. Revisar `positive_seed_buffers_120m`: ajustar a croa/muralla o descartar si el punto cae mal.
-6. Revisar `hard_negative_candidates`: aceptar solo negativos visualmente claros.
-7. Guardar las decisiones en una capa nueva, no sobrescribir las capas generadas.
+4. Si existe `remaining_equivalence_candidates`, usarla solo para decidir si una fila clásica bloqueada es duplicado/alias de un registro más fuerte.
+5. Resolver primero `P0`: O Val, conflictos tipológicos y filas sin coordenadas.
+6. Revisar `positive_seed_buffers_120m`: ajustar a croa/muralla o descartar si el punto cae mal.
+7. Revisar `hard_negative_candidates`: aceptar solo negativos visualmente claros.
+8. Guardar las decisiones en una capa nueva, no sobrescribir las capas generadas.
 
 ## Regla de seguridad
 

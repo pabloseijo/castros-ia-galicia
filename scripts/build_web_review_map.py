@@ -23,6 +23,7 @@ def main() -> None:
         "positive_seed_buffers_120m": load_json(QGIS_REVIEW_DIR / "positive_seed_buffers_120m.geojson"),
         "tile_windows_512m": load_json(QGIS_REVIEW_DIR / "tile_windows_512m.geojson"),
         "pba_geocoding_candidates": load_json(QGIS_REVIEW_DIR / "pba_geocoding_candidates.geojson"),
+        "remaining_equivalence_candidates": load_json(QGIS_REVIEW_DIR / "remaining_equivalence_candidates.geojson"),
         "hard_negative_candidates": load_json(QGIS_REVIEW_DIR / "hard_negative_candidates.geojson"),
         "trasancos_aoi": load_json(QGIS_REVIEW_DIR / "trasancos_aoi.geojson"),
     }
@@ -67,6 +68,7 @@ def main() -> None:
       <label><input type="checkbox" data-layer="positive_seed_buffers_120m" checked> Buffers positivos</label>
       <label><input type="checkbox" data-layer="tile_windows_512m"> Ventanas raster</label>
       <label><input type="checkbox" data-layer="pba_geocoding_candidates" checked> Candidatos PBA</label>
+      <label><input type="checkbox" data-layer="remaining_equivalence_candidates" checked> Equivalencias posibles</label>
       <label><input type="checkbox" data-layer="hard_negative_candidates"> Negativos candidatos</label>
       <label><input type="checkbox" data-layer="trasancos_aoi" checked> AOI Trasancos</label>
     </div>
@@ -77,6 +79,7 @@ def main() -> None:
       <span><i class="swatch" style="background:#f2b705"></i> P1</span>
       <span><i class="swatch" style="background:#8a8f98"></i> P2/review</span>
       <span><i class="swatch" style="background:#00a693"></i> PBA geocoding</span>
+      <span><i class="swatch" style="background:#cc4bc2"></i> equivalencia posible</span>
       <span><i class="swatch line" style="background:#29a36a"></i> buffer/ventana</span>
     </div>
     <h2>Bloqueo actual</h2>
@@ -101,8 +104,8 @@ def main() -> None:
     }}
 
     function popup(props) {{
-      const title = props.primary_name || props.negative_id || props.aoi_id || 'feature';
-      const rows = ['site_id','municipality','parish','split','dataset_use','current_dataset_use','pba_decision','pba_name','pba_id_ipaga','pba_tipoloxia','review_priority','qgis_action','suggested_decision','reason','notes']
+      const title = props.primary_name || props.source_name || props.candidate_name || props.negative_id || props.aoi_id || 'feature';
+      const rows = ['site_id','source_site_id','source_name','municipality','source_municipality','parish','source_parish','split','dataset_use','current_dataset_use','candidate_site_id','candidate_name','candidate_code','candidate_parish','candidate_place','pba_decision','pba_name','pba_id_ipaga','pba_tipoloxia','audit_status','evidence_level','review_priority','qgis_action','suggested_decision','reason','evidence_summary','notes']
         .filter(k => props[k])
         .map(k => `<b>${{k}}</b>: ${{String(props[k]).slice(0, 350)}}`);
       return `<b>${{title}}</b><br>${{rows.join('<br>')}}`;
@@ -133,6 +136,13 @@ def main() -> None:
       onEachFeature: (feature, layer) => layer.bindPopup(popup(feature.properties))
     }}).addTo(map);
 
+    layerMap.remaining_equivalence_candidates = L.geoJSON(data.remaining_equivalence_candidates, {{
+      pointToLayer: (feature, latlng) => L.circleMarker(latlng, {{
+        radius: 9, color: '#6b1364', weight: 2, fillColor: '#cc4bc2', fillOpacity: 0.7
+      }}),
+      onEachFeature: (feature, layer) => layer.bindPopup(popup(feature.properties))
+    }}).addTo(map);
+
     layerMap.hard_negative_candidates = L.geoJSON(data.hard_negative_candidates, {{
       pointToLayer: (feature, latlng) => L.circleMarker(latlng, {{
         radius: 3, color: '#545a60', weight: 1, fillColor: '#c3c8cd', fillOpacity: 0.72
@@ -151,6 +161,7 @@ def main() -> None:
       <div class="metric"><span>Buffers</span><b>${{counts.positive_seed_buffers_120m}}</b></div>
       <div class="metric"><span>Ventanas</span><b>${{counts.tile_windows_512m}}</b></div>
       <div class="metric"><span>PBA</span><b>${{counts.pba_geocoding_candidates}}</b></div>
+      <div class="metric"><span>Equiv.</span><b>${{counts.remaining_equivalence_candidates}}</b></div>
       <div class="metric"><span>Negativos</span><b>${{counts.hard_negative_candidates}}</b></div>
     `;
 
@@ -162,7 +173,7 @@ def main() -> None:
       }});
     }});
 
-    const group = L.featureGroup([layerMap.review_points, layerMap.positive_seed_buffers_120m, layerMap.pba_geocoding_candidates, layerMap.trasancos_aoi]);
+    const group = L.featureGroup([layerMap.review_points, layerMap.positive_seed_buffers_120m, layerMap.pba_geocoding_candidates, layerMap.remaining_equivalence_candidates, layerMap.trasancos_aoi]);
     map.fitBounds(group.getBounds().pad(0.08));
   </script>
 </body>

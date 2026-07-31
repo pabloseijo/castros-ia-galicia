@@ -1,6 +1,6 @@
 # PBA catalogue unlock report
 
-Generated: 2026-07-31T12:17:57Z
+Generated: 2026-07-31T12:45:40Z
 
 ## Fact-checked sources
 

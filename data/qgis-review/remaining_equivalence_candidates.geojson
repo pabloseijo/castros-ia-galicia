@@ -1,0 +1,68 @@
+{
+  "type": "FeatureCollection",
+  "name": "remaining_equivalence_candidates",
+  "crs": {
+    "type": "name",
+    "properties": {
+      "name": "EPSG:4326"
+    }
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.23112044,
+          43.51457186
+        ]
+      },
+      "properties": {
+        "source_site_id": "tra-ferrol-ferreiros",
+        "source_name": "Castro de Ferreiros",
+        "source_municipality": "Ferrol",
+        "source_parish": "Santa Uxía de Mandiá",
+        "candidate_site_id": "tra-ferrol-ga15036005",
+        "candidate_name": "Os Castros de Mandiá",
+        "candidate_code": "GA15036005",
+        "candidate_parish": "Mandiá",
+        "candidate_place": "Fraga",
+        "candidate_source": "mvp_master",
+        "coordinate_origin": "Patrimonio Galego",
+        "audit_status": "possible_duplicate_or_equivalence",
+        "evidence_level": "official_possible",
+        "review_priority": "P0",
+        "qgis_action": "Review against existing tra-ferrol-ga15036005; merge/discard only if QGIS and source review confirm equivalence.",
+        "evidence_summary": "André Pena lists Ferreiros in Mandiá. Ferrol PXOM and PBA contain GA15036005 Os Castros/Castro de Mandiá, already present in the MVP as tra-ferrol-ga15036005. The name and parish/place metadata do not match cleanly enough for automatic merging."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.032826260167933,
+          43.577979015085575
+        ]
+      },
+      "properties": {
+        "source_site_id": "tra-san-sadurnino-fraga",
+        "source_name": "Castro de Fraga",
+        "source_municipality": "San Sadurniño",
+        "source_parish": "Santa María de Bardaos",
+        "candidate_site_id": "tra-san-sadurnino-coto-da-croa-ou-a-croa-do-castro",
+        "candidate_name": "Coto da Croa",
+        "candidate_code": "GA15076005",
+        "candidate_parish": "Bardaos (Santa María)",
+        "candidate_place": "O Castro",
+        "candidate_source": "pba_decisions",
+        "coordinate_origin": "PBA/Xunta",
+        "audit_status": "possible_bardaos_duplicate_or_toponym",
+        "evidence_level": "official_possible",
+        "review_priority": "P0",
+        "qgis_action": "Review against Coto da Croa/A Croa do Castro in Bardaos; do not assign coordinates automatically.",
+        "evidence_summary": "André Pena lists Fraga in Bardaos. San Sadurniño NNSS and PBA support Coto da Croa/A Croa do Castro in Bardaos/Lugar de Castro, but there is no exact Fraga match."
+      }
+    }
+  ]
+}

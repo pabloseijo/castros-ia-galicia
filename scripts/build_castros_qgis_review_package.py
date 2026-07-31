@@ -26,8 +26,20 @@ REPORTS_DIR = PROJECT_ROOT / "reports"
 SRS_ID = 4326
 POSITIVE_SPLITS = {"train", "val", "test", "test_o_val"}
 POINT_LAYER_NAMES = {"review_points", "hard_negative_candidates", "pba_geocoding_candidates"}
+POINT_LAYER_NAMES.add("remaining_equivalence_candidates")
 TRASANCOS_BBOX = [-8.36, 43.40, -7.94, 43.68]
 GENERATED_AT = "2026-07-31T00:00:00Z"
+
+EQUIVALENCE_TARGETS = {
+    "tra-ferrol-ferreiros": {
+        "candidate_site_id": "tra-ferrol-ga15036005",
+        "candidate_source": "mvp_master",
+    },
+    "tra-san-sadurnino-fraga": {
+        "candidate_site_id": "tra-san-sadurnino-coto-da-croa-ou-a-croa-do-castro",
+        "candidate_source": "pba_decisions",
+    },
+}
 
 
 def read_tsv(path: Path) -> list[dict[str, str]]:
@@ -283,6 +295,7 @@ def build_review_layers(
         "positive_seed_buffers_120m": positive_buffers,
         "tile_windows_512m": tile_windows,
         "pba_geocoding_candidates": load_pba_geocoding_candidates(),
+        "remaining_equivalence_candidates": load_remaining_equivalence_candidates(sites),
         "hard_negative_candidates": negative_points,
         "trasancos_aoi": aoi,
     }
@@ -322,6 +335,71 @@ def load_pba_geocoding_candidates() -> list[dict[str, Any]]:
             "reason": row.get("reason", ""),
         }
         features.append(point_feature(lon, lat, props))
+    return features
+
+
+def load_remaining_equivalence_candidates(sites: list[dict[str, str]]) -> list[dict[str, Any]]:
+    audit_path = PROJECT_ROOT / "data/review-queues/remaining_geocoding_source_audit.tsv"
+    pba_path = REPORTS_DIR / "pba_geocoding_candidate_decisions.tsv"
+    if not audit_path.exists():
+        return []
+
+    sites_by_id = {row["site_id"]: row for row in sites}
+    pba_by_id = {row["site_id"]: row for row in read_tsv(pba_path)} if pba_path.exists() else {}
+    features: list[dict[str, Any]] = []
+
+    for audit_row in read_tsv(audit_path):
+        source_site_id = audit_row["site_id"]
+        target = EQUIVALENCE_TARGETS.get(source_site_id)
+        if target is None:
+            continue
+
+        candidate_site_id = target["candidate_site_id"]
+        candidate_source = target["candidate_source"]
+        if candidate_source == "mvp_master":
+            candidate = sites_by_id.get(candidate_site_id, {})
+            lat = as_float(candidate.get("lat_wgs84", ""))
+            lon = as_float(candidate.get("lon_wgs84", ""))
+            candidate_name = candidate.get("primary_name", "")
+            candidate_code = candidate.get("ga_code", "")
+            candidate_parish = candidate.get("parish", "")
+            candidate_place = candidate.get("place", "")
+            coordinate_origin = candidate.get("coord_source", "")
+        elif candidate_source == "pba_decisions":
+            candidate = pba_by_id.get(candidate_site_id, {})
+            lat = as_float(candidate.get("pba_lat_wgs84", ""))
+            lon = as_float(candidate.get("pba_lon_wgs84", ""))
+            candidate_name = candidate.get("pba_name", "")
+            candidate_code = candidate.get("pba_id_ipaga", "")
+            candidate_parish = candidate.get("pba_parish", "")
+            candidate_place = candidate.get("pba_place", "")
+            coordinate_origin = "PBA/Xunta"
+        else:
+            continue
+
+        if lat is None or lon is None:
+            continue
+
+        props = {
+            "source_site_id": source_site_id,
+            "source_name": audit_row["primary_name"],
+            "source_municipality": audit_row["municipality"],
+            "source_parish": audit_row["parish"],
+            "candidate_site_id": candidate_site_id,
+            "candidate_name": candidate_name,
+            "candidate_code": candidate_code,
+            "candidate_parish": candidate_parish,
+            "candidate_place": candidate_place,
+            "candidate_source": candidate_source,
+            "coordinate_origin": coordinate_origin,
+            "audit_status": audit_row["status_after_second_pass"],
+            "evidence_level": audit_row["evidence_level"],
+            "review_priority": "P0",
+            "qgis_action": audit_row["proposed_action"],
+            "evidence_summary": audit_row["evidence_summary"],
+        }
+        features.append(point_feature(lon, lat, props))
+
     return features
 
 
@@ -473,6 +551,7 @@ def write_readme(path: Path, layers: dict[str, list[dict[str, Any]]], review_tas
         f"- `positive_seed_buffers_120m.geojson`: {len(layers['positive_seed_buffers_120m'])} buffers provisionales de positivos train/val/test/test_o_val.",
         f"- `tile_windows_512m.geojson`: {len(layers['tile_windows_512m'])} ventanas candidatas para futuros recortes raster.",
         f"- `pba_geocoding_candidates.geojson`: {len(layers['pba_geocoding_candidates'])} candidatos oficiales PBA para revisión de geocodificación.",
+        f"- `remaining_equivalence_candidates.geojson`: {len(layers['remaining_equivalence_candidates'])} equivalencias posibles de la segunda pasada para revisar manualmente.",
         f"- `hard_negative_candidates.geojson`: {len(layers['hard_negative_candidates'])} negativos difíciles generados para revisión.",
         "- `trasancos_aoi.geojson`: caja de trabajo del MVP.",
         "- `qgis_review_tasks.tsv`: cola completa de revisión.",
@@ -493,10 +572,11 @@ def write_readme(path: Path, layers: dict[str, list[dict[str, Any]]], review_tas
             "1. Abrir `castros_trasancos_qgis_review.gpkg` en QGIS.",
             "2. Cargar PNOA/IGN como mapa base y, cuando estén descargados, hillshade/MSRM LiDAR.",
             "3. Si existe `pba_geocoding_candidates`, usarla para resolver geocodificación en `geocoded_sites_reviewed`; no copiarla como etiqueta final.",
-            "4. Resolver primero `P0`: O Val, conflictos tipológicos y filas sin coordenadas.",
-            "5. Revisar `positive_seed_buffers_120m`: ajustar a croa/muralla o descartar si el punto cae mal.",
-            "6. Revisar `hard_negative_candidates`: aceptar solo negativos visualmente claros.",
-            "7. Guardar las decisiones en una capa nueva, no sobrescribir las capas generadas.",
+            "4. Si existe `remaining_equivalence_candidates`, usarla solo para decidir si una fila clásica bloqueada es duplicado/alias de un registro más fuerte.",
+            "5. Resolver primero `P0`: O Val, conflictos tipológicos y filas sin coordenadas.",
+            "6. Revisar `positive_seed_buffers_120m`: ajustar a croa/muralla o descartar si el punto cae mal.",
+            "7. Revisar `hard_negative_candidates`: aceptar solo negativos visualmente claros.",
+            "8. Guardar las decisiones en una capa nueva, no sobrescribir las capas generadas.",
             "",
             "## Regla de seguridad",
             "",

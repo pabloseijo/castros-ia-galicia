@@ -96,6 +96,7 @@ El siguiente paso real es revisar las tareas P0, ajustar buffers a polígonos re
 - `reports/raster_tile_plan.md`: ventanas raster candidatas.
 - `reports/pba_catalog_unlock.md`: consulta fact-checkeada del PBA/Xunta para desbloquear geocodificación.
 - `reports/remaining_geocoding_source_audit.md`: segunda pasada de fuentes para las 9 filas aún bloqueadas tras PBA.
+- `data/qgis-review/remaining_equivalence_candidates.geojson`: capa visual con las dos equivalencias posibles que requieren decisión humana.
 - `reports/training_readiness.md`: estado de exportación entrenable.
 - `reports/environment_status.md`: herramientas locales disponibles/bloqueantes.
 - `data/review-queues/`: colas TSV por prioridad.
