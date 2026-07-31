@@ -76,6 +76,20 @@
       "risk_level": "safe_after_annotation_guard"
     },
     {
+      "id": "pnoa_preview_index",
+      "enabled": true,
+      "description": "Regenerate review-only IGN PNOA WMS preview URLs and HTML index for candidate windows.",
+      "command": ["make", "pnoa-preview-index"],
+      "timeout_seconds": 180,
+      "systemd_on_calendar": "Mon..Fri 04:20",
+      "writes": [
+        "data/raster-prep/pnoa_preview_urls.tsv",
+        "reports/pnoa_preview_index.md",
+        "webmap/pnoa_preview_index.html"
+      ],
+      "risk_level": "safe_review_preview_only"
+    },
+    {
       "id": "training_readiness_watchdog",
       "enabled": true,
       "description": "Check whether QGIS annotations are ready for chip export and report missing metadata.",

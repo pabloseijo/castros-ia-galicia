@@ -107,10 +107,13 @@ El siguiente paso real es revisar las tareas P0, ajustar buffers a polígonos re
 - `reports/environment_status.md`: herramientas locales disponibles/bloqueantes.
 - `reports/annotation_backup_status.md`: estado del backup/verificación del GeoPackage editable.
 - `reports/repo_drift_status.md`: estado Git local/remoto sin auto-merge.
+- `reports/pnoa_preview_index.md`: estado del índice de previsualización PNOA.
 - `data/review-queues/`: colas TSV por prioridad.
 - `data/raster-prep/candidate_raster_tiles.tsv`: manifiesto de tiles.
+- `data/raster-prep/pnoa_preview_urls.tsv`: enlaces WMS PNOA de solo revisión para cada ventana candidata.
 - `data/training/`: manifiestos exportados desde anotaciones aceptadas.
 - `webmap/index.html`: mapa estático con capas embebidas para inspección rápida.
+- `webmap/pnoa_preview_index.html`: tabla HTML con miniaturas WMS PNOA para revisión visual; no crea etiquetas.
 - `docs/raspberry-agents.md`: runner agentico para Raspberry con systemd y reglas de seguridad.
 
 ## Mapa web
@@ -120,3 +123,9 @@ Abrir:
 `webmap/index.html`
 
 La vista web ayuda a detectar errores gruesos de coordenadas y distribución. No sustituye QGIS ni permite crear etiquetas finales.
+
+Para revisar ortofoto PNOA oficial por ventana candidata:
+
+`webmap/pnoa_preview_index.html`
+
+Ese índice solo prepara enlaces/miniaturas WMS. No descarga rasters fuente ni convierte candidatos en entrenamiento.

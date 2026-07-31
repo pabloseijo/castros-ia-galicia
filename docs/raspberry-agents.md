@@ -4,21 +4,29 @@ This project can run a small autonomous worker layer on a Raspberry Pi. These ag
 
 ## Current SSH status
 
-From this Codex environment, `ssh raspberry` does not resolve and there is no Raspberry host alias in `~/.ssh/config`. Deployment is therefore prepared but not activated.
+The Raspberry connection workflow lives in the local Keltera Brain repo:
+`/Users/pabloseijo/Documents/KelteraStudio/Nabia/Keltera-Brain/WORKFLOWS/raspberry-server.md`.
 
-Needed later:
+Credentials live in the non-versioned Keltera Brain `.env`. Do not copy them into this repo or into wiki pages.
+
+Use Tailscale first:
 
 ```bash
-ssh pi@RASPBERRY_IP 'hostname'
+set -a
+. /Users/pabloseijo/Documents/KelteraStudio/Nabia/Keltera-Brain/.env
+set +a
+sshpass -p "$RASPBERRI_SSH_PASSWORD" ssh -o ConnectTimeout=10 "$RASPBERRI_SSH_USER"@"$RASPBERRI_TAILSCALE_HOST" 'hostname'
 ```
 
-or a `~/.ssh/config` entry such as:
+Fallback to the local IP only if Tailscale is offline:
 
-```sshconfig
-Host raspberry
-  HostName RASPBERRY_IP
-  User pi
+```bash
+sshpass -p "$RASPBERRI_SSH_PASSWORD" ssh -o ConnectTimeout=10 "$RASPBERRI_SSH_USER"@"$RASPBERRI_LOCAL_IP" 'hostname'
 ```
+
+Verified from this Codex environment on 2026-07-31: hostname `raspberri`, user `admin`, port 22 reachable through Tailscale and local network.
+
+Earlier failures came from trying the unresolved alias `raspberry` instead of the configured `raspberri` workflow.
 
 ## Agent contract
 
@@ -27,6 +35,7 @@ Allowed:
 - Refresh PBA/Xunta source snapshots.
 - Rebuild generated QGIS review layers.
 - Refresh reports, webmap, queues and training-readiness checks.
+- Generate review-only PNOA WMS preview URL indexes.
 - Record logs and state.
 
 Forbidden:
@@ -34,6 +43,7 @@ Forbidden:
 - Accept archaeological labels automatically.
 - Promote PBA or toponymic points into training positives.
 - Overwrite human QGIS annotations.
+- Persist or process source rasters before review acceptance.
 - Train deep-learning models on the Raspberry.
 - Bypass anti-bot systems or scrape hostile services aggressively.
 
@@ -49,6 +59,7 @@ The source of truth is `configs/raspberry_agents.json`.
 | `pba_catalog_monitor` | Refresh PBA/Xunta catalogue snapshot and PBA decision queues. | weekdays 03:20 |
 | `qgis_package_refresh` | Rebuild generated QGIS review layers without touching annotations. | weekdays 03:40 |
 | `review_outputs_refresh` | Rebuild queues, raster manifest, training readiness and webmap. | weekdays 04:00 |
+| `pnoa_preview_index` | Rebuild review-only IGN PNOA WMS URLs and an HTML preview page. | weekdays 04:20 |
 | `training_readiness_watchdog` | Re-check accepted QGIS labels and metadata. | hourly |
 | `full_safe_verify` | Full verification chain; disabled by default. | Sunday 05:00 |
 
@@ -84,9 +95,23 @@ Agent state and logs:
 - `data/annotation-backups/`
 - `logs/agents/`
 
+The PNOA preview index writes:
+
+- `data/raster-prep/pnoa_preview_urls.tsv`
+- `webmap/pnoa_preview_index.html`
+- `reports/pnoa_preview_index.md`
+
+This is a review aid only. It creates official WMS links and one smoke-test request; it does not download/persist source rasters or create labels.
+
 These runtime folders are intentionally not versioned.
 
 ## Systemd deployment on Raspberry
+
+Canonical remote path:
+
+```text
+/home/admin/Mimir/wiki/vida/carrera/arqueologia-computacional/castros-ia-galicia
+```
 
 On the Raspberry, inside the repo:
 
@@ -101,8 +126,18 @@ systemctl --user enable --now castros-ia-env_watchdog.timer
 systemctl --user enable --now castros-ia-pba_catalog_monitor.timer
 systemctl --user enable --now castros-ia-qgis_package_refresh.timer
 systemctl --user enable --now castros-ia-review_outputs_refresh.timer
+systemctl --user enable --now castros-ia-pnoa_preview_index.timer
 systemctl --user enable --now castros-ia-training_readiness_watchdog.timer
 ```
+
+For timers to keep running after SSH logout, the `admin` user needs linger enabled:
+
+```bash
+loginctl show-user admin -p Linger
+sudo loginctl enable-linger admin
+```
+
+Verified on 2026-07-31: `Linger=yes`.
 
 Check status:
 
