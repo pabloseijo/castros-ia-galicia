@@ -21,7 +21,7 @@ reports: annotations
 raster-prep: qgis-review
 	python3 scripts/build_raster_tile_manifest.py
 
-pnoa-preview-index: raster-prep
+pnoa-preview-index:
 	python3 scripts/build_pnoa_preview_index.py --smoke-test 1
 
 pba-unlock:
