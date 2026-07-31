@@ -14,7 +14,6 @@ import json
 import math
 import sqlite3
 import struct
-from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
@@ -26,6 +25,7 @@ OUT_DIR = PROJECT_ROOT / "data/qgis-review"
 SRS_ID = 4326
 POSITIVE_SPLITS = {"train", "val", "test", "test_o_val"}
 TRASANCOS_BBOX = [-8.36, 43.40, -7.94, 43.68]
+GENERATED_AT = "2026-07-31T00:00:00Z"
 
 
 def read_tsv(path: Path) -> list[dict[str, str]]:
@@ -390,7 +390,7 @@ def create_gpkg(path: Path, layers: dict[str, list[dict[str, Any]]]) -> None:
                 table_name,
                 table_name,
                 "Castros IA Galicia QGIS review layer",
-                datetime.now(timezone.utc).isoformat(),
+                GENERATED_AT,
                 min_x,
                 min_y,
                 max_x,

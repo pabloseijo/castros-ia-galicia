@@ -20,7 +20,6 @@ import struct
 import unicodedata
 from collections import defaultdict
 from dataclasses import dataclass, field
-from datetime import datetime, timezone
 from pathlib import Path
 from typing import Iterable
 
@@ -38,6 +37,7 @@ def find_mimir_root(start: Path) -> Path:
 MIMIR_ROOT = find_mimir_root(PROJECT_ROOT)
 SOURCE_DIR = MIMIR_ROOT / "wiki/aldea/fuentes/datos/castros-trasancos"
 OUT_DIR = PROJECT_ROOT / "data/processed/castros-trasancos-mvp"
+GENERATED_AT = "2026-07-31T00:00:00Z"
 
 STRICT_MUNICIPALITIES = {
     "Ferrol",
@@ -962,7 +962,7 @@ def write_gpkg_points(path: Path, sites: list[Site]) -> None:
             "castros_master",
             "castros_master",
             "Castros IA Galicia MVP master points generated from Mimir",
-            datetime.now(timezone.utc).isoformat(),
+            GENERATED_AT,
             min_x,
             min_y,
             max_x,
