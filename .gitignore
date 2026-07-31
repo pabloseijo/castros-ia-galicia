@@ -32,6 +32,8 @@ wandb/
 mlruns/
 checkpoints/
 data/raster-chips/
+data/viladonga-pilot/chips/
+data/viladonga-pilot/lidar/
 
 # Local agent runtime
 logs/

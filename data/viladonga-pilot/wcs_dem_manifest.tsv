@@ -1,0 +1,2 @@
+product	path	coverage_id	wcs_crs	bbox_wcs_crs	size_bytes	status	error
+mdt_wcs	data/viladonga-pilot/lidar/viladonga_mdt5_wcs.tif	Elevacion25830_5	EPSG:25830	142270.45,4787154.00,144030.54,4788784.22	230200	downloaded	

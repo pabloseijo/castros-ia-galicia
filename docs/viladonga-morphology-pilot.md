@@ -1,0 +1,79 @@
+# Viladonga morphology pilot
+
+This is the first runnable version of the original TFG idea: use a known castro as a controlled case to export chips, masks and LiDAR relief products before scaling to Trasancos.
+
+## Why Viladonga first
+
+Trasancos is still blocked by QGIS review: candidate points and provisional buffers are not training labels. Viladonga already has one positive polygon and eight negative polygons in the original TFG folder, so it can test the technical pipeline immediately.
+
+This pilot is not a model-quality dataset. It is a smoke test for:
+
+- reading the original TFG geodata;
+- exporting PNOA image chips;
+- rasterizing a segmentation mask for the known castro outline;
+- turning LAZ point clouds into a local DEM;
+- generating first morphology products: hillshade, slope and LRM;
+- proving the project is about shape detection, not only point collection.
+
+## Commands
+
+From the repo root:
+
+```bash
+make viladonga-audit
+make viladonga-wcs-dem
+make viladonga-relief-wcs
+make viladonga-lidar-derivatives
+make viladonga-pnoa-chips
+```
+
+The combined target is:
+
+```bash
+make viladonga-pilot
+```
+
+## Outputs
+
+- `reports/viladonga_pilot_readiness.md`
+- `reports/viladonga_lidar_derivatives.md`
+- `reports/viladonga_mdt_wcs.md`
+- `reports/viladonga_pnoa_chips.md`
+- `data/viladonga-pilot/labels_manifest.tsv`
+- `data/viladonga-pilot/lidar_derivatives_manifest.tsv`
+- `data/viladonga-pilot/pnoa_chip_manifest.tsv`
+- `data/viladonga-pilot/wcs_dem_manifest.tsv`
+
+Generated chips and LiDAR rasters stay ignored by git:
+
+- `data/viladonga-pilot/chips/`
+- `data/viladonga-pilot/lidar/`
+
+## Raspberry use
+
+The Raspberry already has `geopandas`, `rasterio`, `shapely`, `pyproj` and `sklearn`. It may still need `laspy` and `lazrs` for LAZ input:
+
+```bash
+python3 -m pip install --user laspy lazrs
+```
+
+Sync only the small Viladonga inputs first:
+
+```bash
+set -a
+. /Users/pabloseijo/Documents/KelteraStudio/Nabia/Keltera-Brain/.env
+set +a
+rsync -av --exclude 'ortofoto/*.tif' /Users/pabloseijo/Documents/TFG/img/castroViladonga/ "$RASPBERRI_SSH_USER@$RASPBERRI_TAILSCALE_HOST:/home/admin/CastrosIA/data/tfg/castroViladonga/"
+```
+
+The PNOA chip target can use IGN WMS if the 2 GB orthoimage is absent. The LAZ derivative target needs the correct LAZ tiles plus labels. If those tiles are missing, `make viladonga-relief-wcs` can use the public MDT5 WCS as a coarse relief baseline.
+
+Current LAZ blocker:
+
+- available tiles: `622-4780`;
+- needed tiles for the buffered pilot: `630-4780` and `630-4782`;
+- details: `reports/viladonga_laz_tile_blocker.md`.
+
+## Methodological line
+
+For castro shape, LiDAR derivatives are the primary signal. PNOA is visual texture. Sentinel-2 is auxiliary context for vegetation and moisture, not enough by itself to trace small walls. Hyperspectral data would be useful for buried structures if high-resolution acquisitions become available, but it is not present in the current open-data pilot.

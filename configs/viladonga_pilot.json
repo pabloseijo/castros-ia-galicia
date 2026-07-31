@@ -1,0 +1,27 @@
+{
+  "pilot_id": "viladonga",
+  "description": "Controlled morphology pilot using the original TFG Castro de Viladonga files.",
+  "source_root_local": "/Users/pabloseijo/Documents/TFG/img/castroViladonga",
+  "source_root_raspberry": "/home/admin/CastrosIA/data/tfg/castroViladonga",
+  "label_crs": "EPSG:32629",
+  "target_crs": "EPSG:25829",
+  "label_geojson": "entrenamiento_viladonga.geojson",
+  "label_gpkg": "entrenamiento_castros.gpkg",
+  "pnoa_ortho": "ortofoto/PNOA_MA_OF_ETRS89_HU29_h25_0073_1.tif",
+  "lidar_crs": "EPSG:25829",
+  "lidar_laz": [
+    "LiDAR/PNOA_2009_Lote1_GAL_622-4780_ORT-CLA-COL.laz",
+    "LiDAR/PNOA_2009_Lote1_GAL_622-4780_ORT-CLA-CIR.laz"
+  ],
+  "sentinel_products": {
+    "true_color": "multiespectrales/2025-04-28-00:00_2025-04-28-23:59_Sentinel-2_L1C_True_color.tiff",
+    "swir": "multiespectrales/2025-04-28-00:00_2025-04-28-23:59_Sentinel-2_L1C_SWIR.tiff",
+    "ndvi": "multiespectrales/2025-04-28-00:00_2025-04-28-23:59_Sentinel-2_L1C_NDVI.tiff",
+    "moisture": "multiespectrales/2025-04-28-00:00_2025-04-28-23:59_Sentinel-2_L1C_Moisture_index.tiff"
+  },
+  "tile_side_m": 512,
+  "chip_pixels": 1024,
+  "dem_resolution_m": 1.0,
+  "dem_buffer_m": 300,
+  "lrm_radius_m": 25
+}

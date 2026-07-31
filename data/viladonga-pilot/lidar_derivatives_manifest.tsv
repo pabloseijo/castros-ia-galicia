@@ -1,0 +1,5 @@
+product	path	width	height	resolution_m	crs	status	notes
+dem	data/viladonga-pilot/lidar/viladonga_dem.tif	352	326	5.00	EPSG:25830	written	
+slope_degrees	data/viladonga-pilot/lidar/viladonga_slope_degrees.tif	352	326	5.00	EPSG:25830	written	
+hillshade_315_45	data/viladonga-pilot/lidar/viladonga_hillshade_315_45.tif	352	326	5.00	EPSG:25830	written	
+lrm	data/viladonga-pilot/lidar/viladonga_lrm.tif	352	326	5.00	EPSG:25830	written	
