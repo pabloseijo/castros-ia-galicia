@@ -101,7 +101,7 @@ tra-valdovino-castro-de-punta-castrelo	Castro de Punta Castrelo	Valdoviño	revie
 tra-valdovino-castro-de-santo-tomas	Castro de Santo Tomás	Valdoviño	review_only	review_only	43.59203000	-8.18717000	Candidato procedente de catálogo web no reconciliado con la tabla oficial normalizada.
 tra-valdovino-castro-de-villarrube	Castro de Villarrube	Valdoviño	review_only	review_only	43.62611100	-8.06611100	Candidato procedente de catálogo web no reconciliado con la tabla oficial normalizada.
 tra-valdovino-fradigas	Castro de Frádigas	Valdoviño	review_only	review_only	43.63694400	-8.08694400	Entrada de la lista clásica Pena/Calaméo pendiente de reconciliación con catálogo oficial. | 2 coordenadas candidatas en fuentes; se eligió Artabro por prioridad.
-tra-valdovino-ga15087001	Castro de Punta Taraza	Valdoviño	needs_geocoding	review_only			tabla ID_IPAGA 2021 | Presente en lista clásica Pena/Calaméo nº 52.
+tra-valdovino-ga15087001	Castro de Punta Taraza	Valdoviño	train_positive_candidate	train	43.60171000	-8.19920000	tabla ID_IPAGA 2021 | Presente en lista clásica Pena/Calaméo nº 52.
 tra-valdovino-ga15087002	O Castrillón	Valdoviño	train_positive_candidate	train	43.57555500	-8.19638800	tabla ID_IPAGA 2021 | 2 coordenadas candidatas en fuentes; se eligió Artabro por prioridad.
 tra-valdovino-ga15087003	Castro de Coto Redondo	Valdoviño	train_positive_candidate	train	43.64390560	-8.11046390	tabla ID_IPAGA 2021 | Presente en lista clásica Pena/Calaméo nº 53.
 tra-valdovino-ga15087004	Castro de Lagoa	Valdoviño	train_positive_candidate	train	43.63166600	-8.11944400	tabla ID_IPAGA 2021 | 4 coordenadas candidatas en fuentes; se eligió Artabro por prioridad.
@@ -109,7 +109,7 @@ tra-valdovino-ga15087005	Os Castros	Valdoviño	train_positive_candidate	train	43
 tra-valdovino-ga15087006	Castro de Vilarrube / Os Castros de Ferreirías	Valdoviño	train_positive_candidate	train	43.62602800	-8.06598600	tabla ID_IPAGA 2021
 tra-valdovino-ga15087007	Castro de Casianes	Valdoviño	positive_damaged_review	review_only	43.63416600	-8.09888800	tabla ID_IPAGA 2021 | Presente en lista clásica Pena/Calaméo nº 54. | 2 coordenadas candidatas en fuentes; se eligió Artabro por prioridad.
 tra-valdovino-ga15087008	Castro	Valdoviño	positive_damaged_review	review_only	43.62598950	-8.06606080	tabla ID_IPAGA 2021 | Presente en lista clásica Pena/Calaméo nº 58. | Presente en lista clásica Pena/Calaméo nº 60. | Presente en lista clásica Pena/Calaméo nº 63.
-tra-valdovino-ga15087009	Castro de Punta Frouxeira	Valdoviño	needs_geocoding	review_only			tabla ID_IPAGA 2021
+tra-valdovino-ga15087009	Castro de Punta Frouxeira	Valdoviño	train_positive_candidate	train	43.61841390	-8.14910000	tabla ID_IPAGA 2021
 tra-valdovino-ga15087010	Castro de Poulo	Valdoviño	train_positive_candidate	train	43.60416500	-8.14277800	tabla ID_IPAGA 2021 | Presente en lista clásica Pena/Calaméo nº 51. | 2 coordenadas candidatas en fuentes; se eligió Artabro por prioridad.
 tra-valdovino-ga15087011	O Castro	Valdoviño	train_positive_candidate	train	43.59218000	-8.17120000	tabla ID_IPAGA 2021
 tra-valdovino-ga15087012	Castro de Aviño	Valdoviño	train_positive_candidate	train	43.58416430	-8.13316550	tabla ID_IPAGA 2021 | Presente en lista clásica Pena/Calaméo nº 49.

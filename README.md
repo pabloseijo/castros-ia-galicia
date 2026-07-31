@@ -15,14 +15,14 @@ El objetivo no es declarar nuevos yacimientos por IA. El objetivo defendible es 
 ## Estado actual
 
 - Dataset maestro MVP: 125 filas.
-- Puntos con coordenadas WGS84: 97.
-- Buffers provisionales para revisión: 46.
-- Ventanas raster candidatas: 46.
+- Puntos con coordenadas WGS84: 99.
+- Buffers provisionales para revisión: 48.
+- Ventanas raster candidatas: 48.
 - Negativos difíciles generados para revisión: 160.
-- Tareas de geocodificación: 28.
+- Tareas de geocodificación: 26.
 - Workspace editable de anotación: 3 capas y 2 tablas de decisiones.
 - Colas de revisión: P0/P1/P2, O Val y geocodificación.
-- Manifiesto de ventanas raster: 46 tiles candidatos de 512 m.
+- Manifiesto de ventanas raster: 48 tiles candidatos de 512 m.
 - Readiness de entrenamiento: bloqueado hasta tener polígonos/negativos revisados.
 - Mapa web estático de inspección rápida.
 
@@ -30,7 +30,7 @@ O Val queda como holdout narrativo. No se usa para entrenar en la primera versi�
 
 Split espacial actual:
 
-- `train`: Ferrol, Valdoviño y Neda, 27 positivos candidatos.
+- `train`: Ferrol, Valdoviño y Neda, 29 positivos candidatos.
 - `val`: San Sadurniño, 5 positivos candidatos.
 - `test`: Narón no-O-Val, 10 positivos candidatos.
 - `test_o_val`: O Val, 4 positivos candidatos.
@@ -90,6 +90,7 @@ El siguiente paso real es revisar las tareas P0, ajustar buffers a polígonos re
 ## Reportes operativos
 
 - `reports/review_status.md`: cola de revisión y bloqueos.
+- `reports/geocoding_blockers.md`: filas que siguen sin coordenada segura.
 - `reports/raster_tile_plan.md`: ventanas raster candidatas.
 - `reports/training_readiness.md`: estado de exportación entrenable.
 - `reports/environment_status.md`: herramientas locales disponibles/bloqueantes.

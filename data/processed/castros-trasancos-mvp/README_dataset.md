@@ -5,26 +5,26 @@ Generado: 2026-07-31
 ## Resumen
 
 - Sitios/pistas en tabla maestra: 125
-- Sitios con coordenadas WGS84: 97
-- Sitios sin coordenadas: 28
+- Sitios con coordenadas WGS84: 99
+- Sitios sin coordenadas: 26
 - Candidatos negativos generados para revisar en QGIS: 160
 
 ## Particiones
 
-- review_only: 79
+- review_only: 77
 - test: 10
 - test_o_val: 4
-- train: 27
+- train: 29
 - val: 5
 
 ## Usos de dataset
 
-- needs_geocoding: 18
+- needs_geocoding: 16
 - positive_damaged_review: 16
 - positive_o_val_holdout: 4
 - review_only: 45
 - test_positive_candidate: 10
-- train_positive_candidate: 27
+- train_positive_candidate: 29
 - val_positive_candidate: 5
 
 ## Municipios

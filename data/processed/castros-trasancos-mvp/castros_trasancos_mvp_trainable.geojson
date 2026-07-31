@@ -973,6 +973,38 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          -8.1992,
+          43.60171
+        ]
+      },
+      "properties": {
+        "site_id": "tra-valdovino-ga15087001",
+        "primary_name": "Castro de Punta Taraza",
+        "aliases": "Castro de Lavacerido; Castro de Punta Taraza; Lavacerido; Punta Taraza; Taraza",
+        "municipality": "Valdoviño",
+        "parish": "Meirás",
+        "place": "Lavacerido",
+        "scope": "trasancos_estricto",
+        "ga_code": "GA15087001",
+        "record_type": "official_castro",
+        "confidence": "high",
+        "source_tier": "official_catalog",
+        "conservation_state": "desconocido",
+        "coord_status": "point_from_source",
+        "coord_source": "Galipedia",
+        "dataset_use": "train_positive_candidate",
+        "split": "train",
+        "needs_review": "",
+        "sources": "André Pena Graña, Narón un concello con historia de seu I, edición Calaméo 2010, lista Catalogación de Castros de Galicia; Concello de Valdoviño, Modificación Puntual nº 13, información patrimonial; Galipedia",
+        "urls": "https://gl.wikipedia.org/wiki/Castros_da_provincia_da_Coru%C3%B1a; https://www.calameo.com/books/00129295754f931ea1d4a; https://www.concellodevaldovino.com/arquivo/sites/all/themes/valbartik/doc/13/0102.pdf",
+        "notes": "tabla ID_IPAGA 2021 | Presente en lista clásica Pena/Calaméo nº 52."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           -8.196388,
           43.575555
         ]
@@ -1125,6 +1157,38 @@
         "needs_review": "",
         "sources": "Concello de Valdoviño, Modificación Puntual nº 13, información patrimonial; Galipedia",
         "urls": "https://gl.wikipedia.org/wiki/Castro_de_Vilarrube; https://www.concellodevaldovino.com/arquivo/sites/all/themes/valbartik/doc/13/0102.pdf",
+        "notes": "tabla ID_IPAGA 2021"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.1491,
+          43.6184139
+        ]
+      },
+      "properties": {
+        "site_id": "tra-valdovino-ga15087009",
+        "primary_name": "Castro de Punta Frouxeira",
+        "aliases": "A Saíña; Castro da Frouxeira; Castro de Punta Frouxeira; Frouxeira; Punta Frouxeira",
+        "municipality": "Valdoviño",
+        "parish": "Valdoviño",
+        "place": "A Saíña",
+        "scope": "trasancos_estricto",
+        "ga_code": "GA15087009",
+        "record_type": "official_castro",
+        "confidence": "high",
+        "source_tier": "official_catalog",
+        "conservation_state": "desconocido",
+        "coord_status": "point_from_source",
+        "coord_source": "Galipedia",
+        "dataset_use": "train_positive_candidate",
+        "split": "train",
+        "needs_review": "",
+        "sources": "Concello de Valdoviño, Modificación Puntual nº 13, información patrimonial; Galipedia",
+        "urls": "https://gl.wikipedia.org/wiki/Castros_da_provincia_da_Coru%C3%B1a; https://www.concellodevaldovino.com/arquivo/sites/all/themes/valbartik/doc/13/0102.pdf",
         "notes": "tabla ID_IPAGA 2021"
       }
     },

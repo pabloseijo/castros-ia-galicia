@@ -131,11 +131,73 @@ def write_report(tasks: list[dict[str, str]], queues: dict[str, list[dict[str, s
     (REPORTS_DIR / "review_status.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
 
 
+def write_geocoding_blockers(geocoding_rows: list[dict[str, str]]) -> None:
+    REPORTS_DIR.mkdir(parents=True, exist_ok=True)
+    by_record_type = Counter(row["record_type"] for row in geocoding_rows)
+    by_dataset_use = Counter(row["dataset_use"] for row in geocoding_rows)
+    by_municipality = Counter(row["municipality"] for row in geocoding_rows)
+
+    lines: list[str] = [
+        "# Geocoding blockers",
+        "",
+        "Generated: 2026-07-31",
+        "",
+        f"- Pending rows: {len(geocoding_rows)}",
+        "- Checked automatically: embedded UTM in source text, scraped decimal coordinates, coded Galipedia coordinate supplement and downloadable PDF text.",
+        "- Rule: no coordinate is assigned from parish/place names alone.",
+        "",
+        "## By record type",
+        "",
+    ]
+    for key, count in sorted(by_record_type.items()):
+        lines.append(f"- {key}: {count}")
+    lines.extend(["", "## By dataset use", ""])
+    for key, count in sorted(by_dataset_use.items()):
+        lines.append(f"- {key}: {count}")
+    lines.extend(["", "## By municipality", ""])
+    for key, count in sorted(by_municipality.items()):
+        lines.append(f"- {key}: {count}")
+
+    lines.extend(
+        [
+            "",
+            "## Pending rows",
+            "",
+            "| Site | Municipality | Parish | Code | Type | Dataset use | Source |",
+            "|---|---|---|---|---|---|---|",
+        ]
+    )
+    for row in geocoding_rows:
+        lines.append(
+            "| {name} | {municipality} | {parish} | {code} | {record_type} | {dataset_use} | {source} |".format(
+                name=row["primary_name"].replace("|", "/"),
+                municipality=row["municipality"],
+                parish=row["parish"].replace("|", "/"),
+                code=row["ga_code"],
+                record_type=row["record_type"],
+                dataset_use=row["dataset_use"],
+                source=row["sources"].replace("|", "/")[:120],
+            )
+        )
+
+    lines.extend(
+        [
+            "",
+            "## Operational conclusion",
+            "",
+            "These rows need manual source work, QGIS visual inspection, an official catalogue with coordinates, or a deliberate discard decision. They should not be converted into raster windows automatically.",
+        ]
+    )
+    (REPORTS_DIR / "geocoding_blockers.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
+
+
 def main() -> None:
     tasks = read_tsv(QGIS_REVIEW_DIR / "qgis_review_tasks.tsv")
+    geocoding_rows = read_tsv(QGIS_REVIEW_DIR / "geocoding_tasks.tsv")
     queues = build_queues(tasks)
     write_queue_files(queues)
     write_report(tasks, queues)
+    write_geocoding_blockers(geocoding_rows)
     print("Wrote review queues and report")
     for name, rows in queues.items():
         print(f"{name}: {len(rows)}")

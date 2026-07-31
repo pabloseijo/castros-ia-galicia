@@ -5,17 +5,17 @@ Generated: 2026-07-31
 ## Summary
 
 - Total site tasks: 125
-- P0 blockers: 23
-- P1 training/review candidates: 58
+- P0 blockers: 21
+- P1 training/review candidates: 60
 - P2 reconciliation tasks: 44
-- Missing coordinates: 28
+- Missing coordinates: 26
 
 ## Split counts
 
-- review_only: 79
+- review_only: 77
 - test: 10
 - test_o_val: 4
-- train: 27
+- train: 29
 - val: 5
 
 ## Municipality counts
@@ -29,8 +29,8 @@ Generated: 2026-07-31
 
 ## Suggested decisions
 
-- draw_training_polygon: 42
-- geocode_then_reclassify: 18
+- draw_training_polygon: 44
+- geocode_then_reclassify: 16
 - inspect_damaged_site: 16
 - reconcile_or_discard: 44
 - resolve_typology: 1
@@ -60,7 +60,7 @@ Generated: 2026-07-31
 | P0 | Coto da Croa ou A Croa do Castro | San Sadurniño | review_only | geocode_then_reclassify |
 | P0 | Castro de As Filgueiras | Valdoviño | review_only | geocode_then_reclassify |
 | P0 | Castro de Praia Frouxeira | Valdoviño | review_only | geocode_then_reclassify |
-| ... | 3 tareas más |  |  |  |
+| ... | 1 tareas más |  |  |  |
 
 ## O Val Holdout
 
@@ -92,12 +92,12 @@ Generated: 2026-07-31
 | P0 | Coto da Croa ou A Croa do Castro | San Sadurniño | review_only | geocode_then_reclassify |
 | P0 | Castro de As Filgueiras | Valdoviño | review_only | geocode_then_reclassify |
 | P0 | Castro de Praia Frouxeira | Valdoviño | review_only | geocode_then_reclassify |
-| P0 | Castro de Punta Frouxeira | Valdoviño | review_only | geocode_then_reclassify |
-| P0 | Castro de Punta Taraza | Valdoviño | review_only | geocode_then_reclassify |
 | P0 | Puerto de Meirás | Valdoviño | review_only | geocode_then_reclassify |
 | P1 | Castro de Almieiras | Fene | review_only | inspect_damaged_site |
 | P1 | Castro de Loureiros | Fene | review_only | inspect_damaged_site |
-| ... | 8 tareas más |  |  |  |
+| P1 | Castro de San Esteban de Perlío | Fene | review_only | inspect_damaged_site |
+| P1 | Castro do Sartego | Fene | review_only | inspect_damaged_site |
+| ... | 6 tareas más |  |  |  |
 
 ## P1 Training Candidates
 
@@ -123,7 +123,7 @@ Generated: 2026-07-31
 | P1 | Os Castros de Mandiá | Ferrol | train | draw_training_polygon |
 | P1 | O Castro | Narón | review_only | inspect_damaged_site |
 | P1 | X-04 Castro da Ermida | Narón | test | draw_training_polygon |
-| ... | 38 tareas más |  |  |  |
+| ... | 40 tareas más |  |  |  |
 
 ## Operational conclusion
 

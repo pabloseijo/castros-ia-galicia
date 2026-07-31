@@ -62,7 +62,7 @@ Resultado actual:
 | Componente | Estado actual | Juicio | Acción |
 |---|---|---|---|
 | Inventario de sitios | 125 filas | Bien para MVP | Mantener y depurar |
-| Coordenadas | 91 puntos | Bien para revisión, insuficiente para entrenamiento | Resolver 37 geocoding tasks |
+| Coordenadas | 99 puntos | Bien para revisión, insuficiente para entrenamiento | Resolver 26 geocoding tasks |
 | Split | Espacial por municipio | Mejorado | Mantener hasta ampliar corpus |
 | O Val | Holdout `test_o_val` | Muy bien | No entrenar con O Val en v0 |
 | Buffers | 42 semillas de 120 m | Útiles, no etiquetas | Ajustar manualmente |

@@ -9,9 +9,9 @@ Paquete ligero para abrir en QGIS y pasar del inventario de puntos a etiquetas r
 ## Archivos principales
 
 - `castros_trasancos_qgis_review.gpkg`: GeoPackage con todas las capas de revisión.
-- `review_points.geojson`: 91 puntos con coordenadas.
-- `positive_seed_buffers_120m.geojson`: buffers provisionales de positivos train/val/test/test_o_val.
-- `tile_windows_512m.geojson`: ventanas candidatas para futuros recortes raster.
+- `review_points.geojson`: 99 puntos con coordenadas.
+- `positive_seed_buffers_120m.geojson`: 48 buffers provisionales de positivos train/val/test/test_o_val.
+- `tile_windows_512m.geojson`: 48 ventanas candidatas para futuros recortes raster.
 - `hard_negative_candidates.geojson`: 160 negativos difíciles generados para revisión.
 - `trasancos_aoi.geojson`: caja de trabajo del MVP.
 - `qgis_review_tasks.tsv`: cola completa de revisión.
@@ -19,13 +19,13 @@ Paquete ligero para abrir en QGIS y pasar del inventario de puntos a etiquetas r
 
 ## Conteos
 
-- review_points: 97
-- positive_seed_buffers_120m: 46
-- tile_windows_512m: 46
+- review_points: 99
+- positive_seed_buffers_120m: 48
+- tile_windows_512m: 48
 - hard_negative_candidates: 160
 - trasancos_aoi: 1
 - qgis_review_tasks: 125
-- geocoding_tasks: 28
+- geocoding_tasks: 26
 
 ## Orden de revisión
 
