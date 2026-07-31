@@ -4,3 +4,4 @@ source_catalog_dir: /Users/pabloseijo/Documents/Mimir/wiki/aldea/fuentes/datos/c
 external_data_root: /Users/pabloseijo/Documents/CastrosIA/data
 processed_data_dir: data/processed
 qgis_review_dir: data/qgis-review
+github_repository: https://github.com/pabloseijo/castros-ia-galicia

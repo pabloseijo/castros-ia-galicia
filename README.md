@@ -2,6 +2,8 @@
 
 MVP técnico para explorar detección y priorización de castros en la comarca histórica de Trasancos mediante datos abiertos, revisión QGIS y futura preparación de rasters PNOA/LiDAR.
 
+Repositorio privado: https://github.com/pabloseijo/castros-ia-galicia
+
 El objetivo no es declarar nuevos yacimientos por IA. El objetivo defendible es construir un flujo reproducible para:
 
 1. reunir castros conocidos y pistas documentadas,
