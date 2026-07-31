@@ -29,3 +29,19 @@ El agente remoto de Raspberry escribe su propio reporte para no mezclar entornos
 `reports/environment_status_raspberry.md`
 
 No conviene instalar el stack de modelo antes de tener `labels_reviewed` y `negative_areas_reviewed` con ejemplos aceptados. Primero se revisa, luego se descargan rasters, y solo después se entrena.
+
+## Estado Raspberry 2026-07-31
+
+Instalado por `apt` en Debian 13 arm64:
+
+- `gdal-bin`
+- `python3-gdal`
+- `python3-pandas`
+- `python3-geopandas`
+- `python3-rasterio`
+- `python3-shapely`
+- `python3-pyproj`
+- `python3-fiona`
+- `python3-sklearn`
+
+Resultado: la Raspberry queda lista para raster/DTM base con GDAL y Rasterio. PDAL no quedó disponible por apt en esta instalación; se reserva para una fase posterior si se decide procesar LAZ/COPC originales en vez de DEM/DTM raster ya preparado.
