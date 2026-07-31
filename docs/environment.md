@@ -9,8 +9,8 @@ make verify
 Las fases siguientes necesitan herramientas pesadas:
 
 - QGIS para la revisión visual y dibujo de etiquetas.
-- GDAL/OGR para cortar y transformar rasters.
-- PDAL para procesar nubes LiDAR/LAZ si se trabaja desde punto original.
+- GDAL/OGR para cortar y transformar ortofoto, DEM/DTM y derivados raster.
+- PDAL solo para procesar nubes LiDAR/LAZ/COPC desde punto original; si usamos DEM/DTM ya preparado, GDAL basta para empezar.
 - `rasterio`, `geopandas`, `shapely` y `pyproj` para automatizar ventanas raster/vector.
 - PyTorch/Ultralytics solo cuando ya existan etiquetas revisadas.
 
@@ -20,8 +20,12 @@ Comprobar estado:
 make env-check
 ```
 
-Reporte generado:
+Reporte local generado:
 
 `reports/environment_status.md`
+
+El agente remoto de Raspberry escribe su propio reporte para no mezclar entornos:
+
+`reports/environment_status_raspberry.md`
 
 No conviene instalar el stack de modelo antes de tener `labels_reviewed` y `negative_areas_reviewed` con ejemplos aceptados. Primero se revisa, luego se descargan rasters, y solo después se entrena.

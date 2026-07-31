@@ -8,6 +8,7 @@ script records what is available without failing the reproducible light pipeline
 
 from __future__ import annotations
 
+import argparse
 import importlib.util
 import shutil
 import subprocess
@@ -16,6 +17,7 @@ from pathlib import Path
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 REPORTS_DIR = PROJECT_ROOT / "reports"
+DEFAULT_REPORT = REPORTS_DIR / "environment_status.md"
 
 COMMANDS = [
     ("python3", "Python runtime"),
@@ -67,7 +69,15 @@ def module_status(module: str) -> tuple[bool, str]:
     return True, str(getattr(imported, "__version__", "installed"))
 
 
+def parse_args() -> argparse.Namespace:
+    parser = argparse.ArgumentParser(description="Check optional geospatial/model tooling.")
+    parser.add_argument("--report", type=Path, default=DEFAULT_REPORT)
+    parser.add_argument("--label", default="local", help="Human-readable environment label for the report.")
+    return parser.parse_args()
+
+
 def main() -> None:
+    args = parse_args()
     REPORTS_DIR.mkdir(parents=True, exist_ok=True)
 
     command_rows = []
@@ -98,9 +108,10 @@ def main() -> None:
     missing_commands = [row["name"] for row in command_rows if row["status"] == "missing"]
     missing_modules = [row["name"] for row in module_rows if row["status"] == "missing"]
 
-    raster_blocked = any(name in missing_commands for name in {"gdalinfo", "gdaldem", "pdal"}) or any(
+    raster_base_blocked = any(name in missing_commands for name in {"gdalinfo", "ogr2ogr", "gdaldem"}) or any(
         name in missing_modules for name in {"rasterio", "geopandas", "shapely", "pyproj"}
     )
+    lidar_point_cloud_blocked = "pdal" in missing_commands
     qgis_blocked = "qgis" in missing_commands and "qgis_process" in missing_commands
     model_blocked = any(name in missing_modules for name in {"torch", "ultralytics"})
 
@@ -111,8 +122,10 @@ def main() -> None:
         "",
         "## Summary",
         "",
+        f"- Environment: {args.label}",
         f"- QGIS available: {'no' if qgis_blocked else 'yes'}",
-        f"- Raster/LiDAR processing ready: {'no' if raster_blocked else 'yes'}",
+        f"- Raster/DTM base processing ready: {'no' if raster_base_blocked else 'yes'}",
+        f"- LiDAR point-cloud processing ready: {'no' if lidar_point_cloud_blocked else 'yes'}",
         f"- Deep learning experiment ready: {'no' if model_blocked else 'yes'}",
         "",
         "The light dataset, QGIS package, reports and web map do not require these optional tools.",
@@ -133,20 +146,26 @@ def main() -> None:
     lines.extend(["", "## Operational blockers", ""])
     if qgis_blocked:
         lines.append("- Manual visual review still requires opening the GeoPackages in QGIS desktop.")
-    if raster_blocked:
-        lines.append("- Raster/LiDAR phase needs GDAL/PDAL plus Python geospatial libraries before downloading and cutting tiles.")
+    if raster_base_blocked:
+        lines.append("- Raster/DTM phase needs GDAL plus Python geospatial libraries before cutting image or DEM tiles.")
+    if lidar_point_cloud_blocked:
+        lines.append("- LiDAR point-cloud phase needs PDAL only if processing original LAZ/COPC point clouds instead of prepared DEM/DTM rasters.")
     if model_blocked:
         lines.append("- YOLO/deep-learning experiments need a model stack such as PyTorch and Ultralytics.")
-    if not any([qgis_blocked, raster_blocked, model_blocked]):
+    if not any([qgis_blocked, raster_base_blocked, lidar_point_cloud_blocked, model_blocked]):
         lines.append("- No local tooling blocker detected; the next blocker is human annotation quality.")
 
-    (REPORTS_DIR / "environment_status.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
+    report_path = args.report if args.report.is_absolute() else PROJECT_ROOT / args.report
+    report_path.parent.mkdir(parents=True, exist_ok=True)
+    report_path.write_text("\n".join(lines) + "\n", encoding="utf-8")
 
     print(f"missing_commands={','.join(missing_commands) if missing_commands else 'none'}")
     print(f"missing_modules={','.join(missing_modules) if missing_modules else 'none'}")
     print(f"qgis_available={'no' if qgis_blocked else 'yes'}")
-    print(f"raster_processing_ready={'no' if raster_blocked else 'yes'}")
+    print(f"raster_base_processing_ready={'no' if raster_base_blocked else 'yes'}")
+    print(f"lidar_point_cloud_processing_ready={'no' if lidar_point_cloud_blocked else 'yes'}")
     print(f"deep_learning_ready={'no' if model_blocked else 'yes'}")
+    print(f"report={report_path.relative_to(PROJECT_ROOT)}")
 
 
 if __name__ == "__main__":

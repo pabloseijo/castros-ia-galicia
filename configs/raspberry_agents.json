@@ -24,10 +24,10 @@
       "id": "env_watchdog",
       "enabled": true,
       "description": "Check local commands and Python modules available on the Raspberry.",
-      "command": ["python3", "scripts/check_environment.py"],
+      "command": ["python3", "scripts/check_environment.py", "--report", "reports/environment_status_raspberry.md", "--label", "raspberry"],
       "timeout_seconds": 120,
       "systemd_on_calendar": "daily",
-      "writes": ["reports/environment_status.md"],
+      "writes": ["reports/environment_status_raspberry.md"],
       "risk_level": "safe"
     },
     {
@@ -88,6 +88,20 @@
         "webmap/pnoa_preview_index.html"
       ],
       "risk_level": "safe_review_preview_only"
+    },
+    {
+      "id": "pnoa_chip_export",
+      "enabled": true,
+      "description": "Export PNOA chips only for accepted reviewed positive and negative annotations.",
+      "command": ["make", "pnoa-chips"],
+      "timeout_seconds": 600,
+      "systemd_on_calendar": "Mon..Fri 04:40",
+      "writes": [
+        "data/training/pnoa_chip_manifest.tsv",
+        "reports/pnoa_chip_export.md",
+        "data/raster-chips/pnoa/"
+      ],
+      "risk_level": "safe_after_accepted_annotations_only"
     },
     {
       "id": "training_readiness_watchdog",

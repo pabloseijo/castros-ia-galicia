@@ -105,13 +105,16 @@ El siguiente paso real es revisar las tareas P0, ajustar buffers a polígonos re
 - `data/qgis-review/remaining_equivalence_candidates.geojson`: capa visual con las dos equivalencias posibles que requieren decisión humana.
 - `reports/training_readiness.md`: estado de exportación entrenable.
 - `reports/environment_status.md`: herramientas locales disponibles/bloqueantes.
+- `reports/environment_status_raspberry.md`: herramientas disponibles en la Raspberry para agentes remotos.
 - `reports/annotation_backup_status.md`: estado del backup/verificación del GeoPackage editable.
 - `reports/repo_drift_status.md`: estado Git local/remoto sin auto-merge.
 - `reports/pnoa_preview_index.md`: estado del índice de previsualización PNOA.
+- `reports/pnoa_chip_export.md`: estado de exportación de chips PNOA desde anotaciones aceptadas.
 - `data/review-queues/`: colas TSV por prioridad.
 - `data/raster-prep/candidate_raster_tiles.tsv`: manifiesto de tiles.
 - `data/raster-prep/pnoa_preview_urls.tsv`: enlaces WMS PNOA de solo revisión para cada ventana candidata.
 - `data/training/`: manifiestos exportados desde anotaciones aceptadas.
+- `data/training/pnoa_chip_manifest.tsv`: chips PNOA exportados desde etiquetas aceptadas; permanece vacío mientras no haya revisión QGIS aceptada.
 - `webmap/index.html`: mapa estático con capas embebidas para inspección rápida.
 - `webmap/pnoa_preview_index.html`: tabla HTML con miniaturas WMS PNOA para revisión visual; no crea etiquetas.
 - `docs/raspberry-agents.md`: runner agentico para Raspberry con systemd y reglas de seguridad.
@@ -129,3 +132,11 @@ Para revisar ortofoto PNOA oficial por ventana candidata:
 `webmap/pnoa_preview_index.html`
 
 Ese índice solo prepara enlaces/miniaturas WMS. No descarga rasters fuente ni convierte candidatos en entrenamiento.
+
+Cuando existan polígonos aceptados en QGIS, exportar chips PNOA:
+
+```bash
+make pnoa-chips
+```
+
+Este target ignora puntos candidatos y solo usa `labels_reviewed` / `negative_areas_reviewed` con `review_status=accepted`.

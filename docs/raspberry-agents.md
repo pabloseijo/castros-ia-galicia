@@ -60,6 +60,7 @@ The source of truth is `configs/raspberry_agents.json`.
 | `qgis_package_refresh` | Rebuild generated QGIS review layers without touching annotations. | weekdays 03:40 |
 | `review_outputs_refresh` | Rebuild queues, raster manifest, training readiness and webmap. | weekdays 04:00 |
 | `pnoa_preview_index` | Rebuild review-only IGN PNOA WMS URLs and an HTML preview page. | weekdays 04:20 |
+| `pnoa_chip_export` | Export PNOA chips only from accepted reviewed annotations. | weekdays 04:40 |
 | `training_readiness_watchdog` | Re-check accepted QGIS labels and metadata. | hourly |
 | `full_safe_verify` | Full verification chain; disabled by default. | Sunday 05:00 |
 
@@ -103,6 +104,16 @@ The PNOA preview index writes:
 
 This is a review aid only. It creates official WMS links and one smoke-test request; it does not download/persist source rasters or create labels.
 
+The PNOA chip export writes:
+
+- `data/training/pnoa_chip_manifest.tsv`
+- `reports/pnoa_chip_export.md`
+- `data/raster-chips/pnoa/`
+
+This export is gated by accepted human annotations. With zero accepted positives or negatives, it writes an empty manifest and does not download imagery.
+
+The Raspberry environment watchdog writes `reports/environment_status_raspberry.md`, separate from the local Mac report `reports/environment_status.md`.
+
 These runtime folders are intentionally not versioned.
 
 ## Systemd deployment on Raspberry
@@ -127,6 +138,7 @@ systemctl --user enable --now castros-ia-pba_catalog_monitor.timer
 systemctl --user enable --now castros-ia-qgis_package_refresh.timer
 systemctl --user enable --now castros-ia-review_outputs_refresh.timer
 systemctl --user enable --now castros-ia-pnoa_preview_index.timer
+systemctl --user enable --now castros-ia-pnoa_chip_export.timer
 systemctl --user enable --now castros-ia-training_readiness_watchdog.timer
 ```
 

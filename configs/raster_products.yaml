@@ -33,4 +33,5 @@ optional_products:
     source: Sentinel-2
     role: auxiliary_context
 
-download_rule: pending_qgis_review
+download_rule: accepted_reviewed_annotations_only
+candidate_preview_rule: wms_url_index_only
