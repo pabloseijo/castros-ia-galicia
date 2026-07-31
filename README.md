@@ -64,6 +64,7 @@ make annotations
 make reports
 make raster-prep
 make pba-unlock
+make pba-review
 make training-manifest
 make webmap
 make env-check

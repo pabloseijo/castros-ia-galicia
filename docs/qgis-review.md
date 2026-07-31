@@ -13,15 +13,17 @@ Orden de trabajo:
 1. Revisar tareas `P0`.
 2. Comprobar O Val como holdout: Monte do Castro, Quintá, A Pedreira y Vilasuso.
 3. Resolver Pena Grande/Lagoa como conflicto castro/cercado neolítico.
-4. Geocodificar filas sin coordenadas o descartarlas del MVP geoespacial.
-5. Ajustar buffers de 120 m a croa/muralla/recinto cuando sea visible.
-6. Aceptar negativos solo si PNOA/LiDAR no muestra forma arqueológica plausible.
-7. Dibujar positivos revisados en `labels_reviewed`.
-8. Dibujar negativos aceptados en `negative_areas_reviewed`.
-9. Añadir coordenadas corregidas en `geocoded_sites_reviewed`.
-10. Marcar decisiones en `site_review_decisions` y `negative_review_decisions`.
+4. Usar `pba_geocoding_candidates`, si existe, para geocodificar/reconciliar filas sin coordenadas.
+5. Geocodificar manualmente o descartar lo que siga bloqueado tras PBA.
+6. Ajustar buffers de 120 m a croa/muralla/recinto cuando sea visible.
+7. Aceptar negativos solo si PNOA/LiDAR no muestra forma arqueológica plausible.
+8. Dibujar positivos revisados en `labels_reviewed`.
+9. Dibujar negativos aceptados en `negative_areas_reviewed`.
+10. Añadir coordenadas corregidas en `geocoded_sites_reviewed`.
+11. Marcar decisiones en `site_review_decisions` y `negative_review_decisions`.
 
 Los buffers generados no son etiquetas finales.
+Los puntos PBA son candidatos oficiales de localización/reconciliación; tampoco son etiquetas finales.
 
 ## Campos recomendados
 
@@ -51,6 +53,14 @@ Para entrar en faena sin perderse:
 Reporte legible:
 
 `reports/review_status.md`
+
+Desbloqueo PBA:
+
+```bash
+make pba-review
+```
+
+Ese comando consulta el PBA/Xunta, actualiza `reports/pba_catalog_unlock.md` y regenera el paquete QGIS con `pba_geocoding_candidates`.
 
 ## Después de revisar
 

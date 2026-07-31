@@ -21,9 +21,11 @@ from typing import Any
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 MVP_DIR = PROJECT_ROOT / "data/processed/castros-trasancos-mvp"
 OUT_DIR = PROJECT_ROOT / "data/qgis-review"
+REPORTS_DIR = PROJECT_ROOT / "reports"
 
 SRS_ID = 4326
 POSITIVE_SPLITS = {"train", "val", "test", "test_o_val"}
+POINT_LAYER_NAMES = {"review_points", "hard_negative_candidates", "pba_geocoding_candidates"}
 TRASANCOS_BBOX = [-8.36, 43.40, -7.94, 43.68]
 GENERATED_AT = "2026-07-31T00:00:00Z"
 
@@ -280,10 +282,47 @@ def build_review_layers(
         "review_points": review_points,
         "positive_seed_buffers_120m": positive_buffers,
         "tile_windows_512m": tile_windows,
+        "pba_geocoding_candidates": load_pba_geocoding_candidates(),
         "hard_negative_candidates": negative_points,
         "trasancos_aoi": aoi,
     }
     return layers, review_tasks, geocoding_tasks
+
+
+def load_pba_geocoding_candidates() -> list[dict[str, Any]]:
+    path = REPORTS_DIR / "pba_geocoding_candidate_decisions.tsv"
+    if not path.exists():
+        return []
+    features: list[dict[str, Any]] = []
+    for row in read_tsv(path):
+        lat = as_float(row.get("pba_lat_wgs84", ""))
+        lon = as_float(row.get("pba_lon_wgs84", ""))
+        if lat is None or lon is None:
+            continue
+        decision = row.get("decision", "")
+        props = {
+            "site_id": row.get("site_id", ""),
+            "primary_name": row.get("primary_name", ""),
+            "municipality": row.get("municipality", ""),
+            "parish": row.get("parish", ""),
+            "current_dataset_use": row.get("current_dataset_use", ""),
+            "pba_decision": decision,
+            "pba_name": row.get("pba_name", ""),
+            "pba_municipality": row.get("pba_municipality", ""),
+            "pba_parish": row.get("pba_parish", ""),
+            "pba_place": row.get("pba_place", ""),
+            "pba_id_ipaga": row.get("pba_id_ipaga", ""),
+            "pba_cod_impres": row.get("pba_cod_impres", ""),
+            "pba_tipoloxia": row.get("pba_tipoloxia", ""),
+            "pba_x_etrs89_utm29": row.get("pba_x_etrs89_utm29", ""),
+            "pba_y_etrs89_utm29": row.get("pba_y_etrs89_utm29", ""),
+            "pba_observacio": row.get("pba_observacio", ""),
+            "review_priority": "P0" if "coordinate" in decision else "P2",
+            "qgis_action": "Revisar contra PNOA/LiDAR y copiar a geocoded_sites_reviewed solo si queda aceptado.",
+            "reason": row.get("reason", ""),
+        }
+        features.append(point_feature(lon, lat, props))
+    return features
 
 
 def geom_bbox(geometry: dict[str, Any]) -> tuple[float, float, float, float]:
@@ -371,7 +410,7 @@ def create_gpkg(path: Path, layers: dict[str, list[dict[str, Any]]]) -> None:
     )
 
     for table_name, features in layers.items():
-        geom_type = "POINT" if table_name in {"review_points", "hard_negative_candidates"} else "POLYGON"
+        geom_type = "POINT" if table_name in POINT_LAYER_NAMES else "POLYGON"
         property_names = sorted({key for feature in features for key in feature["properties"].keys()})
         columns_sql = ", ".join(f'"{name}" TEXT' for name in property_names)
         cur.execute(
@@ -433,6 +472,7 @@ def write_readme(path: Path, layers: dict[str, list[dict[str, Any]]], review_tas
         f"- `review_points.geojson`: {len(layers['review_points'])} puntos con coordenadas.",
         f"- `positive_seed_buffers_120m.geojson`: {len(layers['positive_seed_buffers_120m'])} buffers provisionales de positivos train/val/test/test_o_val.",
         f"- `tile_windows_512m.geojson`: {len(layers['tile_windows_512m'])} ventanas candidatas para futuros recortes raster.",
+        f"- `pba_geocoding_candidates.geojson`: {len(layers['pba_geocoding_candidates'])} candidatos oficiales PBA para revisión de geocodificación.",
         f"- `hard_negative_candidates.geojson`: {len(layers['hard_negative_candidates'])} negativos difíciles generados para revisión.",
         "- `trasancos_aoi.geojson`: caja de trabajo del MVP.",
         "- `qgis_review_tasks.tsv`: cola completa de revisión.",
@@ -452,10 +492,11 @@ def write_readme(path: Path, layers: dict[str, list[dict[str, Any]]], review_tas
             "",
             "1. Abrir `castros_trasancos_qgis_review.gpkg` en QGIS.",
             "2. Cargar PNOA/IGN como mapa base y, cuando estén descargados, hillshade/MSRM LiDAR.",
-            "3. Resolver primero `P0`: O Val, conflictos tipológicos y filas sin coordenadas.",
-            "4. Revisar `positive_seed_buffers_120m`: ajustar a croa/muralla o descartar si el punto cae mal.",
-            "5. Revisar `hard_negative_candidates`: aceptar solo negativos visualmente claros.",
-            "6. Guardar las decisiones en una capa nueva, no sobrescribir las capas generadas.",
+            "3. Si existe `pba_geocoding_candidates`, usarla para resolver geocodificación en `geocoded_sites_reviewed`; no copiarla como etiqueta final.",
+            "4. Resolver primero `P0`: O Val, conflictos tipológicos y filas sin coordenadas.",
+            "5. Revisar `positive_seed_buffers_120m`: ajustar a croa/muralla o descartar si el punto cae mal.",
+            "6. Revisar `hard_negative_candidates`: aceptar solo negativos visualmente claros.",
+            "7. Guardar las decisiones en una capa nueva, no sobrescribir las capas generadas.",
             "",
             "## Regla de seguridad",
             "",

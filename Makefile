@@ -1,4 +1,4 @@
-.PHONY: dataset qgis-review annotations reports raster-prep pba-unlock training-manifest webmap env-check sync-wiki verify clean
+.PHONY: dataset qgis-review annotations reports raster-prep pba-unlock pba-review training-manifest webmap env-check sync-wiki verify clean
 
 dataset:
 	python3 scripts/build_castros_ia_dataset.py
@@ -17,6 +17,8 @@ raster-prep: qgis-review
 
 pba-unlock:
 	python3 scripts/query_pba_catalog_unlock.py
+
+pba-review: pba-unlock qgis-review annotations reports raster-prep webmap
 
 training-manifest: annotations
 	python3 scripts/export_training_manifest.py

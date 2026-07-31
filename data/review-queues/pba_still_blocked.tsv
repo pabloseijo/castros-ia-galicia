@@ -1,0 +1,10 @@
+site_id	primary_name	municipality	parish	current_dataset_use	decision	reason	pba_name	pba_municipality	pba_parish	pba_place	pba_id_ipaga	pba_cod_impres	pba_tipoloxia	pba_x_etrs89_utm29	pba_y_etrs89_utm29	pba_lon_wgs84	pba_lat_wgs84	pba_observacio
+tra-fene-almieiras	Castro de Almieiras	Fene	Santa Eulalia de Limodre	positive_damaged_review	still_blocked	No PBA catalogue hit for Almieiras/Limodre in the queried fields.												
+tra-fene-re15035002	Castro do Sartego	Fene	Fene	positive_damaged_review	still_blocked	No PBA hit for RE15035002 or Castro do Sartego; only an unrelated Sartego da Fonte dos Mouros achado appears.												
+tra-ferrol-ferreiros	Castro de Ferreiros	Ferrol	Santa Uxía de Mandiá	needs_geocoding	still_blocked	PBA match for Ferreiros is a mamoa in Brion, not Castro de Ferreiros in Mandia.												
+tra-neda-santa-maria-de-neda	Castro de Santa María de Neda	Neda	Santa María de Neda	positive_damaged_review	still_blocked	Same parish as Castro de Ancos, but no PBA name/code supports automatic equivalence.												
+tra-san-sadurnino-fraga	Castro de Fraga	San Sadurniño	Santa María de Bardaos	needs_geocoding	still_blocked	No PBA Castro de Fraga match in San Sadurnino/Bardaos.												
+tra-san-sadurnino-o-picho	O Picho	San Sadurniño	San Sadurniño	review_only	still_blocked	PBA Picho hits are fountains, not castro evidence.												
+tra-san-sadurnino-san-cristobal	Castro de San Cristóbal	San Sadurniño	Santa María de San Sadurniño	needs_geocoding	still_blocked	No PBA San Cristobal/San Sadurnino castro match in the queried layer.												
+tra-san-sadurnino-tralocastro	Tralocastro	San Sadurniño	San Xiao de Lamas	positive_damaged_review	still_blocked	No San Sadurnino Tralocastro hit; Ferrol Tralocastro is a different official site.												
+tra-valdovino-as-filgueiras	Castro de As Filgueiras	Valdoviño	San Vicente de Meirás	needs_geocoding	still_blocked	PBA Filgueiras hits are in San Sadurnino and are not Valdovino/Meiras castros.												

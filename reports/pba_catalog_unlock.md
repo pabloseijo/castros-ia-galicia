@@ -1,6 +1,6 @@
 # PBA catalogue unlock report
 
-Generated: 2026-07-31T11:49:48Z
+Generated: 2026-07-31T12:17:57Z
 
 ## Fact-checked sources
 
@@ -66,3 +66,9 @@ Generated: 2026-07-31T11:49:48Z
 2. Add PBA coordinates only to review queues, not directly to `labels_reviewed`.
 3. For `still_blocked` rows, use the PBA visor/PXOM PDFs manually or remove them from the MVP geospatial scope.
 4. After QGIS review, draw accepted positives in `labels_reviewed` and accepted negative areas in `negative_areas_reviewed`.
+
+## Generated queues
+
+- `data/review-queues/pba_geocode_candidates.tsv`: official PBA coordinates that can be checked in QGIS.
+- `data/review-queues/pba_duplicate_aliases.tsv`: rows that should probably be merged/discarded against stronger existing records.
+- `data/review-queues/pba_still_blocked.tsv`: rows still lacking enough official support after this PBA pass.

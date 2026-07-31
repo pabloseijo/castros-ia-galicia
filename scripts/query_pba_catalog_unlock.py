@@ -22,6 +22,7 @@ from urllib.request import Request, urlopen
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 REPORTS_DIR = PROJECT_ROOT / "reports"
 QGIS_REVIEW_DIR = PROJECT_ROOT / "data/qgis-review"
+QUEUES_DIR = PROJECT_ROOT / "data/review-queues"
 
 PBA_DATASET_URL = "https://datos.gob.es/es/catalogo/a12002994-plan-basico-autonomico-de-galicia-afecciones-del-patrimonio-cultural"
 PBA_REST_BASE = "https://ideg.xunta.gal/servizos/rest/services/PBA/Afeccions_PatrimonioCultural/MapServer"
@@ -47,6 +48,28 @@ PBA_OUT_FIELDS = ",".join(
         "OBSERVACIO",
     ]
 )
+
+DECISION_FIELDS = [
+    "site_id",
+    "primary_name",
+    "municipality",
+    "parish",
+    "current_dataset_use",
+    "decision",
+    "reason",
+    "pba_name",
+    "pba_municipality",
+    "pba_parish",
+    "pba_place",
+    "pba_id_ipaga",
+    "pba_cod_impres",
+    "pba_tipoloxia",
+    "pba_x_etrs89_utm29",
+    "pba_y_etrs89_utm29",
+    "pba_lon_wgs84",
+    "pba_lat_wgs84",
+    "pba_observacio",
+]
 
 
 DECISION_RULES = {
@@ -399,9 +422,25 @@ def write_report(decisions: list[dict[str, str]], pba_rows: list[dict[str, str]]
             "2. Add PBA coordinates only to review queues, not directly to `labels_reviewed`.",
             "3. For `still_blocked` rows, use the PBA visor/PXOM PDFs manually or remove them from the MVP geospatial scope.",
             "4. After QGIS review, draw accepted positives in `labels_reviewed` and accepted negative areas in `negative_areas_reviewed`.",
+            "",
+            "## Generated queues",
+            "",
+            "- `data/review-queues/pba_geocode_candidates.tsv`: official PBA coordinates that can be checked in QGIS.",
+            "- `data/review-queues/pba_duplicate_aliases.tsv`: rows that should probably be merged/discarded against stronger existing records.",
+            "- `data/review-queues/pba_still_blocked.tsv`: rows still lacking enough official support after this PBA pass.",
         ]
     )
     (REPORTS_DIR / "pba_catalog_unlock.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
+
+
+def write_action_queues(decisions: list[dict[str, str]]) -> None:
+    QUEUES_DIR.mkdir(parents=True, exist_ok=True)
+    geocode = [row for row in decisions if row["decision"].startswith("coordinate_for")]
+    duplicates = [row for row in decisions if row["decision"] in {"duplicate_or_alias", "duplicate_possible_needs_human"}]
+    blocked = [row for row in decisions if row["decision"] == "still_blocked"]
+    write_tsv(QUEUES_DIR / "pba_geocode_candidates.tsv", geocode, DECISION_FIELDS)
+    write_tsv(QUEUES_DIR / "pba_duplicate_aliases.tsv", duplicates, DECISION_FIELDS)
+    write_tsv(QUEUES_DIR / "pba_still_blocked.tsv", blocked, DECISION_FIELDS)
 
 
 def main() -> None:
@@ -426,29 +465,9 @@ def main() -> None:
         "lat_wgs84",
         "observacio",
     ]
-    decision_fields = [
-        "site_id",
-        "primary_name",
-        "municipality",
-        "parish",
-        "current_dataset_use",
-        "decision",
-        "reason",
-        "pba_name",
-        "pba_municipality",
-        "pba_parish",
-        "pba_place",
-        "pba_id_ipaga",
-        "pba_cod_impres",
-        "pba_tipoloxia",
-        "pba_x_etrs89_utm29",
-        "pba_y_etrs89_utm29",
-        "pba_lon_wgs84",
-        "pba_lat_wgs84",
-        "pba_observacio",
-    ]
     write_tsv(REPORTS_DIR / "pba_catalog_castro_like_snapshot.tsv", pba_rows, pba_fields)
-    write_tsv(REPORTS_DIR / "pba_geocoding_candidate_decisions.tsv", decisions, decision_fields)
+    write_tsv(REPORTS_DIR / "pba_geocoding_candidate_decisions.tsv", decisions, DECISION_FIELDS)
+    write_action_queues(decisions)
     write_report(decisions, pba_rows, layers)
 
     print(f"PBA rows: {len(pba_rows)}")
