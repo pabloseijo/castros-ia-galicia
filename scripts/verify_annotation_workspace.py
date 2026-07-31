@@ -9,6 +9,8 @@ from pathlib import Path
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 ANNOTATION_GPKG = PROJECT_ROOT / "data/annotations/castros_annotations.gpkg"
+QGIS_REVIEW_TASKS = PROJECT_ROOT / "data/qgis-review/qgis_review_tasks.tsv"
+NEGATIVE_CANDIDATES = PROJECT_ROOT / "data/processed/castros-trasancos-mvp/hard_negative_candidates.tsv"
 
 EXPECTED_CONTENTS = {
     "labels_reviewed": "features",
@@ -45,10 +47,12 @@ def main() -> None:
 
     site_decisions = cur.execute("select count(*) from site_review_decisions").fetchone()[0]
     negative_decisions = cur.execute("select count(*) from negative_review_decisions").fetchone()[0]
-    if site_decisions != 128:
-        raise SystemExit(f"Expected 128 site decisions, got {site_decisions}")
-    if negative_decisions != 160:
-        raise SystemExit(f"Expected 160 negative decisions, got {negative_decisions}")
+    expected_site_decisions = max(sum(1 for _ in QGIS_REVIEW_TASKS.open(encoding="utf-8")) - 1, 0)
+    expected_negative_decisions = max(sum(1 for _ in NEGATIVE_CANDIDATES.open(encoding="utf-8")) - 1, 0)
+    if site_decisions != expected_site_decisions:
+        raise SystemExit(f"Expected {expected_site_decisions} site decisions, got {site_decisions}")
+    if negative_decisions != expected_negative_decisions:
+        raise SystemExit(f"Expected {expected_negative_decisions} negative decisions, got {negative_decisions}")
 
     conn.close()
     print("annotation_workspace_ok")

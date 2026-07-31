@@ -11,7 +11,7 @@ Y abrir también el workspace editable:
 Orden de trabajo:
 
 1. Revisar tareas `P0`.
-2. Comprobar O Val como holdout: Quintá, A Pedreira y Vilasuso.
+2. Comprobar O Val como holdout: Monte do Castro, Quintá, A Pedreira y Vilasuso.
 3. Resolver Pena Grande/Lagoa como conflicto castro/cercado neolítico.
 4. Geocodificar filas sin coordenadas o descartarlas del MVP geoespacial.
 5. Ajustar buffers de 120 m a croa/muralla/recinto cuando sea visible.
@@ -37,3 +37,27 @@ En `negative_areas_reviewed`:
 
 - `negative_type`: `agricultural`, `forestry`, `road_cut`, `quarry`, `natural_hill`, `urban`, `unclear`.
 - `review_status`: `accepted` solo si no parece forma arqueológica plausible.
+
+## Colas generadas
+
+Para entrar en faena sin perderse:
+
+- `data/review-queues/p0_blockers.tsv`
+- `data/review-queues/o_val_holdout.tsv`
+- `data/review-queues/needs_geocoding.tsv`
+- `data/review-queues/p1_training_candidates.tsv`
+- `data/review-queues/p2_reconciliation.tsv`
+
+Reporte legible:
+
+`reports/review_status.md`
+
+## Después de revisar
+
+Cuando haya polígonos aceptados:
+
+```bash
+make training-manifest
+```
+
+Si sigue saliendo `training_status=blocked`, falta al menos un positivo aceptado o un negativo aceptado.

@@ -229,6 +229,25 @@ def extract_alias_label(value: str) -> str:
     return value
 
 
+def normalize_pdf_spaced_label(value: str) -> str:
+    value = clean(value)
+    value = re.sub(r"\bX-\s+(\d+)\b", r"X-\1", value, flags=re.IGNORECASE)
+    value = re.sub(r"\bd\s+([oa])\b", r"d\1", value, flags=re.IGNORECASE)
+    value = re.sub(
+        r"\b([A-Za-zÁÉÍÓÚÜÑáéíóúüñ]{3,})\s+([a-záéíóúüñ])\b",
+        lambda match: match.group(1) + match.group(2),
+        value,
+    )
+    return clean(value)
+
+
+def display_site_name(value: str) -> str:
+    label = normalize_pdf_spaced_label(clean_alias_candidate(extract_alias_label(value)))
+    if label and is_plausible_alias(label):
+        return label
+    return clean(value)
+
+
 def clean_alias_candidate(value: str) -> str:
     value = clean(value)
     value = re.split(
@@ -237,6 +256,7 @@ def clean_alias_candidate(value: str) -> str:
         maxsplit=1,
         flags=re.IGNORECASE,
     )[0]
+    value = re.sub(r"\s*\(\s*(?:\(\s*)*(?:SRPAU|SRPI|SRP[A-Z]+)\b.*$", "", value, flags=re.IGNORECASE)
     value = re.sub(r"^[^0-9A-Za-zÁÉÍÓÚÜÑáéíóúüñ]+", "", value)
     value = re.sub(r"[^0-9A-Za-zÁÉÍÓÚÜÑáéíóúüñ]+$", "", value)
     value = re.sub(r"\s+", " ", value)
@@ -256,6 +276,8 @@ def is_plausible_alias(value: str) -> bool:
         return False
     alnum = re.findall(r"[0-9A-Za-zÁÉÍÓÚÜÑáéíóúüñ]", value)
     if len(alnum) / max(len(value), 1) < 0.45:
+        return False
+    if value.count("(") + value.count(")") > 2:
         return False
     if re.search(r"([!()°])\1{3,}", value):
         return False
@@ -382,6 +404,16 @@ def extract_coords(record: dict[str, str]) -> tuple[float | None, float | None]:
     utm_y = parse_decimal_coord(record.get("utm_y", ""), 4700000, 4900000)
     if utm_x is not None and utm_y is not None:
         return utm29n_to_wgs84(utm_x, utm_y)
+
+    text_blob = " ".join(str(value) for value in record.values())
+    for match in re.finditer(r"\b([456]\d{5})\s*/\s*(4[78]\d{5,6})\b", text_blob):
+        try:
+            embedded_x = float(match.group(1))
+            embedded_y = float(match.group(2))
+        except ValueError:
+            continue
+        if 450000 <= embedded_x <= 650000 and 4700000 <= embedded_y <= 4900000:
+            return utm29n_to_wgs84(embedded_x, embedded_y)
     return None, None
 
 
@@ -432,7 +464,7 @@ def match_score(site: Site, record: dict[str, str]) -> int:
         # allow code matches above, but keep name-only matches strict.
         return 0
 
-    rec_name = clean(record.get("name", ""))
+    rec_name = display_site_name(record.get("name", ""))
     rec_norm = norm(rec_name)
     if not rec_norm:
         return 0
@@ -732,9 +764,10 @@ def add_unmatched_web_candidates(sites_by_key: dict[str, Site], records: list[di
             continue
         if code and find_by_code(existing_sites, code):
             continue
-        if find_best_site(existing_sites, municipality, record.get("name", "")):
+        candidate_name = display_site_name(record.get("name", ""))
+        if find_best_site(existing_sites, municipality, candidate_name):
             continue
-        name = clean(record.get("name", ""))
+        name = candidate_name
         is_cercado_conflict = "Cercado neolítico" in name or "Cercado neolitico" in name
         key = "web:" + "|".join([slugify(municipality), slugify(name), slugify(record.get("place", ""))])
         site = Site(

@@ -456,24 +456,73 @@
         "coordinates": [
           [
             [
-              -8.217427814909628,
-              43.550462563392024
+              -8.22363078507735,
+              43.564705063392026
             ],
             [
-              -8.211081605090373,
-              43.550462563392024
+              -8.217283074922648,
+              43.564705063392026
             ],
             [
-              -8.211081605090373,
-              43.555061916607976
+              -8.217283074922648,
+              43.56930441660798
             ],
             [
-              -8.217427814909628,
-              43.555061916607976
+              -8.22363078507735,
+              43.56930441660798
             ],
             [
-              -8.217427814909628,
-              43.550462563392024
+              -8.22363078507735,
+              43.564705063392026
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "site_id": "tra-naron-ga15054001",
+        "primary_name": "X-39 Monte do Castro",
+        "municipality": "Narón",
+        "parish": "O Val",
+        "place": "",
+        "ga_code": "GA15054001",
+        "record_type": "official_castro",
+        "confidence": "high",
+        "dataset_use": "positive_o_val_holdout",
+        "split": "test_o_val",
+        "coord_source": "PXOM Narón 2023/2024",
+        "review_priority": "P0",
+        "qgis_action": "Verificar coordenada y dibujar polígono/buffer; mantener fuera de entrenamiento.",
+        "suggested_decision": "verify_holdout_polygon",
+        "notes": "",
+        "tile_side_m": "512",
+        "tile_status": "candidate_crop_window"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -8.217437506360184,
+              43.55049011339202
+            ],
+            [
+              -8.211091293639814,
+              43.55049011339202
+            ],
+            [
+              -8.211091293639814,
+              43.555089466607974
+            ],
+            [
+              -8.217437506360184,
+              43.555089466607974
+            ],
+            [
+              -8.217437506360184,
+              43.55049011339202
             ]
           ]
         ]
@@ -489,11 +538,11 @@
         "confidence": "high",
         "dataset_use": "positive_o_val_holdout",
         "split": "test_o_val",
-        "coord_source": "Patrimonio Galego",
+        "coord_source": "PXOM Narón 2023/2024",
         "review_priority": "P0",
         "qgis_action": "Verificar coordenada y dibujar polígono/buffer; mantener fuera de entrenamiento.",
         "suggested_decision": "verify_holdout_polygon",
-        "notes": "Presente en lista clásica Pena/Calaméo nº 14. | 3 coordenadas candidatas en fuentes; se eligió Patrimonio Galego por prioridad.",
+        "notes": "Presente en lista clásica Pena/Calaméo nº 14. | 4 coordenadas candidatas en fuentes; se eligió PXOM Narón 2023/2024 por prioridad.",
         "tile_side_m": "512",
         "tile_status": "candidate_crop_window"
       }
@@ -505,24 +554,24 @@
         "coordinates": [
           [
             [
-              -8.225232635772459,
-              43.54155032339202
+              -8.225439450524977,
+              43.54145061339202
             ],
             [
-              -8.218887364227543,
-              43.54155032339202
+              -8.219094189475022,
+              43.54145061339202
             ],
             [
-              -8.218887364227543,
-              43.546149676607975
+              -8.219094189475022,
+              43.546049966607974
             ],
             [
-              -8.225232635772459,
-              43.546149676607975
+              -8.225439450524977,
+              43.546049966607974
             ],
             [
-              -8.225232635772459,
-              43.54155032339202
+              -8.225439450524977,
+              43.54145061339202
             ]
           ]
         ]
@@ -538,11 +587,11 @@
         "confidence": "high",
         "dataset_use": "test_positive_candidate",
         "split": "test",
-        "coord_source": "Galipedia",
+        "coord_source": "PXOM Narón 2023/2024",
         "review_priority": "P1",
         "qgis_action": "Verificar coordenada y dibujar polígono/buffer entrenable.",
         "suggested_decision": "draw_training_polygon",
-        "notes": "Presente en lista clásica Pena/Calaméo nº 15.",
+        "notes": "Presente en lista clásica Pena/Calaméo nº 15. | 2 coordenadas candidatas en fuentes; se eligió PXOM Narón 2023/2024 por prioridad.",
         "tile_side_m": "512",
         "tile_status": "candidate_crop_window"
       }
@@ -554,24 +603,73 @@
         "coordinates": [
           [
             [
-              -8.13678979566304,
-              43.548767453392024
+              -8.181311664934428,
+              43.542294443392024
             ],
             [
-              -8.130443764336961,
-              43.548767453392024
+              -8.174966315065573,
+              43.542294443392024
             ],
             [
-              -8.130443764336961,
-              43.553366806607976
+              -8.174966315065573,
+              43.546893796607975
             ],
             [
-              -8.13678979566304,
-              43.553366806607976
+              -8.181311664934428,
+              43.546893796607975
             ],
             [
-              -8.13678979566304,
-              43.548767453392024
+              -8.181311664934428,
+              43.542294443392024
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "site_id": "tra-naron-ga15054004",
+        "primary_name": "X-40 Castro de Santa María",
+        "municipality": "Narón",
+        "parish": "Castro (Santa María)",
+        "place": "Borreiros",
+        "ga_code": "GA15054004",
+        "record_type": "official_castro",
+        "confidence": "high",
+        "dataset_use": "test_positive_candidate",
+        "split": "test",
+        "coord_source": "PXOM Narón 2023/2024",
+        "review_priority": "P1",
+        "qgis_action": "Verificar coordenada y dibujar polígono/buffer entrenable.",
+        "suggested_decision": "draw_training_polygon",
+        "notes": "",
+        "tile_side_m": "512",
+        "tile_status": "candidate_crop_window"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -8.136938117858822,
+              43.54899910339203
+            ],
+            [
+              -8.13059206214118,
+              43.54899910339203
+            ],
+            [
+              -8.13059206214118,
+              43.55359845660798
+            ],
+            [
+              -8.136938117858822,
+              43.55359845660798
+            ],
+            [
+              -8.136938117858822,
+              43.54899910339203
             ]
           ]
         ]
@@ -587,11 +685,11 @@
         "confidence": "high",
         "dataset_use": "test_positive_candidate",
         "split": "test",
-        "coord_source": "Patrimonio Galego",
+        "coord_source": "PXOM Narón 2023/2024",
         "review_priority": "P1",
         "qgis_action": "Verificar coordenada y dibujar polígono/buffer entrenable.",
         "suggested_decision": "draw_training_polygon",
-        "notes": "Presente en lista clásica Pena/Calaméo nº 18. | 2 coordenadas candidatas en fuentes; se eligió Patrimonio Galego por prioridad.",
+        "notes": "Presente en lista clásica Pena/Calaméo nº 18. | 3 coordenadas candidatas en fuentes; se eligió PXOM Narón 2023/2024 por prioridad.",
         "tile_side_m": "512",
         "tile_status": "candidate_crop_window"
       }
@@ -603,24 +701,24 @@
         "coordinates": [
           [
             [
-              -8.182337418195313,
-              43.49936732339202
+              -8.181903740522705,
+              43.49941164339202
             ],
             [
-              -8.175996581804686,
-              43.49936732339202
+              -8.175562899477294,
+              43.49941164339202
             ],
             [
-              -8.175996581804686,
-              43.50396667660797
+              -8.175562899477294,
+              43.504010996607974
             ],
             [
-              -8.182337418195313,
-              43.50396667660797
+              -8.181903740522705,
+              43.504010996607974
             ],
             [
-              -8.182337418195313,
-              43.49936732339202
+              -8.181903740522705,
+              43.49941164339202
             ]
           ]
         ]
@@ -636,11 +734,11 @@
         "confidence": "high",
         "dataset_use": "test_positive_candidate",
         "split": "test",
-        "coord_source": "Artabro",
+        "coord_source": "PXOM Narón 2023/2024",
         "review_priority": "P1",
         "qgis_action": "Verificar coordenada y dibujar polígono/buffer entrenable.",
         "suggested_decision": "draw_training_polygon",
-        "notes": "2 coordenadas candidatas en fuentes; se eligió Artabro por prioridad.",
+        "notes": "3 coordenadas candidatas en fuentes; se eligió PXOM Narón 2023/2024 por prioridad.",
         "tile_side_m": "512",
         "tile_status": "candidate_crop_window"
       }
@@ -652,24 +750,24 @@
         "coordinates": [
           [
             [
-              -8.176077866076897,
-              43.531292613392026
+              -8.17601451778902,
+              43.531325163392026
             ],
             [
-              -8.169733673923103,
-              43.531292613392026
+              -8.16967032221098,
+              43.531325163392026
             ],
             [
-              -8.169733673923103,
-              43.53589196660798
+              -8.16967032221098,
+              43.53592451660798
             ],
             [
-              -8.176077866076897,
-              43.53589196660798
+              -8.17601451778902,
+              43.53592451660798
             ],
             [
-              -8.176077866076897,
-              43.531292613392026
+              -8.17601451778902,
+              43.531325163392026
             ]
           ]
         ]
@@ -685,11 +783,11 @@
         "confidence": "high",
         "dataset_use": "test_positive_candidate",
         "split": "test",
-        "coord_source": "Patrimonio Galego",
+        "coord_source": "PXOM Narón 2023/2024",
         "review_priority": "P1",
         "qgis_action": "Verificar coordenada y dibujar polígono/buffer entrenable.",
         "suggested_decision": "draw_training_polygon",
-        "notes": "Presente en lista clásica Pena/Calaméo nº 16. | 3 coordenadas candidatas en fuentes; se eligió Patrimonio Galego por prioridad.",
+        "notes": "Presente en lista clásica Pena/Calaméo nº 16. | 4 coordenadas candidatas en fuentes; se eligió PXOM Narón 2023/2024 por prioridad.",
         "tile_side_m": "512",
         "tile_status": "candidate_crop_window"
       }
@@ -701,24 +799,24 @@
         "coordinates": [
           [
             [
-              -8.161894386580556,
-              43.53206263339202
+              -8.161845547818803,
+              43.532086173392024
             ],
             [
-              -8.155550113419444,
-              43.53206263339202
+              -8.155501272181198,
+              43.532086173392024
             ],
             [
-              -8.155550113419444,
-              43.536661986607974
+              -8.155501272181198,
+              43.536685526607975
             ],
             [
-              -8.161894386580556,
-              43.536661986607974
+              -8.161845547818803,
+              43.536685526607975
             ],
             [
-              -8.161894386580556,
-              43.53206263339202
+              -8.161845547818803,
+              43.532086173392024
             ]
           ]
         ]
@@ -734,11 +832,11 @@
         "confidence": "high",
         "dataset_use": "test_positive_candidate",
         "split": "test",
-        "coord_source": "Patrimonio Galego",
+        "coord_source": "PXOM Narón 2023/2024",
         "review_priority": "P1",
         "qgis_action": "Verificar coordenada y dibujar polígono/buffer entrenable.",
         "suggested_decision": "draw_training_polygon",
-        "notes": "Presente en lista clásica Pena/Calaméo nº 19.",
+        "notes": "Presente en lista clásica Pena/Calaméo nº 19. | 2 coordenadas candidatas en fuentes; se eligió PXOM Narón 2023/2024 por prioridad.",
         "tile_side_m": "512",
         "tile_status": "candidate_crop_window"
       }
@@ -750,24 +848,24 @@
         "coordinates": [
           [
             [
-              -8.107061102005432,
-              43.53140532339202
+              -8.10738709184763,
+              43.53140232339202
             ],
             [
-              -8.10071689799457,
-              43.53140532339202
+              -8.101042888152369,
+              43.53140232339202
             ],
             [
-              -8.10071689799457,
-              43.53600467660797
+              -8.101042888152369,
+              43.536001676607974
             ],
             [
-              -8.107061102005432,
-              43.53600467660797
+              -8.10738709184763,
+              43.536001676607974
             ],
             [
-              -8.107061102005432,
-              43.53140532339202
+              -8.10738709184763,
+              43.53140232339202
             ]
           ]
         ]
@@ -783,11 +881,11 @@
         "confidence": "high",
         "dataset_use": "test_positive_candidate",
         "split": "test",
-        "coord_source": "Artabro",
+        "coord_source": "PXOM Narón 2023/2024",
         "review_priority": "P1",
         "qgis_action": "Verificar coordenada y dibujar polígono/buffer entrenable.",
         "suggested_decision": "draw_training_polygon",
-        "notes": "Presente en lista clásica Pena/Calaméo nº 20. | 2 coordenadas candidatas en fuentes; se eligió Artabro por prioridad.",
+        "notes": "Presente en lista clásica Pena/Calaméo nº 20. | 3 coordenadas candidatas en fuentes; se eligió PXOM Narón 2023/2024 por prioridad.",
         "tile_side_m": "512",
         "tile_status": "candidate_crop_window"
       }
@@ -799,24 +897,24 @@
         "coordinates": [
           [
             [
-              -8.23216966074559,
-              43.558548663392024
+              -8.232303388497481,
+              43.558505983392024
             ],
             [
-              -8.22582259925441,
-              43.558548663392024
+              -8.22595633150252,
+              43.558505983392024
             ],
             [
-              -8.22582259925441,
-              43.563148016607975
+              -8.22595633150252,
+              43.563105336607975
             ],
             [
-              -8.23216966074559,
-              43.563148016607975
+              -8.232303388497481,
+              43.563105336607975
             ],
             [
-              -8.23216966074559,
-              43.558548663392024
+              -8.232303388497481,
+              43.558505983392024
             ]
           ]
         ]
@@ -832,11 +930,11 @@
         "confidence": "high",
         "dataset_use": "positive_o_val_holdout",
         "split": "test_o_val",
-        "coord_source": "Patrimonio Galego",
+        "coord_source": "PXOM Narón 2023/2024",
         "review_priority": "P0",
         "qgis_action": "Verificar coordenada y dibujar polígono/buffer; mantener fuera de entrenamiento.",
         "suggested_decision": "verify_holdout_polygon",
-        "notes": "3 coordenadas candidatas en fuentes; se eligió Patrimonio Galego por prioridad.",
+        "notes": "4 coordenadas candidatas en fuentes; se eligió PXOM Narón 2023/2024 por prioridad.",
         "tile_side_m": "512",
         "tile_status": "candidate_crop_window"
       }
@@ -897,24 +995,24 @@
         "coordinates": [
           [
             [
-              -8.122339623194547,
-              43.54131132339202
+              -8.122558761681946,
+              43.54090254339202
             ],
             [
-              -8.115994376805451,
-              43.54131132339202
+              -8.116213558318053,
+              43.54090254339202
             ],
             [
-              -8.115994376805451,
-              43.545910676607974
+              -8.116213558318053,
+              43.54550189660797
             ],
             [
-              -8.122339623194547,
-              43.545910676607974
+              -8.122558761681946,
+              43.54550189660797
             ],
             [
-              -8.122339623194547,
-              43.54131132339202
+              -8.122558761681946,
+              43.54090254339202
             ]
           ]
         ]
@@ -930,11 +1028,11 @@
         "confidence": "medium_high",
         "dataset_use": "test_positive_candidate",
         "split": "test",
-        "coord_source": "Artabro",
+        "coord_source": "PXOM Narón 2023/2024",
         "review_priority": "P1",
         "qgis_action": "Verificar coordenada y dibujar polígono/buffer entrenable.",
         "suggested_decision": "draw_training_polygon",
-        "notes": "Presente en lista clásica Pena/Calaméo nº 24. | 2 coordenadas candidatas en fuentes; se eligió Artabro por prioridad.",
+        "notes": "Presente en lista clásica Pena/Calaméo nº 24. | 3 coordenadas candidatas en fuentes; se eligió PXOM Narón 2023/2024 por prioridad.",
         "tile_side_m": "512",
         "tile_status": "candidate_crop_window"
       }
@@ -946,24 +1044,24 @@
         "coordinates": [
           [
             [
-              -8.160116396608217,
-              43.53700532339202
+              -8.160243064888753,
+              43.536972643392026
             ],
             [
-              -8.153771603391782,
-              43.53700532339202
+              -8.153898275111246,
+              43.536972643392026
             ],
             [
-              -8.153771603391782,
-              43.541604676607975
+              -8.153898275111246,
+              43.54157199660798
             ],
             [
-              -8.160116396608217,
-              43.541604676607975
+              -8.160243064888753,
+              43.54157199660798
             ],
             [
-              -8.160116396608217,
-              43.53700532339202
+              -8.160243064888753,
+              43.536972643392026
             ]
           ]
         ]
@@ -979,11 +1077,60 @@
         "confidence": "medium_high",
         "dataset_use": "test_positive_candidate",
         "split": "test",
-        "coord_source": "Artabro",
+        "coord_source": "PXOM Narón 2023/2024",
         "review_priority": "P1",
         "qgis_action": "Verificar coordenada y dibujar polígono/buffer entrenable.",
         "suggested_decision": "draw_training_polygon",
-        "notes": "Presente en lista clásica Pena/Calaméo nº 17. | 2 coordenadas candidatas en fuentes; se eligió Artabro por prioridad.",
+        "notes": "Presente en lista clásica Pena/Calaméo nº 17. | 3 coordenadas candidatas en fuentes; se eligió PXOM Narón 2023/2024 por prioridad.",
+        "tile_side_m": "512",
+        "tile_status": "candidate_crop_window"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -8.107034513532845,
+              43.51755110339202
+            ],
+            [
+              -8.100691766467154,
+              43.51755110339202
+            ],
+            [
+              -8.100691766467154,
+              43.522150456607974
+            ],
+            [
+              -8.107034513532845,
+              43.522150456607974
+            ],
+            [
+              -8.107034513532845,
+              43.51755110339202
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "site_id": "tra-naron-x-48-castro-do-ramo",
+        "primary_name": "X-48 Castro do Ramo",
+        "municipality": "Narón",
+        "parish": "",
+        "place": "",
+        "ga_code": "",
+        "record_type": "official_uncoded_castro",
+        "confidence": "medium_high",
+        "dataset_use": "test_positive_candidate",
+        "split": "test",
+        "coord_source": "PXOM Narón 2023/2024",
+        "review_priority": "P1",
+        "qgis_action": "Verificar coordenada y dibujar polígono/buffer entrenable.",
+        "suggested_decision": "draw_training_polygon",
+        "notes": "en trámite según índice PXOM",
         "tile_side_m": "512",
         "tile_status": "candidate_crop_window"
       }

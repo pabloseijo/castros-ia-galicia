@@ -14,13 +14,17 @@ El objetivo no es declarar nuevos yacimientos por IA. El objetivo defendible es 
 
 ## Estado actual
 
-- Dataset maestro MVP: 128 filas.
-- Puntos con coordenadas WGS84: 91.
-- Buffers provisionales para revisión: 42.
-- Ventanas raster candidatas: 42.
+- Dataset maestro MVP: 127 filas.
+- Puntos con coordenadas WGS84: 95.
+- Buffers provisionales para revisión: 45.
+- Ventanas raster candidatas: 45.
 - Negativos difíciles generados para revisión: 160.
-- Tareas de geocodificación: 37.
+- Tareas de geocodificación: 32.
 - Workspace editable de anotación: 3 capas y 2 tablas de decisiones.
+- Colas de revisión: P0/P1/P2, O Val y geocodificación.
+- Manifiesto de ventanas raster: 45 tiles candidatos de 512 m.
+- Readiness de entrenamiento: bloqueado hasta tener polígonos/negativos revisados.
+- Mapa web estático de inspección rápida.
 
 O Val queda como holdout narrativo. No se usa para entrenar en la primera versión.
 
@@ -28,8 +32,8 @@ Split espacial actual:
 
 - `train`: Ferrol, Valdoviño y Neda, 25 positivos candidatos.
 - `val`: San Sadurniño, 6 positivos candidatos.
-- `test`: Narón no-O-Val, 8 positivos candidatos.
-- `test_o_val`: O Val, 3 positivos candidatos.
+- `test`: Narón no-O-Val, 10 positivos candidatos.
+- `test_o_val`: O Val, 4 positivos candidatos.
 
 La auditoría metodológica está en `docs/literature-audit-2026-07-31.md`.
 
@@ -57,6 +61,12 @@ castros-ia-galicia/
 make dataset
 make qgis-review
 make annotations
+make reports
+make raster-prep
+make training-manifest
+make webmap
+make env-check
+make sync-wiki
 make verify
 ```
 
@@ -76,3 +86,22 @@ Abrir estos dos GeoPackage juntos:
 - `data/annotations/castros_annotations.gpkg`: capas editables para dibujar y decidir.
 
 El siguiente paso real es revisar las tareas P0, ajustar buffers a polígonos reales en `labels_reviewed`, aceptar negativos en `negative_areas_reviewed` y solo después descargar/procesar rasters para ventanas útiles.
+
+## Reportes operativos
+
+- `reports/review_status.md`: cola de revisión y bloqueos.
+- `reports/raster_tile_plan.md`: ventanas raster candidatas.
+- `reports/training_readiness.md`: estado de exportación entrenable.
+- `reports/environment_status.md`: herramientas locales disponibles/bloqueantes.
+- `data/review-queues/`: colas TSV por prioridad.
+- `data/raster-prep/candidate_raster_tiles.tsv`: manifiesto de tiles.
+- `data/training/`: manifiestos exportados desde anotaciones aceptadas.
+- `webmap/index.html`: mapa estático con capas embebidas para inspección rápida.
+
+## Mapa web
+
+Abrir:
+
+`webmap/index.html`
+
+La vista web ayuda a detectar errores gruesos de coordenadas y distribución. No sustituye QGIS ni permite crear etiquetas finales.

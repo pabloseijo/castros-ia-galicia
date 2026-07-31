@@ -1421,8 +1421,40 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -8.2142547074,
-          43.552762235
+          -8.220456934637646,
+          43.567004736766265
+        ]
+      },
+      "properties": {
+        "site_id": "tra-naron-ga15054001",
+        "primary_name": "X-39 Monte do Castro",
+        "aliases": "X-39 Monte do Castro",
+        "municipality": "Narón",
+        "parish": "O Val",
+        "place": "",
+        "scope": "trasancos_estricto",
+        "ga_code": "GA15054001",
+        "record_type": "official_castro",
+        "confidence": "high",
+        "source_tier": "official_catalog",
+        "conservation_state": "desconocido",
+        "coord_status": "point_from_source",
+        "coord_source": "PXOM Narón 2023/2024",
+        "dataset_use": "positive_o_val_holdout",
+        "split": "test_o_val",
+        "needs_review": "",
+        "sources": "PXOM Narón 2023/2024; PXOM Narón 2023/2024, índice y fichas arqueológicas",
+        "urls": "https://pxom.naron.gal/08.CAT/15054_PXOM_202310_AI_CAT_02F/15054_PXOM_202310_AI_CAT_02F_01ARQ_X-39_signed_signed.pdf",
+        "notes": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.21426439875589,
+          43.55278979295351
         ]
       },
       "properties": {
@@ -1439,13 +1471,13 @@
         "source_tier": "official_catalog",
         "conservation_state": "Regular",
         "coord_status": "point_from_source",
-        "coord_source": "Patrimonio Galego",
+        "coord_source": "PXOM Narón 2023/2024",
         "dataset_use": "positive_o_val_holdout",
         "split": "test_o_val",
         "needs_review": "",
         "sources": "André Pena Graña, Narón un concello con historia de seu I, edición Calaméo 2010, lista Catalogación de Castros de Galicia; Artabro; Galipedia; PXOM Narón 2023/2024; PXOM Narón 2023/2024, índice y fichas arqueológicas; Patrimonio Galego",
         "urls": "http://www.artabro.es/node38.html; https://gl.wikipedia.org/wiki/Castro_de_Quint%C3%A1; https://patrimoniogalego.net/index.php/92169/2017/01/castro-de-quinta-2/; https://pxom.naron.gal/08.CAT/15054_PXOM_202310_AI_CAT_02F/15054_PXOM_202310_AI_CAT_02F_01ARQ_X-41_signed_signed.pdf; https://www.calameo.com/books/00129295754f931ea1d4a",
-        "notes": "Presente en lista clásica Pena/Calaméo nº 14. | 3 coordenadas candidatas en fuentes; se eligió Patrimonio Galego por prioridad."
+        "notes": "Presente en lista clásica Pena/Calaméo nº 14. | 4 coordenadas candidatas en fuentes; se eligió PXOM Narón 2023/2024 por prioridad."
       }
     },
     {
@@ -1453,8 +1485,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -8.22206,
-          43.54385
+          -8.22226681632418,
+          43.54375028907838
         ]
       },
       "properties": {
@@ -1471,13 +1503,13 @@
         "source_tier": "official_catalog",
         "conservation_state": "desconocido",
         "coord_status": "point_from_source",
-        "coord_source": "Galipedia",
+        "coord_source": "PXOM Narón 2023/2024",
         "dataset_use": "test_positive_candidate",
         "split": "test",
         "needs_review": "",
         "sources": "André Pena Graña, Narón un concello con historia de seu I, edición Calaméo 2010, lista Catalogación de Castros de Galicia; Galipedia; PXOM Narón 2023/2024; PXOM Narón 2023/2024, índice y fichas arqueológicas",
         "urls": "https://gl.wikipedia.org/wiki/Castro_do_Vilar; https://pxom.naron.gal/08.CAT/15054_PXOM_202310_AI_CAT_02F/15054_PXOM_202310_AI_CAT_02F_01ARQ_X-14_signed_signed.pdf; https://www.calameo.com/books/00129295754f931ea1d4a",
-        "notes": "Presente en lista clásica Pena/Calaméo nº 15."
+        "notes": "Presente en lista clásica Pena/Calaméo nº 15. | 2 coordenadas candidatas en fuentes; se eligió PXOM Narón 2023/2024 por prioridad."
       }
     },
     {
@@ -1485,8 +1517,40 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -8.13361677557,
-          43.5510671263
+          -8.178138985208266,
+          43.544594120715765
+        ]
+      },
+      "properties": {
+        "site_id": "tra-naron-ga15054004",
+        "primary_name": "X-40 Castro de Santa María",
+        "aliases": "Borreiros; X-40 Castro de Santa María",
+        "municipality": "Narón",
+        "parish": "Castro (Santa María)",
+        "place": "Borreiros",
+        "scope": "trasancos_estricto",
+        "ga_code": "GA15054004",
+        "record_type": "official_castro",
+        "confidence": "high",
+        "source_tier": "official_catalog",
+        "conservation_state": "desconocido",
+        "coord_status": "point_from_source",
+        "coord_source": "PXOM Narón 2023/2024",
+        "dataset_use": "test_positive_candidate",
+        "split": "test",
+        "needs_review": "",
+        "sources": "PXOM Narón 2023/2024; PXOM Narón 2023/2024, índice y fichas arqueológicas",
+        "urls": "https://pxom.naron.gal/08.CAT/15054_PXOM_202310_AI_CAT_02F/15054_PXOM_202310_AI_CAT_02F_01ARQ_X-40_signed_signed.pdf",
+        "notes": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.133765092487913,
+          43.55129877527176
         ]
       },
       "properties": {
@@ -1503,13 +1567,13 @@
         "source_tier": "official_catalog",
         "conservation_state": "Regular",
         "coord_status": "point_from_source",
-        "coord_source": "Patrimonio Galego",
+        "coord_source": "PXOM Narón 2023/2024",
         "dataset_use": "test_positive_candidate",
         "split": "test",
         "needs_review": "",
         "sources": "André Pena Graña, Narón un concello con historia de seu I, edición Calaméo 2010, lista Catalogación de Castros de Galicia; Galipedia; PXOM Narón 2023/2024; PXOM Narón 2023/2024, índice y fichas arqueológicas; Patrimonio Galego",
         "urls": "https://gl.wikipedia.org/wiki/Castro_de_Eiravedra; https://patrimoniogalego.net/index.php/91717/2016/12/castro-de-eiravedra/; https://pxom.naron.gal/08.CAT/15054_PXOM_202310_AI_CAT_02F/15054_PXOM_202310_AI_CAT_02F_01ARQ_X-10_signed_signed.pdf; https://www.calameo.com/books/00129295754f931ea1d4a",
-        "notes": "Presente en lista clásica Pena/Calaméo nº 18. | 2 coordenadas candidatas en fuentes; se eligió Patrimonio Galego por prioridad."
+        "notes": "Presente en lista clásica Pena/Calaméo nº 18. | 3 coordenadas candidatas en fuentes; se eligió PXOM Narón 2023/2024 por prioridad."
       }
     },
     {
@@ -1517,8 +1581,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -8.179167,
-          43.501667
+          -8.178733324653969,
+          43.50171131743082
         ]
       },
       "properties": {
@@ -1535,13 +1599,13 @@
         "source_tier": "official_catalog",
         "conservation_state": "desconocido",
         "coord_status": "point_from_source",
-        "coord_source": "Artabro",
+        "coord_source": "PXOM Narón 2023/2024",
         "dataset_use": "test_positive_candidate",
         "split": "test",
         "needs_review": "",
         "sources": "Artabro; Galipedia; PXOM Narón 2023/2024; PXOM Narón 2023/2024, índice y fichas arqueológicas",
         "urls": "http://www.artabro.es/node31.html; https://gl.wikipedia.org/wiki/Castro_do_Petouzal; https://pxom.naron.gal/08.CAT/15054_PXOM_202310_AI_CAT_02F/15054_PXOM_202310_AI_CAT_02F_01ARQ_X-09_signed_signed.pdf",
-        "notes": "2 coordenadas candidatas en fuentes; se eligió Artabro por prioridad."
+        "notes": "3 coordenadas candidatas en fuentes; se eligió PXOM Narón 2023/2024 por prioridad."
       }
     },
     {
@@ -1549,8 +1613,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -8.17290577322,
-          43.5335922874
+          -8.172842421984463,
+          43.53362483688601
         ]
       },
       "properties": {
@@ -1567,13 +1631,13 @@
         "source_tier": "official_catalog",
         "conservation_state": "Regular",
         "coord_status": "point_from_source",
-        "coord_source": "Patrimonio Galego",
+        "coord_source": "PXOM Narón 2023/2024",
         "dataset_use": "test_positive_candidate",
         "split": "test",
         "needs_review": "",
         "sources": "André Pena Graña, Narón un concello con historia de seu I, edición Calaméo 2010, lista Catalogación de Castros de Galicia; Artabro; Galipedia; PXOM Narón 2023/2024; PXOM Narón 2023/2024, índice y fichas arqueológicas; Patrimonio Galego",
         "urls": "http://www.artabro.es/node33.html; https://gl.wikipedia.org/wiki/Castro_de_Sequeiro; https://patrimoniogalego.net/index.php/91863/2017/01/castro-de-sequeiro/; https://pxom.naron.gal/08.CAT/15054_PXOM_202310_AI_CAT_02F/15054_PXOM_202310_AI_CAT_02F_01ARQ_X-11_signed_signed.pdf; https://www.calameo.com/books/00129295754f931ea1d4a",
-        "notes": "Presente en lista clásica Pena/Calaméo nº 16. | 3 coordenadas candidatas en fuentes; se eligió Patrimonio Galego por prioridad."
+        "notes": "Presente en lista clásica Pena/Calaméo nº 16. | 4 coordenadas candidatas en fuentes; se eligió PXOM Narón 2023/2024 por prioridad."
       }
     },
     {
@@ -1581,8 +1645,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -8.15872225195,
-          43.5343623136
+          -8.158673408996664,
+          43.53438585017607
         ]
       },
       "properties": {
@@ -1599,13 +1663,13 @@
         "source_tier": "official_catalog",
         "conservation_state": "Regular",
         "coord_status": "point_from_source",
-        "coord_source": "Patrimonio Galego",
+        "coord_source": "PXOM Narón 2023/2024",
         "dataset_use": "test_positive_candidate",
         "split": "test",
         "needs_review": "",
         "sources": "André Pena Graña, Narón un concello con historia de seu I, edición Calaméo 2010, lista Catalogación de Castros de Galicia; PXOM Narón 2023/2024; PXOM Narón 2023/2024, índice y fichas arqueológicas; Patrimonio Galego",
         "urls": "https://patrimoniogalego.net/index.php/91657/2016/12/castro-de-vicas/; https://pxom.naron.gal/08.CAT/15054_PXOM_202310_AI_CAT_02F/15054_PXOM_202310_AI_CAT_02F_01ARQ_X-15_signed_signed.pdf; https://www.calameo.com/books/00129295754f931ea1d4a",
-        "notes": "Presente en lista clásica Pena/Calaméo nº 19."
+        "notes": "Presente en lista clásica Pena/Calaméo nº 19. | 2 coordenadas candidatas en fuentes; se eligió PXOM Narón 2023/2024 por prioridad."
       }
     },
     {
@@ -1613,8 +1677,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -8.103889,
-          43.533705
+          -8.104214985690291,
+          43.53370200072288
         ]
       },
       "properties": {
@@ -1631,13 +1695,13 @@
         "source_tier": "official_catalog",
         "conservation_state": "desconocido",
         "coord_status": "point_from_source",
-        "coord_source": "Artabro",
+        "coord_source": "PXOM Narón 2023/2024",
         "dataset_use": "test_positive_candidate",
         "split": "test",
         "needs_review": "",
         "sources": "André Pena Graña, Narón un concello con historia de seu I, edición Calaméo 2010, lista Catalogación de Castros de Galicia; Artabro; Galipedia; PXOM Narón 2023/2024; PXOM Narón 2023/2024, índice y fichas arqueológicas",
         "urls": "http://www.artabro.es/node36.html; https://gl.wikipedia.org/wiki/Castro_da_Ermida; https://pxom.naron.gal/08.CAT/15054_PXOM_202310_AI_CAT_02F/15054_PXOM_202310_AI_CAT_02F_01ARQ_X-04_signed_signed.pdf; https://www.calameo.com/books/00129295754f931ea1d4a",
-        "notes": "Presente en lista clásica Pena/Calaméo nº 20. | 2 coordenadas candidatas en fuentes; se eligió Artabro por prioridad."
+        "notes": "Presente en lista clásica Pena/Calaméo nº 20. | 3 coordenadas candidatas en fuentes; se eligió PXOM Narón 2023/2024 por prioridad."
       }
     },
     {
@@ -1645,8 +1709,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -8.22606682777,
-          43.5770666567
+          -8.226085914214185,
+          43.577091605729976
         ]
       },
       "properties": {
@@ -1663,13 +1727,13 @@
         "source_tier": "official_catalog",
         "conservation_state": "Desaparecido | Moi malo",
         "coord_status": "point_from_source",
-        "coord_source": "Patrimonio Galego",
+        "coord_source": "PXOM Narón 2023/2024",
         "dataset_use": "positive_damaged_review",
         "split": "review_only",
         "needs_review": "",
         "sources": "André Pena Graña, Narón un concello con historia de seu I, edición Calaméo 2010, lista Catalogación de Castros de Galicia; Artabro; Galipedia; PXOM Narón 2023/2024; PXOM Narón 2023/2024, índice y fichas arqueológicas; Patrimonio Galego",
         "urls": "http://www.artabro.es/node41.html; https://gl.wikipedia.org/wiki/Castro_de_Pena_Lopesa; https://patrimoniogalego.net/index.php/88309/2016/08/castro-de-pena-lopesa/; https://pxom.naron.gal/08.CAT/15054_PXOM_202310_AI_CAT_02F/15054_PXOM_202310_AI_CAT_02F_01ARQ_X-12_signed_signed.pdf; https://www.calameo.com/books/00129295754f931ea1d4a",
-        "notes": "Presente en lista clásica Pena/Calaméo nº 25. | 3 coordenadas candidatas en fuentes; se eligió Patrimonio Galego por prioridad."
+        "notes": "Presente en lista clásica Pena/Calaméo nº 25. | 4 coordenadas candidatas en fuentes; se eligió PXOM Narón 2023/2024 por prioridad."
       }
     },
     {
@@ -1677,8 +1741,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -8.22899612814,
-          43.5608483357
+          -8.229129856142787,
+          43.56080565700078
         ]
       },
       "properties": {
@@ -1695,13 +1759,45 @@
         "source_tier": "official_catalog",
         "conservation_state": "Malo",
         "coord_status": "point_from_source",
-        "coord_source": "Patrimonio Galego",
+        "coord_source": "PXOM Narón 2023/2024",
         "dataset_use": "positive_o_val_holdout",
         "split": "test_o_val",
         "needs_review": "",
         "sources": "Artabro; Galipedia; PXOM Narón 2023/2024; PXOM Narón 2023/2024, índice y fichas arqueológicas; Patrimonio Galego",
         "urls": "http://www.artabro.es/node63.html; https://gl.wikipedia.org/wiki/Castro_da_Pedreira; https://patrimoniogalego.net/index.php/88189/2016/08/castro-da-pedreira/; https://pxom.naron.gal/08.CAT/15054_PXOM_202310_AI_CAT_02F/15054_PXOM_202310_AI_CAT_02F_01ARQ_X-07_signed_signed.pdf",
-        "notes": "3 coordenadas candidatas en fuentes; se eligió Patrimonio Galego por prioridad."
+        "notes": "4 coordenadas candidatas en fuentes; se eligió PXOM Narón 2023/2024 por prioridad."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.106477030549083,
+          43.523833093847884
+        ]
+      },
+      "properties": {
+        "site_id": "tra-naron-to15054003",
+        "primary_name": "X-08 Castro de Abaixo",
+        "aliases": "Abaixo; Castro de Abaixo; X-08 Castro de Abaixo",
+        "municipality": "Narón",
+        "parish": "",
+        "place": "",
+        "scope": "trasancos_estricto",
+        "ga_code": "TO15054003",
+        "record_type": "official_reference_or_toponym",
+        "confidence": "medium",
+        "source_tier": "official_reference",
+        "conservation_state": "desconocido",
+        "coord_status": "point_from_source",
+        "coord_source": "PXOM Narón 2023/2024",
+        "dataset_use": "review_only",
+        "split": "review_only",
+        "needs_review": "",
+        "sources": "PXOM Narón 2023/2024; PXOM Narón 2023/2024, índice y fichas arqueológicas",
+        "urls": "https://pxom.naron.gal/08.CAT/15054_PXOM_202310_AI_CAT_02F/15054_PXOM_202310_AI_CAT_02F_01ARQ_X-08_signed_signed.pdf",
+        "notes": "en PXOM como toponímico/castro; revisar código"
       }
     },
     {
@@ -1741,14 +1837,14 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -8.119167,
-          43.543611
+          -8.119386158444957,
+          43.54320222325618
         ]
       },
       "properties": {
         "site_id": "tra-naron-x-05-castro-da-pereiruga",
         "primary_name": "X-05 Castro da Pereiruga",
-        "aliases": "Castro da Pereiruga ( ( ( ( ( ( ( ( SRPAU; Castro de Pereiruga; Pereiruga; Pereiruga ( ( ( ( ( ( ( ( SRPAU; X-05 Castro da Pereiruga",
+        "aliases": "Castro da Pereiruga; Castro de Pereiruga; Pereiruga; X-05 Castro da Pereiruga",
         "municipality": "Narón",
         "parish": "Pedroso",
         "place": "",
@@ -1759,13 +1855,13 @@
         "source_tier": "official_catalog_uncoded",
         "conservation_state": "desconocido",
         "coord_status": "point_from_source",
-        "coord_source": "Artabro",
+        "coord_source": "PXOM Narón 2023/2024",
         "dataset_use": "test_positive_candidate",
         "split": "test",
         "needs_review": "",
         "sources": "André Pena Graña, Narón un concello con historia de seu I, edición Calaméo 2010, lista Catalogación de Castros de Galicia; Artabro; Galipedia; PXOM Narón 2023/2024; PXOM Narón 2023/2024, índice y fichas arqueológicas",
         "urls": "http://www.artabro.es/node62.html; https://gl.wikipedia.org/wiki/Castro_de_Pereiruga; https://pxom.naron.gal/08.CAT/15054_PXOM_202310_AI_CAT_02F/15054_PXOM_202310_AI_CAT_02F_01ARQ_X-05_signed_signed.pdf; https://www.calameo.com/books/00129295754f931ea1d4a",
-        "notes": "Presente en lista clásica Pena/Calaméo nº 24. | 2 coordenadas candidatas en fuentes; se eligió Artabro por prioridad."
+        "notes": "Presente en lista clásica Pena/Calaméo nº 24. | 3 coordenadas candidatas en fuentes; se eligió PXOM Narón 2023/2024 por prioridad."
       }
     },
     {
@@ -1773,8 +1869,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -8.156944,
-          43.539305
+          -8.157070665184717,
+          43.539272324398965
         ]
       },
       "properties": {
@@ -1791,13 +1887,13 @@
         "source_tier": "official_catalog_uncoded",
         "conservation_state": "desconocido",
         "coord_status": "point_from_source",
-        "coord_source": "Artabro",
+        "coord_source": "PXOM Narón 2023/2024",
         "dataset_use": "test_positive_candidate",
         "split": "test",
         "needs_review": "",
         "sources": "André Pena Graña, Narón un concello con historia de seu I, edición Calaméo 2010, lista Catalogación de Castros de Galicia; Artabro; Galipedia; PXOM Narón 2023/2024; PXOM Narón 2023/2024, índice y fichas arqueológicas",
         "urls": "http://www.artabro.es/node34.html; https://gl.wikipedia.org/wiki/Castro_da_Revolta; https://pxom.naron.gal/08.CAT/15054_PXOM_202310_AI_CAT_02F/15054_PXOM_202310_AI_CAT_02F_01ARQ_X-06_signed_signed.pdf; https://www.calameo.com/books/00129295754f931ea1d4a",
-        "notes": "Presente en lista clásica Pena/Calaméo nº 17. | 2 coordenadas candidatas en fuentes; se eligió Artabro por prioridad."
+        "notes": "Presente en lista clásica Pena/Calaméo nº 17. | 3 coordenadas candidatas en fuentes; se eligió PXOM Narón 2023/2024 por prioridad."
       }
     },
     {
@@ -1805,8 +1901,40 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -8.238235,
-          43.553519
+          -8.103863144548544,
+          43.51985078435882
+        ]
+      },
+      "properties": {
+        "site_id": "tra-naron-x-48-castro-do-ramo",
+        "primary_name": "X-48 Castro do Ramo",
+        "aliases": "Castro d o Ram o; X-48 Castro do Ramo",
+        "municipality": "Narón",
+        "parish": "",
+        "place": "",
+        "scope": "trasancos_estricto",
+        "ga_code": "",
+        "record_type": "official_uncoded_castro",
+        "confidence": "medium_high",
+        "source_tier": "official_catalog_uncoded",
+        "conservation_state": "desconocido",
+        "coord_status": "point_from_source",
+        "coord_source": "PXOM Narón 2023/2024",
+        "dataset_use": "test_positive_candidate",
+        "split": "test",
+        "needs_review": "",
+        "sources": "PXOM Narón 2023/2024; PXOM Narón 2023/2024, índice y fichas arqueológicas",
+        "urls": "https://pxom.naron.gal/08.CAT/15054_PXOM_202310_AI_CAT_02F/15054_PXOM_202310_AI_CAT_02F_01ARQ_X-48_signed_signed.pdf",
+        "notes": "en trámite según índice PXOM"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.238248345821631,
+          43.55349236342313
         ]
       },
       "properties": {
@@ -1823,13 +1951,13 @@
         "source_tier": "official_catalog_conflict",
         "conservation_state": "desconocido",
         "coord_status": "point_from_source",
-        "coord_source": "Artabro",
+        "coord_source": "PXOM Narón 2023/2024",
         "dataset_use": "review_only",
         "split": "review_only",
         "needs_review": "",
         "sources": "Artabro; PXOM Narón 2023/2024; PXOM Narón 2023/2024, índice y fichas arqueológicas",
         "urls": "http://www.artabro.es/node65.html; https://pxom.naron.gal/08.CAT/15054_PXOM_202310_AI_CAT_02F/15054_PXOM_202310_AI_CAT_02F_01ARQ_X-50_signed_signed.pdf",
-        "notes": "Pena Grande/Lagoa: no usar como positivo hasta resolver castro vs cercado neolítico. | no tratar automáticamente como castro; caso conflictivo"
+        "notes": "Pena Grande/Lagoa: no usar como positivo hasta resolver castro vs cercado neolítico. | no tratar automáticamente como castro; caso conflictivo | 2 coordenadas candidatas en fuentes; se eligió PXOM Narón 2023/2024 por prioridad."
       }
     },
     {

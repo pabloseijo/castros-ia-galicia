@@ -4,26 +4,26 @@ Generado: 2026-07-31
 
 ## Resumen
 
-- Sitios/pistas en tabla maestra: 128
-- Sitios con coordenadas WGS84: 91
-- Sitios sin coordenadas: 37
+- Sitios/pistas en tabla maestra: 127
+- Sitios con coordenadas WGS84: 95
+- Sitios sin coordenadas: 32
 - Candidatos negativos generados para revisar en QGIS: 160
 
 ## Particiones
 
-- review_only: 86
-- test: 8
-- test_o_val: 3
+- review_only: 82
+- test: 10
+- test_o_val: 4
 - train: 25
 - val: 6
 
 ## Usos de dataset
 
-- needs_geocoding: 24
+- needs_geocoding: 19
 - positive_damaged_review: 16
-- positive_o_val_holdout: 3
-- review_only: 46
-- test_positive_candidate: 8
+- positive_o_val_holdout: 4
+- review_only: 47
+- test_positive_candidate: 10
 - train_positive_candidate: 25
 - val_positive_candidate: 6
 
@@ -31,7 +31,7 @@ Generado: 2026-07-31
 
 - Fene: 15
 - Ferrol: 35
-- Narón: 24
+- Narón: 23
 - Neda: 6
 - San Sadurniño: 18
 - Valdoviño: 30

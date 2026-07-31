@@ -1,0 +1,36 @@
+version: 2026-07-31
+target_crs: EPSG:25829
+tile_side_m: 512
+
+required_products:
+  pnoa_rgb:
+    source: CNIG PNOA maxima actualidad
+    role: visual_texture
+  lidar_dem:
+    source: CNIG/PNOA LiDAR or MDT
+    role: terrain_base
+  hillshade_315_45:
+    source: lidar_dem
+    role: relief_visualization
+  slope_degrees:
+    source: lidar_dem
+    role: morphometric_feature
+  lrm_msrm:
+    source: lidar_dem
+    role: local_relief_multiscale
+
+optional_products:
+  openness:
+    source: lidar_dem
+    role: relief_visualization
+  sky_view_factor:
+    source: lidar_dem
+    role: relief_visualization
+  sentinel2_ndvi:
+    source: Sentinel-2
+    role: auxiliary_context
+  sentinel2_moisture:
+    source: Sentinel-2
+    role: auxiliary_context
+
+download_rule: pending_qgis_review

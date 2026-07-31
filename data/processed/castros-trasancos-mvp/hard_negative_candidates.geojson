@@ -2839,14 +2839,14 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -8.12,
+          -8.075,
           43.52
         ]
       },
       "properties": {
         "negative_id": "neg-tra-0158",
         "lat_wgs84": "43.52000000",
-        "lon_wgs84": "-8.12000000",
+        "lon_wgs84": "-8.07500000",
         "status": "generated_candidate_requires_qgis_review",
         "use": "hard_negative_candidate",
         "notes": "Punto generado automáticamente lejos de positivos conocidos; no asumir que sea negativo real sin revisión visual."
@@ -2857,14 +2857,14 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -8.105,
+          -8.06,
           43.52
         ]
       },
       "properties": {
         "negative_id": "neg-tra-0159",
         "lat_wgs84": "43.52000000",
-        "lon_wgs84": "-8.10500000",
+        "lon_wgs84": "-8.06000000",
         "status": "generated_candidate_requires_qgis_review",
         "use": "hard_negative_candidate",
         "notes": "Punto generado automáticamente lejos de positivos conocidos; no asumir que sea negativo real sin revisión visual."
@@ -2875,14 +2875,14 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -8.09,
+          -8.045,
           43.52
         ]
       },
       "properties": {
         "negative_id": "neg-tra-0160",
         "lat_wgs84": "43.52000000",
-        "lon_wgs84": "-8.09000000",
+        "lon_wgs84": "-8.04500000",
         "status": "generated_candidate_requires_qgis_review",
         "use": "hard_negative_candidate",
         "notes": "Punto generado automáticamente lejos de positivos conocidos; no asumir que sea negativo real sin revisión visual."
