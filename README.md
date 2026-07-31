@@ -14,15 +14,15 @@ El objetivo no es declarar nuevos yacimientos por IA. El objetivo defendible es 
 
 ## Estado actual
 
-- Dataset maestro MVP: 127 filas.
-- Puntos con coordenadas WGS84: 95.
-- Buffers provisionales para revisión: 45.
-- Ventanas raster candidatas: 45.
+- Dataset maestro MVP: 125 filas.
+- Puntos con coordenadas WGS84: 97.
+- Buffers provisionales para revisión: 46.
+- Ventanas raster candidatas: 46.
 - Negativos difíciles generados para revisión: 160.
-- Tareas de geocodificación: 32.
+- Tareas de geocodificación: 28.
 - Workspace editable de anotación: 3 capas y 2 tablas de decisiones.
 - Colas de revisión: P0/P1/P2, O Val y geocodificación.
-- Manifiesto de ventanas raster: 45 tiles candidatos de 512 m.
+- Manifiesto de ventanas raster: 46 tiles candidatos de 512 m.
 - Readiness de entrenamiento: bloqueado hasta tener polígonos/negativos revisados.
 - Mapa web estático de inspección rápida.
 
@@ -30,8 +30,8 @@ O Val queda como holdout narrativo. No se usa para entrenar en la primera versi�
 
 Split espacial actual:
 
-- `train`: Ferrol, Valdoviño y Neda, 25 positivos candidatos.
-- `val`: San Sadurniño, 6 positivos candidatos.
+- `train`: Ferrol, Valdoviño y Neda, 27 positivos candidatos.
+- `val`: San Sadurniño, 5 positivos candidatos.
 - `test`: Narón no-O-Val, 10 positivos candidatos.
 - `test_o_val`: O Val, 4 positivos candidatos.
 

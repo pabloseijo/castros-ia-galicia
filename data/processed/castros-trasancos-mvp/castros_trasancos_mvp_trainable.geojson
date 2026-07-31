@@ -180,7 +180,7 @@
       "properties": {
         "site_id": "tra-ferrol-ga15036007",
         "primary_name": "Castro de Santa Cecilia",
-        "aliases": "Castro de Santa Cecilia; Castro de Santa Icía; Castro de Santa Icía (Ferrol; Santa Cecilia; Santa Icía; Santa Icía (Ferrol",
+        "aliases": "Castro de Santa Cecilia; Castro de Santa Icía; Santa Cecilia; Santa Icía",
         "municipality": "Ferrol",
         "parish": "Santa Icía de Trasancos",
         "place": "Castro",
@@ -195,9 +195,9 @@
         "dataset_use": "train_positive_candidate",
         "split": "train",
         "needs_review": "",
-        "sources": "Galipedia; PXOM Ferrol / SIOTUGA, catálogo de bienes protegidos; Patrimonio Galego",
-        "urls": "https://gl.wikipedia.org/wiki/Castro_de_Santa_Ic%C3%ADa_(Ferrol); https://patrimoniogalego.net/index.php/92292/2017/01/castro-de-santa-icia-2/; https://siotuga.xunta.gal/siotuga/documentos/urbanismo/FERROL/documents/0184ca004.pdf",
-        "notes": "catálogo Ferrol | 2 coordenadas candidatas en fuentes; se eligió Patrimonio Galego por prioridad."
+        "sources": "PXOM Ferrol / SIOTUGA, catálogo de bienes protegidos; Patrimonio Galego",
+        "urls": "https://patrimoniogalego.net/index.php/92292/2017/01/castro-de-santa-icia-2/; https://siotuga.xunta.gal/siotuga/documentos/urbanismo/FERROL/documents/0184ca004.pdf",
+        "notes": "catálogo Ferrol"
       }
     },
     {
@@ -820,7 +820,7 @@
       "properties": {
         "site_id": "tra-san-sadurnino-castro-da-croa-do-redo",
         "primary_name": "Castro da Croa do Redo",
-        "aliases": "A Croa do Redo; A Croa do Redo; Pico do Redo; Redo; Castro da Croa do Redo; Croa do Redo; Fálame de San Sadurniño - Castro do Redo; Lugar de Redo; Pico do Redo; Redo",
+        "aliases": "A Croa do Redo; A Croa do Redo; Pico do Redo; Redo; Castro da Croa do Redo; Croa do Redo; Lugar de Redo; Pico do Redo; Redo",
         "municipality": "San Sadurniño",
         "parish": "Lamas",
         "place": "Lugar de Redo",
@@ -835,8 +835,8 @@
         "dataset_use": "val_positive_candidate",
         "split": "val",
         "needs_review": "",
-        "sources": "André Pena Graña, Narón un concello con historia de seu I, edición Calaméo 2010, lista Catalogación de Castros de Galicia; Fálame de San Sadurniño; Fálame/Galipedia/O Noso Patrimonio; Galipedia; NNSS San Sadurniño / SIOTUGA, catálogo complementario",
-        "urls": "http://www.falamedesansadurnino.org/imaxe/castro-do-redo/; https://falamedesansadurnino.org/imaxe/castro-do-redo/; https://gl.wikipedia.org/wiki/Castro_da_Croa_do_Redo; https://siotuga.xunta.gal/siotuga/documentos/urbanismo/SANSADURNINO/documents/0355ca001.pdf; https://www.calameo.com/books/00129295754f931ea1d4a; https://www.falamedesansadurnino.org/imaxe/castro-do-redo/",
+        "sources": "André Pena Graña, Narón un concello con historia de seu I, edición Calaméo 2010, lista Catalogación de Castros de Galicia; Fálame/Galipedia/O Noso Patrimonio; Galipedia; NNSS San Sadurniño / SIOTUGA, catálogo complementario",
+        "urls": "https://gl.wikipedia.org/wiki/Castro_da_Croa_do_Redo; https://siotuga.xunta.gal/siotuga/documentos/urbanismo/SANSADURNINO/documents/0355ca001.pdf; https://www.calameo.com/books/00129295754f931ea1d4a; https://www.falamedesansadurnino.org/imaxe/castro-do-redo/",
         "notes": "OCR lee Retío; Fálame/Galipedia leen Redo | Presente en lista clásica Pena/Calaméo nº 73. | parte del sistema de cinco castros del Val do Xuvia"
       }
     },
@@ -852,7 +852,7 @@
       "properties": {
         "site_id": "tra-san-sadurnino-castro-da-croa-ou-castro-de-rupiallo",
         "primary_name": "Castro da Croa ou Castro de Rupiallo",
-        "aliases": "A Croa; Castro da Croa; Castro da Croa ou Castro de Rupiallo; Castro de Rupiallo; Croa ou Castro de Rupiallo; Fálame de San Sadurniño - Castro de Rupiallo; Lugar de Rupiallo; Rupiallo",
+        "aliases": "A Croa; Castro da Croa; Castro da Croa ou Castro de Rupiallo; Castro de Rupiallo; Croa ou Castro de Rupiallo; Lugar de Rupiallo; Rupiallo",
         "municipality": "San Sadurniño",
         "parish": "San Sadurniño",
         "place": "Lugar de Rupiallo",
@@ -867,8 +867,8 @@
         "dataset_use": "val_positive_candidate",
         "split": "val",
         "needs_review": "",
-        "sources": "Fálame de San Sadurniño; Fálame/Galipedia/O Noso Patrimonio; Galipedia; NNSS San Sadurniño / SIOTUGA, catálogo complementario; Patrimonio Galego",
-        "urls": "http://www.falamedesansadurnino.org/imaxe/castro-de-rupiallo/; https://falamedesansadurnino.org/imaxe/castro-de-rupiallo/; https://gl.wikipedia.org/wiki/Castro_de_Rupiallo; https://patrimoniogalego.net/index.php/98903/2018/02/castro-de-rupiallo/; https://siotuga.xunta.gal/siotuga/documentos/urbanismo/SANSADURNINO/documents/0355ca001.pdf; https://www.falamedesansadurnino.org/imaxe/castro-de-rupiallo/",
+        "sources": "Fálame/Galipedia/O Noso Patrimonio; Galipedia; NNSS San Sadurniño / SIOTUGA, catálogo complementario; Patrimonio Galego",
+        "urls": "https://gl.wikipedia.org/wiki/Castro_de_Rupiallo; https://patrimoniogalego.net/index.php/98903/2018/02/castro-de-rupiallo/; https://siotuga.xunta.gal/siotuga/documentos/urbanismo/SANSADURNINO/documents/0355ca001.pdf; https://www.falamedesansadurnino.org/imaxe/castro-de-rupiallo/",
         "notes": "catálogo NNSS San Sadurniño | flanco suroeste del sistema; junto a A Portela | 2 coordenadas candidatas en fuentes; se eligió Patrimonio Galego por prioridad."
       }
     },
@@ -884,7 +884,7 @@
       "properties": {
         "site_id": "tra-san-sadurnino-castro-de-castrelo",
         "primary_name": "Castro de Castrelo",
-        "aliases": "Castrelo; Castrelo (San Sadurniño; Castro de Castrelo; Castro de Castrelo (San Sadurniño; Fálame de San Sadurniño - Castro de Castrelo; Lugar de Castrelo; O Castro; O Castro ou Castrelo; Penacastrelo",
+        "aliases": "Castrelo; Castro de Castrelo; Lugar de Castrelo; O Castro; O Castro ou Castrelo; Penacastrelo",
         "municipality": "San Sadurniño",
         "parish": "Monte",
         "place": "Lugar de Castrelo",
@@ -899,8 +899,8 @@
         "dataset_use": "val_positive_candidate",
         "split": "val",
         "needs_review": "",
-        "sources": "André Pena Graña, Narón un concello con historia de seu I, edición Calaméo 2010, lista Catalogación de Castros de Galicia; Fálame de San Sadurniño; Fálame/Galipedia/O Noso Patrimonio; Galipedia; NNSS San Sadurniño / SIOTUGA, catálogo complementario",
-        "urls": "http://www.falamedesansadurnino.org/imaxe/castro-de-castrelo/; https://falamedesansadurnino.org/imaxe/castro-de-castrelo/; https://gl.wikipedia.org/wiki/Castro_de_Castrelo_(San_Sadurni%C3%B1o); https://gl.wikipedia.org/wiki/Castros_da_provincia_da_Coru%C3%B1a; https://siotuga.xunta.gal/siotuga/documentos/urbanismo/SANSADURNINO/documents/0355ca001.pdf; https://www.calameo.com/books/00129295754f931ea1d4a; https://www.falamedesansadurnino.org/imaxe/castro-de-castrelo/",
+        "sources": "André Pena Graña, Narón un concello con historia de seu I, edición Calaméo 2010, lista Catalogación de Castros de Galicia; Fálame/Galipedia/O Noso Patrimonio; Galipedia; NNSS San Sadurniño / SIOTUGA, catálogo complementario",
+        "urls": "https://gl.wikipedia.org/wiki/Castros_da_provincia_da_Coru%C3%B1a; https://siotuga.xunta.gal/siotuga/documentos/urbanismo/SANSADURNINO/documents/0355ca001.pdf; https://www.calameo.com/books/00129295754f931ea1d4a; https://www.falamedesansadurnino.org/imaxe/castro-de-castrelo/",
         "notes": "catálogo NNSS San Sadurniño | Presente en lista clásica Pena/Calaméo nº 69. | Presente en lista clásica Pena/Calaméo nº 70. | apoyo norte; deteriorado; fuente en Fálame y Ateneo 1987 | solo pista nominal Galipedia/O Noso Patrimonio; confirmar"
       }
     },
@@ -948,7 +948,7 @@
       "properties": {
         "site_id": "tra-san-sadurnino-castro-de-riboira",
         "primary_name": "Castro de Riboira",
-        "aliases": "Castro de Riboira; Fálame de San Sadurniño - O castro de Riboira; Lugar de Riboira; O castro de Riboira; Riboira",
+        "aliases": "Castro de Riboira; Lugar de Riboira; O castro de Riboira; Riboira",
         "municipality": "San Sadurniño",
         "parish": "Lamas",
         "place": "Lugar de Riboira",
@@ -963,73 +963,9 @@
         "dataset_use": "val_positive_candidate",
         "split": "val",
         "needs_review": "",
-        "sources": "André Pena Graña, Narón un concello con historia de seu I, edición Calaméo 2010, lista Catalogación de Castros de Galicia; Fálame de San Sadurniño; Fálame/Galipedia/O Noso Patrimonio; Galipedia; NNSS San Sadurniño / SIOTUGA, catálogo complementario; Patrimonio Galego",
-        "urls": "http://www.falamedesansadurnino.org/imaxe/o-castro-de-riboira/; https://falamedesansadurnino.org/imaxe/o-castro-de-riboira/; https://gl.wikipedia.org/wiki/Castro_de_Riboira; https://patrimoniogalego.net/index.php/98990/2018/03/castro-de-riboira/; https://siotuga.xunta.gal/siotuga/documentos/urbanismo/SANSADURNINO/documents/0355ca001.pdf; https://www.calameo.com/books/00129295754f931ea1d4a; https://www.falamedesansadurnino.org/imaxe/o-castro-de-riboira/",
+        "sources": "André Pena Graña, Narón un concello con historia de seu I, edición Calaméo 2010, lista Catalogación de Castros de Galicia; Fálame/Galipedia/O Noso Patrimonio; Galipedia; NNSS San Sadurniño / SIOTUGA, catálogo complementario; Patrimonio Galego",
+        "urls": "https://gl.wikipedia.org/wiki/Castro_de_Riboira; https://patrimoniogalego.net/index.php/98990/2018/03/castro-de-riboira/; https://siotuga.xunta.gal/siotuga/documentos/urbanismo/SANSADURNINO/documents/0355ca001.pdf; https://www.calameo.com/books/00129295754f931ea1d4a; https://www.falamedesansadurnino.org/imaxe/o-castro-de-riboira/",
         "notes": "catálogo NNSS San Sadurniño | Presente en lista clásica Pena/Calaméo nº 67. | parte del sistema de cinco castros del Val do Xuvia | 2 coordenadas candidatas en fuentes; se eligió Patrimonio Galego por prioridad."
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -8.0330311,
-          43.5778546
-        ]
-      },
-      "properties": {
-        "site_id": "tra-san-sadurnino-coto-da-croa-ou-a-croa-do-castro-2",
-        "primary_name": "Coto da Croa ou A Croa do Castro",
-        "aliases": "A Croa do Castro; Coto da Croa; Coto da Croa ou A Croa do Castro; Lugar de Castrelo",
-        "municipality": "San Sadurniño",
-        "parish": "Monte",
-        "place": "Lugar de Castrelo",
-        "scope": "trasancos_estricto",
-        "ga_code": "",
-        "record_type": "official_uncoded_castro",
-        "confidence": "medium_high",
-        "source_tier": "official_catalog_uncoded",
-        "conservation_state": "desconocido",
-        "coord_status": "point_from_source",
-        "coord_source": "Galipedia",
-        "dataset_use": "val_positive_candidate",
-        "split": "val",
-        "needs_review": "",
-        "sources": "NNSS San Sadurniño / SIOTUGA, catálogo complementario",
-        "urls": "https://siotuga.xunta.gal/siotuga/documentos/urbanismo/SANSADURNINO/documents/0355ca001.pdf",
-        "notes": "posible Escoitadoira/A Croa do Castro; distinguir de Bardaos"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -8.198888,
-          43.601666
-        ]
-      },
-      "properties": {
-        "site_id": "tra-valdovino-ga15087001",
-        "primary_name": "Castro de Punta Taraza",
-        "aliases": "Castro de Lavacerido; Castro de Punta Taraza; Lavacerido; Punta Taraza; Taraza",
-        "municipality": "Valdoviño",
-        "parish": "Meirás",
-        "place": "Lavacerido",
-        "scope": "trasancos_estricto",
-        "ga_code": "GA15087001",
-        "record_type": "official_castro",
-        "confidence": "high",
-        "source_tier": "official_catalog",
-        "conservation_state": "desconocido",
-        "coord_status": "point_from_source",
-        "coord_source": "Artabro",
-        "dataset_use": "train_positive_candidate",
-        "split": "train",
-        "needs_review": "",
-        "sources": "André Pena Graña, Narón un concello con historia de seu I, edición Calaméo 2010, lista Catalogación de Castros de Galicia; Artabro; Concello de Valdoviño, Modificación Puntual nº 13, información patrimonial; Galipedia",
-        "urls": "http://www.artabro.es/node59.html; https://gl.wikipedia.org/wiki/Castro_de_Lavacerido; https://www.calameo.com/books/00129295754f931ea1d4a; https://www.concellodevaldovino.com/arquivo/sites/all/themes/valbartik/doc/13/0102.pdf",
-        "notes": "tabla ID_IPAGA 2021 | Presente en lista clásica Pena/Calaméo nº 52. | 2 coordenadas candidatas en fuentes; se eligió Artabro por prioridad."
       }
     },
     {
@@ -1062,6 +998,38 @@
         "sources": "Artabro; Concello de Valdoviño, Modificación Puntual nº 13, información patrimonial; Galipedia",
         "urls": "http://www.artabro.es/node43.html; https://gl.wikipedia.org/wiki/Castro_de_Castrill%C3%B3n; https://www.concellodevaldovino.com/arquivo/sites/all/themes/valbartik/doc/13/0102.pdf",
         "notes": "tabla ID_IPAGA 2021 | 2 coordenadas candidatas en fuentes; se eligió Artabro por prioridad."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.1104639,
+          43.6439056
+        ]
+      },
+      "properties": {
+        "site_id": "tra-valdovino-ga15087003",
+        "primary_name": "Castro de Coto Redondo",
+        "aliases": "A Gabeira; Castro de Coto Redondo; Castro do Rodo; Coto Redondo; Rodo",
+        "municipality": "Valdoviño",
+        "parish": "Pantín",
+        "place": "A Gabeira",
+        "scope": "trasancos_estricto",
+        "ga_code": "GA15087003",
+        "record_type": "official_castro",
+        "confidence": "high",
+        "source_tier": "official_catalog",
+        "conservation_state": "desconocido",
+        "coord_status": "point_from_source",
+        "coord_source": "Galipedia",
+        "dataset_use": "train_positive_candidate",
+        "split": "train",
+        "needs_review": "",
+        "sources": "André Pena Graña, Narón un concello con historia de seu I, edición Calaméo 2010, lista Catalogación de Castros de Galicia; Concello de Valdoviño, Modificación Puntual nº 13, información patrimonial; Galipedia",
+        "urls": "https://gl.wikipedia.org/wiki/Castros_da_provincia_da_Coru%C3%B1a; https://www.calameo.com/books/00129295754f931ea1d4a; https://www.concellodevaldovino.com/arquivo/sites/all/themes/valbartik/doc/13/0102.pdf",
+        "notes": "tabla ID_IPAGA 2021 | Presente en lista clásica Pena/Calaméo nº 53."
       }
     },
     {
@@ -1165,38 +1133,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -8.149004,
-          43.61851
-        ]
-      },
-      "properties": {
-        "site_id": "tra-valdovino-ga15087009",
-        "primary_name": "Castro de Punta Frouxeira",
-        "aliases": "A Saíña; Castro da Frouxeira; Castro de Frouxeira; Castro de Punta Frouxeira; Frouxeira; Punta Frouxeira",
-        "municipality": "Valdoviño",
-        "parish": "Valdoviño",
-        "place": "A Saíña",
-        "scope": "trasancos_estricto",
-        "ga_code": "GA15087009",
-        "record_type": "official_castro",
-        "confidence": "high",
-        "source_tier": "official_catalog",
-        "conservation_state": "desconocido",
-        "coord_status": "point_from_source",
-        "coord_source": "Artabro",
-        "dataset_use": "train_positive_candidate",
-        "split": "train",
-        "needs_review": "",
-        "sources": "Artabro; Concello de Valdoviño, Modificación Puntual nº 13, información patrimonial; Galipedia",
-        "urls": "http://www.artabro.es/node54.html; https://gl.wikipedia.org/wiki/Castro_da_Frouxeira; https://www.concellodevaldovino.com/arquivo/sites/all/themes/valbartik/doc/13/0102.pdf",
-        "notes": "tabla ID_IPAGA 2021 | 2 coordenadas candidatas en fuentes; se eligió Artabro por prioridad."
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           -8.142778,
           43.604165
         ]
@@ -1222,6 +1158,70 @@
         "sources": "André Pena Graña, Narón un concello con historia de seu I, edición Calaméo 2010, lista Catalogación de Castros de Galicia; Artabro; Concello de Valdoviño, Modificación Puntual nº 13, información patrimonial; Galipedia",
         "urls": "http://www.artabro.es/node55.html; https://gl.wikipedia.org/wiki/Castro_de_Poulo; https://www.calameo.com/books/00129295754f931ea1d4a; https://www.concellodevaldovino.com/arquivo/sites/all/themes/valbartik/doc/13/0102.pdf",
         "notes": "tabla ID_IPAGA 2021 | Presente en lista clásica Pena/Calaméo nº 51. | 2 coordenadas candidatas en fuentes; se eligió Artabro por prioridad."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.1712,
+          43.59218
+        ]
+      },
+      "properties": {
+        "site_id": "tra-valdovino-ga15087011",
+        "primary_name": "O Castro",
+        "aliases": "Castro de Lago; Lago; O Castro",
+        "municipality": "Valdoviño",
+        "parish": "Lago",
+        "place": "O Castro",
+        "scope": "trasancos_estricto",
+        "ga_code": "GA15087011",
+        "record_type": "official_castro",
+        "confidence": "high",
+        "source_tier": "official_catalog",
+        "conservation_state": "desconocido",
+        "coord_status": "point_from_source",
+        "coord_source": "Galipedia",
+        "dataset_use": "train_positive_candidate",
+        "split": "train",
+        "needs_review": "",
+        "sources": "Concello de Valdoviño, Modificación Puntual nº 13, información patrimonial; Galipedia",
+        "urls": "https://gl.wikipedia.org/wiki/Castros_da_provincia_da_Coru%C3%B1a; https://www.concellodevaldovino.com/arquivo/sites/all/themes/valbartik/doc/13/0102.pdf",
+        "notes": "tabla ID_IPAGA 2021"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.1331655,
+          43.5841643
+        ]
+      },
+      "properties": {
+        "site_id": "tra-valdovino-ga15087012",
+        "primary_name": "Castro de Aviño",
+        "aliases": "As Casas Novas; Aviño; Castro de Aviño; Castro de Monte do Foro; Monte do Foro",
+        "municipality": "Valdoviño",
+        "parish": "Valdoviño",
+        "place": "As Casas Novas",
+        "scope": "trasancos_estricto",
+        "ga_code": "GA15087012",
+        "record_type": "official_castro",
+        "confidence": "high",
+        "source_tier": "official_catalog",
+        "conservation_state": "desconocido",
+        "coord_status": "point_from_source",
+        "coord_source": "Galipedia",
+        "dataset_use": "train_positive_candidate",
+        "split": "train",
+        "needs_review": "",
+        "sources": "André Pena Graña, Narón un concello con historia de seu I, edición Calaméo 2010, lista Catalogación de Castros de Galicia; Concello de Valdoviño, Modificación Puntual nº 13, información patrimonial; Galipedia",
+        "urls": "https://gl.wikipedia.org/wiki/Castros_da_provincia_da_Coru%C3%B1a; https://www.calameo.com/books/00129295754f931ea1d4a; https://www.concellodevaldovino.com/arquivo/sites/all/themes/valbartik/doc/13/0102.pdf",
+        "notes": "tabla ID_IPAGA 2021 | Presente en lista clásica Pena/Calaméo nº 49."
       }
     },
     {
@@ -1381,6 +1381,38 @@
         "needs_review": "",
         "sources": "Artabro; Concello de Valdoviño, Modificación Puntual nº 13, información patrimonial",
         "urls": "http://www.artabro.es/node58.html; https://www.concellodevaldovino.com/arquivo/sites/all/themes/valbartik/doc/13/0102.pdf",
+        "notes": "tabla ID_IPAGA 2021"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.1477083,
+          43.6226111
+        ]
+      },
+      "properties": {
+        "site_id": "tra-valdovino-ga15087022",
+        "primary_name": "Castro de Punta do Vico",
+        "aliases": "Castro de Punta do Bico; Castro de Punta do Vico; Postamaior; Punta do Bico; Punta do Vico",
+        "municipality": "Valdoviño",
+        "parish": "Valdoviño",
+        "place": "Postamaior",
+        "scope": "trasancos_estricto",
+        "ga_code": "GA15087022",
+        "record_type": "official_castro",
+        "confidence": "high",
+        "source_tier": "official_catalog",
+        "conservation_state": "desconocido",
+        "coord_status": "point_from_source",
+        "coord_source": "Galipedia",
+        "dataset_use": "train_positive_candidate",
+        "split": "train",
+        "needs_review": "",
+        "sources": "Concello de Valdoviño, Modificación Puntual nº 13, información patrimonial; Galipedia",
+        "urls": "https://gl.wikipedia.org/wiki/Castros_da_provincia_da_Coru%C3%B1a; https://www.concellodevaldovino.com/arquivo/sites/all/themes/valbartik/doc/13/0102.pdf",
         "notes": "tabla ID_IPAGA 2021"
       }
     },

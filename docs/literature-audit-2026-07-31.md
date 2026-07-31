@@ -61,7 +61,7 @@ Resultado actual:
 
 | Componente | Estado actual | Juicio | Acción |
 |---|---|---|---|
-| Inventario de sitios | 128 filas | Bien para MVP | Mantener y depurar |
+| Inventario de sitios | 125 filas | Bien para MVP | Mantener y depurar |
 | Coordenadas | 91 puntos | Bien para revisión, insuficiente para entrenamiento | Resolver 37 geocoding tasks |
 | Split | Espacial por municipio | Mejorado | Mantener hasta ampliar corpus |
 | O Val | Holdout `test_o_val` | Muy bien | No entrenar con O Val en v0 |

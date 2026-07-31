@@ -4,19 +4,19 @@ Generated: 2026-07-31
 
 ## Summary
 
-- Total site tasks: 127
-- P0 blockers: 24
-- P1 training/review candidates: 57
-- P2 reconciliation tasks: 46
-- Missing coordinates: 32
+- Total site tasks: 125
+- P0 blockers: 23
+- P1 training/review candidates: 58
+- P2 reconciliation tasks: 44
+- Missing coordinates: 28
 
 ## Split counts
 
-- review_only: 82
+- review_only: 79
 - test: 10
 - test_o_val: 4
-- train: 25
-- val: 6
+- train: 27
+- val: 5
 
 ## Municipality counts
 
@@ -25,14 +25,14 @@ Generated: 2026-07-31
 - Narón: 23
 - Neda: 6
 - San Sadurniño: 18
-- Valdoviño: 30
+- Valdoviño: 28
 
 ## Suggested decisions
 
-- draw_training_polygon: 41
-- geocode_then_reclassify: 19
+- draw_training_polygon: 42
+- geocode_then_reclassify: 18
 - inspect_damaged_site: 16
-- reconcile_or_discard: 46
+- reconcile_or_discard: 44
 - resolve_typology: 1
 - verify_holdout_polygon: 4
 
@@ -57,10 +57,10 @@ Generated: 2026-07-31
 | P0 | Castro de Fraga | San Sadurniño | review_only | geocode_then_reclassify |
 | P0 | Castro de San Cristóbal | San Sadurniño | review_only | geocode_then_reclassify |
 | P0 | Coto da Croa ou A Croa do Castro | San Sadurniño | review_only | geocode_then_reclassify |
+| P0 | Coto da Croa ou A Croa do Castro | San Sadurniño | review_only | geocode_then_reclassify |
 | P0 | Castro de As Filgueiras | Valdoviño | review_only | geocode_then_reclassify |
-| P0 | Castro de Aviño | Valdoviño | review_only | geocode_then_reclassify |
-| P0 | Castro de Coto Redondo | Valdoviño | review_only | geocode_then_reclassify |
-| ... | 4 tareas más |  |  |  |
+| P0 | Castro de Praia Frouxeira | Valdoviño | review_only | geocode_then_reclassify |
+| ... | 3 tareas más |  |  |  |
 
 ## O Val Holdout
 
@@ -89,15 +89,15 @@ Generated: 2026-07-31
 | P0 | Castro de Fraga | San Sadurniño | review_only | geocode_then_reclassify |
 | P0 | Castro de San Cristóbal | San Sadurniño | review_only | geocode_then_reclassify |
 | P0 | Coto da Croa ou A Croa do Castro | San Sadurniño | review_only | geocode_then_reclassify |
+| P0 | Coto da Croa ou A Croa do Castro | San Sadurniño | review_only | geocode_then_reclassify |
 | P0 | Castro de As Filgueiras | Valdoviño | review_only | geocode_then_reclassify |
-| P0 | Castro de Aviño | Valdoviño | review_only | geocode_then_reclassify |
-| P0 | Castro de Coto Redondo | Valdoviño | review_only | geocode_then_reclassify |
 | P0 | Castro de Praia Frouxeira | Valdoviño | review_only | geocode_then_reclassify |
-| P0 | Castro de Punta do Vico | Valdoviño | review_only | geocode_then_reclassify |
-| P0 | O Castro | Valdoviño | review_only | geocode_then_reclassify |
+| P0 | Castro de Punta Frouxeira | Valdoviño | review_only | geocode_then_reclassify |
+| P0 | Castro de Punta Taraza | Valdoviño | review_only | geocode_then_reclassify |
 | P0 | Puerto de Meirás | Valdoviño | review_only | geocode_then_reclassify |
 | P1 | Castro de Almieiras | Fene | review_only | inspect_damaged_site |
-| ... | 12 tareas más |  |  |  |
+| P1 | Castro de Loureiros | Fene | review_only | inspect_damaged_site |
+| ... | 8 tareas más |  |  |  |
 
 ## P1 Training Candidates
 
@@ -123,7 +123,7 @@ Generated: 2026-07-31
 | P1 | Os Castros de Mandiá | Ferrol | train | draw_training_polygon |
 | P1 | O Castro | Narón | review_only | inspect_damaged_site |
 | P1 | X-04 Castro da Ermida | Narón | test | draw_training_polygon |
-| ... | 37 tareas más |  |  |  |
+| ... | 38 tareas más |  |  |  |
 
 ## Operational conclusion
 

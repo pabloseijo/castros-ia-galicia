@@ -4,28 +4,28 @@ Generado: 2026-07-31
 
 ## Resumen
 
-- Sitios/pistas en tabla maestra: 127
-- Sitios con coordenadas WGS84: 95
-- Sitios sin coordenadas: 32
+- Sitios/pistas en tabla maestra: 125
+- Sitios con coordenadas WGS84: 97
+- Sitios sin coordenadas: 28
 - Candidatos negativos generados para revisar en QGIS: 160
 
 ## Particiones
 
-- review_only: 82
+- review_only: 79
 - test: 10
 - test_o_val: 4
-- train: 25
-- val: 6
+- train: 27
+- val: 5
 
 ## Usos de dataset
 
-- needs_geocoding: 19
+- needs_geocoding: 18
 - positive_damaged_review: 16
 - positive_o_val_holdout: 4
-- review_only: 47
+- review_only: 45
 - test_positive_candidate: 10
-- train_positive_candidate: 25
-- val_positive_candidate: 6
+- train_positive_candidate: 27
+- val_positive_candidate: 5
 
 ## Municipios
 
@@ -34,7 +34,7 @@ Generado: 2026-07-31
 - Narón: 23
 - Neda: 6
 - San Sadurniño: 18
-- Valdoviño: 30
+- Valdoviño: 28
 
 ## Lectura operativa
 

@@ -707,7 +707,7 @@
         "review_priority": "P1",
         "qgis_action": "Verificar coordenada y dibujar polígono/buffer entrenable.",
         "suggested_decision": "draw_training_polygon",
-        "notes": "catálogo Ferrol | 2 coordenadas candidatas en fuentes; se eligió Patrimonio Galego por prioridad."
+        "notes": "catálogo Ferrol"
       }
     },
     {
@@ -1876,33 +1876,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -8.0330311,
-          43.5778546
-        ]
-      },
-      "properties": {
-        "site_id": "tra-san-sadurnino-coto-da-croa-ou-a-croa-do-castro-2",
-        "primary_name": "Coto da Croa ou A Croa do Castro",
-        "municipality": "San Sadurniño",
-        "parish": "Monte",
-        "place": "Lugar de Castrelo",
-        "ga_code": "",
-        "record_type": "official_uncoded_castro",
-        "confidence": "medium_high",
-        "dataset_use": "val_positive_candidate",
-        "split": "val",
-        "coord_source": "Galipedia",
-        "review_priority": "P1",
-        "qgis_action": "Verificar coordenada y dibujar polígono/buffer entrenable.",
-        "suggested_decision": "draw_training_polygon",
-        "notes": "posible Escoitadoira/A Croa do Castro; distinguir de Bardaos"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           -8.87574911,
           43.27205992
         ]
@@ -1957,6 +1930,60 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          -8.0732965,
+          43.5804622
+        ]
+      },
+      "properties": {
+        "site_id": "tra-san-sadurnino-ga15076004",
+        "primary_name": "Escoitadoira",
+        "municipality": "San Sadurniño",
+        "parish": "Santa Mariña do Monte / Escoitadora",
+        "place": "",
+        "ga_code": "GA15076004",
+        "record_type": "toponymic_candidate",
+        "confidence": "low",
+        "dataset_use": "review_only",
+        "split": "review_only",
+        "coord_source": "Galipedia",
+        "review_priority": "P2",
+        "qgis_action": "Reconciliar con fuente oficial o descartar.",
+        "suggested_decision": "reconcile_or_discard",
+        "notes": "apoyo norte; vigilancia/control visual; deteriorado por eucaliptos y silvas"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.0330311,
+          43.5778546
+        ]
+      },
+      "properties": {
+        "site_id": "tra-san-sadurnino-ga15076005",
+        "primary_name": "Bardaos",
+        "municipality": "San Sadurniño",
+        "parish": "Bardaos / Castro",
+        "place": "",
+        "ga_code": "GA15076005",
+        "record_type": "toponymic_candidate",
+        "confidence": "low",
+        "dataset_use": "review_only",
+        "split": "review_only",
+        "coord_source": "Galipedia",
+        "review_priority": "P2",
+        "qgis_action": "Reconciliar con fuente oficial o descartar.",
+        "suggested_decision": "reconcile_or_discard",
+        "notes": "apoyo norte; topónimos Castro, Croa, Muíño do Castro; posible centro agrogandeiro"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           -8.0653383,
           43.5434675
         ]
@@ -1976,7 +2003,7 @@
         "review_priority": "P2",
         "qgis_action": "Reconciliar con fuente oficial o descartar.",
         "suggested_decision": "reconcile_or_discard",
-        "notes": "central del sistema del Val do Xuvia; torque de oro, fíbulas, cerámica, muros; tradición Loureana"
+        "notes": "central del sistema del Val do Xuvia; torque de oro, fíbulas, cerámica, muros; tradición Loureana | 2 coordenadas candidatas en fuentes; se eligió Galipedia por prioridad."
       }
     },
     {
@@ -1994,60 +2021,6 @@
         "municipality": "Valdoviño",
         "parish": "Santiago de Pantín",
         "place": "Punta Castrelo",
-        "ga_code": "",
-        "record_type": "web_catalog_candidate",
-        "confidence": "medium",
-        "dataset_use": "review_only",
-        "split": "review_only",
-        "coord_source": "Artabro",
-        "review_priority": "P2",
-        "qgis_action": "Reconciliar con fuente oficial o descartar.",
-        "suggested_decision": "reconcile_or_discard",
-        "notes": "Candidato procedente de catálogo web no reconciliado con la tabla oficial normalizada."
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -8.1477,
-          43.6225
-        ]
-      },
-      "properties": {
-        "site_id": "tra-valdovino-castro-de-punta-do-bico",
-        "primary_name": "Castro de Punta do Bico",
-        "municipality": "Valdoviño",
-        "parish": "Sta. Eulalia de Valdoviñ",
-        "place": "Punta do Bico",
-        "ga_code": "",
-        "record_type": "web_catalog_candidate",
-        "confidence": "medium",
-        "dataset_use": "review_only",
-        "split": "review_only",
-        "coord_source": "Artabro",
-        "review_priority": "P2",
-        "qgis_action": "Reconciliar con fuente oficial o descartar.",
-        "suggested_decision": "reconcile_or_discard",
-        "notes": "Candidato procedente de catálogo web no reconciliado con la tabla oficial normalizada."
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -8.110555,
-          43.644166
-        ]
-      },
-      "properties": {
-        "site_id": "tra-valdovino-castro-de-rodo",
-        "primary_name": "Castro de Rodo",
-        "municipality": "Valdoviño",
-        "parish": "Santiago de Pantín",
-        "place": "Chao da Gabeira, Porto Carrizo",
         "ga_code": "",
         "record_type": "web_catalog_candidate",
         "confidence": "medium",
@@ -2146,33 +2119,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -8.198888,
-          43.601666
-        ]
-      },
-      "properties": {
-        "site_id": "tra-valdovino-ga15087001",
-        "primary_name": "Castro de Punta Taraza",
-        "municipality": "Valdoviño",
-        "parish": "Meirás",
-        "place": "Lavacerido",
-        "ga_code": "GA15087001",
-        "record_type": "official_castro",
-        "confidence": "high",
-        "dataset_use": "train_positive_candidate",
-        "split": "train",
-        "coord_source": "Artabro",
-        "review_priority": "P1",
-        "qgis_action": "Verificar coordenada y dibujar polígono/buffer entrenable.",
-        "suggested_decision": "draw_training_polygon",
-        "notes": "tabla ID_IPAGA 2021 | Presente en lista clásica Pena/Calaméo nº 52. | 2 coordenadas candidatas en fuentes; se eligió Artabro por prioridad."
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           -8.196388,
           43.575555
         ]
@@ -2193,6 +2139,33 @@
         "qgis_action": "Verificar coordenada y dibujar polígono/buffer entrenable.",
         "suggested_decision": "draw_training_polygon",
         "notes": "tabla ID_IPAGA 2021 | 2 coordenadas candidatas en fuentes; se eligió Artabro por prioridad."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.1104639,
+          43.6439056
+        ]
+      },
+      "properties": {
+        "site_id": "tra-valdovino-ga15087003",
+        "primary_name": "Castro de Coto Redondo",
+        "municipality": "Valdoviño",
+        "parish": "Pantín",
+        "place": "A Gabeira",
+        "ga_code": "GA15087003",
+        "record_type": "official_castro",
+        "confidence": "high",
+        "dataset_use": "train_positive_candidate",
+        "split": "train",
+        "coord_source": "Galipedia",
+        "review_priority": "P1",
+        "qgis_action": "Verificar coordenada y dibujar polígono/buffer entrenable.",
+        "suggested_decision": "draw_training_polygon",
+        "notes": "tabla ID_IPAGA 2021 | Presente en lista clásica Pena/Calaméo nº 53."
       }
     },
     {
@@ -2308,26 +2281,26 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -8.149004,
-          43.61851
+          -8.0660608,
+          43.6259895
         ]
       },
       "properties": {
-        "site_id": "tra-valdovino-ga15087009",
-        "primary_name": "Castro de Punta Frouxeira",
+        "site_id": "tra-valdovino-ga15087008",
+        "primary_name": "Castro",
         "municipality": "Valdoviño",
-        "parish": "Valdoviño",
-        "place": "A Saíña",
-        "ga_code": "GA15087009",
+        "parish": "Vilarrube",
+        "place": "A Escola",
+        "ga_code": "GA15087008",
         "record_type": "official_castro",
         "confidence": "high",
-        "dataset_use": "train_positive_candidate",
-        "split": "train",
-        "coord_source": "Artabro",
+        "dataset_use": "positive_damaged_review",
+        "split": "review_only",
+        "coord_source": "Galipedia",
         "review_priority": "P1",
-        "qgis_action": "Verificar coordenada y dibujar polígono/buffer entrenable.",
-        "suggested_decision": "draw_training_polygon",
-        "notes": "tabla ID_IPAGA 2021 | 2 coordenadas candidatas en fuentes; se eligió Artabro por prioridad."
+        "qgis_action": "Comprobar visibilidad/conservación; usar solo como caso de error o revisión.",
+        "suggested_decision": "inspect_damaged_site",
+        "notes": "tabla ID_IPAGA 2021 | Presente en lista clásica Pena/Calaméo nº 58. | Presente en lista clásica Pena/Calaméo nº 60. | Presente en lista clásica Pena/Calaméo nº 63."
       }
     },
     {
@@ -2355,6 +2328,60 @@
         "qgis_action": "Verificar coordenada y dibujar polígono/buffer entrenable.",
         "suggested_decision": "draw_training_polygon",
         "notes": "tabla ID_IPAGA 2021 | Presente en lista clásica Pena/Calaméo nº 51. | 2 coordenadas candidatas en fuentes; se eligió Artabro por prioridad."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.1712,
+          43.59218
+        ]
+      },
+      "properties": {
+        "site_id": "tra-valdovino-ga15087011",
+        "primary_name": "O Castro",
+        "municipality": "Valdoviño",
+        "parish": "Lago",
+        "place": "O Castro",
+        "ga_code": "GA15087011",
+        "record_type": "official_castro",
+        "confidence": "high",
+        "dataset_use": "train_positive_candidate",
+        "split": "train",
+        "coord_source": "Galipedia",
+        "review_priority": "P1",
+        "qgis_action": "Verificar coordenada y dibujar polígono/buffer entrenable.",
+        "suggested_decision": "draw_training_polygon",
+        "notes": "tabla ID_IPAGA 2021"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.1331655,
+          43.5841643
+        ]
+      },
+      "properties": {
+        "site_id": "tra-valdovino-ga15087012",
+        "primary_name": "Castro de Aviño",
+        "municipality": "Valdoviño",
+        "parish": "Valdoviño",
+        "place": "As Casas Novas",
+        "ga_code": "GA15087012",
+        "record_type": "official_castro",
+        "confidence": "high",
+        "dataset_use": "train_positive_candidate",
+        "split": "train",
+        "coord_source": "Galipedia",
+        "review_priority": "P1",
+        "qgis_action": "Verificar coordenada y dibujar polígono/buffer entrenable.",
+        "suggested_decision": "draw_training_polygon",
+        "notes": "tabla ID_IPAGA 2021 | Presente en lista clásica Pena/Calaméo nº 49."
       }
     },
     {
@@ -2486,6 +2513,33 @@
         "dataset_use": "train_positive_candidate",
         "split": "train",
         "coord_source": "Artabro",
+        "review_priority": "P1",
+        "qgis_action": "Verificar coordenada y dibujar polígono/buffer entrenable.",
+        "suggested_decision": "draw_training_polygon",
+        "notes": "tabla ID_IPAGA 2021"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.1477083,
+          43.6226111
+        ]
+      },
+      "properties": {
+        "site_id": "tra-valdovino-ga15087022",
+        "primary_name": "Castro de Punta do Vico",
+        "municipality": "Valdoviño",
+        "parish": "Valdoviño",
+        "place": "Postamaior",
+        "ga_code": "GA15087022",
+        "record_type": "official_castro",
+        "confidence": "high",
+        "dataset_use": "train_positive_candidate",
+        "split": "train",
+        "coord_source": "Galipedia",
         "review_priority": "P1",
         "qgis_action": "Verificar coordenada y dibujar polígono/buffer entrenable.",
         "suggested_decision": "draw_training_polygon",

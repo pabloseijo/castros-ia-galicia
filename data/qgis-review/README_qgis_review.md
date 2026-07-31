@@ -19,13 +19,13 @@ Paquete ligero para abrir en QGIS y pasar del inventario de puntos a etiquetas r
 
 ## Conteos
 
-- review_points: 95
-- positive_seed_buffers_120m: 45
-- tile_windows_512m: 45
+- review_points: 97
+- positive_seed_buffers_120m: 46
+- tile_windows_512m: 46
 - hard_negative_candidates: 160
 - trasancos_aoi: 1
-- qgis_review_tasks: 127
-- geocoding_tasks: 32
+- qgis_review_tasks: 125
+- geocoding_tasks: 28
 
 ## Orden de revisión
 

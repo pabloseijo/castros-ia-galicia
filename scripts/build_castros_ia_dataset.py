@@ -37,6 +37,7 @@ def find_mimir_root(start: Path) -> Path:
 MIMIR_ROOT = find_mimir_root(PROJECT_ROOT)
 SOURCE_DIR = MIMIR_ROOT / "wiki/aldea/fuentes/datos/castros-trasancos"
 OUT_DIR = PROJECT_ROOT / "data/processed/castros-trasancos-mvp"
+SOURCE_OVERRIDES_DIR = PROJECT_ROOT / "data/source-overrides"
 GENERATED_AT = "2026-07-31T00:00:00Z"
 
 STRICT_MUNICIPALITIES = {
@@ -528,11 +529,21 @@ def source_priority(source: str) -> int:
     return priorities.get(source, 20)
 
 
+def load_coordinate_supplements() -> list[dict[str, str]]:
+    rows: list[dict[str, str]] = []
+    if not SOURCE_OVERRIDES_DIR.exists():
+        return rows
+    for path in sorted(SOURCE_OVERRIDES_DIR.glob("*coordinate*.tsv")):
+        rows.extend(read_tsv(path))
+    return rows
+
+
 def build_sites() -> tuple[list[Site], list[dict[str, str]], list[dict[str, str]]]:
     official_rows = read_tsv(SOURCE_DIR / "catalogos-oficiais-castros-trasancos.tsv")
     pena_rows = read_tsv(SOURCE_DIR / "catalogacion-pena-calameo-1991-2010.tsv")
     san_rows = read_tsv(SOURCE_DIR / "san-sadurnino-pistas-falame-galipedia.tsv")
     records = read_json(SOURCE_DIR / "castros_trasancos_records.json")
+    records.extend(load_coordinate_supplements())
 
     sites_by_key: dict[str, Site] = {}
     source_index_notes: list[dict[str, str]] = []
@@ -703,6 +714,41 @@ def find_best_site(sites: Iterable[Site], municipality: str, name: str) -> Site 
     return best[1] if best else None
 
 
+def context_matches(site: Site, record: dict[str, str]) -> bool:
+    record_context = norm(" ".join([record.get("parish", ""), record.get("place", "")]))
+    if not record_context:
+        return False
+    site_context = norm(" ".join([site.parish, site.place]))
+    return bool(site_context and (record_context in site_context or site_context in record_context))
+
+
+def find_record_match(sites: list[Site], record: dict[str, str]) -> Site | None:
+    rec_code = clean(record.get("ga_code", "")).upper()
+    if rec_code and rec_code not in {"E", "EN TRÁMITE", "EN TRAMITE"}:
+        coded = find_by_code(sites, rec_code)
+        if coded:
+            return coded
+
+    scored: list[tuple[int, Site]] = []
+    for site in sites:
+        score = match_score(site, record)
+        if score:
+            scored.append((score, site))
+    if not scored:
+        return None
+
+    scored.sort(key=lambda item: item[0], reverse=True)
+    top_score = scored[0][0]
+    top_sites = [site for score, site in scored if score == top_score]
+    if len(top_sites) == 1:
+        return top_sites[0]
+
+    contextual = [site for site in top_sites if context_matches(site, record)]
+    if len(contextual) == 1:
+        return contextual[0]
+    return None
+
+
 def enrich_with_scrape_records(sites: list[Site], records: list[dict[str, str]]) -> None:
     coord_candidates: dict[str, list[tuple[int, float, float, str]]] = defaultdict(list)
     for record in records:
@@ -710,14 +756,9 @@ def enrich_with_scrape_records(sites: list[Site], records: list[dict[str, str]])
             continue
         if not useful_site_record(record):
             continue
-        best: tuple[int, Site] | None = None
-        for site in sites:
-            score = match_score(site, record)
-            if score and (best is None or score > best[0]):
-                best = (score, site)
-        if not best:
+        site = find_record_match(sites, record)
+        if not site:
             continue
-        site = best[1]
         site.add_aliases(record.get("name", ""))
         site.add_source(record.get("source", ""), record.get("url", ""))
         if record.get("ga_code") and not site.ga_code and clean(record["ga_code"]).upper() not in {"E", "EN TRÁMITE"}:
