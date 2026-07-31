@@ -1,0 +1,121 @@
+{
+  "project": "castros-ia-galicia",
+  "policy": {
+    "never_auto_accept_archaeological_labels": true,
+    "never_overwrite_human_annotations": true,
+    "never_train_on_raspberry": true,
+    "notes": "Raspberry agents may refresh sources, reports, web maps and readiness checks. They must not decide final archaeology or overwrite QGIS edits."
+  },
+  "agents": [
+    {
+      "id": "annotation_vault",
+      "enabled": true,
+      "description": "Back up and verify the editable QGIS annotation workspace before other scheduled refreshes.",
+      "command": ["python3", "scripts/backup_annotation_workspace.py"],
+      "timeout_seconds": 180,
+      "systemd_on_calendar": "Mon..Fri 03:05",
+      "writes": [
+        "data/annotation-backups/",
+        "reports/annotation_backup_status.md"
+      ],
+      "risk_level": "safe"
+    },
+    {
+      "id": "env_watchdog",
+      "enabled": true,
+      "description": "Check local commands and Python modules available on the Raspberry.",
+      "command": ["python3", "scripts/check_environment.py"],
+      "timeout_seconds": 120,
+      "systemd_on_calendar": "daily",
+      "writes": ["reports/environment_status.md"],
+      "risk_level": "safe"
+    },
+    {
+      "id": "pba_catalog_monitor",
+      "enabled": true,
+      "description": "Refresh the PBA/Xunta catalogue snapshot and geocoding decision queues.",
+      "command": ["python3", "scripts/query_pba_catalog_unlock.py"],
+      "timeout_seconds": 600,
+      "systemd_on_calendar": "Mon..Fri 03:20",
+      "writes": [
+        "reports/pba_catalog_unlock.md",
+        "reports/pba_catalog_castro_like_snapshot.tsv",
+        "reports/pba_geocoding_candidate_decisions.tsv",
+        "data/review-queues/pba_geocode_candidates.tsv",
+        "data/review-queues/pba_duplicate_aliases.tsv",
+        "data/review-queues/pba_still_blocked.tsv"
+      ],
+      "risk_level": "safe"
+    },
+    {
+      "id": "qgis_package_refresh",
+      "enabled": true,
+      "description": "Regenerate generated QGIS review layers without touching human annotation edits.",
+      "command": ["make", "qgis-review"],
+      "timeout_seconds": 300,
+      "systemd_on_calendar": "Mon..Fri 03:40",
+      "writes": ["data/qgis-review/"],
+      "risk_level": "safe_after_annotation_guard"
+    },
+    {
+      "id": "review_outputs_refresh",
+      "enabled": true,
+      "description": "Refresh review queues, raster tile manifest, training readiness and web map.",
+      "command": ["make", "reports", "raster-prep", "training-manifest", "webmap"],
+      "timeout_seconds": 600,
+      "systemd_on_calendar": "Mon..Fri 04:00",
+      "writes": [
+        "data/review-queues/",
+        "data/raster-prep/",
+        "data/training/",
+        "reports/review_status.md",
+        "reports/raster_tile_plan.md",
+        "reports/training_readiness.md",
+        "webmap/index.html"
+      ],
+      "risk_level": "safe_after_annotation_guard"
+    },
+    {
+      "id": "training_readiness_watchdog",
+      "enabled": true,
+      "description": "Check whether QGIS annotations are ready for chip export and report missing metadata.",
+      "command": ["python3", "scripts/export_training_manifest.py"],
+      "timeout_seconds": 180,
+      "systemd_on_calendar": "hourly",
+      "writes": [
+        "data/training/training_labels_manifest.tsv",
+        "data/training/training_negatives_manifest.tsv",
+        "reports/training_readiness.md"
+      ],
+      "risk_level": "safe"
+    },
+    {
+      "id": "repo_drift_watchdog",
+      "enabled": true,
+      "description": "Fetch origin and report local/remote drift without merging, committing or pushing.",
+      "command": ["python3", "scripts/check_repo_drift.py"],
+      "timeout_seconds": 180,
+      "systemd_on_calendar": "Mon..Fri 02:50",
+      "writes": ["reports/repo_drift_status.md"],
+      "risk_level": "safe_no_automerge"
+    },
+    {
+      "id": "full_safe_verify",
+      "enabled": false,
+      "description": "Run the whole verification chain. Disabled by default because it is heavier and should be scheduled deliberately.",
+      "command": ["make", "verify"],
+      "timeout_seconds": 1200,
+      "systemd_on_calendar": "Sun 05:00",
+      "writes": [
+        "data/processed/",
+        "data/qgis-review/",
+        "data/review-queues/",
+        "data/raster-prep/",
+        "data/training/",
+        "reports/",
+        "webmap/index.html"
+      ],
+      "risk_level": "safe_after_annotation_guard"
+    }
+  ]
+}

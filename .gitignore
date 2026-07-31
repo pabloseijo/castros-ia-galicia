@@ -32,4 +32,12 @@ wandb/
 mlruns/
 checkpoints/
 
+# Local agent runtime
+logs/
+data/agent-state/
+data/annotation-backups/
+ops/raspberry/systemd/
+reports/annotation_backup_status.md
+reports/repo_drift_status.md
+
 # Keep lightweight generated review artifacts versionable for the MVP.

@@ -68,7 +68,11 @@ make pba-review
 make training-manifest
 make webmap
 make env-check
+make annotation-backup
+make repo-drift
 make sync-wiki
+make agent-list
+make agent-run
 make verify
 ```
 
@@ -89,6 +93,8 @@ Abrir estos dos GeoPackage juntos:
 
 El siguiente paso real es revisar las tareas P0, ajustar buffers a polígonos reales en `labels_reviewed`, aceptar negativos en `negative_areas_reviewed` y solo después descargar/procesar rasters para ventanas útiles.
 
+`make annotations` conserva el GeoPackage editable si ya existe. Para recrearlo desde cero hay que usar `make annotations-reset`, solo después de respaldar cualquier edición humana.
+
 ## Reportes operativos
 
 - `reports/review_status.md`: cola de revisión y bloqueos.
@@ -99,10 +105,13 @@ El siguiente paso real es revisar las tareas P0, ajustar buffers a polígonos re
 - `data/qgis-review/remaining_equivalence_candidates.geojson`: capa visual con las dos equivalencias posibles que requieren decisión humana.
 - `reports/training_readiness.md`: estado de exportación entrenable.
 - `reports/environment_status.md`: herramientas locales disponibles/bloqueantes.
+- `reports/annotation_backup_status.md`: estado del backup/verificación del GeoPackage editable.
+- `reports/repo_drift_status.md`: estado Git local/remoto sin auto-merge.
 - `data/review-queues/`: colas TSV por prioridad.
 - `data/raster-prep/candidate_raster_tiles.tsv`: manifiesto de tiles.
 - `data/training/`: manifiestos exportados desde anotaciones aceptadas.
 - `webmap/index.html`: mapa estático con capas embebidas para inspección rápida.
+- `docs/raspberry-agents.md`: runner agentico para Raspberry con systemd y reglas de seguridad.
 
 ## Mapa web
 

@@ -9,6 +9,7 @@ areas, corrected/geocoded points, and decision tables.
 
 from __future__ import annotations
 
+import argparse
 import csv
 import sqlite3
 import struct
@@ -267,9 +268,24 @@ Do not edit generated layers in `data/qgis-review`; copy or trace into these ann
     )
 
 
+def parse_args() -> argparse.Namespace:
+    parser = argparse.ArgumentParser(description="Create the editable QGIS annotation workspace.")
+    parser.add_argument(
+        "--force",
+        action="store_true",
+        help="Overwrite the existing annotation GeoPackage. Use only before human review or after backing it up.",
+    )
+    return parser.parse_args()
+
+
 def main() -> None:
+    args = parse_args()
     OUT_DIR.mkdir(parents=True, exist_ok=True)
     if OUT_PATH.exists():
+        if not args.force:
+            print(f"Annotation workspace already exists; keeping {OUT_PATH}")
+            print("Use --force only after backing up human QGIS edits.")
+            return
         OUT_PATH.unlink()
     conn = sqlite3.connect(OUT_PATH)
     cur = conn.cursor()
