@@ -20,6 +20,7 @@ El objetivo no es declarar nuevos yacimientos por IA. El objetivo defendible es 
 - Ventanas raster candidatas: 42.
 - Negativos difíciles generados para revisión: 160.
 - Tareas de geocodificación: 37.
+- Workspace editable de anotación: 3 capas y 2 tablas de decisiones.
 
 O Val queda como holdout narrativo. No se usa para entrenar en la primera versión.
 
@@ -40,7 +41,8 @@ castros-ia-galicia/
 ├── data/
 │   ├── external/          # rasters/LAZ fuera de git
 │   ├── processed/         # outputs ligeros reproducibles
-│   └── qgis-review/       # paquete QGIS de revisión
+│   ├── qgis-review/       # paquete QGIS generado para revisión
+│   └── annotations/       # capas editables para revisión humana
 ├── docs/
 ├── notebooks/
 ├── qgis/
@@ -54,6 +56,7 @@ castros-ia-galicia/
 ```bash
 make dataset
 make qgis-review
+make annotations
 make verify
 ```
 
@@ -65,6 +68,11 @@ Los datos pesados PNOA/LiDAR/Sentinel no se versionan aquí. Deben vivir fuera d
 
 Las capas generadas aquí son ligeras y reproducibles. Los buffers de 120 m son semillas de revisión, no perímetros arqueológicos.
 
-## Siguiente paso real
+## Flujo QGIS
 
-Abrir `data/qgis-review/castros_trasancos_qgis_review.gpkg` en QGIS, revisar las tareas P0, ajustar buffers a polígonos reales y solo después descargar/procesar rasters para ventanas útiles.
+Abrir estos dos GeoPackage juntos:
+
+- `data/qgis-review/castros_trasancos_qgis_review.gpkg`: capas generadas para mirar, no editar.
+- `data/annotations/castros_annotations.gpkg`: capas editables para dibujar y decidir.
+
+El siguiente paso real es revisar las tareas P0, ajustar buffers a polígonos reales en `labels_reviewed`, aceptar negativos en `negative_areas_reviewed` y solo después descargar/procesar rasters para ventanas útiles.
