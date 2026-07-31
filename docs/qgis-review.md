@@ -37,10 +37,14 @@ En `labels_reviewed`:
 - `review_status`: `accepted`, `needs_followup`, `rejected`.
 - `source_basis`: `pnoa`, `lidar`, `catalog`, `field`, o combinación separada por `+`.
 
+Para exportar entrenamiento, los positivos aceptados deben tener cubiertos: `label_id`, `site_id`, `primary_name`, `final_split`, `label_class`, `label_geometry`, `confidence`, `source_basis`, `reviewed_by` y `reviewed_date`.
+
 En `negative_areas_reviewed`:
 
 - `negative_type`: `agricultural`, `forestry`, `road_cut`, `quarry`, `natural_hill`, `urban`, `unclear`.
 - `review_status`: `accepted` solo si no parece forma arqueológica plausible.
+
+Para exportar entrenamiento, los negativos aceptados deben tener cubiertos: `negative_label_id`, `final_split`, `negative_type`, `confidence`, `source_basis`, `reviewed_by` y `reviewed_date`.
 
 ## Colas generadas
 
@@ -78,4 +82,4 @@ Cuando haya polígonos aceptados:
 make training-manifest
 ```
 
-Si sigue saliendo `training_status=blocked`, falta al menos un positivo aceptado o un negativo aceptado.
+Si sigue saliendo `training_status=blocked`, falta al menos un positivo aceptado, un negativo aceptado o metadatos obligatorios en alguna geometría aceptada.
