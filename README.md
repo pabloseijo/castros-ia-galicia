@@ -63,6 +63,7 @@ make qgis-review
 make annotations
 make reports
 make raster-prep
+make pba-unlock
 make training-manifest
 make webmap
 make env-check
@@ -92,6 +93,7 @@ El siguiente paso real es revisar las tareas P0, ajustar buffers a polígonos re
 - `reports/review_status.md`: cola de revisión y bloqueos.
 - `reports/geocoding_blockers.md`: filas que siguen sin coordenada segura.
 - `reports/raster_tile_plan.md`: ventanas raster candidatas.
+- `reports/pba_catalog_unlock.md`: consulta fact-checkeada del PBA/Xunta para desbloquear geocodificación.
 - `reports/training_readiness.md`: estado de exportación entrenable.
 - `reports/environment_status.md`: herramientas locales disponibles/bloqueantes.
 - `data/review-queues/`: colas TSV por prioridad.
