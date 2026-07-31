@@ -1,0 +1,2892 @@
+{
+  "type": "FeatureCollection",
+  "name": "hard_negative_candidates",
+  "crs": {
+    "type": "name",
+    "properties": {
+      "name": "EPSG:4326"
+    }
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.36,
+          43.4
+        ]
+      },
+      "properties": {
+        "negative_id": "neg-tra-0001",
+        "status": "generated_candidate_requires_qgis_review",
+        "use": "hard_negative_candidate",
+        "review_priority": "P2",
+        "qgis_action": "Comprobar en PNOA/LiDAR; aceptar solo si no parece arqueológico ni ambiguo.",
+        "notes": "Punto generado automáticamente lejos de positivos conocidos; no asumir que sea negativo real sin revisión visual."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.345,
+          43.4
+        ]
+      },
+      "properties": {
+        "negative_id": "neg-tra-0002",
+        "status": "generated_candidate_requires_qgis_review",
+        "use": "hard_negative_candidate",
+        "review_priority": "P2",
+        "qgis_action": "Comprobar en PNOA/LiDAR; aceptar solo si no parece arqueológico ni ambiguo.",
+        "notes": "Punto generado automáticamente lejos de positivos conocidos; no asumir que sea negativo real sin revisión visual."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.33,
+          43.4
+        ]
+      },
+      "properties": {
+        "negative_id": "neg-tra-0003",
+        "status": "generated_candidate_requires_qgis_review",
+        "use": "hard_negative_candidate",
+        "review_priority": "P2",
+        "qgis_action": "Comprobar en PNOA/LiDAR; aceptar solo si no parece arqueológico ni ambiguo.",
+        "notes": "Punto generado automáticamente lejos de positivos conocidos; no asumir que sea negativo real sin revisión visual."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.315,
+          43.4
+        ]
+      },
+      "properties": {
+        "negative_id": "neg-tra-0004",
+        "status": "generated_candidate_requires_qgis_review",
+        "use": "hard_negative_candidate",
+        "review_priority": "P2",
+        "qgis_action": "Comprobar en PNOA/LiDAR; aceptar solo si no parece arqueológico ni ambiguo.",
+        "notes": "Punto generado automáticamente lejos de positivos conocidos; no asumir que sea negativo real sin revisión visual."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.3,
+          43.4
+        ]
+      },
+      "properties": {
+        "negative_id": "neg-tra-0005",
+        "status": "generated_candidate_requires_qgis_review",
+        "use": "hard_negative_candidate",
+        "review_priority": "P2",
+        "qgis_action": "Comprobar en PNOA/LiDAR; aceptar solo si no parece arqueológico ni ambiguo.",
+        "notes": "Punto generado automáticamente lejos de positivos conocidos; no asumir que sea negativo real sin revisión visual."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.285,
+          43.4
+        ]
+      },
+      "properties": {
+        "negative_id": "neg-tra-0006",
+        "status": "generated_candidate_requires_qgis_review",
+        "use": "hard_negative_candidate",
+        "review_priority": "P2",
+        "qgis_action": "Comprobar en PNOA/LiDAR; aceptar solo si no parece arqueológico ni ambiguo.",
+        "notes": "Punto generado automáticamente lejos de positivos conocidos; no asumir que sea negativo real sin revisión visual."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.27,
+          43.4
+        ]
+      },
+      "properties": {
+        "negative_id": "neg-tra-0007",
+        "status": "generated_candidate_requires_qgis_review",
+        "use": "hard_negative_candidate",
+        "review_priority": "P2",
+        "qgis_action": "Comprobar en PNOA/LiDAR; aceptar solo si no parece arqueológico ni ambiguo.",
+        "notes": "Punto generado automáticamente lejos de positivos conocidos; no asumir que sea negativo real sin revisión visual."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.255,
+          43.4
+        ]
+      },
+      "properties": {
+        "negative_id": "neg-tra-0008",
+        "status": "generated_candidate_requires_qgis_review",
+        "use": "hard_negative_candidate",
+        "review_priority": "P2",
+        "qgis_action": "Comprobar en PNOA/LiDAR; aceptar solo si no parece arqueológico ni ambiguo.",
+        "notes": "Punto generado automáticamente lejos de positivos conocidos; no asumir que sea negativo real sin revisión visual."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.24,
+          43.4
+        ]
+      },
+      "properties": {
+        "negative_id": "neg-tra-0009",
+        "status": "generated_candidate_requires_qgis_review",
+        "use": "hard_negative_candidate",
+        "review_priority": "P2",
+        "qgis_action": "Comprobar en PNOA/LiDAR; aceptar solo si no parece arqueológico ni ambiguo.",
+        "notes": "Punto generado automáticamente lejos de positivos conocidos; no asumir que sea negativo real sin revisión visual."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.225,
+          43.4
+        ]
+      },
+      "properties": {
+        "negative_id": "neg-tra-0010",
+        "status": "generated_candidate_requires_qgis_review",
+        "use": "hard_negative_candidate",
+        "review_priority": "P2",
+        "qgis_action": "Comprobar en PNOA/LiDAR; aceptar solo si no parece arqueológico ni ambiguo.",
+        "notes": "Punto generado automáticamente lejos de positivos conocidos; no asumir que sea negativo real sin revisión visual."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.21,
+          43.4
+        ]
+      },
+      "properties": {
+        "negative_id": "neg-tra-0011",
+        "status": "generated_candidate_requires_qgis_review",
+        "use": "hard_negative_candidate",
+        "review_priority": "P2",
+        "qgis_action": "Comprobar en PNOA/LiDAR; aceptar solo si no parece arqueológico ni ambiguo.",
+        "notes": "Punto generado automáticamente lejos de positivos conocidos; no asumir que sea negativo real sin revisión visual."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.195,
+          43.4
+        ]
+      },
+      "properties": {
+        "negative_id": "neg-tra-0012",
+        "status": "generated_candidate_requires_qgis_review",
+        "use": "hard_negative_candidate",
+        "review_priority": "P2",
+        "qgis_action": "Comprobar en PNOA/LiDAR; aceptar solo si no parece arqueológico ni ambiguo.",
+        "notes": "Punto generado automáticamente lejos de positivos conocidos; no asumir que sea negativo real sin revisión visual."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.18,
+          43.4
+        ]
+      },
+      "properties": {
+        "negative_id": "neg-tra-0013",
+        "status": "generated_candidate_requires_qgis_review",
+        "use": "hard_negative_candidate",
+        "review_priority": "P2",
+        "qgis_action": "Comprobar en PNOA/LiDAR; aceptar solo si no parece arqueológico ni ambiguo.",
+        "notes": "Punto generado automáticamente lejos de positivos conocidos; no asumir que sea negativo real sin revisión visual."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.165,
+          43.4
+        ]
+      },
+      "properties": {
+        "negative_id": "neg-tra-0014",
+        "status": "generated_candidate_requires_qgis_review",
+        "use": "hard_negative_candidate",
+        "review_priority": "P2",
+        "qgis_action": "Comprobar en PNOA/LiDAR; aceptar solo si no parece arqueológico ni ambiguo.",
+        "notes": "Punto generado automáticamente lejos de positivos conocidos; no asumir que sea negativo real sin revisión visual."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.15,
+          43.4
+        ]
+      },
+      "properties": {
+        "negative_id": "neg-tra-0015",
+        "status": "generated_candidate_requires_qgis_review",
+        "use": "hard_negative_candidate",
+        "review_priority": "P2",
+        "qgis_action": "Comprobar en PNOA/LiDAR; aceptar solo si no parece arqueológico ni ambiguo.",
+        "notes": "Punto generado automáticamente lejos de positivos conocidos; no asumir que sea negativo real sin revisión visual."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.135,
+          43.4
+        ]
+      },
+      "properties": {
+        "negative_id": "neg-tra-0016",
+        "status": "generated_candidate_requires_qgis_review",
+        "use": "hard_negative_candidate",
+        "review_priority": "P2",
+        "qgis_action": "Comprobar en PNOA/LiDAR; aceptar solo si no parece arqueológico ni ambiguo.",
+        "notes": "Punto generado automáticamente lejos de positivos conocidos; no asumir que sea negativo real sin revisión visual."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.12,
+          43.4
+        ]
+      },
+      "properties": {
+        "negative_id": "neg-tra-0017",
+        "status": "generated_candidate_requires_qgis_review",
+        "use": "hard_negative_candidate",
+        "review_priority": "P2",
+        "qgis_action": "Comprobar en PNOA/LiDAR; aceptar solo si no parece arqueológico ni ambiguo.",
+        "notes": "Punto generado automáticamente lejos de positivos conocidos; no asumir que sea negativo real sin revisión visual."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.105,
+          43.4
+        ]
+      },
+      "properties": {
+        "negative_id": "neg-tra-0018",
+        "status": "generated_candidate_requires_qgis_review",
+        "use": "hard_negative_candidate",
+        "review_priority": "P2",
+        "qgis_action": "Comprobar en PNOA/LiDAR; aceptar solo si no parece arqueológico ni ambiguo.",
+        "notes": "Punto generado automáticamente lejos de positivos conocidos; no asumir que sea negativo real sin revisión visual."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.09,
+          43.4
+        ]
+      },
+      "properties": {
+        "negative_id": "neg-tra-0019",
+        "status": "generated_candidate_requires_qgis_review",
+        "use": "hard_negative_candidate",
+        "review_priority": "P2",
+        "qgis_action": "Comprobar en PNOA/LiDAR; aceptar solo si no parece arqueológico ni ambiguo.",
+        "notes": "Punto generado automáticamente lejos de positivos conocidos; no asumir que sea negativo real sin revisión visual."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.075,
+          43.4
+        ]
+      },
+      "properties": {
+        "negative_id": "neg-tra-0020",
+        "status": "generated_candidate_requires_qgis_review",
+        "use": "hard_negative_candidate",
+        "review_priority": "P2",
+        "qgis_action": "Comprobar en PNOA/LiDAR; aceptar solo si no parece arqueológico ni ambiguo.",
+        "notes": "Punto generado automáticamente lejos de positivos conocidos; no asumir que sea negativo real sin revisión visual."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.06,
+          43.4
+        ]
+      },
+      "properties": {
+        "negative_id": "neg-tra-0021",
+        "status": "generated_candidate_requires_qgis_review",
+        "use": "hard_negative_candidate",
+        "review_priority": "P2",
+        "qgis_action": "Comprobar en PNOA/LiDAR; aceptar solo si no parece arqueológico ni ambiguo.",
+        "notes": "Punto generado automáticamente lejos de positivos conocidos; no asumir que sea negativo real sin revisión visual."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.045,
+          43.4
+        ]
+      },
+      "properties": {
+        "negative_id": "neg-tra-0022",
+        "status": "generated_candidate_requires_qgis_review",
+        "use": "hard_negative_candidate",
+        "review_priority": "P2",
+        "qgis_action": "Comprobar en PNOA/LiDAR; aceptar solo si no parece arqueológico ni ambiguo.",
+        "notes": "Punto generado automáticamente lejos de positivos conocidos; no asumir que sea negativo real sin revisión visual."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.03,
+          43.4
+        ]
+      },
+      "properties": {
+        "negative_id": "neg-tra-0023",
+        "status": "generated_candidate_requires_qgis_review",
+        "use": "hard_negative_candidate",
+        "review_priority": "P2",
+        "qgis_action": "Comprobar en PNOA/LiDAR; aceptar solo si no parece arqueológico ni ambiguo.",
+        "notes": "Punto generado automáticamente lejos de positivos conocidos; no asumir que sea negativo real sin revisión visual."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.36,
+          43.415
+        ]
+      },
+      "properties": {
+        "negative_id": "neg-tra-0024",
+        "status": "generated_candidate_requires_qgis_review",
+        "use": "hard_negative_candidate",
+        "review_priority": "P2",
+        "qgis_action": "Comprobar en PNOA/LiDAR; aceptar solo si no parece arqueológico ni ambiguo.",
+        "notes": "Punto generado automáticamente lejos de positivos conocidos; no asumir que sea negativo real sin revisión visual."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.345,
+          43.415
+        ]
+      },
+      "properties": {
+        "negative_id": "neg-tra-0025",
+        "status": "generated_candidate_requires_qgis_review",
+        "use": "hard_negative_candidate",
+        "review_priority": "P2",
+        "qgis_action": "Comprobar en PNOA/LiDAR; aceptar solo si no parece arqueológico ni ambiguo.",
+        "notes": "Punto generado automáticamente lejos de positivos conocidos; no asumir que sea negativo real sin revisión visual."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.33,
+          43.415
+        ]
+      },
+      "properties": {
+        "negative_id": "neg-tra-0026",
+        "status": "generated_candidate_requires_qgis_review",
+        "use": "hard_negative_candidate",
+        "review_priority": "P2",
+        "qgis_action": "Comprobar en PNOA/LiDAR; aceptar solo si no parece arqueológico ni ambiguo.",
+        "notes": "Punto generado automáticamente lejos de positivos conocidos; no asumir que sea negativo real sin revisión visual."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.315,
+          43.415
+        ]
+      },
+      "properties": {
+        "negative_id": "neg-tra-0027",
+        "status": "generated_candidate_requires_qgis_review",
+        "use": "hard_negative_candidate",
+        "review_priority": "P2",
+        "qgis_action": "Comprobar en PNOA/LiDAR; aceptar solo si no parece arqueológico ni ambiguo.",
+        "notes": "Punto generado automáticamente lejos de positivos conocidos; no asumir que sea negativo real sin revisión visual."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.3,
+          43.415
+        ]
+      },
+      "properties": {
+        "negative_id": "neg-tra-0028",
+        "status": "generated_candidate_requires_qgis_review",
+        "use": "hard_negative_candidate",
+        "review_priority": "P2",
+        "qgis_action": "Comprobar en PNOA/LiDAR; aceptar solo si no parece arqueológico ni ambiguo.",
+        "notes": "Punto generado automáticamente lejos de positivos conocidos; no asumir que sea negativo real sin revisión visual."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.285,
+          43.415
+        ]
+      },
+      "properties": {
+        "negative_id": "neg-tra-0029",
+        "status": "generated_candidate_requires_qgis_review",
+        "use": "hard_negative_candidate",
+        "review_priority": "P2",
+        "qgis_action": "Comprobar en PNOA/LiDAR; aceptar solo si no parece arqueológico ni ambiguo.",
+        "notes": "Punto generado automáticamente lejos de positivos conocidos; no asumir que sea negativo real sin revisión visual."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.27,
+          43.415
+        ]
+      },
+      "properties": {
+        "negative_id": "neg-tra-0030",
+        "status": "generated_candidate_requires_qgis_review",
+        "use": "hard_negative_candidate",
+        "review_priority": "P2",
+        "qgis_action": "Comprobar en PNOA/LiDAR; aceptar solo si no parece arqueológico ni ambiguo.",
+        "notes": "Punto generado automáticamente lejos de positivos conocidos; no asumir que sea negativo real sin revisión visual."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.255,
+          43.415
+        ]
+      },
+      "properties": {
+        "negative_id": "neg-tra-0031",
+        "status": "generated_candidate_requires_qgis_review",
+        "use": "hard_negative_candidate",
+        "review_priority": "P2",
+        "qgis_action": "Comprobar en PNOA/LiDAR; aceptar solo si no parece arqueológico ni ambiguo.",
+        "notes": "Punto generado automáticamente lejos de positivos conocidos; no asumir que sea negativo real sin revisión visual."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.24,
+          43.415
+        ]
+      },
+      "properties": {
+        "negative_id": "neg-tra-0032",
+        "status": "generated_candidate_requires_qgis_review",
+        "use": "hard_negative_candidate",
+        "review_priority": "P2",
+        "qgis_action": "Comprobar en PNOA/LiDAR; aceptar solo si no parece arqueológico ni ambiguo.",
+        "notes": "Punto generado automáticamente lejos de positivos conocidos; no asumir que sea negativo real sin revisión visual."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.225,
+          43.415
+        ]
+      },
+      "properties": {
+        "negative_id": "neg-tra-0033",
+        "status": "generated_candidate_requires_qgis_review",
+        "use": "hard_negative_candidate",
+        "review_priority": "P2",
+        "qgis_action": "Comprobar en PNOA/LiDAR; aceptar solo si no parece arqueológico ni ambiguo.",
+        "notes": "Punto generado automáticamente lejos de positivos conocidos; no asumir que sea negativo real sin revisión visual."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.21,
+          43.415
+        ]
+      },
+      "properties": {
+        "negative_id": "neg-tra-0034",
+        "status": "generated_candidate_requires_qgis_review",
+        "use": "hard_negative_candidate",
+        "review_priority": "P2",
+        "qgis_action": "Comprobar en PNOA/LiDAR; aceptar solo si no parece arqueológico ni ambiguo.",
+        "notes": "Punto generado automáticamente lejos de positivos conocidos; no asumir que sea negativo real sin revisión visual."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.195,
+          43.415
+        ]
+      },
+      "properties": {
+        "negative_id": "neg-tra-0035",
+        "status": "generated_candidate_requires_qgis_review",
+        "use": "hard_negative_candidate",
+        "review_priority": "P2",
+        "qgis_action": "Comprobar en PNOA/LiDAR; aceptar solo si no parece arqueológico ni ambiguo.",
+        "notes": "Punto generado automáticamente lejos de positivos conocidos; no asumir que sea negativo real sin revisión visual."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.165,
+          43.415
+        ]
+      },
+      "properties": {
+        "negative_id": "neg-tra-0036",
+        "status": "generated_candidate_requires_qgis_review",
+        "use": "hard_negative_candidate",
+        "review_priority": "P2",
+        "qgis_action": "Comprobar en PNOA/LiDAR; aceptar solo si no parece arqueológico ni ambiguo.",
+        "notes": "Punto generado automáticamente lejos de positivos conocidos; no asumir que sea negativo real sin revisión visual."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.15,
+          43.415
+        ]
+      },
+      "properties": {
+        "negative_id": "neg-tra-0037",
+        "status": "generated_candidate_requires_qgis_review",
+        "use": "hard_negative_candidate",
+        "review_priority": "P2",
+        "qgis_action": "Comprobar en PNOA/LiDAR; aceptar solo si no parece arqueológico ni ambiguo.",
+        "notes": "Punto generado automáticamente lejos de positivos conocidos; no asumir que sea negativo real sin revisión visual."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.135,
+          43.415
+        ]
+      },
+      "properties": {
+        "negative_id": "neg-tra-0038",
+        "status": "generated_candidate_requires_qgis_review",
+        "use": "hard_negative_candidate",
+        "review_priority": "P2",
+        "qgis_action": "Comprobar en PNOA/LiDAR; aceptar solo si no parece arqueológico ni ambiguo.",
+        "notes": "Punto generado automáticamente lejos de positivos conocidos; no asumir que sea negativo real sin revisión visual."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.12,
+          43.415
+        ]
+      },
+      "properties": {
+        "negative_id": "neg-tra-0039",
+        "status": "generated_candidate_requires_qgis_review",
+        "use": "hard_negative_candidate",
+        "review_priority": "P2",
+        "qgis_action": "Comprobar en PNOA/LiDAR; aceptar solo si no parece arqueológico ni ambiguo.",
+        "notes": "Punto generado automáticamente lejos de positivos conocidos; no asumir que sea negativo real sin revisión visual."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.105,
+          43.415
+        ]
+      },
+      "properties": {
+        "negative_id": "neg-tra-0040",
+        "status": "generated_candidate_requires_qgis_review",
+        "use": "hard_negative_candidate",
+        "review_priority": "P2",
+        "qgis_action": "Comprobar en PNOA/LiDAR; aceptar solo si no parece arqueológico ni ambiguo.",
+        "notes": "Punto generado automáticamente lejos de positivos conocidos; no asumir que sea negativo real sin revisión visual."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.09,
+          43.415
+        ]
+      },
+      "properties": {
+        "negative_id": "neg-tra-0041",
+        "status": "generated_candidate_requires_qgis_review",
+        "use": "hard_negative_candidate",
+        "review_priority": "P2",
+        "qgis_action": "Comprobar en PNOA/LiDAR; aceptar solo si no parece arqueológico ni ambiguo.",
+        "notes": "Punto generado automáticamente lejos de positivos conocidos; no asumir que sea negativo real sin revisión visual."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.075,
+          43.415
+        ]
+      },
+      "properties": {
+        "negative_id": "neg-tra-0042",
+        "status": "generated_candidate_requires_qgis_review",
+        "use": "hard_negative_candidate",
+        "review_priority": "P2",
+        "qgis_action": "Comprobar en PNOA/LiDAR; aceptar solo si no parece arqueológico ni ambiguo.",
+        "notes": "Punto generado automáticamente lejos de positivos conocidos; no asumir que sea negativo real sin revisión visual."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.06,
+          43.415
+        ]
+      },
+      "properties": {
+        "negative_id": "neg-tra-0043",
+        "status": "generated_candidate_requires_qgis_review",
+        "use": "hard_negative_candidate",
+        "review_priority": "P2",
+        "qgis_action": "Comprobar en PNOA/LiDAR; aceptar solo si no parece arqueológico ni ambiguo.",
+        "notes": "Punto generado automáticamente lejos de positivos conocidos; no asumir que sea negativo real sin revisión visual."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.045,
+          43.415
+        ]
+      },
+      "properties": {
+        "negative_id": "neg-tra-0044",
+        "status": "generated_candidate_requires_qgis_review",
+        "use": "hard_negative_candidate",
+        "review_priority": "P2",
+        "qgis_action": "Comprobar en PNOA/LiDAR; aceptar solo si no parece arqueológico ni ambiguo.",
+        "notes": "Punto generado automáticamente lejos de positivos conocidos; no asumir que sea negativo real sin revisión visual."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.03,
+          43.415
+        ]
+      },
+      "properties": {
+        "negative_id": "neg-tra-0045",
+        "status": "generated_candidate_requires_qgis_review",
+        "use": "hard_negative_candidate",
+        "review_priority": "P2",
+        "qgis_action": "Comprobar en PNOA/LiDAR; aceptar solo si no parece arqueológico ni ambiguo.",
+        "notes": "Punto generado automáticamente lejos de positivos conocidos; no asumir que sea negativo real sin revisión visual."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.36,
+          43.43
+        ]
+      },
+      "properties": {
+        "negative_id": "neg-tra-0046",
+        "status": "generated_candidate_requires_qgis_review",
+        "use": "hard_negative_candidate",
+        "review_priority": "P2",
+        "qgis_action": "Comprobar en PNOA/LiDAR; aceptar solo si no parece arqueológico ni ambiguo.",
+        "notes": "Punto generado automáticamente lejos de positivos conocidos; no asumir que sea negativo real sin revisión visual."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.345,
+          43.43
+        ]
+      },
+      "properties": {
+        "negative_id": "neg-tra-0047",
+        "status": "generated_candidate_requires_qgis_review",
+        "use": "hard_negative_candidate",
+        "review_priority": "P2",
+        "qgis_action": "Comprobar en PNOA/LiDAR; aceptar solo si no parece arqueológico ni ambiguo.",
+        "notes": "Punto generado automáticamente lejos de positivos conocidos; no asumir que sea negativo real sin revisión visual."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.33,
+          43.43
+        ]
+      },
+      "properties": {
+        "negative_id": "neg-tra-0048",
+        "status": "generated_candidate_requires_qgis_review",
+        "use": "hard_negative_candidate",
+        "review_priority": "P2",
+        "qgis_action": "Comprobar en PNOA/LiDAR; aceptar solo si no parece arqueológico ni ambiguo.",
+        "notes": "Punto generado automáticamente lejos de positivos conocidos; no asumir que sea negativo real sin revisión visual."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.315,
+          43.43
+        ]
+      },
+      "properties": {
+        "negative_id": "neg-tra-0049",
+        "status": "generated_candidate_requires_qgis_review",
+        "use": "hard_negative_candidate",
+        "review_priority": "P2",
+        "qgis_action": "Comprobar en PNOA/LiDAR; aceptar solo si no parece arqueológico ni ambiguo.",
+        "notes": "Punto generado automáticamente lejos de positivos conocidos; no asumir que sea negativo real sin revisión visual."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.3,
+          43.43
+        ]
+      },
+      "properties": {
+        "negative_id": "neg-tra-0050",
+        "status": "generated_candidate_requires_qgis_review",
+        "use": "hard_negative_candidate",
+        "review_priority": "P2",
+        "qgis_action": "Comprobar en PNOA/LiDAR; aceptar solo si no parece arqueológico ni ambiguo.",
+        "notes": "Punto generado automáticamente lejos de positivos conocidos; no asumir que sea negativo real sin revisión visual."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.285,
+          43.43
+        ]
+      },
+      "properties": {
+        "negative_id": "neg-tra-0051",
+        "status": "generated_candidate_requires_qgis_review",
+        "use": "hard_negative_candidate",
+        "review_priority": "P2",
+        "qgis_action": "Comprobar en PNOA/LiDAR; aceptar solo si no parece arqueológico ni ambiguo.",
+        "notes": "Punto generado automáticamente lejos de positivos conocidos; no asumir que sea negativo real sin revisión visual."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.27,
+          43.43
+        ]
+      },
+      "properties": {
+        "negative_id": "neg-tra-0052",
+        "status": "generated_candidate_requires_qgis_review",
+        "use": "hard_negative_candidate",
+        "review_priority": "P2",
+        "qgis_action": "Comprobar en PNOA/LiDAR; aceptar solo si no parece arqueológico ni ambiguo.",
+        "notes": "Punto generado automáticamente lejos de positivos conocidos; no asumir que sea negativo real sin revisión visual."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.255,
+          43.43
+        ]
+      },
+      "properties": {
+        "negative_id": "neg-tra-0053",
+        "status": "generated_candidate_requires_qgis_review",
+        "use": "hard_negative_candidate",
+        "review_priority": "P2",
+        "qgis_action": "Comprobar en PNOA/LiDAR; aceptar solo si no parece arqueológico ni ambiguo.",
+        "notes": "Punto generado automáticamente lejos de positivos conocidos; no asumir que sea negativo real sin revisión visual."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.24,
+          43.43
+        ]
+      },
+      "properties": {
+        "negative_id": "neg-tra-0054",
+        "status": "generated_candidate_requires_qgis_review",
+        "use": "hard_negative_candidate",
+        "review_priority": "P2",
+        "qgis_action": "Comprobar en PNOA/LiDAR; aceptar solo si no parece arqueológico ni ambiguo.",
+        "notes": "Punto generado automáticamente lejos de positivos conocidos; no asumir que sea negativo real sin revisión visual."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.225,
+          43.43
+        ]
+      },
+      "properties": {
+        "negative_id": "neg-tra-0055",
+        "status": "generated_candidate_requires_qgis_review",
+        "use": "hard_negative_candidate",
+        "review_priority": "P2",
+        "qgis_action": "Comprobar en PNOA/LiDAR; aceptar solo si no parece arqueológico ni ambiguo.",
+        "notes": "Punto generado automáticamente lejos de positivos conocidos; no asumir que sea negativo real sin revisión visual."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.21,
+          43.43
+        ]
+      },
+      "properties": {
+        "negative_id": "neg-tra-0056",
+        "status": "generated_candidate_requires_qgis_review",
+        "use": "hard_negative_candidate",
+        "review_priority": "P2",
+        "qgis_action": "Comprobar en PNOA/LiDAR; aceptar solo si no parece arqueológico ni ambiguo.",
+        "notes": "Punto generado automáticamente lejos de positivos conocidos; no asumir que sea negativo real sin revisión visual."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.165,
+          43.43
+        ]
+      },
+      "properties": {
+        "negative_id": "neg-tra-0057",
+        "status": "generated_candidate_requires_qgis_review",
+        "use": "hard_negative_candidate",
+        "review_priority": "P2",
+        "qgis_action": "Comprobar en PNOA/LiDAR; aceptar solo si no parece arqueológico ni ambiguo.",
+        "notes": "Punto generado automáticamente lejos de positivos conocidos; no asumir que sea negativo real sin revisión visual."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.15,
+          43.43
+        ]
+      },
+      "properties": {
+        "negative_id": "neg-tra-0058",
+        "status": "generated_candidate_requires_qgis_review",
+        "use": "hard_negative_candidate",
+        "review_priority": "P2",
+        "qgis_action": "Comprobar en PNOA/LiDAR; aceptar solo si no parece arqueológico ni ambiguo.",
+        "notes": "Punto generado automáticamente lejos de positivos conocidos; no asumir que sea negativo real sin revisión visual."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.135,
+          43.43
+        ]
+      },
+      "properties": {
+        "negative_id": "neg-tra-0059",
+        "status": "generated_candidate_requires_qgis_review",
+        "use": "hard_negative_candidate",
+        "review_priority": "P2",
+        "qgis_action": "Comprobar en PNOA/LiDAR; aceptar solo si no parece arqueológico ni ambiguo.",
+        "notes": "Punto generado automáticamente lejos de positivos conocidos; no asumir que sea negativo real sin revisión visual."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.12,
+          43.43
+        ]
+      },
+      "properties": {
+        "negative_id": "neg-tra-0060",
+        "status": "generated_candidate_requires_qgis_review",
+        "use": "hard_negative_candidate",
+        "review_priority": "P2",
+        "qgis_action": "Comprobar en PNOA/LiDAR; aceptar solo si no parece arqueológico ni ambiguo.",
+        "notes": "Punto generado automáticamente lejos de positivos conocidos; no asumir que sea negativo real sin revisión visual."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.105,
+          43.43
+        ]
+      },
+      "properties": {
+        "negative_id": "neg-tra-0061",
+        "status": "generated_candidate_requires_qgis_review",
+        "use": "hard_negative_candidate",
+        "review_priority": "P2",
+        "qgis_action": "Comprobar en PNOA/LiDAR; aceptar solo si no parece arqueológico ni ambiguo.",
+        "notes": "Punto generado automáticamente lejos de positivos conocidos; no asumir que sea negativo real sin revisión visual."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.09,
+          43.43
+        ]
+      },
+      "properties": {
+        "negative_id": "neg-tra-0062",
+        "status": "generated_candidate_requires_qgis_review",
+        "use": "hard_negative_candidate",
+        "review_priority": "P2",
+        "qgis_action": "Comprobar en PNOA/LiDAR; aceptar solo si no parece arqueológico ni ambiguo.",
+        "notes": "Punto generado automáticamente lejos de positivos conocidos; no asumir que sea negativo real sin revisión visual."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.075,
+          43.43
+        ]
+      },
+      "properties": {
+        "negative_id": "neg-tra-0063",
+        "status": "generated_candidate_requires_qgis_review",
+        "use": "hard_negative_candidate",
+        "review_priority": "P2",
+        "qgis_action": "Comprobar en PNOA/LiDAR; aceptar solo si no parece arqueológico ni ambiguo.",
+        "notes": "Punto generado automáticamente lejos de positivos conocidos; no asumir que sea negativo real sin revisión visual."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.06,
+          43.43
+        ]
+      },
+      "properties": {
+        "negative_id": "neg-tra-0064",
+        "status": "generated_candidate_requires_qgis_review",
+        "use": "hard_negative_candidate",
+        "review_priority": "P2",
+        "qgis_action": "Comprobar en PNOA/LiDAR; aceptar solo si no parece arqueológico ni ambiguo.",
+        "notes": "Punto generado automáticamente lejos de positivos conocidos; no asumir que sea negativo real sin revisión visual."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.045,
+          43.43
+        ]
+      },
+      "properties": {
+        "negative_id": "neg-tra-0065",
+        "status": "generated_candidate_requires_qgis_review",
+        "use": "hard_negative_candidate",
+        "review_priority": "P2",
+        "qgis_action": "Comprobar en PNOA/LiDAR; aceptar solo si no parece arqueológico ni ambiguo.",
+        "notes": "Punto generado automáticamente lejos de positivos conocidos; no asumir que sea negativo real sin revisión visual."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.03,
+          43.43
+        ]
+      },
+      "properties": {
+        "negative_id": "neg-tra-0066",
+        "status": "generated_candidate_requires_qgis_review",
+        "use": "hard_negative_candidate",
+        "review_priority": "P2",
+        "qgis_action": "Comprobar en PNOA/LiDAR; aceptar solo si no parece arqueológico ni ambiguo.",
+        "notes": "Punto generado automáticamente lejos de positivos conocidos; no asumir que sea negativo real sin revisión visual."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.36,
+          43.445
+        ]
+      },
+      "properties": {
+        "negative_id": "neg-tra-0067",
+        "status": "generated_candidate_requires_qgis_review",
+        "use": "hard_negative_candidate",
+        "review_priority": "P2",
+        "qgis_action": "Comprobar en PNOA/LiDAR; aceptar solo si no parece arqueológico ni ambiguo.",
+        "notes": "Punto generado automáticamente lejos de positivos conocidos; no asumir que sea negativo real sin revisión visual."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.345,
+          43.445
+        ]
+      },
+      "properties": {
+        "negative_id": "neg-tra-0068",
+        "status": "generated_candidate_requires_qgis_review",
+        "use": "hard_negative_candidate",
+        "review_priority": "P2",
+        "qgis_action": "Comprobar en PNOA/LiDAR; aceptar solo si no parece arqueológico ni ambiguo.",
+        "notes": "Punto generado automáticamente lejos de positivos conocidos; no asumir que sea negativo real sin revisión visual."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.33,
+          43.445
+        ]
+      },
+      "properties": {
+        "negative_id": "neg-tra-0069",
+        "status": "generated_candidate_requires_qgis_review",
+        "use": "hard_negative_candidate",
+        "review_priority": "P2",
+        "qgis_action": "Comprobar en PNOA/LiDAR; aceptar solo si no parece arqueológico ni ambiguo.",
+        "notes": "Punto generado automáticamente lejos de positivos conocidos; no asumir que sea negativo real sin revisión visual."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.315,
+          43.445
+        ]
+      },
+      "properties": {
+        "negative_id": "neg-tra-0070",
+        "status": "generated_candidate_requires_qgis_review",
+        "use": "hard_negative_candidate",
+        "review_priority": "P2",
+        "qgis_action": "Comprobar en PNOA/LiDAR; aceptar solo si no parece arqueológico ni ambiguo.",
+        "notes": "Punto generado automáticamente lejos de positivos conocidos; no asumir que sea negativo real sin revisión visual."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.3,
+          43.445
+        ]
+      },
+      "properties": {
+        "negative_id": "neg-tra-0071",
+        "status": "generated_candidate_requires_qgis_review",
+        "use": "hard_negative_candidate",
+        "review_priority": "P2",
+        "qgis_action": "Comprobar en PNOA/LiDAR; aceptar solo si no parece arqueológico ni ambiguo.",
+        "notes": "Punto generado automáticamente lejos de positivos conocidos; no asumir que sea negativo real sin revisión visual."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.285,
+          43.445
+        ]
+      },
+      "properties": {
+        "negative_id": "neg-tra-0072",
+        "status": "generated_candidate_requires_qgis_review",
+        "use": "hard_negative_candidate",
+        "review_priority": "P2",
+        "qgis_action": "Comprobar en PNOA/LiDAR; aceptar solo si no parece arqueológico ni ambiguo.",
+        "notes": "Punto generado automáticamente lejos de positivos conocidos; no asumir que sea negativo real sin revisión visual."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.27,
+          43.445
+        ]
+      },
+      "properties": {
+        "negative_id": "neg-tra-0073",
+        "status": "generated_candidate_requires_qgis_review",
+        "use": "hard_negative_candidate",
+        "review_priority": "P2",
+        "qgis_action": "Comprobar en PNOA/LiDAR; aceptar solo si no parece arqueológico ni ambiguo.",
+        "notes": "Punto generado automáticamente lejos de positivos conocidos; no asumir que sea negativo real sin revisión visual."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.255,
+          43.445
+        ]
+      },
+      "properties": {
+        "negative_id": "neg-tra-0074",
+        "status": "generated_candidate_requires_qgis_review",
+        "use": "hard_negative_candidate",
+        "review_priority": "P2",
+        "qgis_action": "Comprobar en PNOA/LiDAR; aceptar solo si no parece arqueológico ni ambiguo.",
+        "notes": "Punto generado automáticamente lejos de positivos conocidos; no asumir que sea negativo real sin revisión visual."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.24,
+          43.445
+        ]
+      },
+      "properties": {
+        "negative_id": "neg-tra-0075",
+        "status": "generated_candidate_requires_qgis_review",
+        "use": "hard_negative_candidate",
+        "review_priority": "P2",
+        "qgis_action": "Comprobar en PNOA/LiDAR; aceptar solo si no parece arqueológico ni ambiguo.",
+        "notes": "Punto generado automáticamente lejos de positivos conocidos; no asumir que sea negativo real sin revisión visual."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.225,
+          43.445
+        ]
+      },
+      "properties": {
+        "negative_id": "neg-tra-0076",
+        "status": "generated_candidate_requires_qgis_review",
+        "use": "hard_negative_candidate",
+        "review_priority": "P2",
+        "qgis_action": "Comprobar en PNOA/LiDAR; aceptar solo si no parece arqueológico ni ambiguo.",
+        "notes": "Punto generado automáticamente lejos de positivos conocidos; no asumir que sea negativo real sin revisión visual."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.21,
+          43.445
+        ]
+      },
+      "properties": {
+        "negative_id": "neg-tra-0077",
+        "status": "generated_candidate_requires_qgis_review",
+        "use": "hard_negative_candidate",
+        "review_priority": "P2",
+        "qgis_action": "Comprobar en PNOA/LiDAR; aceptar solo si no parece arqueológico ni ambiguo.",
+        "notes": "Punto generado automáticamente lejos de positivos conocidos; no asumir que sea negativo real sin revisión visual."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.165,
+          43.445
+        ]
+      },
+      "properties": {
+        "negative_id": "neg-tra-0078",
+        "status": "generated_candidate_requires_qgis_review",
+        "use": "hard_negative_candidate",
+        "review_priority": "P2",
+        "qgis_action": "Comprobar en PNOA/LiDAR; aceptar solo si no parece arqueológico ni ambiguo.",
+        "notes": "Punto generado automáticamente lejos de positivos conocidos; no asumir que sea negativo real sin revisión visual."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.135,
+          43.445
+        ]
+      },
+      "properties": {
+        "negative_id": "neg-tra-0079",
+        "status": "generated_candidate_requires_qgis_review",
+        "use": "hard_negative_candidate",
+        "review_priority": "P2",
+        "qgis_action": "Comprobar en PNOA/LiDAR; aceptar solo si no parece arqueológico ni ambiguo.",
+        "notes": "Punto generado automáticamente lejos de positivos conocidos; no asumir que sea negativo real sin revisión visual."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.12,
+          43.445
+        ]
+      },
+      "properties": {
+        "negative_id": "neg-tra-0080",
+        "status": "generated_candidate_requires_qgis_review",
+        "use": "hard_negative_candidate",
+        "review_priority": "P2",
+        "qgis_action": "Comprobar en PNOA/LiDAR; aceptar solo si no parece arqueológico ni ambiguo.",
+        "notes": "Punto generado automáticamente lejos de positivos conocidos; no asumir que sea negativo real sin revisión visual."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.105,
+          43.445
+        ]
+      },
+      "properties": {
+        "negative_id": "neg-tra-0081",
+        "status": "generated_candidate_requires_qgis_review",
+        "use": "hard_negative_candidate",
+        "review_priority": "P2",
+        "qgis_action": "Comprobar en PNOA/LiDAR; aceptar solo si no parece arqueológico ni ambiguo.",
+        "notes": "Punto generado automáticamente lejos de positivos conocidos; no asumir que sea negativo real sin revisión visual."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.09,
+          43.445
+        ]
+      },
+      "properties": {
+        "negative_id": "neg-tra-0082",
+        "status": "generated_candidate_requires_qgis_review",
+        "use": "hard_negative_candidate",
+        "review_priority": "P2",
+        "qgis_action": "Comprobar en PNOA/LiDAR; aceptar solo si no parece arqueológico ni ambiguo.",
+        "notes": "Punto generado automáticamente lejos de positivos conocidos; no asumir que sea negativo real sin revisión visual."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.075,
+          43.445
+        ]
+      },
+      "properties": {
+        "negative_id": "neg-tra-0083",
+        "status": "generated_candidate_requires_qgis_review",
+        "use": "hard_negative_candidate",
+        "review_priority": "P2",
+        "qgis_action": "Comprobar en PNOA/LiDAR; aceptar solo si no parece arqueológico ni ambiguo.",
+        "notes": "Punto generado automáticamente lejos de positivos conocidos; no asumir que sea negativo real sin revisión visual."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.06,
+          43.445
+        ]
+      },
+      "properties": {
+        "negative_id": "neg-tra-0084",
+        "status": "generated_candidate_requires_qgis_review",
+        "use": "hard_negative_candidate",
+        "review_priority": "P2",
+        "qgis_action": "Comprobar en PNOA/LiDAR; aceptar solo si no parece arqueológico ni ambiguo.",
+        "notes": "Punto generado automáticamente lejos de positivos conocidos; no asumir que sea negativo real sin revisión visual."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.045,
+          43.445
+        ]
+      },
+      "properties": {
+        "negative_id": "neg-tra-0085",
+        "status": "generated_candidate_requires_qgis_review",
+        "use": "hard_negative_candidate",
+        "review_priority": "P2",
+        "qgis_action": "Comprobar en PNOA/LiDAR; aceptar solo si no parece arqueológico ni ambiguo.",
+        "notes": "Punto generado automáticamente lejos de positivos conocidos; no asumir que sea negativo real sin revisión visual."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.03,
+          43.445
+        ]
+      },
+      "properties": {
+        "negative_id": "neg-tra-0086",
+        "status": "generated_candidate_requires_qgis_review",
+        "use": "hard_negative_candidate",
+        "review_priority": "P2",
+        "qgis_action": "Comprobar en PNOA/LiDAR; aceptar solo si no parece arqueológico ni ambiguo.",
+        "notes": "Punto generado automáticamente lejos de positivos conocidos; no asumir que sea negativo real sin revisión visual."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.36,
+          43.46
+        ]
+      },
+      "properties": {
+        "negative_id": "neg-tra-0087",
+        "status": "generated_candidate_requires_qgis_review",
+        "use": "hard_negative_candidate",
+        "review_priority": "P2",
+        "qgis_action": "Comprobar en PNOA/LiDAR; aceptar solo si no parece arqueológico ni ambiguo.",
+        "notes": "Punto generado automáticamente lejos de positivos conocidos; no asumir que sea negativo real sin revisión visual."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.345,
+          43.46
+        ]
+      },
+      "properties": {
+        "negative_id": "neg-tra-0088",
+        "status": "generated_candidate_requires_qgis_review",
+        "use": "hard_negative_candidate",
+        "review_priority": "P2",
+        "qgis_action": "Comprobar en PNOA/LiDAR; aceptar solo si no parece arqueológico ni ambiguo.",
+        "notes": "Punto generado automáticamente lejos de positivos conocidos; no asumir que sea negativo real sin revisión visual."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.33,
+          43.46
+        ]
+      },
+      "properties": {
+        "negative_id": "neg-tra-0089",
+        "status": "generated_candidate_requires_qgis_review",
+        "use": "hard_negative_candidate",
+        "review_priority": "P2",
+        "qgis_action": "Comprobar en PNOA/LiDAR; aceptar solo si no parece arqueológico ni ambiguo.",
+        "notes": "Punto generado automáticamente lejos de positivos conocidos; no asumir que sea negativo real sin revisión visual."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.315,
+          43.46
+        ]
+      },
+      "properties": {
+        "negative_id": "neg-tra-0090",
+        "status": "generated_candidate_requires_qgis_review",
+        "use": "hard_negative_candidate",
+        "review_priority": "P2",
+        "qgis_action": "Comprobar en PNOA/LiDAR; aceptar solo si no parece arqueológico ni ambiguo.",
+        "notes": "Punto generado automáticamente lejos de positivos conocidos; no asumir que sea negativo real sin revisión visual."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.3,
+          43.46
+        ]
+      },
+      "properties": {
+        "negative_id": "neg-tra-0091",
+        "status": "generated_candidate_requires_qgis_review",
+        "use": "hard_negative_candidate",
+        "review_priority": "P2",
+        "qgis_action": "Comprobar en PNOA/LiDAR; aceptar solo si no parece arqueológico ni ambiguo.",
+        "notes": "Punto generado automáticamente lejos de positivos conocidos; no asumir que sea negativo real sin revisión visual."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.285,
+          43.46
+        ]
+      },
+      "properties": {
+        "negative_id": "neg-tra-0092",
+        "status": "generated_candidate_requires_qgis_review",
+        "use": "hard_negative_candidate",
+        "review_priority": "P2",
+        "qgis_action": "Comprobar en PNOA/LiDAR; aceptar solo si no parece arqueológico ni ambiguo.",
+        "notes": "Punto generado automáticamente lejos de positivos conocidos; no asumir que sea negativo real sin revisión visual."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.27,
+          43.46
+        ]
+      },
+      "properties": {
+        "negative_id": "neg-tra-0093",
+        "status": "generated_candidate_requires_qgis_review",
+        "use": "hard_negative_candidate",
+        "review_priority": "P2",
+        "qgis_action": "Comprobar en PNOA/LiDAR; aceptar solo si no parece arqueológico ni ambiguo.",
+        "notes": "Punto generado automáticamente lejos de positivos conocidos; no asumir que sea negativo real sin revisión visual."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.255,
+          43.46
+        ]
+      },
+      "properties": {
+        "negative_id": "neg-tra-0094",
+        "status": "generated_candidate_requires_qgis_review",
+        "use": "hard_negative_candidate",
+        "review_priority": "P2",
+        "qgis_action": "Comprobar en PNOA/LiDAR; aceptar solo si no parece arqueológico ni ambiguo.",
+        "notes": "Punto generado automáticamente lejos de positivos conocidos; no asumir que sea negativo real sin revisión visual."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.24,
+          43.46
+        ]
+      },
+      "properties": {
+        "negative_id": "neg-tra-0095",
+        "status": "generated_candidate_requires_qgis_review",
+        "use": "hard_negative_candidate",
+        "review_priority": "P2",
+        "qgis_action": "Comprobar en PNOA/LiDAR; aceptar solo si no parece arqueológico ni ambiguo.",
+        "notes": "Punto generado automáticamente lejos de positivos conocidos; no asumir que sea negativo real sin revisión visual."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.225,
+          43.46
+        ]
+      },
+      "properties": {
+        "negative_id": "neg-tra-0096",
+        "status": "generated_candidate_requires_qgis_review",
+        "use": "hard_negative_candidate",
+        "review_priority": "P2",
+        "qgis_action": "Comprobar en PNOA/LiDAR; aceptar solo si no parece arqueológico ni ambiguo.",
+        "notes": "Punto generado automáticamente lejos de positivos conocidos; no asumir que sea negativo real sin revisión visual."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.135,
+          43.46
+        ]
+      },
+      "properties": {
+        "negative_id": "neg-tra-0097",
+        "status": "generated_candidate_requires_qgis_review",
+        "use": "hard_negative_candidate",
+        "review_priority": "P2",
+        "qgis_action": "Comprobar en PNOA/LiDAR; aceptar solo si no parece arqueológico ni ambiguo.",
+        "notes": "Punto generado automáticamente lejos de positivos conocidos; no asumir que sea negativo real sin revisión visual."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.09,
+          43.46
+        ]
+      },
+      "properties": {
+        "negative_id": "neg-tra-0098",
+        "status": "generated_candidate_requires_qgis_review",
+        "use": "hard_negative_candidate",
+        "review_priority": "P2",
+        "qgis_action": "Comprobar en PNOA/LiDAR; aceptar solo si no parece arqueológico ni ambiguo.",
+        "notes": "Punto generado automáticamente lejos de positivos conocidos; no asumir que sea negativo real sin revisión visual."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.075,
+          43.46
+        ]
+      },
+      "properties": {
+        "negative_id": "neg-tra-0099",
+        "status": "generated_candidate_requires_qgis_review",
+        "use": "hard_negative_candidate",
+        "review_priority": "P2",
+        "qgis_action": "Comprobar en PNOA/LiDAR; aceptar solo si no parece arqueológico ni ambiguo.",
+        "notes": "Punto generado automáticamente lejos de positivos conocidos; no asumir que sea negativo real sin revisión visual."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.06,
+          43.46
+        ]
+      },
+      "properties": {
+        "negative_id": "neg-tra-0100",
+        "status": "generated_candidate_requires_qgis_review",
+        "use": "hard_negative_candidate",
+        "review_priority": "P2",
+        "qgis_action": "Comprobar en PNOA/LiDAR; aceptar solo si no parece arqueológico ni ambiguo.",
+        "notes": "Punto generado automáticamente lejos de positivos conocidos; no asumir que sea negativo real sin revisión visual."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.045,
+          43.46
+        ]
+      },
+      "properties": {
+        "negative_id": "neg-tra-0101",
+        "status": "generated_candidate_requires_qgis_review",
+        "use": "hard_negative_candidate",
+        "review_priority": "P2",
+        "qgis_action": "Comprobar en PNOA/LiDAR; aceptar solo si no parece arqueológico ni ambiguo.",
+        "notes": "Punto generado automáticamente lejos de positivos conocidos; no asumir que sea negativo real sin revisión visual."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.03,
+          43.46
+        ]
+      },
+      "properties": {
+        "negative_id": "neg-tra-0102",
+        "status": "generated_candidate_requires_qgis_review",
+        "use": "hard_negative_candidate",
+        "review_priority": "P2",
+        "qgis_action": "Comprobar en PNOA/LiDAR; aceptar solo si no parece arqueológico ni ambiguo.",
+        "notes": "Punto generado automáticamente lejos de positivos conocidos; no asumir que sea negativo real sin revisión visual."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.36,
+          43.475
+        ]
+      },
+      "properties": {
+        "negative_id": "neg-tra-0103",
+        "status": "generated_candidate_requires_qgis_review",
+        "use": "hard_negative_candidate",
+        "review_priority": "P2",
+        "qgis_action": "Comprobar en PNOA/LiDAR; aceptar solo si no parece arqueológico ni ambiguo.",
+        "notes": "Punto generado automáticamente lejos de positivos conocidos; no asumir que sea negativo real sin revisión visual."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.345,
+          43.475
+        ]
+      },
+      "properties": {
+        "negative_id": "neg-tra-0104",
+        "status": "generated_candidate_requires_qgis_review",
+        "use": "hard_negative_candidate",
+        "review_priority": "P2",
+        "qgis_action": "Comprobar en PNOA/LiDAR; aceptar solo si no parece arqueológico ni ambiguo.",
+        "notes": "Punto generado automáticamente lejos de positivos conocidos; no asumir que sea negativo real sin revisión visual."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.33,
+          43.475
+        ]
+      },
+      "properties": {
+        "negative_id": "neg-tra-0105",
+        "status": "generated_candidate_requires_qgis_review",
+        "use": "hard_negative_candidate",
+        "review_priority": "P2",
+        "qgis_action": "Comprobar en PNOA/LiDAR; aceptar solo si no parece arqueológico ni ambiguo.",
+        "notes": "Punto generado automáticamente lejos de positivos conocidos; no asumir que sea negativo real sin revisión visual."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.315,
+          43.475
+        ]
+      },
+      "properties": {
+        "negative_id": "neg-tra-0106",
+        "status": "generated_candidate_requires_qgis_review",
+        "use": "hard_negative_candidate",
+        "review_priority": "P2",
+        "qgis_action": "Comprobar en PNOA/LiDAR; aceptar solo si no parece arqueológico ni ambiguo.",
+        "notes": "Punto generado automáticamente lejos de positivos conocidos; no asumir que sea negativo real sin revisión visual."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.3,
+          43.475
+        ]
+      },
+      "properties": {
+        "negative_id": "neg-tra-0107",
+        "status": "generated_candidate_requires_qgis_review",
+        "use": "hard_negative_candidate",
+        "review_priority": "P2",
+        "qgis_action": "Comprobar en PNOA/LiDAR; aceptar solo si no parece arqueológico ni ambiguo.",
+        "notes": "Punto generado automáticamente lejos de positivos conocidos; no asumir que sea negativo real sin revisión visual."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.285,
+          43.475
+        ]
+      },
+      "properties": {
+        "negative_id": "neg-tra-0108",
+        "status": "generated_candidate_requires_qgis_review",
+        "use": "hard_negative_candidate",
+        "review_priority": "P2",
+        "qgis_action": "Comprobar en PNOA/LiDAR; aceptar solo si no parece arqueológico ni ambiguo.",
+        "notes": "Punto generado automáticamente lejos de positivos conocidos; no asumir que sea negativo real sin revisión visual."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.27,
+          43.475
+        ]
+      },
+      "properties": {
+        "negative_id": "neg-tra-0109",
+        "status": "generated_candidate_requires_qgis_review",
+        "use": "hard_negative_candidate",
+        "review_priority": "P2",
+        "qgis_action": "Comprobar en PNOA/LiDAR; aceptar solo si no parece arqueológico ni ambiguo.",
+        "notes": "Punto generado automáticamente lejos de positivos conocidos; no asumir que sea negativo real sin revisión visual."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.225,
+          43.475
+        ]
+      },
+      "properties": {
+        "negative_id": "neg-tra-0110",
+        "status": "generated_candidate_requires_qgis_review",
+        "use": "hard_negative_candidate",
+        "review_priority": "P2",
+        "qgis_action": "Comprobar en PNOA/LiDAR; aceptar solo si no parece arqueológico ni ambiguo.",
+        "notes": "Punto generado automáticamente lejos de positivos conocidos; no asumir que sea negativo real sin revisión visual."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.21,
+          43.475
+        ]
+      },
+      "properties": {
+        "negative_id": "neg-tra-0111",
+        "status": "generated_candidate_requires_qgis_review",
+        "use": "hard_negative_candidate",
+        "review_priority": "P2",
+        "qgis_action": "Comprobar en PNOA/LiDAR; aceptar solo si no parece arqueológico ni ambiguo.",
+        "notes": "Punto generado automáticamente lejos de positivos conocidos; no asumir que sea negativo real sin revisión visual."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.195,
+          43.475
+        ]
+      },
+      "properties": {
+        "negative_id": "neg-tra-0112",
+        "status": "generated_candidate_requires_qgis_review",
+        "use": "hard_negative_candidate",
+        "review_priority": "P2",
+        "qgis_action": "Comprobar en PNOA/LiDAR; aceptar solo si no parece arqueológico ni ambiguo.",
+        "notes": "Punto generado automáticamente lejos de positivos conocidos; no asumir que sea negativo real sin revisión visual."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.135,
+          43.475
+        ]
+      },
+      "properties": {
+        "negative_id": "neg-tra-0113",
+        "status": "generated_candidate_requires_qgis_review",
+        "use": "hard_negative_candidate",
+        "review_priority": "P2",
+        "qgis_action": "Comprobar en PNOA/LiDAR; aceptar solo si no parece arqueológico ni ambiguo.",
+        "notes": "Punto generado automáticamente lejos de positivos conocidos; no asumir que sea negativo real sin revisión visual."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.09,
+          43.475
+        ]
+      },
+      "properties": {
+        "negative_id": "neg-tra-0114",
+        "status": "generated_candidate_requires_qgis_review",
+        "use": "hard_negative_candidate",
+        "review_priority": "P2",
+        "qgis_action": "Comprobar en PNOA/LiDAR; aceptar solo si no parece arqueológico ni ambiguo.",
+        "notes": "Punto generado automáticamente lejos de positivos conocidos; no asumir que sea negativo real sin revisión visual."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.075,
+          43.475
+        ]
+      },
+      "properties": {
+        "negative_id": "neg-tra-0115",
+        "status": "generated_candidate_requires_qgis_review",
+        "use": "hard_negative_candidate",
+        "review_priority": "P2",
+        "qgis_action": "Comprobar en PNOA/LiDAR; aceptar solo si no parece arqueológico ni ambiguo.",
+        "notes": "Punto generado automáticamente lejos de positivos conocidos; no asumir que sea negativo real sin revisión visual."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.06,
+          43.475
+        ]
+      },
+      "properties": {
+        "negative_id": "neg-tra-0116",
+        "status": "generated_candidate_requires_qgis_review",
+        "use": "hard_negative_candidate",
+        "review_priority": "P2",
+        "qgis_action": "Comprobar en PNOA/LiDAR; aceptar solo si no parece arqueológico ni ambiguo.",
+        "notes": "Punto generado automáticamente lejos de positivos conocidos; no asumir que sea negativo real sin revisión visual."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.045,
+          43.475
+        ]
+      },
+      "properties": {
+        "negative_id": "neg-tra-0117",
+        "status": "generated_candidate_requires_qgis_review",
+        "use": "hard_negative_candidate",
+        "review_priority": "P2",
+        "qgis_action": "Comprobar en PNOA/LiDAR; aceptar solo si no parece arqueológico ni ambiguo.",
+        "notes": "Punto generado automáticamente lejos de positivos conocidos; no asumir que sea negativo real sin revisión visual."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.03,
+          43.475
+        ]
+      },
+      "properties": {
+        "negative_id": "neg-tra-0118",
+        "status": "generated_candidate_requires_qgis_review",
+        "use": "hard_negative_candidate",
+        "review_priority": "P2",
+        "qgis_action": "Comprobar en PNOA/LiDAR; aceptar solo si no parece arqueológico ni ambiguo.",
+        "notes": "Punto generado automáticamente lejos de positivos conocidos; no asumir que sea negativo real sin revisión visual."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.36,
+          43.49
+        ]
+      },
+      "properties": {
+        "negative_id": "neg-tra-0119",
+        "status": "generated_candidate_requires_qgis_review",
+        "use": "hard_negative_candidate",
+        "review_priority": "P2",
+        "qgis_action": "Comprobar en PNOA/LiDAR; aceptar solo si no parece arqueológico ni ambiguo.",
+        "notes": "Punto generado automáticamente lejos de positivos conocidos; no asumir que sea negativo real sin revisión visual."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.345,
+          43.49
+        ]
+      },
+      "properties": {
+        "negative_id": "neg-tra-0120",
+        "status": "generated_candidate_requires_qgis_review",
+        "use": "hard_negative_candidate",
+        "review_priority": "P2",
+        "qgis_action": "Comprobar en PNOA/LiDAR; aceptar solo si no parece arqueológico ni ambiguo.",
+        "notes": "Punto generado automáticamente lejos de positivos conocidos; no asumir que sea negativo real sin revisión visual."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.33,
+          43.49
+        ]
+      },
+      "properties": {
+        "negative_id": "neg-tra-0121",
+        "status": "generated_candidate_requires_qgis_review",
+        "use": "hard_negative_candidate",
+        "review_priority": "P2",
+        "qgis_action": "Comprobar en PNOA/LiDAR; aceptar solo si no parece arqueológico ni ambiguo.",
+        "notes": "Punto generado automáticamente lejos de positivos conocidos; no asumir que sea negativo real sin revisión visual."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.255,
+          43.49
+        ]
+      },
+      "properties": {
+        "negative_id": "neg-tra-0122",
+        "status": "generated_candidate_requires_qgis_review",
+        "use": "hard_negative_candidate",
+        "review_priority": "P2",
+        "qgis_action": "Comprobar en PNOA/LiDAR; aceptar solo si no parece arqueológico ni ambiguo.",
+        "notes": "Punto generado automáticamente lejos de positivos conocidos; no asumir que sea negativo real sin revisión visual."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.24,
+          43.49
+        ]
+      },
+      "properties": {
+        "negative_id": "neg-tra-0123",
+        "status": "generated_candidate_requires_qgis_review",
+        "use": "hard_negative_candidate",
+        "review_priority": "P2",
+        "qgis_action": "Comprobar en PNOA/LiDAR; aceptar solo si no parece arqueológico ni ambiguo.",
+        "notes": "Punto generado automáticamente lejos de positivos conocidos; no asumir que sea negativo real sin revisión visual."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.21,
+          43.49
+        ]
+      },
+      "properties": {
+        "negative_id": "neg-tra-0124",
+        "status": "generated_candidate_requires_qgis_review",
+        "use": "hard_negative_candidate",
+        "review_priority": "P2",
+        "qgis_action": "Comprobar en PNOA/LiDAR; aceptar solo si no parece arqueológico ni ambiguo.",
+        "notes": "Punto generado automáticamente lejos de positivos conocidos; no asumir que sea negativo real sin revisión visual."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.195,
+          43.49
+        ]
+      },
+      "properties": {
+        "negative_id": "neg-tra-0125",
+        "status": "generated_candidate_requires_qgis_review",
+        "use": "hard_negative_candidate",
+        "review_priority": "P2",
+        "qgis_action": "Comprobar en PNOA/LiDAR; aceptar solo si no parece arqueológico ni ambiguo.",
+        "notes": "Punto generado automáticamente lejos de positivos conocidos; no asumir que sea negativo real sin revisión visual."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.18,
+          43.49
+        ]
+      },
+      "properties": {
+        "negative_id": "neg-tra-0126",
+        "status": "generated_candidate_requires_qgis_review",
+        "use": "hard_negative_candidate",
+        "review_priority": "P2",
+        "qgis_action": "Comprobar en PNOA/LiDAR; aceptar solo si no parece arqueológico ni ambiguo.",
+        "notes": "Punto generado automáticamente lejos de positivos conocidos; no asumir que sea negativo real sin revisión visual."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.165,
+          43.49
+        ]
+      },
+      "properties": {
+        "negative_id": "neg-tra-0127",
+        "status": "generated_candidate_requires_qgis_review",
+        "use": "hard_negative_candidate",
+        "review_priority": "P2",
+        "qgis_action": "Comprobar en PNOA/LiDAR; aceptar solo si no parece arqueológico ni ambiguo.",
+        "notes": "Punto generado automáticamente lejos de positivos conocidos; no asumir que sea negativo real sin revisión visual."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.15,
+          43.49
+        ]
+      },
+      "properties": {
+        "negative_id": "neg-tra-0128",
+        "status": "generated_candidate_requires_qgis_review",
+        "use": "hard_negative_candidate",
+        "review_priority": "P2",
+        "qgis_action": "Comprobar en PNOA/LiDAR; aceptar solo si no parece arqueológico ni ambiguo.",
+        "notes": "Punto generado automáticamente lejos de positivos conocidos; no asumir que sea negativo real sin revisión visual."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.135,
+          43.49
+        ]
+      },
+      "properties": {
+        "negative_id": "neg-tra-0129",
+        "status": "generated_candidate_requires_qgis_review",
+        "use": "hard_negative_candidate",
+        "review_priority": "P2",
+        "qgis_action": "Comprobar en PNOA/LiDAR; aceptar solo si no parece arqueológico ni ambiguo.",
+        "notes": "Punto generado automáticamente lejos de positivos conocidos; no asumir que sea negativo real sin revisión visual."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.105,
+          43.49
+        ]
+      },
+      "properties": {
+        "negative_id": "neg-tra-0130",
+        "status": "generated_candidate_requires_qgis_review",
+        "use": "hard_negative_candidate",
+        "review_priority": "P2",
+        "qgis_action": "Comprobar en PNOA/LiDAR; aceptar solo si no parece arqueológico ni ambiguo.",
+        "notes": "Punto generado automáticamente lejos de positivos conocidos; no asumir que sea negativo real sin revisión visual."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.09,
+          43.49
+        ]
+      },
+      "properties": {
+        "negative_id": "neg-tra-0131",
+        "status": "generated_candidate_requires_qgis_review",
+        "use": "hard_negative_candidate",
+        "review_priority": "P2",
+        "qgis_action": "Comprobar en PNOA/LiDAR; aceptar solo si no parece arqueológico ni ambiguo.",
+        "notes": "Punto generado automáticamente lejos de positivos conocidos; no asumir que sea negativo real sin revisión visual."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.075,
+          43.49
+        ]
+      },
+      "properties": {
+        "negative_id": "neg-tra-0132",
+        "status": "generated_candidate_requires_qgis_review",
+        "use": "hard_negative_candidate",
+        "review_priority": "P2",
+        "qgis_action": "Comprobar en PNOA/LiDAR; aceptar solo si no parece arqueológico ni ambiguo.",
+        "notes": "Punto generado automáticamente lejos de positivos conocidos; no asumir que sea negativo real sin revisión visual."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.045,
+          43.49
+        ]
+      },
+      "properties": {
+        "negative_id": "neg-tra-0133",
+        "status": "generated_candidate_requires_qgis_review",
+        "use": "hard_negative_candidate",
+        "review_priority": "P2",
+        "qgis_action": "Comprobar en PNOA/LiDAR; aceptar solo si no parece arqueológico ni ambiguo.",
+        "notes": "Punto generado automáticamente lejos de positivos conocidos; no asumir que sea negativo real sin revisión visual."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.03,
+          43.49
+        ]
+      },
+      "properties": {
+        "negative_id": "neg-tra-0134",
+        "status": "generated_candidate_requires_qgis_review",
+        "use": "hard_negative_candidate",
+        "review_priority": "P2",
+        "qgis_action": "Comprobar en PNOA/LiDAR; aceptar solo si no parece arqueológico ni ambiguo.",
+        "notes": "Punto generado automáticamente lejos de positivos conocidos; no asumir que sea negativo real sin revisión visual."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.36,
+          43.505
+        ]
+      },
+      "properties": {
+        "negative_id": "neg-tra-0135",
+        "status": "generated_candidate_requires_qgis_review",
+        "use": "hard_negative_candidate",
+        "review_priority": "P2",
+        "qgis_action": "Comprobar en PNOA/LiDAR; aceptar solo si no parece arqueológico ni ambiguo.",
+        "notes": "Punto generado automáticamente lejos de positivos conocidos; no asumir que sea negativo real sin revisión visual."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.345,
+          43.505
+        ]
+      },
+      "properties": {
+        "negative_id": "neg-tra-0136",
+        "status": "generated_candidate_requires_qgis_review",
+        "use": "hard_negative_candidate",
+        "review_priority": "P2",
+        "qgis_action": "Comprobar en PNOA/LiDAR; aceptar solo si no parece arqueológico ni ambiguo.",
+        "notes": "Punto generado automáticamente lejos de positivos conocidos; no asumir que sea negativo real sin revisión visual."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.33,
+          43.505
+        ]
+      },
+      "properties": {
+        "negative_id": "neg-tra-0137",
+        "status": "generated_candidate_requires_qgis_review",
+        "use": "hard_negative_candidate",
+        "review_priority": "P2",
+        "qgis_action": "Comprobar en PNOA/LiDAR; aceptar solo si no parece arqueológico ni ambiguo.",
+        "notes": "Punto generado automáticamente lejos de positivos conocidos; no asumir que sea negativo real sin revisión visual."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.315,
+          43.505
+        ]
+      },
+      "properties": {
+        "negative_id": "neg-tra-0138",
+        "status": "generated_candidate_requires_qgis_review",
+        "use": "hard_negative_candidate",
+        "review_priority": "P2",
+        "qgis_action": "Comprobar en PNOA/LiDAR; aceptar solo si no parece arqueológico ni ambiguo.",
+        "notes": "Punto generado automáticamente lejos de positivos conocidos; no asumir que sea negativo real sin revisión visual."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.3,
+          43.505
+        ]
+      },
+      "properties": {
+        "negative_id": "neg-tra-0139",
+        "status": "generated_candidate_requires_qgis_review",
+        "use": "hard_negative_candidate",
+        "review_priority": "P2",
+        "qgis_action": "Comprobar en PNOA/LiDAR; aceptar solo si no parece arqueológico ni ambiguo.",
+        "notes": "Punto generado automáticamente lejos de positivos conocidos; no asumir que sea negativo real sin revisión visual."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.285,
+          43.505
+        ]
+      },
+      "properties": {
+        "negative_id": "neg-tra-0140",
+        "status": "generated_candidate_requires_qgis_review",
+        "use": "hard_negative_candidate",
+        "review_priority": "P2",
+        "qgis_action": "Comprobar en PNOA/LiDAR; aceptar solo si no parece arqueológico ni ambiguo.",
+        "notes": "Punto generado automáticamente lejos de positivos conocidos; no asumir que sea negativo real sin revisión visual."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.24,
+          43.505
+        ]
+      },
+      "properties": {
+        "negative_id": "neg-tra-0141",
+        "status": "generated_candidate_requires_qgis_review",
+        "use": "hard_negative_candidate",
+        "review_priority": "P2",
+        "qgis_action": "Comprobar en PNOA/LiDAR; aceptar solo si no parece arqueológico ni ambiguo.",
+        "notes": "Punto generado automáticamente lejos de positivos conocidos; no asumir que sea negativo real sin revisión visual."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.15,
+          43.505
+        ]
+      },
+      "properties": {
+        "negative_id": "neg-tra-0142",
+        "status": "generated_candidate_requires_qgis_review",
+        "use": "hard_negative_candidate",
+        "review_priority": "P2",
+        "qgis_action": "Comprobar en PNOA/LiDAR; aceptar solo si no parece arqueológico ni ambiguo.",
+        "notes": "Punto generado automáticamente lejos de positivos conocidos; no asumir que sea negativo real sin revisión visual."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.135,
+          43.505
+        ]
+      },
+      "properties": {
+        "negative_id": "neg-tra-0143",
+        "status": "generated_candidate_requires_qgis_review",
+        "use": "hard_negative_candidate",
+        "review_priority": "P2",
+        "qgis_action": "Comprobar en PNOA/LiDAR; aceptar solo si no parece arqueológico ni ambiguo.",
+        "notes": "Punto generado automáticamente lejos de positivos conocidos; no asumir que sea negativo real sin revisión visual."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.12,
+          43.505
+        ]
+      },
+      "properties": {
+        "negative_id": "neg-tra-0144",
+        "status": "generated_candidate_requires_qgis_review",
+        "use": "hard_negative_candidate",
+        "review_priority": "P2",
+        "qgis_action": "Comprobar en PNOA/LiDAR; aceptar solo si no parece arqueológico ni ambiguo.",
+        "notes": "Punto generado automáticamente lejos de positivos conocidos; no asumir que sea negativo real sin revisión visual."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.105,
+          43.505
+        ]
+      },
+      "properties": {
+        "negative_id": "neg-tra-0145",
+        "status": "generated_candidate_requires_qgis_review",
+        "use": "hard_negative_candidate",
+        "review_priority": "P2",
+        "qgis_action": "Comprobar en PNOA/LiDAR; aceptar solo si no parece arqueológico ni ambiguo.",
+        "notes": "Punto generado automáticamente lejos de positivos conocidos; no asumir que sea negativo real sin revisión visual."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.09,
+          43.505
+        ]
+      },
+      "properties": {
+        "negative_id": "neg-tra-0146",
+        "status": "generated_candidate_requires_qgis_review",
+        "use": "hard_negative_candidate",
+        "review_priority": "P2",
+        "qgis_action": "Comprobar en PNOA/LiDAR; aceptar solo si no parece arqueológico ni ambiguo.",
+        "notes": "Punto generado automáticamente lejos de positivos conocidos; no asumir que sea negativo real sin revisión visual."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.075,
+          43.505
+        ]
+      },
+      "properties": {
+        "negative_id": "neg-tra-0147",
+        "status": "generated_candidate_requires_qgis_review",
+        "use": "hard_negative_candidate",
+        "review_priority": "P2",
+        "qgis_action": "Comprobar en PNOA/LiDAR; aceptar solo si no parece arqueológico ni ambiguo.",
+        "notes": "Punto generado automáticamente lejos de positivos conocidos; no asumir que sea negativo real sin revisión visual."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.06,
+          43.505
+        ]
+      },
+      "properties": {
+        "negative_id": "neg-tra-0148",
+        "status": "generated_candidate_requires_qgis_review",
+        "use": "hard_negative_candidate",
+        "review_priority": "P2",
+        "qgis_action": "Comprobar en PNOA/LiDAR; aceptar solo si no parece arqueológico ni ambiguo.",
+        "notes": "Punto generado automáticamente lejos de positivos conocidos; no asumir que sea negativo real sin revisión visual."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.045,
+          43.505
+        ]
+      },
+      "properties": {
+        "negative_id": "neg-tra-0149",
+        "status": "generated_candidate_requires_qgis_review",
+        "use": "hard_negative_candidate",
+        "review_priority": "P2",
+        "qgis_action": "Comprobar en PNOA/LiDAR; aceptar solo si no parece arqueológico ni ambiguo.",
+        "notes": "Punto generado automáticamente lejos de positivos conocidos; no asumir que sea negativo real sin revisión visual."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.03,
+          43.505
+        ]
+      },
+      "properties": {
+        "negative_id": "neg-tra-0150",
+        "status": "generated_candidate_requires_qgis_review",
+        "use": "hard_negative_candidate",
+        "review_priority": "P2",
+        "qgis_action": "Comprobar en PNOA/LiDAR; aceptar solo si no parece arqueológico ni ambiguo.",
+        "notes": "Punto generado automáticamente lejos de positivos conocidos; no asumir que sea negativo real sin revisión visual."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.36,
+          43.52
+        ]
+      },
+      "properties": {
+        "negative_id": "neg-tra-0151",
+        "status": "generated_candidate_requires_qgis_review",
+        "use": "hard_negative_candidate",
+        "review_priority": "P2",
+        "qgis_action": "Comprobar en PNOA/LiDAR; aceptar solo si no parece arqueológico ni ambiguo.",
+        "notes": "Punto generado automáticamente lejos de positivos conocidos; no asumir que sea negativo real sin revisión visual."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.345,
+          43.52
+        ]
+      },
+      "properties": {
+        "negative_id": "neg-tra-0152",
+        "status": "generated_candidate_requires_qgis_review",
+        "use": "hard_negative_candidate",
+        "review_priority": "P2",
+        "qgis_action": "Comprobar en PNOA/LiDAR; aceptar solo si no parece arqueológico ni ambiguo.",
+        "notes": "Punto generado automáticamente lejos de positivos conocidos; no asumir que sea negativo real sin revisión visual."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.3,
+          43.52
+        ]
+      },
+      "properties": {
+        "negative_id": "neg-tra-0153",
+        "status": "generated_candidate_requires_qgis_review",
+        "use": "hard_negative_candidate",
+        "review_priority": "P2",
+        "qgis_action": "Comprobar en PNOA/LiDAR; aceptar solo si no parece arqueológico ni ambiguo.",
+        "notes": "Punto generado automáticamente lejos de positivos conocidos; no asumir que sea negativo real sin revisión visual."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.285,
+          43.52
+        ]
+      },
+      "properties": {
+        "negative_id": "neg-tra-0154",
+        "status": "generated_candidate_requires_qgis_review",
+        "use": "hard_negative_candidate",
+        "review_priority": "P2",
+        "qgis_action": "Comprobar en PNOA/LiDAR; aceptar solo si no parece arqueológico ni ambiguo.",
+        "notes": "Punto generado automáticamente lejos de positivos conocidos; no asumir que sea negativo real sin revisión visual."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.27,
+          43.52
+        ]
+      },
+      "properties": {
+        "negative_id": "neg-tra-0155",
+        "status": "generated_candidate_requires_qgis_review",
+        "use": "hard_negative_candidate",
+        "review_priority": "P2",
+        "qgis_action": "Comprobar en PNOA/LiDAR; aceptar solo si no parece arqueológico ni ambiguo.",
+        "notes": "Punto generado automáticamente lejos de positivos conocidos; no asumir que sea negativo real sin revisión visual."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.18,
+          43.52
+        ]
+      },
+      "properties": {
+        "negative_id": "neg-tra-0156",
+        "status": "generated_candidate_requires_qgis_review",
+        "use": "hard_negative_candidate",
+        "review_priority": "P2",
+        "qgis_action": "Comprobar en PNOA/LiDAR; aceptar solo si no parece arqueológico ni ambiguo.",
+        "notes": "Punto generado automáticamente lejos de positivos conocidos; no asumir que sea negativo real sin revisión visual."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.165,
+          43.52
+        ]
+      },
+      "properties": {
+        "negative_id": "neg-tra-0157",
+        "status": "generated_candidate_requires_qgis_review",
+        "use": "hard_negative_candidate",
+        "review_priority": "P2",
+        "qgis_action": "Comprobar en PNOA/LiDAR; aceptar solo si no parece arqueológico ni ambiguo.",
+        "notes": "Punto generado automáticamente lejos de positivos conocidos; no asumir que sea negativo real sin revisión visual."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.12,
+          43.52
+        ]
+      },
+      "properties": {
+        "negative_id": "neg-tra-0158",
+        "status": "generated_candidate_requires_qgis_review",
+        "use": "hard_negative_candidate",
+        "review_priority": "P2",
+        "qgis_action": "Comprobar en PNOA/LiDAR; aceptar solo si no parece arqueológico ni ambiguo.",
+        "notes": "Punto generado automáticamente lejos de positivos conocidos; no asumir que sea negativo real sin revisión visual."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.105,
+          43.52
+        ]
+      },
+      "properties": {
+        "negative_id": "neg-tra-0159",
+        "status": "generated_candidate_requires_qgis_review",
+        "use": "hard_negative_candidate",
+        "review_priority": "P2",
+        "qgis_action": "Comprobar en PNOA/LiDAR; aceptar solo si no parece arqueológico ni ambiguo.",
+        "notes": "Punto generado automáticamente lejos de positivos conocidos; no asumir que sea negativo real sin revisión visual."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.09,
+          43.52
+        ]
+      },
+      "properties": {
+        "negative_id": "neg-tra-0160",
+        "status": "generated_candidate_requires_qgis_review",
+        "use": "hard_negative_candidate",
+        "review_priority": "P2",
+        "qgis_action": "Comprobar en PNOA/LiDAR; aceptar solo si no parece arqueológico ni ambiguo.",
+        "notes": "Punto generado automáticamente lejos de positivos conocidos; no asumir que sea negativo real sin revisión visual."
+      }
+    }
+  ]
+}

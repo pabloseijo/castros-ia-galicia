@@ -1,0 +1,35 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# OS/editor
+.DS_Store
+.idea/
+.vscode/
+
+# Heavy geospatial data
+data/external/**
+!data/external/README.md
+*.tif
+*.tiff
+*.laz
+*.las
+*.copc.laz
+*.vrt
+*.mbtiles
+*.gpkg-shm
+*.gpkg-wal
+
+# Model/training outputs
+models/
+runs/
+wandb/
+mlruns/
+checkpoints/
+
+# Keep lightweight generated review artifacts versionable for the MVP.

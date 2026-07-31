@@ -1,0 +1,48 @@
+{
+  "type": "FeatureCollection",
+  "name": "trasancos_aoi",
+  "crs": {
+    "type": "name",
+    "properties": {
+      "name": "EPSG:4326"
+    }
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -8.36,
+              43.4
+            ],
+            [
+              -7.94,
+              43.4
+            ],
+            [
+              -7.94,
+              43.68
+            ],
+            [
+              -8.36,
+              43.68
+            ],
+            [
+              -8.36,
+              43.4
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "aoi_id": "trasancos_bbox",
+        "name": "Trasancos MVP search area",
+        "status": "review_area",
+        "bbox_wgs84": "-8.36,43.4,-7.94,43.68"
+      }
+    }
+  ]
+}

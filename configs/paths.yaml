@@ -1,0 +1,6 @@
+project_root: /Users/pabloseijo/Documents/Mimir/wiki/vida/carrera/arqueologia-computacional/castros-ia-galicia
+mimir_root: /Users/pabloseijo/Documents/Mimir
+source_catalog_dir: /Users/pabloseijo/Documents/Mimir/wiki/aldea/fuentes/datos/castros-trasancos
+external_data_root: /Users/pabloseijo/Documents/CastrosIA/data
+processed_data_dir: data/processed
+qgis_review_dir: data/qgis-review

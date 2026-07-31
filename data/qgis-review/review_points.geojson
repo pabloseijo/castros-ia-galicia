@@ -1,0 +1,2469 @@
+{
+  "type": "FeatureCollection",
+  "name": "review_points",
+  "crs": {
+    "type": "name",
+    "properties": {
+      "name": "EPSG:4326"
+    }
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.17153215,
+          43.47426751
+        ]
+      },
+      "properties": {
+        "site_id": "tra-fene-as-pias",
+        "primary_name": "Castro de As Pías",
+        "municipality": "Fene",
+        "parish": "San Esteban de Perlío",
+        "place": "",
+        "ga_code": "GA15500011",
+        "record_type": "classical_catalog_reference",
+        "confidence": "medium_low",
+        "dataset_use": "positive_damaged_review",
+        "split": "review_only",
+        "coord_source": "Patrimonio Galego",
+        "review_priority": "P1",
+        "qgis_action": "Comprobar visibilidad/conservación; usar solo como caso de error o revisión.",
+        "suggested_decision": "inspect_damaged_site",
+        "notes": "Entrada de la lista clásica Pena/Calaméo pendiente de reconciliación con catálogo oficial. | 2 coordenadas candidatas en fuentes; se eligió Patrimonio Galego por prioridad."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.20861,
+          43.45913
+        ]
+      },
+      "properties": {
+        "site_id": "tra-fene-castro-das-escadas",
+        "primary_name": "Castro das Escadas",
+        "municipality": "Fene",
+        "parish": "",
+        "place": "",
+        "ga_code": "",
+        "record_type": "web_catalog_candidate",
+        "confidence": "medium_low",
+        "dataset_use": "review_only",
+        "split": "review_only",
+        "coord_source": "Galipedia",
+        "review_priority": "P2",
+        "qgis_action": "Reconciliar con fuente oficial o descartar.",
+        "suggested_decision": "reconcile_or_discard",
+        "notes": "Candidato procedente de catálogo web no reconciliado con la tabla oficial normalizada."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.11322649,
+          43.46702358
+        ]
+      },
+      "properties": {
+        "site_id": "tra-fene-castro-de-belelle",
+        "primary_name": "Castro de Belelle",
+        "municipality": "Fene",
+        "parish": "Sillobre (Santa Mariña)",
+        "place": "Belelle",
+        "ga_code": "",
+        "record_type": "web_catalog_candidate",
+        "confidence": "medium",
+        "dataset_use": "review_only",
+        "split": "review_only",
+        "coord_source": "Patrimonio Galego",
+        "review_priority": "P2",
+        "qgis_action": "Reconciliar con fuente oficial o descartar.",
+        "suggested_decision": "reconcile_or_discard",
+        "notes": "Candidato procedente de catálogo web no reconciliado con la tabla oficial normalizada."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.14753332,
+          43.4508238
+        ]
+      },
+      "properties": {
+        "site_id": "tra-fene-ga15035007",
+        "primary_name": "Castro de Magalofes",
+        "municipality": "Fene",
+        "parish": "Magalofes (San Xurxo)",
+        "place": "A Fontenova",
+        "ga_code": "GA15035007",
+        "record_type": "web_catalog_candidate",
+        "confidence": "medium",
+        "dataset_use": "review_only",
+        "split": "review_only",
+        "coord_source": "Patrimonio Galego",
+        "review_priority": "P2",
+        "qgis_action": "Reconciliar con fuente oficial o descartar.",
+        "suggested_decision": "reconcile_or_discard",
+        "notes": "Candidato procedente de catálogo web no reconciliado con la tabla oficial normalizada."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.18191767,
+          43.44537826
+        ]
+      },
+      "properties": {
+        "site_id": "tra-fene-ga15035008",
+        "primary_name": "Castro de Prismos",
+        "municipality": "Fene",
+        "parish": "Limodre",
+        "place": "",
+        "ga_code": "GA15035008",
+        "record_type": "official_plan_reference",
+        "confidence": "medium_high",
+        "dataset_use": "review_only",
+        "split": "review_only",
+        "coord_source": "Patrimonio Galego",
+        "review_priority": "P2",
+        "qgis_action": "Reconciliar con fuente oficial o descartar.",
+        "suggested_decision": "reconcile_or_discard",
+        "notes": "Plan Sectorial 2014 | Presente en lista clásica Pena/Calaméo nº 26. | 2 coordenadas candidatas en fuentes; se eligió Patrimonio Galego por prioridad."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.15251549,
+          43.47097639
+        ]
+      },
+      "properties": {
+        "site_id": "tra-fene-ga15035009",
+        "primary_name": "Castro de Orra",
+        "municipality": "Fene",
+        "parish": "Sillobre",
+        "place": "",
+        "ga_code": "GA15035009",
+        "record_type": "official_plan_reference",
+        "confidence": "medium_high",
+        "dataset_use": "review_only",
+        "split": "review_only",
+        "coord_source": "Patrimonio Galego",
+        "review_priority": "P2",
+        "qgis_action": "Reconciliar con fuente oficial o descartar.",
+        "suggested_decision": "reconcile_or_discard",
+        "notes": "Plan Sectorial 2014 | 2 coordenadas candidatas en fuentes; se eligió Patrimonio Galego por prioridad."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.17490101,
+          43.46326112
+        ]
+      },
+      "properties": {
+        "site_id": "tra-fene-ga15035010",
+        "primary_name": "Castro de Barallobre",
+        "municipality": "Fene",
+        "parish": "Barallobre",
+        "place": "",
+        "ga_code": "GA15035010",
+        "record_type": "official_plan_reference",
+        "confidence": "medium_high",
+        "dataset_use": "review_only",
+        "split": "review_only",
+        "coord_source": "Patrimonio Galego",
+        "review_priority": "P2",
+        "qgis_action": "Reconciliar con fuente oficial o descartar.",
+        "suggested_decision": "reconcile_or_discard",
+        "notes": "Plan Sectorial 2014 | 2 coordenadas candidatas en fuentes; se eligió Patrimonio Galego por prioridad."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.18635404,
+          43.42390093
+        ]
+      },
+      "properties": {
+        "site_id": "tra-fene-ga15035012",
+        "primary_name": "Castro de Río Castro",
+        "municipality": "Fene",
+        "parish": "Limodre (Santa Eulalia)",
+        "place": "Río Castro",
+        "ga_code": "GA15035012",
+        "record_type": "web_catalog_candidate",
+        "confidence": "medium",
+        "dataset_use": "review_only",
+        "split": "review_only",
+        "coord_source": "Patrimonio Galego",
+        "review_priority": "P2",
+        "qgis_action": "Reconciliar con fuente oficial o descartar.",
+        "suggested_decision": "reconcile_or_discard",
+        "notes": "Candidato procedente de catálogo web no reconciliado con la tabla oficial normalizada."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.11914325,
+          43.54428455
+        ]
+      },
+      "properties": {
+        "site_id": "tra-ferrol-castro-da-pereiruga",
+        "primary_name": "Castro da Pereiruga",
+        "municipality": "Ferrol",
+        "parish": "Pedroso (San Salvador)",
+        "place": "Pereiruga",
+        "ga_code": "",
+        "record_type": "web_catalog_candidate",
+        "confidence": "medium",
+        "dataset_use": "review_only",
+        "split": "review_only",
+        "coord_source": "Patrimonio Galego",
+        "review_priority": "P2",
+        "qgis_action": "Reconciliar con fuente oficial o descartar.",
+        "suggested_decision": "reconcile_or_discard",
+        "notes": "Candidato procedente de catálogo web no reconciliado con la tabla oficial normalizada."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.14046144,
+          43.5218338
+        ]
+      },
+      "properties": {
+        "site_id": "tra-ferrol-castro-de-ancos",
+        "primary_name": "Castro de Ancos",
+        "municipality": "Ferrol",
+        "parish": "Neda, Santa María",
+        "place": "Alto de Ancos",
+        "ga_code": "",
+        "record_type": "web_catalog_candidate",
+        "confidence": "medium",
+        "dataset_use": "review_only",
+        "split": "review_only",
+        "coord_source": "Patrimonio Galego",
+        "review_priority": "P2",
+        "qgis_action": "Reconciliar con fuente oficial o descartar.",
+        "suggested_decision": "reconcile_or_discard",
+        "notes": "Candidato procedente de catálogo web no reconciliado con la tabla oficial normalizada."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.17132863,
+          43.5921795
+        ]
+      },
+      "properties": {
+        "site_id": "tra-ferrol-castro-de-lago",
+        "primary_name": "Castro de Lago",
+        "municipality": "Ferrol",
+        "parish": "Lago (Santiago)",
+        "place": "Castro",
+        "ga_code": "",
+        "record_type": "web_catalog_candidate",
+        "confidence": "medium",
+        "dataset_use": "review_only",
+        "split": "review_only",
+        "coord_source": "Patrimonio Galego",
+        "review_priority": "P2",
+        "qgis_action": "Reconciliar con fuente oficial o descartar.",
+        "suggested_decision": "reconcile_or_discard",
+        "notes": "Candidato procedente de catálogo web no reconciliado con la tabla oficial normalizada."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.19886956,
+          43.60168211
+        ]
+      },
+      "properties": {
+        "site_id": "tra-ferrol-castro-de-lavacerido",
+        "primary_name": "Castro de Lavacerido",
+        "municipality": "Ferrol",
+        "parish": "Meirás ( San Vicente)",
+        "place": "Punta Sarda",
+        "ga_code": "",
+        "record_type": "web_catalog_candidate",
+        "confidence": "medium",
+        "dataset_use": "review_only",
+        "split": "review_only",
+        "coord_source": "Patrimonio Galego",
+        "review_priority": "P2",
+        "qgis_action": "Reconciliar con fuente oficial o descartar.",
+        "suggested_decision": "reconcile_or_discard",
+        "notes": "Candidato procedente de catálogo web no reconciliado con la tabla oficial normalizada."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.05880788,
+          43.59482396
+        ]
+      },
+      "properties": {
+        "site_id": "tra-ferrol-castro-de-loiravella",
+        "primary_name": "Castro de Loiravella",
+        "municipality": "Ferrol",
+        "parish": "Loira (Santiago)",
+        "place": "Loiravella",
+        "ga_code": "",
+        "record_type": "web_catalog_candidate",
+        "confidence": "medium",
+        "dataset_use": "review_only",
+        "split": "review_only",
+        "coord_source": "Patrimonio Galego",
+        "review_priority": "P2",
+        "qgis_action": "Reconciliar con fuente oficial o descartar.",
+        "suggested_decision": "reconcile_or_discard",
+        "notes": "Candidato procedente de catálogo web no reconciliado con la tabla oficial normalizada."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.18721268,
+          43.59218304
+        ]
+      },
+      "properties": {
+        "site_id": "tra-ferrol-castro-de-santo-tomas",
+        "primary_name": "Castro de Santo Tomás",
+        "municipality": "Ferrol",
+        "parish": "Meirás",
+        "place": "Taraza",
+        "ga_code": "",
+        "record_type": "web_catalog_candidate",
+        "confidence": "medium",
+        "dataset_use": "review_only",
+        "split": "review_only",
+        "coord_source": "Patrimonio Galego",
+        "review_priority": "P2",
+        "qgis_action": "Reconciliar con fuente oficial o descartar.",
+        "suggested_decision": "reconcile_or_discard",
+        "notes": "Candidato procedente de catálogo web no reconciliado con la tabla oficial normalizada."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.200277,
+          43.510833
+        ]
+      },
+      "properties": {
+        "site_id": "tra-ferrol-castro-de-sta-cecilia",
+        "primary_name": "Castro de Sta. Cecilia",
+        "municipality": "Ferrol",
+        "parish": "Sta. Cecilia de Trasancos",
+        "place": "O castro",
+        "ga_code": "",
+        "record_type": "web_catalog_candidate",
+        "confidence": "medium",
+        "dataset_use": "review_only",
+        "split": "review_only",
+        "coord_source": "Artabro",
+        "review_priority": "P2",
+        "qgis_action": "Reconciliar con fuente oficial o descartar.",
+        "suggested_decision": "reconcile_or_discard",
+        "notes": "Candidato procedente de catálogo web no reconciliado con la tabla oficial normalizada."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.28257,
+          43.559527
+        ]
+      },
+      "properties": {
+        "site_id": "tra-ferrol-castro-de-sta-comba",
+        "primary_name": "Castro de Sta. Comba",
+        "municipality": "Ferrol",
+        "parish": "S. Martín de Cobas",
+        "place": "Isla de Sta. Comba",
+        "ga_code": "",
+        "record_type": "web_catalog_candidate",
+        "confidence": "medium",
+        "dataset_use": "review_only",
+        "split": "review_only",
+        "coord_source": "Artabro",
+        "review_priority": "P2",
+        "qgis_action": "Reconciliar con fuente oficial o descartar.",
+        "suggested_decision": "reconcile_or_discard",
+        "notes": "Candidato procedente de catálogo web no reconciliado con la tabla oficial normalizada."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.225082,
+          43.497559
+        ]
+      },
+      "properties": {
+        "site_id": "tra-ferrol-castro-de-sta-marina",
+        "primary_name": "Castro de Sta. Marina",
+        "municipality": "Ferrol",
+        "parish": "Sta. Marina del Vilar",
+        "place": "O castro",
+        "ga_code": "",
+        "record_type": "web_catalog_candidate",
+        "confidence": "medium",
+        "dataset_use": "review_only",
+        "split": "review_only",
+        "coord_source": "Artabro",
+        "review_priority": "P2",
+        "qgis_action": "Reconciliar con fuente oficial o descartar.",
+        "suggested_decision": "reconcile_or_discard",
+        "notes": "Candidato procedente de catálogo web no reconciliado con la tabla oficial normalizada."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.11948051,
+          43.48461061
+        ]
+      },
+      "properties": {
+        "site_id": "tra-ferrol-castro-de-viladonelle",
+        "primary_name": "Castro de Viladonelle",
+        "municipality": "Ferrol",
+        "parish": "Viladonelle (Santo André)",
+        "place": "O Castro",
+        "ga_code": "",
+        "record_type": "web_catalog_candidate",
+        "confidence": "medium",
+        "dataset_use": "review_only",
+        "split": "review_only",
+        "coord_source": "Patrimonio Galego",
+        "review_priority": "P2",
+        "qgis_action": "Reconciliar con fuente oficial o descartar.",
+        "suggested_decision": "reconcile_or_discard",
+        "notes": "Candidato procedente de catálogo web no reconciliado con la tabla oficial normalizada."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.22231206,
+          43.54389738
+        ]
+      },
+      "properties": {
+        "site_id": "tra-ferrol-castro-do-vilar",
+        "primary_name": "Castro do Vilar",
+        "municipality": "Ferrol",
+        "parish": "Trasancos (San Mateo)",
+        "place": "O Vilar",
+        "ga_code": "",
+        "record_type": "web_catalog_candidate",
+        "confidence": "medium",
+        "dataset_use": "review_only",
+        "split": "review_only",
+        "coord_source": "Patrimonio Galego",
+        "review_priority": "P2",
+        "qgis_action": "Reconciliar con fuente oficial o descartar.",
+        "suggested_decision": "reconcile_or_discard",
+        "notes": "Candidato procedente de catálogo web no reconciliado con la tabla oficial normalizada."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.15688762,
+          43.53925447
+        ]
+      },
+      "properties": {
+        "site_id": "tra-ferrol-ga-15054008",
+        "primary_name": "Castro da Revolta",
+        "municipality": "Ferrol",
+        "parish": "Sedes (San Estevo)",
+        "place": "A Revolta",
+        "ga_code": "GA 15054008",
+        "record_type": "web_catalog_candidate",
+        "confidence": "medium",
+        "dataset_use": "review_only",
+        "split": "review_only",
+        "coord_source": "Patrimonio Galego",
+        "review_priority": "P2",
+        "qgis_action": "Reconciliar con fuente oficial o descartar.",
+        "suggested_decision": "reconcile_or_discard",
+        "notes": "Candidato procedente de catálogo web no reconciliado con la tabla oficial normalizada."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.09129918,
+          43.66075514
+        ]
+      },
+      "properties": {
+        "site_id": "tra-ferrol-ga15036001",
+        "primary_name": "Castro de Lobariz / Lobadiz",
+        "municipality": "Ferrol",
+        "parish": "San Xurxo da Mariña",
+        "place": "Punta do Castro",
+        "ga_code": "GA15036001",
+        "record_type": "official_castro",
+        "confidence": "high",
+        "dataset_use": "train_positive_candidate",
+        "split": "train",
+        "coord_source": "Patrimonio Galego",
+        "review_priority": "P1",
+        "qgis_action": "Verificar coordenada y dibujar polígono/buffer entrenable.",
+        "suggested_decision": "draw_training_polygon",
+        "notes": "catálogo Ferrol; otros nombres Punta do Castro | Presente en lista clásica Pena/Calaméo nº 1. | 3 coordenadas candidatas en fuentes; se eligió Patrimonio Galego por prioridad."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.26729807,
+          43.53191997
+        ]
+      },
+      "properties": {
+        "site_id": "tra-ferrol-ga15036002",
+        "primary_name": "Castro de Tralocastro / Esmelle",
+        "municipality": "Ferrol",
+        "parish": "Esmelle",
+        "place": "Tralocastro",
+        "ga_code": "GA15036002",
+        "record_type": "official_castro",
+        "confidence": "high",
+        "dataset_use": "train_positive_candidate",
+        "split": "train",
+        "coord_source": "Patrimonio Galego",
+        "review_priority": "P1",
+        "qgis_action": "Verificar coordenada y dibujar polígono/buffer entrenable.",
+        "suggested_decision": "draw_training_polygon",
+        "notes": "catálogo Ferrol | Presente en lista clásica Pena/Calaméo nº 5. | 3 coordenadas candidatas en fuentes; se eligió Patrimonio Galego por prioridad."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.24894103,
+          43.53979889
+        ]
+      },
+      "properties": {
+        "site_id": "tra-ferrol-ga15036003",
+        "primary_name": "Castro de Marmancón / Papoi",
+        "municipality": "Ferrol",
+        "parish": "Marmancón",
+        "place": "Papoi",
+        "ga_code": "GA15036003",
+        "record_type": "official_castro",
+        "confidence": "high",
+        "dataset_use": "train_positive_candidate",
+        "split": "train",
+        "coord_source": "Patrimonio Galego",
+        "review_priority": "P1",
+        "qgis_action": "Verificar coordenada y dibujar polígono/buffer entrenable.",
+        "suggested_decision": "draw_training_polygon",
+        "notes": "catálogo Ferrol; otros nombres Castro de Papoi | 3 coordenadas candidatas en fuentes; se eligió Patrimonio Galego por prioridad."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.240064,
+          43.524366
+        ]
+      },
+      "properties": {
+        "site_id": "tra-ferrol-ga15036004",
+        "primary_name": "Monte do Castro / Castro de Vilela",
+        "municipality": "Ferrol",
+        "parish": "Mandiá",
+        "place": "Vilela",
+        "ga_code": "GA15036004",
+        "record_type": "official_castro",
+        "confidence": "high",
+        "dataset_use": "train_positive_candidate",
+        "split": "train",
+        "coord_source": "Artabro",
+        "review_priority": "P1",
+        "qgis_action": "Verificar coordenada y dibujar polígono/buffer entrenable.",
+        "suggested_decision": "draw_training_polygon",
+        "notes": "catálogo Ferrol; OCR lee Vuela/Vilela | Presente en lista clásica Pena/Calaméo nº 7. | 2 coordenadas candidatas en fuentes; se eligió Artabro por prioridad."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.23112044,
+          43.51457186
+        ]
+      },
+      "properties": {
+        "site_id": "tra-ferrol-ga15036005",
+        "primary_name": "Os Castros de Mandiá",
+        "municipality": "Ferrol",
+        "parish": "Mandiá",
+        "place": "Fraga",
+        "ga_code": "GA15036005",
+        "record_type": "official_castro",
+        "confidence": "high",
+        "dataset_use": "train_positive_candidate",
+        "split": "train",
+        "coord_source": "Patrimonio Galego",
+        "review_priority": "P1",
+        "qgis_action": "Verificar coordenada y dibujar polígono/buffer entrenable.",
+        "suggested_decision": "draw_training_polygon",
+        "notes": "catálogo Ferrol"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.19999608,
+          43.51114054
+        ]
+      },
+      "properties": {
+        "site_id": "tra-ferrol-ga15036007",
+        "primary_name": "Castro de Santa Cecilia",
+        "municipality": "Ferrol",
+        "parish": "Santa Icía de Trasancos",
+        "place": "Castro",
+        "ga_code": "GA15036007",
+        "record_type": "official_castro",
+        "confidence": "high",
+        "dataset_use": "train_positive_candidate",
+        "split": "train",
+        "coord_source": "Patrimonio Galego",
+        "review_priority": "P1",
+        "qgis_action": "Verificar coordenada y dibujar polígono/buffer entrenable.",
+        "suggested_decision": "draw_training_polygon",
+        "notes": "catálogo Ferrol | 2 coordenadas candidatas en fuentes; se eligió Patrimonio Galego por prioridad."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.263233,
+          43.50009
+        ]
+      },
+      "properties": {
+        "site_id": "tra-ferrol-ga15036008",
+        "primary_name": "Castro de Vilasanche",
+        "municipality": "Ferrol",
+        "parish": "Serantes",
+        "place": "Vilasanche",
+        "ga_code": "GA15036008",
+        "record_type": "official_castro",
+        "confidence": "high",
+        "dataset_use": "train_positive_candidate",
+        "split": "train",
+        "coord_source": "Artabro",
+        "review_priority": "P1",
+        "qgis_action": "Verificar coordenada y dibujar polígono/buffer entrenable.",
+        "suggested_decision": "draw_training_polygon",
+        "notes": "catálogo Ferrol | Presente en lista clásica Pena/Calaméo nº 8. | 2 coordenadas candidatas en fuentes; se eligió Artabro por prioridad."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.30896887,
+          43.48804215
+        ]
+      },
+      "properties": {
+        "site_id": "tra-ferrol-ga15036009",
+        "primary_name": "A Croa / Castro da Croa de Fontá",
+        "municipality": "Ferrol",
+        "parish": "Doniños",
+        "place": "Fontá",
+        "ga_code": "GA15036009",
+        "record_type": "official_castro",
+        "confidence": "high",
+        "dataset_use": "positive_damaged_review",
+        "split": "review_only",
+        "coord_source": "Patrimonio Galego",
+        "review_priority": "P1",
+        "qgis_action": "Comprobar visibilidad/conservación; usar solo como caso de error o revisión.",
+        "suggested_decision": "inspect_damaged_site",
+        "notes": "catálogo Ferrol; Artabro/PG lo nombran como Croa de Fontá | Presente en lista clásica Pena/Calaméo nº 2. | Presente en lista clásica Pena/Calaméo nº 10. | 3 coordenadas candidatas en fuentes; se eligió Patrimonio Galego por prioridad."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.27676091,
+          43.49387984
+        ]
+      },
+      "properties": {
+        "site_id": "tra-ferrol-ga15036010",
+        "primary_name": "Coto dos Mouros / Castro de Vilabuíde",
+        "municipality": "Ferrol",
+        "parish": "Doniños",
+        "place": "Vilabuíde",
+        "ga_code": "GA15036010",
+        "record_type": "official_castro",
+        "confidence": "high",
+        "dataset_use": "train_positive_candidate",
+        "split": "train",
+        "coord_source": "Patrimonio Galego",
+        "review_priority": "P1",
+        "qgis_action": "Verificar coordenada y dibujar polígono/buffer entrenable.",
+        "suggested_decision": "draw_training_polygon",
+        "notes": "catálogo Ferrol; otros nombres Castelo dos Mouros/Castro de Vilabuíde | Presente en lista clásica Pena/Calaméo nº 3. | 2 coordenadas candidatas en fuentes; se eligió Patrimonio Galego por prioridad."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.22509083,
+          43.49749092
+        ]
+      },
+      "properties": {
+        "site_id": "tra-ferrol-ga15036011",
+        "primary_name": "Castro de Santa Mariña / Casal dos Ovos",
+        "municipality": "Ferrol",
+        "parish": "Santa Mariña do Vilar | Serantes",
+        "place": "Casal dos Ovos",
+        "ga_code": "GA15036011",
+        "record_type": "official_castro",
+        "confidence": "high",
+        "dataset_use": "positive_damaged_review",
+        "split": "review_only",
+        "coord_source": "Patrimonio Galego",
+        "review_priority": "P1",
+        "qgis_action": "Comprobar visibilidad/conservación; usar solo como caso de error o revisión.",
+        "suggested_decision": "inspect_damaged_site",
+        "notes": "catálogo Ferrol | otros yacimientos documentados; posible equivalencia con Santa Mariña/Casal dos Ovos, revisar | Presente en lista clásica Pena/Calaméo nº 12. | 2 coordenadas candidatas en fuentes; se eligió Patrimonio Galego por prioridad."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.24286851,
+          43.47824913
+        ]
+      },
+      "properties": {
+        "site_id": "tra-ferrol-ga15036012",
+        "primary_name": "Castro de Ferrol Vello",
+        "municipality": "Ferrol",
+        "parish": "Ferrol",
+        "place": "núcleo urbano",
+        "ga_code": "GA15036012",
+        "record_type": "official_castro",
+        "confidence": "high",
+        "dataset_use": "positive_damaged_review",
+        "split": "review_only",
+        "coord_source": "Patrimonio Galego",
+        "review_priority": "P1",
+        "qgis_action": "Comprobar visibilidad/conservación; usar solo como caso de error o revisión.",
+        "suggested_decision": "inspect_damaged_site",
+        "notes": "otros yacimientos documentados | Presente en lista clásica Pena/Calaméo nº 11. | 2 coordenadas candidatas en fuentes; se eligió Patrimonio Galego por prioridad."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.28390598,
+          43.56033873
+        ]
+      },
+      "properties": {
+        "site_id": "tra-ferrol-ga15036014",
+        "primary_name": "Necrópolis de Santa Comba",
+        "municipality": "Ferrol",
+        "parish": "Covas",
+        "place": "Santa Comba",
+        "ga_code": "GA15036014",
+        "record_type": "official_castro",
+        "confidence": "high",
+        "dataset_use": "train_positive_candidate",
+        "split": "train",
+        "coord_source": "Patrimonio Galego",
+        "review_priority": "P1",
+        "qgis_action": "Verificar coordenada y dibujar polígono/buffer entrenable.",
+        "suggested_decision": "draw_training_polygon",
+        "notes": "el catálogo la tipa como castro/asentamiento fortificado y necrópolis | 2 coordenadas candidatas en fuentes; se eligió Patrimonio Galego por prioridad."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.24948788,
+          43.51372366
+        ]
+      },
+      "properties": {
+        "site_id": "tra-ferrol-ref15036002",
+        "primary_name": "Pico de Ouro",
+        "municipality": "Ferrol",
+        "parish": "Mandiá",
+        "place": "",
+        "ga_code": "REF15036002",
+        "record_type": "official_reference_or_toponym",
+        "confidence": "medium",
+        "dataset_use": "review_only",
+        "split": "review_only",
+        "coord_source": "Patrimonio Galego",
+        "review_priority": "P2",
+        "qgis_action": "Reconciliar con fuente oficial o descartar.",
+        "suggested_decision": "reconcile_or_discard",
+        "notes": "referencia del catálogo, no código GA"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.32338843,
+          43.52437454
+        ]
+      },
+      "properties": {
+        "site_id": "tra-ferrol-ref15036004",
+        "primary_name": "Castro de Arbosa",
+        "municipality": "Ferrol",
+        "parish": "Brión",
+        "place": "",
+        "ga_code": "REF15036004",
+        "record_type": "official_reference_or_toponym",
+        "confidence": "medium",
+        "dataset_use": "review_only",
+        "split": "review_only",
+        "coord_source": "Patrimonio Galego",
+        "review_priority": "P2",
+        "qgis_action": "Reconciliar con fuente oficial o descartar.",
+        "suggested_decision": "reconcile_or_discard",
+        "notes": "referencia del catálogo, no código GA"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.20805344,
+          43.52267864
+        ]
+      },
+      "properties": {
+        "site_id": "tra-ferrol-ri-000007172",
+        "primary_name": "Castro da Croa de Leixa",
+        "municipality": "Ferrol",
+        "parish": "Leixa",
+        "place": "",
+        "ga_code": "RI.000007172",
+        "record_type": "web_catalog_candidate",
+        "confidence": "medium",
+        "dataset_use": "review_only",
+        "split": "review_only",
+        "coord_source": "Patrimonio Galego",
+        "review_priority": "P2",
+        "qgis_action": "Reconciliar con fuente oficial o descartar.",
+        "suggested_decision": "reconcile_or_discard",
+        "notes": "Candidato procedente de catálogo web no reconciliado con la tabla oficial normalizada."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.10408029,
+          43.53361562
+        ]
+      },
+      "properties": {
+        "site_id": "tra-ferrol-ri-000009062",
+        "primary_name": "Castro da Ermida",
+        "municipality": "Ferrol",
+        "parish": "Pedroso (San Salvador)",
+        "place": "O Castro da Ermida",
+        "ga_code": "RI.000009062",
+        "record_type": "web_catalog_candidate",
+        "confidence": "medium",
+        "dataset_use": "review_only",
+        "split": "review_only",
+        "coord_source": "Patrimonio Galego",
+        "review_priority": "P2",
+        "qgis_action": "Reconciliar con fuente oficial o descartar.",
+        "suggested_decision": "reconcile_or_discard",
+        "notes": "Candidato procedente de catálogo web no reconciliado con la tabla oficial normalizada."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.09338364,
+          43.59596363
+        ]
+      },
+      "properties": {
+        "site_id": "tra-ferrol-ri-000015019",
+        "primary_name": "Castro de Crecente",
+        "municipality": "Ferrol",
+        "parish": "Loira (San Pedro)",
+        "place": "Crecente",
+        "ga_code": "RI.000015019",
+        "record_type": "web_catalog_candidate",
+        "confidence": "medium",
+        "dataset_use": "review_only",
+        "split": "review_only",
+        "coord_source": "Patrimonio Galego",
+        "review_priority": "P2",
+        "qgis_action": "Reconciliar con fuente oficial o descartar.",
+        "suggested_decision": "reconcile_or_discard",
+        "notes": "Candidato procedente de catálogo web no reconciliado con la tabla oficial normalizada."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.16994461,
+          43.57592912
+        ]
+      },
+      "properties": {
+        "site_id": "tra-ferrol-ri-000015021",
+        "primary_name": "Castro de Lodeiro",
+        "municipality": "Ferrol",
+        "parish": "O Sequeiro (Santa María)",
+        "place": "O Lodeiro",
+        "ga_code": "RI.000015021",
+        "record_type": "web_catalog_candidate",
+        "confidence": "medium",
+        "dataset_use": "review_only",
+        "split": "review_only",
+        "coord_source": "Patrimonio Galego",
+        "review_priority": "P2",
+        "qgis_action": "Reconciliar con fuente oficial o descartar.",
+        "suggested_decision": "reconcile_or_discard",
+        "notes": "Candidato procedente de catálogo web no reconciliado con la tabla oficial normalizada."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.11020646,
+          43.6434975
+        ]
+      },
+      "properties": {
+        "site_id": "tra-ferrol-ri-000015057",
+        "primary_name": "Castro do Rodo",
+        "municipality": "Ferrol",
+        "parish": "Pantín",
+        "place": "",
+        "ga_code": "RI.000015057",
+        "record_type": "web_catalog_candidate",
+        "confidence": "medium",
+        "dataset_use": "review_only",
+        "split": "review_only",
+        "coord_source": "Patrimonio Galego",
+        "review_priority": "P2",
+        "qgis_action": "Reconciliar con fuente oficial o descartar.",
+        "suggested_decision": "reconcile_or_discard",
+        "notes": "Candidato procedente de catálogo web no reconciliado con la tabla oficial normalizada."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.158736,
+          43.534444
+        ]
+      },
+      "properties": {
+        "site_id": "tra-naron-castro-de-bicas",
+        "primary_name": "Castro de Bicás",
+        "municipality": "Narón",
+        "parish": "S. Julián de Narón",
+        "place": "Os Bicás",
+        "ga_code": "",
+        "record_type": "web_catalog_candidate",
+        "confidence": "medium",
+        "dataset_use": "review_only",
+        "split": "review_only",
+        "coord_source": "Artabro",
+        "review_priority": "P2",
+        "qgis_action": "Reconciliar con fuente oficial o descartar.",
+        "suggested_decision": "reconcile_or_discard",
+        "notes": "Candidato procedente de catálogo web no reconciliado con la tabla oficial normalizada."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.2225,
+          43.543889
+        ]
+      },
+      "properties": {
+        "site_id": "tra-naron-castro-de-s-mateo",
+        "primary_name": "Castro de S. Mateo",
+        "municipality": "Narón",
+        "parish": "S. Mateo de Trasancos",
+        "place": "Cruz do castro, Croas",
+        "ga_code": "",
+        "record_type": "web_catalog_candidate",
+        "confidence": "medium",
+        "dataset_use": "review_only",
+        "split": "review_only",
+        "coord_source": "Artabro",
+        "review_priority": "P2",
+        "qgis_action": "Reconciliar con fuente oficial o descartar.",
+        "suggested_decision": "reconcile_or_discard",
+        "notes": "Candidato procedente de catálogo web no reconciliado con la tabla oficial normalizada."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.1361107,
+          43.5503142
+        ]
+      },
+      "properties": {
+        "site_id": "tra-naron-castro-de-san-estevo",
+        "primary_name": "Castro de San Estevo",
+        "municipality": "Narón",
+        "parish": "",
+        "place": "",
+        "ga_code": "",
+        "record_type": "web_catalog_candidate",
+        "confidence": "medium_low",
+        "dataset_use": "review_only",
+        "split": "review_only",
+        "coord_source": "Galipedia",
+        "review_priority": "P2",
+        "qgis_action": "Reconciliar con fuente oficial o descartar.",
+        "suggested_decision": "reconcile_or_discard",
+        "notes": "Candidato procedente de catálogo web no reconciliado con la tabla oficial normalizada."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.133586,
+          43.551069
+        ]
+      },
+      "properties": {
+        "site_id": "tra-naron-castro-de-sedes",
+        "primary_name": "Castro de Sedes",
+        "municipality": "Narón",
+        "parish": "S. Esteban de Sedes",
+        "place": "Eiravedra",
+        "ga_code": "",
+        "record_type": "web_catalog_candidate",
+        "confidence": "medium",
+        "dataset_use": "review_only",
+        "split": "review_only",
+        "coord_source": "Artabro",
+        "review_priority": "P2",
+        "qgis_action": "Reconciliar con fuente oficial o descartar.",
+        "suggested_decision": "reconcile_or_discard",
+        "notes": "Candidato procedente de catálogo web no reconciliado con la tabla oficial normalizada."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.178333,
+          43.544722
+        ]
+      },
+      "properties": {
+        "site_id": "tra-naron-castro-de-sta-maria",
+        "primary_name": "Castro de Sta. María",
+        "municipality": "Narón",
+        "parish": "Sta. María de Castro",
+        "place": "Castro, Fernande",
+        "ga_code": "",
+        "record_type": "web_catalog_candidate",
+        "confidence": "medium",
+        "dataset_use": "review_only",
+        "split": "review_only",
+        "coord_source": "Artabro",
+        "review_priority": "P2",
+        "qgis_action": "Reconciliar con fuente oficial o descartar.",
+        "suggested_decision": "reconcile_or_discard",
+        "notes": "Candidato procedente de catálogo web no reconciliado con la tabla oficial normalizada."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.21425471,
+          43.55276224
+        ]
+      },
+      "properties": {
+        "site_id": "tra-naron-ga15054002",
+        "primary_name": "X-41 Castro de Quintá",
+        "municipality": "Narón",
+        "parish": "O Val",
+        "place": "Quintá",
+        "ga_code": "GA15054002",
+        "record_type": "official_castro",
+        "confidence": "high",
+        "dataset_use": "positive_o_val_holdout",
+        "split": "test_o_val",
+        "coord_source": "Patrimonio Galego",
+        "review_priority": "P0",
+        "qgis_action": "Verificar coordenada y dibujar polígono/buffer; mantener fuera de entrenamiento.",
+        "suggested_decision": "verify_holdout_polygon",
+        "notes": "Presente en lista clásica Pena/Calaméo nº 14. | 3 coordenadas candidatas en fuentes; se eligió Patrimonio Galego por prioridad."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.22206,
+          43.54385
+        ]
+      },
+      "properties": {
+        "site_id": "tra-naron-ga15054003",
+        "primary_name": "X-14 Castro de San Mateo",
+        "municipality": "Narón",
+        "parish": "Trasancos / San Mateo",
+        "place": "O Vilar",
+        "ga_code": "GA15054003",
+        "record_type": "official_castro",
+        "confidence": "high",
+        "dataset_use": "test_positive_candidate",
+        "split": "test",
+        "coord_source": "Galipedia",
+        "review_priority": "P1",
+        "qgis_action": "Verificar coordenada y dibujar polígono/buffer entrenable.",
+        "suggested_decision": "draw_training_polygon",
+        "notes": "Presente en lista clásica Pena/Calaméo nº 15."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.13361678,
+          43.55106713
+        ]
+      },
+      "properties": {
+        "site_id": "tra-naron-ga15054005",
+        "primary_name": "X-10 Castro de Eiravedra",
+        "municipality": "Narón",
+        "parish": "Sedes",
+        "place": "Eiravedra",
+        "ga_code": "GA15054005",
+        "record_type": "official_castro",
+        "confidence": "high",
+        "dataset_use": "test_positive_candidate",
+        "split": "test",
+        "coord_source": "Patrimonio Galego",
+        "review_priority": "P1",
+        "qgis_action": "Verificar coordenada y dibujar polígono/buffer entrenable.",
+        "suggested_decision": "draw_training_polygon",
+        "notes": "Presente en lista clásica Pena/Calaméo nº 18. | 2 coordenadas candidatas en fuentes; se eligió Patrimonio Galego por prioridad."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.179167,
+          43.501667
+        ]
+      },
+      "properties": {
+        "site_id": "tra-naron-ga15054006",
+        "primary_name": "X-09 Castro de Couto / O Petouzal",
+        "municipality": "Narón",
+        "parish": "O Couto",
+        "place": "",
+        "ga_code": "GA15054006",
+        "record_type": "official_castro",
+        "confidence": "high",
+        "dataset_use": "test_positive_candidate",
+        "split": "test",
+        "coord_source": "Artabro",
+        "review_priority": "P1",
+        "qgis_action": "Verificar coordenada y dibujar polígono/buffer entrenable.",
+        "suggested_decision": "draw_training_polygon",
+        "notes": "2 coordenadas candidatas en fuentes; se eligió Artabro por prioridad."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.17290577,
+          43.53359229
+        ]
+      },
+      "properties": {
+        "site_id": "tra-naron-ga15054007",
+        "primary_name": "X-11 Castro de Sequeiro",
+        "municipality": "Narón",
+        "parish": "San Xiao de Narón",
+        "place": "Sequeiro",
+        "ga_code": "GA15054007",
+        "record_type": "official_castro",
+        "confidence": "high",
+        "dataset_use": "test_positive_candidate",
+        "split": "test",
+        "coord_source": "Patrimonio Galego",
+        "review_priority": "P1",
+        "qgis_action": "Verificar coordenada y dibujar polígono/buffer entrenable.",
+        "suggested_decision": "draw_training_polygon",
+        "notes": "Presente en lista clásica Pena/Calaméo nº 16. | 3 coordenadas candidatas en fuentes; se eligió Patrimonio Galego por prioridad."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.15872225,
+          43.53436231
+        ]
+      },
+      "properties": {
+        "site_id": "tra-naron-ga15054009",
+        "primary_name": "X-15 Castro de Vicás",
+        "municipality": "Narón",
+        "parish": "San Xiao de Narón",
+        "place": "Vicás",
+        "ga_code": "GA15054009",
+        "record_type": "official_castro",
+        "confidence": "high",
+        "dataset_use": "test_positive_candidate",
+        "split": "test",
+        "coord_source": "Patrimonio Galego",
+        "review_priority": "P1",
+        "qgis_action": "Verificar coordenada y dibujar polígono/buffer entrenable.",
+        "suggested_decision": "draw_training_polygon",
+        "notes": "Presente en lista clásica Pena/Calaméo nº 19."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.103889,
+          43.533705
+        ]
+      },
+      "properties": {
+        "site_id": "tra-naron-ga15054010",
+        "primary_name": "X-04 Castro da Ermida",
+        "municipality": "Narón",
+        "parish": "Pedroso",
+        "place": "",
+        "ga_code": "GA15054010",
+        "record_type": "official_castro",
+        "confidence": "high",
+        "dataset_use": "test_positive_candidate",
+        "split": "test",
+        "coord_source": "Artabro",
+        "review_priority": "P1",
+        "qgis_action": "Verificar coordenada y dibujar polígono/buffer entrenable.",
+        "suggested_decision": "draw_training_polygon",
+        "notes": "Presente en lista clásica Pena/Calaméo nº 20. | 2 coordenadas candidatas en fuentes; se eligió Artabro por prioridad."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.22606683,
+          43.57706666
+        ]
+      },
+      "properties": {
+        "site_id": "tra-naron-ga15054015",
+        "primary_name": "X-12 Castro de Pena Lopesa",
+        "municipality": "Narón",
+        "parish": "O Val",
+        "place": "Lopesa",
+        "ga_code": "GA15054015",
+        "record_type": "official_castro",
+        "confidence": "high",
+        "dataset_use": "positive_damaged_review",
+        "split": "review_only",
+        "coord_source": "Patrimonio Galego",
+        "review_priority": "P1",
+        "qgis_action": "Comprobar visibilidad/conservación; usar solo como caso de error o revisión.",
+        "suggested_decision": "inspect_damaged_site",
+        "notes": "Presente en lista clásica Pena/Calaméo nº 25. | 3 coordenadas candidatas en fuentes; se eligió Patrimonio Galego por prioridad."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.22899613,
+          43.56084834
+        ]
+      },
+      "properties": {
+        "site_id": "tra-naron-ga15054037",
+        "primary_name": "X-07 Castro de A Pedreira",
+        "municipality": "Narón",
+        "parish": "O Val",
+        "place": "Pedreira",
+        "ga_code": "GA15054037",
+        "record_type": "official_castro",
+        "confidence": "high",
+        "dataset_use": "positive_o_val_holdout",
+        "split": "test_o_val",
+        "coord_source": "Patrimonio Galego",
+        "review_priority": "P0",
+        "qgis_action": "Verificar coordenada y dibujar polígono/buffer; mantener fuera de entrenamiento.",
+        "suggested_decision": "verify_holdout_polygon",
+        "notes": "3 coordenadas candidatas en fuentes; se eligió Patrimonio Galego por prioridad."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.22056326,
+          43.56705213
+        ]
+      },
+      "properties": {
+        "site_id": "tra-naron-vilasuso",
+        "primary_name": "Castro de Vilasuso",
+        "municipality": "Narón",
+        "parish": "Santa María Maior do Val",
+        "place": "",
+        "ga_code": "GA150054001",
+        "record_type": "classical_catalog_reference",
+        "confidence": "medium_low",
+        "dataset_use": "positive_o_val_holdout",
+        "split": "test_o_val",
+        "coord_source": "Patrimonio Galego",
+        "review_priority": "P0",
+        "qgis_action": "Verificar coordenada y dibujar polígono/buffer; mantener fuera de entrenamiento.",
+        "suggested_decision": "verify_holdout_polygon",
+        "notes": "Entrada de la lista clásica Pena/Calaméo pendiente de reconciliación con catálogo oficial. | 3 coordenadas candidatas en fuentes; se eligió Patrimonio Galego por prioridad."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.119167,
+          43.543611
+        ]
+      },
+      "properties": {
+        "site_id": "tra-naron-x-05-castro-da-pereiruga",
+        "primary_name": "X-05 Castro da Pereiruga",
+        "municipality": "Narón",
+        "parish": "Pedroso",
+        "place": "",
+        "ga_code": "GA15054016",
+        "record_type": "official_uncoded_castro",
+        "confidence": "medium_high",
+        "dataset_use": "test_positive_candidate",
+        "split": "test",
+        "coord_source": "Artabro",
+        "review_priority": "P1",
+        "qgis_action": "Verificar coordenada y dibujar polígono/buffer entrenable.",
+        "suggested_decision": "draw_training_polygon",
+        "notes": "Presente en lista clásica Pena/Calaméo nº 24. | 2 coordenadas candidatas en fuentes; se eligió Artabro por prioridad."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.156944,
+          43.539305
+        ]
+      },
+      "properties": {
+        "site_id": "tra-naron-x-06-castro-da-revolta",
+        "primary_name": "X-06 Castro da Revolta",
+        "municipality": "Narón",
+        "parish": "Sedes",
+        "place": "A Revolta",
+        "ga_code": "GA15054008",
+        "record_type": "official_uncoded_castro",
+        "confidence": "medium_high",
+        "dataset_use": "test_positive_candidate",
+        "split": "test",
+        "coord_source": "Artabro",
+        "review_priority": "P1",
+        "qgis_action": "Verificar coordenada y dibujar polígono/buffer entrenable.",
+        "suggested_decision": "draw_training_polygon",
+        "notes": "Presente en lista clásica Pena/Calaméo nº 17. | 2 coordenadas candidatas en fuentes; se eligió Artabro por prioridad."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.238235,
+          43.553519
+        ]
+      },
+      "properties": {
+        "site_id": "tra-naron-x-50-cercado-neolitico-da-lagoa-pena-grande",
+        "primary_name": "X-50 Cercado neolítico da Lagoa / Pena Grande",
+        "municipality": "Narón",
+        "parish": "O Val",
+        "place": "Pena Grande",
+        "ga_code": "",
+        "record_type": "conflict_neolithic_or_castro",
+        "confidence": "medium",
+        "dataset_use": "review_only",
+        "split": "review_only",
+        "coord_source": "Artabro",
+        "review_priority": "P0",
+        "qgis_action": "Resolver tipología castro/cercado neolítico; no usar como positivo.",
+        "suggested_decision": "resolve_typology",
+        "notes": "Pena Grande/Lagoa: no usar como positivo hasta resolver castro vs cercado neolítico. | no tratar automáticamente como castro; caso conflictivo"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.14037,
+          43.52196
+        ]
+      },
+      "properties": {
+        "site_id": "tra-neda-castro-de-ancos",
+        "primary_name": "Castro de Ancos",
+        "municipality": "Neda",
+        "parish": "Santa María de Neda",
+        "place": "Alto de Ancos",
+        "ga_code": "",
+        "record_type": "official_uncoded_castro",
+        "confidence": "medium_high",
+        "dataset_use": "train_positive_candidate",
+        "split": "train",
+        "coord_source": "Galipedia",
+        "review_priority": "P1",
+        "qgis_action": "Verificar coordenada y dibujar polígono/buffer entrenable.",
+        "suggested_decision": "draw_training_polygon",
+        "notes": "catálogo NNSS Neda, ficha 42 | Presente en lista clásica Pena/Calaméo nº 46."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.1200803,
+          43.4851952
+        ]
+      },
+      "properties": {
+        "site_id": "tra-neda-castro-de-viladonelle",
+        "primary_name": "Castro de Viladonelle",
+        "municipality": "Neda",
+        "parish": "Viladonelle",
+        "place": "Monte da Croa",
+        "ga_code": "",
+        "record_type": "official_uncoded_castro",
+        "confidence": "medium_high",
+        "dataset_use": "train_positive_candidate",
+        "split": "train",
+        "coord_source": "Galipedia",
+        "review_priority": "P1",
+        "qgis_action": "Verificar coordenada y dibujar polígono/buffer entrenable.",
+        "suggested_decision": "draw_training_polygon",
+        "notes": "catálogo NNSS Neda, ficha 43 | Presente en lista clásica Pena/Calaméo nº 47."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.17839894,
+          43.50140574
+        ]
+      },
+      "properties": {
+        "site_id": "tra-neda-ga150554006",
+        "primary_name": "Castro do Petouzal",
+        "municipality": "Neda",
+        "parish": "O Couto",
+        "place": "O Couto",
+        "ga_code": "GA150554006",
+        "record_type": "web_catalog_candidate",
+        "confidence": "medium",
+        "dataset_use": "review_only",
+        "split": "review_only",
+        "coord_source": "Patrimonio Galego",
+        "review_priority": "P2",
+        "qgis_action": "Reconciliar con fuente oficial o descartar.",
+        "suggested_decision": "reconcile_or_discard",
+        "notes": "Candidato procedente de catálogo web no reconciliado con la tabla oficial normalizada."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.0346941,
+          43.5467959
+        ]
+      },
+      "properties": {
+        "site_id": "tra-san-sadurnino-castro-da-croa-do-redo",
+        "primary_name": "Castro da Croa do Redo",
+        "municipality": "San Sadurniño",
+        "parish": "Lamas",
+        "place": "Lugar de Redo",
+        "ga_code": "GA15076008",
+        "record_type": "official_uncoded_castro",
+        "confidence": "medium_high",
+        "dataset_use": "val_positive_candidate",
+        "split": "val",
+        "coord_source": "Galipedia",
+        "review_priority": "P1",
+        "qgis_action": "Verificar coordenada y dibujar polígono/buffer entrenable.",
+        "suggested_decision": "draw_training_polygon",
+        "notes": "OCR lee Retío; Fálame/Galipedia leen Redo | Presente en lista clásica Pena/Calaméo nº 73. | parte del sistema de cinco castros del Val do Xuvia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.08040294,
+          43.53704092
+        ]
+      },
+      "properties": {
+        "site_id": "tra-san-sadurnino-castro-da-croa-ou-castro-de-rupiallo",
+        "primary_name": "Castro da Croa ou Castro de Rupiallo",
+        "municipality": "San Sadurniño",
+        "parish": "San Sadurniño",
+        "place": "Lugar de Rupiallo",
+        "ga_code": "GA15076009",
+        "record_type": "official_uncoded_castro",
+        "confidence": "medium_high",
+        "dataset_use": "val_positive_candidate",
+        "split": "val",
+        "coord_source": "Patrimonio Galego",
+        "review_priority": "P1",
+        "qgis_action": "Verificar coordenada y dibujar polígono/buffer entrenable.",
+        "suggested_decision": "draw_training_polygon",
+        "notes": "catálogo NNSS San Sadurniño | flanco suroeste del sistema; junto a A Portela | 2 coordenadas candidatas en fuentes; se eligió Patrimonio Galego por prioridad."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.0751767,
+          43.5836875
+        ]
+      },
+      "properties": {
+        "site_id": "tra-san-sadurnino-castro-de-castrelo",
+        "primary_name": "Castro de Castrelo",
+        "municipality": "San Sadurniño",
+        "parish": "Monte",
+        "place": "Lugar de Castrelo",
+        "ga_code": "GA15076003",
+        "record_type": "official_uncoded_castro",
+        "confidence": "medium_high",
+        "dataset_use": "val_positive_candidate",
+        "split": "val",
+        "coord_source": "Galipedia",
+        "review_priority": "P1",
+        "qgis_action": "Verificar coordenada y dibujar polígono/buffer entrenable.",
+        "suggested_decision": "draw_training_polygon",
+        "notes": "catálogo NNSS San Sadurniño | Presente en lista clásica Pena/Calaméo nº 69. | Presente en lista clásica Pena/Calaméo nº 70. | apoyo norte; deteriorado; fuente en Fálame y Ateneo 1987 | solo pista nominal Galipedia/O Noso Patrimonio; confirmar"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.042156,
+          43.5411539
+        ]
+      },
+      "properties": {
+        "site_id": "tra-san-sadurnino-castro-de-croas-de-ramil",
+        "primary_name": "Castro de Croas de Ramil",
+        "municipality": "San Sadurniño",
+        "parish": "Lamas",
+        "place": "Lugar de Ramil",
+        "ga_code": "",
+        "record_type": "official_uncoded_castro",
+        "confidence": "medium_high",
+        "dataset_use": "val_positive_candidate",
+        "split": "val",
+        "coord_source": "Galipedia",
+        "review_priority": "P1",
+        "qgis_action": "Verificar coordenada y dibujar polígono/buffer entrenable.",
+        "suggested_decision": "draw_training_polygon",
+        "notes": "catálogo NNSS San Sadurniño | Presente en lista clásica Pena/Calaméo nº 72. | flanco sureste del sistema según Fálame"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.05528846,
+          43.54346474
+        ]
+      },
+      "properties": {
+        "site_id": "tra-san-sadurnino-castro-de-riboira",
+        "primary_name": "Castro de Riboira",
+        "municipality": "San Sadurniño",
+        "parish": "Lamas",
+        "place": "Lugar de Riboira",
+        "ga_code": "GA15076007",
+        "record_type": "official_uncoded_castro",
+        "confidence": "medium_high",
+        "dataset_use": "val_positive_candidate",
+        "split": "val",
+        "coord_source": "Patrimonio Galego",
+        "review_priority": "P1",
+        "qgis_action": "Verificar coordenada y dibujar polígono/buffer entrenable.",
+        "suggested_decision": "draw_training_polygon",
+        "notes": "catálogo NNSS San Sadurniño | Presente en lista clásica Pena/Calaméo nº 67. | parte del sistema de cinco castros del Val do Xuvia | 2 coordenadas candidatas en fuentes; se eligió Patrimonio Galego por prioridad."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.0330311,
+          43.5778546
+        ]
+      },
+      "properties": {
+        "site_id": "tra-san-sadurnino-coto-da-croa-ou-a-croa-do-castro-2",
+        "primary_name": "Coto da Croa ou A Croa do Castro",
+        "municipality": "San Sadurniño",
+        "parish": "Monte",
+        "place": "Lugar de Castrelo",
+        "ga_code": "",
+        "record_type": "official_uncoded_castro",
+        "confidence": "medium_high",
+        "dataset_use": "val_positive_candidate",
+        "split": "val",
+        "coord_source": "Galipedia",
+        "review_priority": "P1",
+        "qgis_action": "Verificar coordenada y dibujar polígono/buffer entrenable.",
+        "suggested_decision": "draw_training_polygon",
+        "notes": "posible Escoitadoira/A Croa do Castro; distinguir de Bardaos"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.87574911,
+          43.27205992
+        ]
+      },
+      "properties": {
+        "site_id": "tra-san-sadurnino-cruceiro-do-castro-de-cores",
+        "primary_name": "Cruceiro do Castro de Cores",
+        "municipality": "San Sadurniño",
+        "parish": "Cores (San Martiño)",
+        "place": "O Castro",
+        "ga_code": "",
+        "record_type": "web_catalog_candidate",
+        "confidence": "medium",
+        "dataset_use": "review_only",
+        "split": "review_only",
+        "coord_source": "Patrimonio Galego",
+        "review_priority": "P2",
+        "qgis_action": "Reconciliar con fuente oficial o descartar.",
+        "suggested_decision": "reconcile_or_discard",
+        "notes": "Candidato procedente de catálogo web no reconciliado con la tabla oficial normalizada."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.06102514,
+          43.4940184
+        ]
+      },
+      "properties": {
+        "site_id": "tra-san-sadurnino-fervenza-do-rio-castro",
+        "primary_name": "Fervenza do río Castro",
+        "municipality": "San Sadurniño",
+        "parish": "Santa María de Narahío",
+        "place": "Castelo-Narahío",
+        "ga_code": "",
+        "record_type": "web_catalog_candidate",
+        "confidence": "medium",
+        "dataset_use": "review_only",
+        "split": "review_only",
+        "coord_source": "Patrimonio Galego",
+        "review_priority": "P2",
+        "qgis_action": "Reconciliar con fuente oficial o descartar.",
+        "suggested_decision": "reconcile_or_discard",
+        "notes": "Candidato procedente de catálogo web no reconciliado con la tabla oficial normalizada."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.0653383,
+          43.5434675
+        ]
+      },
+      "properties": {
+        "site_id": "tra-san-sadurnino-ga15076006",
+        "primary_name": "Castro de San Sadurniño",
+        "municipality": "San Sadurniño",
+        "parish": "Lamas / Carballo",
+        "place": "",
+        "ga_code": "GA15076006",
+        "record_type": "toponymic_candidate",
+        "confidence": "low",
+        "dataset_use": "review_only",
+        "split": "review_only",
+        "coord_source": "Galipedia",
+        "review_priority": "P2",
+        "qgis_action": "Reconciliar con fuente oficial o descartar.",
+        "suggested_decision": "reconcile_or_discard",
+        "notes": "central del sistema del Val do Xuvia; torque de oro, fíbulas, cerámica, muros; tradición Loureana"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.091307,
+          43.660661
+        ]
+      },
+      "properties": {
+        "site_id": "tra-valdovino-castro-de-punta-castrelo",
+        "primary_name": "Castro de Punta Castrelo",
+        "municipality": "Valdoviño",
+        "parish": "Santiago de Pantín",
+        "place": "Punta Castrelo",
+        "ga_code": "",
+        "record_type": "web_catalog_candidate",
+        "confidence": "medium",
+        "dataset_use": "review_only",
+        "split": "review_only",
+        "coord_source": "Artabro",
+        "review_priority": "P2",
+        "qgis_action": "Reconciliar con fuente oficial o descartar.",
+        "suggested_decision": "reconcile_or_discard",
+        "notes": "Candidato procedente de catálogo web no reconciliado con la tabla oficial normalizada."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.1477,
+          43.6225
+        ]
+      },
+      "properties": {
+        "site_id": "tra-valdovino-castro-de-punta-do-bico",
+        "primary_name": "Castro de Punta do Bico",
+        "municipality": "Valdoviño",
+        "parish": "Sta. Eulalia de Valdoviñ",
+        "place": "Punta do Bico",
+        "ga_code": "",
+        "record_type": "web_catalog_candidate",
+        "confidence": "medium",
+        "dataset_use": "review_only",
+        "split": "review_only",
+        "coord_source": "Artabro",
+        "review_priority": "P2",
+        "qgis_action": "Reconciliar con fuente oficial o descartar.",
+        "suggested_decision": "reconcile_or_discard",
+        "notes": "Candidato procedente de catálogo web no reconciliado con la tabla oficial normalizada."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.110555,
+          43.644166
+        ]
+      },
+      "properties": {
+        "site_id": "tra-valdovino-castro-de-rodo",
+        "primary_name": "Castro de Rodo",
+        "municipality": "Valdoviño",
+        "parish": "Santiago de Pantín",
+        "place": "Chao da Gabeira, Porto Carrizo",
+        "ga_code": "",
+        "record_type": "web_catalog_candidate",
+        "confidence": "medium",
+        "dataset_use": "review_only",
+        "split": "review_only",
+        "coord_source": "Artabro",
+        "review_priority": "P2",
+        "qgis_action": "Reconciliar con fuente oficial o descartar.",
+        "suggested_decision": "reconcile_or_discard",
+        "notes": "Candidato procedente de catálogo web no reconciliado con la tabla oficial normalizada."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.18717,
+          43.59203
+        ]
+      },
+      "properties": {
+        "site_id": "tra-valdovino-castro-de-santo-tomas",
+        "primary_name": "Castro de Santo Tomás",
+        "municipality": "Valdoviño",
+        "parish": "",
+        "place": "",
+        "ga_code": "",
+        "record_type": "web_catalog_candidate",
+        "confidence": "medium_low",
+        "dataset_use": "review_only",
+        "split": "review_only",
+        "coord_source": "Galipedia",
+        "review_priority": "P2",
+        "qgis_action": "Reconciliar con fuente oficial o descartar.",
+        "suggested_decision": "reconcile_or_discard",
+        "notes": "Candidato procedente de catálogo web no reconciliado con la tabla oficial normalizada."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.066111,
+          43.626111
+        ]
+      },
+      "properties": {
+        "site_id": "tra-valdovino-castro-de-villarrube",
+        "primary_name": "Castro de Villarrube",
+        "municipality": "Valdoviño",
+        "parish": "S. Martín de Villarrube",
+        "place": "Coto del castro",
+        "ga_code": "",
+        "record_type": "web_catalog_candidate",
+        "confidence": "medium",
+        "dataset_use": "review_only",
+        "split": "review_only",
+        "coord_source": "Artabro",
+        "review_priority": "P2",
+        "qgis_action": "Reconciliar con fuente oficial o descartar.",
+        "suggested_decision": "reconcile_or_discard",
+        "notes": "Candidato procedente de catálogo web no reconciliado con la tabla oficial normalizada."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.086944,
+          43.636944
+        ]
+      },
+      "properties": {
+        "site_id": "tra-valdovino-fradigas",
+        "primary_name": "Castro de Frádigas",
+        "municipality": "Valdoviño",
+        "parish": "Santiago de Pantín",
+        "place": "",
+        "ga_code": "",
+        "record_type": "classical_catalog_reference",
+        "confidence": "medium_low",
+        "dataset_use": "review_only",
+        "split": "review_only",
+        "coord_source": "Artabro",
+        "review_priority": "P2",
+        "qgis_action": "Reconciliar con fuente oficial o descartar.",
+        "suggested_decision": "reconcile_or_discard",
+        "notes": "Entrada de la lista clásica Pena/Calaméo pendiente de reconciliación con catálogo oficial. | 2 coordenadas candidatas en fuentes; se eligió Artabro por prioridad."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.198888,
+          43.601666
+        ]
+      },
+      "properties": {
+        "site_id": "tra-valdovino-ga15087001",
+        "primary_name": "Castro de Punta Taraza",
+        "municipality": "Valdoviño",
+        "parish": "Meirás",
+        "place": "Lavacerido",
+        "ga_code": "GA15087001",
+        "record_type": "official_castro",
+        "confidence": "high",
+        "dataset_use": "train_positive_candidate",
+        "split": "train",
+        "coord_source": "Artabro",
+        "review_priority": "P1",
+        "qgis_action": "Verificar coordenada y dibujar polígono/buffer entrenable.",
+        "suggested_decision": "draw_training_polygon",
+        "notes": "tabla ID_IPAGA 2021 | Presente en lista clásica Pena/Calaméo nº 52. | 2 coordenadas candidatas en fuentes; se eligió Artabro por prioridad."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.196388,
+          43.575555
+        ]
+      },
+      "properties": {
+        "site_id": "tra-valdovino-ga15087002",
+        "primary_name": "O Castrillón",
+        "municipality": "Valdoviño",
+        "parish": "Meirás",
+        "place": "Riobó",
+        "ga_code": "GA15087002",
+        "record_type": "official_castro",
+        "confidence": "high",
+        "dataset_use": "train_positive_candidate",
+        "split": "train",
+        "coord_source": "Artabro",
+        "review_priority": "P1",
+        "qgis_action": "Verificar coordenada y dibujar polígono/buffer entrenable.",
+        "suggested_decision": "draw_training_polygon",
+        "notes": "tabla ID_IPAGA 2021 | 2 coordenadas candidatas en fuentes; se eligió Artabro por prioridad."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.119444,
+          43.631666
+        ]
+      },
+      "properties": {
+        "site_id": "tra-valdovino-ga15087004",
+        "primary_name": "Castro de Lagoa",
+        "municipality": "Valdoviño",
+        "parish": "Pantín",
+        "place": "O Castro",
+        "ga_code": "GA15087004",
+        "record_type": "official_castro",
+        "confidence": "high",
+        "dataset_use": "train_positive_candidate",
+        "split": "train",
+        "coord_source": "Artabro",
+        "review_priority": "P1",
+        "qgis_action": "Verificar coordenada y dibujar polígono/buffer entrenable.",
+        "suggested_decision": "draw_training_polygon",
+        "notes": "tabla ID_IPAGA 2021 | 4 coordenadas candidatas en fuentes; se eligió Artabro por prioridad."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.093611,
+          43.639722
+        ]
+      },
+      "properties": {
+        "site_id": "tra-valdovino-ga15087005",
+        "primary_name": "Os Castros",
+        "municipality": "Valdoviño",
+        "parish": "Pantín",
+        "place": "A Loira",
+        "ga_code": "GA15087005",
+        "record_type": "official_castro",
+        "confidence": "high",
+        "dataset_use": "train_positive_candidate",
+        "split": "train",
+        "coord_source": "Artabro",
+        "review_priority": "P1",
+        "qgis_action": "Verificar coordenada y dibujar polígono/buffer entrenable.",
+        "suggested_decision": "draw_training_polygon",
+        "notes": "tabla ID_IPAGA 2021 | Presente en lista clásica Pena/Calaméo nº 55. | 4 coordenadas candidatas en fuentes; se eligió Artabro por prioridad."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.065986,
+          43.626028
+        ]
+      },
+      "properties": {
+        "site_id": "tra-valdovino-ga15087006",
+        "primary_name": "Castro de Vilarrube / Os Castros de Ferreirías",
+        "municipality": "Valdoviño",
+        "parish": "Pantín",
+        "place": "Frádegas",
+        "ga_code": "GA15087006",
+        "record_type": "official_castro",
+        "confidence": "high",
+        "dataset_use": "train_positive_candidate",
+        "split": "train",
+        "coord_source": "Galipedia",
+        "review_priority": "P1",
+        "qgis_action": "Verificar coordenada y dibujar polígono/buffer entrenable.",
+        "suggested_decision": "draw_training_polygon",
+        "notes": "tabla ID_IPAGA 2021"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.098888,
+          43.634166
+        ]
+      },
+      "properties": {
+        "site_id": "tra-valdovino-ga15087007",
+        "primary_name": "Castro de Casianes",
+        "municipality": "Valdoviño",
+        "parish": "Pantín",
+        "place": "Casianes",
+        "ga_code": "GA15087007",
+        "record_type": "official_castro",
+        "confidence": "high",
+        "dataset_use": "positive_damaged_review",
+        "split": "review_only",
+        "coord_source": "Artabro",
+        "review_priority": "P1",
+        "qgis_action": "Comprobar visibilidad/conservación; usar solo como caso de error o revisión.",
+        "suggested_decision": "inspect_damaged_site",
+        "notes": "tabla ID_IPAGA 2021 | Presente en lista clásica Pena/Calaméo nº 54. | 2 coordenadas candidatas en fuentes; se eligió Artabro por prioridad."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.149004,
+          43.61851
+        ]
+      },
+      "properties": {
+        "site_id": "tra-valdovino-ga15087009",
+        "primary_name": "Castro de Punta Frouxeira",
+        "municipality": "Valdoviño",
+        "parish": "Valdoviño",
+        "place": "A Saíña",
+        "ga_code": "GA15087009",
+        "record_type": "official_castro",
+        "confidence": "high",
+        "dataset_use": "train_positive_candidate",
+        "split": "train",
+        "coord_source": "Artabro",
+        "review_priority": "P1",
+        "qgis_action": "Verificar coordenada y dibujar polígono/buffer entrenable.",
+        "suggested_decision": "draw_training_polygon",
+        "notes": "tabla ID_IPAGA 2021 | 2 coordenadas candidatas en fuentes; se eligió Artabro por prioridad."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.142778,
+          43.604165
+        ]
+      },
+      "properties": {
+        "site_id": "tra-valdovino-ga15087010",
+        "primary_name": "Castro de Poulo",
+        "municipality": "Valdoviño",
+        "parish": "Valdoviño",
+        "place": "Piñeiros",
+        "ga_code": "GA15087010",
+        "record_type": "official_castro",
+        "confidence": "high",
+        "dataset_use": "train_positive_candidate",
+        "split": "train",
+        "coord_source": "Artabro",
+        "review_priority": "P1",
+        "qgis_action": "Verificar coordenada y dibujar polígono/buffer entrenable.",
+        "suggested_decision": "draw_training_polygon",
+        "notes": "tabla ID_IPAGA 2021 | Presente en lista clásica Pena/Calaméo nº 51. | 2 coordenadas candidatas en fuentes; se eligió Artabro por prioridad."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.093333,
+          43.596388
+        ]
+      },
+      "properties": {
+        "site_id": "tra-valdovino-ga15087013",
+        "primary_name": "Castro de Crecente",
+        "municipality": "Valdoviño",
+        "parish": "Loira",
+        "place": "A Furada",
+        "ga_code": "GA15087013",
+        "record_type": "official_castro",
+        "confidence": "high",
+        "dataset_use": "train_positive_candidate",
+        "split": "train",
+        "coord_source": "Artabro",
+        "review_priority": "P1",
+        "qgis_action": "Verificar coordenada y dibujar polígono/buffer entrenable.",
+        "suggested_decision": "draw_training_polygon",
+        "notes": "tabla ID_IPAGA 2021 | Presente en lista clásica Pena/Calaméo nº 50. | 2 coordenadas candidatas en fuentes; se eligió Artabro por prioridad."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.048055,
+          43.598055
+        ]
+      },
+      "properties": {
+        "site_id": "tra-valdovino-ga15087014",
+        "primary_name": "Castro de Vidueiros",
+        "municipality": "Valdoviño",
+        "parish": "Vilaboa",
+        "place": "Morgadelle",
+        "ga_code": "GA15087014",
+        "record_type": "official_castro",
+        "confidence": "high",
+        "dataset_use": "train_positive_candidate",
+        "split": "train",
+        "coord_source": "Artabro",
+        "review_priority": "P1",
+        "qgis_action": "Verificar coordenada y dibujar polígono/buffer entrenable.",
+        "suggested_decision": "draw_training_polygon",
+        "notes": "tabla ID_IPAGA 2021 | Presente en lista clásica Pena/Calaméo nº 56. | 2 coordenadas candidatas en fuentes; se eligió Artabro por prioridad."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.170056,
+          43.575918
+        ]
+      },
+      "properties": {
+        "site_id": "tra-valdovino-ga15087015",
+        "primary_name": "Castro de Lodeiro",
+        "municipality": "Valdoviño",
+        "parish": "O Sequeiro",
+        "place": "O Lodeiro",
+        "ga_code": "GA15087015",
+        "record_type": "official_castro",
+        "confidence": "high",
+        "dataset_use": "train_positive_candidate",
+        "split": "train",
+        "coord_source": "Artabro",
+        "review_priority": "P1",
+        "qgis_action": "Verificar coordenada y dibujar polígono/buffer entrenable.",
+        "suggested_decision": "draw_training_polygon",
+        "notes": "tabla ID_IPAGA 2021 | Presente en lista clásica Pena/Calaméo nº 57. | 2 coordenadas candidatas en fuentes; se eligió Artabro por prioridad."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.175555,
+          43.557222
+        ]
+      },
+      "properties": {
+        "site_id": "tra-valdovino-ga15087016",
+        "primary_name": "Castro de Carreira de Abaixo",
+        "municipality": "Valdoviño",
+        "parish": "O Sequeiro",
+        "place": "A Mata",
+        "ga_code": "GA15087016",
+        "record_type": "official_castro",
+        "confidence": "high",
+        "dataset_use": "train_positive_candidate",
+        "split": "train",
+        "coord_source": "Artabro",
+        "review_priority": "P1",
+        "qgis_action": "Verificar coordenada y dibujar polígono/buffer entrenable.",
+        "suggested_decision": "draw_training_polygon",
+        "notes": "tabla ID_IPAGA 2021 | Presente en lista clásica Pena/Calaméo nº 64. | 2 coordenadas candidatas en fuentes; se eligió Artabro por prioridad."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.1875,
+          43.592222
+        ]
+      },
+      "properties": {
+        "site_id": "tra-valdovino-ga15087020",
+        "primary_name": "Zona arqueológica de la Iglesia y Castro Sto. Tomás de Taraza",
+        "municipality": "Valdoviño",
+        "parish": "Meirás",
+        "place": "Padín",
+        "ga_code": "GA15087020",
+        "record_type": "official_castro",
+        "confidence": "high",
+        "dataset_use": "train_positive_candidate",
+        "split": "train",
+        "coord_source": "Artabro",
+        "review_priority": "P1",
+        "qgis_action": "Verificar coordenada y dibujar polígono/buffer entrenable.",
+        "suggested_decision": "draw_training_polygon",
+        "notes": "tabla ID_IPAGA 2021"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.134952,
+          43.618569
+        ]
+      },
+      "properties": {
+        "site_id": "tra-valdovino-ga15087023",
+        "primary_name": "Castro y Mina do Pereiro",
+        "municipality": "Valdoviño",
+        "parish": "Valdoviño",
+        "place": "O Pereiro",
+        "ga_code": "GA15087023",
+        "record_type": "official_castro",
+        "confidence": "high",
+        "dataset_use": "positive_damaged_review",
+        "split": "review_only",
+        "coord_source": "Artabro",
+        "review_priority": "P1",
+        "qgis_action": "Comprobar visibilidad/conservación; usar solo como caso de error o revisión.",
+        "suggested_decision": "inspect_damaged_site",
+        "notes": "tabla ID_IPAGA 2021 | Presente en lista clásica Pena/Calaméo nº 62. | 2 coordenadas candidatas en fuentes; se eligió Artabro por prioridad."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.08928626,
+          43.61918876
+        ]
+      },
+      "properties": {
+        "site_id": "tra-valdovino-ga15087024",
+        "primary_name": "Castro de Lousada",
+        "municipality": "Valdoviño",
+        "parish": "Loira",
+        "place": "Lousada",
+        "ga_code": "GA15087024",
+        "record_type": "official_castro",
+        "confidence": "high",
+        "dataset_use": "train_positive_candidate",
+        "split": "train",
+        "coord_source": "Patrimonio Galego",
+        "review_priority": "P1",
+        "qgis_action": "Verificar coordenada y dibujar polígono/buffer entrenable.",
+        "suggested_decision": "draw_training_polygon",
+        "notes": "tabla ID_IPAGA 2021 | Presente en lista clásica Pena/Calaméo nº 65. | 3 coordenadas candidatas en fuentes; se eligió Patrimonio Galego por prioridad."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.133055,
+          43.584166
+        ]
+      },
+      "properties": {
+        "site_id": "tra-valdovino-ga15087032",
+        "primary_name": "O Foro",
+        "municipality": "Valdoviño",
+        "parish": "Valdoviño",
+        "place": "A Espiñuda | As Casas Novas",
+        "ga_code": "GA15087032",
+        "record_type": "official_castro",
+        "confidence": "high",
+        "dataset_use": "train_positive_candidate",
+        "split": "train",
+        "coord_source": "Artabro",
+        "review_priority": "P1",
+        "qgis_action": "Verificar coordenada y dibujar polígono/buffer entrenable.",
+        "suggested_decision": "draw_training_polygon",
+        "notes": "tabla ID_IPAGA 2021 | 2 coordenadas candidatas en fuentes; se eligió Artabro por prioridad."
+      }
+    }
+  ]
+}

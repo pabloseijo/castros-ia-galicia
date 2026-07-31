@@ -1,0 +1,62 @@
+# Raster/Data Manifest - Castros IA Galicia MVP
+
+generated: 2026-07-31
+crs_target: EPSG:25829  # ETRS89 / UTM zone 29N; existing Viladonga labels use EPSG:32629, near-equivalent for MVP
+heavy_data_policy: keep outside Mimir; do not commit PNOA/LiDAR rasters to wiki
+recommended_data_root: /Users/pabloseijo/Documents/CastrosIA/data
+
+official_sources:
+  - name: CNIG LiDAR 3a Cobertura 2022-2025
+    url: https://centrodedescargas.cnig.es/CentroDescargas/lidar-tercera-cobertura
+    use: preferred LAZ source for new Trasancos processing
+  - name: CNIG LiDAR 2a Cobertura 2015-2021
+    url: https://centrodedescargas.cnig.es/CentroDescargas/lidar-segunda-cobertura
+    use: fallback LAZ source where 3a coverage is unavailable
+  - name: CNIG PNOA Maxima Actualidad
+    url: https://centrodedescargas.cnig.es/CentroDescargas/ortofoto-pnoa-maxima-actualidad
+    use: orthoimage COG tiles for visual/texture channel
+  - name: PNOA productos LiDAR y MDT
+    url: https://pnoa.ign.es/pnoa-lidar/productos-a-descarga
+    use: LAZ/MDT/MDS references and product definitions
+  - name: Xunta Galicia centro de descargas
+    url: https://mapas.xunta.gal/es/mapas/informacion-geografica/centro-de-descargas
+    use: regional vector/raster layers and cartographic cross-checks
+
+areas:
+  - name: trasancos_bbox
+    bbox_wgs84: [-8.36, 43.40, -7.94, 43.68]
+    status: mvp_search_area
+  - name: o_val_holdout
+    note: held-out narrative/inference area; do not train on it in first MVP
+
+derived_products_required:
+  - dem_05m_or_1m
+  - hillshade_315_45
+  - slope_degrees
+  - local_relief_model_radius_50m
+  - local_relief_model_radius_100m
+  - msrm_multiscale_relief
+  - pnoa_rgb
+  - optional_sentinel2_ndvi_moisture_swir
+
+local_existing_files:
+  - path: /Users/pabloseijo/Documents/TFG/img/castroViladonga/LiDAR/PNOA_2009_Lote1_GAL_622-4780_ORT-CLA-CIR.laz
+    size_bytes: 11910119
+  - path: /Users/pabloseijo/Documents/TFG/img/castroViladonga/LiDAR/PNOA_2009_Lote1_GAL_622-4780_ORT-CLA-COL.laz
+    size_bytes: 12968482
+  - path: /Users/pabloseijo/Documents/TFG/img/castroViladonga/entrenamiento_castros.gpkg
+    size_bytes: 106496
+  - path: /Users/pabloseijo/Documents/TFG/img/castroViladonga/entrenamiento_viladonga.geojson
+    size_bytes: 14144
+  - path: /Users/pabloseijo/Documents/TFG/img/castroViladonga/multiespectrales/2025-04-28-00:00_2025-04-28-23:59_Sentinel-2_L1C_Moisture_index.tiff
+    size_bytes: 14507
+  - path: /Users/pabloseijo/Documents/TFG/img/castroViladonga/multiespectrales/2025-04-28-00:00_2025-04-28-23:59_Sentinel-2_L1C_NDVI.tiff
+    size_bytes: 6554
+  - path: /Users/pabloseijo/Documents/TFG/img/castroViladonga/multiespectrales/2025-04-28-00:00_2025-04-28-23:59_Sentinel-2_L1C_SWIR.tiff
+    size_bytes: 121775
+  - path: /Users/pabloseijo/Documents/TFG/img/castroViladonga/multiespectrales/2025-04-28-00:00_2025-04-28-23:59_Sentinel-2_L1C_True_color.tiff
+    size_bytes: 123858
+  - path: /Users/pabloseijo/Documents/TFG/img/castroViladonga/ortofoto/PNOA_MA_OF_ETRS89_HU29_h25_0073_1.tif
+    size_bytes: 2142502774
+  - path: /Users/pabloseijo/Documents/TFG/img/castroViladonga.qgz
+    size_bytes: 14193
