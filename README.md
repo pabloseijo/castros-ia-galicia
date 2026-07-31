@@ -95,6 +95,7 @@ El siguiente paso real es revisar las tareas P0, ajustar buffers a polígonos re
 - `reports/geocoding_blockers.md`: filas que siguen sin coordenada segura.
 - `reports/raster_tile_plan.md`: ventanas raster candidatas.
 - `reports/pba_catalog_unlock.md`: consulta fact-checkeada del PBA/Xunta para desbloquear geocodificación.
+- `reports/remaining_geocoding_source_audit.md`: segunda pasada de fuentes para las 9 filas aún bloqueadas tras PBA.
 - `reports/training_readiness.md`: estado de exportación entrenable.
 - `reports/environment_status.md`: herramientas locales disponibles/bloqueantes.
 - `data/review-queues/`: colas TSV por prioridad.
