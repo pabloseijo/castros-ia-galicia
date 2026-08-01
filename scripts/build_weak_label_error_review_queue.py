@@ -264,6 +264,10 @@ def write_geojson(path: Path, rows: list[dict[str, str]]) -> None:
     )
 
 
+def artifact_path(args: argparse.Namespace, extension: str) -> Path:
+    return args.out_dir / f"{args.artifact_prefix}.{extension}"
+
+
 def queue_counts(rows: list[dict[str, str]]) -> Counter:
     return Counter(row["queue"] for row in rows)
 
@@ -286,8 +290,8 @@ def write_report(path: Path, args: argparse.Namespace, rows: list[dict[str, str]
         "",
         "## Files",
         "",
-        f"- Queue TSV: `{rel_to_project(args.out_dir / 'weak_label_error_review_queue.tsv')}`",
-        f"- Queue GeoJSON: `{rel_to_project(args.out_dir / 'weak_label_error_review_queue.geojson')}`",
+        f"- Queue TSV: `{rel_to_project(artifact_path(args, 'tsv'))}`",
+        f"- Queue GeoJSON: `{rel_to_project(artifact_path(args, 'geojson'))}`",
         "",
         "## Queue Counts",
         "",
@@ -329,6 +333,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--priority-scores", type=Path, default=DEFAULT_PRIORITY_SCORES)
     parser.add_argument("--specialist-scores", type=Path, default=DEFAULT_SPECIALIST_SCORES)
     parser.add_argument("--out-dir", type=Path, default=OUT_DIR)
+    parser.add_argument("--artifact-prefix", default="weak_label_error_review_queue")
     parser.add_argument("--report", type=Path, default=DEFAULT_REPORT)
     parser.add_argument("--holdout-limit", type=int, default=25)
     parser.add_argument("--val-limit", type=int, default=50)
@@ -342,6 +347,8 @@ def resolve_args(args: argparse.Namespace) -> argparse.Namespace:
     args.specialist_scores = args.specialist_scores if args.specialist_scores.is_absolute() else PROJECT_ROOT / args.specialist_scores
     args.out_dir = args.out_dir if args.out_dir.is_absolute() else PROJECT_ROOT / args.out_dir
     args.report = args.report if args.report.is_absolute() else PROJECT_ROOT / args.report
+    if "/" in args.artifact_prefix or "\\" in args.artifact_prefix:
+        raise SystemExit("--artifact-prefix must be a file stem, not a path")
     return args
 
 
@@ -352,8 +359,8 @@ def main() -> None:
     specialist_by_sample = load_specialist_by_sample(args.specialist_scores)
     enriched = enrich_rows(read_tsv(args.fusion_scores), master_by_sample, priority_by_blend, specialist_by_sample)
     queue_rows = build_queue_rows(enriched, args.holdout_limit, args.val_limit)
-    queue_path = args.out_dir / "weak_label_error_review_queue.tsv"
-    geojson_path = args.out_dir / "weak_label_error_review_queue.geojson"
+    queue_path = artifact_path(args, "tsv")
+    geojson_path = artifact_path(args, "geojson")
     write_tsv_lf(queue_path, queue_rows, QUEUE_FIELDS)
     write_geojson(geojson_path, queue_rows)
     write_report(args.report, args, queue_rows)
