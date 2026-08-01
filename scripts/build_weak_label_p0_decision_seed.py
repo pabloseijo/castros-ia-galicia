@@ -38,6 +38,8 @@ SEED_FIELDS = [
     "seed_geometry_role",
     "review_risk",
     "next_qgis_action",
+    "dataset",
+    "final_split",
     "pretriage_group",
     "pretriage_decision",
     "pretriage_confidence",
