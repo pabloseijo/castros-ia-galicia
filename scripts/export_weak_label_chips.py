@@ -309,6 +309,8 @@ def export_rows(rows: list[dict[str, str]], args: argparse.Namespace) -> list[di
 
 def next_step_text(rows: list[dict[str, str]], args: argparse.Namespace) -> str:
     splits = {row["final_split"] for row in rows}
+    if splits == {"train"} and (args.per_split or args.limit):
+        return "Use this train-mini sample with the exported `val` and O Val/Trasancos holdouts to run the first RGB baseline/ranker."
     if splits == {"test_o_val", "test_trasancos"} and not args.per_split and not args.limit:
         return "Export `val`, then train a minimal chip classifier/ranker and evaluate it against the already exported O Val/Trasancos holdouts."
     if args.per_split or args.limit:
