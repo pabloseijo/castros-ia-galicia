@@ -370,6 +370,10 @@ def manifest_dataset_name(path: Path) -> str:
     return name.replace("weak_label_chip_export_", "")
 
 
+def artifact_path(args: argparse.Namespace, suffix: str) -> Path:
+    return args.out_dir / f"{args.artifact_prefix}_{suffix}"
+
+
 def feature_row(row: dict[str, str], meta: dict[str, dict[str, str]], dataset: str, args: argparse.Namespace) -> dict[str, str]:
     master = meta.get(row.get("sample_id", ""), {})
     proposed_radius_m = parse_float(master.get("proposed_radius_m"), 110.0)
@@ -659,10 +663,27 @@ def write_report(
     metric_rows: list[dict[str, str]],
     model: dict,
 ) -> None:
+    feature_path = artifact_path(args, "features.tsv")
+    score_path = artifact_path(args, "scores.tsv")
+    metric_path = artifact_path(args, "metrics.tsv")
+    model_path = artifact_path(args, "model.json")
     feature_counts = Counter(row["status"] for row in feature_rows)
     dataset_counts = Counter(row["dataset"] for row in score_rows)
     class_counts = Counter((row["dataset"], row["label_role"]) for row in score_rows)
     status = signal_status(metric_rows)
+    train_dataset = manifest_dataset_name(args.train_manifest)
+    if train_dataset == "train_mini":
+        train_scope_note = (
+            "The train set here is `train-mini`, not full train. Keep this as a cheap go/no-go check before "
+            "downloading all remaining chips."
+        )
+    elif train_dataset == "train":
+        train_scope_note = (
+            "The train set here is the full `train` chip export. Treat this as the RGB sanity baseline before "
+            "relief fusion, error review, and any candidate-discovery claim."
+        )
+    else:
+        train_scope_note = f"The train set here is `{train_dataset}`. Interpret it according to that manifest scope."
     lines = [
         "# Weak-label RGB baseline v1",
         "",
@@ -677,10 +698,10 @@ def write_report(
         "",
         f"- Train manifest: `{rel_to_project(args.train_manifest)}`",
         f"- Eval manifests: {', '.join(f'`{rel_to_project(path)}`' for path in args.eval_manifest)}",
-        "- Feature table: `data/weak-label-baseline-v1/weak_label_rgb_baseline_features.tsv`",
-        "- Score table: `data/weak-label-baseline-v1/weak_label_rgb_baseline_scores.tsv`",
-        "- Metrics table: `data/weak-label-baseline-v1/weak_label_rgb_baseline_metrics.tsv`",
-        "- Model weights JSON: `data/weak-label-baseline-v1/weak_label_rgb_baseline_model.json`",
+        f"- Feature table: `{rel_to_project(feature_path)}`",
+        f"- Score table: `{rel_to_project(score_path)}`",
+        f"- Metrics table: `{rel_to_project(metric_path)}`",
+        f"- Model weights JSON: `{rel_to_project(model_path)}`",
         "",
         "## Training Setup",
         "",
@@ -713,7 +734,10 @@ def write_report(
             )
         )
     lines.extend(["", "## Top Holdout Scores", ""])
-    for dataset in ("holdouts", "val"):
+    available_datasets = {row["dataset"] for row in score_rows}
+    for dataset in ("test", "holdouts", "val"):
+        if dataset not in available_datasets:
+            continue
         lines.append(f"### {dataset}")
         lines.append("")
         lines.append("| Rank | Split | Class | Score | Name | Municipality |")
@@ -753,7 +777,7 @@ def write_report(
             "",
             "The strongest caution is local: `Castro de Pena Lopesa` is missed in the O Val holdout. That means the next phase must add LiDAR/relief and visual review before any claim about candidate discovery.",
             "",
-            "The default feature radius is fixed for every chip to avoid leaking label-derived radius priors into the RGB baseline. The train set here is `train-mini`, not full train. Keep this as a cheap go/no-go check before downloading all remaining chips.",
+            f"The default feature radius is fixed for every chip to avoid leaking label-derived radius priors into the RGB baseline. {train_scope_note}",
         ]
     )
     path.parent.mkdir(parents=True, exist_ok=True)
@@ -780,6 +804,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--train-manifest", type=Path, default=DEFAULT_TRAIN)
     parser.add_argument("--eval-manifest", type=Path, action="append", default=None)
     parser.add_argument("--out-dir", type=Path, default=OUT_DIR)
+    parser.add_argument("--artifact-prefix", default="weak_label_rgb_baseline")
     parser.add_argument("--report", type=Path, default=REPORTS_DIR / "weak_label_rgb_baseline_v1.md")
     parser.add_argument("--image-size", type=int, default=192)
     parser.add_argument("--radius-mode", choices=("fixed", "manifest"), default="fixed")
@@ -796,6 +821,8 @@ def resolve_args(args: argparse.Namespace) -> argparse.Namespace:
     eval_manifest = args.eval_manifest or DEFAULT_EVAL
     args.eval_manifest = [path if path.is_absolute() else PROJECT_ROOT / path for path in eval_manifest]
     args.out_dir = args.out_dir if args.out_dir.is_absolute() else PROJECT_ROOT / args.out_dir
+    if not args.artifact_prefix or any(char in args.artifact_prefix for char in "/\\"):
+        raise SystemExit("--artifact-prefix must be a non-empty file-name prefix, not a path.")
     args.report = args.report if args.report.is_absolute() else PROJECT_ROOT / args.report
     return args
 
@@ -817,10 +844,10 @@ def main() -> None:
     score_rows = build_score_rows(feature_rows, model)
     metric_rows = build_metric_rows(score_rows)
 
-    feature_path = args.out_dir / "weak_label_rgb_baseline_features.tsv"
-    score_path = args.out_dir / "weak_label_rgb_baseline_scores.tsv"
-    metric_path = args.out_dir / "weak_label_rgb_baseline_metrics.tsv"
-    model_path = args.out_dir / "weak_label_rgb_baseline_model.json"
+    feature_path = artifact_path(args, "features.tsv")
+    score_path = artifact_path(args, "scores.tsv")
+    metric_path = artifact_path(args, "metrics.tsv")
+    model_path = artifact_path(args, "model.json")
 
     write_tsv(feature_path, feature_rows, FEATURE_FIELDS)
     write_tsv(score_path, score_rows, SCORE_FIELDS)
