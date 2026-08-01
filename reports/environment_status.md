@@ -7,7 +7,7 @@ Generated: 2026-07-31
 - Environment: local
 - QGIS available: no
 - Raster/DTM base processing ready: no
-- LiDAR point-cloud processing ready: no
+- LiDAR point-cloud processing ready: yes
 - Deep learning experiment ready: no
 
 The light dataset, QGIS package, reports and web map do not require these optional tools.
@@ -19,10 +19,10 @@ The light dataset, QGIS package, reports and web map do not require these option
 | `python3` | available | Python runtime | Python 3.9.6 |
 | `qgis` | missing | QGIS desktop |  |
 | `qgis_process` | missing | QGIS processing CLI |  |
-| `gdalinfo` | missing | GDAL raster tools |  |
-| `ogr2ogr` | missing | GDAL/OGR vector tools |  |
-| `gdaldem` | missing | GDAL DEM derivatives |  |
-| `pdal` | missing | PDAL point cloud tools |  |
+| `gdalinfo` | available | GDAL raster tools | GDAL 3.13.2 "Iowa City", released 2026/07/20 |
+| `ogr2ogr` | available | GDAL/OGR vector tools | GDAL 3.13.2 "Iowa City", released 2026/07/20 |
+| `gdaldem` | available | GDAL DEM derivatives | GDAL 3.13.2 "Iowa City", released 2026/07/20 |
+| `pdal` | available | PDAL point cloud tools | -------------------------------------------------------------------------------- pdal 2.10.2 (git-version: Release) ---------------------------------------------------------------- |
 
 ## Python modules
 
@@ -43,5 +43,4 @@ The light dataset, QGIS package, reports and web map do not require these option
 
 - Manual visual review still requires opening the GeoPackages in QGIS desktop.
 - Raster/DTM phase needs GDAL plus Python geospatial libraries before cutting image or DEM tiles.
-- LiDAR point-cloud phase needs PDAL only if processing original LAZ/COPC point clouds instead of prepared DEM/DTM rasters.
 - YOLO/deep-learning experiments need a model stack such as PyTorch and Ultralytics.

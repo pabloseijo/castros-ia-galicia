@@ -1,0 +1,205 @@
+tile_id	sample_id	bank_id	label_class	label_role	final_split	country	name	municipality	parish	morphology_proxy	negative_type	feature_radius_m	relief_score	rank_desc	status	error
+wl-tile-v1-02661	wl-neg-neg-es-pba-24808	neg-es-pba-24808	0	hard_negative	test_trasancos	ES	Igrexa de San Martiño de Valdetires	Valdoviño	Meirás (San Vicente)		megalithic_mound	120.0	-0.24714298	140	ok	
+wl-tile-v1-02650	wl-neg-neg-es-pba-20404	neg-es-pba-20404	0	hard_negative	test_trasancos	ES	Mámoa da Ermida	San Sadurniño	Igrexafeita (Santa María)		megalithic_mound	120.0	-0.89654904	202	ok	
+wl-tile-v1-02651	wl-neg-neg-es-pba-20405	neg-es-pba-20405	0	hard_negative	test_trasancos	ES	Mámoa da Pena do Cabalo	San Sadurniño	Igrexafeita (Santa María)		megalithic_mound	120.0	0.18960570	89	ok	
+wl-tile-v1-02652	wl-neg-neg-es-pba-20406	neg-es-pba-20406	0	hard_negative	test_trasancos	ES	Mámoa de Bardaos	San Sadurniño	Bardaos (Santa María)		megalithic_mound	120.0	0.77301521	34	ok	
+wl-tile-v1-02599	wl-neg-neg-es-pba-9906	neg-es-pba-9906	0	hard_negative	test_trasancos	ES	Mámoa de Campaíñas 01/Mámoa de Chao de Castelo 01	Ferrol	Doniños (San Román)		megalithic_mound	120.0	0.04082882	106	ok	
+wl-tile-v1-02600	wl-neg-neg-es-pba-9907	neg-es-pba-9907	0	hard_negative	test_trasancos	ES	Mámoa de Campaíñas 02/Mámoa de Chao de Castelo 02	Ferrol	Doniños (San Román)		megalithic_mound	120.0	0.15189659	93	ok	
+wl-tile-v1-02601	wl-neg-neg-es-pba-9908	neg-es-pba-9908	0	hard_negative	test_trasancos	ES	Mámoa de Campaíñas 03	Ferrol	Doniños (San Román)		megalithic_mound	120.0	0.97320274	27	ok	
+wl-tile-v1-02602	wl-neg-neg-es-pba-9909	neg-es-pba-9909	0	hard_negative	test_trasancos	ES	Mámoa de Campaíñas 04	Ferrol	Doniños (San Román)		megalithic_mound	120.0	-0.05711789	120	ok	
+wl-tile-v1-02603	wl-neg-neg-es-pba-9910	neg-es-pba-9910	0	hard_negative	test_trasancos	ES	Mámoa de Campaíñas 05	Ferrol	Doniños (San Román)		megalithic_mound	120.0	-0.35587283	152	ok	
+wl-tile-v1-02604	wl-neg-neg-es-pba-9911	neg-es-pba-9911	0	hard_negative	test_trasancos	ES	Mámoa de Campaíñas 06	Ferrol	Doniños (San Román)		megalithic_mound	120.0	-0.45751741	164	ok	
+wl-tile-v1-02605	wl-neg-neg-es-pba-9912	neg-es-pba-9912	0	hard_negative	test_trasancos	ES	Mámoa de Campaíñas 07	Ferrol	Doniños (San Román)		megalithic_mound	120.0	-0.64382000	178	ok	
+wl-tile-v1-02606	wl-neg-neg-es-pba-9913	neg-es-pba-9913	0	hard_negative	test_trasancos	ES	Mámoa de Campaíñas 08	Ferrol	Doniños (San Román)		megalithic_mound	120.0	-0.31328164	147	ok	
+wl-tile-v1-02607	wl-neg-neg-es-pba-9914	neg-es-pba-9914	0	hard_negative	test_trasancos	ES	Mámoa de Campaíñas 09	Ferrol	Doniños (San Román)		megalithic_mound	120.0	-0.13396903	129	ok	
+wl-tile-v1-02608	wl-neg-neg-es-pba-9939	neg-es-pba-9939	0	hard_negative	test_trasancos	ES	Mámoa de Campaíñas 10	Ferrol	Doniños (San Román)		megalithic_mound	120.0	0.66761589	42	ok	
+wl-tile-v1-02609	wl-neg-neg-es-pba-9940	neg-es-pba-9940	0	hard_negative	test_trasancos	ES	Mámoa de Campaíñas 11	Ferrol	Doniños (San Román)		megalithic_mound	120.0	-0.38707549	155	ok	
+wl-tile-v1-02610	wl-neg-neg-es-pba-9941	neg-es-pba-9941	0	hard_negative	test_trasancos	ES	Mámoa de Campaíñas 12	Ferrol	Doniños (San Román)		megalithic_mound	120.0	0.31746905	71	ok	
+wl-tile-v1-02611	wl-neg-neg-es-pba-9942	neg-es-pba-9942	0	hard_negative	test_trasancos	ES	Mámoa de Campaíñas 13	Ferrol	Doniños (San Román)		megalithic_mound	120.0	0.06490873	103	ok	
+wl-tile-v1-02653	wl-neg-neg-es-pba-20407	neg-es-pba-20407	0	hard_negative	test_trasancos	ES	Mámoa de Campo da Cruz 2	San Sadurniño	Igrexafeita (Santa María)		megalithic_mound	120.0	-0.44084082	160	ok	
+wl-tile-v1-02612	wl-neg-neg-es-pba-9943	neg-es-pba-9943	0	hard_negative	test_trasancos	ES	Mámoa de Catabois	Ferrol	Serantes (San Salvador)		megalithic_mound	120.0	0.03908176	107	ok	
+wl-tile-v1-02662	wl-neg-neg-es-pba-24842	neg-es-pba-24842	0	hard_negative	test_trasancos	ES	Mámoa de Coto da Fraga 1	Valdoviño	Pantín (Santiago)		megalithic_mound	120.0	0.53186145	55	ok	
+wl-tile-v1-02663	wl-neg-neg-es-pba-24843	neg-es-pba-24843	0	hard_negative	test_trasancos	ES	Mámoa de Coto da Fraga 2	Valdoviño	Pantín (Santiago)		megalithic_mound	120.0	1.44222660	16	ok	
+wl-tile-v1-02613	wl-neg-neg-es-pba-9944	neg-es-pba-9944	0	hard_negative	test_trasancos	ES	Mámoa de Espadanido 1	Ferrol	Marmancón (San Pedro)		megalithic_mound	120.0	-0.56616960	175	ok	
+wl-tile-v1-02614	wl-neg-neg-es-pba-9945	neg-es-pba-9945	0	hard_negative	test_trasancos	ES	Mámoa de Espadanido 2	Ferrol	Marmancón (San Pedro)		megalithic_mound	120.0	-0.02305992	116	ok	
+wl-tile-v1-02615	wl-neg-neg-es-pba-9946	neg-es-pba-9946	0	hard_negative	test_trasancos	ES	Mámoa de Ferreiros	Ferrol	Brión (Santa María)		megalithic_mound	120.0	-0.53445100	170	ok	
+wl-tile-v1-02616	wl-neg-neg-es-pba-9947	neg-es-pba-9947	0	hard_negative	test_trasancos	ES	Mámoa de Leixa 1	Ferrol	Leixa (San Pedro)		megalithic_mound	120.0	-0.43617287	159	ok	
+wl-tile-v1-02617	wl-neg-neg-es-pba-9974	neg-es-pba-9974	0	hard_negative	test_trasancos	ES	Mámoa de Leixa 2	Ferrol	Leixa (San Pedro)		megalithic_mound	120.0	-0.26856923	142	ok	
+wl-tile-v1-02627	wl-neg-neg-es-pba-14222	neg-es-pba-14222	0	hard_negative	test_trasancos	ES	Mámoa de Leixa 3/Mámoa de Trasancos	Narón	Trasancos (San Mateo)		megalithic_mound	120.0	0.03698331	109	ok	
+wl-tile-v1-02664	wl-neg-neg-es-pba-24844	neg-es-pba-24844	0	hard_negative	test_trasancos	ES	Mámoa de Liñeiro	Valdoviño	Vilarrube (San Martiño)		megalithic_mound	120.0	0.03865280	108	ok	
+wl-tile-v1-02665	wl-neg-neg-es-pba-24845	neg-es-pba-24845	0	hard_negative	test_trasancos	ES	Mámoa de Loira	Valdoviño	Loira (San Pedro)		megalithic_mound	120.0	0.14471988	94	ok	
+wl-tile-v1-02654	wl-neg-neg-es-pba-20408	neg-es-pba-20408	0	hard_negative	test_trasancos	ES	Mámoa de Moimentos 1	San Sadurniño	Santa Mariña do Monte (Santa Mariña)		megalithic_mound	120.0	-0.55732759	174	ok	
+wl-tile-v1-02655	wl-neg-neg-es-pba-20409	neg-es-pba-20409	0	hard_negative	test_trasancos	ES	Mámoa de Moimentos 2	San Sadurniño	Santa Mariña do Monte (Santa Mariña)		megalithic_mound	120.0	-0.72667743	190	ok	
+wl-tile-v1-02618	wl-neg-neg-es-pba-9975	neg-es-pba-9975	0	hard_negative	test_trasancos	ES	Mámoa de Monteventoso	Ferrol	Doniños (San Román)		megalithic_mound	120.0	0.64013074	44	ok	
+wl-tile-v1-02619	wl-neg-neg-es-pba-9976	neg-es-pba-9976	0	hard_negative	test_trasancos	ES	Mámoa de Mougá 1	Ferrol	Doniños (San Román)		megalithic_mound	120.0	-0.26942822	143	ok	
+wl-tile-v1-02620	wl-neg-neg-es-pba-9977	neg-es-pba-9977	0	hard_negative	test_trasancos	ES	Mámoa de Mougá 2	Ferrol	Doniños (San Román)		megalithic_mound	120.0	0.25010163	82	ok	
+wl-tile-v1-02621	wl-neg-neg-es-pba-9978	neg-es-pba-9978	0	hard_negative	test_trasancos	ES	Mámoa de Mougá 3	Ferrol	Doniños (San Román)		megalithic_mound	120.0	-0.77517592	194	ok	
+wl-tile-v1-02622	wl-neg-neg-es-pba-9979	neg-es-pba-9979	0	hard_negative	test_trasancos	ES	Mámoa de Mougá 4	Ferrol	Doniños (San Román)		megalithic_mound	120.0	-0.81093610	198	ok	
+wl-tile-v1-02623	wl-neg-neg-es-pba-9980	neg-es-pba-9980	0	hard_negative	test_trasancos	ES	Mámoa de Mougá 5	Ferrol	Doniños (San Román)		megalithic_mound	120.0	0.74730492	36	ok	
+wl-tile-v1-02624	wl-neg-neg-es-pba-9981	neg-es-pba-9981	0	hard_negative	test_trasancos	ES	Mámoa de Mougá 6	Ferrol	Doniños (San Román)		megalithic_mound	120.0	1.04477719	23	ok	
+wl-tile-v1-02628	wl-neg-neg-es-pba-14223	neg-es-pba-14223	0	hard_negative	test_trasancos	ES	Mámoa de Muíño do Vento	Narón	Trasancos (San Mateo)		megalithic_mound	120.0	0.31111013	73	ok	
+wl-tile-v1-02656	wl-neg-neg-es-pba-20435	neg-es-pba-20435	0	hard_negative	test_trasancos	ES	Mámoa de Pena Escrita	San Sadurniño	Lamas (San Xiao)		megalithic_mound	120.0	-0.71220792	186	ok	
+wl-tile-v1-02666	wl-neg-neg-es-pba-24846	neg-es-pba-24846	0	hard_negative	test_trasancos	ES	Mámoa de Pena Moura	Valdoviño	Vilarrube (San Martiño)		megalithic_mound	120.0	1.18041150	21	ok	
+wl-tile-v1-02667	wl-neg-neg-es-pba-24847	neg-es-pba-24847	0	hard_negative	test_trasancos	ES	Mámoa de Portonovo 1	Valdoviño	Valdoviño (Santaia)		megalithic_mound	120.0	-0.27361429	145	ok	
+wl-tile-v1-02668	wl-neg-neg-es-pba-24848	neg-es-pba-24848	0	hard_negative	test_trasancos	ES	Mámoa de Portonovo 2	Valdoviño	Valdoviño (Santaia)		megalithic_mound	120.0	-0.88966636	201	ok	
+wl-tile-v1-02669	wl-neg-neg-es-pba-24849	neg-es-pba-24849	0	hard_negative	test_trasancos	ES	Mámoa de Rioboo 1/Mámoa de Canteiros 1	Valdoviño	Meirás (San Vicente)		megalithic_mound	120.0	0.04412649	105	ok	
+wl-tile-v1-02670	wl-neg-neg-es-pba-24850	neg-es-pba-24850	0	hard_negative	test_trasancos	ES	Mámoa de Rioboo 2/Mámoa de Canteiros 2/M moas do Val	Valdoviño	Meirás (San Vicente)		megalithic_mound	120.0	-0.81776341	199	ok	
+wl-tile-v1-02629	wl-neg-neg-es-pba-14224	neg-es-pba-14224	0	hard_negative	test_trasancos	ES	Mámoa de Sequeiro	Narón	San Xiao de Narón (San Xiao)		megalithic_mound	120.0	-0.31602064	148	ok	
+wl-tile-v1-02630	wl-neg-neg-es-pba-14225	neg-es-pba-14225	0	hard_negative	test_trasancos	ES	Mámoa de Vespasante/Arca de Vespasante	Narón	Trasancos (San Mateo)		megalithic_mound	120.0	-0.65188904	181	ok	
+wl-tile-v1-02631	wl-neg-neg-es-pba-14226	neg-es-pba-14226	0	hard_negative	test_trasancos	ES	Mámoa do Calvario	Narón	Trasancos (San Mateo)		megalithic_mound	120.0	-0.29012444	146	ok	
+wl-tile-v1-02657	wl-neg-neg-es-pba-20436	neg-es-pba-20436	0	hard_negative	test_trasancos	ES	Mámoa do Campo da Cruz 1	San Sadurniño	Igrexafeita (Santa María)		megalithic_mound	120.0	-0.58341529	176	ok	
+wl-tile-v1-02648	wl-neg-neg-es-pba-14636	neg-es-pba-14636	0	hard_negative	test_trasancos	ES	Mámoa do Inglés	Neda	Viladonelle (Santo André)		megalithic_mound	120.0	-0.12392173	128	ok	
+wl-tile-v1-02649	wl-neg-neg-es-pba-14637	neg-es-pba-14637	0	hard_negative	test_trasancos	ES	Mámoa do Monte Marraxón	Neda	Santa María de Neda (Santa María)		megalithic_mound	120.0	0.28241533	78	ok	
+wl-tile-v1-02548	wl-neg-neg-es-pba-9173	neg-es-pba-9173	0	hard_negative	test_trasancos	ES	Mámoa do Monte Marraxón I-1	Fene	Sillobre (Santa Mariña)		megalithic_mound	120.0	0.00938810	115	ok	
+wl-tile-v1-02549	wl-neg-neg-es-pba-9201	neg-es-pba-9201	0	hard_negative	test_trasancos	ES	Mámoa do Monte Marraxón I-2	Fene	Sillobre (Santa Mariña)		megalithic_mound	120.0	0.38365456	68	ok	
+wl-tile-v1-02550	wl-neg-neg-es-pba-9202	neg-es-pba-9202	0	hard_negative	test_trasancos	ES	Mámoa do Monte Marraxón I-3	Fene	Sillobre (Santa Mariña)		megalithic_mound	120.0	0.45621304	60	ok	
+wl-tile-v1-02551	wl-neg-neg-es-pba-9203	neg-es-pba-9203	0	hard_negative	test_trasancos	ES	Mámoa do Monte Marraxón I-4	Fene	Sillobre (Santa Mariña)		megalithic_mound	120.0	-0.15120688	133	ok	
+wl-tile-v1-02552	wl-neg-neg-es-pba-9204	neg-es-pba-9204	0	hard_negative	test_trasancos	ES	Mámoa do Monte Marraxón I-5	Fene	Sillobre (Santa Mariña)		megalithic_mound	120.0	-0.45137471	163	ok	
+wl-tile-v1-02553	wl-neg-neg-es-pba-9205	neg-es-pba-9205	0	hard_negative	test_trasancos	ES	Mámoa do Monte Marraxón I-6	Fene	Sillobre (Santa Mariña)		megalithic_mound	120.0	-0.75491899	193	ok	
+wl-tile-v1-02554	wl-neg-neg-es-pba-9206	neg-es-pba-9206	0	hard_negative	test_trasancos	ES	Mámoa do Monte Marraxón II-1	Fene	Sillobre (Santa Mariña)		megalithic_mound	120.0	0.46012224	58	ok	
+wl-tile-v1-02555	wl-neg-neg-es-pba-9207	neg-es-pba-9207	0	hard_negative	test_trasancos	ES	Mámoa do Monte Marraxón III-1	Fene	Sillobre (Santa Mariña)		megalithic_mound	120.0	0.54179420	52	ok	
+wl-tile-v1-02556	wl-neg-neg-es-pba-9208	neg-es-pba-9208	0	hard_negative	test_trasancos	ES	Mámoa do Monte Marraxón III-2	Fene	Sillobre (Santa Mariña)		megalithic_mound	120.0	0.22416332	86	ok	
+wl-tile-v1-02536	wl-neg-neg-es-pba-8678	neg-es-pba-8678	0	hard_negative	test_trasancos	ES	Mámoa do Monte Marraxón III-3	Fene	Sillobre (Santa Mariña)		megalithic_mound	120.0	-0.03588809	119	ok	
+wl-tile-v1-02537	wl-neg-neg-es-pba-8679	neg-es-pba-8679	0	hard_negative	test_trasancos	ES	Mámoa do Monte Marraxón III-4	Fene	Sillobre (Santa Mariña)		megalithic_mound	120.0	0.42358321	63	ok	
+wl-tile-v1-02538	wl-neg-neg-es-pba-8680	neg-es-pba-8680	0	hard_negative	test_trasancos	ES	Mámoa do Monte Marraxón III-5	Fene	Sillobre (Santa Mariña)		megalithic_mound	120.0	0.23078367	84	ok	
+wl-tile-v1-02539	wl-neg-neg-es-pba-8681	neg-es-pba-8681	0	hard_negative	test_trasancos	ES	Mámoa do Monte Marraxón III-6	Fene	Sillobre (Santa Mariña)		megalithic_mound	120.0	0.18940782	90	ok	
+wl-tile-v1-02540	wl-neg-neg-es-pba-8682	neg-es-pba-8682	0	hard_negative	test_trasancos	ES	Mámoa do Monte Marraxón IV-1	Fene	Sillobre (Santa Mariña)		megalithic_mound	120.0	1.01316567	25	ok	
+wl-tile-v1-02541	wl-neg-neg-es-pba-8683	neg-es-pba-8683	0	hard_negative	test_trasancos	ES	Mámoa do Monte Marraxón IV-2	Fene	Sillobre (Santa Mariña)		megalithic_mound	120.0	0.06967200	102	ok	
+wl-tile-v1-02542	wl-neg-neg-es-pba-8684	neg-es-pba-8684	0	hard_negative	test_trasancos	ES	Mámoa do Monte Marraxón IV-3	Fene	Sillobre (Santa Mariña)		megalithic_mound	120.0	-0.11881599	127	ok	
+wl-tile-v1-02543	wl-neg-neg-es-pba-8685	neg-es-pba-8685	0	hard_negative	test_trasancos	ES	Mámoa do Monte Marraxón IV-4	Fene	Sillobre (Santa Mariña)		megalithic_mound	120.0	-0.37400614	153	ok	
+wl-tile-v1-02544	wl-neg-neg-es-pba-8713	neg-es-pba-8713	0	hard_negative	test_trasancos	ES	Mámoa do Monte Marraxón IV-5	Fene	Sillobre (Santa Mariña)		megalithic_mound	120.0	0.67214634	41	ok	
+wl-tile-v1-02545	wl-neg-neg-es-pba-8714	neg-es-pba-8714	0	hard_negative	test_trasancos	ES	Mámoa do Monte Marraxón IV-6	Fene	Sillobre (Santa Mariña)		megalithic_mound	120.0	-0.07940242	122	ok	
+wl-tile-v1-02658	wl-neg-neg-es-pba-24330	neg-es-pba-24330	0	hard_negative	test_trasancos	ES	Mámoa do Monte de Pena Moura 1	Valdoviño	Valdoviño (Santaia)		megalithic_mound	120.0	-0.77726516	195	ok	
+wl-tile-v1-02659	wl-neg-neg-es-pba-24331	neg-es-pba-24331	0	hard_negative	test_trasancos	ES	Mámoa do Monte de Pena Moura 2	Valdoviño	Valdoviño (Santaia)		megalithic_mound	120.0	0.35778010	70	ok	
+wl-tile-v1-02660	wl-neg-neg-es-pba-24332	neg-es-pba-24332	0	hard_negative	test_trasancos	ES	Mámoa do Monte de Pena Moura 3	Valdoviño	Valdoviño (Santaia)		megalithic_mound	120.0	0.89991656	28	ok	
+wl-tile-v1-02632	wl-neg-neg-es-pba-14255	neg-es-pba-14255	0	hard_negative	test_trasancos	ES	Mámoa do Monte dos Niños 01	Narón	Sedes (Santo Estevo)		megalithic_mound	120.0	-0.21685862	136	ok	
+wl-tile-v1-02633	wl-neg-neg-es-pba-14256	neg-es-pba-14256	0	hard_negative	test_trasancos	ES	Mámoa do Monte dos Niños 02	Narón	Sedes (Santo Estevo)		megalithic_mound	120.0	-0.68368072	184	ok	
+wl-tile-v1-02634	wl-neg-neg-es-pba-14257	neg-es-pba-14257	0	hard_negative	test_trasancos	ES	Mámoa do Monte dos Niños 03	Narón	Sedes (Santo Estevo)		megalithic_mound	120.0	-0.72628829	189	ok	
+wl-tile-v1-02635	wl-neg-neg-es-pba-14258	neg-es-pba-14258	0	hard_negative	test_trasancos	ES	Mámoa do Monte dos Niños 04	Narón	Sedes (Santo Estevo)		megalithic_mound	120.0	-0.71722960	187	ok	
+wl-tile-v1-02636	wl-neg-neg-es-pba-14259	neg-es-pba-14259	0	hard_negative	test_trasancos	ES	Mámoa do Monte dos Niños 05	Narón	Sedes (Santo Estevo)		megalithic_mound	120.0	0.62818275	47	ok	
+wl-tile-v1-02637	wl-neg-neg-es-pba-14260	neg-es-pba-14260	0	hard_negative	test_trasancos	ES	Mámoa do Monte dos Niños 06	Narón	Sedes (Santo Estevo)		megalithic_mound	120.0	-0.08273180	123	ok	
+wl-tile-v1-02638	wl-neg-neg-es-pba-14261	neg-es-pba-14261	0	hard_negative	test_trasancos	ES	Mámoa do Monte dos Niños 07	Narón	Sedes (Santo Estevo)		megalithic_mound	120.0	1.30268392	17	ok	
+wl-tile-v1-02639	wl-neg-neg-es-pba-14262	neg-es-pba-14262	0	hard_negative	test_trasancos	ES	Mámoa do Monte dos Niños 08	Narón	Sedes (Santo Estevo)		megalithic_mound	120.0	-0.17279666	135	ok	
+wl-tile-v1-02640	wl-neg-neg-es-pba-14291	neg-es-pba-14291	0	hard_negative	test_trasancos	ES	Mámoa do Monte dos Niños 09	Narón	Sedes (Santo Estevo)		megalithic_mound	120.0	0.28839903	76	ok	
+wl-tile-v1-02641	wl-neg-neg-es-pba-14292	neg-es-pba-14292	0	hard_negative	test_trasancos	ES	Mámoa do Monte dos Niños 10	Narón	Sedes (Santo Estevo)		megalithic_mound	120.0	-0.15053869	132	ok	
+wl-tile-v1-02642	wl-neg-neg-es-pba-14293	neg-es-pba-14293	0	hard_negative	test_trasancos	ES	Mámoa do Monte dos Niños 11	Narón	Sedes (Santo Estevo)		megalithic_mound	120.0	-0.78160655	196	ok	
+wl-tile-v1-02643	wl-neg-neg-es-pba-14294	neg-es-pba-14294	0	hard_negative	test_trasancos	ES	Mámoa do Monte dos Niños 12	Narón	Sedes (Santo Estevo)		megalithic_mound	120.0	-0.61761247	177	ok	
+wl-tile-v1-02644	wl-neg-neg-es-pba-14295	neg-es-pba-14295	0	hard_negative	test_trasancos	ES	Mámoa do Monte dos Niños 13	Narón	Sedes (Santo Estevo)		megalithic_mound	120.0	-0.66483102	182	ok	
+wl-tile-v1-02645	wl-neg-neg-es-pba-14296	neg-es-pba-14296	0	hard_negative	test_trasancos	ES	Mámoa do Monte dos Niños 14	Narón	Sedes (Santo Estevo)		megalithic_mound	120.0	-0.85167010	200	ok	
+wl-tile-v1-02646	wl-neg-neg-es-pba-14297	neg-es-pba-14297	0	hard_negative	test_trasancos	ES	Mámoa do Monte dos Niños 15	Narón	Sedes (Santo Estevo)		megalithic_mound	120.0	-0.70818802	185	ok	
+wl-tile-v1-02647	wl-neg-neg-es-pba-14298	neg-es-pba-14298	0	hard_negative	test_trasancos	ES	Mámoa do Monte dos Niños 16	Narón	Sedes (Santo Estevo)		megalithic_mound	120.0	-0.53181277	169	ok	
+wl-tile-v1-02625	wl-neg-neg-es-pba-9982	neg-es-pba-9982	0	hard_negative	test_trasancos	ES	Mámoa do Pico de Ouro	Ferrol	Mandiá (Santa Uxía)		megalithic_mound	120.0	0.10678343	96	ok	
+wl-tile-v1-02546	wl-neg-neg-es-pba-8715	neg-es-pba-8715	0	hard_negative	test_trasancos	ES	Mámoa do Rego da Moa	Fene	Barallobre (Santiago)		megalithic_mound	120.0	1.21423481	18	ok	
+wl-tile-v1-02626	wl-neg-neg-es-pba-9983	neg-es-pba-9983	0	hard_negative	test_trasancos	ES	Mámoa dos Montes de Brión I-1	Ferrol	Doniños (San Román)		megalithic_mound	120.0	1.14436633	22	ok	
+wl-tile-v1-02557	wl-neg-neg-es-pba-10008	neg-es-pba-10008	0	hard_negative	test_trasancos	ES	Mámoa dos Montes de Brión I-10	Ferrol	Brión (Santa María)		megalithic_mound	120.0	0.67806925	40	ok	
+wl-tile-v1-02558	wl-neg-neg-es-pba-10009	neg-es-pba-10009	0	hard_negative	test_trasancos	ES	Mámoa dos Montes de Brión I-2	Ferrol	Brión (Santa María)		megalithic_mound	120.0	0.48153136	56	ok	
+wl-tile-v1-02559	wl-neg-neg-es-pba-10010	neg-es-pba-10010	0	hard_negative	test_trasancos	ES	Mámoa dos Montes de Brión I-3	Ferrol	Doniños (San Román)		megalithic_mound	120.0	0.08654579	100	ok	
+wl-tile-v1-02560	wl-neg-neg-es-pba-10011	neg-es-pba-10011	0	hard_negative	test_trasancos	ES	Mámoa dos Montes de Brión I-4	Ferrol	Doniños (San Román)		megalithic_mound	120.0	-0.37495172	154	ok	
+wl-tile-v1-02561	wl-neg-neg-es-pba-10012	neg-es-pba-10012	0	hard_negative	test_trasancos	ES	Mámoa dos Montes de Brión I-5	Ferrol	Doniños (San Román)		megalithic_mound	120.0	0.03454968	110	ok	
+wl-tile-v1-02562	wl-neg-neg-es-pba-10013	neg-es-pba-10013	0	hard_negative	test_trasancos	ES	Mámoa dos Montes de Brión I-6	Ferrol	Brión (Santa María)		megalithic_mound	120.0	0.63365862	45	ok	
+wl-tile-v1-02563	wl-neg-neg-es-pba-10014	neg-es-pba-10014	0	hard_negative	test_trasancos	ES	Mámoa dos Montes de Brión I-7	Ferrol	Brión (Santa María)		megalithic_mound	120.0	0.73377992	37	ok	
+wl-tile-v1-02564	wl-neg-neg-es-pba-10015	neg-es-pba-10015	0	hard_negative	test_trasancos	ES	Mámoa dos Montes de Brión I-8	Ferrol	Brión (Santa María)		megalithic_mound	120.0	0.01472220	113	ok	
+wl-tile-v1-02565	wl-neg-neg-es-pba-10039	neg-es-pba-10039	0	hard_negative	test_trasancos	ES	Mámoa dos Montes de Brión I-9	Ferrol	Brión (Santa María)		megalithic_mound	120.0	0.01040803	114	ok	
+wl-tile-v1-02566	wl-neg-neg-es-pba-10040	neg-es-pba-10040	0	hard_negative	test_trasancos	ES	Mámoa dos Montes de Brión II-1	Ferrol	Brión (Santa María)		megalithic_mound	120.0	-0.42424414	157	ok	
+wl-tile-v1-02567	wl-neg-neg-es-pba-10041	neg-es-pba-10041	0	hard_negative	test_trasancos	ES	Mámoa dos Montes de Brión II-2	Ferrol	Doniños (San Román)		megalithic_mound	120.0	-0.94975493	204	ok	
+wl-tile-v1-02568	wl-neg-neg-es-pba-10042	neg-es-pba-10042	0	hard_negative	test_trasancos	ES	Mámoa dos Montes de Brión III-1	Ferrol	Doniños (San Román)		megalithic_mound	120.0	-0.78634725	197	ok	
+wl-tile-v1-02569	wl-neg-neg-es-pba-10043	neg-es-pba-10043	0	hard_negative	test_trasancos	ES	Mámoa dos Montes de Brión III-2	Ferrol	Doniños (San Román)		megalithic_mound	120.0	-0.72274445	188	ok	
+wl-tile-v1-02570	wl-neg-neg-es-pba-10044	neg-es-pba-10044	0	hard_negative	test_trasancos	ES	Mámoa dos Montes de Brión III-3	Ferrol	Doniños (San Román)		megalithic_mound	120.0	0.29131639	75	ok	
+wl-tile-v1-02571	wl-neg-neg-es-pba-10045	neg-es-pba-10045	0	hard_negative	test_trasancos	ES	Mámoa dos Montes de Brión III-4	Ferrol	Doniños (San Román)		megalithic_mound	120.0	-0.91469892	203	ok	
+wl-tile-v1-02572	wl-neg-neg-es-pba-10046	neg-es-pba-10046	0	hard_negative	test_trasancos	ES	Mámoa dos Montes de Brión III-5	Ferrol	Doniños (San Román)		megalithic_mound	120.0	0.38826042	67	ok	
+wl-tile-v1-02573	wl-neg-neg-es-pba-10069	neg-es-pba-10069	0	hard_negative	test_trasancos	ES	Mámoa dos Montes de Brión III-6	Ferrol	Doniños (San Román)		megalithic_mound	120.0	-0.27050708	144	ok	
+wl-tile-v1-02574	wl-neg-neg-es-pba-10070	neg-es-pba-10070	0	hard_negative	test_trasancos	ES	Mámoa dos Montes de Brión III-7	Ferrol	Doniños (San Román)		megalithic_mound	120.0	-0.67535876	183	ok	
+wl-tile-v1-02575	wl-neg-neg-es-pba-10071	neg-es-pba-10071	0	hard_negative	test_trasancos	ES	Mámoa dos Montes de Brión III-8	Ferrol	Doniños (San Román)		megalithic_mound	120.0	0.79330256	32	ok	
+wl-tile-v1-02576	wl-neg-neg-es-pba-10072	neg-es-pba-10072	0	hard_negative	test_trasancos	ES	Mámoa dos Montes de Brión IV-1	Ferrol	Doniños (San Román)		megalithic_mound	120.0	-0.25198454	141	ok	
+wl-tile-v1-02577	wl-neg-neg-es-pba-10073	neg-es-pba-10073	0	hard_negative	test_trasancos	ES	Mámoa dos Montes de Brión IV-10	Ferrol	Doniños (San Román)		megalithic_mound	120.0	-0.42656683	158	ok	
+wl-tile-v1-02578	wl-neg-neg-es-pba-10074	neg-es-pba-10074	0	hard_negative	test_trasancos	ES	Mámoa dos Montes de Brión IV-11	Ferrol	Doniños (San Román)		megalithic_mound	120.0	-0.22957128	137	ok	
+wl-tile-v1-02579	wl-neg-neg-es-pba-10075	neg-es-pba-10075	0	hard_negative	test_trasancos	ES	Mámoa dos Montes de Brión IV-12	Ferrol	Doniños (San Román)		megalithic_mound	120.0	-0.23532661	138	ok	
+wl-tile-v1-02580	wl-neg-neg-es-pba-10076	neg-es-pba-10076	0	hard_negative	test_trasancos	ES	Mámoa dos Montes de Brión IV-2	Ferrol	Doniños (San Román)		megalithic_mound	120.0	0.25401435	81	ok	
+wl-tile-v1-02581	wl-neg-neg-es-pba-10098	neg-es-pba-10098	0	hard_negative	test_trasancos	ES	Mámoa dos Montes de Brión IV-3	Ferrol	Doniños (San Román)		megalithic_mound	120.0	-0.23721286	139	ok	
+wl-tile-v1-02582	wl-neg-neg-es-pba-10099	neg-es-pba-10099	0	hard_negative	test_trasancos	ES	Mámoa dos Montes de Brión IV-4	Ferrol	Doniños (San Román)		megalithic_mound	120.0	-0.51490027	168	ok	
+wl-tile-v1-02583	wl-neg-neg-es-pba-10100	neg-es-pba-10100	0	hard_negative	test_trasancos	ES	Mámoa dos Montes de Brión IV-5	Ferrol	Doniños (San Román)		megalithic_mound	120.0	-0.11547067	126	ok	
+wl-tile-v1-02584	wl-neg-neg-es-pba-10101	neg-es-pba-10101	0	hard_negative	test_trasancos	ES	Mámoa dos Montes de Brión IV-6	Ferrol	Doniños (San Román)		megalithic_mound	120.0	0.08592766	101	ok	
+wl-tile-v1-02585	wl-neg-neg-es-pba-10102	neg-es-pba-10102	0	hard_negative	test_trasancos	ES	Mámoa dos Montes de Brión IV-7	Ferrol	Brión (Santa María)		megalithic_mound	120.0	0.28392850	77	ok	
+wl-tile-v1-02586	wl-neg-neg-es-pba-10103	neg-es-pba-10103	0	hard_negative	test_trasancos	ES	Mámoa dos Montes de Brión IV-8	Ferrol	Doniños (San Román)		megalithic_mound	120.0	-0.73545743	191	ok	
+wl-tile-v1-02587	wl-neg-neg-es-pba-10104	neg-es-pba-10104	0	hard_negative	test_trasancos	ES	Mámoa dos Montes de Brión IV-9	Ferrol	Doniños (San Román)		megalithic_mound	120.0	-0.07216048	121	ok	
+wl-tile-v1-02588	wl-neg-neg-es-pba-10105	neg-es-pba-10105	0	hard_negative	test_trasancos	ES	Mámoa dos Montes de Brión V-1	Ferrol	Brión (Santa María)		megalithic_mound	120.0	0.15230447	92	ok	
+wl-tile-v1-02589	wl-neg-neg-es-pba-10130	neg-es-pba-10130	0	hard_negative	test_trasancos	ES	Mámoa dos Montes de Brión V-2	Ferrol	Brión (Santa María)		megalithic_mound	120.0	-0.16928328	134	ok	
+wl-tile-v1-02590	wl-neg-neg-es-pba-10131	neg-es-pba-10131	0	hard_negative	test_trasancos	ES	Mámoa dos Montes de Brión VI-1	Ferrol	Brión (Santa María)		megalithic_mound	120.0	0.68647242	39	ok	
+wl-tile-v1-02591	wl-neg-neg-es-pba-10132	neg-es-pba-10132	0	hard_negative	test_trasancos	ES	Mámoa dos Montes de Brión VI-2	Ferrol	Brión (Santa María)		megalithic_mound	120.0	-0.44869561	162	ok	
+wl-tile-v1-02592	wl-neg-neg-es-pba-10133	neg-es-pba-10133	0	hard_negative	test_trasancos	ES	Mámoa dos Montes de Brión VI-3	Ferrol	Brión (Santa María)		megalithic_mound	120.0	-0.39791179	156	ok	
+wl-tile-v1-02593	wl-neg-neg-es-pba-10134	neg-es-pba-10134	0	hard_negative	test_trasancos	ES	Mámoa dos Montes de Brión VI-4	Ferrol	Brión (Santa María)		megalithic_mound	120.0	-0.49026096	165	ok	
+wl-tile-v1-02594	wl-neg-neg-es-pba-10135	neg-es-pba-10135	0	hard_negative	test_trasancos	ES	Mámoa dos Montes de Brión VI-5	Ferrol	Brión (Santa María)		megalithic_mound	120.0	-0.34392431	151	ok	
+wl-tile-v1-02595	wl-neg-neg-es-pba-10136	neg-es-pba-10136	0	hard_negative	test_trasancos	ES	Mámoas de Brión	Ferrol	Brión (Santa María)		megalithic_mound	120.0	-0.64897060	179	ok	
+wl-tile-v1-02596	wl-neg-neg-es-pba-10137	neg-es-pba-10137	0	hard_negative	test_trasancos	ES	Mámoas do Monte Ventoso	Ferrol	Doniños (San Román)		megalithic_mound	120.0	0.62078777	48	ok	
+wl-tile-v1-02597	wl-neg-neg-es-pba-9852	neg-es-pba-9852	0	hard_negative	test_trasancos	ES	Petróglifo de Chamorro	Ferrol	Serantes (San Salvador)		rock_art_surface	120.0	0.31432118	72	ok	
+wl-tile-v1-02547	wl-neg-neg-es-pba-8755	neg-es-pba-8755	0	hard_negative	test_trasancos	ES	Petróglifo do Monte Marraxón	Fene	Sillobre (Santa Mariña)		rock_art_surface	120.0	0.47314583	57	ok	
+wl-tile-v1-02598	wl-neg-neg-es-pba-9853	neg-es-pba-9853	0	hard_negative	test_trasancos	ES	Petróglifo do coto de San Xurxo	Ferrol	San Xurxo da Mariña (San Xurxo)		rock_art_surface	120.0	0.25436300	80	ok	
+wl-tile-v1-02709	wl-pos-pos-es-pba-20704	pos-es-pba-20704	1	positive	test_trasancos	ES	A Croa	San Sadurniño	Naraío (Santa María)	croa_top_ring_hint		120.0	-0.54871157	172	ok	
+wl-tile-v1-02710	wl-pos-pos-es-pba-20705	pos-es-pba-20705	1	positive	test_trasancos	ES	A Croa do Castro	San Sadurniño	Santa Mariña do Monte (Santa Mariña)	croa_top_ring_hint		120.0	1.49071972	14	ok	
+wl-tile-v1-02711	wl-pos-pos-es-pba-20706	pos-es-pba-20706	1	positive	test_trasancos	ES	A Croa do Redo	San Sadurniño	Lamas (San Xiao)	croa_top_ring_hint		120.0	1.20178562	19	ok	
+wl-tile-v1-02680	wl-pos-pos-es-pba-9072	pos-es-pba-9072	1	positive	test_trasancos	ES	A Croa/Castro da Croa de Fontá	Ferrol	Doniños (San Román)	croa_top_ring_hint		120.0	0.87509172	29	ok	
+wl-tile-v1-02691	wl-pos-pos-es-pba-14210	pos-es-pba-14210	1	positive	test_trasancos	ES	As Croas	Narón	Trasancos (San Mateo)	croa_top_ring_hint		120.0	0.30325531	74	ok	
+wl-tile-v1-02719	wl-pos-pos-es-pba-24673	pos-es-pba-24673	1	positive	test_trasancos	ES	Castro	Valdoviño	Vilarrube (San Martiño)	generic_castro_hint		120.0	1.47960436	15	ok	
+wl-tile-v1-02712	wl-pos-pos-es-pba-20782	pos-es-pba-20782	1	positive	test_trasancos	ES	Castro Das Croas	San Sadurniño	San Sadurniño (Santa María)	croa_top_ring_hint		120.0	1.94308726	9	ok	
+wl-tile-v1-02693	wl-pos-pos-es-pba-14552	pos-es-pba-14552	1	positive	test_trasancos	ES	Castro da Ermida	Narón	Pedroso (San Salvador)	generic_castro_hint		120.0	1.19831178	20	ok	
+wl-tile-v1-02694	wl-pos-pos-es-pba-14554	pos-es-pba-14554	1	positive	test_trasancos	ES	Castro da Pereiruga	Narón	Pedroso (San Salvador)	generic_castro_hint		120.0	1.59224646	12	ok	
+wl-tile-v1-02720	wl-pos-pos-es-pba-24674	pos-es-pba-24674	1	positive	test_trasancos	ES	Castro da Punta do Vico	Valdoviño	Valdoviño (Santaia)	coastal_promontory_hint		120.0	0.81818782	31	ok	
+wl-tile-v1-02695	wl-pos-pos-es-pba-14555	pos-es-pba-14555	1	positive	test_trasancos	ES	Castro da Revolta	Narón	Sedes (Santo Estevo)	generic_castro_hint		120.0	1.59178698	13	ok	
+wl-tile-v1-02671	wl-pos-pos-es-pba-8704	pos-es-pba-8704	1	positive	test_trasancos	ES	Castro das Pías/Castro de Cardoeiro	Fene	Perlío (Santo Estevo)	generic_castro_hint		120.0	2.08607588	8	ok	
+wl-tile-v1-02703	wl-pos-pos-es-pba-14488	pos-es-pba-14488	1	positive	test_trasancos	ES	Castro de Ancos	Neda	Santa María de Neda (Santa María)	generic_castro_hint		120.0	1.00359529	26	ok	
+wl-tile-v1-02721	wl-pos-pos-es-pba-24675	pos-es-pba-24675	1	positive	test_trasancos	ES	Castro de Aviño	Valdoviño	Valdoviño (Santaia)	generic_castro_hint		120.0	0.40385738	65	ok	
+wl-tile-v1-02672	wl-pos-pos-es-pba-8705	pos-es-pba-8705	1	positive	test_trasancos	ES	Castro de Barallobre	Fene	Barallobre (Santiago)	generic_castro_hint		120.0	-0.14285251	130	ok	
+wl-tile-v1-02681	wl-pos-pos-es-pba-9152	pos-es-pba-9152	1	positive	test_trasancos	ES	Castro de Canido	Ferrol	Ferrol	generic_castro_hint		120.0	0.05227192	104	ok	
+wl-tile-v1-02722	wl-pos-pos-es-pba-24676	pos-es-pba-24676	1	positive	test_trasancos	ES	Castro de Carreira de Abaixo	Valdoviño	O Sequeiro (Santa María)	generic_castro_hint		120.0	0.54023176	53	ok	
+wl-tile-v1-02723	wl-pos-pos-es-pba-24677	pos-es-pba-24677	1	positive	test_trasancos	ES	Castro de Casianes	Valdoviño	Pantín (Santiago)	generic_castro_hint		120.0	-0.65104785	180	ok	
+wl-tile-v1-02713	wl-pos-pos-es-pba-20783	pos-es-pba-20783	1	positive	test_trasancos	ES	Castro de Castrelo	San Sadurniño	Santa Mariña do Monte (Santa Mariña)	castrel_toponym_hint		120.0	0.44578662	62	ok	
+wl-tile-v1-02724	wl-pos-pos-es-pba-24678	pos-es-pba-24678	1	positive	test_trasancos	ES	Castro de Coto Redondo	Valdoviño	Pantín (Santiago)	hilltop_hint		120.0	-0.14322850	131	ok	
+wl-tile-v1-02725	wl-pos-pos-es-pba-24679	pos-es-pba-24679	1	positive	test_trasancos	ES	Castro de Crecente	Valdoviño	Loira (San Pedro)	generic_castro_hint		120.0	0.09939442	99	ok	
+wl-tile-v1-02696	wl-pos-pos-es-pba-14556	pos-es-pba-14556	1	positive	test_trasancos	ES	Castro de Eiravedra	Narón	Sedes (Santo Estevo)	generic_castro_hint		120.0	0.22898751	85	ok	
+wl-tile-v1-02682	wl-pos-pos-es-pba-9153	pos-es-pba-9153	1	positive	test_trasancos	ES	Castro de Ferrol Vello	Ferrol	Ferrol	generic_castro_hint		120.0	0.38115640	69	ok	
+wl-tile-v1-02726	wl-pos-pos-es-pba-24705	pos-es-pba-24705	1	positive	test_trasancos	ES	Castro de Lagoa	Valdoviño	Pantín (Santiago)	generic_castro_hint		120.0	0.76224826	35	ok	
+wl-tile-v1-02683	wl-pos-pos-es-pba-9154	pos-es-pba-9154	1	positive	test_trasancos	ES	Castro de Leixa/A Croa de Leixa	Ferrol	Leixa (San Pedro)	croa_top_ring_hint		120.0	0.14185543	95	ok	
+wl-tile-v1-02684	wl-pos-pos-es-pba-9155	pos-es-pba-9155	1	positive	test_trasancos	ES	Castro de Lobariz	Ferrol	San Xurxo da Mariña (San Xurxo)	generic_castro_hint		120.0	6.53049690	1	ok	
+wl-tile-v1-02727	wl-pos-pos-es-pba-24706	pos-es-pba-24706	1	positive	test_trasancos	ES	Castro de Lodeiro	Valdoviño	O Sequeiro (Santa María)	generic_castro_hint		120.0	0.23879913	83	ok	
+wl-tile-v1-02728	wl-pos-pos-es-pba-24707	pos-es-pba-24707	1	positive	test_trasancos	ES	Castro de Lousada	Valdoviño	Loira (San Pedro)	generic_castro_hint		120.0	0.59192692	49	ok	
+wl-tile-v1-02673	wl-pos-pos-es-pba-8706	pos-es-pba-8706	1	positive	test_trasancos	ES	Castro de Magalofes	Fene	Magalofes (San Xurxo)	generic_castro_hint		120.0	0.20647229	87	ok	
+wl-tile-v1-02685	wl-pos-pos-es-pba-9183	pos-es-pba-9183	1	positive	test_trasancos	ES	Castro de Marmancón/Castro de Papoi	Ferrol	Marmancón (San Pedro)	coastal_promontory_hint		120.0	0.02152527	111	ok	
+wl-tile-v1-02674	wl-pos-pos-es-pba-8707	pos-es-pba-8707	1	positive	test_trasancos	ES	Castro de Orra	Fene	Sillobre (Santa Mariña)	generic_castro_hint		120.0	0.66294604	43	ok	
+wl-tile-v1-02697	wl-pos-pos-es-pba-14589	pos-es-pba-14589	1	positive	test_trasancos	ES	Castro de Petouzal/Castro da Croa	Narón	Narón	croa_top_ring_hint		120.0	-0.33290939	149	ok	
+wl-tile-v1-02729	wl-pos-pos-es-pba-24708	pos-es-pba-24708	1	positive	test_trasancos	ES	Castro de Poulo	Valdoviño	Valdoviño (Santaia)	generic_castro_hint		120.0	0.40383301	66	ok	
+wl-tile-v1-02675	wl-pos-pos-es-pba-8708	pos-es-pba-8708	1	positive	test_trasancos	ES	Castro de Prismos	Fene	Maniños (San Salvador)	generic_castro_hint		120.0	0.53652744	54	ok	
+wl-tile-v1-02730	wl-pos-pos-es-pba-24709	pos-es-pba-24709	1	positive	test_trasancos	ES	Castro de Punta Frouxeira	Valdoviño	Valdoviño (Santaia)	coastal_promontory_hint		120.0	2.57913878	4	ok	
+wl-tile-v1-02731	wl-pos-pos-es-pba-24710	pos-es-pba-24710	1	positive	test_trasancos	ES	Castro de Punta Taraza	Valdoviño	Meirás (San Vicente)	coastal_promontory_hint		120.0	3.61180386	3	ok	
+wl-tile-v1-02706	wl-pos-pos-es-pba-20260	pos-es-pba-20260	1	positive	test_trasancos	ES	Castro de Riboira	San Sadurniño	Lamas (San Xiao)	generic_castro_hint		120.0	0.10530372	97	ok	
+wl-tile-v1-02707	wl-pos-pos-es-pba-20261	pos-es-pba-20261	1	positive	test_trasancos	ES	Castro de Rupiallo	San Sadurniño	San Sadurniño (Santa María)	generic_castro_hint		120.0	0.44860396	61	ok	
+wl-tile-v1-02686	wl-pos-pos-es-pba-9184	pos-es-pba-9184	1	positive	test_trasancos	ES	Castro de Santa Cecilia	Ferrol	Santa Cecilia de Trasancos (Santa Cecilia)	generic_castro_hint		120.0	0.15242923	91	ok	
+wl-tile-v1-02687	wl-pos-pos-es-pba-9185	pos-es-pba-9185	1	positive	test_trasancos	ES	Castro de Santa Mariña/Os Castros Altos	Ferrol	Ferrol	coastal_promontory_hint		120.0	-0.03344725	118	ok	
+wl-tile-v1-02698	wl-pos-pos-es-pba-14590	pos-es-pba-14590	1	positive	test_trasancos	ES	Castro de Santo Estevo	Narón	Sedes (Santo Estevo)	generic_castro_hint		120.0	-0.33334384	150	ok	
+wl-tile-v1-02699	wl-pos-pos-es-pba-14591	pos-es-pba-14591	1	positive	test_trasancos	ES	Castro de Sedes/Castro de Eiravedra	Narón	Sedes (Santo Estevo)	generic_castro_hint		120.0	0.57379324	50	ok	
+wl-tile-v1-02700	wl-pos-pos-es-pba-14592	pos-es-pba-14592	1	positive	test_trasancos	ES	Castro de Sequeiro/Castro de Narón	Narón	San Xiao de Narón (San Xiao)	generic_castro_hint		120.0	-0.54720461	171	ok	
+wl-tile-v1-02688	wl-pos-pos-es-pba-9186	pos-es-pba-9186	1	positive	test_trasancos	ES	Castro de Tralocastro	Ferrol	Esmelle (San Xoán)	generic_castro_hint		120.0	0.63295391	46	ok	
+wl-tile-v1-02701	wl-pos-pos-es-pba-14593	pos-es-pba-14593	1	positive	test_trasancos	ES	Castro de Trasancos	Narón	Trasancos (San Mateo)	generic_castro_hint		120.0	0.77747655	33	ok	
+wl-tile-v1-02702	wl-pos-pos-es-pba-14594	pos-es-pba-14594	1	positive	test_trasancos	ES	Castro de Vicás	Narón	San Xiao de Narón (San Xiao)	generic_castro_hint		120.0	0.26430362	79	ok	
+wl-tile-v1-02732	wl-pos-pos-es-pba-24711	pos-es-pba-24711	1	positive	test_trasancos	ES	Castro de Vidueiros	Valdoviño	Vilaboa (San Vicente)	generic_castro_hint		120.0	0.82108053	30	ok	
+wl-tile-v1-02704	wl-pos-pos-es-pba-14518	pos-es-pba-14518	1	positive	test_trasancos	ES	Castro de Viladonelle	Neda	Viladonelle (Santo André)	generic_castro_hint		120.0	2.09125413	7	ok	
+wl-tile-v1-02733	wl-pos-pos-es-pba-24712	pos-es-pba-24712	1	positive	test_trasancos	ES	Castro de Vilarrube/Os Castros de Ferreirías	Valdoviño	Pantín (Santiago)	generic_castro_hint		120.0	1.66635124	11	ok	
+wl-tile-v1-02689	wl-pos-pos-es-pba-9187	pos-es-pba-9187	1	positive	test_trasancos	ES	Castro de Vilasanche	Ferrol	Doniños (San Román)	generic_castro_hint		120.0	2.47618298	6	ok	
+wl-tile-v1-02714	wl-pos-pos-es-pba-20784	pos-es-pba-20784	1	positive	test_trasancos	ES	Castro de croas de Ramil	San Sadurniño	Lamas (San Xiao)	croa_top_ring_hint		120.0	-0.08410744	124	ok	
+wl-tile-v1-02676	wl-pos-pos-es-pba-8709	pos-es-pba-8709	1	positive	test_trasancos	ES	Castro do Río Castro	Fene	Limodre (Santa Baia)	valley_or_river_edge_hint		120.0	0.10360643	98	ok	
+wl-tile-v1-02734	wl-pos-pos-es-pba-24738	pos-es-pba-24738	1	positive	test_trasancos	ES	Castro e Mina do Pereiro	Valdoviño	Valdoviño (Santaia)	generic_castro_hint		120.0	-0.73883965	192	ok	
+wl-tile-v1-02705	wl-pos-pos-es-pba-14519	pos-es-pba-14519	1	positive	test_trasancos	ES	Castros	Neda	Santa María de Neda (Santa María)	generic_castro_hint		120.0	2.57171448	5	ok	
+wl-tile-v1-02708	wl-pos-pos-es-pba-20265	pos-es-pba-20265	1	positive	test_trasancos	ES	Coto da Croa	San Sadurniño	Bardaos (Santa María)	croa_top_ring_hint		120.0	1.01681168	24	ok	
+wl-tile-v1-02677	wl-pos-pos-es-pba-10165	pos-es-pba-10165	1	positive	test_trasancos	ES	Monte do Castro/Castro de Vilela	Ferrol	Mandiá (Santa Uxía)	hilltop_hint		120.0	-0.49437403	167	ok	
+wl-tile-v1-02678	wl-pos-pos-es-pba-10262	pos-es-pba-10262	1	positive	test_trasancos	ES	Necrópole de Santa Comba/Castro de Santa Comba	Ferrol	Covas (San Martiño)	generic_castro_hint		120.0	4.51217092	2	ok	
+wl-tile-v1-02715	wl-pos-pos-es-pba-24334	pos-es-pba-24334	1	positive	test_trasancos	ES	O Castrillón	Valdoviño	Meirás (San Vicente)	castrel_toponym_hint		120.0	0.70349466	38	ok	
+wl-tile-v1-02692	wl-pos-pos-es-pba-14336	pos-es-pba-14336	1	positive	test_trasancos	ES	O Castro	Narón	Castro (Santa María)	generic_castro_hint		120.0	-0.44104028	161	ok	
+wl-tile-v1-02716	wl-pos-pos-es-pba-24335	pos-es-pba-24335	1	positive	test_trasancos	ES	O Castro	Valdoviño	Lago (Santiago)	generic_castro_hint		120.0	-0.02403689	117	ok	
+wl-tile-v1-02717	wl-pos-pos-es-pba-24337	pos-es-pba-24337	1	positive	test_trasancos	ES	Os Castros	Valdoviño	Pantín (Santiago)	generic_castro_hint		120.0	0.56180830	51	ok	
+wl-tile-v1-02679	wl-pos-pos-es-pba-10266	pos-es-pba-10266	1	positive	test_trasancos	ES	Os Castros de Mandiá	Ferrol	Serantes (San Salvador)	generic_castro_hint		120.0	0.01589346	112	ok	
+wl-tile-v1-02690	wl-pos-pos-es-pba-9886	pos-es-pba-9886	1	positive	test_trasancos	ES	Porta do Castro/Arco do Cristo	Ferrol	Ferrol	generic_castro_hint		120.0	-0.55589095	173	ok	
+wl-tile-v1-02718	wl-pos-pos-es-pba-24370	pos-es-pba-24370	1	positive	test_trasancos	ES	Zona arqueolóxica da Igrexa e Castro de Santo Tomás de Taraza	Valdoviño	Meirás (San Vicente)	generic_castro_hint		120.0	-0.09373912	125	ok	
+wl-tile-v1-02531	wl-neg-neg-es-pba-14299	neg-es-pba-14299	0	hard_negative	test_o_val	ES	Mámoa do Val/Mámoa de Santa Margarida	Narón	O Val (Santa María A Maior)		megalithic_mound	120.0	0.20636503	88	ok	
+wl-tile-v1-02534	wl-pos-pos-es-pba-14553	pos-es-pba-14553	1	positive	test_o_val	ES	Castro da Pedreira	Narón	O Val (Santa María A Maior)	generic_castro_hint		120.0	0.45731483	59	ok	
+wl-tile-v1-02535	wl-pos-pos-es-pba-14588	pos-es-pba-14588	1	positive	test_o_val	ES	Castro de Pena Lopesa	Narón	O Val (Santa María A Maior)	hilltop_hint		120.0	-0.49341152	166	ok	
+wl-tile-v1-02532	wl-pos-pos-es-pba-14328	pos-es-pba-14328	1	positive	test_o_val	ES	Monte do Castro (Castro de Vilasuso)	Narón	O Val (Santa María A Maior)	hilltop_hint		120.0	0.42279269	64	ok	
+wl-tile-v1-02533	wl-pos-pos-es-pba-14367	pos-es-pba-14367	1	positive	test_o_val	ES	O Castro (Castro de Quintá)	Narón	O Val (Santa María A Maior)	generic_castro_hint		120.0	1.88998989	10	ok	

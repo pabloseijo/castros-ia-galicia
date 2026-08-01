@@ -1,0 +1,4 @@
+subset	rows	positives	negatives	roc_auc	average_precision	precision_at_10	recall_at_10	precision_at_50	recall_at_50	precision_at_100	recall_at_100	best_positive_rank	median_positive_rank
+all	204	68	136	0.730536	0.636385	1.000000	0.147059	0.580000	0.426471	0.490000	0.720588	1	61.5
+split:test_o_val	5	4	1	0.750000	0.950000	0.800000	1.000000	0.800000	1.000000	0.800000	1.000000	1	2.5
+split:test_trasancos	199	64	135	0.732523	0.627894	1.000000	0.156250	0.580000	0.453125	0.470000	0.734375	1	59.5
