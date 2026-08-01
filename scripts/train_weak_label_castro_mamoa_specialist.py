@@ -99,6 +99,10 @@ def max_safety_lookup(path: Path) -> dict[str, dict[str, str]]:
     }
 
 
+def artifact_path(args: argparse.Namespace, suffix: str) -> Path:
+    return args.out_dir / f"{args.artifact_prefix}_{suffix}"
+
+
 def training_rows(rows: list[dict[str, str]], train_dataset: str) -> list[dict[str, str]]:
     return [
         row
@@ -264,11 +268,16 @@ def o_val_rows(score_rows: list[dict[str, str]]) -> list[dict[str, str]]:
     return [row for row in score_rows if row["final_split"] == "test_o_val"]
 
 
+def o_val_row(score_rows: list[dict[str, str]], name: str) -> dict[str, str]:
+    return next((row for row in o_val_rows(score_rows) if row["name"] == name), {})
+
+
 def write_report(path: Path, args: argparse.Namespace, score_rows: list[dict[str, str]], metrics: list[dict[str, str]], train_counts: Counter, model: dict) -> None:
     fusion_holdout = metric_lookup(metrics, "fusion_reference", "holdouts")
     mean_holdout = metric_lookup(metrics, "fusion_specialist_mean", "holdouts")
     specialist_holdout = metric_lookup(metrics, "castro_mamoa_specialist", "holdouts")
     mean_val = metric_lookup(metrics, "fusion_specialist_mean", "val")
+    pena = o_val_row(score_rows, "Castro de Pena Lopesa")
     lines = [
         "# Weak-label castro-vs-mamoa specialist v1",
         "",
@@ -277,15 +286,15 @@ def write_report(path: Path, args: argparse.Namespace, score_rows: list[dict[str
         "## What This Is",
         "",
         "A specialist ranker for the main false-positive pattern found in the error review batch: castros confused with mamoas/megalithic mounds.",
-        "It is trained only on `train_mini` positives plus `train_mini` negatives whose `negative_type` is `megalithic_mound`.",
+        f"It is trained only on `{args.train_dataset}` positives plus `{args.train_dataset}` negatives whose `negative_type` is `megalithic_mound`.",
         "This is an error-analysis layer, not an archaeological detector.",
         "",
         "## Files",
         "",
         f"- Feature table: `{rel_to_project(args.features)}`",
-        f"- Score table: `data/weak-label-fusion-v1/weak_label_castro_mamoa_specialist_scores.tsv`",
-        f"- Metrics table: `data/weak-label-fusion-v1/weak_label_castro_mamoa_specialist_metrics.tsv`",
-        f"- Model JSON: `data/weak-label-fusion-v1/weak_label_castro_mamoa_specialist_model.json`",
+        f"- Score table: `{rel_to_project(artifact_path(args, 'scores.tsv'))}`",
+        f"- Metrics table: `{rel_to_project(artifact_path(args, 'metrics.tsv'))}`",
+        f"- Model JSON: `{rel_to_project(artifact_path(args, 'model.json'))}`",
         "",
         "## Training Setup",
         "",
@@ -334,9 +343,9 @@ def write_report(path: Path, args: argparse.Namespace, score_rows: list[dict[str
             "## Interpretation",
             "",
             "- The specialist improves the explicit castro-vs-mamoa bottleneck and supports treating mamoas as a separate hard-negative family.",
-            "- It ranks `Castro de Pena Lopesa` very high by specialist probability, which confirms that the fusion failure is not simple absence of signal.",
+            f"- For `Castro de Pena Lopesa`, ranks are fusion `{pena.get('fusion_rank', 'n/a')}`, specialist `{pena.get('specialist_rank', 'n/a')}`, mean `{pena.get('mean_rank', 'n/a')}` and max-safety `{pena.get('max_safety_rank', 'n/a')}`.",
             "- The product score still inherits the low fusion score for Pena Lopesa, so the project should keep three lanes: main fusion, morphology safety, and mamoa specialist.",
-            "- This layer should inform QGIS review and hard-negative mining before exporting full `test/train`.",
+            "- This layer should inform QGIS review, hard-negative mining and the next full review queue.",
         ]
     )
     path.parent.mkdir(parents=True, exist_ok=True)
@@ -349,6 +358,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--fusion-scores", type=Path, default=DEFAULT_FUSION_SCORES)
     parser.add_argument("--priority-scores", type=Path, default=DEFAULT_PRIORITY_SCORES)
     parser.add_argument("--out-dir", type=Path, default=OUT_DIR)
+    parser.add_argument("--artifact-prefix", default="weak_label_castro_mamoa_specialist")
     parser.add_argument("--report", type=Path, default=DEFAULT_REPORT)
     parser.add_argument("--train-dataset", default="train_mini")
     parser.add_argument("--epochs", type=int, default=900)
@@ -361,6 +371,8 @@ def resolve_args(args: argparse.Namespace) -> argparse.Namespace:
     for attr in ("features", "fusion_scores", "priority_scores", "out_dir", "report"):
         value = getattr(args, attr)
         setattr(args, attr, value if value.is_absolute() else PROJECT_ROOT / value)
+    if "/" in args.artifact_prefix or "\\" in args.artifact_prefix:
+        raise SystemExit("--artifact-prefix must be a file stem, not a path")
     return args
 
 
@@ -379,9 +391,9 @@ def main() -> None:
     score_rows = build_score_rows(ok_rows(feature_rows), model, score_lookup(args.fusion_scores), max_safety_lookup(args.priority_scores))
     metric_rows = build_metric_rows(score_rows)
 
-    score_path = args.out_dir / "weak_label_castro_mamoa_specialist_scores.tsv"
-    metric_path = args.out_dir / "weak_label_castro_mamoa_specialist_metrics.tsv"
-    model_path = args.out_dir / "weak_label_castro_mamoa_specialist_model.json"
+    score_path = artifact_path(args, "scores.tsv")
+    metric_path = artifact_path(args, "metrics.tsv")
+    model_path = artifact_path(args, "model.json")
     write_tsv(score_path, score_rows, SCORE_FIELDS)
     write_tsv(metric_path, metric_rows, METRIC_FIELDS_WITH_SCORE)
     write_model(model_path, model, train_counts, args)

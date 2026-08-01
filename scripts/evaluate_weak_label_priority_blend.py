@@ -209,6 +209,17 @@ def load_fusion_references(path: Path) -> list[str]:
     return out
 
 
+def artifact_path(args: argparse.Namespace, suffix: str) -> Path:
+    return args.out_dir / f"{args.artifact_prefix}_{suffix}"
+
+
+def o_val_rank(score_rows: list[dict[str, str]], blend: str, name: str) -> str:
+    for row in score_rows:
+        if row["blend"] == blend and row["final_split"] == "test_o_val" and row["name"] == name:
+            return row["rank_desc_in_dataset"]
+    return "n/a"
+
+
 def o_val_summary(score_rows: list[dict[str, str]]) -> list[str]:
     lines = []
     names = [
@@ -248,8 +259,8 @@ def write_report(path: Path, args: argparse.Namespace, score_rows: list[dict[str
         "",
         f"- Fusion features: `{rel_to_project(args.features)}`",
         f"- Fusion scores: `{rel_to_project(args.scores)}`",
-        "- Blend score TSV: `data/weak-label-fusion-v1/weak_label_priority_blend_scores.tsv`",
-        "- Blend metrics TSV: `data/weak-label-fusion-v1/weak_label_priority_blend_metrics.tsv`",
+        f"- Blend score TSV: `{rel_to_project(artifact_path(args, 'scores.tsv'))}`",
+        f"- Blend metrics TSV: `{rel_to_project(artifact_path(args, 'metrics.tsv'))}`",
         "",
         "## Blend Logic",
         "",
@@ -278,6 +289,9 @@ def write_report(path: Path, args: argparse.Namespace, score_rows: list[dict[str
     max_holdouts = metric_lookup(metric_rows, "max_safety", "holdouts")
     max_val = metric_lookup(metric_rows, "max_safety", "val")
     fusion70_val = metric_lookup(metric_rows, "fusion70_arch30", "val")
+    pena_fusion = o_val_rank(score_rows, "fusion_only", "Castro de Pena Lopesa")
+    pena_max = o_val_rank(score_rows, "max_safety", "Castro de Pena Lopesa")
+    mamoa_max = o_val_rank(score_rows, "max_safety", "Mámoa do Val/Mámoa de Santa Margarida")
     lines.extend(
         [
             "",
@@ -297,7 +311,7 @@ def write_report(path: Path, args: argparse.Namespace, score_rows: list[dict[str
         [
             "## Interpretation",
             "",
-            "- `max_safety` improves the treatment of `Castro de Pena Lopesa`: it moves from rank 199 under supervised fusion to rank 72 in holdouts, above the mámoa hard negative.",
+            f"- `max_safety` tests the treatment of `Castro de Pena Lopesa`: supervised fusion rank `{pena_fusion}`, `max_safety` rank `{pena_max}`; local mámoa `max_safety` rank `{mamoa_max}`.",
             "- The cost is lower top-50 precision on holdouts, so the correct operational use is two queues: main queue by fusion score, safety queue by morphology rescue.",
             "- This directly addresses the current bottleneck: castros are not one shape, so the review workflow must preserve several shape hypotheses at once.",
         ]
@@ -312,6 +326,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--scores", type=Path, default=DEFAULT_SCORES)
     parser.add_argument("--fusion-metrics", type=Path, default=DEFAULT_FUSION_METRICS)
     parser.add_argument("--out-dir", type=Path, default=OUT_DIR)
+    parser.add_argument("--artifact-prefix", default="weak_label_priority_blend")
     parser.add_argument("--report", type=Path, default=DEFAULT_REPORT)
     return parser.parse_args()
 
@@ -322,6 +337,8 @@ def resolve_args(args: argparse.Namespace) -> argparse.Namespace:
     args.fusion_metrics = args.fusion_metrics if args.fusion_metrics.is_absolute() else PROJECT_ROOT / args.fusion_metrics
     args.out_dir = args.out_dir if args.out_dir.is_absolute() else PROJECT_ROOT / args.out_dir
     args.report = args.report if args.report.is_absolute() else PROJECT_ROOT / args.report
+    if "/" in args.artifact_prefix or "\\" in args.artifact_prefix:
+        raise SystemExit("--artifact-prefix must be a file stem, not a path")
     return args
 
 
@@ -331,8 +348,8 @@ def main() -> None:
     base = base_rows(read_tsv(args.scores), features_by_sample)
     score_rows = build_score_rows(base)
     metric_rows = build_metric_rows(score_rows)
-    score_path = args.out_dir / "weak_label_priority_blend_scores.tsv"
-    metric_path = args.out_dir / "weak_label_priority_blend_metrics.tsv"
+    score_path = artifact_path(args, "scores.tsv")
+    metric_path = artifact_path(args, "metrics.tsv")
     write_tsv(score_path, score_rows, SCORE_FIELDS)
     write_tsv(metric_path, metric_rows, METRIC_FIELDS_WITH_BLEND)
     write_report(args.report, args, score_rows, metric_rows)
