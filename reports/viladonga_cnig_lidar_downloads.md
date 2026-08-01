@@ -1,14 +1,14 @@
-# Viladonga CNIG LiDAR candidates
+# Viladonga CNIG LiDAR downloads
 
 Generated: 2026-08-01
 
 - Chip manifest: `data/viladonga-pilot/pnoa_chip_manifest.tsv`
-- Output TSV: `data/viladonga-pilot/cnig_lidar_candidates.tsv`
+- Output TSV: `data/viladonga-pilot/cnig_lidar_downloads.tsv`
 - Official source: `https://centrodedescargas.cnig.es/CentroDescargas/lidar-tercera-cobertura`
 - Product definitions: `https://pnoa.ign.es/pnoa-lidar/productos-a-descarga`
 - Pilot chip bounds EPSG:25829: `630239.88,4779224.99,631641.93,4780504.99`
 - Queried 1 km cells from lower-left IDs: 630-4779, 630-4780, 631-4779, 631-4780
-- Preferred status: `ready_to_download_lida3`
+- Preferred status: `downloaded_lida3`
 
 ## Preferred 3rd coverage LAZ
 
@@ -25,16 +25,8 @@ CNIG's 3rd-coverage filenames here use the northern kilometre edge for the Y com
 
 ## Fallback coverages
 
-- 2nd coverage unique files found: 4.
-  - `PNOA_2016_GAL_E_630-4780_ORT-CLA-CIR.laz` sec `11036866` (0,50 ptos/m2, 44.55 MB)
-  - `PNOA_2016_GAL_E_630-4780_ORT-CLA-COL.laz` sec `11032764` (0,50 ptos/m2, 44.36 MB)
-  - `PNOA_2016_GAL_E_630-4782_ORT-CLA-CIR.laz` sec `11036867` (0,50 ptos/m2, 41.99 MB)
-  - `PNOA_2016_GAL_E_630-4782_ORT-CLA-COL.laz` sec `11032765` (0,50 ptos/m2, 41.71 MB)
-- 1st coverage unique files found: 4.
-  - `PNOA_2009_LOTE1_GAL_630-4780_ORT-CLA-CIR.laz` sec `10085910` (0,50 ptos/m2, 12.32 MB)
-  - `PNOA_2009_LOTE1_GAL_630-4780_ORT-CLA-COL.laz` sec `9920591` (0,50 ptos/m2, 13.18 MB)
-  - `PNOA_2009_LOTE1_GAL_630-4782_ORT-CLA-CIR.laz` sec `10083206` (0,50 ptos/m2, 12.50 MB)
-  - `PNOA_2009_LOTE1_GAL_630-4782_ORT-CLA-COL.laz` sec `9919076` (0,50 ptos/m2, 13.48 MB)
+- 2nd coverage: not queried in this run.
+- 1st coverage: not queried in this run.
 
 ## Download command
 

@@ -42,6 +42,7 @@ make viladonga-pilot
 
 - `reports/viladonga_pilot_readiness.md`
 - `reports/viladonga_cnig_lidar_candidates.md`
+- `reports/viladonga_cnig_lidar_downloads.md`
 - `reports/viladonga_lidar_derivatives.md`
 - `reports/viladonga_mdt_wcs.md`
 - `reports/viladonga_pnoa_chips.md`
@@ -51,6 +52,7 @@ make viladonga-pilot
 - `reports/viladonga_radial_relief_profile.md`
 - `data/viladonga-pilot/labels_manifest.tsv`
 - `data/viladonga-pilot/cnig_lidar_candidates.tsv`
+- `data/viladonga-pilot/cnig_lidar_downloads.tsv`
 - `data/viladonga-pilot/lidar_derivatives_manifest.tsv`
 - `data/viladonga-pilot/pnoa_chip_manifest.tsv`
 - `data/viladonga-pilot/wcs_dem_manifest.tsv`
@@ -91,11 +93,12 @@ The candidate query is lightweight and writes only a TSV/report. To download the
 python3 scripts/query_viladonga_cnig_lidar.py --coverage LIDA3 --download-dir data/external/viladonga/cnig-lidar-3a
 ```
 
-Current LAZ blocker:
+Current LAZ status:
 
-- available tiles: `622-4780`;
-- needed tiles for the buffered pilot: `630-4780` and `630-4782`;
-- details: `reports/viladonga_laz_tile_blocker.md`.
+- original TFG folder had wrong first-coverage tiles: `622-4780`;
+- CNIG query now finds the preferred 2024 third-coverage LAZ tiles for the current chip bounds: `630-4780`, `630-4781`, `631-4780`, `631-4781`;
+- Raspberry download path: `/home/admin/CastrosIA/data/viladonga-lidar/cnig-lidar-3a`;
+- details: `reports/viladonga_cnig_lidar_candidates.md`, `reports/viladonga_cnig_lidar_downloads.md` and `reports/viladonga_laz_tile_blocker.md`.
 
 ## Methodological line
 

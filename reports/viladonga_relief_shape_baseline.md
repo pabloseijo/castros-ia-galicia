@@ -14,14 +14,14 @@ Generated: 2026-08-01
 ## Positive Row
 
 - Chip: `viladonga-pnoa-positive-1`
-- Relief score: 15.416635
+- Relief score: 10.517642
 - Relief-rank: 1 of 9
-- Negative median relief score: -1.140906
-- Slope ratio: 1.016721
-- LRM abs ratio: 1.340616
-- Hillshade edge ratio: 1.879517
-- DEM inside delta: 9.266235 m
-- LRM inside delta: 0.130844 m
+- Negative median relief score: -1.302530
+- Slope ratio: 1.146870
+- LRM abs ratio: 1.173583
+- Hillshade edge ratio: 0.778863
+- DEM inside delta: 3.150635 m
+- LRM inside delta: 0.496445 m
 
 ## Signal Reading
 
@@ -31,11 +31,11 @@ Relief shows the strongest controlled-chip signal so far: the known castro ranks
 
 | Rank | Chip | Class | Score | Slope ratio | LRM abs ratio | DEM delta m |
 |---:|---|---:|---:|---:|---:|---:|
-| 1 | `viladonga-pnoa-positive-1` | 1 | 15.416635 | 1.016721 | 1.340616 | 9.266235 |
-| 2 | `viladonga-pnoa-negative-2` | 0 | 3.282035 | 0.894849 | 0.846503 | 2.784607 |
-| 3 | `viladonga-pnoa-negative-5` | 0 | 2.629459 | 0.867133 | 0.866700 | 3.435822 |
-| 4 | `viladonga-pnoa-negative-4` | 0 | -0.762525 | 0.766911 | 0.903181 | -6.422729 |
-| 5 | `viladonga-pnoa-negative-6` | 0 | -0.787617 | 0.584399 | 0.933290 | -2.311829 |
+| 1 | `viladonga-pnoa-positive-1` | 1 | 10.517642 | 1.146870 | 1.173583 | 3.150635 |
+| 2 | `viladonga-pnoa-negative-8` | 0 | 3.415820 | 1.028784 | 0.931376 | 0.636230 |
+| 3 | `viladonga-pnoa-negative-3` | 0 | 3.281286 | 1.075331 | 1.070182 | 0.509827 |
+| 4 | `viladonga-pnoa-negative-5` | 0 | 1.205023 | 0.887253 | 1.120843 | 1.140381 |
+| 5 | `viladonga-pnoa-negative-2` | 0 | -0.314429 | 1.002584 | 0.857550 | 0.522705 |
 
 ## Interpretation
 
@@ -43,4 +43,4 @@ This is a controlled baseline, not a detector. The positive mask is projected on
 
 The DEM inside-vs-context signal can capture the fact that the known hillfort sits on a topographic high; that is useful hillfort morphology, but not by itself proof of walls or ditches. The wall/ditch question needs finer LiDAR or a richer relief baseline.
 
-Because the input is a 5 m MDT WCS product, a positive result is only a coarse morphology signal. The fine archaeological test still depends on getting the correct LAZ tiles or an equivalent high-resolution LiDAR/DTM covering Viladonga.
+The strength of this result depends on the relief source listed in the manifest. It should remain a controlled morphology signal until it is repeated across more known castros and hard negatives.

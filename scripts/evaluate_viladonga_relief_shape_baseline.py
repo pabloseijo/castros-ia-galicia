@@ -402,7 +402,7 @@ def write_report(path: Path, rows: list[dict[str, str]], chip_manifest: Path, re
         )
     elif signal == "relief_shape_signal_weak":
         lines.append(
-            "The MDT5 relief signal is weak in this controlled test. This does not kill the project, but it makes the fine LAZ tiles more important before any serious detector claim."
+            "The relief signal is weak in this controlled test. This does not kill the project, but it makes better relief input or more controlled castros more important before any serious detector claim."
         )
     else:
         lines.append("The baseline could not produce a usable signal classification.")
@@ -424,7 +424,7 @@ def write_report(path: Path, rows: list[dict[str, str]], chip_manifest: Path, re
             "",
             "The DEM inside-vs-context signal can capture the fact that the known hillfort sits on a topographic high; that is useful hillfort morphology, but not by itself proof of walls or ditches. The wall/ditch question needs finer LiDAR or a richer relief baseline.",
             "",
-            "Because the input is a 5 m MDT WCS product, a positive result is only a coarse morphology signal. The fine archaeological test still depends on getting the correct LAZ tiles or an equivalent high-resolution LiDAR/DTM covering Viladonga.",
+            "The strength of this result depends on the relief source listed in the manifest. It should remain a controlled morphology signal until it is repeated across more known castros and hard negatives.",
         ]
     )
     if failed_rows:

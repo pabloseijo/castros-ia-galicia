@@ -15,48 +15,48 @@ Generated: 2026-08-01
 ## Positive Summary
 
 - Chip: `viladonga-pnoa-positive-1`
-- Edge/talud score: 13.172684
+- Edge/talud score: 10.979821
 - Edge/talud rank: 1 of 9
 - Topographic prominence rank: 1 of 9
-- Edge slope ring: `expected_wall_inner` (13.781946 vs context 11.768352, ratio 1.171102)
-- Edge LRM ring: `expected_wall_inner` (0.999454 vs context 0.638250, ratio 1.565929)
-- Edge hillshade ring: `expected_wall_inner` (0.519447 vs context 0.247029, ratio 2.102781)
-- DEM prominence core-vs-far-context: 13.609314 m
-- Equivalent radius: 64.27 m
+- Edge slope ring: `expected_wall_inner` (22.411860 vs context 16.248982, ratio 1.379278)
+- Edge LRM ring: `expected_wall_inner` (1.576953 vs context 0.856715, ratio 1.840696)
+- Edge hillshade ring: `expected_wall_outer` (0.502716 vs context 0.577402, ratio 0.870652)
+- DEM prominence core-vs-far-context: 13.205688 m
+- Equivalent radius: 63.82 m
 
 ## Positive Rings
 
 | Ring | Pixels | DEM | Slope | LRM abs | Hillshade edge |
 |---|---:|---:|---:|---:|---:|
-| `core` | 187 | 547.978638 | 5.515691 | 0.541654 | 0.288594 |
-| `inner_plateau` | 188 | 548.526611 | 11.693231 | 1.587700 | 0.657698 |
-| `expected_wall_inner` | 197 | 545.751282 | 13.781946 | 0.999454 | 0.519447 |
-| `expected_wall_outer` | 305 | 544.603271 | 6.614532 | 0.861699 | 0.329690 |
-| `near_exterior` | 624 | 541.645813 | 10.790936 | 0.604459 | 0.241769 |
-| `far_context` | 1741 | 534.369324 | 12.745768 | 0.672041 | 0.252289 |
+| `core` | 4606 | 547.912964 | 8.399146 | 0.602887 | 0.282128 |
+| `inner_plateau` | 4518 | 548.656677 | 21.293791 | 1.870442 | 0.598223 |
+| `expected_wall_inner` | 4860 | 545.698181 | 22.411860 | 1.576953 | 0.474356 |
+| `expected_wall_outer` | 7491 | 544.643188 | 14.060316 | 1.063816 | 0.502716 |
+| `near_exterior` | 15307 | 542.149414 | 16.213928 | 0.878113 | 0.574783 |
+| `far_context` | 42758 | 534.707275 | 16.284037 | 0.835318 | 0.580021 |
 
 ## Edge/Talud Ranking
 
 | Rank | Chip | Class | Score | Slope ratio | LRM abs ratio | Hillshade ratio |
 |---:|---|---:|---:|---:|---:|---:|
-| 1 | `viladonga-pnoa-positive-1` | 1 | 13.172684 | 1.171102 | 1.565929 | 2.102781 |
-| 2 | `viladonga-pnoa-negative-4` | 0 | 2.423540 | 0.867145 | 0.966250 | 1.028554 |
-| 3 | `viladonga-pnoa-negative-6` | 0 | 1.819809 | 0.767715 | 1.014676 | 1.021001 |
-| 4 | `viladonga-pnoa-negative-2` | 0 | 0.111900 | 0.904705 | 0.836716 | 0.941915 |
-| 5 | `viladonga-pnoa-negative-7` | 0 | 0.105993 | 0.838712 | 0.959287 | 0.901464 |
+| 1 | `viladonga-pnoa-positive-1` | 1 | 10.979821 | 1.379278 | 1.840696 | 0.870652 |
+| 2 | `viladonga-pnoa-negative-8` | 0 | 4.446190 | 0.898896 | 0.661020 | 1.015477 |
+| 3 | `viladonga-pnoa-negative-2` | 0 | 1.975847 | 0.875232 | 0.726549 | 0.793969 |
+| 4 | `viladonga-pnoa-negative-6` | 0 | 0.808630 | 0.760066 | 0.977316 | 0.784740 |
+| 5 | `viladonga-pnoa-negative-4` | 0 | 0.143460 | 0.768037 | 0.779774 | 0.823408 |
 
 ## Topographic Prominence Ranking
 
 | Rank | Chip | Class | DEM prominence m |
 |---:|---|---:|---:|
-| 1 | `viladonga-pnoa-positive-1` | 1 | 13.609314 |
-| 2 | `viladonga-pnoa-negative-2` | 0 | 5.013977 |
-| 3 | `viladonga-pnoa-negative-5` | 0 | 4.464478 |
-| 4 | `viladonga-pnoa-negative-8` | 0 | 2.737549 |
-| 5 | `viladonga-pnoa-negative-3` | 0 | 2.145203 |
+| 1 | `viladonga-pnoa-positive-1` | 1 | 13.205688 |
+| 2 | `viladonga-pnoa-negative-2` | 0 | 4.796997 |
+| 3 | `viladonga-pnoa-negative-5` | 0 | 4.194000 |
+| 4 | `viladonga-pnoa-negative-8` | 0 | 2.565277 |
+| 5 | `viladonga-pnoa-negative-3` | 0 | 1.947449 |
 
 ## Interpretation
 
 The known castro ranks first both in topographic prominence and in the radial edge/talud score. This is the strongest current evidence that the relief signal is not only generic elevation: there is also ring-local contrast around the expected boundary.
 
-This is still a controlled smoke test over a 5 m MDT WCS product. The result should guide the next measurement, not serve as a claim of automatic archaeological detection. Fine LiDAR and more known castros are still required.
+This is still a controlled smoke test over the relief source listed in the manifest. The result should guide the next measurement, not serve as a claim of automatic archaeological detection. More known castros and hard negatives are still required.

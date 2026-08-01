@@ -406,11 +406,11 @@ def write_report(
             "The known castro ranks first as a topographic high but not as a radial edge/talud feature. This supports hillfort siting, not yet wall/foso detection."
         )
     else:
-        lines.append("The radial profile does not isolate a strong edge/talud signal in this coarse MDT5 test.")
+        lines.append("The radial profile does not isolate a strong edge/talud signal in this controlled relief test.")
     lines.extend(
         [
             "",
-            "This is still a controlled smoke test over a 5 m MDT WCS product. The result should guide the next measurement, not serve as a claim of automatic archaeological detection. Fine LiDAR and more known castros are still required.",
+            "This is still a controlled smoke test over the relief source listed in the manifest. The result should guide the next measurement, not serve as a claim of automatic archaeological detection. More known castros and hard negatives are still required.",
         ]
     )
     if failed_rows:

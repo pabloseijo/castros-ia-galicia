@@ -16,7 +16,7 @@ DEFAULT_CONFIG = PROJECT_ROOT / "configs/viladonga_pilot.json"
 DEFAULT_OUT_DIR = PROJECT_ROOT / "data/viladonga-pilot/lidar"
 DEFAULT_REPORT = PROJECT_ROOT / "reports/viladonga_lidar_derivatives.md"
 DEFAULT_MANIFEST = PROJECT_ROOT / "data/viladonga-pilot/lidar_derivatives_manifest.tsv"
-GENERATED_AT = "2026-07-31"
+GENERATED_AT = "2026-08-01"
 
 
 FIELDS = ["product", "path", "width", "height", "resolution_m", "crs", "status", "notes"]
@@ -126,9 +126,9 @@ def build_dem_from_laz(laz_paths: list[Path], bounds: tuple[float, float, float,
     used_points = 0
     for laz_path in laz_paths:
         las = laspy.read(laz_path)
-        x = las.x
-        y = las.y
-        z = las.z
+        x = np.asarray(las.x)
+        y = np.asarray(las.y)
+        z = np.asarray(las.z)
         keep = (x >= minx) & (x < maxx) & (y >= miny) & (y < maxy)
         total_points += int(keep.sum())
         if hasattr(las, "classification"):

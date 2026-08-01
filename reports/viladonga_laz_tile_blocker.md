@@ -4,8 +4,9 @@ Generated: 2026-07-31
 
 ## Status
 
-- Status: `blocked_wrong_laz_tiles`
+- Status: `resolved_with_cnig_lida3_2024`
 - Workaround ready: `reports/viladonga_mdt_wcs.md` and `reports/viladonga_lidar_derivatives.md`
+- Resolution: `reports/viladonga_cnig_lidar_candidates.md` and `reports/viladonga_cnig_lidar_downloads.md`
 
 ## What happened
 
@@ -39,6 +40,21 @@ Likely first-coverage filenames to look for:
 - `PNOA_2009_Lote1_GAL_630-4782_ORT-CLA-COL.laz`
 
 Equivalent newer PNOA-LiDAR/MDT products are also acceptable if they cover the same extent.
+
+## Resolved CNIG 3rd coverage tiles
+
+The preferred replacement is the 2024 PNOA-LiDAR 3rd coverage, queried from CNIG by the current Viladonga chip bounds. It uses 1x1 km LAZ files in H29:
+
+- `PNOA_2024_GAL_630-4780_H29_NPC01.laz`
+- `PNOA_2024_GAL_630-4781_H29_NPC01.laz`
+- `PNOA_2024_GAL_631-4780_H29_NPC01.laz`
+- `PNOA_2024_GAL_631-4781_H29_NPC01.laz`
+
+Downloaded on the Raspberry outside Git:
+
+- `/home/admin/CastrosIA/data/viladonga-lidar/cnig-lidar-3a`
+
+The LAZ-based derivative run now writes a 1 m DEM, slope, hillshade and LRM for the pilot. The old MDT5 WCS workaround remains useful as a coarse comparison, but it is no longer the main relief source for Viladonga.
 
 ## Current workaround
 

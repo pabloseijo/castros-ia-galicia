@@ -388,10 +388,14 @@ def write_report(
     preferred = dedupe_preferred(rows, "LIDA3")
     fallback2 = dedupe_preferred(rows, "LIDA2")
     fallback1 = dedupe_preferred(rows, "LIDAR")
+    queried_series = {row["series_code"] for row in rows}
     preferred_ready = len(preferred) == len(points) and all(row["status"] in {"ready_to_download", "downloaded", "exists"} for row in preferred)
+    preferred_downloaded = bool(preferred) and all(row["status"] in {"downloaded", "exists"} for row in preferred)
     total_mb = sum(parse_mb(row["size_mb"]) for row in preferred)
+    title = "Viladonga CNIG LiDAR downloads" if preferred_downloaded else "Viladonga CNIG LiDAR candidates"
+    status = "downloaded_lida3" if preferred_downloaded else ("ready_to_download_lida3" if preferred_ready else "incomplete_lida3")
     lines = [
-        "# Viladonga CNIG LiDAR candidates",
+        f"# {title}",
         "",
         f"Generated: {GENERATED_AT}",
         "",
@@ -401,7 +405,7 @@ def write_report(
         "- Product definitions: `https://pnoa.ign.es/pnoa-lidar/productos-a-descarga`",
         f"- Pilot chip bounds EPSG:25829: `{bounds[0]:.2f},{bounds[1]:.2f},{bounds[2]:.2f},{bounds[3]:.2f}`",
         f"- Queried 1 km cells from lower-left IDs: {', '.join(point['query_tile_lower_id'] for point in points)}",
-        f"- Preferred status: `{'ready_to_download_lida3' if preferred_ready else 'incomplete_lida3'}`",
+        f"- Preferred status: `{status}`",
         "",
         "## Preferred 3rd coverage LAZ",
         "",
@@ -424,12 +428,18 @@ def write_report(
     else:
         lines.append("- No preferred LIDA3 files found.")
     lines.extend(["", "## Fallback coverages", ""])
-    lines.append(f"- 2nd coverage unique files found: {len(fallback2)}.")
-    for row in fallback2:
-        lines.append(f"  - `{row['file_name']}` sec `{row['sec']}` ({row['density_or_scale']}, {row['size_mb']} MB)")
-    lines.append(f"- 1st coverage unique files found: {len(fallback1)}.")
-    for row in fallback1:
-        lines.append(f"  - `{row['file_name']}` sec `{row['sec']}` ({row['density_or_scale']}, {row['size_mb']} MB)")
+    if "LIDA2" in queried_series:
+        lines.append(f"- 2nd coverage unique files found: {len(fallback2)}.")
+        for row in fallback2:
+            lines.append(f"  - `{row['file_name']}` sec `{row['sec']}` ({row['density_or_scale']}, {row['size_mb']} MB)")
+    else:
+        lines.append("- 2nd coverage: not queried in this run.")
+    if "LIDAR" in queried_series:
+        lines.append(f"- 1st coverage unique files found: {len(fallback1)}.")
+        for row in fallback1:
+            lines.append(f"  - `{row['file_name']}` sec `{row['sec']}` ({row['density_or_scale']}, {row['size_mb']} MB)")
+    else:
+        lines.append("- 1st coverage: not queried in this run.")
     lines.extend(
         [
             "",
@@ -445,7 +455,7 @@ def write_report(
             "",
             "## Interpretation",
             "",
-            "This resolves the previous LAZ blocker for Viladonga. The next morphology step is to download these four ignored LAZ files on the Raspberry, rebuild the DEM/relief derivatives from point cloud data, and rerun the relief/radial baselines against the MDT5 WCS results.",
+            "This resolves the previous LAZ blocker for Viladonga. If the preferred files are already downloaded, the next morphology step is to rebuild the DEM/relief derivatives from point cloud data and rerun the relief/radial baselines against the MDT5 WCS results.",
         ]
     )
     path.parent.mkdir(parents=True, exist_ok=True)
