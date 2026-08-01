@@ -27,6 +27,7 @@ make viladonga-lidar-derivatives
 make viladonga-pnoa-chips
 make viladonga-mask-quality
 make viladonga-shape-baseline
+make viladonga-relief-shape-baseline
 ```
 
 The combined target is:
@@ -43,6 +44,7 @@ make viladonga-pilot
 - `reports/viladonga_pnoa_chips.md`
 - `reports/viladonga_mask_quality.md`
 - `reports/viladonga_pnoa_shape_baseline.md`
+- `reports/viladonga_relief_shape_baseline.md`
 - `data/viladonga-pilot/labels_manifest.tsv`
 - `data/viladonga-pilot/lidar_derivatives_manifest.tsv`
 - `data/viladonga-pilot/pnoa_chip_manifest.tsv`
