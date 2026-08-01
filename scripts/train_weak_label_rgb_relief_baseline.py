@@ -83,9 +83,9 @@ FEATURE_FIELDS = [
     "parish",
     "morphology_proxy",
     "negative_type",
-    "status",
-    "error",
     *FUSION_FEATURE_NAMES,
+    "error",
+    "status",
 ]
 
 SCORE_FIELDS = [
@@ -104,8 +104,8 @@ SCORE_FIELDS = [
     "negative_type",
     "probability",
     "rank_desc_in_dataset",
-    "status",
     "error",
+    "status",
 ]
 
 
@@ -118,6 +118,10 @@ def require_runtime() -> None:
             missing.append(module)
     if missing:
         raise SystemExit(f"Missing Python modules: {', '.join(missing)}")
+
+
+def artifact_path(args: argparse.Namespace, suffix: str) -> Path:
+    return args.out_dir / f"{args.artifact_prefix}_{suffix}"
 
 
 def dataset_from_relief_path(path: Path) -> str:
@@ -362,6 +366,10 @@ def write_model(path: Path, model: dict) -> None:
 
 
 def write_report(path: Path, args: argparse.Namespace, feature_rows: list[dict[str, str]], score_rows: list[dict[str, str]], metric_rows: list[dict[str, str]], model: dict) -> None:
+    feature_path = artifact_path(args, "features.tsv")
+    score_path = artifact_path(args, "scores.tsv")
+    metric_path = artifact_path(args, "metrics.tsv")
+    model_path = artifact_path(args, "model.json")
     feature_counts = Counter(row["status"] for row in feature_rows)
     dataset_counts = Counter(row["dataset"] for row in score_rows)
     class_counts = Counter((row["dataset"], row["label_role"]) for row in score_rows)
@@ -379,10 +387,10 @@ def write_report(path: Path, args: argparse.Namespace, feature_rows: list[dict[s
         "",
         f"- RGB feature TSV: `{rel_to_project(args.rgb_features)}`",
         f"- Relief feature TSVs: {', '.join(f'`{rel_to_project(path)}`' for path in args.relief_features)}",
-        "- Feature table: `data/weak-label-fusion-v1/weak_label_rgb_relief_features.tsv`",
-        "- Score table: `data/weak-label-fusion-v1/weak_label_rgb_relief_scores.tsv`",
-        "- Metrics table: `data/weak-label-fusion-v1/weak_label_rgb_relief_metrics.tsv`",
-        "- Model weights JSON: `data/weak-label-fusion-v1/weak_label_rgb_relief_model.json`",
+        f"- Feature table: `{rel_to_project(feature_path)}`",
+        f"- Score table: `{rel_to_project(score_path)}`",
+        f"- Metrics table: `{rel_to_project(metric_path)}`",
+        f"- Model weights JSON: `{rel_to_project(model_path)}`",
         "",
         "## Training Setup",
         "",
@@ -418,7 +426,10 @@ def write_report(path: Path, args: argparse.Namespace, feature_rows: list[dict[s
         lines.extend(["", "## References", ""])
         lines.extend(reference)
     lines.extend(["", "## Top Scores", ""])
-    for dataset in ("holdouts", "val"):
+    available_datasets = {row["dataset"] for row in score_rows}
+    for dataset in ("test", "holdouts", "val"):
+        if dataset not in available_datasets:
+            continue
         lines.append(f"### {dataset}")
         lines.append("")
         lines.append("| Rank | Split | Class | Score | Name | Municipality |")
@@ -452,6 +463,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--relief-features", type=Path, action="append", default=None)
     parser.add_argument("--relief-metrics", type=Path, action="append", default=None)
     parser.add_argument("--out-dir", type=Path, default=OUT_DIR)
+    parser.add_argument("--artifact-prefix", default="weak_label_rgb_relief")
     parser.add_argument("--report", type=Path, default=DEFAULT_REPORT)
     parser.add_argument("--train-dataset", default="train_mini")
     parser.add_argument("--epochs", type=int, default=900)
@@ -472,6 +484,8 @@ def resolve_args(args: argparse.Namespace) -> argparse.Namespace:
         for path in (args.relief_metrics or DEFAULT_RELIEF_METRICS)
     ]
     args.out_dir = args.out_dir if args.out_dir.is_absolute() else PROJECT_ROOT / args.out_dir
+    if not args.artifact_prefix or any(char in args.artifact_prefix for char in "/\\"):
+        raise SystemExit("--artifact-prefix must be a non-empty file-name prefix, not a path.")
     args.report = args.report if args.report.is_absolute() else PROJECT_ROOT / args.report
     return args
 
@@ -492,10 +506,10 @@ def main() -> None:
     score_rows = build_score_rows(feature_rows, model)
     metric_rows = build_metric_rows(score_rows)
 
-    feature_path = args.out_dir / "weak_label_rgb_relief_features.tsv"
-    score_path = args.out_dir / "weak_label_rgb_relief_scores.tsv"
-    metric_path = args.out_dir / "weak_label_rgb_relief_metrics.tsv"
-    model_path = args.out_dir / "weak_label_rgb_relief_model.json"
+    feature_path = artifact_path(args, "features.tsv")
+    score_path = artifact_path(args, "scores.tsv")
+    metric_path = artifact_path(args, "metrics.tsv")
+    model_path = artifact_path(args, "model.json")
 
     write_tsv(feature_path, feature_rows, FEATURE_FIELDS)
     write_tsv(score_path, score_rows, SCORE_FIELDS)

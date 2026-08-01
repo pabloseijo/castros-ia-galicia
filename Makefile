@@ -1,6 +1,6 @@
 GEO_PYTHON ?= .venv-geo/bin/python
 
-.PHONY: dataset qgis-review annotations annotations-reset annotation-backup reports raster-prep pnoa-preview-index pnoa-chips viladonga-audit viladonga-cnig-lidar-candidates viladonga-pnoa-chips viladonga-mask-quality viladonga-shape-baseline viladonga-relief-shape-baseline viladonga-radial-relief-profile viladonga-wcs-dem viladonga-lidar-derivatives viladonga-relief-wcs viladonga-pilot pba-unlock pba-review morphology-bank morphology-autoreview morphology-visual-signals weak-label-splits weak-label-chips-smoke weak-label-chips-holdouts weak-label-chips-val weak-label-chips-test weak-label-chips-train-mini weak-label-chips-train weak-label-rgb-baseline-mini weak-label-rgb-baseline-full weak-label-relief-holdouts weak-label-relief-val weak-label-relief-train-mini weak-label-relief-baseline-holdouts weak-label-relief-baseline-val weak-label-relief-baseline-train-mini weak-label-relief-score-variants weak-label-relief-coverage-policy weak-label-rgb-relief-baseline-mini weak-label-priority-blend weak-label-error-review weak-label-error-review-figures weak-label-error-review-workspace weak-label-p0-visual-dossier weak-label-p0-decision-seed weak-label-p0-boundary-proposals weak-label-castro-mamoa-specialist o-val-relief-diagnostics training-manifest webmap env-check repo-drift sync-wiki agent-list agent-run agent-run-one agent-systemd verify clean
+.PHONY: dataset qgis-review annotations annotations-reset annotation-backup reports raster-prep pnoa-preview-index pnoa-chips viladonga-audit viladonga-cnig-lidar-candidates viladonga-pnoa-chips viladonga-mask-quality viladonga-shape-baseline viladonga-relief-shape-baseline viladonga-radial-relief-profile viladonga-wcs-dem viladonga-lidar-derivatives viladonga-relief-wcs viladonga-pilot pba-unlock pba-review morphology-bank morphology-autoreview morphology-visual-signals weak-label-splits weak-label-chips-smoke weak-label-chips-holdouts weak-label-chips-val weak-label-chips-test weak-label-chips-train-mini weak-label-chips-train weak-label-rgb-baseline-mini weak-label-rgb-baseline-full weak-label-relief-holdouts weak-label-relief-val weak-label-relief-test weak-label-relief-train-mini weak-label-relief-train weak-label-relief-baseline-holdouts weak-label-relief-baseline-val weak-label-relief-baseline-test weak-label-relief-baseline-train-mini weak-label-relief-baseline-train weak-label-relief-score-variants weak-label-relief-coverage-policy weak-label-rgb-relief-baseline-mini weak-label-rgb-relief-baseline-full weak-label-priority-blend weak-label-error-review weak-label-error-review-figures weak-label-error-review-workspace weak-label-p0-visual-dossier weak-label-p0-decision-seed weak-label-p0-boundary-proposals weak-label-castro-mamoa-specialist o-val-relief-diagnostics training-manifest webmap env-check repo-drift sync-wiki agent-list agent-run agent-run-one agent-systemd verify clean
 
 dataset:
 	python3 scripts/build_castros_ia_dataset.py
@@ -110,8 +110,14 @@ weak-label-relief-holdouts:
 weak-label-relief-val:
 	$(GEO_PYTHON) scripts/export_weak_label_relief_wcs.py --input data/weak-label-splits-v1/weak_label_chip_export_val.tsv --out-manifest data/weak-label-relief-v1/weak_label_relief_wcs_val.tsv --report reports/weak_label_relief_wcs_val.md --workers 6 --wcs-parallel 4
 
+weak-label-relief-test:
+	$(GEO_PYTHON) scripts/export_weak_label_relief_wcs.py --input data/weak-label-splits-v1/weak_label_chip_export_test.tsv --out-manifest data/weak-label-relief-v1/weak_label_relief_wcs_test.tsv --report reports/weak_label_relief_wcs_test.md --workers 6 --wcs-parallel 4
+
 weak-label-relief-train-mini:
 	$(GEO_PYTHON) scripts/export_weak_label_relief_wcs.py --input data/weak-label-splits-v1/weak_label_chip_export_train_mini.tsv --out-manifest data/weak-label-relief-v1/weak_label_relief_wcs_train_mini.tsv --report reports/weak_label_relief_wcs_train_mini.md --workers 6 --wcs-parallel 4
+
+weak-label-relief-train:
+	$(GEO_PYTHON) scripts/export_weak_label_relief_wcs.py --input data/weak-label-splits-v1/weak_label_chip_export_train.tsv --out-manifest data/weak-label-relief-v1/weak_label_relief_wcs_train.tsv --report reports/weak_label_relief_wcs_train.md --workers 6 --wcs-parallel 4
 
 weak-label-relief-baseline-holdouts:
 	$(GEO_PYTHON) scripts/evaluate_weak_label_relief_baseline.py
@@ -119,8 +125,14 @@ weak-label-relief-baseline-holdouts:
 weak-label-relief-baseline-val:
 	$(GEO_PYTHON) scripts/evaluate_weak_label_relief_baseline.py --relief-manifest data/weak-label-relief-v1/weak_label_relief_wcs_val.tsv --dataset-name val --report reports/weak_label_relief_baseline_val.md
 
+weak-label-relief-baseline-test:
+	$(GEO_PYTHON) scripts/evaluate_weak_label_relief_baseline.py --relief-manifest data/weak-label-relief-v1/weak_label_relief_wcs_test.tsv --dataset-name test --rgb-metrics data/weak-label-baseline-v1/weak_label_rgb_baseline_full_metrics.tsv --report reports/weak_label_relief_baseline_test.md
+
 weak-label-relief-baseline-train-mini:
 	$(GEO_PYTHON) scripts/evaluate_weak_label_relief_baseline.py --relief-manifest data/weak-label-relief-v1/weak_label_relief_wcs_train_mini.tsv --dataset-name train_mini --report reports/weak_label_relief_baseline_train_mini.md
+
+weak-label-relief-baseline-train:
+	$(GEO_PYTHON) scripts/evaluate_weak_label_relief_baseline.py --relief-manifest data/weak-label-relief-v1/weak_label_relief_wcs_train.tsv --dataset-name train --rgb-metrics data/weak-label-baseline-v1/weak_label_rgb_baseline_full_metrics.tsv --report reports/weak_label_relief_baseline_train.md
 
 weak-label-relief-score-variants:
 	$(GEO_PYTHON) scripts/evaluate_weak_label_relief_score_variants.py
@@ -130,6 +142,9 @@ weak-label-relief-coverage-policy:
 
 weak-label-rgb-relief-baseline-mini:
 	$(GEO_PYTHON) scripts/train_weak_label_rgb_relief_baseline.py
+
+weak-label-rgb-relief-baseline-full:
+	$(GEO_PYTHON) scripts/train_weak_label_rgb_relief_baseline.py --rgb-features data/weak-label-baseline-v1/weak_label_rgb_baseline_full_features.tsv --rgb-metrics data/weak-label-baseline-v1/weak_label_rgb_baseline_full_metrics.tsv --relief-features data/weak-label-relief-v1/weak_label_relief_features_train.tsv --relief-features data/weak-label-relief-v1/weak_label_relief_features_val.tsv --relief-features data/weak-label-relief-v1/weak_label_relief_features_test.tsv --relief-features data/weak-label-relief-v1/weak_label_relief_features_holdouts.tsv --relief-metrics data/weak-label-relief-v1/weak_label_relief_metrics_train.tsv --relief-metrics data/weak-label-relief-v1/weak_label_relief_metrics_val.tsv --relief-metrics data/weak-label-relief-v1/weak_label_relief_metrics_test.tsv --relief-metrics data/weak-label-relief-v1/weak_label_relief_metrics_holdouts.tsv --train-dataset train --artifact-prefix weak_label_rgb_relief_full --report reports/weak_label_rgb_relief_baseline_full_v1.md
 
 weak-label-priority-blend:
 	$(GEO_PYTHON) scripts/evaluate_weak_label_priority_blend.py

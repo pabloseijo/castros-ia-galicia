@@ -72,7 +72,13 @@ def read_tsv(path: Path) -> list[dict[str, str]]:
 def write_tsv(path: Path, rows: list[dict[str, str]], fields: list[str]) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     with path.open("w", encoding="utf-8", newline="") as fh:
-        writer = csv.DictWriter(fh, fieldnames=fields, dialect="excel-tab", extrasaction="ignore")
+        writer = csv.DictWriter(
+            fh,
+            fieldnames=fields,
+            dialect="excel-tab",
+            extrasaction="ignore",
+            lineterminator="\n",
+        )
         writer.writeheader()
         writer.writerows(rows)
 
