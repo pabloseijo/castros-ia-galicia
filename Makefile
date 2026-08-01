@@ -1,6 +1,6 @@
 GEO_PYTHON ?= .venv-geo/bin/python
 
-.PHONY: dataset qgis-review annotations annotations-reset annotation-backup reports raster-prep pnoa-preview-index pnoa-chips viladonga-audit viladonga-cnig-lidar-candidates viladonga-pnoa-chips viladonga-mask-quality viladonga-shape-baseline viladonga-relief-shape-baseline viladonga-radial-relief-profile viladonga-wcs-dem viladonga-lidar-derivatives viladonga-relief-wcs viladonga-pilot pba-unlock pba-review morphology-bank morphology-autoreview morphology-visual-signals weak-label-splits weak-label-chips-smoke weak-label-chips-holdouts weak-label-chips-val weak-label-chips-train-mini weak-label-rgb-baseline-mini weak-label-relief-holdouts weak-label-relief-val weak-label-relief-train-mini weak-label-relief-baseline-holdouts weak-label-relief-baseline-val weak-label-relief-baseline-train-mini weak-label-relief-score-variants weak-label-relief-coverage-policy weak-label-rgb-relief-baseline-mini weak-label-priority-blend weak-label-error-review weak-label-error-review-figures weak-label-error-review-workspace weak-label-p0-visual-dossier weak-label-p0-decision-seed weak-label-p0-boundary-proposals weak-label-castro-mamoa-specialist o-val-relief-diagnostics training-manifest webmap env-check repo-drift sync-wiki agent-list agent-run agent-run-one agent-systemd verify clean
+.PHONY: dataset qgis-review annotations annotations-reset annotation-backup reports raster-prep pnoa-preview-index pnoa-chips viladonga-audit viladonga-cnig-lidar-candidates viladonga-pnoa-chips viladonga-mask-quality viladonga-shape-baseline viladonga-relief-shape-baseline viladonga-radial-relief-profile viladonga-wcs-dem viladonga-lidar-derivatives viladonga-relief-wcs viladonga-pilot pba-unlock pba-review morphology-bank morphology-autoreview morphology-visual-signals weak-label-splits weak-label-chips-smoke weak-label-chips-holdouts weak-label-chips-val weak-label-chips-test weak-label-chips-train-mini weak-label-chips-train weak-label-rgb-baseline-mini weak-label-relief-holdouts weak-label-relief-val weak-label-relief-train-mini weak-label-relief-baseline-holdouts weak-label-relief-baseline-val weak-label-relief-baseline-train-mini weak-label-relief-score-variants weak-label-relief-coverage-policy weak-label-rgb-relief-baseline-mini weak-label-priority-blend weak-label-error-review weak-label-error-review-figures weak-label-error-review-workspace weak-label-p0-visual-dossier weak-label-p0-decision-seed weak-label-p0-boundary-proposals weak-label-castro-mamoa-specialist o-val-relief-diagnostics training-manifest webmap env-check repo-drift sync-wiki agent-list agent-run agent-run-one agent-systemd verify clean
 
 dataset:
 	python3 scripts/build_castros_ia_dataset.py
@@ -89,8 +89,14 @@ weak-label-chips-holdouts:
 weak-label-chips-val:
 	$(GEO_PYTHON) scripts/export_weak_label_chips.py --splits val --workers 10 --out-manifest data/weak-label-splits-v1/weak_label_chip_export_val.tsv --report reports/weak_label_chip_export_val.md
 
+weak-label-chips-test:
+	$(GEO_PYTHON) scripts/export_weak_label_chips.py --splits test --workers 10 --out-manifest data/weak-label-splits-v1/weak_label_chip_export_test.tsv --report reports/weak_label_chip_export_test.md
+
 weak-label-chips-train-mini:
 	$(GEO_PYTHON) scripts/export_weak_label_chips.py --splits train --per-split 1000 --workers 10 --out-manifest data/weak-label-splits-v1/weak_label_chip_export_train_mini.tsv --report reports/weak_label_chip_export_train_mini.md
+
+weak-label-chips-train:
+	$(GEO_PYTHON) scripts/export_weak_label_chips.py --splits train --workers 10 --out-manifest data/weak-label-splits-v1/weak_label_chip_export_train.tsv --report reports/weak_label_chip_export_train.md
 
 weak-label-rgb-baseline-mini:
 	$(GEO_PYTHON) scripts/train_weak_label_rgb_baseline.py
