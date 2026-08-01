@@ -1,0 +1,13 @@
+dataset	final_split	country	label_role	label_class	total_rows	rgb_valid_rows	relief_valid_rows	relief_unsupported_country_rows	relief_failed_or_invalid_rows	relief_missing_rows	relief_usable_rate	policy_bucket
+holdouts	test_o_val	ES	hard_negative	0	1	1	1	0	0	0	1.000000	relief_fusion_v1_allowed
+holdouts	test_o_val	ES	positive	1	4	4	4	0	0	0	1.000000	relief_fusion_v1_allowed
+holdouts	test_trasancos	ES	hard_negative	0	135	135	135	0	0	0	1.000000	relief_fusion_v1_allowed
+holdouts	test_trasancos	ES	positive	1	64	64	64	0	0	0	1.000000	relief_fusion_v1_allowed
+val	val	ES	hard_negative	0	1492	1492	1492	0	0	0	1.000000	relief_fusion_v1_allowed
+val	val	ES	positive	1	359	359	359	0	0	0	1.000000	relief_fusion_v1_allowed
+val	val	PT	hard_negative	0	120	120	0	120	0	0	0.000000	rgb_only_until_portugal_dem_provider
+val	val	PT	positive	1	66	66	0	66	0	0	0.000000	rgb_only_until_portugal_dem_provider
+train_mini	train	ES	hard_negative	0	277	277	277	0	0	0	1.000000	relief_fusion_v1_allowed
+train_mini	train	ES	positive	1	276	276	276	0	0	0	1.000000	relief_fusion_v1_allowed
+train_mini	train	PT	hard_negative	0	277	277	0	277	0	0	0.000000	rgb_only_until_portugal_dem_provider
+train_mini	train	PT	positive	1	170	170	0	170	0	0	0.000000	rgb_only_until_portugal_dem_provider

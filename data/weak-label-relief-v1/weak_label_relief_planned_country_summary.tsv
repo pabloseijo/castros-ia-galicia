@@ -1,0 +1,17 @@
+final_split	country	label_role	label_class	planned_rows	policy_bucket
+test	ES	hard_negative	0	1855	planned_spanish_mdt5_provider
+test	ES	positive	1	528	planned_spanish_mdt5_provider
+test	PT	hard_negative	0	111	planned_relief_provider_needed
+test	PT	positive	1	36	planned_relief_provider_needed
+test_o_val	ES	hard_negative	0	1	planned_spanish_mdt5_provider
+test_o_val	ES	positive	1	4	planned_spanish_mdt5_provider
+test_trasancos	ES	hard_negative	0	135	planned_spanish_mdt5_provider
+test_trasancos	ES	positive	1	64	planned_spanish_mdt5_provider
+train	ES	hard_negative	0	6797	planned_spanish_mdt5_provider
+train	ES	positive	1	1844	planned_spanish_mdt5_provider
+train	PT	hard_negative	0	334	planned_relief_provider_needed
+train	PT	positive	1	170	planned_relief_provider_needed
+val	ES	hard_negative	0	1492	planned_spanish_mdt5_provider
+val	ES	positive	1	359	planned_spanish_mdt5_provider
+val	PT	hard_negative	0	120	planned_relief_provider_needed
+val	PT	positive	1	66	planned_relief_provider_needed
