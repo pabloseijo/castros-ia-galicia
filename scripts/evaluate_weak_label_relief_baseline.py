@@ -528,21 +528,21 @@ def write_report(
     feature_counts = Counter(row["status"] for row in feature_rows)
     status = signal_status(metric_rows)
     lines = [
-        "# Weak-label relief baseline holdouts",
+        f"# Weak-label relief baseline {args.dataset_name}",
         "",
         f"Generated: {GENERATED_AT}",
         "",
         "## What This Is",
         "",
-        "A first relief/MDT ranking baseline over O Val and Trasancos holdouts. It uses public MDT5 WCS crops, derives slope, hillshade and local relief in memory, then scores topographic/radial contrast.",
+        f"A first relief/MDT ranking baseline over `{args.dataset_name}`. It uses public MDT5 WCS crops, derives slope, hillshade and local relief in memory, then scores topographic/radial contrast.",
         "It is a ranking sanity check, not an archaeological detector.",
         "",
         "## Files",
         "",
         f"- Relief manifest: `{rel_to_project(args.relief_manifest)}`",
-        f"- Feature TSV: `{rel_to_project(args.out_dir / 'weak_label_relief_features_holdouts.tsv')}`",
-        f"- Score TSV: `{rel_to_project(args.out_dir / 'weak_label_relief_scores_holdouts.tsv')}`",
-        f"- Metrics TSV: `{rel_to_project(args.out_dir / 'weak_label_relief_metrics_holdouts.tsv')}`",
+        f"- Feature TSV: `{rel_to_project(feature_output_path(args))}`",
+        f"- Score TSV: `{rel_to_project(score_output_path(args))}`",
+        f"- Metrics TSV: `{rel_to_project(metric_output_path(args))}`",
         "",
         "## Setup",
         "",
@@ -569,7 +569,8 @@ def write_report(
         lines.extend(["", "## RGB Baseline Reference", ""])
         lines.extend(rgb_summary)
     lines.extend(["", "## Top Relief Scores", ""])
-    for split in (None, "test_o_val", "test_trasancos"):
+    splits_for_top = [None, *sorted({row["final_split"] for row in score_rows})]
+    for split in splits_for_top:
         title = "all" if split is None else split
         lines.append(f"### {title}")
         lines.append("")
@@ -603,6 +604,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--rgb-metrics", type=Path, default=DEFAULT_RGB_METRICS)
     parser.add_argument("--out-dir", type=Path, default=DEFAULT_OUT_DIR)
     parser.add_argument("--report", type=Path, default=DEFAULT_REPORT)
+    parser.add_argument("--dataset-name", default="holdouts")
     parser.add_argument("--fixed-radius-m", type=float, default=120.0)
     parser.add_argument("--lrm-radius-m", type=float, default=50.0)
     return parser.parse_args()
@@ -617,6 +619,18 @@ def resolve_args(args: argparse.Namespace) -> argparse.Namespace:
     return args
 
 
+def feature_output_path(args: argparse.Namespace) -> Path:
+    return args.out_dir / f"weak_label_relief_features_{args.dataset_name}.tsv"
+
+
+def score_output_path(args: argparse.Namespace) -> Path:
+    return args.out_dir / f"weak_label_relief_scores_{args.dataset_name}.tsv"
+
+
+def metric_output_path(args: argparse.Namespace) -> Path:
+    return args.out_dir / f"weak_label_relief_metrics_{args.dataset_name}.tsv"
+
+
 def main() -> None:
     require_runtime()
     args = resolve_args(parse_args())
@@ -625,9 +639,9 @@ def main() -> None:
     feature_rows = [feature_row(row, meta, args) for row in relief_rows]
     score_rows = build_score_rows(feature_rows)
     metric_rows = build_metric_rows(score_rows)
-    feature_path = args.out_dir / "weak_label_relief_features_holdouts.tsv"
-    score_path = args.out_dir / "weak_label_relief_scores_holdouts.tsv"
-    metric_path = args.out_dir / "weak_label_relief_metrics_holdouts.tsv"
+    feature_path = feature_output_path(args)
+    score_path = score_output_path(args)
+    metric_path = metric_output_path(args)
     write_tsv(feature_path, feature_rows, FEATURE_FIELDS)
     write_tsv(score_path, score_rows, SCORE_FIELDS)
     write_tsv(metric_path, metric_rows, METRIC_FIELDS)

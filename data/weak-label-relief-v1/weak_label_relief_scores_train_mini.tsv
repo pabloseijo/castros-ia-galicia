@@ -1,0 +1,554 @@
+tile_id	sample_id	bank_id	label_class	label_role	final_split	country	name	municipality	parish	morphology_proxy	negative_type	feature_radius_m	relief_score	rank_desc	status	error
+wl-tile-v1-06178	wl-neg-neg-es-pba-38894	neg-es-pba-38894	0	hard_negative	train	ES	A Chousa das Minas	Pol	Arcos de Frades (Santiago)		mining_or_quarry	120.0	-1.04751923	540	ok	
+wl-tile-v1-05758	wl-neg-neg-es-pba-35203	neg-es-pba-35203	0	hard_negative	train	ES	A Costa/Medorra de Montecalvo 1	Monterroso	Marzán (Santa María)		megalithic_mound	120.0	0.69215615	146	ok	
+wl-tile-v1-05760	wl-neg-neg-es-pba-35254	neg-es-pba-35254	0	hard_negative	train	ES	A Costa/Medorra de Montecalvo 2	Monterroso	Marzán (Santa María)		megalithic_mound	120.0	0.74737295	137	ok	
+wl-tile-v1-03135	wl-neg-neg-es-pba-18194	neg-es-pba-18194	0	hard_negative	train	ES	A Cruz do Pinal/Mámoa da Cruz do Pinal	As Pontes de García Rodríguez	Vilavella (Santa María)		megalithic_mound	120.0	1.33057240	49	ok	
+wl-tile-v1-06235	wl-neg-neg-es-pba-40747	neg-es-pba-40747	0	hard_negative	train	ES	A Eira da Torre/Medorra de Sotordei	Ribas de Sil	Soutordei (Santiago)		megalithic_mound	120.0	0.17772752	263	ok	
+wl-tile-v1-05761	wl-neg-neg-es-pba-35256	neg-es-pba-35256	0	hard_negative	train	ES	A Escrita/A Casa das Mouras/As Fontelas/Orgoso/Mámoa da Escrita 1	Monterroso	Fufín (San Martiño)		megalithic_mound	120.0	-0.50633992	452	ok	
+wl-tile-v1-07467	wl-neg-neg-es-pba-65654	neg-es-pba-65654	0	hard_negative	train	ES	A Gándara	A Guarda	Salcidos (San Lourenzo)		roman_built_context	120.0	0.24507559	246	ok	
+wl-tile-v1-08416	wl-neg-neg-es-pba-66223	neg-es-pba-66223	0	hard_negative	train	ES	A Laxe das Presiñas	Gondomar	Peitieiros (San Miguel)		rock_art_surface	120.0	-0.31099727	400	ok	
+wl-tile-v1-06179	wl-neg-neg-es-pba-38898	neg-es-pba-38898	0	hard_negative	train	ES	A Madorra da Valiña	Pol	Luaces (Santa María)		megalithic_mound	120.0	-0.24127268	376	ok	
+wl-tile-v1-04509	wl-neg-neg-es-pba-24888	neg-es-pba-24888	0	hard_negative	train	ES	A Madorra/Foxo do Cabrito	Toques	Santa Mariña de Brañas (Santa Mari¤a)		megalithic_mound	120.0	-0.53218335	461	ok	
+wl-tile-v1-07325	wl-neg-neg-es-pba-56893	neg-es-pba-56893	0	hard_negative	train	ES	A Meana	Rubiá	Quereño (San Cristovo)		mining_or_quarry	120.0	0.05801786	289	ok	
+wl-tile-v1-05830	wl-neg-neg-es-pba-29650	neg-es-pba-29650	0	hard_negative	train	ES	A Medorra	O Corgo	Santo Estevo de Farnadeiros (Santo Estevo)		megalithic_mound	120.0	0.54449743	170	ok	
+wl-tile-v1-06757	wl-neg-neg-es-pba-50551	neg-es-pba-50551	0	hard_negative	train	ES	A Medorra	A Gudiña	O Canizo (Santa María)		megalithic_mound	120.0	-0.65923259	493	ok	
+wl-tile-v1-09449	wl-neg-neg-es-pba-74609	neg-es-pba-74609	0	hard_negative	train	ES	A Medorra 2	Vila de Cruces	Cumeiro (San Pedro)		megalithic_mound	120.0	0.56394373	164	ok	
+wl-tile-v1-09450	wl-neg-neg-es-pba-74610	neg-es-pba-74610	0	hard_negative	train	ES	A Medorra 3	Vila de Cruces	Cumeiro (San Pedro)		megalithic_mound	120.0	-0.77834428	512	ok	
+wl-tile-v1-09451	wl-neg-neg-es-pba-74611	neg-es-pba-74611	0	hard_negative	train	ES	A Medorra 4	Vila de Cruces	Cumeiro (San Pedro)		megalithic_mound	120.0	-1.00161193	533	ok	
+wl-tile-v1-09452	wl-neg-neg-es-pba-74612	neg-es-pba-74612	0	hard_negative	train	ES	A Medorra 5	Vila de Cruces	Cumeiro (San Pedro)		megalithic_mound	120.0	-0.04375660	317	ok	
+wl-tile-v1-05833	wl-neg-neg-es-pba-32105	neg-es-pba-32105	0	hard_negative	train	ES	A Medorra de Cereixido	O Incio	Santa María do Mao (Santa María)		megalithic_mound	120.0	-1.06677423	541	ok	
+wl-tile-v1-06187	wl-neg-neg-es-pba-38387	neg-es-pba-38387	0	hard_negative	train	ES	A Medorra de Hospital	Portomarín	Nespereira (San Cibrao)		megalithic_mound	120.0	-0.37708229	421	ok	
+wl-tile-v1-05616	wl-neg-neg-es-pba-31043	neg-es-pba-31043	0	hard_negative	train	ES	A Medorra de Reigosa 1	Friol	Friol (San Xiao)		megalithic_mound	120.0	0.62102725	154	ok	
+wl-tile-v1-06315	wl-neg-neg-es-pba-42146	neg-es-pba-42146	0	hard_negative	train	ES	A Medorra de Xisto	Sarria	San Vicenzo de Froián (San Vicenzo)		megalithic_mound	120.0	-0.26133042	388	ok	
+wl-tile-v1-05617	wl-neg-neg-es-pba-31044	neg-es-pba-31044	0	hard_negative	train	ES	A Medorra de Xoana	Friol	Santalla de Devesa (Santalla)		megalithic_mound	120.0	-1.73467669	551	ok	
+wl-tile-v1-06188	wl-neg-neg-es-pba-38388	neg-es-pba-38388	0	hard_negative	train	ES	A Medorra do Rañadoiro 1	Portomarín	Vilaxuste (San Pedro)		megalithic_mound	120.0	-0.35721865	413	ok	
+wl-tile-v1-06189	wl-neg-neg-es-pba-38389	neg-es-pba-38389	0	hard_negative	train	ES	A Medorra do Rañadoiro 2	Portomarín	Vilaxuste (San Pedro)		megalithic_mound	120.0	-0.53968463	463	ok	
+wl-tile-v1-06190	wl-neg-neg-es-pba-38420	neg-es-pba-38420	0	hard_negative	train	ES	A Medorra do Rañadoiro 3	Portomarín	Vilaxuste (San Pedro)		megalithic_mound	120.0	-1.01392800	537	ok	
+wl-tile-v1-03920	wl-neg-neg-es-pba-15468	neg-es-pba-15468	0	hard_negative	train	ES	A Medorra/Mámoa de Aldea de Abaixo 1	Ordes	Beán (Santa María)		megalithic_mound	120.0	-0.01959124	313	ok	
+wl-tile-v1-03921	wl-neg-neg-es-pba-15469	neg-es-pba-15469	0	hard_negative	train	ES	A Medorra/Mámoa de Aldea de Abaixo 2	Ordes	Beán (Santa María)		megalithic_mound	120.0	0.21749754	252	ok	
+wl-tile-v1-03922	wl-neg-neg-es-pba-15470	neg-es-pba-15470	0	hard_negative	train	ES	A Medorra/Mámoa de Aldea de Abaixo 3	Ordes	Beán (Santa María)		megalithic_mound	120.0	-0.25098175	382	ok	
+wl-tile-v1-03923	wl-neg-neg-es-pba-15471	neg-es-pba-15471	0	hard_negative	train	ES	A Medorra/Mámoa de Aldea de Abaixo 4	Ordes	Beán (Santa María)		megalithic_mound	120.0	-0.60688561	479	ok	
+wl-tile-v1-05091	wl-neg-neg-es-pba-42396	neg-es-pba-42396	0	hard_negative	train	ES	A Medorriña/Medorra do Coto Redondo	Baralla	Pacios (Santa María)		megalithic_mound	120.0	-0.49054974	449	ok	
+wl-tile-v1-05007	wl-neg-neg-es-pba-38985	neg-es-pba-38985	0	hard_negative	train	ES	A Mina	A Pobra do Brollón	Ferreiros (San Salvador)		mining_or_quarry	120.0	-0.04389660	318	ok	
+wl-tile-v1-07427	wl-neg-neg-es-pba-60601	neg-es-pba-60601	0	hard_negative	train	ES	A Mina dos Lameiros	Vilardevós	Vilar de Cervos (San Vicente)		mining_or_quarry	120.0	-0.01630622	310	ok	
+wl-tile-v1-06609	wl-neg-neg-es-pba-30140	neg-es-pba-30140	0	hard_negative	train	ES	A Modia	Xermade	Xermade (Santa María)		megalithic_mound	120.0	-0.20891487	365	ok	
+wl-tile-v1-06482	wl-neg-neg-es-pba-43240	neg-es-pba-43240	0	hard_negative	train	ES	A Modia de Gocendre	Vilalba	Goiriz (Santiago)		megalithic_mound	120.0	-0.91960494	523	ok	
+wl-tile-v1-06610	wl-neg-neg-es-pba-30141	neg-es-pba-30141	0	hard_negative	train	ES	A Modia/Medoña da Zaipa	Xermade	Xermade (Santa María)		megalithic_mound	120.0	-0.57749021	471	ok	
+wl-tile-v1-05008	wl-neg-neg-es-pba-38986	neg-es-pba-38986	0	hard_negative	train	ES	A Modorra	A Pobra do Brollón	Eixón (San Xurxo)		megalithic_mound	120.0	0.35907983	218	ok	
+wl-tile-v1-06046	wl-neg-neg-es-pba-37805	neg-es-pba-37805	0	hard_negative	train	ES	A Modorra Grande	Paradela	Castro de Rei de Lemos (Santa María)		megalithic_mound	120.0	-0.30347857	398	ok	
+wl-tile-v1-06044	wl-neg-neg-es-pba-37803	neg-es-pba-37803	0	hard_negative	train	ES	A Modorra de Bacorelle	Paradela	Castro de Rei de Lemos (Santa María)		megalithic_mound	120.0	-0.56660126	470	ok	
+wl-tile-v1-06316	wl-neg-neg-es-pba-42147	neg-es-pba-42147	0	hard_negative	train	ES	A Modorra do Cruceiro	Sarria	Santalla de Arxemil (Santalla)		megalithic_mound	120.0	-0.39837861	427	ok	
+wl-tile-v1-06045	wl-neg-neg-es-pba-37804	neg-es-pba-37804	0	hard_negative	train	ES	A Modorra dos Chaos	Paradela	Castro de Rei de Lemos (Santa María)		megalithic_mound	120.0	-0.46740727	446	ok	
+wl-tile-v1-07326	wl-neg-neg-es-pba-56894	neg-es-pba-56894	0	hard_negative	train	ES	A Muria/O Foio	Rubiá	O Barrio de Cascallá (Nosa Señora da Asunción)		mining_or_quarry	120.0	-0.18456548	354	ok	
+wl-tile-v1-03540	wl-neg-neg-es-pba-10048	neg-es-pba-10048	0	hard_negative	train	ES	A Mámoa	Fisterra	Duio (San Vicenzo)		megalithic_mound	120.0	-0.96177595	528	ok	
+wl-tile-v1-09448	wl-neg-neg-es-pba-74608	neg-es-pba-74608	0	hard_negative	train	ES	A Mámoa 2	Vila de Cruces	Ferreirós (San Xes)		megalithic_mound	120.0	-1.14141874	545	ok	
+wl-tile-v1-06043	wl-neg-neg-es-pba-37802	neg-es-pba-37802	0	hard_negative	train	ES	A Mámoa 3	Paradela	Castro de Rei de Lemos (Santa María)		megalithic_mound	120.0	-0.58848759	474	ok	
+wl-tile-v1-07113	wl-neg-neg-es-pba-51258	neg-es-pba-51258	0	hard_negative	train	ES	A Mámoa de Calvelo	Maceda	Zorelle (Santiago)		megalithic_mound	120.0	0.22634192	249	ok	
+wl-tile-v1-03026	wl-neg-neg-es-pba-884	neg-es-pba-884	0	hard_negative	train	ES	A Mámoa de Costa da Vide	Aranga	Cambás (San Pedro)		megalithic_mound	120.0	-0.13801824	344	ok	
+wl-tile-v1-03027	wl-neg-neg-es-pba-885	neg-es-pba-885	0	hard_negative	train	ES	A Mámoa de Ferreiros	Aranga	Vilarraso (San Lourenzo)		megalithic_mound	120.0	-0.98256817	531	ok	
+wl-tile-v1-03028	wl-neg-neg-es-pba-886	neg-es-pba-886	0	hard_negative	train	ES	A Mámoa de Vilarraso	Aranga	Vilarraso (San Lourenzo)		megalithic_mound	120.0	0.49655580	182	ok	
+wl-tile-v1-03029	wl-neg-neg-es-pba-887	neg-es-pba-887	0	hard_negative	train	ES	A Mámoa do Marco de Buño	Aranga	Cambás (San Pedro)		megalithic_mound	120.0	-0.47718744	447	ok	
+wl-tile-v1-03030	wl-neg-neg-es-pba-888	neg-es-pba-888	0	hard_negative	train	ES	A Mámoa do Monte dos Croios Brancos	Aranga	Aranga (San Paio)		megalithic_mound	120.0	-1.06955909	542	ok	
+wl-tile-v1-03031	wl-neg-neg-es-pba-889	neg-es-pba-889	0	hard_negative	train	ES	A Mámoa do Pousadoiro	Aranga	Aranga (San Paio)		megalithic_mound	120.0	0.26025010	241	ok	
+wl-tile-v1-03032	wl-neg-neg-es-pba-890	neg-es-pba-890	0	hard_negative	train	ES	A Mámoa/A Medoña	Aranga	Aranga (San Paio)		megalithic_mound	120.0	-0.78118499	513	ok	
+wl-tile-v1-07327	wl-neg-neg-es-pba-56895	neg-es-pba-56895	0	hard_negative	train	ES	A Pala I	Rubiá	O Porto (San Cristovo)		mining_or_quarry	120.0	0.35225655	219	ok	
+wl-tile-v1-07328	wl-neg-neg-es-pba-56896	neg-es-pba-56896	0	hard_negative	train	ES	A Pala I	Rubiá	O Porto (San Cristovo)		mining_or_quarry	120.0	-0.37403612	418	ok	
+wl-tile-v1-07329	wl-neg-neg-es-pba-56897	neg-es-pba-56897	0	hard_negative	train	ES	A Pala I	Rubiá	O Porto (San Cristovo)		mining_or_quarry	120.0	-0.42196226	434	ok	
+wl-tile-v1-07330	wl-neg-neg-es-pba-56923	neg-es-pba-56923	0	hard_negative	train	ES	A Pala I	Rubiá	O Porto (San Cristovo)		mining_or_quarry	120.0	-0.96526017	530	ok	
+wl-tile-v1-07331	wl-neg-neg-es-pba-56924	neg-es-pba-56924	0	hard_negative	train	ES	A Pala II	Rubiá	O Porto (San Cristovo)		mining_or_quarry	120.0	0.16698577	266	ok	
+wl-tile-v1-07332	wl-neg-neg-es-pba-56925	neg-es-pba-56925	0	hard_negative	train	ES	A Pala II	Rubiá	O Porto (San Cristovo)		mining_or_quarry	120.0	-0.08346730	331	ok	
+wl-tile-v1-07333	wl-neg-neg-es-pba-56926	neg-es-pba-56926	0	hard_negative	train	ES	A Pala II	Rubiá	O Porto (San Cristovo)		mining_or_quarry	120.0	-0.75484257	506	ok	
+wl-tile-v1-06262	wl-neg-neg-es-pba-40686	neg-es-pba-40686	0	hard_negative	train	ES	A Pedra Chantada	Ribeira de Piquín	Navallos (San Pedro)		megalithic_mound	120.0	0.25823577	243	ok	
+wl-tile-v1-05315	wl-neg-neg-es-pba-29114	neg-es-pba-29114	0	hard_negative	train	ES	A Torre do Braña/As Torres	Cospeito	Vilapene (Santa María)		historic_fortification	120.0	1.17743069	67	ok	
+wl-tile-v1-06611	wl-neg-neg-es-pba-30142	neg-es-pba-30142	0	hard_negative	train	ES	Abrigo Curaceiro 1	Xermade	Burgás (Santa Baia)		rock_art_surface	120.0	0.34808412	221	ok	
+wl-tile-v1-05678	wl-neg-neg-es-pba-34130	neg-es-pba-34130	0	hard_negative	train	ES	Abrigo da Pena da Capela	Mondoñedo	Figueiras (San Martiño)		rock_art_surface	120.0	-0.82892676	516	ok	
+wl-tile-v1-06483	wl-neg-neg-es-pba-43242	neg-es-pba-43242	0	hard_negative	train	ES	Abrigo de Dos Niñas	Vilalba	Santaballa (San Pedro)		rock_art_surface	120.0	1.36252349	48	ok	
+wl-tile-v1-06047	wl-neg-neg-es-pba-37807	neg-es-pba-37807	0	hard_negative	train	ES	Abrigo de Monte Agudo	Paradela	Santalla de Paradela (Santalla)		rock_art_surface	120.0	1.94390525	22	ok	
+wl-tile-v1-05679	wl-neg-neg-es-pba-34131	neg-es-pba-34131	0	hard_negative	train	ES	Abrigo de Monte Lourido	Mondoñedo	A Couboeira (Santa María Madanela)		rock_art_surface	120.0	0.43358233	197	ok	
+wl-tile-v1-06317	wl-neg-neg-es-pba-42148	neg-es-pba-42148	0	hard_negative	train	ES	Abrigo de Pena Moura	Sarria	Barbadelo (Santiago)		rock_art_surface	120.0	1.08636135	83	ok	
+wl-tile-v1-09350	wl-neg-neg-es-pba-70706	neg-es-pba-70706	0	hard_negative	train	ES	Achado de Areeiro	Tomiño	Tebra (Santa María)		rock_art_surface	120.0	0.19412628	259	ok	
+wl-tile-v1-05062	wl-neg-neg-es-pba-26911	neg-es-pba-26911	0	hard_negative	train	ES	Agro da Mámoa/Mámoa de Árbol	Antas de Ulla	Árbol (Santalla)		megalithic_mound	120.0	-0.87896592	519	ok	
+wl-tile-v1-07433	wl-neg-neg-es-pba-65159	neg-es-pba-65159	0	hard_negative	train	ES	Aloque/Almarra/Bouziña de Moledo	A Guarda	Camposancos (Santa Isabel)		roman_built_context	120.0	-0.64846202	487	ok	
+wl-tile-v1-06066	wl-neg-neg-es-pba-36986	neg-es-pba-36986	0	hard_negative	train	ES	Alto da Medorra	Pedrafita do Cebreiro	Zanfoga (San Martiño)		megalithic_mound	120.0	1.57494119	34	ok	
+wl-tile-v1-08724	wl-neg-neg-es-pba-68165	neg-es-pba-68165	0	hard_negative	train	ES	Anta do Meixueiro/Anta de Meixoeiro	Mos	Cela (San Pedro)		rock_art_surface	120.0	0.47921077	183	ok	
+wl-tile-v1-09423	wl-neg-neg-es-pba-73288	neg-es-pba-73288	0	hard_negative	train	ES	Ara votiva de San Mamede de Martores	Valga	Valga (San Miguel)		roman_built_context	120.0	0.04591111	292	ok	
+wl-tile-v1-07114	wl-neg-neg-es-pba-51261	neg-es-pba-51261	0	hard_negative	train	ES	As Cerdeiras	Maceda	Foncuberta (Santa María)		roman_built_context	120.0	-0.63884672	483	ok	
+wl-tile-v1-07334	wl-neg-neg-es-pba-56959	neg-es-pba-56959	0	hard_negative	train	ES	As Cheices	Rubiá	Quereño (San Cristovo)		mining_or_quarry	120.0	0.78929531	128	ok	
+wl-tile-v1-07335	wl-neg-neg-es-pba-56960	neg-es-pba-56960	0	hard_negative	train	ES	As Cheices	Rubiá	Quereño (San Cristovo)		mining_or_quarry	120.0	-1.03025457	539	ok	
+wl-tile-v1-07336	wl-neg-neg-es-pba-56961	neg-es-pba-56961	0	hard_negative	train	ES	As Cheices	Rubiá	Quereño (San Cristovo)		mining_or_quarry	120.0	0.38858202	211	ok	
+wl-tile-v1-07337	wl-neg-neg-es-pba-56962	neg-es-pba-56962	0	hard_negative	train	ES	As Cheices	Rubiá	Quereño (San Cristovo)		mining_or_quarry	120.0	0.10632129	274	ok	
+wl-tile-v1-07434	wl-neg-neg-es-pba-65197	neg-es-pba-65197	0	hard_negative	train	ES	As Covas	A Guarda	Salcidos (San Lourenzo)		roman_built_context	120.0	0.98378170	99	ok	
+wl-tile-v1-05772	wl-neg-neg-es-pba-35096	neg-es-pba-35096	0	hard_negative	train	ES	As Covas de Castañedo	Navia de Suarna	Castañedo (Santiago)		rock_art_surface	120.0	0.99944659	97	ok	
+wl-tile-v1-08419	wl-neg-neg-es-pba-66262	neg-es-pba-66262	0	hard_negative	train	ES	As Laxes	Gondomar	Couso (San Cristovo)		rock_art_surface	120.0	-0.38178504	424	ok	
+wl-tile-v1-07686	wl-neg-neg-es-pba-66074	neg-es-pba-66074	0	hard_negative	train	ES	As Mamuelas 1	Agolada	Ventosa (San Xulián)		megalithic_mound	120.0	-0.19310132	358	ok	
+wl-tile-v1-07687	wl-neg-neg-es-pba-66075	neg-es-pba-66075	0	hard_negative	train	ES	As Mamuelas 2	Agolada	Ventosa (San Xulián)		megalithic_mound	120.0	-0.64054983	485	ok	
+wl-tile-v1-07688	wl-neg-neg-es-pba-66076	neg-es-pba-66076	0	hard_negative	train	ES	As Mamuelas 3	Agolada	Ventosa (San Xulián)		megalithic_mound	120.0	-0.33418565	409	ok	
+wl-tile-v1-07689	wl-neg-neg-es-pba-66077	neg-es-pba-66077	0	hard_negative	train	ES	As Mamuelas 4	Agolada	Ventosa (San Xulián)		megalithic_mound	120.0	-0.10309347	336	ok	
+wl-tile-v1-07690	wl-neg-neg-es-pba-66078	neg-es-pba-66078	0	hard_negative	train	ES	As Mamuelas 5	Agolada	Ventosa (San Xulián)		megalithic_mound	120.0	-0.31730160	402	ok	
+wl-tile-v1-07691	wl-neg-neg-es-pba-66079	neg-es-pba-66079	0	hard_negative	train	ES	As Mamuelas 6	Agolada	Ventosa (San Xulián)		megalithic_mound	120.0	-0.40445416	429	ok	
+wl-tile-v1-06191	wl-neg-neg-es-pba-38423	neg-es-pba-38423	0	hard_negative	train	ES	As Medorras	Portomarín	Caborrecelle (San Xulián)		megalithic_mound	120.0	0.09185602	279	ok	
+wl-tile-v1-05762	wl-neg-neg-es-pba-35258	neg-es-pba-35258	0	hard_negative	train	ES	As Medorras/A Casa das Mouras/Medorra de Ligonde 1	Monterroso	Ligonde (Santiago)		megalithic_mound	120.0	0.04481744	293	ok	
+wl-tile-v1-05763	wl-neg-neg-es-pba-35259	neg-es-pba-35259	0	hard_negative	train	ES	As Medorras/A Casa das Mouras/Medorra de Ligonde 2	Monterroso	Ligonde (Santiago)		megalithic_mound	120.0	-0.20535687	363	ok	
+wl-tile-v1-05764	wl-neg-neg-es-pba-35260	neg-es-pba-35260	0	hard_negative	train	ES	As Medorras/A Casa das Mouras/Medorra de Ligonde 3	Monterroso	Ligonde (Santiago)		megalithic_mound	120.0	-0.29445668	396	ok	
+wl-tile-v1-05765	wl-neg-neg-es-pba-35282	neg-es-pba-35282	0	hard_negative	train	ES	As Medorras/A Casa das Mouras/Medorra de Ligonde 4	Monterroso	Ligonde (Santiago)		megalithic_mound	120.0	-0.45717998	443	ok	
+wl-tile-v1-03924	wl-neg-neg-es-pba-15509	neg-es-pba-15509	0	hard_negative	train	ES	As Medorras/Mámoa das Medorras de Santa Cruz	Ordes	Santa Cruz de Montaos (Santa Cruz)		megalithic_mound	120.0	-0.22855135	370	ok	
+wl-tile-v1-06053	wl-neg-neg-es-pba-37845	neg-es-pba-37845	0	hard_negative	train	ES	As Modorras 1	Paradela	Castro de Rei de Lemos (Santa María)		megalithic_mound	120.0	-0.56292258	468	ok	
+wl-tile-v1-06054	wl-neg-neg-es-pba-37846	neg-es-pba-37846	0	hard_negative	train	ES	As Modorras 2	Paradela	Castro de Rei de Lemos (Santa María)		megalithic_mound	120.0	-0.03580699	316	ok	
+wl-tile-v1-06055	wl-neg-neg-es-pba-37847	neg-es-pba-37847	0	hard_negative	train	ES	As Modorras 3	Paradela	Castro de Rei de Lemos (Santa María)		megalithic_mound	120.0	-0.44785567	440	ok	
+wl-tile-v1-05995	wl-neg-neg-es-pba-37276	neg-es-pba-37276	0	hard_negative	train	ES	As Modorras 4	Paradela	Castro de Rei de Lemos (Santa María)		megalithic_mound	120.0	-0.11402114	337	ok	
+wl-tile-v1-05996	wl-neg-neg-es-pba-37277	neg-es-pba-37277	0	hard_negative	train	ES	As Modorriñas	Paradela	Castro de Rei de Lemos (Santa María)		megalithic_mound	120.0	-0.65445502	490	ok	
+wl-tile-v1-07981	wl-neg-neg-es-pba-78752	neg-es-pba-78752	0	hard_negative	train	ES	As Mámoas	Cerdedo-Cotobade	Folgoso (Santa María)		megalithic_mound	120.0	-0.08153673	328	ok	
+wl-tile-v1-06503	wl-neg-neg-es-pba-43279	neg-es-pba-43279	0	hard_negative	train	ES	As Mámoas de Moscaran 1	Vilalba	Árbol (San Lourenzo)		megalithic_mound	120.0	-0.45135621	442	ok	
+wl-tile-v1-06504	wl-neg-neg-es-pba-43280	neg-es-pba-43280	0	hard_negative	train	ES	As Mámoas de Vilate 1	Vilalba	Lanzós (San Martiño)		megalithic_mound	120.0	-0.81826595	515	ok	
+wl-tile-v1-06621	wl-neg-neg-es-pba-30179	neg-es-pba-30179	0	hard_negative	train	ES	As Penas do Castelo	Xermade	Lousada (Santo André)		historic_fortification	120.0	0.47714264	184	ok	
+wl-tile-v1-07338	wl-neg-neg-es-pba-56963	neg-es-pba-56963	0	hard_negative	train	ES	As Perdigueiras	Rubiá	Pardollán (Santo Estevo)		mining_or_quarry	120.0	0.84395668	119	ok	
+wl-tile-v1-07692	wl-neg-neg-es-pba-66080	neg-es-pba-66080	0	hard_negative	train	ES	As Sete Mámoas	Agolada	Ferreiroa (San Pedro)		megalithic_mound	120.0	-0.02032188	314	ok	
+wl-tile-v1-06758	wl-neg-neg-es-pba-50577	neg-es-pba-50577	0	hard_negative	train	ES	Bouzas	A Gudiña	Pentes (San Mamede)		roman_built_context	120.0	-0.99281387	532	ok	
+wl-tile-v1-05680	wl-neg-neg-es-pba-34211	neg-es-pba-34211	0	hard_negative	train	ES	Calzada romana de Lindín	Mondoñedo	Lindín (Santiago)		roman_built_context	120.0	-0.24914981	381	ok	
+wl-tile-v1-07712	wl-neg-neg-es-pba-66114	neg-es-pba-66114	0	hard_negative	train	ES	Campo da Mámoa	Agolada	Brántega (San Lourenzo)		megalithic_mound	120.0	0.16985366	264	ok	
+wl-tile-v1-08328	wl-neg-neg-es-pba-64483	neg-es-pba-64483	0	hard_negative	train	ES	Campo da Mámoa 1	Forcarei	Pardesoa (Santiago)		megalithic_mound	120.0	-0.44433036	438	ok	
+wl-tile-v1-08329	wl-neg-neg-es-pba-64484	neg-es-pba-64484	0	hard_negative	train	ES	Campo da Mámoa 2	Forcarei	Pardesoa (Santiago)		megalithic_mound	120.0	-0.42011603	431	ok	
+wl-tile-v1-08252	wl-neg-neg-es-pba-63991	neg-es-pba-63991	0	hard_negative	train	ES	Campo da Mámoa 3	Forcarei	Pardesoa (Santiago)		megalithic_mound	120.0	-0.24431397	379	ok	
+wl-tile-v1-04597	wl-neg-neg-es-pba-25211	neg-es-pba-25211	0	hard_negative	train	ES	Cancela Encrucillada/Mámoa de Fornelos	Tordoia	Andoio (San Mamede)		megalithic_mound	120.0	-0.20798476	364	ok	
+wl-tile-v1-05942	wl-neg-neg-es-pba-41795	neg-es-pba-41795	0	hard_negative	train	ES	Capela e Necrópole de San Pedro de Cela	O Saviñao	Diomondi (San Paio)		necropolis_or_burial	120.0	-0.33121540	406	ok	
+wl-tile-v1-06336	wl-neg-neg-es-pba-42279	neg-es-pba-42279	0	hard_negative	train	ES	Capela e necrópole de San Marcos	Sarria	Biville (San Miguel)		necropolis_or_burial	120.0	1.13813948	79	ok	
+wl-tile-v1-06289	wl-neg-neg-es-pba-41944	neg-es-pba-41944	0	hard_negative	train	ES	Casa Torre de Barrio	Sarria	Louseiro (San Martiño)		historic_fortification	120.0	-0.53263942	462	ok	
+wl-tile-v1-06290	wl-neg-neg-es-pba-41945	neg-es-pba-41945	0	hard_negative	train	ES	Casa Torre de Outeiro	Sarria	Goián (San Miguel)		historic_fortification	120.0	-0.25480060	386	ok	
+wl-tile-v1-05886	wl-neg-neg-es-pba-37167	neg-es-pba-37167	0	hard_negative	train	ES	Casa de Mámoa	O Páramo	A Torre (San Martiño)		megalithic_mound	120.0	-0.55643052	464	ok	
+wl-tile-v1-06769	wl-neg-neg-es-pba-57591	neg-es-pba-57591	0	hard_negative	train	ES	Casa reitoral de Pedrafita	A Teixeira	Pedrafita (San Martiño)		megalithic_mound	120.0	-1.08191117	543	ok	
+wl-tile-v1-06069	wl-neg-neg-es-pba-37086	neg-es-pba-37086	0	hard_negative	train	ES	Casas (2) de Pedrafita	Pedrafita do Cebreiro	Pedrafita do Cebreiro (Santo Antón)		megalithic_mound	120.0	-1.65148279	550	ok	
+wl-tile-v1-05681	wl-neg-neg-es-pba-34394	neg-es-pba-34394	0	hard_negative	train	ES	Castelo	Mondoñedo	Figueiras (San Martiño)		historic_fortification	120.0	2.97689254	4	ok	
+wl-tile-v1-06580	wl-neg-neg-es-pba-43110	neg-es-pba-43110	0	hard_negative	train	ES	Castelo	Viveiro	Galdo (Santa María)		historic_fortification	120.0	1.45238990	41	ok	
+wl-tile-v1-06581	wl-neg-neg-es-pba-43142	neg-es-pba-43142	0	hard_negative	train	ES	Castelo	Viveiro	Faro (San Xiao)		historic_fortification	120.0	-0.49586336	450	ok	
+wl-tile-v1-06582	wl-neg-neg-es-pba-43143	neg-es-pba-43143	0	hard_negative	train	ES	Castelo	Viveiro	Celeiro (Santiago)		historic_fortification	120.0	1.16166528	72	ok	
+wl-tile-v1-06740	wl-neg-neg-es-pba-32082	neg-es-pba-32082	0	hard_negative	train	ES	Castelo	Xove	Portocelo (San Tirso)		historic_fortification	120.0	-0.10029239	334	ok	
+wl-tile-v1-06741	wl-neg-neg-es-pba-32083	neg-es-pba-32083	0	hard_negative	train	ES	Castelo	Xove	Portocelo (San Tirso)		historic_fortification	120.0	1.12430790	80	ok	
+wl-tile-v1-05766	wl-neg-neg-es-pba-35341	neg-es-pba-35341	0	hard_negative	train	ES	Castelo Longo de Ambarría	Monterroso	San Breixo (San Salvador)		historic_fortification	120.0	-0.37756361	422	ok	
+wl-tile-v1-06254	wl-neg-neg-es-pba-40334	neg-es-pba-40334	0	hard_negative	train	ES	Castelo Vello	Ribeira de Piquín	San Xurxo de Piquín (San Xurxo)		mining_or_quarry	120.0	-0.51638460	454	ok	
+wl-tile-v1-08856	wl-neg-neg-es-pba-71232	neg-es-pba-71232	0	hard_negative	train	ES	Castelo da Mata	O Rosal	O Rosal (Santa Mariña)		historic_fortification	120.0	0.01677052	303	ok	
+wl-tile-v1-05167	wl-neg-neg-es-pba-28789	neg-es-pba-28789	0	hard_negative	train	ES	Castelo da Modorra	Bóveda	Teilán (Santa Baia)		historic_fortification	120.0	1.24526777	59	ok	
+wl-tile-v1-05682	wl-neg-neg-es-pba-34395	neg-es-pba-34395	0	hard_negative	train	ES	Castelo da Recadeira	Mondoñedo	Os Remedios (Nosa Señora dos Remedios)		historic_fortification	120.0	-0.01692809	311	ok	
+wl-tile-v1-05943	wl-neg-neg-es-pba-37344	neg-es-pba-37344	0	hard_negative	train	ES	Castelo das Saíñas	Pantón	Espasantes (Santo Estevo)		historic_fortification	120.0	0.95482705	105	ok	
+wl-tile-v1-08568	wl-neg-neg-es-pba-67156	neg-es-pba-67156	0	hard_negative	train	ES	Castelo de Ardán	Marín	Ardán (Santa María)		historic_fortification	120.0	1.90009761	24	ok	
+wl-tile-v1-08569	wl-neg-neg-es-pba-67157	neg-es-pba-67157	0	hard_negative	train	ES	Castelo de Barbudo	Marín	Marín (San Xián)		historic_fortification	120.0	0.74427628	138	ok	
+wl-tile-v1-05944	wl-neg-neg-es-pba-37345	neg-es-pba-37345	0	hard_negative	train	ES	Castelo de Burnugueiras	Pantón	Pantón (San Martiño)		historic_fortification	120.0	0.02323138	302	ok	
+wl-tile-v1-09378	wl-neg-neg-es-pba-70318	neg-es-pba-70318	0	hard_negative	train	ES	Castelo de Casas Novas	Tui	Randufe (Santa María da Guía)		historic_fortification	120.0	0.15085267	268	ok	
+wl-tile-v1-08577	wl-neg-neg-es-pba-66595	neg-es-pba-66595	0	hard_negative	train	ES	Castelo de Con O Real/O Castelo	Moaña	Tirán (San Xoán)		historic_fortification	120.0	0.06151563	287	ok	
+wl-tile-v1-09247	wl-neg-neg-es-pba-70135	neg-es-pba-70135	0	hard_negative	train	ES	Castelo de Ferveda/Coto do Castelo	Silleda	Xestoso (Santa María)		historic_fortification	120.0	0.14342257	271	ok	
+wl-tile-v1-07934	wl-neg-neg-es-pba-61517	neg-es-pba-61517	0	hard_negative	train	ES	Castelo de Pereiró	Bueu	A Illa de Ons (San Xoaquín)		historic_fortification	120.0	-0.13117876	342	ok	
+wl-tile-v1-09176	wl-neg-neg-es-pba-71331	neg-es-pba-71331	0	hard_negative	train	ES	Castelo de Rande	Redondela	Trasmañó (San Vicente)		historic_fortification	120.0	0.25939349	242	ok	
+wl-tile-v1-09495	wl-neg-neg-es-pba-74969	neg-es-pba-74969	0	hard_negative	train	ES	Castelo de Uveiras/O Castelo	Vilaboa	Cobres (Santo Adrán)		historic_fortification	120.0	0.55300327	168	ok	
+wl-tile-v1-08778	wl-neg-neg-es-pba-68975	neg-es-pba-68975	0	hard_negative	train	ES	Castelo do Monte	Nigrán	Parada (Santiago)		historic_fortification	120.0	-0.64866186	488	ok	
+wl-tile-v1-08857	wl-neg-neg-es-pba-71233	neg-es-pba-71233	0	hard_negative	train	ES	Castelo do Monte Terroso	O Rosal	O Rosal (Santa Mariña)		historic_fortification	120.0	1.46993050	39	ok	
+wl-tile-v1-05683	wl-neg-neg-es-pba-34396	neg-es-pba-34396	0	hard_negative	train	ES	Castelo do Monte da Arca	Mondoñedo	Argomoso (San Pedro)		historic_fortification	120.0	1.19811107	65	ok	
+wl-tile-v1-02802	wl-neg-neg-es-pba-7236	neg-es-pba-7236	0	hard_negative	train	ES	Castelo/Batería de San Diego	A Coruña	A Coruña		historic_fortification	120.0	-0.53209567	460	ok	
+wl-tile-v1-06192	wl-neg-neg-es-pba-38466	neg-es-pba-38466	0	hard_negative	train	ES	Cazoletas de Penamaior	Portomarín	Recelle (San Pedro)		rock_art_surface	120.0	0.50532910	179	ok	
+wl-tile-v1-06840	wl-neg-neg-es-pba-45330	neg-es-pba-45330	0	hard_negative	train	ES	Cazoletas de San Pedro	Baltar	Vilamaior da Boullosa (Santa María)		rock_art_surface	120.0	0.25576850	245	ok	
+wl-tile-v1-07324	wl-neg-neg-es-pba-56795	neg-es-pba-56795	0	hard_negative	train	ES	Cista de Biobra	Rubiá	Biobra (San Miguel)		megalithic_mound	120.0	0.26340385	240	ok	
+wl-tile-v1-09497	wl-neg-neg-es-pba-75104	neg-es-pba-75104	0	hard_negative	train	ES	Cista de Chan de Castiñeiras 2/Mámoa do Rei	Vilaboa	Vilaboa (San Martiño)		megalithic_mound	120.0	-0.40153063	428	ok	
+wl-tile-v1-07947	wl-neg-neg-es-pba-62940	neg-es-pba-62940	0	hard_negative	train	ES	Cistas de Gandón	Cangas	Aldán (San Cibrán)		megalithic_mound	120.0	-0.21724693	368	ok	
+wl-tile-v1-08858	wl-neg-neg-es-pba-68854	neg-es-pba-68854	0	hard_negative	train	ES	Complexo megalítico de Amoedo/Mámoa de Alvedosa 1	Pazos de Borbén	Amoedo (San Sadurniño)		megalithic_mound	120.0	-1.01065038	536	ok	
+wl-tile-v1-08859	wl-neg-neg-es-pba-68855	neg-es-pba-68855	0	hard_negative	train	ES	Complexo megalítico de Amoedo/Mámoa de Alvedosa 2	Pazos de Borbén	Amoedo (San Sadurniño)		megalithic_mound	120.0	-1.09970894	544	ok	
+wl-tile-v1-08860	wl-neg-neg-es-pba-68856	neg-es-pba-68856	0	hard_negative	train	ES	Complexo megalítico de Amoedo/Mámoa de Alvedosa 3	Pazos de Borbén	Amoedo (San Sadurniño)		megalithic_mound	120.0	-0.90994782	522	ok	
+wl-tile-v1-08861	wl-neg-neg-es-pba-68857	neg-es-pba-68857	0	hard_negative	train	ES	Complexo megalítico de Amoedo/Mámoa de Alvedosa 4	Pazos de Borbén	Amoedo (San Sadurniño)		megalithic_mound	120.0	-0.59282429	477	ok	
+wl-tile-v1-08862	wl-neg-neg-es-pba-68858	neg-es-pba-68858	0	hard_negative	train	ES	Complexo megalítico de Amoedo/Mámoa de Alvedosa 5	Pazos de Borbén	Amoedo (San Sadurniño)		megalithic_mound	120.0	-0.26621646	390	ok	
+wl-tile-v1-08863	wl-neg-neg-es-pba-68859	neg-es-pba-68859	0	hard_negative	train	ES	Complexo megalítico de Amoedo/Mámoa de Alvedosa 6	Pazos de Borbén	Amoedo (San Sadurniño)		megalithic_mound	120.0	0.29747647	232	ok	
+wl-tile-v1-08578	wl-neg-neg-es-pba-66693	neg-es-pba-66693	0	hard_negative	train	ES	Complexo rupestre da Escada	Moaña	Meira (Santa Eulalia)		rock_art_surface	120.0	-0.44683024	439	ok	
+wl-tile-v1-08913	wl-neg-neg-es-pba-76607	neg-es-pba-76607	0	hard_negative	train	ES	Complexo rupestre de Combarro	Poio	Combarro (San Roque)		rock_art_surface	120.0	-0.90390892	521	ok	
+wl-tile-v1-08914	wl-neg-neg-es-pba-76608	neg-es-pba-76608	0	hard_negative	train	ES	Complexo rupestre de Combarro-Raxó	Poio	Combarro (San Roque)		rock_art_surface	120.0	0.15481404	267	ok	
+wl-tile-v1-04279	wl-neg-neg-es-pba-20010	neg-es-pba-20010	0	hard_negative	train	ES	Contorna de Porta da Mámoa	Santiago de Compostela	Santiago de Compostela		megalithic_mound	120.0	-0.05441894	321	ok	
+wl-tile-v1-03925	wl-neg-neg-es-pba-15660	neg-es-pba-15660	0	hard_negative	train	ES	Coto da Medorra/Mámoa do Coto da Medorra	Ordes	Parada (Santa Mariña)		megalithic_mound	120.0	-0.43928851	437	ok	
+wl-tile-v1-06338	wl-neg-neg-es-pba-41313	neg-es-pba-41313	0	hard_negative	train	ES	Coto das Medorras 1	Taboada	Meixonfrío (Santa Mariña)		megalithic_mound	120.0	-0.33796537	410	ok	
+wl-tile-v1-06339	wl-neg-neg-es-pba-41314	neg-es-pba-41314	0	hard_negative	train	ES	Coto das Medorras 2	Taboada	Meixonfrío (Santa Mariña)		megalithic_mound	120.0	-0.01838401	312	ok	
+wl-tile-v1-06340	wl-neg-neg-es-pba-41315	neg-es-pba-41315	0	hard_negative	train	ES	Coto das Medorras 3	Taboada	Meixonfrío (Santa Mariña)		megalithic_mound	120.0	-0.25170335	383	ok	
+wl-tile-v1-07974	wl-neg-neg-es-pba-78570	neg-es-pba-78570	0	hard_negative	train	ES	Coto de Mámoas 1	Cerdedo-Cotobade	Cerdedo (San Xoán)		megalithic_mound	120.0	-0.07671611	327	ok	
+wl-tile-v1-07975	wl-neg-neg-es-pba-78571	neg-es-pba-78571	0	hard_negative	train	ES	Coto de Mámoas 2	Cerdedo-Cotobade	Cerdedo (San Xoán)		megalithic_mound	120.0	-0.19627956	359	ok	
+wl-tile-v1-07976	wl-neg-neg-es-pba-78572	neg-es-pba-78572	0	hard_negative	train	ES	Coto de Mámoas 3	Cerdedo-Cotobade	Cerdedo (San Xoán)		megalithic_mound	120.0	-0.23985450	375	ok	
+wl-tile-v1-07977	wl-neg-neg-es-pba-78573	neg-es-pba-78573	0	hard_negative	train	ES	Coto de Mámoas 4	Cerdedo-Cotobade	Cerdedo (San Xoán)		megalithic_mound	120.0	-0.22626847	369	ok	
+wl-tile-v1-07978	wl-neg-neg-es-pba-78574	neg-es-pba-78574	0	hard_negative	train	ES	Coto de Mámoas 5	Cerdedo-Cotobade	Cerdedo (San Xoán)		megalithic_mound	120.0	-0.16937682	351	ok	
+wl-tile-v1-05767	wl-neg-neg-es-pba-35346	neg-es-pba-35346	0	hard_negative	train	ES	Coto do Mouro Morto/Orgoso/Medorra de Monte Agudo 1	Monterroso	Pedraza (Santa María)		megalithic_mound	120.0	-0.72611544	499	ok	
+wl-tile-v1-05768	wl-neg-neg-es-pba-35347	neg-es-pba-35347	0	hard_negative	train	ES	Coto do Mouro Morto/Orgoso/Medorra de Monte Agudo 2	Monterroso	Fufín (San Martiño)		megalithic_mound	120.0	-0.64042060	484	ok	
+wl-tile-v1-05769	wl-neg-neg-es-pba-35369	neg-es-pba-35369	0	hard_negative	train	ES	Coto do Mouro Morto/Orgoso/Medorra de Monte Agudo 3	Monterroso	Fufín (San Martiño)		megalithic_mound	120.0	-0.08306632	330	ok	
+wl-tile-v1-05652	wl-neg-neg-es-pba-31691	neg-es-pba-31691	0	hard_negative	train	ES	Cova da Moura	Láncara	Cedrón (Santiago)		rock_art_surface	120.0	0.82723971	120	ok	
+wl-tile-v1-06070	wl-neg-neg-es-pba-37122	neg-es-pba-37122	0	hard_negative	train	ES	Cova da Tara	Pedrafita do Cebreiro	Lousada (San Vicente)		rock_art_surface	120.0	-0.36433962	416	ok	
+wl-tile-v1-05866	wl-neg-neg-es-pba-32412	neg-es-pba-32412	0	hard_negative	train	ES	Cova de Bermún	O Incio	O Viso (Santa Cristina)		rock_art_surface	120.0	0.32802445	227	ok	
+wl-tile-v1-06341	wl-neg-neg-es-pba-41318	neg-es-pba-41318	0	hard_negative	train	ES	Cova de Cal de Mourelle	Taboada	Ansar (Santo Estevo)		rock_art_surface	120.0	0.33098815	226	ok	
+wl-tile-v1-06342	wl-neg-neg-es-pba-41319	neg-es-pba-41319	0	hard_negative	train	ES	Cova de Fonteboa	Taboada	Vilameñe (Santa Mariña)		rock_art_surface	120.0	-0.25206421	384	ok	
+wl-tile-v1-05684	wl-neg-neg-es-pba-34502	neg-es-pba-34502	0	hard_negative	train	ES	Cova de Furada dos Cas	Mondoñedo	Vilamor (Santa María)		rock_art_surface	120.0	1.52468908	35	ok	
+wl-tile-v1-06308	wl-neg-neg-es-pba-42121	neg-es-pba-42121	0	hard_negative	train	ES	Cova de Gaspar	Sarria	Cesar (San Salvador)		rock_art_surface	120.0	0.21320587	253	ok	
+wl-tile-v1-06072	wl-neg-neg-es-pba-38398	neg-es-pba-38398	0	hard_negative	train	ES	Cova de Praducelo	Pol	Suegos (Santa Eulalia)		rock_art_surface	120.0	-0.37630507	419	ok	
+wl-tile-v1-05653	wl-neg-neg-es-pba-31692	neg-es-pba-31692	0	hard_negative	train	ES	Cova de Saballeiros	Láncara	Vilaesteva de Herdeiros (Santa María)		rock_art_surface	120.0	-0.41111883	430	ok	
+wl-tile-v1-06071	wl-neg-neg-es-pba-37123	neg-es-pba-37123	0	hard_negative	train	ES	Cova de Val de Galiñas	Pedrafita do Cebreiro	Pedrafita do Cebreiro (Santo Antón)		rock_art_surface	120.0	0.08891675	280	ok	
+wl-tile-v1-05685	wl-neg-neg-es-pba-34503	neg-es-pba-34503	0	hard_negative	train	ES	Cova do Rei Cintolo	Mondoñedo	Argomoso (San Pedro)		rock_art_surface	120.0	0.17998727	262	ok	
+wl-tile-v1-05771	wl-neg-neg-es-pba-34823	neg-es-pba-34823	0	hard_negative	train	ES	Cova dos Mouros	Navia de Suarna	Mosteiro (San Salvador)		rock_art_surface	120.0	-0.44923079	441	ok	
+wl-tile-v1-08276	wl-neg-neg-es-pba-64133	neg-es-pba-64133	0	hard_negative	train	ES	Cruceiro da Mámoa	Forcarei	Castrelo (Santa Mariña)		megalithic_mound	120.0	-0.23160784	371	ok	
+wl-tile-v1-07446	wl-neg-neg-es-pba-65445	neg-es-pba-65445	0	hard_negative	train	ES	Cruces de Porto María Albiña	A Guarda	Salcidos (San Lourenzo)		rock_art_surface	120.0	-0.37029208	417	ok	
+wl-tile-v1-06841	wl-neg-neg-es-pba-45431	neg-es-pba-45431	0	hard_negative	train	ES	Cruces do Pisón	Baltar	Vilamaior da Boullosa (Santa María)		rock_art_surface	120.0	-1.02813347	538	ok	
+wl-tile-v1-03609	wl-neg-neg-es-pba-11325	neg-es-pba-11325	0	hard_negative	train	ES	Cruz da Mámoa 1	Irixoa	Verís (Santa María)		megalithic_mound	120.0	-0.28189335	395	ok	
+wl-tile-v1-03610	wl-neg-neg-es-pba-11326	neg-es-pba-11326	0	hard_negative	train	ES	Cruz da Mámoa 2	Irixoa	Verís (Santa María)		megalithic_mound	120.0	-0.67259267	494	ok	
+wl-tile-v1-04840	wl-neg-neg-es-pba-25648	neg-es-pba-25648	0	hard_negative	train	ES	Dolmen Mina de Caxadas	Vimianzo	Cambeda (San Xoán)		megalithic_mound	120.0	-0.85557810	518	ok	
+wl-tile-v1-03636	wl-neg-neg-es-pba-12929	neg-es-pba-12929	0	hard_negative	train	ES	Dolmen Pedra da Arca	Malpica de Bergantiños	Cerqueda (San Cristovo)		megalithic_mound	120.0	-0.17744570	352	ok	
+wl-tile-v1-04281	wl-neg-neg-es-pba-21191	neg-es-pba-21191	0	hard_negative	train	ES	Dolmen das Derramadas	Santiago de Compostela	Bando (Santa Eulalia)		megalithic_mound	120.0	-0.74975343	505	ok	
+wl-tile-v1-06680	wl-neg-neg-es-pba-30461	neg-es-pba-30461	0	hard_negative	train	ES	Dolmen de Capeirón	Xermade	Cazás (San Xulián)		megalithic_mound	120.0	0.03646706	298	ok	
+wl-tile-v1-06257	wl-neg-neg-es-pba-40367	neg-es-pba-40367	0	hard_negative	train	ES	Dolmen de Carballons 2	Ribeira de Piquín	Navallos (San Pedro)		megalithic_mound	120.0	-0.17835273	353	ok	
+wl-tile-v1-06256	wl-neg-neg-es-pba-40366	neg-es-pba-40366	0	hard_negative	train	ES	Dolmen de Carballóns 1	Ribeira de Piquín	Navallos (San Pedro)		megalithic_mound	120.0	-0.33242182	407	ok	
+wl-tile-v1-03611	wl-neg-neg-es-pba-11086	neg-es-pba-11086	0	hard_negative	train	ES	Dolmen de Fornella dos Mouros	Laxe	Nande (San Simón)		megalithic_mound	120.0	0.51947695	174	ok	
+wl-tile-v1-05000	wl-neg-neg-es-pba-27462	neg-es-pba-27462	0	hard_negative	train	ES	Dolmen de Pedra Vixía	Zas	Lamas (Santa María)		megalithic_mound	120.0	-0.52801125	456	ok	
+wl-tile-v1-07122	wl-neg-neg-es-pba-52270	neg-es-pba-52270	0	hard_negative	train	ES	Dolmen de Rebordondo	Monterrei	Infesta (San Vicenzo)		megalithic_mound	120.0	0.39800448	209	ok	
+wl-tile-v1-05001	wl-neg-neg-es-pba-27491	neg-es-pba-27491	0	hard_negative	train	ES	Dolmen de Vermello	Zas	Lamas (Santa María)		megalithic_mound	120.0	-0.95454581	527	ok	
+wl-tile-v1-04003	wl-neg-neg-es-pba-17549	neg-es-pba-17549	0	hard_negative	train	ES	Dolmen do Cristo de Mouraz/Mámoa de Xuncos de Mouraz 5	Ortigueira	Devesos (San Sebastián)		megalithic_mound	120.0	-0.73257121	500	ok	
+wl-tile-v1-07466	wl-neg-neg-es-pba-65633	neg-es-pba-65633	0	hard_negative	train	ES	Eira Vella/Sa	A Guarda	Camposancos (Santa Isabel)		roman_built_context	120.0	-0.51147459	453	ok	
+wl-tile-v1-08696	wl-neg-neg-es-pba-67591	neg-es-pba-67591	0	hard_negative	train	ES	Entrepiñeiro/A Mina	Mos	Cela (San Pedro)		mining_or_quarry	120.0	-0.65618716	492	ok	
+wl-tile-v1-05829	wl-neg-neg-es-pba-29551	neg-es-pba-29551	0	hard_negative	train	ES	Escola en Pedrafita	O Corgo	Pedrafita (San Miguel)		megalithic_mound	120.0	-1.15420469	547	ok	
+wl-tile-v1-06759	wl-neg-neg-es-pba-50710	neg-es-pba-50710	0	hard_negative	train	ES	Estela de Tameirón/Cabeza do Chinchón	A Gudiña	A Gudiña (San Martiño e San Pedro)		roman_built_context	120.0	-0.04557955	319	ok	
+wl-tile-v1-05940	wl-neg-neg-es-pba-41478	neg-es-pba-41478	0	hard_negative	train	ES	Estrutura lítica de Vilatán	O Saviñao	Vilatán (San Xoán)		rock_art_surface	120.0	-0.18962624	355	ok	
+wl-tile-v1-06225	wl-neg-neg-es-pba-40491	neg-es-pba-40491	0	hard_negative	train	ES	Explotación mineira da Escrita	Ribas de Sil	Soutordei (Santiago)		mining_or_quarry	120.0	-0.47891159	448	ok	
+wl-tile-v1-05103	wl-neg-neg-es-pba-28400	neg-es-pba-28400	0	hard_negative	train	ES	Explotación mineira da Granxa de Constantín	Begonte	Bóveda (Santalla)		mining_or_quarry	120.0	-1.19192773	548	ok	
+wl-tile-v1-05104	wl-neg-neg-es-pba-28401	neg-es-pba-28401	0	hard_negative	train	ES	Explotación mineira da Graña	Begonte	Bóveda (Santalla)		mining_or_quarry	120.0	-0.62393727	482	ok	
+wl-tile-v1-07786	wl-neg-neg-es-pba-59720	neg-es-pba-59720	0	hard_negative	train	ES	Explotación mineira da Lagoa/A Cova	Arbo	Arbo (Santa María)		mining_or_quarry	120.0	-0.15542397	349	ok	
+wl-tile-v1-09017	wl-neg-neg-es-pba-76507	neg-es-pba-76507	0	hard_negative	train	ES	Explotación mineira da Lomba	Ponteareas	Ponteareas (San Miguel)		mining_or_quarry	120.0	0.18639498	261	ok	
+wl-tile-v1-09018	wl-neg-neg-es-pba-76508	neg-es-pba-76508	0	hard_negative	train	ES	Explotación mineira da Ribeira	Ponteareas	Areas (Santa María)		mining_or_quarry	120.0	0.39556176	210	ok	
+wl-tile-v1-09358	wl-neg-neg-es-pba-71280	neg-es-pba-71280	0	hard_negative	train	ES	Explotación mineira das Chans de Tebra	Tomiño	Tebra (Santa María)		mining_or_quarry	120.0	-0.23549557	373	ok	
+wl-tile-v1-07857	wl-neg-neg-es-pba-60223	neg-es-pba-60223	0	hard_negative	train	ES	Explotación mineira das Insuas	Baiona	Belesar (San Lourenzo)		mining_or_quarry	120.0	-0.76163392	509	ok	
+wl-tile-v1-09359	wl-neg-neg-es-pba-71281	neg-es-pba-71281	0	hard_negative	train	ES	Explotación mineira das Torres	Tomiño	Taborda (San Miguel)		mining_or_quarry	120.0	0.55650266	166	ok	
+wl-tile-v1-05654	wl-neg-neg-es-pba-31696	neg-es-pba-31696	0	hard_negative	train	ES	Explotación mineira de Monte Trandeira	Láncara	Cedrón (Santiago)		mining_or_quarry	120.0	0.04967665	290	ok	
+wl-tile-v1-05105	wl-neg-neg-es-pba-28402	neg-es-pba-28402	0	hard_negative	train	ES	Explotación mineira de Pena Moura	Begonte	Bóveda (Santalla)		mining_or_quarry	120.0	-0.42050585	432	ok	
+wl-tile-v1-08277	wl-neg-neg-es-pba-64195	neg-es-pba-64195	0	hard_negative	train	ES	Explotación mineira de Prado do Muíño Entrerríos	Forcarei	Pereira (San Bartolomeu)		mining_or_quarry	120.0	-0.70341040	496	ok	
+wl-tile-v1-06226	wl-neg-neg-es-pba-40492	neg-es-pba-40492	0	hard_negative	train	ES	Explotación mineira do Covallón	Ribas de Sil	Soutordei (Santiago)		mining_or_quarry	120.0	0.25722812	244	ok	
+wl-tile-v1-06227	wl-neg-neg-es-pba-40493	neg-es-pba-40493	0	hard_negative	train	ES	Explotación mineira do Vogo	Ribas de Sil	Soutordei (Santiago)		mining_or_quarry	120.0	-0.84957315	517	ok	
+wl-tile-v1-07858	wl-neg-neg-es-pba-60224	neg-es-pba-60224	0	hard_negative	train	ES	Explotación mineira do Xuncal	Baiona	Santa Cristina da Ramallosa (Santa Cristina)		mining_or_quarry	120.0	-0.33271144	408	ok	
+wl-tile-v1-09360	wl-neg-neg-es-pba-71282	neg-es-pba-71282	0	hard_negative	train	ES	Explotación mineira dos Buracos dos Mouros	Tomiño	Pinzás (Santa María)		mining_or_quarry	120.0	-0.58846465	473	ok	
+wl-tile-v1-06228	wl-neg-neg-es-pba-40494	neg-es-pba-40494	0	hard_negative	train	ES	Explotacións mineiras de Barreiro	Ribas de Sil	Nogueira (Nosa Señora das Neves)		mining_or_quarry	120.0	0.03605462	299	ok	
+wl-tile-v1-06229	wl-neg-neg-es-pba-40553	neg-es-pba-40553	0	hard_negative	train	ES	Explotacións mineiras de Figueirido1	Ribas de Sil	Piñeira (San Cristovo)		mining_or_quarry	120.0	-0.74287913	503	ok	
+wl-tile-v1-06230	wl-neg-neg-es-pba-40554	neg-es-pba-40554	0	hard_negative	train	ES	Explotacións mineiras de Figueirido2	Ribas de Sil	Piñeira (San Cristovo)		mining_or_quarry	120.0	-0.33061988	405	ok	
+wl-tile-v1-06231	wl-neg-neg-es-pba-40555	neg-es-pba-40555	0	hard_negative	train	ES	Explotacións mineiras de Peites	Ribas de Sil	Peites (San Martiño)		mining_or_quarry	120.0	-0.08295898	329	ok	
+wl-tile-v1-06232	wl-neg-neg-es-pba-40556	neg-es-pba-40556	0	hard_negative	train	ES	Explotacións mineiras de Rairós	Ribas de Sil	Nogueira (Nosa Señora das Neves)		mining_or_quarry	120.0	-0.64362757	486	ok	
+wl-tile-v1-06233	wl-neg-neg-es-pba-40557	neg-es-pba-40557	0	hard_negative	train	ES	Explotacións mineiras de San Clodio 1	Ribas de Sil	Ribas de Sil (San Clodio)		mining_or_quarry	120.0	0.38098966	213	ok	
+wl-tile-v1-06234	wl-neg-neg-es-pba-40584	neg-es-pba-40584	0	hard_negative	train	ES	Explotacións mineiras de San Clodio 2	Ribas de Sil	Ribas de Sil (San Clodio)		mining_or_quarry	120.0	0.46968267	187	ok	
+wl-tile-v1-07320	wl-neg-neg-es-pba-56726	neg-es-pba-56726	0	hard_negative	train	ES	Foi Pidriña	Rubiá	Quereño (San Cristovo)		mining_or_quarry	120.0	-0.09095887	332	ok	
+wl-tile-v1-07321	wl-neg-neg-es-pba-56727	neg-es-pba-56727	0	hard_negative	train	ES	Foi Pidriña	Rubiá	Quereño (San Cristovo)		mining_or_quarry	120.0	-0.25753885	387	ok	
+wl-tile-v1-07322	wl-neg-neg-es-pba-56728	neg-es-pba-56728	0	hard_negative	train	ES	Folo das Arcas	Rubiá	Biobra (San Miguel)		megalithic_mound	120.0	0.76314533	132	ok	
+wl-tile-v1-08864	wl-neg-neg-es-pba-68930	neg-es-pba-68930	0	hard_negative	train	ES	Fonte do Muras	Pazos de Borbén	Amoedo (San Sadurniño)		rock_art_surface	120.0	0.06550589	285	ok	
+wl-tile-v1-05770	wl-neg-neg-es-pba-35433	neg-es-pba-35433	0	hard_negative	train	ES	Forno dos Mouros/Medorra de Monte Fabeiro 1	Monterroso	Tarrío (Santa María)		megalithic_mound	120.0	1.14779159	77	ok	
+wl-tile-v1-05759	wl-neg-neg-es-pba-35225	neg-es-pba-35225	0	hard_negative	train	ES	Forno dos Mouros/Medorra de Monte Fabeiro 2	Monterroso	Tarrío (Santa María)		megalithic_mound	120.0	1.04500023	89	ok	
+wl-tile-v1-08822	wl-neg-neg-es-pba-77256	neg-es-pba-77256	0	hard_negative	train	ES	Gabias exploratorias Monte Gándara de Torneirós	O Porriño	Torneiros (San Salvador)		mining_or_quarry	120.0	-0.59767976	478	ok	
+wl-tile-v1-08819	wl-neg-neg-es-pba-77253	neg-es-pba-77253	0	hard_negative	train	ES	Gabias exploratorias do Monte Carrascal e Laxedo I	O Porriño	Atios (Santa Eulalia)		mining_or_quarry	120.0	0.33824658	223	ok	
+wl-tile-v1-08820	wl-neg-neg-es-pba-77254	neg-es-pba-77254	0	hard_negative	train	ES	Gabias exploratorias do Monte Carrascal e Laxedo II	O Porriño	Atios (Santa Eulalia)		mining_or_quarry	120.0	-0.09446434	333	ok	
+wl-tile-v1-08821	wl-neg-neg-es-pba-77255	neg-es-pba-77255	0	hard_negative	train	ES	Gabias exploratorias do Monte Carrascal e Laxedo III	O Porriño	Atios (Santa Eulalia)		mining_or_quarry	120.0	-0.01511379	309	ok	
+wl-tile-v1-09520	wl-neg-neg-es-pba-74239	neg-es-pba-74239	0	hard_negative	train	ES	Gravado de Maceiras	Vilanova de Arousa	András (San Lourenzo)		rock_art_surface	120.0	1.07654774	86	ok	
+wl-tile-v1-06449	wl-neg-neg-es-pba-43122	neg-es-pba-43122	0	hard_negative	train	ES	Gravado de Pena Grande	Vilalba	Santaballa (San Pedro)		rock_art_surface	120.0	0.63550152	152	ok	
+wl-tile-v1-05832	wl-neg-neg-es-pba-31874	neg-es-pba-31874	0	hard_negative	train	ES	Gravados da Pena Escrita de Treimonte	O Incio	Sirgueiros (San Xoán)		rock_art_surface	120.0	0.29246757	233	ok	
+wl-tile-v1-06263	wl-neg-neg-es-pba-41604	neg-es-pba-41604	0	hard_negative	train	ES	Gravados de Fonte 2	Sarria	Maside (San Pedro)		rock_art_surface	120.0	-0.26986250	391	ok	
+wl-tile-v1-05002	wl-neg-neg-es-pba-27562	neg-es-pba-27562	0	hard_negative	train	ES	Hórreo na Mámoa	Zas	San Martiño de Meanos (San Martiño)		megalithic_mound	120.0	0.06267639	286	ok	
+wl-tile-v1-06770	wl-neg-neg-es-pba-57759	neg-es-pba-57759	0	hard_negative	train	ES	Igrexa de Pedrafita (Parroquial de San Martiño)	A Teixeira	Pedrafita (San Martiño)		megalithic_mound	120.0	-0.70462533	497	ok	
+wl-tile-v1-05822	wl-neg-neg-es-pba-29301	neg-es-pba-29301	0	hard_negative	train	ES	Igrexa de Pedrafita (Parroquial de San Miguel)	O Corgo	Pedrafita (San Miguel)		megalithic_mound	120.0	-0.11514487	338	ok	
+wl-tile-v1-06067	wl-neg-neg-es-pba-37060	neg-es-pba-37060	0	hard_negative	train	ES	Igrexa de Pedrafita do Cebreiro (Parroquial de Santo Antón)	Pedrafita do Cebreiro	Pedrafita do Cebreiro (Santo Antón)		megalithic_mound	120.0	-1.80451848	552	ok	
+wl-tile-v1-08556	wl-neg-neg-es-pba-66669	neg-es-pba-66669	0	hard_negative	train	ES	Lapa	Marín	Marín (San Xián)		rock_art_surface	120.0	0.59648179	158	ok	
+wl-tile-v1-08212	wl-neg-neg-es-pba-64531	neg-es-pba-64531	0	hard_negative	train	ES	Lapa de Monte das Mámoas	Dozón	O Castro (San Salvador)		megalithic_mound	120.0	-0.52928499	458	ok	
+wl-tile-v1-08682	wl-neg-neg-es-pba-67513	neg-es-pba-67513	0	hard_negative	train	ES	Laxe das Cruces	Mos	Louredo (San Salvador)		rock_art_surface	120.0	-0.36044297	414	ok	
+wl-tile-v1-07948	wl-neg-neg-es-pba-63326	neg-es-pba-63326	0	hard_negative	train	ES	Laxe de Chan	Cangas	Darbo (Santa María)		rock_art_surface	120.0	-0.53052773	459	ok	
+wl-tile-v1-08141	wl-neg-neg-es-pba-64776	neg-es-pba-64776	0	hard_negative	train	ES	Laxe dos Gatos	Cuntis	Cequeril (Santa María)		rock_art_surface	120.0	0.03220707	300	ok	
+wl-tile-v1-06484	wl-neg-neg-es-pba-43246	neg-es-pba-43246	0	hard_negative	train	ES	Leira da Modia	Vilalba	Vilapedre (San Mamede)		megalithic_mound	120.0	-0.77033868	510	ok	
+wl-tile-v1-06760	wl-neg-neg-es-pba-50748	neg-es-pba-50748	0	hard_negative	train	ES	Leiras da Preseira	A Gudiña	A Gudiña (San Martiño e San Pedro)		rock_art_surface	120.0	-1.24565191	549	ok	
+wl-tile-v1-05674	wl-neg-neg-es-pba-33907	neg-es-pba-33907	0	hard_negative	train	ES	Lugar da Torre de Vilamor	Mondoñedo	Vilamor (Santa María)		historic_fortification	120.0	0.45587143	189	ok	
+wl-tile-v1-05774	wl-neg-neg-es-pba-36333	neg-es-pba-36333	0	hard_negative	train	ES	Madorra da Rebola de Vilares 1	Navia de Suarna	Barcia (San Miguel)		megalithic_mound	120.0	0.80280640	125	ok	
+wl-tile-v1-05775	wl-neg-neg-es-pba-36358	neg-es-pba-36358	0	hard_negative	train	ES	Madorra da Rebola de Vilares 2	Navia de Suarna	Barcia (San Miguel)		megalithic_mound	120.0	1.17065652	69	ok	
+wl-tile-v1-05776	wl-neg-neg-es-pba-36359	neg-es-pba-36359	0	hard_negative	train	ES	Madorra da Rebola de Vilares 3	Navia de Suarna	Barcia (San Miguel)		megalithic_mound	120.0	0.76831711	129	ok	
+wl-tile-v1-06073	wl-neg-neg-es-pba-38524	neg-es-pba-38524	0	hard_negative	train	ES	Madorra da Veiga 3	Pol	Carazo (San Pedro)		megalithic_mound	120.0	-1.00416351	534	ok	
+wl-tile-v1-06074	wl-neg-neg-es-pba-38525	neg-es-pba-38525	0	hard_negative	train	ES	Madorra da Veiga 4	Pol	Carazo (San Pedro)		megalithic_mound	120.0	-0.96196583	529	ok	
+wl-tile-v1-09428	wl-neg-neg-es-pba-74213	neg-es-pba-74213	0	hard_negative	train	ES	Madorra de Abaixo	Vila de Cruces	Loño (San Mamede)		megalithic_mound	120.0	-0.81434377	514	ok	
+wl-tile-v1-05627	wl-neg-neg-es-pba-31274	neg-es-pba-31274	0	hard_negative	train	ES	Madorra de Montouto 1	Láncara	Vilaesteva de Herdeiros (Santa María)		megalithic_mound	120.0	-0.92290225	524	ok	
+wl-tile-v1-05628	wl-neg-neg-es-pba-31275	neg-es-pba-31275	0	hard_negative	train	ES	Madorra de Montouto 2	Láncara	Vilaesteva de Herdeiros (Santa María)		megalithic_mound	120.0	-0.12350183	340	ok	
+wl-tile-v1-05629	wl-neg-neg-es-pba-31276	neg-es-pba-31276	0	hard_negative	train	ES	Madorra de Montouto 3	Láncara	Vilaesteva de Herdeiros (Santa María)		megalithic_mound	120.0	0.01241313	305	ok	
+wl-tile-v1-05630	wl-neg-neg-es-pba-31306	neg-es-pba-31306	0	hard_negative	train	ES	Madorra de Montouto 4	Láncara	Vilaesteva de Herdeiros (Santa María)		megalithic_mound	120.0	-0.15273502	348	ok	
+wl-tile-v1-05631	wl-neg-neg-es-pba-31307	neg-es-pba-31307	0	hard_negative	train	ES	Madorra de Montouto 5	Láncara	Vilaesteva de Herdeiros (Santa María)		megalithic_mound	120.0	-0.00931900	307	ok	
+wl-tile-v1-09429	wl-neg-neg-es-pba-74341	neg-es-pba-74341	0	hard_negative	train	ES	Madorra de Seixas	Vila de Cruces	Cumeiro (San Pedro)		megalithic_mound	120.0	-0.19155766	356	ok	
+wl-tile-v1-06075	wl-neg-neg-es-pba-38526	neg-es-pba-38526	0	hard_negative	train	ES	Madorra do Barreiro 1/Madorra do Monte Alfonsín 1	Pol	Valonga (Santa María)		megalithic_mound	120.0	-0.69720199	495	ok	
+wl-tile-v1-06076	wl-neg-neg-es-pba-38527	neg-es-pba-38527	0	hard_negative	train	ES	Madorra do Barreiro 2/Madorra do Monte Alfonsín 2	Pol	Valonga (Santa María)		megalithic_mound	120.0	-0.21233230	366	ok	
+wl-tile-v1-05777	wl-neg-neg-es-pba-36360	neg-es-pba-36360	0	hard_negative	train	ES	Madorra do Chao do Couso 1	Navia de Suarna	Mosteiro (San Salvador)		megalithic_mound	120.0	-0.60927952	480	ok	
+wl-tile-v1-05778	wl-neg-neg-es-pba-36361	neg-es-pba-36361	0	hard_negative	train	ES	Madorra do Chao do Couso 2	Navia de Suarna	Mosteiro (San Salvador)		megalithic_mound	120.0	-0.36200013	415	ok	
+wl-tile-v1-05779	wl-neg-neg-es-pba-36362	neg-es-pba-36362	0	hard_negative	train	ES	Madorra do Coto da Maestra	Navia de Suarna	Mosteiro (San Salvador)		megalithic_mound	120.0	1.15939007	74	ok	
+wl-tile-v1-05781	wl-neg-neg-es-pba-36364	neg-es-pba-36364	0	hard_negative	train	ES	Madorra do Monte Meiroi 1	Navia de Suarna	Queizán (Santiago)		megalithic_mound	120.0	0.95010009	106	ok	
+wl-tile-v1-05782	wl-neg-neg-es-pba-36365	neg-es-pba-36365	0	hard_negative	train	ES	Madorra do Monte Meiroi 2	Navia de Suarna	Mosteiro (San Salvador)		megalithic_mound	120.0	0.70583985	143	ok	
+wl-tile-v1-05783	wl-neg-neg-es-pba-36366	neg-es-pba-36366	0	hard_negative	train	ES	Madorra do Monte Meiroi 3	Navia de Suarna	Mosteiro (San Salvador)		megalithic_mound	120.0	0.07445862	281	ok	
+wl-tile-v1-05780	wl-neg-neg-es-pba-36363	neg-es-pba-36363	0	hard_negative	train	ES	Madorra do Monte da Farrapa/Zarrapa 1	Navia de Suarna	Mosteiro (San Salvador)		megalithic_mound	120.0	-0.20482434	362	ok	
+wl-tile-v1-05784	wl-neg-neg-es-pba-36367	neg-es-pba-36367	0	hard_negative	train	ES	Madorra do Moural 1	Navia de Suarna	Queizán (Santiago)		megalithic_mound	120.0	0.40576408	204	ok	
+wl-tile-v1-05785	wl-neg-neg-es-pba-36392	neg-es-pba-36392	0	hard_negative	train	ES	Madorra do Moural 2	Navia de Suarna	Queizán (Santiago)		megalithic_mound	120.0	-0.43080780	436	ok	
+wl-tile-v1-05786	wl-neg-neg-es-pba-36393	neg-es-pba-36393	0	hard_negative	train	ES	Madorra do Pico das Valiñas 1	Navia de Suarna	Mosteiro (San Salvador)		megalithic_mound	120.0	-0.94831222	526	ok	
+wl-tile-v1-05787	wl-neg-neg-es-pba-36394	neg-es-pba-36394	0	hard_negative	train	ES	Madorra do Pico das Valiñas 2	Navia de Suarna	Mosteiro (San Salvador)		megalithic_mound	120.0	-0.58883011	475	ok	
+wl-tile-v1-10378	wl-pos-pos-es-pba-20474	pos-es-pba-20474	1	positive	train	ES	A Ameixeira/Castro de Caselas/O Terreo	Santa Comba	Santa Comba (San Pedro)	generic_castro_hint		120.0	-0.38172960	423	ok	
+wl-tile-v1-11164	wl-pos-pos-es-pba-57575	pos-es-pba-57575	1	positive	train	ES	A Canda/Castro da Canda	A Veiga	Valdín (Santa María)	generic_castro_hint		120.0	1.27822042	55	ok	
+wl-tile-v1-10719	wl-pos-pos-es-pba-31040	pos-es-pba-31040	1	positive	train	ES	A Castronela	Friol	Vilafiz (Santa María)	generic_castro_hint		120.0	0.55683464	165	ok	
+wl-tile-v1-10720	wl-pos-pos-es-pba-31041	pos-es-pba-31041	1	positive	train	ES	A Castronela/O Castro	Friol	Ousá (San Xiao)	generic_castro_hint		120.0	-0.07217537	326	ok	
+wl-tile-v1-10814	wl-pos-pos-es-pba-35202	pos-es-pba-35202	1	positive	train	ES	A Castronera/O Castelo/As Lagoas/A Castronera	Monterroso	Fufín (San Martiño)	generic_castro_hint		120.0	0.16937288	265	ok	
+wl-tile-v1-11243	wl-pos-pos-es-pba-51629	pos-es-pba-51629	1	positive	train	ES	A Cidadella/Castro da Cidadella	Laza	Carraxo (San Bieito)	generic_castro_hint		120.0	0.64326292	151	ok	
+wl-tile-v1-11307	wl-pos-pos-es-pba-56891	pos-es-pba-56891	1	positive	train	ES	A Cogola/A Ciuda	Rubiá	O Robledo da Lastra (Nosa Señora da Concepción)	generic_castro_hint		120.0	0.64629167	149	ok	
+wl-tile-v1-11131	wl-pos-pos-es-pba-50548	pos-es-pba-50548	1	positive	train	ES	A Corbiza	A Gudiña	O Tameirón (Santa María)	generic_castro_hint		120.0	-0.46585524	445	ok	
+wl-tile-v1-11244	wl-pos-pos-es-pba-51630	pos-es-pba-51630	1	positive	train	ES	A Coroa/O Castro	Laza	O Castro de Laza (San Pedro)	croa_top_ring_hint		120.0	0.74802352	136	ok	
+wl-tile-v1-10206	wl-pos-pos-es-pba-13980	pos-es-pba-13980	1	positive	train	ES	A Croa	Muxía	Nemiña (San Cristovo)	croa_top_ring_hint		120.0	0.53121605	173	ok	
+wl-tile-v1-10270	wl-pos-pos-es-pba-15531	pos-es-pba-15531	1	positive	train	ES	A Croa	Ortigueira	Ladrido (Santalla)	croa_top_ring_hint		120.0	1.44520169	43	ok	
+wl-tile-v1-10581	wl-pos-pos-es-pba-42578	pos-es-pba-42578	1	positive	train	ES	A Croa	Baralla	Covas (Santiago)	croa_top_ring_hint		120.0	-0.04561519	320	ok	
+wl-tile-v1-10664	wl-pos-pos-es-pba-27967	pos-es-pba-27967	1	positive	train	ES	A Croa	Castroverde	Serés (San Pedro)	croa_top_ring_hint		120.0	0.45000228	193	ok	
+wl-tile-v1-10755	wl-pos-pos-es-pba-31342	pos-es-pba-31342	1	positive	train	ES	A Croa	Láncara	Carracedo (San Vicente)	croa_top_ring_hint		120.0	1.25735561	58	ok	
+wl-tile-v1-10756	wl-pos-pos-es-pba-31370	pos-es-pba-31370	1	positive	train	ES	A Croa	Láncara	Láncara (San Pedro)	croa_top_ring_hint		120.0	1.22308383	63	ok	
+wl-tile-v1-11347	wl-pos-pos-es-pba-60421	pos-es-pba-60421	1	positive	train	ES	A Croa	Vilariño de Conso	Sabuguido (Santa María)	croa_top_ring_hint		120.0	1.07259906	87	ok	
+wl-tile-v1-10380	wl-pos-pos-es-pba-20110	pos-es-pba-20110	1	positive	train	ES	A Croa das Paradelas	Santiago de Compostela	Nemenzo (Santa Cristina)	croa_top_ring_hint		120.0	-0.24267008	377	ok	
+wl-tile-v1-11578	wl-pos-pos-es-pba-76906	pos-es-pba-76906	1	positive	train	ES	A Croa de Barxiela	Ponteareas	Ribadetea (San Xurxo)	croa_top_ring_hint		120.0	0.37164495	216	ok	
+wl-tile-v1-11043	wl-pos-pos-es-pba-41086	pos-es-pba-41086	1	positive	train	ES	A Croa de Castrillos	Taboada	San Xián de Önsua (San Xián)	croa_top_ring_hint		120.0	-0.56443655	469	ok	
+wl-tile-v1-11673	wl-pos-pos-es-pba-74606	pos-es-pba-74606	1	positive	train	ES	A Croa de Castromouzo	Vila de Cruces	Gres (Santiago)	croa_top_ring_hint		120.0	0.95939892	103	ok	
+wl-tile-v1-10665	wl-pos-pos-es-pba-27968	pos-es-pba-27968	1	positive	train	ES	A Croa de Mouriz	Castroverde	Barredo (San Xoán)	croa_top_ring_hint		120.0	0.56746666	161	ok	
+wl-tile-v1-11063	wl-pos-pos-es-pba-43239	pos-es-pba-43239	1	positive	train	ES	A Croa de Muruxás	Vilalba	Lanzós (San Martiño)	croa_top_ring_hint		120.0	-0.39088608	426	ok	
+wl-tile-v1-10886	wl-pos-pos-es-pba-37125	pos-es-pba-37125	1	positive	train	ES	A Croa de San Martiño/Croa do Castro	O Páramo	A Torre (San Martiño)	coastal_promontory_hint		120.0	0.94071674	111	ok	
+wl-tile-v1-10666	wl-pos-pos-es-pba-27969	pos-es-pba-27969	1	positive	train	ES	A Croa de Souto de Torres	Castroverde	Souto de Torres (San Tomé)	croa_top_ring_hint		120.0	0.63286877	153	ok	
+wl-tile-v1-10667	wl-pos-pos-es-pba-27970	pos-es-pba-27970	1	positive	train	ES	A Croa de Souto de Torres	Castroverde	Souto de Torres (San Tomé)	croa_top_ring_hint		120.0	0.76692573	130	ok	
+wl-tile-v1-10668	wl-pos-pos-es-pba-27971	pos-es-pba-27971	1	positive	train	ES	A Croa de Soutomerille	Castroverde	Soutomerille (San Salvador)	croa_top_ring_hint		120.0	0.54855418	169	ok	
+wl-tile-v1-10844	wl-pos-pos-es-pba-29622	pos-es-pba-29622	1	positive	train	ES	A Croa de Vilanova	O Corgo	O Alto (Santalla)	croa_top_ring_hint		120.0	0.21948382	251	ok	
+wl-tile-v1-10669	wl-pos-pos-es-pba-27972	pos-es-pba-27972	1	positive	train	ES	A Croa de Xivil	Castroverde	Bolaño (Santa Baia)	croa_top_ring_hint		120.0	1.59991249	33	ok	
+wl-tile-v1-11044	wl-pos-pos-es-pba-41087	pos-es-pba-41087	1	positive	train	ES	A Croa de Xián/Castro de Xián	Taboada	Xián (Santa María)	croa_top_ring_hint		120.0	-0.03106964	315	ok	
+wl-tile-v1-09890	wl-pos-pos-es-pba-17047	pos-es-pba-17047	1	positive	train	ES	A Croa do Castro/A Croa de Posmarcos	A Pobra do Caramiñal	Posmarcos (Santo Isidro)	coastal_promontory_hint		120.0	0.94182708	109	ok	
+wl-tile-v1-10670	wl-pos-pos-es-pba-27973	pos-es-pba-27973	1	positive	train	ES	A Croa dos Mouros	Castroverde	Montecubeiro (San Cibrao)	croa_top_ring_hint		120.0	0.47454587	185	ok	
+wl-tile-v1-11100	wl-pos-pos-es-pba-43437	pos-es-pba-43437	1	positive	train	ES	A Croa/Castro da Forca	Viveiro	Landrove (San Xiao)	croa_top_ring_hint		120.0	1.16751933	70	ok	
+wl-tile-v1-10455	wl-pos-pos-es-pba-25056	pos-es-pba-25056	1	positive	train	ES	A Croa/Castro de Bardaos	Tordoia	Bardaos (Santa María)	croa_top_ring_hint		120.0	0.75442241	135	ok	
+wl-tile-v1-10757	wl-pos-pos-es-pba-31371	pos-es-pba-31371	1	positive	train	ES	A Croa/O Castro	Láncara	Ronfe (San Pedro)	croa_top_ring_hint		120.0	0.04099115	296	ok	
+wl-tile-v1-10475	wl-pos-pos-es-pba-24587	pos-es-pba-24587	1	positive	train	ES	A Croela do Castro	Trazo	Castelo (Santa María)	generic_castro_hint		120.0	0.01604166	304	ok	
+wl-tile-v1-10456	wl-pos-pos-es-pba-25083	pos-es-pba-25083	1	positive	train	ES	A Medorra de Castro	Tordoia	Gorgullos (Santaia)	generic_castro_hint		120.0	-0.20178289	361	ok	
+wl-tile-v1-10244	wl-pos-pos-es-pba-15436	pos-es-pba-15436	1	positive	train	ES	A Medorra do Gavián/Castro da Medorra do Gavión	Ordes	Parada (Santa Mariña)	generic_castro_hint		120.0	0.02439590	301	ok	
+wl-tile-v1-10245	wl-pos-pos-es-pba-15438	pos-es-pba-15438	1	positive	train	ES	A Medorra/A Medorra de Castro	Ordes	Leira (Santa María)	generic_castro_hint		120.0	-0.61409479	481	ok	
+wl-tile-v1-10246	wl-pos-pos-es-pba-15467	pos-es-pba-15467	1	positive	train	ES	A Medorra/Castro de Parada	Ordes	Parada (Santa Mariña)	generic_castro_hint		120.0	-0.31165333	401	ok	
+wl-tile-v1-10437	wl-pos-pos-es-pba-24889	pos-es-pba-24889	1	positive	train	ES	A Orela de Castro de Ares	Toques	A Capela (Santa María)	generic_castro_hint		120.0	-0.74048375	501	ok	
+wl-tile-v1-11320	wl-pos-pos-es-pba-56508	pos-es-pba-56508	1	positive	train	ES	A Pena dos Castros	San Xoán de Río	San Xoán de Río (San Xoán)	hilltop_hint		120.0	0.22334594	250	ok	
+wl-tile-v1-09928	wl-pos-pos-es-pba-1956	pos-es-pba-1956	1	positive	train	ES	A Roda do Castro	Ares	Caamouco (San Vicente)	earthwork_or_wall_hint		120.0	2.85096407	5	ok	
+wl-tile-v1-10220	wl-pos-pos-es-pba-16572	pos-es-pba-16572	1	positive	train	ES	A Roda do Castro	O Pino	Gonzar (Santa María)	generic_castro_hint		120.0	-0.01456126	308	ok	
+wl-tile-v1-10221	wl-pos-pos-es-pba-16573	pos-es-pba-16573	1	positive	train	ES	A Roda do Castro	O Pino	Pereira (San Miguel)	generic_castro_hint		120.0	0.39916270	208	ok	
+wl-tile-v1-10537	wl-pos-pos-es-pba-38989	pos-es-pba-38989	1	positive	train	ES	A Roda do Castro	A Pobra do Brollón	Salcedo (San Xoán)	generic_castro_hint		120.0	0.40958130	201	ok	
+wl-tile-v1-10860	wl-pos-pos-es-pba-32106	pos-es-pba-32106	1	positive	train	ES	A Roda do Castro	O Incio	A Cervela (San Cristovo)	generic_castro_hint		120.0	1.16030345	73	ok	
+wl-tile-v1-10222	wl-pos-pos-es-pba-16574	pos-es-pba-16574	1	positive	train	ES	A Roda do Castro de Astrar	O Pino	Arca (Santaia)	generic_castro_hint		120.0	-0.42088820	433	ok	
+wl-tile-v1-10420	wl-pos-pos-es-pba-24204	pos-es-pba-24204	1	positive	train	ES	A Roda do Castro/Castro de Rairiz	Santiso	Santaia de Rairiz (Santaia)	generic_castro_hint		120.0	-0.26239953	389	ok	
+wl-tile-v1-10385	wl-pos-pos-es-pba-20170	pos-es-pba-20170	1	positive	train	ES	A Roda dos Mouros/Castro de Enfesta/Casto de Vilasuso	Santiago de Compostela	A Enfesta (San Cristovo)	generic_castro_hint		120.0	0.64412063	150	ok	
+wl-tile-v1-10223	wl-pos-pos-es-pba-16575	pos-es-pba-16575	1	positive	train	ES	A Roda/Agra do Castro	O Pino	Ferreiros (San Breixo)	generic_castro_hint		120.0	0.45152869	192	ok	
+wl-tile-v1-10282	wl-pos-pos-es-pba-17487	pos-es-pba-17487	1	positive	train	ES	A Torre do Castelo/O Castro	Outes	Outes (San Pedro)	generic_castro_hint		120.0	2.31370019	10	ok	
+wl-tile-v1-11322	wl-pos-pos-es-pba-58393	pos-es-pba-58393	1	positive	train	ES	A Torre do Castro	Sandiás	Sandiás (Santo Estevo)	generic_castro_hint		120.0	2.09897107	16	ok	
+wl-tile-v1-10247	wl-pos-pos-es-pba-15472	pos-es-pba-15472	1	positive	train	ES	A Torre/Castro da Torre	Ordes	Ardemil (San Pedro)	generic_castro_hint		120.0	0.59473567	159	ok	
+wl-tile-v1-10248	wl-pos-pos-es-pba-15473	pos-es-pba-15473	1	positive	train	ES	A Torre/Castro da Torre	Ordes	Buscás (San Paio)	generic_castro_hint		120.0	0.44036522	195	ok	
+wl-tile-v1-10249	wl-pos-pos-es-pba-15474	pos-es-pba-15474	1	positive	train	ES	A Torre/O Castro/A Torre de Moscoso	Ordes	Ardemil (San Pedro)	generic_castro_hint		120.0	-0.34033580	411	ok	
+wl-tile-v1-10271	wl-pos-pos-es-pba-15636	pos-es-pba-15636	1	positive	train	ES	A Volta dos Castros	Ortigueira	Mera de Abaixo (Santiago)	generic_castro_hint		120.0	4.34267862	2	ok	
+wl-tile-v1-09884	wl-pos-pos-es-pba-11387	pos-es-pba-11387	1	positive	train	ES	Agra do Castro/Castro de Lestón/Os Castros	A Laracha	Lestón (San Martiño)	generic_castro_hint		120.0	0.53559913	172	ok	
+wl-tile-v1-10845	wl-pos-pos-es-pba-29651	pos-es-pba-29651	1	positive	train	ES	Agra dos Castros	O Corgo	Arxemil (San Pedro)	generic_castro_hint		120.0	0.45204234	191	ok	
+wl-tile-v1-11621	wl-pos-pos-es-pba-69983	pos-es-pba-69983	1	positive	train	ES	Agra dos Castros	Silleda	O Castro (San Mamede)	generic_castro_hint		120.0	-0.65497177	491	ok	
+wl-tile-v1-11499	wl-pos-pos-es-pba-65686	pos-es-pba-65686	1	positive	train	ES	Agro do Castro	Lalín	Santiso (San Román)	generic_castro_hint		120.0	-0.38943366	425	ok	
+wl-tile-v1-11665	wl-pos-pos-es-pba-73150	pos-es-pba-73150	1	positive	train	ES	Agro do Castro	Valga	Cordeiro (Santa Comba)	generic_castro_hint		120.0	-0.58040997	472	ok	
+wl-tile-v1-10152	wl-pos-pos-es-pba-12345	pos-es-pba-12345	1	positive	train	ES	Agro do Castro/Castro de Castrarón	Mazaricos	Os Vaos (San Tomé)	generic_castro_hint		120.0	-2.53594942	553	ok	
+wl-tile-v1-10861	wl-pos-pos-es-pba-32107	pos-es-pba-32107	1	positive	train	ES	Agro do Castro/Pena do Castro	O Incio	Eirexalba (Santo Estevo)	hilltop_hint		120.0	0.33555308	224	ok	
+wl-tile-v1-11334	wl-pos-pos-es-pba-58982	pos-es-pba-58982	1	positive	train	ES	Aira da Castro	Vilamartín de Valdeorras	Córgomo (Santa Comba)	generic_castro_hint		120.0	1.17680790	68	ok	
+wl-tile-v1-10393	wl-pos-pos-es-pba-20197	pos-es-pba-20197	1	positive	train	ES	Alto da Croa/Alto do Castro	Santiago de Compostela	A Peregrina (Santa María)	croa_top_ring_hint		120.0	2.07733656	18	ok	
+wl-tile-v1-11298	wl-pos-pos-es-pba-56643	pos-es-pba-56643	1	positive	train	ES	As Cabarquellas. Os Mouros. O Castro. As Murallas	Riós	Progo (San Miguel)	earthwork_or_wall_hint		120.0	0.87463838	115	ok	
+wl-tile-v1-10311	wl-pos-pos-es-pba-27475	pos-es-pba-27475	1	positive	train	ES	As Casiñas de Coterras/Castro de Muruxeses	Oza-Cesuras	Rodeiro (Santa María)	generic_castro_hint		120.0	-0.56054667	467	ok	
+wl-tile-v1-10436	wl-pos-pos-es-pba-24300	pos-es-pba-24300	1	positive	train	ES	As Castronelas	Sobrado	Carelle (San Lourenzo)	generic_castro_hint		120.0	0.14700299	270	ok	
+wl-tile-v1-10250	wl-pos-pos-es-pba-15505	pos-es-pba-15505	1	positive	train	ES	As Cenicas/Castro de Vilasuso	Ordes	Beán (Santa María)	generic_castro_hint		120.0	-0.07022478	325	ok	
+wl-tile-v1-10539	wl-pos-pos-es-pba-38688	pos-es-pba-38688	1	positive	train	ES	As Coroas/Fincas dos Castros e das Coroas/Castros de Xudán	A Pontenova	Xudán (Santa María Madanela)	croa_top_ring_hint		120.0	1.02922439	91	ok	
+wl-tile-v1-10961	wl-pos-pos-es-pba-38902	pos-es-pba-38902	1	positive	train	ES	As Coroas/Os Castros/Monte das Croas/A Croa do Carballido	Pol	Valonga (Santa María)	croa_top_ring_hint		120.0	-0.16353164	350	ok	
+wl-tile-v1-10312	wl-pos-pos-es-pba-27476	pos-es-pba-27476	1	positive	train	ES	As Croas/Castro de Oza/Castro de Carraceda	Oza-Cesuras	Oza (San Pedro)	croa_top_ring_hint		120.0	0.38131293	212	ok	
+wl-tile-v1-10577	wl-pos-pos-es-pba-42398	pos-es-pba-42398	1	positive	train	ES	As Croas/Os Castros	Baralla	Constantín (Santa María)	croa_top_ring_hint		120.0	1.69665740	29	ok	
+wl-tile-v1-10578	wl-pos-pos-es-pba-42399	pos-es-pba-42399	1	positive	train	ES	As Croas/Os Castros	Baralla	Vale (San Xurxo)	croa_top_ring_hint		120.0	-0.10236860	335	ok	
+wl-tile-v1-10579	wl-pos-pos-es-pba-42400	pos-es-pba-42400	1	positive	train	ES	As Croas/Os Castros	Baralla	Pacios (Santa María)	croa_top_ring_hint		120.0	1.09483168	82	ok	
+wl-tile-v1-10580	wl-pos-pos-es-pba-42401	pos-es-pba-42401	1	positive	train	ES	As Croas/Os Castros	Baralla	Pedrafita de Camporredondo (San Xoán)	croa_top_ring_hint		120.0	0.51213447	176	ok	
+wl-tile-v1-10962	wl-pos-pos-es-pba-38903	pos-es-pba-38903	1	positive	train	ES	As Croas/Os Castros	Pol	Torneiros (San Lourenzo)	croa_top_ring_hint		120.0	-0.27423817	392	ok	
+wl-tile-v1-10457	wl-pos-pos-es-pba-25147	pos-es-pba-25147	1	positive	train	ES	As Medorras de Castro	Tordoia	Gorgullos (Santaia)	generic_castro_hint		120.0	-0.23376890	372	ok	
+wl-tile-v1-10070	wl-pos-pos-es-pba-5747	pos-es-pba-5747	1	positive	train	ES	As Picureas do Castro/As Quenllas	Coristanco	Oca (San Martiño)	generic_castro_hint		120.0	2.19355500	13	ok	
+wl-tile-v1-11308	wl-pos-pos-es-pba-56964	pos-es-pba-56964	1	positive	train	ES	As Portas	Rubiá	A Veiga de Cascallá (Santa Cruz)	generic_castro_hint		120.0	1.16358989	71	ok	
+wl-tile-v1-11560	wl-pos-pos-es-pba-78344	pos-es-pba-78344	1	positive	train	ES	Asentamento do Castro	O Porriño	Atios (Santa Eulalia)	generic_castro_hint		120.0	0.50891492	178	ok	
+wl-tile-v1-10484	wl-pos-pos-es-pba-24373	pos-es-pba-24373	1	positive	train	ES	Bico do Castro	Val do Dubra	Portomouro (San Cristovo)	generic_castro_hint		120.0	1.45752971	40	ok	
+wl-tile-v1-11309	wl-pos-pos-es-pba-56965	pos-es-pba-56965	1	positive	train	ES	Cabeza do Castro	Rubiá	Rubiá (Santa Mariña)	generic_castro_hint		120.0	0.43763434	196	ok	
+wl-tile-v1-10548	wl-pos-pos-es-pba-26686	pos-es-pba-26686	1	positive	train	ES	Calvario da Igrexa de San Salvador do Castro de Ouro	Alfoz do Castrodouro	O Castro de Ouro (San Salvador)	valley_or_river_edge_hint		120.0	1.98973893	20	ok	
+wl-tile-v1-11228	wl-pos-pos-es-pba-48170	pos-es-pba-48170	1	positive	train	ES	Camiño da Costa/Camiño do Castro	Cenlle	Razamonde (Santa María)	coastal_promontory_hint		120.0	-0.93192979	525	ok	
+wl-tile-v1-10232	wl-pos-pos-es-pba-19426	pos-es-pba-19426	1	positive	train	ES	Camiño principal de acceso ao Castro	O Porto do Son	Baroña (San Pedro)	generic_castro_hint		120.0	0.06803299	283	ok	
+wl-tile-v1-09970	wl-pos-pos-es-pba-4275	pos-es-pba-4275	1	positive	train	ES	Campo da Romaría de San Fins de Castro	Cabana de Bergantiños	Cesullas (Santo Estevo)	coastal_promontory_hint		120.0	-0.77142480	511	ok	
+wl-tile-v1-10033	wl-pos-pos-es-pba-6059	pos-es-pba-6059	1	positive	train	ES	Campo do Castro	Cedeira	Cedeira (Santa María do Mar)	generic_castro_hint		120.0	5.85332251	1	ok	
+wl-tile-v1-11459	wl-pos-pos-es-pba-63992	pos-es-pba-63992	1	positive	train	ES	Capela da Nosa Señora dos Remedios do Castro	Forcarei	San Miguel de Presqueiras (San Miguel)	generic_castro_hint		120.0	0.91829944	114	ok	
+wl-tile-v1-11269	wl-pos-pos-es-pba-52211	pos-es-pba-52211	1	positive	train	ES	Capela da Virxe do Castro en Guntumil	Muíños	Requiás (Santiago)	generic_castro_hint		120.0	0.41214735	200	ok	
+wl-tile-v1-10689	wl-pos-pos-es-pba-28838	pos-es-pba-28838	1	positive	train	ES	Capela de Castro Portela	Folgoso do Courel	Vilamor (San Vicente)	generic_castro_hint		120.0	0.09658183	277	ok	
+wl-tile-v1-10351	wl-pos-pos-es-pba-20591	pos-es-pba-20591	1	positive	train	ES	Capela de San Roque no Castro de Samoedo	Sada	Osedo (San Xián)	generic_castro_hint		120.0	-0.59091595	476	ok	
+wl-tile-v1-10794	wl-pos-pos-es-pba-34283	pos-es-pba-34283	1	positive	train	ES	Capela de Santiago no Castro	Mondoñedo	Lindín (Santiago)	generic_castro_hint		120.0	-0.37697943	420	ok	
+wl-tile-v1-11674	wl-pos-pos-es-pba-74887	pos-es-pba-74887	1	positive	train	ES	Capela dos Castros – Capela de San Roque	Vila de Cruces	Brandariz (San Miguel)	generic_castro_hint		120.0	0.31523932	230	ok	
+wl-tile-v1-10294	wl-pos-pos-es-pba-27586	pos-es-pba-27586	1	positive	train	ES	Casa Forte do Castronou de Eirís	Oza Cesuras	Oza (San Pedro)	generic_castro_hint		120.0	-0.49716549	451	ok	
+wl-tile-v1-11264	wl-pos-pos-es-pba-52266	pos-es-pba-52266	1	positive	train	ES	Castelo das Chás/Citania das Laxes das Chás/A Cerca/Castro de Lobarz n	Monterrei	Oímbra (Santa María)	large_castrexo_civitas_hint		120.0	0.92548338	113	ok	
+wl-tile-v1-11004	wl-pos-pos-es-pba-41947	pos-es-pba-41947	1	positive	train	ES	Castelo de Loureiro/Os Castros de Castelo	Sarria	Loureiro (San Martiño)	generic_castro_hint		120.0	1.01908201	93	ok	
+wl-tile-v1-09866	wl-pos-pos-es-pba-1186	pos-es-pba-1186	1	positive	train	ES	Castelo de Rodado/Castro de Gosende	A Baña	A Ermida (San Salvador)	generic_castro_hint		120.0	-0.13823851	345	ok	
+wl-tile-v1-11390	wl-pos-pos-es-pba-60005	pos-es-pba-60005	1	positive	train	ES	Castelo/Castro de Casás	Barro	Agudelo (San Martiño)	generic_castro_hint		120.0	0.73470829	139	ok	
+wl-tile-v1-11402	wl-pos-pos-es-pba-62902	pos-es-pba-62902	1	positive	train	ES	Castrelin	Cangas	O Hío (Santo André)	castrel_toponym_hint		120.0	-0.76112963	508	ok	
+wl-tile-v1-11440	wl-pos-pos-es-pba-64596	pos-es-pba-64596	1	positive	train	ES	Castreliño/O Castriño	Cuntis	Cuntis (Santa María)	castrel_toponym_hint		120.0	-0.27631261	393	ok	
+wl-tile-v1-11622	wl-pos-pos-es-pba-70136	pos-es-pba-70136	1	positive	train	ES	Castrillón	Silleda	Dornelas (San Martiño)	castrel_toponym_hint		120.0	-0.21650506	367	ok	
+wl-tile-v1-09989	wl-pos-pos-es-pba-3481	pos-es-pba-3481	1	positive	train	ES	Castrillón/Castro de Santa Eirena	Carballo	Lema (San Cristovo)	castrel_toponym_hint		120.0	2.34911193	9	ok	
+wl-tile-v1-11490	wl-pos-pos-es-pba-65313	pos-es-pba-65313	1	positive	train	ES	Castriño da Barreira	Lalín	Xaxán (Santa María da Saleta)	generic_castro_hint		120.0	-0.06210603	323	ok	
+wl-tile-v1-11491	wl-pos-pos-es-pba-65423	pos-es-pba-65423	1	positive	train	ES	Castriño de Bendoiro	Lalín	Bendoiro (San Miguel)	generic_castro_hint		120.0	0.33210330	225	ok	
+wl-tile-v1-10017	wl-pos-pos-es-pba-27145	pos-es-pba-27145	1	positive	train	ES	Castro	Cariño	A Pedra (Santa María)	generic_castro_hint		120.0	-0.75987163	507	ok	
+wl-tile-v1-10634	wl-pos-pos-es-pba-28478	pos-es-pba-28478	1	positive	train	ES	Castro	Carballedo	Furco (San Gregorio)	generic_castro_hint		120.0	0.28649743	236	ok	
+wl-tile-v1-10745	wl-pos-pos-es-pba-31769	pos-es-pba-31769	1	positive	train	ES	Castro	Lourenzá	Lourenzá (Santa María)	generic_castro_hint		120.0	1.96245234	21	ok	
+wl-tile-v1-11094	wl-pos-pos-es-pba-43144	pos-es-pba-43144	1	positive	train	ES	Castro	Viveiro	Celeiro (Santiago)	generic_castro_hint		120.0	-1.00698471	535	ok	
+wl-tile-v1-11590	wl-pos-pos-es-pba-69614	pos-es-pba-69614	1	positive	train	ES	Castro	Pontevedra	Salcedo (San Martiño)	generic_castro_hint		120.0	-0.74096199	502	ok	
+wl-tile-v1-11603	wl-pos-pos-es-pba-69686	pos-es-pba-69686	1	positive	train	ES	Castro	Salvaterra de Miño	Soutolobre (Santa Comba)	generic_castro_hint		120.0	-0.13179799	343	ok	
+wl-tile-v1-11666	wl-pos-pos-es-pba-73433	pos-es-pba-73433	1	positive	train	ES	Castro	Valga	Cordeiro (Santa Comba)	generic_castro_hint		120.0	-0.55660922	465	ok	
+wl-tile-v1-10034	wl-pos-pos-es-pba-6182	pos-es-pba-6182	1	positive	train	ES	Castro A Croa de Carracedo	Cedeira	Montoxo (San Xiao)	croa_top_ring_hint		120.0	0.80030396	126	ok	
+wl-tile-v1-11329	wl-pos-pos-es-pba-57805	pos-es-pba-57805	1	positive	train	ES	Castro A Ermida/A Costa	Trasmiras	Vilar de Lebres (San Salvador)	coastal_promontory_hint		120.0	0.04354469	294	ok	
+wl-tile-v1-11330	wl-pos-pos-es-pba-57806	pos-es-pba-57806	1	positive	train	ES	Castro A Igrexa de Zos	Trasmiras	Zos (Santa María)	generic_castro_hint		120.0	0.60957078	156	ok	
+wl-tile-v1-10035	wl-pos-pos-es-pba-6183	pos-es-pba-6183	1	positive	train	ES	Castro As Croas	Cedeira	Esteiro (San Fiz)	croa_top_ring_hint		120.0	0.94125745	110	ok	
+wl-tile-v1-10036	wl-pos-pos-es-pba-6217	pos-es-pba-6217	1	positive	train	ES	Castro As Croas	Cedeira	Esteiro (San Fiz)	croa_top_ring_hint		120.0	0.81603787	122	ok	
+wl-tile-v1-10344	wl-pos-pos-es-pba-19069	pos-es-pba-19069	1	positive	train	ES	Castro Barbudo	Rianxo	Taragoña (San Salvador)	generic_castro_hint		120.0	2.22946711	11	ok	
+wl-tile-v1-11575	wl-pos-pos-es-pba-76654	pos-es-pba-76654	1	positive	train	ES	Castro Barbudo	Ponte Caldelas	Castro Barbudo (Santa María)	generic_castro_hint		120.0	0.45538434	190	ok	
+wl-tile-v1-11241	wl-pos-pos-es-pba-51593	pos-es-pba-51593	1	positive	train	ES	Castro Cabanelas	Larouco	Seadur (Santa Mariña)	generic_castro_hint		120.0	0.76326984	131	ok	
+wl-tile-v1-11045	wl-pos-pos-es-pba-41244	pos-es-pba-41244	1	positive	train	ES	Castro Carboeiro	Taboada	Cerdeda (Santa Mariña)	generic_castro_hint		120.0	1.89252278	25	ok	
+wl-tile-v1-10815	wl-pos-pos-es-pba-35342	pos-es-pba-35342	1	positive	train	ES	Castro Cercio	Monterroso	Novelúa (San Cristovo)	generic_castro_hint		120.0	1.14341978	78	ok	
+wl-tile-v1-11315	wl-pos-pos-es-pba-58242	pos-es-pba-58242	1	positive	train	ES	Castro Costa dos Mouros	San Cibrao das Viñas	Soutopenedo (San Miguel)	coastal_promontory_hint		120.0	-0.24865677	380	ok	
+wl-tile-v1-10018	wl-pos-pos-es-pba-27146	pos-es-pba-27146	1	positive	train	ES	Castro Croado	Cariño	A Pedra (Santa María)	croa_top_ring_hint		120.0	1.24404562	61	ok	
+wl-tile-v1-11071	wl-pos-pos-es-pba-43376	pos-es-pba-43376	1	positive	train	ES	Castro Curbel	Vilalba	Santaballa (San Pedro)	generic_castro_hint		120.0	-0.65427794	489	ok	
+wl-tile-v1-11493	wl-pos-pos-es-pba-65425	pos-es-pba-65425	1	positive	train	ES	Castro Daquil Lado/Castro de Soutolongo	Lalín	Soutolongo (Santa María)	generic_castro_hint		120.0	1.01510042	94	ok	
+wl-tile-v1-10032	wl-pos-pos-es-pba-6571	pos-es-pba-6571	1	positive	train	ES	Castro Detorre	Carral	Quembre (San Pedro)	generic_castro_hint		120.0	1.12237321	81	ok	
+wl-tile-v1-10496	wl-pos-pos-es-pba-24466	pos-es-pba-24466	1	positive	train	ES	Castro Facho	Val do Dubra	Niveiro (San Vicente)	generic_castro_hint		120.0	-0.06896394	324	ok	
+wl-tile-v1-11344	wl-pos-pos-es-pba-60251	pos-es-pba-60251	1	positive	train	ES	Castro Grande	Vilardevós	Vilarello da Cota (Santa María)	generic_castro_hint		120.0	1.71670003	28	ok	
+wl-tile-v1-09897	wl-pos-pos-es-pba-112	pos-es-pba-112	1	positive	train	ES	Castro Grande de Alcaiana	Abegondo	Vizoño (San Pedro)	earthwork_or_wall_hint		120.0	-0.11630024	339	ok	
+wl-tile-v1-10371	wl-pos-pos-es-pba-20135	pos-es-pba-20135	1	positive	train	ES	Castro Laberco	Santa Comba	Cícere (San Pedro)	generic_castro_hint		120.0	-0.30970382	399	ok	
+wl-tile-v1-11401	wl-pos-pos-es-pba-61547	pos-es-pba-61547	1	positive	train	ES	Castro Liboreiro e petróglifos	Bueu	Bueu (San Martiño)	generic_castro_hint		120.0	1.22550334	62	ok	
+wl-tile-v1-09898	wl-pos-pos-es-pba-113	pos-es-pba-113	1	positive	train	ES	Castro Maior	Abegondo	Vizoño (San Pedro)	earthwork_or_wall_hint		120.0	-0.31923707	403	ok	
+wl-tile-v1-11314	wl-pos-pos-es-pba-58514	pos-es-pba-58514	1	positive	train	ES	Castro Martiño	San Amaro	Eiras (Santa Ouxea)	coastal_promontory_hint		120.0	0.13072423	272	ok	
+wl-tile-v1-11644	wl-pos-pos-es-pba-70413	pos-es-pba-70413	1	positive	train	ES	Castro Montaz	Silleda	Oleiros (San Miguel)	generic_castro_hint		120.0	1.32018511	50	ok	
+wl-tile-v1-11153	wl-pos-pos-es-pba-56198	pos-es-pba-56198	1	positive	train	ES	Castro Monte dos Castros	A Peroxa	A Peroxa (Santiago)	hilltop_hint		120.0	-0.27813777	394	ok	
+wl-tile-v1-11331	wl-pos-pos-es-pba-57832	pos-es-pba-57832	1	positive	train	ES	Castro O Muro/Penedo do Mouro	Trasmiras	Vilaseca (San Román)	hilltop_hint		120.0	-0.19166127	357	ok	
+wl-tile-v1-10040	wl-pos-pos-es-pba-6221	pos-es-pba-6221	1	positive	train	ES	Castro Os Castros	Cedeira	Montoxo (San Xiao)	generic_castro_hint		120.0	1.15023070	76	ok	
+wl-tile-v1-10041	wl-pos-pos-es-pba-6222	pos-es-pba-6222	1	positive	train	ES	Castro Os Castros	Cedeira	Cervo (Santaia)	generic_castro_hint		120.0	-0.52735104	455	ok	
+wl-tile-v1-11332	wl-pos-pos-es-pba-57833	pos-es-pba-57833	1	positive	train	ES	Castro Outeiro do Castelo	Trasmiras	Vila de Rei (San Salvador)	hilltop_hint		120.0	1.27918796	54	ok	
+wl-tile-v1-10435	wl-pos-pos-es-pba-23982	pos-es-pba-23982	1	positive	train	ES	Castro Pazoi	Sobrado	Nogueira (San Xurxo)	generic_castro_hint		120.0	0.97415450	101	ok	
+wl-tile-v1-10451	wl-pos-pos-es-pba-24985	pos-es-pba-24985	1	positive	train	ES	Castro Pedro	Toques	Folladela (San Pedro) / Melide	generic_castro_hint		120.0	0.22827201	248	ok	
+wl-tile-v1-10818	wl-pos-pos-es-pba-35345	pos-es-pba-35345	1	positive	train	ES	Castro Penedo/Castro da Croa/O Castro	Monterroso	Satrexas (Santa Eufemia)	croa_top_ring_hint		120.0	0.70658072	142	ok	
+wl-tile-v1-11345	wl-pos-pos-es-pba-60252	pos-es-pba-60252	1	positive	train	ES	Castro Pequeno	Vilardevós	Vilarello da Cota (Santa María)	generic_castro_hint		120.0	0.09673659	276	ok	
+wl-tile-v1-09875	wl-pos-pos-es-pba-11057	pos-es-pba-11057	1	positive	train	ES	Castro Pequeno/Castro das Motas/A Mota	A Laracha	Vilaño (Santiago)	generic_castro_hint		120.0	0.04053569	297	ok	
+wl-tile-v1-10483	wl-pos-pos-es-pba-24732	pos-es-pba-24732	1	positive	train	ES	Castro Pereiro	Trazo	Chaián (Santa María)	generic_castro_hint		120.0	3.27561922	3	ok	
+wl-tile-v1-11451	wl-pos-pos-es-pba-64635	pos-es-pba-64635	1	positive	train	ES	Castro Piñeiro	Cuntis	Piñeiro (San Mamede)	generic_castro_hint		120.0	0.34906056	220	ok	
+wl-tile-v1-11692	wl-pos-pos-es-pba-75426	pos-es-pba-75426	1	positive	train	ES	Castro Piñeiro/Castro de Carbia/O Castro/Eira dos Mouros/Os Castros	Vila de Cruces	Ollares (Santa María)	generic_castro_hint		120.0	0.98006779	100	ok	
+wl-tile-v1-10372	wl-pos-pos-es-pba-20157	pos-es-pba-20157	1	positive	train	ES	Castro Pombo	Santa Comba	Freixeiro (San Fins)	generic_castro_hint		120.0	0.65594383	147	ok	
+wl-tile-v1-10711	wl-pos-pos-es-pba-29067	pos-es-pba-29067	1	positive	train	ES	Castro Portela	Folgoso do Courel	Vilamor (San Vicente)	generic_castro_hint		120.0	1.73960557	27	ok	
+wl-tile-v1-10136	wl-pos-pos-es-pba-11757	pos-es-pba-11757	1	positive	train	ES	Castro Redondo	Frades	Mesos (San Salvador)	generic_castro_hint		120.0	0.95814196	104	ok	
+wl-tile-v1-10076	wl-pos-pos-es-pba-5920	pos-es-pba-5920	1	positive	train	ES	Castro Redondo do Portal	Coristanco	Cereo (Santa María)	generic_castro_hint		120.0	0.04678101	291	ok	
+wl-tile-v1-10712	wl-pos-pos-es-pba-29068	pos-es-pba-29068	1	positive	train	ES	Castro Romeor	Folgoso do Courel	Esperante (San Pedro)	generic_castro_hint		120.0	0.14724858	269	ok	
+wl-tile-v1-11452	wl-pos-pos-es-pba-64636	pos-es-pba-64636	1	positive	train	ES	Castro Sebil	Cuntis	Cuntis (Santa María)	generic_castro_hint		120.0	1.39278554	45	ok	
+wl-tile-v1-11434	wl-pos-pos-es-pba-78765	pos-es-pba-78765	1	positive	train	ES	Castro Segón	Cerdedo-Cotobade	Cerdedo (San Xoán)	generic_castro_hint		120.0	0.49743406	181	ok	
+wl-tile-v1-10060	wl-pos-pos-es-pba-5561	pos-es-pba-5561	1	positive	train	ES	Castro Sete (San Martiño de Cerdido)	Cerdido	Cerdido (San Martiño)	coastal_promontory_hint		120.0	0.42696375	199	ok	
+wl-tile-v1-10320	wl-pos-pos-es-pba-16947	pos-es-pba-16947	1	positive	train	ES	Castro Valente/A Cerca	Padrón	Carcacía (San Pedro)	valley_or_river_edge_hint		120.0	1.05890189	88	ok	
+wl-tile-v1-10207	wl-pos-pos-es-pba-14196	pos-es-pba-14196	1	positive	train	ES	Castro da Aldea de Castro	Negreira	Campolongo (Santa Cruz)	generic_castro_hint		120.0	1.00309597	96	ok	
+wl-tile-v1-10116	wl-pos-pos-es-pba-11689	pos-es-pba-11689	1	positive	train	ES	Castro da Areda/Castro das Medorras	Frades	Céltigos (San Xulián)	generic_castro_hint		120.0	-0.32084515	404	ok	
+wl-tile-v1-10339	wl-pos-pos-es-pba-18249	pos-es-pba-18249	1	positive	train	ES	Castro da Aurela	Pontedeume	Ombre (Santa María)	generic_castro_hint		120.0	1.31010913	51	ok	
+wl-tile-v1-10721	wl-pos-pos-es-pba-31122	pos-es-pba-31122	1	positive	train	ES	Castro da Aurela	Friol	San Cibrao da Pregación (San Cibrao)	generic_castro_hint		120.0	1.69191091	30	ok	
+wl-tile-v1-10327	wl-pos-pos-es-pba-18603	pos-es-pba-18603	1	positive	train	ES	Castro da Barda	Ponteceso	Corme Aldea (Santo Adrán)	generic_castro_hint		120.0	2.84330938	6	ok	
+wl-tile-v1-10328	wl-pos-pos-es-pba-18604	pos-es-pba-18604	1	positive	train	ES	Castro da Barda/Castelo	Ponteceso	Corme Aldea (Santo Adrán)	generic_castro_hint		120.0	0.40143968	207	ok	
+wl-tile-v1-11580	wl-pos-pos-es-pba-77727	pos-es-pba-77727	1	positive	train	ES	Castro da Barxa	Ponteareas	Guláns (San Xulián)	generic_castro_hint		120.0	1.01499447	95	ok	
+wl-tile-v1-09867	wl-pos-pos-es-pba-1187	pos-es-pba-1187	1	positive	train	ES	Castro da Baña	A Baña	A Baña (San Vicenzo)	generic_castro_hint		120.0	0.85253817	118	ok	
+wl-tile-v1-10910	wl-pos-pos-es-pba-41928	pos-es-pba-41928	1	positive	train	ES	Castro da Besta ou de Vilelos	O Saviñao	Vilelos (San Martiño)	generic_castro_hint		120.0	1.38366789	46	ok	
+wl-tile-v1-10161	wl-pos-pos-es-pba-12434	pos-es-pba-12434	1	positive	train	ES	Castro da Braña	Mesía	Visantoña (San Martiño)	earthwork_or_wall_hint		120.0	-0.55702550	466	ok	
+wl-tile-v1-09990	wl-pos-pos-es-pba-3482	pos-es-pba-3482	1	positive	train	ES	Castro da Brea	Carballo	Ardaña (Santa María)	generic_castro_hint		120.0	-0.74795815	504	ok	
+wl-tile-v1-11141	wl-pos-pos-es-pba-52855	pos-es-pba-52855	1	positive	train	ES	Castro da Cabeciña	A Mezquita	A Vilavella (Santa María da Cabeza)	generic_castro_hint		120.0	0.61917709	155	ok	
+wl-tile-v1-11142	wl-pos-pos-es-pba-52856	pos-es-pba-52856	1	positive	train	ES	Castro da Cabeciña do Souto	A Mezquita	Santigoso (San Simón)	generic_castro_hint		120.0	0.57241911	160	ok	
+wl-tile-v1-11143	wl-pos-pos-es-pba-52891	pos-es-pba-52891	1	positive	train	ES	Castro da Cabeza	A Mezquita	O Pereiro (San Pedro)	generic_castro_hint		120.0	0.40300805	206	ok	
+wl-tile-v1-11165	wl-pos-pos-es-pba-57711	pos-es-pba-57711	1	positive	train	ES	Castro da Cabeza	A Veiga	Santa Cristina (San Tirso)	generic_castro_hint		120.0	0.19662448	258	ok	
+wl-tile-v1-10381	wl-pos-pos-es-pba-20153	pos-es-pba-20153	1	positive	train	ES	Castro da Caluba	Santiago de Compostela	A Barciela (Santo André)	generic_castro_hint		120.0	0.19992533	257	ok	
+wl-tile-v1-10584	wl-pos-pos-es-pba-44400	pos-es-pba-44400	1	positive	train	ES	Castro da Calvela	Baralla	Ferreiros (San Pedro)	generic_castro_hint		120.0	1.30993009	52	ok	
+wl-tile-v1-10759	wl-pos-pos-es-pba-31552	pos-es-pba-31552	1	positive	train	ES	Castro da Capela	Láncara	Toirán (San Salvador)	generic_castro_hint		120.0	0.40620468	203	ok	
+wl-tile-v1-11385	wl-pos-pos-es-pba-60051	pos-es-pba-60051	1	positive	train	ES	Castro da Carabela/O Castro/A Penisa	Baiona	Baiona (Santa María de Forá)	generic_castro_hint		120.0	0.49978471	180	ok	
+wl-tile-v1-10760	wl-pos-pos-es-pba-31553	pos-es-pba-31553	1	positive	train	ES	Castro da Carballeda	Láncara	Neira de Cabaleiros (Santa María Madanela)	generic_castro_hint		120.0	0.21084605	254	ok	
+wl-tile-v1-10117	wl-pos-pos-es-pba-11690	pos-es-pba-11690	1	positive	train	ES	Castro da Carballeira	Frades	Gafoi (Santa Mariña)	generic_castro_hint		120.0	0.29171893	234	ok	
+wl-tile-v1-10139	wl-pos-pos-es-pba-11478	pos-es-pba-11478	1	positive	train	ES	Castro da Casagrande	Irixoa	Mántaras (Santa María)	generic_castro_hint		120.0	-0.42625396	435	ok	
+wl-tile-v1-11005	wl-pos-pos-es-pba-41948	pos-es-pba-41948	1	positive	train	ES	Castro da Casilla	Sarria	Betote (San Vicenzo)	coastal_promontory_hint		120.0	-0.25357697	385	ok	
+wl-tile-v1-10512	wl-pos-pos-es-pba-25968	pos-es-pba-25968	1	positive	train	ES	Castro da Cerca	Vimianzo	Serramo (San Sebastián)	generic_castro_hint		120.0	0.70972827	141	ok	
+wl-tile-v1-11416	wl-pos-pos-es-pba-78565	pos-es-pba-78565	1	positive	train	ES	Castro da Cerca	Cerdedo-Cotobade	Parada (San Pedro)	generic_castro_hint		120.0	0.19196037	260	ok	
+wl-tile-v1-11192	wl-pos-pos-es-pba-45105	pos-es-pba-45105	1	positive	train	ES	Castro da Ciadella	Baños de Molgas	Guamil (Santa María)	generic_castro_hint		120.0	0.34246083	222	ok	
+wl-tile-v1-11371	wl-pos-pos-es-pba-60104	pos-es-pba-60104	1	positive	train	ES	Castro da Cidade de Arbo	Arbo	Arbo (Santa María)	generic_castro_hint		120.0	0.37211141	215	ok	
+wl-tile-v1-10911	wl-pos-pos-es-pba-41929	pos-es-pba-41929	1	positive	train	ES	Castro da Cidá	O Saviñao	Xuvencos (Santiago)	generic_castro_hint		120.0	0.20880238	255	ok	
+wl-tile-v1-11208	wl-pos-pos-es-pba-46888	pos-es-pba-46888	1	positive	train	ES	Castro da Cidá de Pereda	Cartelle	Cartelle (Santa María)	generic_castro_hint		120.0	1.27355685	56	ok	
+wl-tile-v1-11161	wl-pos-pos-es-pba-55967	pos-es-pba-55967	1	positive	train	ES	Castro da Cigadoña	A Pobra de Trives	San Mamede de Trives (San Mamede)	generic_castro_hint		120.0	-0.12601078	341	ok	
+wl-tile-v1-11193	wl-pos-pos-es-pba-45106	pos-es-pba-45106	1	positive	train	ES	Castro da Ciradella	Baños de Molgas	Presqueira (San Martiño)	generic_castro_hint		120.0	0.56634172	163	ok	
+wl-tile-v1-11542	wl-pos-pos-es-pba-67838	pos-es-pba-67838	1	positive	train	ES	Castro da Cividade/A Cidá	Mos	Louredo (San Salvador)	large_castrexo_civitas_hint		120.0	1.29380626	53	ok	
+wl-tile-v1-10572	wl-pos-pos-es-pba-35993	pos-es-pba-35993	1	positive	train	ES	Castro da Conca	As Nogais	Noceda (San Xoán)	generic_castro_hint		120.0	0.81502565	123	ok	
+wl-tile-v1-09991	wl-pos-pos-es-pba-3507	pos-es-pba-3507	1	positive	train	ES	Castro da Condesa/Bico do Castro	Carballo	Bértoa (Santa María)	generic_castro_hint		120.0	0.53838400	171	ok	
+wl-tile-v1-10585	wl-pos-pos-es-pba-44401	pos-es-pba-44401	1	positive	train	ES	Castro da Condomiña/O Castro	Baralla	San Martín de Neira de Rei (San Pedro)	generic_castro_hint		120.0	1.41713088	44	ok	
+wl-tile-v1-10382	wl-pos-pos-es-pba-20154	pos-es-pba-20154	1	positive	train	ES	Castro da Corela	Santiago de Compostela	A Barciela (Santo André)	generic_castro_hint		120.0	1.51851112	36	ok	
+wl-tile-v1-11147	wl-pos-pos-es-pba-56165	pos-es-pba-56165	1	positive	train	ES	Castro da Coroa	A Peroxa	San Xes (San Xes)	croa_top_ring_hint		120.0	0.37480313	214	ok	
+wl-tile-v1-11148	wl-pos-pos-es-pba-56166	pos-es-pba-56166	1	positive	train	ES	Castro da Coroa de Santa Baia	A Peroxa	Beacán (Santa María)	croa_top_ring_hint		120.0	0.56674665	162	ok	
+wl-tile-v1-10981	wl-pos-pos-es-pba-39496	pos-es-pba-39496	1	positive	train	ES	Castro da Coroa/A Coroa	Ribadeo	Arante (San Pedro)	croa_top_ring_hint		120.0	0.28620122	237	ok	
+wl-tile-v1-11528	wl-pos-pos-es-pba-68506	pos-es-pba-68506	1	positive	train	ES	Castro da Corte dos Cabalos	Mondariz	Mondariz (Santa Baia)	generic_castro_hint		120.0	0.27902795	238	ok	
+wl-tile-v1-10816	wl-pos-pos-es-pba-35343	pos-es-pba-35343	1	positive	train	ES	Castro da Cotela	Monterroso	San Breixo (San Salvador)	earthwork_or_wall_hint		120.0	0.85392019	117	ok	
+wl-tile-v1-10551	wl-pos-pos-es-pba-26867	pos-es-pba-26867	1	positive	train	ES	Castro da Croa	Alfoz do Castrodouro	O Pereiro (Santa Maria)	croa_top_ring_hint		120.0	0.93387319	112	ok	
+wl-tile-v1-10643	wl-pos-pos-es-pba-27868	pos-es-pba-27868	1	positive	train	ES	Castro da Croa	Castroverde	Pereiramá (San Xulián)	croa_top_ring_hint		120.0	0.44914922	194	ok	
+wl-tile-v1-11112	wl-pos-pos-es-pba-32084	pos-es-pba-32084	1	positive	train	ES	Castro da Croa	Xove	Xuances (San Pedro)	croa_top_ring_hint		120.0	2.15663984	14	ok	
+wl-tile-v1-10644	wl-pos-pos-es-pba-27869	pos-es-pba-27869	1	positive	train	ES	Castro da Croa de Xan da Torre	Castroverde	A Meda (Santiago)	croa_top_ring_hint		120.0	-0.30125866	397	ok	
+wl-tile-v1-11372	wl-pos-pos-es-pba-60105	pos-es-pba-60105	1	positive	train	ES	Castro da Croa dos Castelos	Arbo	Sela (Santa María)	croa_top_ring_hint		120.0	1.60542726	32	ok	
+wl-tile-v1-10645	wl-pos-pos-es-pba-27870	pos-es-pba-27870	1	positive	train	ES	Castro da Croa ou de Folgosa	Castroverde	Agustín (Santa María)	croa_top_ring_hint		120.0	0.10319081	275	ok	
+wl-tile-v1-11529	wl-pos-pos-es-pba-68507	pos-es-pba-68507	1	positive	train	ES	Castro da Croa/A Croa de Lougares	Mondariz	Lougares (San Fiz)	croa_top_ring_hint		120.0	0.65459032	148	ok	
+wl-tile-v1-10646	wl-pos-pos-es-pba-27871	pos-es-pba-27871	1	positive	train	ES	Castro da Croa/Croa da Casiña	Castroverde	Furís (Santo Estevo)	croa_top_ring_hint		120.0	0.73468334	140	ok	
+wl-tile-v1-10476	wl-pos-pos-es-pba-24700	pos-es-pba-24700	1	positive	train	ES	Castro da Croela	Trazo	Castelo (Santa María)	generic_castro_hint		120.0	1.61920809	31	ok	
+wl-tile-v1-11653	wl-pos-pos-es-pba-70319	pos-es-pba-70319	1	positive	train	ES	Castro da Cruz/Os Castros	Tui	Malvas (Santiago)	generic_castro_hint		120.0	0.27312368	239	ok	
+wl-tile-v1-10145	wl-pos-pos-es-pba-12760	pos-es-pba-12760	1	positive	train	ES	Castro da Devesa	Malpica de Bergantiños	Cambre (San Martiño)	generic_castro_hint		120.0	0.29126548	235	ok	
+wl-tile-v1-10251	wl-pos-pos-es-pba-15625	pos-es-pba-15625	1	positive	train	ES	Castro da Devesa	Ordes	Barbeiros (Santa María)	generic_castro_hint		120.0	0.76027092	133	ok	
+wl-tile-v1-11006	wl-pos-pos-es-pba-41949	pos-es-pba-41949	1	positive	train	ES	Castro da Devesa	Sarria	Corvelle (Santa María)	generic_castro_hint		120.0	1.07730661	85	ok	
+wl-tile-v1-11648	wl-pos-pos-es-pba-71137	pos-es-pba-71137	1	positive	train	ES	Castro da Devesa de Rebadillo	Tomiño	Goián (San Cristovo)	generic_castro_hint		120.0	0.29949430	231	ok	
+wl-tile-v1-10383	wl-pos-pos-es-pba-20155	pos-es-pba-20155	1	positive	train	ES	Castro da Devesa do Carballal	Santiago de Compostela	O Carballal (San Xulián)	generic_castro_hint		120.0	-0.70509713	498	ok	
+wl-tile-v1-10690	wl-pos-pos-es-pba-28882	pos-es-pba-28882	1	positive	train	ES	Castro da Devesa do Rei	Folgoso do Courel	Esperante (San Pedro)	generic_castro_hint		120.0	-1.14239546	546	ok	
+wl-tile-v1-10761	wl-pos-pos-es-pba-31581	pos-es-pba-31581	1	positive	train	ES	Castro da Eirexa/Castro de San Xoán	Láncara	Muro (San Xoán)	generic_castro_hint		120.0	0.69419961	145	ok	
+wl-tile-v1-10647	wl-pos-pos-es-pba-27872	pos-es-pba-27872	1	positive	train	ES	Castro da Eirexe	Castroverde	Páramo (San Miguel)	generic_castro_hint		120.0	0.07251328	282	ok	
+wl-tile-v1-10762	wl-pos-pos-es-pba-31582	pos-es-pba-31582	1	positive	train	ES	Castro da Eirexe	Láncara	Neira de Cabaleiros (Santa María Madanela)	generic_castro_hint		120.0	0.24467394	247	ok	
+wl-tile-v1-10887	wl-pos-pos-es-pba-37199	pos-es-pba-37199	1	positive	train	ES	Castro da Eirexe/Aira do Castro/Castro de Moscá	O Páramo	Moscán (Santa María Madanela)	generic_castro_hint		120.0	0.06799143	284	ok	
+wl-tile-v1-11403	wl-pos-pos-es-pba-62905	pos-es-pba-62905	1	positive	train	ES	Castro da Eirexiña	Cangas	O Hío (Santo André)	generic_castro_hint		120.0	1.19883371	64	ok	
+wl-tile-v1-10763	wl-pos-pos-es-pba-31583	pos-es-pba-31583	1	positive	train	ES	Castro da Ermida	Láncara	Lama (Santa María)	generic_castro_hint		120.0	0.46727970	188	ok	
+wl-tile-v1-10764	wl-pos-pos-es-pba-31584	pos-es-pba-31584	1	positive	train	ES	Castro da Ermida	Láncara	Vilaleo (Santa María)	generic_castro_hint		120.0	-0.06181018	322	ok	
+wl-tile-v1-10648	wl-pos-pos-es-pba-27873	pos-es-pba-27873	1	positive	train	ES	Castro da Ermida de Santa Cristina	Castroverde	A Pumarega (Santa Mariña)	generic_castro_hint		120.0	1.08158551	84	ok	
+wl-tile-v1-11242	wl-pos-pos-es-pba-51594	pos-es-pba-51594	1	positive	train	ES	Castro da Ermida/O Castro	Larouco	Larouco (Santa María)	generic_castro_hint		120.0	2.09697474	17	ok	
+wl-tile-v1-10953	wl-pos-pos-es-pba-37087	pos-es-pba-37087	1	positive	train	ES	Castro da Escrita/Tras do Castro	Pedrafita do Cebreiro	Pacios (San Lourenzo)	generic_castro_hint		120.0	0.96449205	102	ok	
+wl-tile-v1-11166	wl-pos-pos-es-pba-57712	pos-es-pba-57712	1	positive	train	ES	Castro da Espeñuca/A Peneda	A Veiga	Prada (Santo André)	generic_castro_hint		120.0	1.49061440	37	ok	
+wl-tile-v1-11561	wl-pos-pos-es-pba-71366	pos-es-pba-71366	1	positive	train	ES	Castro da Fonte do Ouro	O Rosal	O Rosal (Santa Mariña)	generic_castro_hint		120.0	0.05897930	288	ok	
+wl-tile-v1-11705	wl-pos-pos-es-pba-75451	pos-es-pba-75451	1	positive	train	ES	Castro da Fontenla	Vilanova de Arousa	Baión (San Xoán)	generic_castro_hint		120.0	-0.23877004	374	ok	
+wl-tile-v1-09992	wl-pos-pos-es-pba-3508	pos-es-pba-3508	1	positive	train	ES	Castro da Forca/Castro de Antelo	Carballo	Rus (Santa María)	generic_castro_hint		120.0	0.01018914	306	ok	
+wl-tile-v1-11350	wl-pos-pos-es-pba-65293	pos-es-pba-65293	1	positive	train	ES	Castro da Forca/O Montiño	A Guarda	A Guarda (Santa María)	generic_castro_hint		120.0	0.40380426	205	ok	
+wl-tile-v1-11299	wl-pos-pos-es-pba-56746	pos-es-pba-56746	1	positive	train	ES	Castro da Fraga da Moura	Riós	Castrelo de Cima (Santa María)	generic_castro_hint		120.0	0.86511563	116	ok	
+wl-tile-v1-11654	wl-pos-pos-es-pba-70320	pos-es-pba-70320	1	positive	train	ES	Castro da Granxa	Tui	Rebordáns (San Bartolomeu)	generic_castro_hint		120.0	0.94404227	108	ok	
+wl-tile-v1-09945	wl-pos-pos-es-pba-1531	pos-es-pba-1531	1	positive	train	ES	Castro da Graña	Betanzos	Requián (Santiago)	generic_castro_hint		120.0	-0.14879678	347	ok	
+wl-tile-v1-10441	wl-pos-pos-es-pba-24952	pos-es-pba-24952	1	positive	train	ES	Castro da Graña	Toques	A Capela (Santa María)	generic_castro_hint		120.0	0.75945390	134	ok	
+wl-tile-v1-10649	wl-pos-pos-es-pba-27874	pos-es-pba-27874	1	positive	train	ES	Castro da Graña	Castroverde	Montecubeiro (San Cibrao)	generic_castro_hint		120.0	0.82344566	121	ok	
+wl-tile-v1-11378	wl-pos-pos-es-pba-68601	pos-es-pba-68601	1	positive	train	ES	Castro da Graña	As Neves	As Neves (Santa María)	generic_castro_hint		120.0	0.51793007	175	ok	
+wl-tile-v1-11101	wl-pos-pos-es-pba-30224	pos-es-pba-30224	1	positive	train	ES	Castro da Graña/Os Castros	Xermade	Roupar (San Pedro Fiz)	generic_castro_hint		120.0	-0.35377579	412	ok	
+wl-tile-v1-10442	wl-pos-pos-es-pba-24953	pos-es-pba-24953	1	positive	train	ES	Castro da Grela	Toques	San Xiao do Monte (San Xiao)	generic_castro_hint		120.0	-0.45830841	444	ok	
+wl-tile-v1-10107	wl-pos-pos-es-pba-9620	pos-es-pba-9620	1	positive	train	ES	Castro da Grixa	Dumbría	Berdeogás (Santiago)	generic_castro_hint		120.0	-0.89495000	520	ok	
+wl-tile-v1-10846	wl-pos-pos-es-pba-29948	pos-es-pba-29948	1	positive	train	ES	Castro da Grova	O Corgo	Paradela (San Fiz)	generic_castro_hint		120.0	-0.24365434	378	ok	
+wl-tile-v1-11359	wl-pos-pos-es-pba-66198	pos-es-pba-66198	1	positive	train	ES	Castro da Gurobela	Agolada	O Sexo (Santiago)	generic_castro_hint		120.0	-0.52829322	457	ok	
+wl-tile-v1-10586	wl-pos-pos-es-pba-44402	pos-es-pba-44402	1	positive	train	ES	Castro da Igrexa/A Cortiña da Igrexa	Baralla	Piñeira (San Salvador)	generic_castro_hint		120.0	0.32066778	229	ok	
+wl-tile-v1-10587	wl-pos-pos-es-pba-44431	pos-es-pba-44431	1	positive	train	ES	Castro da Igrexa/Castro de Lebruxo	Baralla	Lebruxo (San Tomé)	generic_castro_hint		120.0	0.60793299	157	ok	
+wl-tile-v1-11102	wl-pos-pos-es-pba-30225	pos-es-pba-30225	1	positive	train	ES	Castro da Igrexa/O Castro de Cazas	Xermade	Cazás (San Xulián)	generic_castro_hint		120.0	-0.14035692	346	ok	
+wl-tile-v1-10329	wl-pos-pos-es-pba-18628	pos-es-pba-18628	1	positive	train	ES	Castro da Illa da Estrela	Ponteceso	Corme Aldea (Santo Adrán)	coastal_promontory_hint		120.0	2.65324441	8	ok	
+wl-tile-v1-10422	wl-pos-pos-es-pba-23921	pos-es-pba-23921	1	positive	train	ES	Castro da Lagoa/Os Castros de Muradelo	Sobrado	Codesoso (San Miguel)	generic_castro_hint		120.0	0.70439963	144	ok	
+wl-tile-v1-10832	wl-pos-pos-es-pba-35177	pos-es-pba-35177	1	positive	train	ES	Castro da Lagúa	Navia de Suarna	Mosteiro (San Salvador)	generic_castro_hint		120.0	1.45038430	42	ok	
+wl-tile-v1-10526	wl-pos-pos-es-pba-38417	pos-es-pba-38417	1	positive	train	ES	Castro da Lama	A Pobra do Brollón	Barxa de Lor (Santa Mariña)	generic_castro_hint		120.0	1.76280718	26	ok	
+wl-tile-v1-11354	wl-pos-pos-es-pba-67107	pos-es-pba-67107	1	positive	train	ES	Castro da Lama	A Lama	A Lama (San Salvador)	generic_castro_hint		120.0	2.65429101	7	ok	
+wl-tile-v1-11046	wl-pos-pos-es-pba-41245	pos-es-pba-41245	1	positive	train	ES	Castro da Laxa	Taboada	Sobrecedo (Santiago)	generic_castro_hint		120.0	0.32540451	228	ok	
+wl-tile-v1-11233	wl-pos-pos-es-pba-48059	pos-es-pba-48059	1	positive	train	ES	Castro da Madanela	Coles	Coles (San Xoán)	generic_castro_hint		120.0	1.91417071	23	ok	
+wl-tile-v1-10862	wl-pos-pos-es-pba-32296	pos-es-pba-32296	1	positive	train	ES	Castro da Margarida/A Ciudá	O Incio	Santa María do Mao (Santa María)	coastal_promontory_hint		120.0	0.79731312	127	ok	
+wl-tile-v1-11316	wl-pos-pos-es-pba-58046	pos-es-pba-58046	1	positive	train	ES	Castro da Martiña	San Cristovo de Cea	Oseira (Santa María a Real)	coastal_promontory_hint		120.0	1.18779135	66	ok	
+wl-tile-v1-11470	wl-pos-pos-es-pba-65785	pos-es-pba-65785	1	positive	train	ES	Castro da Matanza	Gondomar	Vincios (Santa Mariña)	generic_castro_hint		120.0	1.02290702	92	ok	
+wl-tile-v1-11155	wl-pos-pos-es-pba-55771	pos-es-pba-55771	1	positive	train	ES	Castro da Medorra	A Pobra de Trives	Mendoia (Nosa Señora da Concepción)	generic_castro_hint		120.0	0.50949264	177	ok	
+wl-tile-v1-10817	wl-pos-pos-es-pba-35344	pos-es-pba-35344	1	positive	train	ES	Castro da Morerira/Agro do Castro	Monterroso	Pedraza (Santa María)	generic_castro_hint		120.0	0.20194907	256	ok	
+wl-tile-v1-11460	wl-pos-pos-es-pba-64033	pos-es-pba-64033	1	positive	train	ES	Castro da Mota	Forcarei	Castrelo (Santa Mariña)	generic_castro_hint		120.0	1.26997504	57	ok	
+wl-tile-v1-10019	wl-pos-pos-es-pba-27147	pos-es-pba-27147	1	positive	train	ES	Castro da Moura	Cariño	A Pedra (Santa María)	generic_castro_hint		120.0	2.13266306	15	ok	
+wl-tile-v1-11461	wl-pos-pos-es-pba-64034	pos-es-pba-64034	1	positive	train	ES	Castro da Mouteira	Forcarei	Millarada (San Amedio)	generic_castro_hint		120.0	-0.19753798	360	ok	
+wl-tile-v1-11124	wl-pos-pos-es-pba-47786	pos-es-pba-47786	1	positive	train	ES	Castro da Munía	A Bola	Sorga (San Mamede)	generic_castro_hint		120.0	1.36602342	47	ok	
+wl-tile-v1-10555	wl-pos-pos-es-pba-26987	pos-es-pba-26987	1	positive	train	ES	Castro da Orela	Antas de Ulla	Santo Estevo do Castro de Amarante (Santo Estevo)	generic_castro_hint		120.0	0.47222290	186	ok	
+wl-tile-v1-10373	wl-pos-pos-es-pba-20300	pos-es-pba-20300	1	positive	train	ES	Castro da Pallota	Santa Comba	Fontecada (San Martiño)	generic_castro_hint		120.0	0.40772430	202	ok	
+wl-tile-v1-10650	wl-pos-pos-es-pba-27875	pos-es-pba-27875	1	positive	train	ES	Castro da Pallota	Castroverde	Soutomerille (San Salvador)	generic_castro_hint		120.0	2.06463902	19	ok	
+wl-tile-v1-10556	wl-pos-pos-es-pba-26988	pos-es-pba-26988	1	positive	train	ES	Castro da Pena Grande	Antas de Ulla	Agela (San Mamede)	hilltop_hint		120.0	0.55351977	167	ok	
+wl-tile-v1-10540	wl-pos-pos-es-pba-38845	pos-es-pba-38845	1	positive	train	ES	Castro da Pena das Vellas	A Pontenova	Vilarmide (O Salvador)	hilltop_hint		120.0	0.94410521	107	ok	
+wl-tile-v1-09877	wl-pos-pos-es-pba-11223	pos-es-pba-11223	1	positive	train	ES	Castro da Pena/O Petón	A Laracha	Montemaior (Santa María Madanela)	hilltop_hint		120.0	0.43311823	198	ok	
+wl-tile-v1-11136	wl-pos-pos-es-pba-52998	pos-es-pba-52998	1	positive	train	ES	Castro da Peneda de Cebre	A Merca	A Merca (Santa María)	generic_castro_hint		120.0	1.24524050	60	ok	
+wl-tile-v1-11600	wl-pos-pos-es-pba-71332	pos-es-pba-71332	1	positive	train	ES	Castro da Peneda/Castrizán	Redondela	O Viso (Santa María)	castrel_toponym_hint		120.0	2.21638659	12	ok	
+wl-tile-v1-10557	wl-pos-pos-es-pba-26989	pos-es-pba-26989	1	positive	train	ES	Castro da Penela	Antas de Ulla	Reboredo (Santiago)	generic_castro_hint		120.0	0.80301470	124	ok	
+wl-tile-v1-10765	wl-pos-pos-es-pba-31585	pos-es-pba-31585	1	positive	train	ES	Castro da Penela	Láncara	Vilarello (San Pedro)	generic_castro_hint		120.0	0.04327271	295	ok	
+wl-tile-v1-11342	wl-pos-pos-es-pba-60249	pos-es-pba-60249	1	positive	train	ES	Castro da Plaza	Vilardevós	Santa María de Traseirexa (Santa María)	generic_castro_hint		120.0	1.48614211	38	ok	
+wl-tile-v1-10991	wl-pos-pos-es-pba-40973	pos-es-pba-40973	1	positive	train	ES	Castro da Portela	Ribas de Sil	Soutordei (Santiago)	generic_castro_hint		120.0	0.99327815	98	ok	
+wl-tile-v1-10162	wl-pos-pos-es-pba-12435	pos-es-pba-12435	1	positive	train	ES	Castro da Pousada	Mesía	Castro (San Sebastián)	earthwork_or_wall_hint		120.0	0.10983297	273	ok	
+wl-tile-v1-10912	wl-pos-pos-es-pba-41930	pos-es-pba-41930	1	positive	train	ES	Castro da Pousada	O Saviñao	Licín (Santalla)	generic_castro_hint		120.0	0.36464774	217	ok	
+wl-tile-v1-11591	wl-pos-pos-es-pba-69678	pos-es-pba-69678	1	positive	train	ES	Castro da Raxeira/Monte do Castro	Pontevedra	Mourente (Santa María)	hilltop_hint		120.0	1.03563563	90	ok	
+wl-tile-v1-11132	wl-pos-pos-es-pba-50677	pos-es-pba-50677	1	positive	train	ES	Castro da Ribeira	A Gudiña	A Gudiña (San Martiño e San Pedro)	valley_or_river_edge_hint		120.0	0.09386472	278	ok	
+wl-tile-v1-09993	wl-pos-pos-es-pba-3509	pos-es-pba-3509	1	positive	train	ES	Castro da Ribeira/Castro de Nogareda	Carballo	Rus (Santa María)	valley_or_river_edge_hint		120.0	1.15106242	75	ok	

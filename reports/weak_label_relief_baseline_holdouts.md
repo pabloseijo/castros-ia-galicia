@@ -4,7 +4,7 @@ Generated: 2026-08-01T00:00:00Z
 
 ## What This Is
 
-A first relief/MDT ranking baseline over O Val and Trasancos holdouts. It uses public MDT5 WCS crops, derives slope, hillshade and local relief in memory, then scores topographic/radial contrast.
+A first relief/MDT ranking baseline over `holdouts`. It uses public MDT5 WCS crops, derives slope, hillshade and local relief in memory, then scores topographic/radial contrast.
 It is a ranking sanity check, not an archaeological detector.
 
 ## Files
