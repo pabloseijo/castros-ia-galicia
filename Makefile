@@ -1,4 +1,4 @@
-.PHONY: dataset qgis-review annotations annotations-reset annotation-backup reports raster-prep pnoa-preview-index pnoa-chips viladonga-audit viladonga-pnoa-chips viladonga-mask-quality viladonga-shape-baseline viladonga-relief-shape-baseline viladonga-wcs-dem viladonga-lidar-derivatives viladonga-relief-wcs viladonga-pilot pba-unlock pba-review training-manifest webmap env-check repo-drift sync-wiki agent-list agent-run agent-run-one agent-systemd verify clean
+.PHONY: dataset qgis-review annotations annotations-reset annotation-backup reports raster-prep pnoa-preview-index pnoa-chips viladonga-audit viladonga-pnoa-chips viladonga-mask-quality viladonga-shape-baseline viladonga-relief-shape-baseline viladonga-radial-relief-profile viladonga-wcs-dem viladonga-lidar-derivatives viladonga-relief-wcs viladonga-pilot pba-unlock pba-review training-manifest webmap env-check repo-drift sync-wiki agent-list agent-run agent-run-one agent-systemd verify clean
 
 dataset:
 	python3 scripts/build_castros_ia_dataset.py
@@ -42,6 +42,9 @@ viladonga-shape-baseline:
 viladonga-relief-shape-baseline:
 	python3 scripts/evaluate_viladonga_relief_shape_baseline.py
 
+viladonga-radial-relief-profile:
+	python3 scripts/evaluate_viladonga_radial_relief_profile.py
+
 viladonga-wcs-dem:
 	python3 scripts/fetch_viladonga_mdt_wcs.py
 
@@ -51,7 +54,7 @@ viladonga-lidar-derivatives:
 viladonga-relief-wcs: viladonga-wcs-dem
 	python3 scripts/build_viladonga_lidar_derivatives.py --dem data/viladonga-pilot/lidar/viladonga_mdt5_wcs.tif
 
-viladonga-pilot: viladonga-audit viladonga-relief-wcs viladonga-pnoa-chips viladonga-mask-quality viladonga-shape-baseline viladonga-relief-shape-baseline
+viladonga-pilot: viladonga-audit viladonga-relief-wcs viladonga-pnoa-chips viladonga-mask-quality viladonga-shape-baseline viladonga-relief-shape-baseline viladonga-radial-relief-profile
 
 pba-unlock:
 	python3 scripts/query_pba_catalog_unlock.py
@@ -86,7 +89,7 @@ agent-systemd:
 	python3 scripts/render_raspberry_systemd_units.py --out-dir ops/raspberry/systemd
 
 verify:
-	python3 -m py_compile scripts/build_castros_ia_dataset.py scripts/build_castros_qgis_review_package.py scripts/build_annotation_workspace.py scripts/verify_annotation_workspace.py scripts/build_review_reports.py scripts/build_raster_tile_manifest.py scripts/build_pnoa_preview_index.py scripts/export_reviewed_pnoa_chips.py scripts/audit_viladonga_pilot.py scripts/export_viladonga_pnoa_chips.py scripts/evaluate_viladonga_mask_quality.py scripts/evaluate_viladonga_pnoa_shape_baseline.py scripts/evaluate_viladonga_relief_shape_baseline.py scripts/fetch_viladonga_mdt_wcs.py scripts/build_viladonga_lidar_derivatives.py scripts/query_pba_catalog_unlock.py scripts/export_training_manifest.py scripts/build_web_review_map.py scripts/check_environment.py scripts/check_repo_drift.py scripts/backup_annotation_workspace.py scripts/sync_wiki_exports.py scripts/run_raspberry_agents.py scripts/render_raspberry_systemd_units.py
+	python3 -m py_compile scripts/build_castros_ia_dataset.py scripts/build_castros_qgis_review_package.py scripts/build_annotation_workspace.py scripts/verify_annotation_workspace.py scripts/build_review_reports.py scripts/build_raster_tile_manifest.py scripts/build_pnoa_preview_index.py scripts/export_reviewed_pnoa_chips.py scripts/audit_viladonga_pilot.py scripts/export_viladonga_pnoa_chips.py scripts/evaluate_viladonga_mask_quality.py scripts/evaluate_viladonga_pnoa_shape_baseline.py scripts/evaluate_viladonga_relief_shape_baseline.py scripts/evaluate_viladonga_radial_relief_profile.py scripts/fetch_viladonga_mdt_wcs.py scripts/build_viladonga_lidar_derivatives.py scripts/query_pba_catalog_unlock.py scripts/export_training_manifest.py scripts/build_web_review_map.py scripts/check_environment.py scripts/check_repo_drift.py scripts/backup_annotation_workspace.py scripts/sync_wiki_exports.py scripts/run_raspberry_agents.py scripts/render_raspberry_systemd_units.py
 	python3 scripts/build_castros_ia_dataset.py
 	python3 scripts/build_castros_qgis_review_package.py
 	python3 scripts/build_annotation_workspace.py
