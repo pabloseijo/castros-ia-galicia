@@ -1,6 +1,6 @@
 GEO_PYTHON ?= .venv-geo/bin/python
 
-.PHONY: dataset qgis-review annotations annotations-reset annotation-backup reports raster-prep pnoa-preview-index pnoa-chips viladonga-audit viladonga-cnig-lidar-candidates viladonga-pnoa-chips viladonga-mask-quality viladonga-shape-baseline viladonga-relief-shape-baseline viladonga-radial-relief-profile viladonga-wcs-dem viladonga-lidar-derivatives viladonga-relief-wcs viladonga-pilot pba-unlock pba-review morphology-bank morphology-autoreview morphology-visual-signals weak-label-splits weak-label-chips-smoke training-manifest webmap env-check repo-drift sync-wiki agent-list agent-run agent-run-one agent-systemd verify clean
+.PHONY: dataset qgis-review annotations annotations-reset annotation-backup reports raster-prep pnoa-preview-index pnoa-chips viladonga-audit viladonga-cnig-lidar-candidates viladonga-pnoa-chips viladonga-mask-quality viladonga-shape-baseline viladonga-relief-shape-baseline viladonga-radial-relief-profile viladonga-wcs-dem viladonga-lidar-derivatives viladonga-relief-wcs viladonga-pilot pba-unlock pba-review morphology-bank morphology-autoreview morphology-visual-signals weak-label-splits weak-label-chips-smoke weak-label-chips-holdouts training-manifest webmap env-check repo-drift sync-wiki agent-list agent-run agent-run-one agent-systemd verify clean
 
 dataset:
 	python3 scripts/build_castros_ia_dataset.py
@@ -80,8 +80,11 @@ weak-label-splits: morphology-bank
 	$(GEO_PYTHON) scripts/build_weak_label_splits.py
 	ogr2ogr -f GPKG data/weak-label-splits-v1/weak_label_splits_v1.gpkg data/weak-label-splits-v1/weak_label_points.geojson -nln weak_label_points -overwrite
 
-weak-label-chips-smoke: weak-label-splits
+weak-label-chips-smoke:
 	$(GEO_PYTHON) scripts/export_weak_label_chips.py --splits train,val,test,test_trasancos,test_o_val --per-split 4 --workers 10 --out-manifest data/weak-label-splits-v1/weak_label_chip_export_smoke.tsv --report reports/weak_label_chip_export_smoke.md
+
+weak-label-chips-holdouts:
+	$(GEO_PYTHON) scripts/export_weak_label_chips.py --splits test_o_val,test_trasancos --workers 10 --out-manifest data/weak-label-splits-v1/weak_label_chip_export_holdouts.tsv --report reports/weak_label_chip_export_holdouts.md
 
 training-manifest: annotations
 	python3 scripts/export_training_manifest.py

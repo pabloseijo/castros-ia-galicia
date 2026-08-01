@@ -307,6 +307,17 @@ def export_rows(rows: list[dict[str, str]], args: argparse.Namespace) -> list[di
     return sorted(exported, key=lambda row: row["export_id"])
 
 
+def next_step_text(rows: list[dict[str, str]], args: argparse.Namespace) -> str:
+    splits = {row["final_split"] for row in rows}
+    if splits == {"test_o_val", "test_trasancos"} and not args.per_split and not args.limit:
+        return "Export `val`, then train a minimal chip classifier/ranker and evaluate it against the already exported O Val/Trasancos holdouts."
+    if args.per_split or args.limit:
+        return "Run the same exporter over `test_o_val` and `test_trasancos`, then export `val` and train a minimal chip classifier/ranker before touching full train."
+    if splits == {"val"}:
+        return "Train the first minimal chip classifier/ranker and evaluate it against `test_o_val` and `test_trasancos` before exporting full train."
+    return "Keep the output as a technical ranking dataset; do not treat model scores as archaeological discoveries without QGIS/LiDAR/source review."
+
+
 def write_report(path: Path, source_manifest: Path, rows: list[dict[str, str]], args: argparse.Namespace) -> None:
     status_counts = Counter(row["status"] for row in rows)
     image_counts = Counter(row["image_status"] for row in rows)
@@ -374,7 +385,7 @@ def write_report(path: Path, source_manifest: Path, rows: list[dict[str, str]], 
             "",
             "## Next Step",
             "",
-            "Run the same exporter over `test_o_val` and `test_trasancos`, then export `val` and train a minimal chip classifier/ranker before touching full train.",
+            next_step_text(rows, args),
         ]
     )
     path.parent.mkdir(parents=True, exist_ok=True)
