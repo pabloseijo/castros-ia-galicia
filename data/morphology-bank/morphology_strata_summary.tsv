@@ -1,0 +1,87 @@
+dataset	field	value	count
+positive_all	country	ES	3630
+positive_all	country	PT	299
+positive_all	province_or_district	A Coruña	1311
+positive_all	province_or_district	Braga	60
+positive_all	province_or_district	Bragança	75
+positive_all	province_or_district	Lugo	1241
+positive_all	province_or_district	Ourense	425
+positive_all	province_or_district	Pontevedra	653
+positive_all	province_or_district	Porto	36
+positive_all	province_or_district	Viana do Castelo	54
+positive_all	province_or_district	Vila Real	74
+positive_all	positive_confidence	high_official_typology	1259
+positive_all	positive_confidence	low_toponymic_review	1
+positive_all	positive_confidence	medium_official_name_or_type	2669
+positive_all	morphology_proxy	castrel_toponym_hint	135
+positive_all	morphology_proxy	coastal_promontory_hint	197
+positive_all	morphology_proxy	croa_top_ring_hint	163
+positive_all	morphology_proxy	earthwork_or_wall_hint	221
+positive_all	morphology_proxy	generic_castro_hint	2701
+positive_all	morphology_proxy	hilltop_hint	415
+positive_all	morphology_proxy	large_castrexo_civitas_hint	24
+positive_all	morphology_proxy	valley_or_river_edge_hint	73
+positive_all	review_priority	P0	442
+positive_all	review_priority	P1	786
+positive_all	review_priority	P2	2701
+negative_all	country	ES	10280
+negative_all	country	PT	565
+negative_all	province_or_district	A Coruña	3298
+negative_all	province_or_district	Braga	168
+negative_all	province_or_district	Bragança	66
+negative_all	province_or_district	Lugo	3020
+negative_all	province_or_district	Ourense	900
+negative_all	province_or_district	Pontevedra	3062
+negative_all	province_or_district	Porto	116
+negative_all	province_or_district	Viana do Castelo	149
+negative_all	province_or_district	Vila Real	66
+negative_all	negative_type	historic_fortification	81
+negative_all	negative_type	historic_fortification;roman_built_context	2
+negative_all	negative_type	megalithic_mound	7521
+negative_all	negative_type	megalithic_mound;rock_art_surface	11
+negative_all	negative_type	mining_or_quarry	161
+negative_all	negative_type	necropolis_or_burial	118
+negative_all	negative_type	necropolis_or_burial;roman_built_context	22
+negative_all	negative_type	rock_art_surface	2706
+negative_all	negative_type	rock_art_surface;roman_built_context	3
+negative_all	negative_type	roman_built_context	220
+negative_all	review_priority	P0	7628
+negative_all	review_priority	P1	397
+negative_all	review_priority	P2	2820
+review_seed	country	ES	1617
+review_seed	country	PT	783
+review_seed	province_or_district	A Coruña	362
+review_seed	province_or_district	Braga	193
+review_seed	province_or_district	Bragança	135
+review_seed	province_or_district	Lugo	536
+review_seed	province_or_district	Ourense	316
+review_seed	province_or_district	Pontevedra	403
+review_seed	province_or_district	Porto	152
+review_seed	province_or_district	Viana do Castelo	184
+review_seed	province_or_district	Vila Real	119
+review_seed	positive_confidence	high_official_typology	329
+review_seed	positive_confidence	low_toponymic_review	1
+review_seed	positive_confidence	medium_official_name_or_type	870
+review_seed	morphology_proxy	castrel_toponym_hint	116
+review_seed	morphology_proxy	coastal_promontory_hint	176
+review_seed	morphology_proxy	croa_top_ring_hint	117
+review_seed	morphology_proxy	earthwork_or_wall_hint	180
+review_seed	morphology_proxy	generic_castro_hint	282
+review_seed	morphology_proxy	hilltop_hint	232
+review_seed	morphology_proxy	large_castrexo_civitas_hint	24
+review_seed	morphology_proxy	valley_or_river_edge_hint	73
+review_seed	negative_type	historic_fortification	81
+review_seed	negative_type	historic_fortification;roman_built_context	2
+review_seed	negative_type	megalithic_mound	352
+review_seed	negative_type	megalithic_mound;rock_art_surface	11
+review_seed	negative_type	mining_or_quarry	101
+review_seed	negative_type	necropolis_or_burial	107
+review_seed	negative_type	necropolis_or_burial;roman_built_context	22
+review_seed	negative_type	rock_art_surface	329
+review_seed	negative_type	rock_art_surface;roman_built_context	3
+review_seed	negative_type	roman_built_context	192
+review_seed	review_priority	P0	839
+review_seed	review_priority	P1	847
+review_seed	review_priority	P2	714
+review_seed	review_role	negative	1200
+review_seed	review_role	positive	1200
