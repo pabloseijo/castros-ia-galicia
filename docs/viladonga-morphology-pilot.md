@@ -25,6 +25,7 @@ make viladonga-wcs-dem
 make viladonga-relief-wcs
 make viladonga-lidar-derivatives
 make viladonga-pnoa-chips
+make viladonga-mask-quality
 ```
 
 The combined target is:
@@ -39,6 +40,7 @@ make viladonga-pilot
 - `reports/viladonga_lidar_derivatives.md`
 - `reports/viladonga_mdt_wcs.md`
 - `reports/viladonga_pnoa_chips.md`
+- `reports/viladonga_mask_quality.md`
 - `data/viladonga-pilot/labels_manifest.tsv`
 - `data/viladonga-pilot/lidar_derivatives_manifest.tsv`
 - `data/viladonga-pilot/pnoa_chip_manifest.tsv`

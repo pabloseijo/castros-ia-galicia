@@ -68,6 +68,7 @@ make viladonga-wcs-dem
 make viladonga-relief-wcs
 make viladonga-lidar-derivatives
 make viladonga-pnoa-chips
+make viladonga-mask-quality
 make viladonga-pilot
 make pba-unlock
 make pba-review
@@ -99,11 +100,12 @@ make viladonga-audit
 make viladonga-relief-wcs
 make viladonga-lidar-derivatives
 make viladonga-pnoa-chips
+make viladonga-mask-quality
 ```
 
 Documentación: `docs/viladonga-morphology-pilot.md`.
 
-La finalidad es probar chips, máscaras y derivados de relieve sobre un castro conocido. No es un dataset suficiente para entrenar un modelo serio.
+La finalidad es probar chips, máscaras, derivados de relieve y calidad geométrica básica sobre un castro conocido. No es un dataset suficiente para entrenar un modelo serio.
 
 ## Flujo QGIS
 
@@ -136,6 +138,7 @@ El siguiente paso real es revisar las tareas P0, ajustar buffers a polígonos re
 - `reports/viladonga_lidar_derivatives.md`: derivados LiDAR/relieve generados para Viladonga.
 - `reports/viladonga_laz_tile_blocker.md`: teselas LAZ correctas que faltan para relieve LiDAR fino.
 - `reports/viladonga_pnoa_chips.md`: chips PNOA y máscaras de segmentación para Viladonga.
+- `reports/viladonga_mask_quality.md`: auditoría de presencia, binariedad y geometría raster de las máscaras Viladonga.
 - `data/review-queues/`: colas TSV por prioridad.
 - `data/raster-prep/candidate_raster_tiles.tsv`: manifiesto de tiles.
 - `data/raster-prep/pnoa_preview_urls.tsv`: enlaces WMS PNOA de solo revisión para cada ventana candidata.
