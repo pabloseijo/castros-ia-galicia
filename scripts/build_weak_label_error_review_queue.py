@@ -4,17 +4,19 @@
 from __future__ import annotations
 
 import argparse
+import csv
 import json
 from collections import Counter
 from pathlib import Path
 
-from train_weak_label_rgb_baseline import parse_float, read_tsv, rel_to_project, write_tsv
+from train_weak_label_rgb_baseline import parse_float, read_tsv, rel_to_project
 
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_MASTER = PROJECT_ROOT / "data/weak-label-splits-v1/weak_label_master.tsv"
 DEFAULT_FUSION_SCORES = PROJECT_ROOT / "data/weak-label-fusion-v1/weak_label_rgb_relief_scores.tsv"
 DEFAULT_PRIORITY_SCORES = PROJECT_ROOT / "data/weak-label-fusion-v1/weak_label_priority_blend_scores.tsv"
+DEFAULT_SPECIALIST_SCORES = PROJECT_ROOT / "data/weak-label-fusion-v1/weak_label_castro_mamoa_specialist_scores.tsv"
 OUT_DIR = PROJECT_ROOT / "data/weak-label-fusion-v1"
 DEFAULT_REPORT = PROJECT_ROOT / "reports/weak_label_error_review_queue_v1.md"
 
@@ -39,9 +41,13 @@ QUEUE_FIELDS = [
     "fusion_rank",
     "max_safety_rank",
     "archetype_only_rank",
+    "specialist_probability",
+    "specialist_rank",
+    "specialist_mean_rank",
     "rank_delta_fusion_to_max",
     "negative_type",
     "morphology_proxy",
+    "review_lane",
     "review_reason",
 ]
 
@@ -57,10 +63,43 @@ def load_priority_by_blend(path: Path) -> dict[tuple[str, str, str], dict[str, s
     return out
 
 
+def load_specialist_by_sample(path: Path) -> dict[str, dict[str, str]]:
+    if not path.exists():
+        return {}
+    return {row["sample_id"]: row for row in read_tsv(path)}
+
+
+def write_tsv_lf(path: Path, rows: list[dict[str, str]], fieldnames: list[str]) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    with path.open("w", encoding="utf-8", newline="") as handle:
+        writer = csv.DictWriter(
+            handle,
+            fieldnames=fieldnames,
+            dialect="excel-tab",
+            extrasaction="ignore",
+            lineterminator="\n",
+        )
+        writer.writeheader()
+        writer.writerows(rows)
+
+
+def review_lane(row: dict[str, str]) -> str:
+    if row.get("label_class") == "0" and row.get("negative_type") == "megalithic_mound":
+        return "mamoa_false_positive_review"
+    if row.get("label_class") == "1" and parse_float(row.get("specialist_rank", "999999")) <= 25:
+        return "mamoa_specialist_positive_review"
+    if row.get("label_class") == "1" and parse_float(row.get("rank_delta_fusion_to_max", "0")) > 0:
+        return "morphology_rescue_review"
+    if row.get("label_class") == "1":
+        return "low_positive_review"
+    return "weak_negative_review"
+
+
 def enrich_rows(
     fusion_rows: list[dict[str, str]],
     master_by_sample: dict[str, dict[str, str]],
     priority_by_blend: dict[tuple[str, str, str], dict[str, str]],
+    specialist_by_sample: dict[str, dict[str, str]],
 ) -> list[dict[str, str]]:
     out = []
     for fusion in fusion_rows:
@@ -69,20 +108,24 @@ def enrich_rows(
         sample_id = fusion["sample_id"]
         max_safety = priority_by_blend.get(("max_safety", dataset, sample_id), {})
         archetype_only = priority_by_blend.get(("archetype_only", dataset, sample_id), {})
+        specialist = specialist_by_sample.get(sample_id, {})
         fusion_rank = int(fusion.get("rank_desc_in_dataset", "0") or 0)
         max_rank = int(max_safety.get("rank_desc_in_dataset", fusion_rank) or fusion_rank)
-        out.append(
-            {
-                **fusion,
-                "longitude": master.get("longitude", ""),
-                "latitude": master.get("latitude", ""),
-                "fusion_probability": fusion.get("probability", ""),
-                "fusion_rank": str(fusion_rank),
-                "max_safety_rank": str(max_rank),
-                "archetype_only_rank": archetype_only.get("rank_desc_in_dataset", ""),
-                "rank_delta_fusion_to_max": str(fusion_rank - max_rank),
-            }
-        )
+        enriched = {
+            **fusion,
+            "longitude": master.get("longitude", ""),
+            "latitude": master.get("latitude", ""),
+            "fusion_probability": fusion.get("probability", ""),
+            "fusion_rank": str(fusion_rank),
+            "max_safety_rank": str(max_rank),
+            "archetype_only_rank": archetype_only.get("rank_desc_in_dataset", ""),
+            "specialist_probability": specialist.get("specialist_probability", ""),
+            "specialist_rank": specialist.get("specialist_rank", ""),
+            "specialist_mean_rank": specialist.get("mean_rank", ""),
+            "rank_delta_fusion_to_max": str(fusion_rank - max_rank),
+        }
+        enriched["review_lane"] = review_lane(enriched)
+        out.append(enriched)
     return out
 
 
@@ -113,9 +156,13 @@ def with_queue(queue: str, reason: str, rows: list[dict[str, str]], limit: int) 
                 "fusion_rank": row["fusion_rank"],
                 "max_safety_rank": row["max_safety_rank"],
                 "archetype_only_rank": row.get("archetype_only_rank", ""),
+                "specialist_probability": row.get("specialist_probability", ""),
+                "specialist_rank": row.get("specialist_rank", ""),
+                "specialist_mean_rank": row.get("specialist_mean_rank", ""),
                 "rank_delta_fusion_to_max": row["rank_delta_fusion_to_max"],
                 "negative_type": row["negative_type"],
                 "morphology_proxy": row["morphology_proxy"],
+                "review_lane": row.get("review_lane", ""),
                 "review_reason": reason,
             }
         )
@@ -252,13 +299,13 @@ def write_report(path: Path, args: argparse.Namespace, rows: list[dict[str, str]
             "",
             "## O Val Rows In Queue",
             "",
-            "| Queue | Fusion rank | Max-safety rank | Delta | Class | Name | Reason |",
-            "|---|---:|---:|---:|---:|---|---|",
+            "| Queue | Lane | Fusion rank | Max-safety rank | Specialist rank | Mean rank | Delta | Class | Name | Reason |",
+            "|---|---|---:|---:|---:|---:|---:|---:|---|---|",
         ]
     )
     for row in o_val_rows(rows):
         lines.append(
-            f"| `{row['queue']}` | {row['fusion_rank']} | {row['max_safety_rank']} | {row['rank_delta_fusion_to_max']} | {row['label_class']} | `{row['name']}` | {row['review_reason']} |"
+            f"| `{row['queue']}` | `{row['review_lane']}` | {row['fusion_rank']} | {row['max_safety_rank']} | {row['specialist_rank']} | {row['specialist_mean_rank']} | {row['rank_delta_fusion_to_max']} | {row['label_class']} | `{row['name']}` | {row['review_reason']} |"
         )
     lines.extend(
         [
@@ -267,6 +314,7 @@ def write_report(path: Path, args: argparse.Namespace, rows: list[dict[str, str]
             "",
             "- Start QGIS inspection with `holdout_top_false_positives` and `holdout_low_rank_positives`; these explain what the model confuses in the local target area.",
             "- Use `holdout_morphology_rescues` as the sanity check for rare forms such as `Castro de Pena Lopesa`.",
+            "- Use `mamoa_false_positive_review` and `mamoa_specialist_positive_review` to separate castro-vs-mamoa confusion from general morphology failure.",
             "- Validation queues are weak-label queues, not archaeological truth: a high-ranked negative may be a mislabeled absence, not a model error.",
         ]
     )
@@ -279,6 +327,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--master", type=Path, default=DEFAULT_MASTER)
     parser.add_argument("--fusion-scores", type=Path, default=DEFAULT_FUSION_SCORES)
     parser.add_argument("--priority-scores", type=Path, default=DEFAULT_PRIORITY_SCORES)
+    parser.add_argument("--specialist-scores", type=Path, default=DEFAULT_SPECIALIST_SCORES)
     parser.add_argument("--out-dir", type=Path, default=OUT_DIR)
     parser.add_argument("--report", type=Path, default=DEFAULT_REPORT)
     parser.add_argument("--holdout-limit", type=int, default=25)
@@ -290,6 +339,7 @@ def resolve_args(args: argparse.Namespace) -> argparse.Namespace:
     args.master = args.master if args.master.is_absolute() else PROJECT_ROOT / args.master
     args.fusion_scores = args.fusion_scores if args.fusion_scores.is_absolute() else PROJECT_ROOT / args.fusion_scores
     args.priority_scores = args.priority_scores if args.priority_scores.is_absolute() else PROJECT_ROOT / args.priority_scores
+    args.specialist_scores = args.specialist_scores if args.specialist_scores.is_absolute() else PROJECT_ROOT / args.specialist_scores
     args.out_dir = args.out_dir if args.out_dir.is_absolute() else PROJECT_ROOT / args.out_dir
     args.report = args.report if args.report.is_absolute() else PROJECT_ROOT / args.report
     return args
@@ -299,11 +349,12 @@ def main() -> None:
     args = resolve_args(parse_args())
     master_by_sample = {row["sample_id"]: row for row in read_tsv(args.master)}
     priority_by_blend = load_priority_by_blend(args.priority_scores)
-    enriched = enrich_rows(read_tsv(args.fusion_scores), master_by_sample, priority_by_blend)
+    specialist_by_sample = load_specialist_by_sample(args.specialist_scores)
+    enriched = enrich_rows(read_tsv(args.fusion_scores), master_by_sample, priority_by_blend, specialist_by_sample)
     queue_rows = build_queue_rows(enriched, args.holdout_limit, args.val_limit)
     queue_path = args.out_dir / "weak_label_error_review_queue.tsv"
     geojson_path = args.out_dir / "weak_label_error_review_queue.geojson"
-    write_tsv(queue_path, queue_rows, QUEUE_FIELDS)
+    write_tsv_lf(queue_path, queue_rows, QUEUE_FIELDS)
     write_geojson(geojson_path, queue_rows)
     write_report(args.report, args, queue_rows)
     print(f"queue_rows={len(queue_rows)}")

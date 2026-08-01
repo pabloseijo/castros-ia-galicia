@@ -12,7 +12,7 @@ from collections import Counter, defaultdict
 from pathlib import Path
 
 from evaluate_weak_label_relief_baseline import derive_products
-from train_weak_label_rgb_baseline import parse_float, read_tsv, rel_to_project, write_tsv
+from train_weak_label_rgb_baseline import parse_float, read_tsv, rel_to_project
 
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
@@ -59,9 +59,13 @@ VISUAL_FIELDS = [
     "fusion_rank",
     "max_safety_rank",
     "archetype_only_rank",
+    "specialist_probability",
+    "specialist_rank",
+    "specialist_mean_rank",
     "rank_delta_fusion_to_max",
     "negative_type",
     "morphology_proxy",
+    "review_lane",
     "rgb_status",
     "relief_status",
     "visual_sheet",
@@ -108,6 +112,20 @@ def by_sample(paths: list[Path]) -> dict[str, dict[str, str]]:
             for row in read_tsv(path):
                 rows[row["sample_id"]] = row
     return rows
+
+
+def write_tsv_lf(path: Path, rows: list[dict[str, str]], fieldnames: list[str]) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    with path.open("w", encoding="utf-8", newline="") as handle:
+        writer = csv.DictWriter(
+            handle,
+            fieldnames=fieldnames,
+            dialect="excel-tab",
+            extrasaction="ignore",
+            lineterminator="\n",
+        )
+        writer.writeheader()
+        writer.writerows(rows)
 
 
 def resolve_paths(paths: list[Path]) -> list[Path]:
@@ -281,7 +299,8 @@ def row_plate(row: dict[str, str], chip_by_sample: dict[str, dict[str, str]], re
     title = f"{row['queue']} #{row['priority_order']} | {row['name']} ({row['municipality']})"
     metrics = (
         f"class={row['label_class']} fusion_rank={row['fusion_rank']} max_rank={row['max_safety_rank']} "
-        f"delta={row['rank_delta_fusion_to_max']} p={row['fusion_probability']} "
+        f"spec_rank={row.get('specialist_rank', '-')} mean_rank={row.get('specialist_mean_rank', '-')} "
+        f"delta={row['rank_delta_fusion_to_max']} p={row['fusion_probability']} spec_p={row.get('specialist_probability', '-')} "
         f"neg={row['negative_type'] or '-'} morph={row['morphology_proxy'] or '-'}"
     )
     draw.text((10, 8), title[:110], fill=(20, 22, 24), font=title_font)
@@ -349,9 +368,13 @@ def visual_rows(
                 "fusion_rank": row["fusion_rank"],
                 "max_safety_rank": row["max_safety_rank"],
                 "archetype_only_rank": row["archetype_only_rank"],
+                "specialist_probability": row.get("specialist_probability", ""),
+                "specialist_rank": row.get("specialist_rank", ""),
+                "specialist_mean_rank": row.get("specialist_mean_rank", ""),
                 "rank_delta_fusion_to_max": row["rank_delta_fusion_to_max"],
                 "negative_type": row["negative_type"],
                 "morphology_proxy": row["morphology_proxy"],
+                "review_lane": row.get("review_lane", ""),
                 "rgb_status": chip.get("image_status", "missing"),
                 "relief_status": relief.get("dem_status", "missing"),
                 "visual_sheet": rel_to_project(sheet_by_queue[row["queue"]]),
@@ -408,13 +431,13 @@ def write_report(path: Path, rows: list[dict[str, str]], sheet_by_queue: dict[st
         [
             "## O Val Focus",
             "",
-            "| Queue | Rank fusion | Rank max | Delta | Class | Name | Focus |",
-            "|---|---:|---:|---:|---:|---|---|",
+            "| Queue | Lane | Rank fusion | Rank max | Specialist rank | Mean rank | Delta | Class | Name | Focus |",
+            "|---|---|---:|---:|---:|---:|---:|---:|---|---|",
         ]
     )
     for row in o_val_rows(rows):
         lines.append(
-            f"| `{row['queue']}` | {row['fusion_rank']} | {row['max_safety_rank']} | {row['rank_delta_fusion_to_max']} | {row['label_class']} | `{row['name']}` | {row['review_focus']} |"
+            f"| `{row['queue']}` | `{row['review_lane']}` | {row['fusion_rank']} | {row['max_safety_rank']} | {row['specialist_rank']} | {row['specialist_mean_rank']} | {row['rank_delta_fusion_to_max']} | {row['label_class']} | `{row['name']}` | {row['review_focus']} |"
         )
 
     holdout_false = by_queue.get("holdout_top_false_positives", [])
@@ -481,7 +504,7 @@ def main() -> None:
         sheet_by_queue[queue] = sheet_path
 
     rows = visual_rows(queue_rows, sheet_by_queue, chip_by_sample, relief_by_sample)
-    write_tsv(args.out_tsv, rows, VISUAL_FIELDS)
+    write_tsv_lf(args.out_tsv, rows, VISUAL_FIELDS)
     write_report(args.report, rows, sheet_by_queue)
 
     print(f"visual_rows={len(rows)}")

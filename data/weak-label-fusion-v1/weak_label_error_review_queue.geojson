@@ -27,9 +27,13 @@
         "fusion_rank": "34",
         "max_safety_rank": "37",
         "archetype_only_rank": "34",
+        "specialist_probability": "0.59351267",
+        "specialist_rank": "47",
+        "specialist_mean_rank": "40",
         "rank_delta_fusion_to_max": "-3",
         "negative_type": "megalithic_mound",
         "morphology_proxy": "",
+        "review_lane": "mamoa_false_positive_review",
         "review_reason": "Known hard negative ranked high by the main fusion model; inspect as false-positive pattern."
       }
     },
@@ -59,9 +63,13 @@
         "fusion_rank": "35",
         "max_safety_rank": "24",
         "archetype_only_rank": "12",
+        "specialist_probability": "0.95558477",
+        "specialist_rank": "18",
+        "specialist_mean_rank": "27",
         "rank_delta_fusion_to_max": "11",
         "negative_type": "megalithic_mound",
         "morphology_proxy": "",
+        "review_lane": "mamoa_false_positive_review",
         "review_reason": "Known hard negative ranked high by the main fusion model; inspect as false-positive pattern."
       }
     },
@@ -91,9 +99,13 @@
         "fusion_rank": "37",
         "max_safety_rank": "41",
         "archetype_only_rank": "112",
+        "specialist_probability": "0.51304754",
+        "specialist_rank": "59",
+        "specialist_mean_rank": "49",
         "rank_delta_fusion_to_max": "-4",
         "negative_type": "megalithic_mound",
         "morphology_proxy": "",
+        "review_lane": "mamoa_false_positive_review",
         "review_reason": "Known hard negative ranked high by the main fusion model; inspect as false-positive pattern."
       }
     },
@@ -123,9 +135,13 @@
         "fusion_rank": "38",
         "max_safety_rank": "42",
         "archetype_only_rank": "58",
+        "specialist_probability": "0.53494045",
+        "specialist_rank": "55",
+        "specialist_mean_rank": "48",
         "rank_delta_fusion_to_max": "-4",
         "negative_type": "megalithic_mound",
         "morphology_proxy": "",
+        "review_lane": "mamoa_false_positive_review",
         "review_reason": "Known hard negative ranked high by the main fusion model; inspect as false-positive pattern."
       }
     },
@@ -155,9 +171,13 @@
         "fusion_rank": "44",
         "max_safety_rank": "48",
         "archetype_only_rank": "84",
+        "specialist_probability": "0.44488268",
+        "specialist_rank": "66",
+        "specialist_mean_rank": "55",
         "rank_delta_fusion_to_max": "-4",
         "negative_type": "megalithic_mound",
         "morphology_proxy": "",
+        "review_lane": "mamoa_false_positive_review",
         "review_reason": "Known hard negative ranked high by the main fusion model; inspect as false-positive pattern."
       }
     },
@@ -187,9 +207,13 @@
         "fusion_rank": "53",
         "max_safety_rank": "63",
         "archetype_only_rank": "53",
+        "specialist_probability": "0.51674851",
+        "specialist_rank": "58",
+        "specialist_mean_rank": "56",
         "rank_delta_fusion_to_max": "-10",
         "negative_type": "megalithic_mound",
         "morphology_proxy": "",
+        "review_lane": "mamoa_false_positive_review",
         "review_reason": "Known hard negative ranked high by the main fusion model; inspect as false-positive pattern."
       }
     },
@@ -219,9 +243,13 @@
         "fusion_rank": "55",
         "max_safety_rank": "66",
         "archetype_only_rank": "51",
+        "specialist_probability": "0.56808626",
+        "specialist_rank": "52",
+        "specialist_mean_rank": "53",
         "rank_delta_fusion_to_max": "-11",
         "negative_type": "megalithic_mound",
         "morphology_proxy": "",
+        "review_lane": "mamoa_false_positive_review",
         "review_reason": "Known hard negative ranked high by the main fusion model; inspect as false-positive pattern."
       }
     },
@@ -251,9 +279,13 @@
         "fusion_rank": "56",
         "max_safety_rank": "51",
         "archetype_only_rank": "26",
+        "specialist_probability": "0.57147575",
+        "specialist_rank": "51",
+        "specialist_mean_rank": "54",
         "rank_delta_fusion_to_max": "5",
         "negative_type": "megalithic_mound",
         "morphology_proxy": "",
+        "review_lane": "mamoa_false_positive_review",
         "review_reason": "Known hard negative ranked high by the main fusion model; inspect as false-positive pattern."
       }
     },
@@ -283,9 +315,13 @@
         "fusion_rank": "58",
         "max_safety_rank": "38",
         "archetype_only_rank": "21",
+        "specialist_probability": "0.82864178",
+        "specialist_rank": "34",
+        "specialist_mean_rank": "38",
         "rank_delta_fusion_to_max": "20",
         "negative_type": "megalithic_mound",
         "morphology_proxy": "",
+        "review_lane": "mamoa_false_positive_review",
         "review_reason": "Known hard negative ranked high by the main fusion model; inspect as false-positive pattern."
       }
     },
@@ -315,9 +351,13 @@
         "fusion_rank": "60",
         "max_safety_rank": "67",
         "archetype_only_rank": "40",
+        "specialist_probability": "0.49869196",
+        "specialist_rank": "60",
+        "specialist_mean_rank": "58",
         "rank_delta_fusion_to_max": "-7",
         "negative_type": "megalithic_mound",
         "morphology_proxy": "",
+        "review_lane": "mamoa_false_positive_review",
         "review_reason": "Known hard negative ranked high by the main fusion model; inspect as false-positive pattern."
       }
     },
@@ -347,9 +387,13 @@
         "fusion_rank": "63",
         "max_safety_rank": "76",
         "archetype_only_rank": "57",
+        "specialist_probability": "0.46133309",
+        "specialist_rank": "64",
+        "specialist_mean_rank": "61",
         "rank_delta_fusion_to_max": "-13",
         "negative_type": "megalithic_mound",
         "morphology_proxy": "",
+        "review_lane": "mamoa_false_positive_review",
         "review_reason": "Known hard negative ranked high by the main fusion model; inspect as false-positive pattern."
       }
     },
@@ -379,9 +423,13 @@
         "fusion_rank": "64",
         "max_safety_rank": "59",
         "archetype_only_rank": "36",
+        "specialist_probability": "0.39108186",
+        "specialist_rank": "75",
+        "specialist_mean_rank": "71",
         "rank_delta_fusion_to_max": "5",
         "negative_type": "megalithic_mound",
         "morphology_proxy": "",
+        "review_lane": "mamoa_false_positive_review",
         "review_reason": "Known hard negative ranked high by the main fusion model; inspect as false-positive pattern."
       }
     },
@@ -411,9 +459,13 @@
         "fusion_rank": "66",
         "max_safety_rank": "79",
         "archetype_only_rank": "65",
+        "specialist_probability": "0.34653576",
+        "specialist_rank": "82",
+        "specialist_mean_rank": "75",
         "rank_delta_fusion_to_max": "-13",
         "negative_type": "megalithic_mound",
         "morphology_proxy": "",
+        "review_lane": "mamoa_false_positive_review",
         "review_reason": "Known hard negative ranked high by the main fusion model; inspect as false-positive pattern."
       }
     },
@@ -443,9 +495,13 @@
         "fusion_rank": "67",
         "max_safety_rank": "81",
         "archetype_only_rank": "144",
+        "specialist_probability": "0.16740709",
+        "specialist_rank": "115",
+        "specialist_mean_rank": "93",
         "rank_delta_fusion_to_max": "-14",
         "negative_type": "megalithic_mound",
         "morphology_proxy": "",
+        "review_lane": "mamoa_false_positive_review",
         "review_reason": "Known hard negative ranked high by the main fusion model; inspect as false-positive pattern."
       }
     },
@@ -475,9 +531,13 @@
         "fusion_rank": "68",
         "max_safety_rank": "82",
         "archetype_only_rank": "96",
+        "specialist_probability": "0.13321068",
+        "specialist_rank": "133",
+        "specialist_mean_rank": "98",
         "rank_delta_fusion_to_max": "-14",
         "negative_type": "megalithic_mound",
         "morphology_proxy": "",
+        "review_lane": "mamoa_false_positive_review",
         "review_reason": "Known hard negative ranked high by the main fusion model; inspect as false-positive pattern."
       }
     },
@@ -507,9 +567,13 @@
         "fusion_rank": "69",
         "max_safety_rank": "84",
         "archetype_only_rank": "151",
+        "specialist_probability": "0.20837475",
+        "specialist_rank": "109",
+        "specialist_mean_rank": "91",
         "rank_delta_fusion_to_max": "-15",
         "negative_type": "megalithic_mound",
         "morphology_proxy": "",
+        "review_lane": "mamoa_false_positive_review",
         "review_reason": "Known hard negative ranked high by the main fusion model; inspect as false-positive pattern."
       }
     },
@@ -539,9 +603,13 @@
         "fusion_rank": "70",
         "max_safety_rank": "39",
         "archetype_only_rank": "23",
+        "specialist_probability": "0.33566896",
+        "specialist_rank": "84",
+        "specialist_mean_rank": "80",
         "rank_delta_fusion_to_max": "31",
         "negative_type": "megalithic_mound",
         "morphology_proxy": "",
+        "review_lane": "mamoa_false_positive_review",
         "review_reason": "Known hard negative ranked high by the main fusion model; inspect as false-positive pattern."
       }
     },
@@ -571,9 +639,13 @@
         "fusion_rank": "71",
         "max_safety_rank": "85",
         "archetype_only_rank": "81",
+        "specialist_probability": "0.47058642",
+        "specialist_rank": "63",
+        "specialist_mean_rank": "63",
         "rank_delta_fusion_to_max": "-14",
         "negative_type": "megalithic_mound",
         "morphology_proxy": "",
+        "review_lane": "mamoa_false_positive_review",
         "review_reason": "Known hard negative ranked high by the main fusion model; inspect as false-positive pattern."
       }
     },
@@ -603,9 +675,13 @@
         "fusion_rank": "73",
         "max_safety_rank": "88",
         "archetype_only_rank": "92",
+        "specialist_probability": "0.29364221",
+        "specialist_rank": "91",
+        "specialist_mean_rank": "81",
         "rank_delta_fusion_to_max": "-15",
         "negative_type": "rock_art_surface",
         "morphology_proxy": "",
+        "review_lane": "weak_negative_review",
         "review_reason": "Known hard negative ranked high by the main fusion model; inspect as false-positive pattern."
       }
     },
@@ -635,9 +711,13 @@
         "fusion_rank": "74",
         "max_safety_rank": "89",
         "archetype_only_rank": "71",
+        "specialist_probability": "0.41277697",
+        "specialist_rank": "71",
+        "specialist_mean_rank": "72",
         "rank_delta_fusion_to_max": "-15",
         "negative_type": "megalithic_mound",
         "morphology_proxy": "",
+        "review_lane": "mamoa_false_positive_review",
         "review_reason": "Known hard negative ranked high by the main fusion model; inspect as false-positive pattern."
       }
     },
@@ -667,9 +747,13 @@
         "fusion_rank": "77",
         "max_safety_rank": "97",
         "archetype_only_rank": "171",
+        "specialist_probability": "0.11844492",
+        "specialist_rank": "142",
+        "specialist_mean_rank": "111",
         "rank_delta_fusion_to_max": "-20",
         "negative_type": "megalithic_mound",
         "morphology_proxy": "",
+        "review_lane": "mamoa_false_positive_review",
         "review_reason": "Known hard negative ranked high by the main fusion model; inspect as false-positive pattern."
       }
     },
@@ -699,9 +783,13 @@
         "fusion_rank": "78",
         "max_safety_rank": "98",
         "archetype_only_rank": "202",
+        "specialist_probability": "0.20227197",
+        "specialist_rank": "110",
+        "specialist_mean_rank": "96",
         "rank_delta_fusion_to_max": "-20",
         "negative_type": "megalithic_mound",
         "morphology_proxy": "",
+        "review_lane": "mamoa_false_positive_review",
         "review_reason": "Known hard negative ranked high by the main fusion model; inspect as false-positive pattern."
       }
     },
@@ -731,9 +819,13 @@
         "fusion_rank": "79",
         "max_safety_rank": "87",
         "archetype_only_rank": "60",
+        "specialist_probability": "0.45650043",
+        "specialist_rank": "65",
+        "specialist_mean_rank": "70",
         "rank_delta_fusion_to_max": "-8",
         "negative_type": "megalithic_mound",
         "morphology_proxy": "",
+        "review_lane": "mamoa_false_positive_review",
         "review_reason": "Known hard negative ranked high by the main fusion model; inspect as false-positive pattern."
       }
     },
@@ -763,9 +855,13 @@
         "fusion_rank": "80",
         "max_safety_rank": "99",
         "archetype_only_rank": "83",
+        "specialist_probability": "0.25713143",
+        "specialist_rank": "95",
+        "specialist_mean_rank": "90",
         "rank_delta_fusion_to_max": "-19",
         "negative_type": "megalithic_mound",
         "morphology_proxy": "",
+        "review_lane": "mamoa_false_positive_review",
         "review_reason": "Known hard negative ranked high by the main fusion model; inspect as false-positive pattern."
       }
     },
@@ -795,9 +891,13 @@
         "fusion_rank": "81",
         "max_safety_rank": "100",
         "archetype_only_rank": "73",
+        "specialist_probability": "0.28156299",
+        "specialist_rank": "92",
+        "specialist_mean_rank": "89",
         "rank_delta_fusion_to_max": "-19",
         "negative_type": "megalithic_mound",
         "morphology_proxy": "",
+        "review_lane": "mamoa_false_positive_review",
         "review_reason": "Known hard negative ranked high by the main fusion model; inspect as false-positive pattern."
       }
     },
@@ -827,9 +927,13 @@
         "fusion_rank": "199",
         "max_safety_rank": "72",
         "archetype_only_rank": "47",
+        "specialist_probability": "1.00000000",
+        "specialist_rank": "2",
+        "specialist_mean_rank": "51",
         "rank_delta_fusion_to_max": "127",
         "negative_type": "",
         "morphology_proxy": "hilltop_hint",
+        "review_lane": "mamoa_specialist_positive_review",
         "review_reason": "Known positive ranked low by the main fusion model; inspect as false-negative morphology."
       }
     },
@@ -859,9 +963,13 @@
         "fusion_rank": "172",
         "max_safety_rank": "123",
         "archetype_only_rank": "99",
+        "specialist_probability": "0.23111581",
+        "specialist_rank": "103",
+        "specialist_mean_rank": "127",
         "rank_delta_fusion_to_max": "49",
         "negative_type": "",
         "morphology_proxy": "hilltop_hint",
+        "review_lane": "morphology_rescue_review",
         "review_reason": "Known positive ranked low by the main fusion model; inspect as false-negative morphology."
       }
     },
@@ -891,9 +999,13 @@
         "fusion_rank": "164",
         "max_safety_rank": "184",
         "archetype_only_rank": "166",
+        "specialist_probability": "0.13156826",
+        "specialist_rank": "135",
+        "specialist_mean_rank": "152",
         "rank_delta_fusion_to_max": "-20",
         "negative_type": "",
         "morphology_proxy": "generic_castro_hint",
+        "review_lane": "low_positive_review",
         "review_reason": "Known positive ranked low by the main fusion model; inspect as false-negative morphology."
       }
     },
@@ -923,9 +1035,13 @@
         "fusion_rank": "160",
         "max_safety_rank": "90",
         "archetype_only_rank": "62",
+        "specialist_probability": "0.12112084",
+        "specialist_rank": "139",
+        "specialist_mean_rank": "155",
         "rank_delta_fusion_to_max": "70",
         "negative_type": "",
         "morphology_proxy": "generic_castro_hint",
+        "review_lane": "morphology_rescue_review",
         "review_reason": "Known positive ranked low by the main fusion model; inspect as false-negative morphology."
       }
     },
@@ -955,9 +1071,13 @@
         "fusion_rank": "155",
         "max_safety_rank": "71",
         "archetype_only_rank": "46",
+        "specialist_probability": "0.35083792",
+        "specialist_rank": "79",
+        "specialist_mean_rank": "102",
         "rank_delta_fusion_to_max": "84",
         "negative_type": "",
         "morphology_proxy": "croa_top_ring_hint",
+        "review_lane": "morphology_rescue_review",
         "review_reason": "Known positive ranked low by the main fusion model; inspect as false-negative morphology."
       }
     },
@@ -987,9 +1107,13 @@
         "fusion_rank": "141",
         "max_safety_rank": "69",
         "archetype_only_rank": "44",
+        "specialist_probability": "0.12025498",
+        "specialist_rank": "140",
+        "specialist_mean_rank": "142",
         "rank_delta_fusion_to_max": "72",
         "negative_type": "",
         "morphology_proxy": "valley_or_river_edge_hint",
+        "review_lane": "morphology_rescue_review",
         "review_reason": "Known positive ranked low by the main fusion model; inspect as false-negative morphology."
       }
     },
@@ -1019,9 +1143,13 @@
         "fusion_rank": "138",
         "max_safety_rank": "163",
         "archetype_only_rank": "152",
+        "specialist_probability": "0.32742838",
+        "specialist_rank": "86",
+        "specialist_mean_rank": "99",
         "rank_delta_fusion_to_max": "-25",
         "negative_type": "",
         "morphology_proxy": "generic_castro_hint",
+        "review_lane": "low_positive_review",
         "review_reason": "Known positive ranked low by the main fusion model; inspect as false-negative morphology."
       }
     },
@@ -1051,9 +1179,13 @@
         "fusion_rank": "106",
         "max_safety_rank": "131",
         "archetype_only_rank": "164",
+        "specialist_probability": "0.41540962",
+        "specialist_rank": "70",
+        "specialist_mean_rank": "82",
         "rank_delta_fusion_to_max": "-25",
         "negative_type": "",
         "morphology_proxy": "generic_castro_hint",
+        "review_lane": "low_positive_review",
         "review_reason": "Known positive ranked low by the main fusion model; inspect as false-negative morphology."
       }
     },
@@ -1083,9 +1215,13 @@
         "fusion_rank": "96",
         "max_safety_rank": "117",
         "archetype_only_rank": "127",
+        "specialist_probability": "0.24187362",
+        "specialist_rank": "100",
+        "specialist_mean_rank": "100",
         "rank_delta_fusion_to_max": "-21",
         "negative_type": "",
         "morphology_proxy": "generic_castro_hint",
+        "review_lane": "low_positive_review",
         "review_reason": "Known positive ranked low by the main fusion model; inspect as false-negative morphology."
       }
     },
@@ -1115,9 +1251,13 @@
         "fusion_rank": "94",
         "max_safety_rank": "53",
         "archetype_only_rank": "28",
+        "specialist_probability": "0.44184615",
+        "specialist_rank": "67",
+        "specialist_mean_rank": "78",
         "rank_delta_fusion_to_max": "41",
         "negative_type": "",
         "morphology_proxy": "generic_castro_hint",
+        "review_lane": "morphology_rescue_review",
         "review_reason": "Known positive ranked low by the main fusion model; inspect as false-negative morphology."
       }
     },
@@ -1147,9 +1287,13 @@
         "fusion_rank": "93",
         "max_safety_rank": "25",
         "archetype_only_rank": "13",
+        "specialist_probability": "0.99996177",
+        "specialist_rank": "6",
+        "specialist_mean_rank": "37",
         "rank_delta_fusion_to_max": "68",
         "negative_type": "",
         "morphology_proxy": "coastal_promontory_hint",
+        "review_lane": "mamoa_specialist_positive_review",
         "review_reason": "Known positive ranked low by the main fusion model; inspect as false-negative morphology."
       }
     },
@@ -1179,9 +1323,13 @@
         "fusion_rank": "84",
         "max_safety_rank": "105",
         "archetype_only_rank": "142",
+        "specialist_probability": "0.40867851",
+        "specialist_rank": "73",
+        "specialist_mean_rank": "79",
         "rank_delta_fusion_to_max": "-21",
         "negative_type": "",
         "morphology_proxy": "generic_castro_hint",
+        "review_lane": "low_positive_review",
         "review_reason": "Known positive ranked low by the main fusion model; inspect as false-negative morphology."
       }
     },
@@ -1211,9 +1359,13 @@
         "fusion_rank": "76",
         "max_safety_rank": "93",
         "archetype_only_rank": "67",
+        "specialist_probability": "0.38699860",
+        "specialist_rank": "77",
+        "specialist_mean_rank": "76",
         "rank_delta_fusion_to_max": "-17",
         "negative_type": "",
         "morphology_proxy": "generic_castro_hint",
+        "review_lane": "low_positive_review",
         "review_reason": "Known positive ranked low by the main fusion model; inspect as false-negative morphology."
       }
     },
@@ -1243,9 +1395,13 @@
         "fusion_rank": "75",
         "max_safety_rank": "92",
         "archetype_only_rank": "147",
+        "specialist_probability": "0.39190514",
+        "specialist_rank": "74",
+        "specialist_mean_rank": "74",
         "rank_delta_fusion_to_max": "-17",
         "negative_type": "",
         "morphology_proxy": "croa_top_ring_hint",
+        "review_lane": "low_positive_review",
         "review_reason": "Known positive ranked low by the main fusion model; inspect as false-negative morphology."
       }
     },
@@ -1275,9 +1431,13 @@
         "fusion_rank": "72",
         "max_safety_rank": "86",
         "archetype_only_rank": "119",
+        "specialist_probability": "0.25289350",
+        "specialist_rank": "97",
+        "specialist_mean_rank": "88",
         "rank_delta_fusion_to_max": "-14",
         "negative_type": "",
         "morphology_proxy": "generic_castro_hint",
+        "review_lane": "low_positive_review",
         "review_reason": "Known positive ranked low by the main fusion model; inspect as false-negative morphology."
       }
     },
@@ -1307,9 +1467,13 @@
         "fusion_rank": "65",
         "max_safety_rank": "78",
         "archetype_only_rank": "64",
+        "specialist_probability": "0.43818702",
+        "specialist_rank": "68",
+        "specialist_mean_rank": "66",
         "rank_delta_fusion_to_max": "-13",
         "negative_type": "",
         "morphology_proxy": "coastal_promontory_hint",
+        "review_lane": "low_positive_review",
         "review_reason": "Known positive ranked low by the main fusion model; inspect as false-negative morphology."
       }
     },
@@ -1339,9 +1503,13 @@
         "fusion_rank": "62",
         "max_safety_rank": "75",
         "archetype_only_rank": "128",
+        "specialist_probability": "0.25096524",
+        "specialist_rank": "98",
+        "specialist_mean_rank": "83",
         "rank_delta_fusion_to_max": "-13",
         "negative_type": "",
         "morphology_proxy": "croa_top_ring_hint",
+        "review_lane": "low_positive_review",
         "review_reason": "Known positive ranked low by the main fusion model; inspect as false-negative morphology."
       }
     },
@@ -1371,9 +1539,13 @@
         "fusion_rank": "61",
         "max_safety_rank": "58",
         "archetype_only_rank": "35",
+        "specialist_probability": "0.53382290",
+        "specialist_rank": "56",
+        "specialist_mean_rank": "57",
         "rank_delta_fusion_to_max": "3",
         "negative_type": "",
         "morphology_proxy": "generic_castro_hint",
+        "review_lane": "morphology_rescue_review",
         "review_reason": "Known positive ranked low by the main fusion model; inspect as false-negative morphology."
       }
     },
@@ -1403,9 +1575,13 @@
         "fusion_rank": "59",
         "max_safety_rank": "70",
         "archetype_only_rank": "183",
+        "specialist_probability": "0.66567977",
+        "specialist_rank": "38",
+        "specialist_mean_rank": "50",
         "rank_delta_fusion_to_max": "-11",
         "negative_type": "",
         "morphology_proxy": "generic_castro_hint",
+        "review_lane": "low_positive_review",
         "review_reason": "Known positive ranked low by the main fusion model; inspect as false-negative morphology."
       }
     },
@@ -1435,9 +1611,13 @@
         "fusion_rank": "57",
         "max_safety_rank": "68",
         "archetype_only_rank": "177",
+        "specialist_probability": "0.38184513",
+        "specialist_rank": "78",
+        "specialist_mean_rank": "68",
         "rank_delta_fusion_to_max": "-11",
         "negative_type": "",
         "morphology_proxy": "generic_castro_hint",
+        "review_lane": "low_positive_review",
         "review_reason": "Known positive ranked low by the main fusion model; inspect as false-negative morphology."
       }
     },
@@ -1467,9 +1647,13 @@
         "fusion_rank": "54",
         "max_safety_rank": "64",
         "archetype_only_rank": "111",
+        "specialist_probability": "0.99790934",
+        "specialist_rank": "8",
+        "specialist_mean_rank": "31",
         "rank_delta_fusion_to_max": "-10",
         "negative_type": "",
         "morphology_proxy": "hilltop_hint",
+        "review_lane": "mamoa_specialist_positive_review",
         "review_reason": "Known positive ranked low by the main fusion model; inspect as false-negative morphology."
       }
     },
@@ -1499,9 +1683,13 @@
         "fusion_rank": "52",
         "max_safety_rank": "62",
         "archetype_only_rank": "191",
+        "specialist_probability": "0.34799726",
+        "specialist_rank": "80",
+        "specialist_mean_rank": "64",
         "rank_delta_fusion_to_max": "-10",
         "negative_type": "",
         "morphology_proxy": "generic_castro_hint",
+        "review_lane": "low_positive_review",
         "review_reason": "Known positive ranked low by the main fusion model; inspect as false-negative morphology."
       }
     },
@@ -1531,9 +1719,13 @@
         "fusion_rank": "51",
         "max_safety_rank": "60",
         "archetype_only_rank": "116",
+        "specialist_probability": "0.41003802",
+        "specialist_rank": "72",
+        "specialist_mean_rank": "59",
         "rank_delta_fusion_to_max": "-9",
         "negative_type": "",
         "morphology_proxy": "croa_top_ring_hint",
+        "review_lane": "low_positive_review",
         "review_reason": "Known positive ranked low by the main fusion model; inspect as false-negative morphology."
       }
     },
@@ -1563,9 +1755,13 @@
         "fusion_rank": "50",
         "max_safety_rank": "56",
         "archetype_only_rank": "72",
+        "specialist_probability": "0.29891182",
+        "specialist_rank": "90",
+        "specialist_mean_rank": "67",
         "rank_delta_fusion_to_max": "-6",
         "negative_type": "",
         "morphology_proxy": "generic_castro_hint",
+        "review_lane": "low_positive_review",
         "review_reason": "Known positive ranked low by the main fusion model; inspect as false-negative morphology."
       }
     },
@@ -1595,9 +1791,13 @@
         "fusion_rank": "49",
         "max_safety_rank": "55",
         "archetype_only_rank": "42",
+        "specialist_probability": "0.82053006",
+        "specialist_rank": "35",
+        "specialist_mean_rank": "34",
         "rank_delta_fusion_to_max": "-6",
         "negative_type": "",
         "morphology_proxy": "generic_castro_hint",
+        "review_lane": "low_positive_review",
         "review_reason": "Known positive ranked low by the main fusion model; inspect as false-negative morphology."
       }
     },
@@ -1627,9 +1827,13 @@
         "fusion_rank": "199",
         "max_safety_rank": "72",
         "archetype_only_rank": "47",
+        "specialist_probability": "1.00000000",
+        "specialist_rank": "2",
+        "specialist_mean_rank": "51",
         "rank_delta_fusion_to_max": "127",
         "negative_type": "",
         "morphology_proxy": "hilltop_hint",
+        "review_lane": "mamoa_specialist_positive_review",
         "review_reason": "Known positive moved upward by max_safety; inspect morphology archetype missed by the main model."
       }
     },
@@ -1659,9 +1863,13 @@
         "fusion_rank": "155",
         "max_safety_rank": "71",
         "archetype_only_rank": "46",
+        "specialist_probability": "0.35083792",
+        "specialist_rank": "79",
+        "specialist_mean_rank": "102",
         "rank_delta_fusion_to_max": "84",
         "negative_type": "",
         "morphology_proxy": "croa_top_ring_hint",
+        "review_lane": "morphology_rescue_review",
         "review_reason": "Known positive moved upward by max_safety; inspect morphology archetype missed by the main model."
       }
     },
@@ -1691,9 +1899,13 @@
         "fusion_rank": "141",
         "max_safety_rank": "69",
         "archetype_only_rank": "44",
+        "specialist_probability": "0.12025498",
+        "specialist_rank": "140",
+        "specialist_mean_rank": "142",
         "rank_delta_fusion_to_max": "72",
         "negative_type": "",
         "morphology_proxy": "valley_or_river_edge_hint",
+        "review_lane": "morphology_rescue_review",
         "review_reason": "Known positive moved upward by max_safety; inspect morphology archetype missed by the main model."
       }
     },
@@ -1723,9 +1935,13 @@
         "fusion_rank": "160",
         "max_safety_rank": "90",
         "archetype_only_rank": "62",
+        "specialist_probability": "0.12112084",
+        "specialist_rank": "139",
+        "specialist_mean_rank": "155",
         "rank_delta_fusion_to_max": "70",
         "negative_type": "",
         "morphology_proxy": "generic_castro_hint",
+        "review_lane": "morphology_rescue_review",
         "review_reason": "Known positive moved upward by max_safety; inspect morphology archetype missed by the main model."
       }
     },
@@ -1755,9 +1971,13 @@
         "fusion_rank": "93",
         "max_safety_rank": "25",
         "archetype_only_rank": "13",
+        "specialist_probability": "0.99996177",
+        "specialist_rank": "6",
+        "specialist_mean_rank": "37",
         "rank_delta_fusion_to_max": "68",
         "negative_type": "",
         "morphology_proxy": "coastal_promontory_hint",
+        "review_lane": "mamoa_specialist_positive_review",
         "review_reason": "Known positive moved upward by max_safety; inspect morphology archetype missed by the main model."
       }
     },
@@ -1787,9 +2007,13 @@
         "fusion_rank": "172",
         "max_safety_rank": "123",
         "archetype_only_rank": "99",
+        "specialist_probability": "0.23111581",
+        "specialist_rank": "103",
+        "specialist_mean_rank": "127",
         "rank_delta_fusion_to_max": "49",
         "negative_type": "",
         "morphology_proxy": "hilltop_hint",
+        "review_lane": "morphology_rescue_review",
         "review_reason": "Known positive moved upward by max_safety; inspect morphology archetype missed by the main model."
       }
     },
@@ -1819,9 +2043,13 @@
         "fusion_rank": "94",
         "max_safety_rank": "53",
         "archetype_only_rank": "28",
+        "specialist_probability": "0.44184615",
+        "specialist_rank": "67",
+        "specialist_mean_rank": "78",
         "rank_delta_fusion_to_max": "41",
         "negative_type": "",
         "morphology_proxy": "generic_castro_hint",
+        "review_lane": "morphology_rescue_review",
         "review_reason": "Known positive moved upward by max_safety; inspect morphology archetype missed by the main model."
       }
     },
@@ -1851,9 +2079,13 @@
         "fusion_rank": "31",
         "max_safety_rank": "7",
         "archetype_only_rank": "7",
+        "specialist_probability": "0.86479728",
+        "specialist_rank": "32",
+        "specialist_mean_rank": "28",
         "rank_delta_fusion_to_max": "24",
         "negative_type": "",
         "morphology_proxy": "generic_castro_hint",
+        "review_lane": "morphology_rescue_review",
         "review_reason": "Known positive moved upward by max_safety; inspect morphology archetype missed by the main model."
       }
     },
@@ -1883,9 +2115,13 @@
         "fusion_rank": "15",
         "max_safety_rank": "5",
         "archetype_only_rank": "5",
+        "specialist_probability": "0.91474445",
+        "specialist_rank": "26",
+        "specialist_mean_rank": "14",
         "rank_delta_fusion_to_max": "10",
         "negative_type": "",
         "morphology_proxy": "generic_castro_hint",
+        "review_lane": "morphology_rescue_review",
         "review_reason": "Known positive moved upward by max_safety; inspect morphology archetype missed by the main model."
       }
     },
@@ -1915,9 +2151,13 @@
         "fusion_rank": "61",
         "max_safety_rank": "58",
         "archetype_only_rank": "35",
+        "specialist_probability": "0.53382290",
+        "specialist_rank": "56",
+        "specialist_mean_rank": "57",
         "rank_delta_fusion_to_max": "3",
         "negative_type": "",
         "morphology_proxy": "generic_castro_hint",
+        "review_lane": "morphology_rescue_review",
         "review_reason": "Known positive moved upward by max_safety; inspect morphology archetype missed by the main model."
       }
     },
@@ -1947,9 +2187,13 @@
         "fusion_rank": "7",
         "max_safety_rank": "4",
         "archetype_only_rank": "4",
+        "specialist_probability": "0.99999962",
+        "specialist_rank": "3",
+        "specialist_mean_rank": "6",
         "rank_delta_fusion_to_max": "3",
         "negative_type": "",
         "morphology_proxy": "coastal_promontory_hint",
+        "review_lane": "mamoa_specialist_positive_review",
         "review_reason": "Known positive moved upward by max_safety; inspect morphology archetype missed by the main model."
       }
     },
@@ -1979,9 +2223,13 @@
         "fusion_rank": "4",
         "max_safety_rank": "3",
         "archetype_only_rank": "3",
+        "specialist_probability": "1.00000000",
+        "specialist_rank": "1",
+        "specialist_mean_rank": "4",
         "rank_delta_fusion_to_max": "1",
         "negative_type": "",
         "morphology_proxy": "coastal_promontory_hint",
+        "review_lane": "mamoa_specialist_positive_review",
         "review_reason": "Known positive moved upward by max_safety; inspect morphology archetype missed by the main model."
       }
     },
@@ -2011,9 +2259,13 @@
         "fusion_rank": "3",
         "max_safety_rank": "2",
         "archetype_only_rank": "2",
+        "specialist_probability": "0.99999575",
+        "specialist_rank": "4",
+        "specialist_mean_rank": "2",
         "rank_delta_fusion_to_max": "1",
         "negative_type": "",
         "morphology_proxy": "generic_castro_hint",
+        "review_lane": "mamoa_specialist_positive_review",
         "review_reason": "Known positive moved upward by max_safety; inspect morphology archetype missed by the main model."
       }
     },
@@ -2043,9 +2295,13 @@
         "fusion_rank": "43",
         "max_safety_rank": "90",
         "archetype_only_rank": "110",
+        "specialist_probability": "0.99091364",
+        "specialist_rank": "49",
+        "specialist_mean_rank": "39",
         "rank_delta_fusion_to_max": "-47",
         "negative_type": "historic_fortification",
         "morphology_proxy": "",
+        "review_lane": "weak_negative_review",
         "review_reason": "Weak-label negative ranked high on validation; inspect before treating it as true absence."
       }
     },
@@ -2075,9 +2331,13 @@
         "fusion_rank": "52",
         "max_safety_rank": "106",
         "archetype_only_rank": "148",
+        "specialist_probability": "0.98400962",
+        "specialist_rank": "69",
+        "specialist_mean_rank": "51",
         "rank_delta_fusion_to_max": "-54",
         "negative_type": "megalithic_mound",
         "morphology_proxy": "",
+        "review_lane": "mamoa_false_positive_review",
         "review_reason": "Weak-label negative ranked high on validation; inspect before treating it as true absence."
       }
     },
@@ -2107,9 +2367,13 @@
         "fusion_rank": "56",
         "max_safety_rank": "117",
         "archetype_only_rank": "156",
+        "specialist_probability": "0.94920313",
+        "specialist_rank": "123",
+        "specialist_mean_rank": "75",
         "rank_delta_fusion_to_max": "-61",
         "negative_type": "megalithic_mound",
         "morphology_proxy": "",
+        "review_lane": "mamoa_false_positive_review",
         "review_reason": "Weak-label negative ranked high on validation; inspect before treating it as true absence."
       }
     },
@@ -2139,9 +2403,13 @@
         "fusion_rank": "64",
         "max_safety_rank": "131",
         "archetype_only_rank": "236",
+        "specialist_probability": "0.99697517",
+        "specialist_rank": "33",
+        "specialist_mean_rank": "53",
         "rank_delta_fusion_to_max": "-67",
         "negative_type": "historic_fortification",
         "morphology_proxy": "",
+        "review_lane": "weak_negative_review",
         "review_reason": "Weak-label negative ranked high on validation; inspect before treating it as true absence."
       }
     },
@@ -2171,9 +2439,13 @@
         "fusion_rank": "98",
         "max_safety_rank": "156",
         "archetype_only_rank": "125",
+        "specialist_probability": "0.90418206",
+        "specialist_rank": "176",
+        "specialist_mean_rank": "128",
         "rank_delta_fusion_to_max": "-58",
         "negative_type": "rock_art_surface",
         "morphology_proxy": "",
+        "review_lane": "weak_negative_review",
         "review_reason": "Weak-label negative ranked high on validation; inspect before treating it as true absence."
       }
     },
@@ -2203,9 +2475,13 @@
         "fusion_rank": "126",
         "max_safety_rank": "221",
         "archetype_only_rank": "1721",
+        "specialist_probability": "0.65281704",
+        "specialist_rank": "343",
+        "specialist_mean_rank": "230",
         "rank_delta_fusion_to_max": "-95",
         "negative_type": "megalithic_mound",
         "morphology_proxy": "",
+        "review_lane": "mamoa_false_positive_review",
         "review_reason": "Weak-label negative ranked high on validation; inspect before treating it as true absence."
       }
     },
@@ -2235,9 +2511,13 @@
         "fusion_rank": "137",
         "max_safety_rank": "162",
         "archetype_only_rank": "129",
+        "specialist_probability": "0.98102934",
+        "specialist_rank": "76",
+        "specialist_mean_rank": "111",
         "rank_delta_fusion_to_max": "-25",
         "negative_type": "megalithic_mound",
         "morphology_proxy": "",
+        "review_lane": "mamoa_false_positive_review",
         "review_reason": "Weak-label negative ranked high on validation; inspect before treating it as true absence."
       }
     },
@@ -2267,9 +2547,13 @@
         "fusion_rank": "138",
         "max_safety_rank": "237",
         "archetype_only_rank": "904",
+        "specialist_probability": "0.72159683",
+        "specialist_rank": "296",
+        "specialist_mean_rank": "208",
         "rank_delta_fusion_to_max": "-99",
         "negative_type": "megalithic_mound",
         "morphology_proxy": "",
+        "review_lane": "mamoa_false_positive_review",
         "review_reason": "Weak-label negative ranked high on validation; inspect before treating it as true absence."
       }
     },
@@ -2299,9 +2583,13 @@
         "fusion_rank": "139",
         "max_safety_rank": "238",
         "archetype_only_rank": "528",
+        "specialist_probability": "0.83084586",
+        "specialist_rank": "231",
+        "specialist_mean_rank": "176",
         "rank_delta_fusion_to_max": "-99",
         "negative_type": "megalithic_mound",
         "morphology_proxy": "",
+        "review_lane": "mamoa_false_positive_review",
         "review_reason": "Weak-label negative ranked high on validation; inspect before treating it as true absence."
       }
     },
@@ -2331,9 +2619,13 @@
         "fusion_rank": "143",
         "max_safety_rank": "246",
         "archetype_only_rank": "231",
+        "specialist_probability": "0.85253813",
+        "specialist_rank": "212",
+        "specialist_mean_rank": "170",
         "rank_delta_fusion_to_max": "-103",
         "negative_type": "megalithic_mound",
         "morphology_proxy": "",
+        "review_lane": "mamoa_false_positive_review",
         "review_reason": "Weak-label negative ranked high on validation; inspect before treating it as true absence."
       }
     },
@@ -2363,9 +2655,13 @@
         "fusion_rank": "147",
         "max_safety_rank": "253",
         "archetype_only_rank": "295",
+        "specialist_probability": "0.89893992",
+        "specialist_rank": "181",
+        "specialist_mean_rank": "160",
         "rank_delta_fusion_to_max": "-106",
         "negative_type": "megalithic_mound",
         "morphology_proxy": "",
+        "review_lane": "mamoa_false_positive_review",
         "review_reason": "Weak-label negative ranked high on validation; inspect before treating it as true absence."
       }
     },
@@ -2395,9 +2691,13 @@
         "fusion_rank": "161",
         "max_safety_rank": "271",
         "archetype_only_rank": "321",
+        "specialist_probability": "0.98700966",
+        "specialist_rank": "60",
+        "specialist_mean_rank": "129",
         "rank_delta_fusion_to_max": "-110",
         "negative_type": "rock_art_surface",
         "morphology_proxy": "",
+        "review_lane": "weak_negative_review",
         "review_reason": "Weak-label negative ranked high on validation; inspect before treating it as true absence."
       }
     },
@@ -2427,9 +2727,13 @@
         "fusion_rank": "163",
         "max_safety_rank": "107",
         "archetype_only_rank": "86",
+        "specialist_probability": "0.96567665",
+        "specialist_rank": "108",
+        "specialist_mean_rank": "137",
         "rank_delta_fusion_to_max": "56",
         "negative_type": "rock_art_surface",
         "morphology_proxy": "",
+        "review_lane": "weak_negative_review",
         "review_reason": "Weak-label negative ranked high on validation; inspect before treating it as true absence."
       }
     },
@@ -2459,9 +2763,13 @@
         "fusion_rank": "168",
         "max_safety_rank": "280",
         "archetype_only_rank": "324",
+        "specialist_probability": "0.90976483",
+        "specialist_rank": "169",
+        "specialist_mean_rank": "164",
         "rank_delta_fusion_to_max": "-112",
         "negative_type": "megalithic_mound",
         "morphology_proxy": "",
+        "review_lane": "mamoa_false_positive_review",
         "review_reason": "Weak-label negative ranked high on validation; inspect before treating it as true absence."
       }
     },
@@ -2491,9 +2799,13 @@
         "fusion_rank": "170",
         "max_safety_rank": "91",
         "archetype_only_rank": "71",
+        "specialist_probability": "0.65936932",
+        "specialist_rank": "337",
+        "specialist_mean_rank": "248",
         "rank_delta_fusion_to_max": "79",
         "negative_type": "megalithic_mound",
         "morphology_proxy": "",
+        "review_lane": "mamoa_false_positive_review",
         "review_reason": "Weak-label negative ranked high on validation; inspect before treating it as true absence."
       }
     },
@@ -2523,9 +2835,13 @@
         "fusion_rank": "173",
         "max_safety_rank": "283",
         "archetype_only_rank": "553",
+        "specialist_probability": "0.82963096",
+        "specialist_rank": "232",
+        "specialist_mean_rank": "191",
         "rank_delta_fusion_to_max": "-110",
         "negative_type": "megalithic_mound",
         "morphology_proxy": "",
+        "review_lane": "mamoa_false_positive_review",
         "review_reason": "Weak-label negative ranked high on validation; inspect before treating it as true absence."
       }
     },
@@ -2555,9 +2871,13 @@
         "fusion_rank": "177",
         "max_safety_rank": "239",
         "archetype_only_rank": "187",
+        "specialist_probability": "0.85779022",
+        "specialist_rank": "209",
+        "specialist_mean_rank": "185",
         "rank_delta_fusion_to_max": "-62",
         "negative_type": "megalithic_mound",
         "morphology_proxy": "",
+        "review_lane": "mamoa_false_positive_review",
         "review_reason": "Weak-label negative ranked high on validation; inspect before treating it as true absence."
       }
     },
@@ -2587,9 +2907,13 @@
         "fusion_rank": "178",
         "max_safety_rank": "293",
         "archetype_only_rank": "434",
+        "specialist_probability": "0.87167827",
+        "specialist_rank": "199",
+        "specialist_mean_rank": "179",
         "rank_delta_fusion_to_max": "-115",
         "negative_type": "megalithic_mound",
         "morphology_proxy": "",
+        "review_lane": "mamoa_false_positive_review",
         "review_reason": "Weak-label negative ranked high on validation; inspect before treating it as true absence."
       }
     },
@@ -2619,9 +2943,13 @@
         "fusion_rank": "181",
         "max_safety_rank": "297",
         "archetype_only_rank": "761",
+        "specialist_probability": "0.58172379",
+        "specialist_rank": "398",
+        "specialist_mean_rank": "277",
         "rank_delta_fusion_to_max": "-116",
         "negative_type": "megalithic_mound",
         "morphology_proxy": "",
+        "review_lane": "mamoa_false_positive_review",
         "review_reason": "Weak-label negative ranked high on validation; inspect before treating it as true absence."
       }
     },
@@ -2651,9 +2979,13 @@
         "fusion_rank": "184",
         "max_safety_rank": "300",
         "archetype_only_rank": "1454",
+        "specialist_probability": "0.74750594",
+        "specialist_rank": "278",
+        "specialist_mean_rank": "227",
         "rank_delta_fusion_to_max": "-116",
         "negative_type": "megalithic_mound",
         "morphology_proxy": "",
+        "review_lane": "mamoa_false_positive_review",
         "review_reason": "Weak-label negative ranked high on validation; inspect before treating it as true absence."
       }
     },
@@ -2683,9 +3015,13 @@
         "fusion_rank": "185",
         "max_safety_rank": "302",
         "archetype_only_rank": "417",
+        "specialist_probability": "0.92074188",
+        "specialist_rank": "159",
+        "specialist_mean_rank": "167",
         "rank_delta_fusion_to_max": "-117",
         "negative_type": "rock_art_surface",
         "morphology_proxy": "",
+        "review_lane": "weak_negative_review",
         "review_reason": "Weak-label negative ranked high on validation; inspect before treating it as true absence."
       }
     },
@@ -2715,9 +3051,13 @@
         "fusion_rank": "190",
         "max_safety_rank": "170",
         "archetype_only_rank": "135",
+        "specialist_probability": "0.93743203",
+        "specialist_rank": "137",
+        "specialist_mean_rank": "165",
         "rank_delta_fusion_to_max": "20",
         "negative_type": "historic_fortification",
         "morphology_proxy": "",
+        "review_lane": "weak_negative_review",
         "review_reason": "Weak-label negative ranked high on validation; inspect before treating it as true absence."
       }
     },
@@ -2747,9 +3087,13 @@
         "fusion_rank": "192",
         "max_safety_rank": "4",
         "archetype_only_rank": "4",
+        "specialist_probability": "0.50542400",
+        "specialist_rank": "477",
+        "specialist_mean_rank": "320",
         "rank_delta_fusion_to_max": "188",
         "negative_type": "megalithic_mound",
         "morphology_proxy": "",
+        "review_lane": "mamoa_false_positive_review",
         "review_reason": "Weak-label negative ranked high on validation; inspect before treating it as true absence."
       }
     },
@@ -2779,9 +3123,13 @@
         "fusion_rank": "196",
         "max_safety_rank": "103",
         "archetype_only_rank": "84",
+        "specialist_probability": "0.68993650",
+        "specialist_rank": "316",
+        "specialist_mean_rank": "251",
         "rank_delta_fusion_to_max": "93",
         "negative_type": "megalithic_mound",
         "morphology_proxy": "",
+        "review_lane": "mamoa_false_positive_review",
         "review_reason": "Weak-label negative ranked high on validation; inspect before treating it as true absence."
       }
     },
@@ -2811,9 +3159,13 @@
         "fusion_rank": "198",
         "max_safety_rank": "216",
         "archetype_only_rank": "173",
+        "specialist_probability": "0.74161111",
+        "specialist_rank": "283",
+        "specialist_mean_rank": "235",
         "rank_delta_fusion_to_max": "-18",
         "negative_type": "megalithic_mound",
         "morphology_proxy": "",
+        "review_lane": "mamoa_false_positive_review",
         "review_reason": "Weak-label negative ranked high on validation; inspect before treating it as true absence."
       }
     },
@@ -2843,9 +3195,13 @@
         "fusion_rank": "201",
         "max_safety_rank": "322",
         "archetype_only_rank": "424",
+        "specialist_probability": "0.73546165",
+        "specialist_rank": "288",
+        "specialist_mean_rank": "241",
         "rank_delta_fusion_to_max": "-121",
         "negative_type": "megalithic_mound",
         "morphology_proxy": "",
+        "review_lane": "mamoa_false_positive_review",
         "review_reason": "Weak-label negative ranked high on validation; inspect before treating it as true absence."
       }
     },
@@ -2875,9 +3231,13 @@
         "fusion_rank": "203",
         "max_safety_rank": "15",
         "archetype_only_rank": "15",
+        "specialist_probability": "0.77331988",
+        "specialist_rank": "262",
+        "specialist_mean_rank": "229",
         "rank_delta_fusion_to_max": "188",
         "negative_type": "megalithic_mound",
         "morphology_proxy": "",
+        "review_lane": "mamoa_false_positive_review",
         "review_reason": "Weak-label negative ranked high on validation; inspect before treating it as true absence."
       }
     },
@@ -2907,9 +3267,13 @@
         "fusion_rank": "209",
         "max_safety_rank": "338",
         "archetype_only_rank": "679",
+        "specialist_probability": "0.53098677",
+        "specialist_rank": "452",
+        "specialist_mean_rank": "316",
         "rank_delta_fusion_to_max": "-129",
         "negative_type": "megalithic_mound",
         "morphology_proxy": "",
+        "review_lane": "mamoa_false_positive_review",
         "review_reason": "Weak-label negative ranked high on validation; inspect before treating it as true absence."
       }
     },
@@ -2939,9 +3303,13 @@
         "fusion_rank": "211",
         "max_safety_rank": "341",
         "archetype_only_rank": "736",
+        "specialist_probability": "0.70709184",
+        "specialist_rank": "300",
+        "specialist_mean_rank": "254",
         "rank_delta_fusion_to_max": "-130",
         "negative_type": "megalithic_mound",
         "morphology_proxy": "",
+        "review_lane": "mamoa_false_positive_review",
         "review_reason": "Weak-label negative ranked high on validation; inspect before treating it as true absence."
       }
     },
@@ -2971,9 +3339,13 @@
         "fusion_rank": "217",
         "max_safety_rank": "347",
         "archetype_only_rank": "635",
+        "specialist_probability": "0.67407656",
+        "specialist_rank": "326",
+        "specialist_mean_rank": "263",
         "rank_delta_fusion_to_max": "-130",
         "negative_type": "rock_art_surface",
         "morphology_proxy": "",
+        "review_lane": "weak_negative_review",
         "review_reason": "Weak-label negative ranked high on validation; inspect before treating it as true absence."
       }
     },
@@ -3003,9 +3375,13 @@
         "fusion_rank": "219",
         "max_safety_rank": "353",
         "archetype_only_rank": "1725",
+        "specialist_probability": "0.40378429",
+        "specialist_rank": "591",
+        "specialist_mean_rank": "381",
         "rank_delta_fusion_to_max": "-134",
         "negative_type": "megalithic_mound",
         "morphology_proxy": "",
+        "review_lane": "mamoa_false_positive_review",
         "review_reason": "Weak-label negative ranked high on validation; inspect before treating it as true absence."
       }
     },
@@ -3035,9 +3411,13 @@
         "fusion_rank": "221",
         "max_safety_rank": "355",
         "archetype_only_rank": "345",
+        "specialist_probability": "0.89747782",
+        "specialist_rank": "185",
+        "specialist_mean_rank": "194",
         "rank_delta_fusion_to_max": "-134",
         "negative_type": "rock_art_surface",
         "morphology_proxy": "",
+        "review_lane": "weak_negative_review",
         "review_reason": "Weak-label negative ranked high on validation; inspect before treating it as true absence."
       }
     },
@@ -3067,9 +3447,13 @@
         "fusion_rank": "228",
         "max_safety_rank": "361",
         "archetype_only_rank": "358",
+        "specialist_probability": "0.77637012",
+        "specialist_rank": "260",
+        "specialist_mean_rank": "237",
         "rank_delta_fusion_to_max": "-133",
         "negative_type": "megalithic_mound",
         "morphology_proxy": "",
+        "review_lane": "mamoa_false_positive_review",
         "review_reason": "Weak-label negative ranked high on validation; inspect before treating it as true absence."
       }
     },
@@ -3099,9 +3483,13 @@
         "fusion_rank": "230",
         "max_safety_rank": "362",
         "archetype_only_rank": "1038",
+        "specialist_probability": "0.64363671",
+        "specialist_rank": "350",
+        "specialist_mean_rank": "279",
         "rank_delta_fusion_to_max": "-132",
         "negative_type": "megalithic_mound",
         "morphology_proxy": "",
+        "review_lane": "mamoa_false_positive_review",
         "review_reason": "Weak-label negative ranked high on validation; inspect before treating it as true absence."
       }
     },
@@ -3131,9 +3519,13 @@
         "fusion_rank": "232",
         "max_safety_rank": "364",
         "archetype_only_rank": "319",
+        "specialist_probability": "0.82657841",
+        "specialist_rank": "234",
+        "specialist_mean_rank": "220",
         "rank_delta_fusion_to_max": "-132",
         "negative_type": "megalithic_mound",
         "morphology_proxy": "",
+        "review_lane": "mamoa_false_positive_review",
         "review_reason": "Weak-label negative ranked high on validation; inspect before treating it as true absence."
       }
     },
@@ -3163,9 +3555,13 @@
         "fusion_rank": "233",
         "max_safety_rank": "368",
         "archetype_only_rank": "1257",
+        "specialist_probability": "0.43989777",
+        "specialist_rank": "539",
+        "specialist_mean_rank": "369",
         "rank_delta_fusion_to_max": "-135",
         "negative_type": "megalithic_mound",
         "morphology_proxy": "",
+        "review_lane": "mamoa_false_positive_review",
         "review_reason": "Weak-label negative ranked high on validation; inspect before treating it as true absence."
       }
     },
@@ -3195,9 +3591,13 @@
         "fusion_rank": "234",
         "max_safety_rank": "370",
         "archetype_only_rank": "659",
+        "specialist_probability": "0.68774869",
+        "specialist_rank": "319",
+        "specialist_mean_rank": "265",
         "rank_delta_fusion_to_max": "-136",
         "negative_type": "megalithic_mound",
         "morphology_proxy": "",
+        "review_lane": "mamoa_false_positive_review",
         "review_reason": "Weak-label negative ranked high on validation; inspect before treating it as true absence."
       }
     },
@@ -3227,9 +3627,13 @@
         "fusion_rank": "237",
         "max_safety_rank": "375",
         "archetype_only_rank": "816",
+        "specialist_probability": "0.63486464",
+        "specialist_rank": "360",
+        "specialist_mean_rank": "286",
         "rank_delta_fusion_to_max": "-138",
         "negative_type": "megalithic_mound",
         "morphology_proxy": "",
+        "review_lane": "mamoa_false_positive_review",
         "review_reason": "Weak-label negative ranked high on validation; inspect before treating it as true absence."
       }
     },
@@ -3259,9 +3663,13 @@
         "fusion_rank": "238",
         "max_safety_rank": "378",
         "archetype_only_rank": "686",
+        "specialist_probability": "0.52039740",
+        "specialist_rank": "460",
+        "specialist_mean_rank": "335",
         "rank_delta_fusion_to_max": "-140",
         "negative_type": "megalithic_mound",
         "morphology_proxy": "",
+        "review_lane": "mamoa_false_positive_review",
         "review_reason": "Weak-label negative ranked high on validation; inspect before treating it as true absence."
       }
     },
@@ -3291,9 +3699,13 @@
         "fusion_rank": "240",
         "max_safety_rank": "383",
         "archetype_only_rank": "629",
+        "specialist_probability": "0.66493655",
+        "specialist_rank": "334",
+        "specialist_mean_rank": "276",
         "rank_delta_fusion_to_max": "-143",
         "negative_type": "megalithic_mound",
         "morphology_proxy": "",
+        "review_lane": "mamoa_false_positive_review",
         "review_reason": "Weak-label negative ranked high on validation; inspect before treating it as true absence."
       }
     },
@@ -3323,9 +3735,13 @@
         "fusion_rank": "242",
         "max_safety_rank": "387",
         "archetype_only_rank": "646",
+        "specialist_probability": "0.84059146",
+        "specialist_rank": "222",
+        "specialist_mean_rank": "223",
         "rank_delta_fusion_to_max": "-145",
         "negative_type": "megalithic_mound",
         "morphology_proxy": "",
+        "review_lane": "mamoa_false_positive_review",
         "review_reason": "Weak-label negative ranked high on validation; inspect before treating it as true absence."
       }
     },
@@ -3355,9 +3771,13 @@
         "fusion_rank": "243",
         "max_safety_rank": "388",
         "archetype_only_rank": "592",
+        "specialist_probability": "0.90996344",
+        "specialist_rank": "168",
+        "specialist_mean_rank": "199",
         "rank_delta_fusion_to_max": "-145",
         "negative_type": "megalithic_mound",
         "morphology_proxy": "",
+        "review_lane": "mamoa_false_positive_review",
         "review_reason": "Weak-label negative ranked high on validation; inspect before treating it as true absence."
       }
     },
@@ -3387,9 +3807,13 @@
         "fusion_rank": "245",
         "max_safety_rank": "294",
         "archetype_only_rank": "237",
+        "specialist_probability": "0.79132685",
+        "specialist_rank": "251",
+        "specialist_mean_rank": "242",
         "rank_delta_fusion_to_max": "-49",
         "negative_type": "rock_art_surface",
         "morphology_proxy": "",
+        "review_lane": "weak_negative_review",
         "review_reason": "Weak-label negative ranked high on validation; inspect before treating it as true absence."
       }
     },
@@ -3419,9 +3843,13 @@
         "fusion_rank": "246",
         "max_safety_rank": "391",
         "archetype_only_rank": "921",
+        "specialist_probability": "0.76860823",
+        "specialist_rank": "264",
+        "specialist_mean_rank": "244",
         "rank_delta_fusion_to_max": "-145",
         "negative_type": "megalithic_mound",
         "morphology_proxy": "",
+        "review_lane": "mamoa_false_positive_review",
         "review_reason": "Weak-label negative ranked high on validation; inspect before treating it as true absence."
       }
     },
@@ -3451,9 +3879,13 @@
         "fusion_rank": "247",
         "max_safety_rank": "50",
         "archetype_only_rank": "43",
+        "specialist_probability": "0.67583732",
+        "specialist_rank": "325",
+        "specialist_mean_rank": "274",
         "rank_delta_fusion_to_max": "197",
         "negative_type": "megalithic_mound",
         "morphology_proxy": "",
+        "review_lane": "mamoa_false_positive_review",
         "review_reason": "Weak-label negative ranked high on validation; inspect before treating it as true absence."
       }
     },
@@ -3483,9 +3915,13 @@
         "fusion_rank": "249",
         "max_safety_rank": "395",
         "archetype_only_rank": "1222",
+        "specialist_probability": "0.81057429",
+        "specialist_rank": "242",
+        "specialist_mean_rank": "234",
         "rank_delta_fusion_to_max": "-146",
         "negative_type": "megalithic_mound",
         "morphology_proxy": "",
+        "review_lane": "mamoa_false_positive_review",
         "review_reason": "Weak-label negative ranked high on validation; inspect before treating it as true absence."
       }
     },
@@ -3515,9 +3951,13 @@
         "fusion_rank": "250",
         "max_safety_rank": "396",
         "archetype_only_rank": "340",
+        "specialist_probability": "0.82231732",
+        "specialist_rank": "237",
+        "specialist_mean_rank": "231",
         "rank_delta_fusion_to_max": "-146",
         "negative_type": "megalithic_mound",
         "morphology_proxy": "",
+        "review_lane": "mamoa_false_positive_review",
         "review_reason": "Weak-label negative ranked high on validation; inspect before treating it as true absence."
       }
     },
@@ -3547,9 +3987,13 @@
         "fusion_rank": "254",
         "max_safety_rank": "223",
         "archetype_only_rank": "177",
+        "specialist_probability": "0.64104176",
+        "specialist_rank": "354",
+        "specialist_mean_rank": "296",
         "rank_delta_fusion_to_max": "31",
         "negative_type": "megalithic_mound",
         "morphology_proxy": "",
+        "review_lane": "mamoa_false_positive_review",
         "review_reason": "Weak-label negative ranked high on validation; inspect before treating it as true absence."
       }
     },
@@ -3579,9 +4023,13 @@
         "fusion_rank": "257",
         "max_safety_rank": "42",
         "archetype_only_rank": "37",
+        "specialist_probability": "0.66669915",
+        "specialist_rank": "333",
+        "specialist_mean_rank": "282",
         "rank_delta_fusion_to_max": "215",
         "negative_type": "megalithic_mound",
         "morphology_proxy": "",
+        "review_lane": "mamoa_false_positive_review",
         "review_reason": "Weak-label negative ranked high on validation; inspect before treating it as true absence."
       }
     },
@@ -3611,9 +4059,13 @@
         "fusion_rank": "258",
         "max_safety_rank": "9",
         "archetype_only_rank": "9",
+        "specialist_probability": "0.99782375",
+        "specialist_rank": "28",
+        "specialist_mean_rank": "175",
         "rank_delta_fusion_to_max": "249",
         "negative_type": "historic_fortification",
         "morphology_proxy": "",
+        "review_lane": "weak_negative_review",
         "review_reason": "Weak-label negative ranked high on validation; inspect before treating it as true absence."
       }
     },
@@ -3643,9 +4095,13 @@
         "fusion_rank": "1843",
         "max_safety_rank": "33",
         "archetype_only_rank": "29",
+        "specialist_probability": "0.07845831",
+        "specialist_rank": "1518",
+        "specialist_mean_rank": "1747",
         "rank_delta_fusion_to_max": "1810",
         "negative_type": "",
         "morphology_proxy": "generic_castro_hint",
+        "review_lane": "morphology_rescue_review",
         "review_reason": "Weak positive ranked low on validation; inspect label noise, morphology and imagery quality."
       }
     },
@@ -3675,9 +4131,13 @@
         "fusion_rank": "1842",
         "max_safety_rank": "68",
         "archetype_only_rank": "53",
+        "specialist_probability": "0.15178585",
+        "specialist_rank": "1197",
+        "specialist_mean_rank": "1587",
         "rank_delta_fusion_to_max": "1774",
         "negative_type": "",
         "morphology_proxy": "generic_castro_hint",
+        "review_lane": "morphology_rescue_review",
         "review_reason": "Weak positive ranked low on validation; inspect label noise, morphology and imagery quality."
       }
     },
@@ -3707,9 +4167,13 @@
         "fusion_rank": "1841",
         "max_safety_rank": "52",
         "archetype_only_rank": "45",
+        "specialist_probability": "0.06580545",
+        "specialist_rank": "1590",
+        "specialist_mean_rank": "1760",
         "rank_delta_fusion_to_max": "1789",
         "negative_type": "",
         "morphology_proxy": "croa_top_ring_hint",
+        "review_lane": "morphology_rescue_review",
         "review_reason": "Weak positive ranked low on validation; inspect label noise, morphology and imagery quality."
       }
     },
@@ -3739,9 +4203,13 @@
         "fusion_rank": "1825",
         "max_safety_rank": "1613",
         "archetype_only_rank": "1269",
+        "specialist_probability": "0.03113617",
+        "specialist_rank": "1770",
+        "specialist_mean_rank": "1815",
         "rank_delta_fusion_to_max": "212",
         "negative_type": "",
         "morphology_proxy": "generic_castro_hint",
+        "review_lane": "morphology_rescue_review",
         "review_reason": "Weak positive ranked low on validation; inspect label noise, morphology and imagery quality."
       }
     },
@@ -3771,9 +4239,13 @@
         "fusion_rank": "1763",
         "max_safety_rank": "1310",
         "archetype_only_rank": "936",
+        "specialist_probability": "0.04119979",
+        "specialist_rank": "1722",
+        "specialist_mean_rank": "1750",
         "rank_delta_fusion_to_max": "453",
         "negative_type": "",
         "morphology_proxy": "generic_castro_hint",
+        "review_lane": "morphology_rescue_review",
         "review_reason": "Weak positive ranked low on validation; inspect label noise, morphology and imagery quality."
       }
     },
@@ -3803,9 +4275,13 @@
         "fusion_rank": "1749",
         "max_safety_rank": "1830",
         "archetype_only_rank": "1720",
+        "specialist_probability": "0.03019735",
+        "specialist_rank": "1773",
+        "specialist_mean_rank": "1763",
         "rank_delta_fusion_to_max": "-81",
         "negative_type": "",
         "morphology_proxy": "generic_castro_hint",
+        "review_lane": "low_positive_review",
         "review_reason": "Weak positive ranked low on validation; inspect label noise, morphology and imagery quality."
       }
     },
@@ -3835,9 +4311,13 @@
         "fusion_rank": "1671",
         "max_safety_rank": "686",
         "archetype_only_rank": "502",
+        "specialist_probability": "0.10886848",
+        "specialist_rank": "1366",
+        "specialist_mean_rank": "1565",
         "rank_delta_fusion_to_max": "985",
         "negative_type": "",
         "morphology_proxy": "generic_castro_hint",
+        "review_lane": "morphology_rescue_review",
         "review_reason": "Weak positive ranked low on validation; inspect label noise, morphology and imagery quality."
       }
     },
@@ -3867,9 +4347,13 @@
         "fusion_rank": "1636",
         "max_safety_rank": "262",
         "archetype_only_rank": "210",
+        "specialist_probability": "0.21222451",
+        "specialist_rank": "995",
+        "specialist_mean_rank": "1324",
         "rank_delta_fusion_to_max": "1374",
         "negative_type": "",
         "morphology_proxy": "hilltop_hint",
+        "review_lane": "morphology_rescue_review",
         "review_reason": "Weak positive ranked low on validation; inspect label noise, morphology and imagery quality."
       }
     },
@@ -3899,9 +4383,13 @@
         "fusion_rank": "1595",
         "max_safety_rank": "477",
         "archetype_only_rank": "366",
+        "specialist_probability": "0.08242945",
+        "specialist_rank": "1501",
+        "specialist_mean_rank": "1589",
         "rank_delta_fusion_to_max": "1118",
         "negative_type": "",
         "morphology_proxy": "generic_castro_hint",
+        "review_lane": "morphology_rescue_review",
         "review_reason": "Weak positive ranked low on validation; inspect label noise, morphology and imagery quality."
       }
     },
@@ -3931,9 +4419,13 @@
         "fusion_rank": "1594",
         "max_safety_rank": "923",
         "archetype_only_rank": "655",
+        "specialist_probability": "0.09781262",
+        "specialist_rank": "1430",
+        "specialist_mean_rank": "1553",
         "rank_delta_fusion_to_max": "671",
         "negative_type": "",
         "morphology_proxy": "hilltop_hint",
+        "review_lane": "morphology_rescue_review",
         "review_reason": "Weak positive ranked low on validation; inspect label noise, morphology and imagery quality."
       }
     },
@@ -3963,9 +4455,13 @@
         "fusion_rank": "1581",
         "max_safety_rank": "428",
         "archetype_only_rank": "336",
+        "specialist_probability": "0.24772671",
+        "specialist_rank": "901",
+        "specialist_mean_rank": "1227",
         "rank_delta_fusion_to_max": "1153",
         "negative_type": "",
         "morphology_proxy": "generic_castro_hint",
+        "review_lane": "morphology_rescue_review",
         "review_reason": "Weak positive ranked low on validation; inspect label noise, morphology and imagery quality."
       }
     },
@@ -3995,9 +4491,13 @@
         "fusion_rank": "1563",
         "max_safety_rank": "1503",
         "archetype_only_rank": "1127",
+        "specialist_probability": "0.09148301",
+        "specialist_rank": "1458",
+        "specialist_mean_rank": "1551",
         "rank_delta_fusion_to_max": "60",
         "negative_type": "",
         "morphology_proxy": "generic_castro_hint",
+        "review_lane": "morphology_rescue_review",
         "review_reason": "Weak positive ranked low on validation; inspect label noise, morphology and imagery quality."
       }
     },
@@ -4027,9 +4527,13 @@
         "fusion_rank": "1545",
         "max_safety_rank": "111",
         "archetype_only_rank": "89",
+        "specialist_probability": "0.29588960",
+        "specialist_rank": "795",
+        "specialist_mean_rank": "1128",
         "rank_delta_fusion_to_max": "1434",
         "negative_type": "",
         "morphology_proxy": "generic_castro_hint",
+        "review_lane": "morphology_rescue_review",
         "review_reason": "Weak positive ranked low on validation; inspect label noise, morphology and imagery quality."
       }
     },
@@ -4059,9 +4563,13 @@
         "fusion_rank": "1489",
         "max_safety_rank": "1793",
         "archetype_only_rank": "1851",
+        "specialist_probability": "0.05539912",
+        "specialist_rank": "1644",
+        "specialist_mean_rank": "1592",
         "rank_delta_fusion_to_max": "-304",
         "negative_type": "",
         "morphology_proxy": "generic_castro_hint",
+        "review_lane": "low_positive_review",
         "review_reason": "Weak positive ranked low on validation; inspect label noise, morphology and imagery quality."
       }
     },
@@ -4091,9 +4599,13 @@
         "fusion_rank": "1447",
         "max_safety_rank": "284",
         "archetype_only_rank": "228",
+        "specialist_probability": "0.21063325",
+        "specialist_rank": "999",
+        "specialist_mean_rank": "1233",
         "rank_delta_fusion_to_max": "1163",
         "negative_type": "",
         "morphology_proxy": "hilltop_hint",
+        "review_lane": "morphology_rescue_review",
         "review_reason": "Weak positive ranked low on validation; inspect label noise, morphology and imagery quality."
       }
     },
@@ -4123,9 +4635,13 @@
         "fusion_rank": "1400",
         "max_safety_rank": "892",
         "archetype_only_rank": "633",
+        "specialist_probability": "0.34009741",
+        "specialist_rank": "706",
+        "specialist_mean_rank": "999",
         "rank_delta_fusion_to_max": "508",
         "negative_type": "",
         "morphology_proxy": "castrel_toponym_hint",
+        "review_lane": "morphology_rescue_review",
         "review_reason": "Weak positive ranked low on validation; inspect label noise, morphology and imagery quality."
       }
     },
@@ -4155,9 +4671,13 @@
         "fusion_rank": "1374",
         "max_safety_rank": "994",
         "archetype_only_rank": "701",
+        "specialist_probability": "0.27372529",
+        "specialist_rank": "837",
+        "specialist_mean_rank": "1090",
         "rank_delta_fusion_to_max": "380",
         "negative_type": "",
         "morphology_proxy": "generic_castro_hint",
+        "review_lane": "morphology_rescue_review",
         "review_reason": "Weak positive ranked low on validation; inspect label noise, morphology and imagery quality."
       }
     },
@@ -4187,9 +4707,13 @@
         "fusion_rank": "1369",
         "max_safety_rank": "1032",
         "archetype_only_rank": "724",
+        "specialist_probability": "0.23937453",
+        "specialist_rank": "923",
+        "specialist_mean_rank": "1147",
         "rank_delta_fusion_to_max": "337",
         "negative_type": "",
         "morphology_proxy": "generic_castro_hint",
+        "review_lane": "morphology_rescue_review",
         "review_reason": "Weak positive ranked low on validation; inspect label noise, morphology and imagery quality."
       }
     },
@@ -4219,9 +4743,13 @@
         "fusion_rank": "1162",
         "max_safety_rank": "1568",
         "archetype_only_rank": "1706",
+        "specialist_probability": "0.05875561",
+        "specialist_rank": "1628",
+        "specialist_mean_rank": "1394",
         "rank_delta_fusion_to_max": "-406",
         "negative_type": "",
         "morphology_proxy": "generic_castro_hint",
+        "review_lane": "low_positive_review",
         "review_reason": "Weak positive ranked low on validation; inspect label noise, morphology and imagery quality."
       }
     },
@@ -4251,9 +4779,13 @@
         "fusion_rank": "1132",
         "max_safety_rank": "1239",
         "archetype_only_rank": "872",
+        "specialist_probability": "0.23929394",
+        "specialist_rank": "924",
+        "specialist_mean_rank": "1042",
         "rank_delta_fusion_to_max": "-107",
         "negative_type": "",
         "morphology_proxy": "hilltop_hint",
+        "review_lane": "low_positive_review",
         "review_reason": "Weak positive ranked low on validation; inspect label noise, morphology and imagery quality."
       }
     },
@@ -4283,9 +4815,13 @@
         "fusion_rank": "1129",
         "max_safety_rank": "1523",
         "archetype_only_rank": "1480",
+        "specialist_probability": "0.31680987",
+        "specialist_rank": "749",
+        "specialist_mean_rank": "926",
         "rank_delta_fusion_to_max": "-394",
         "negative_type": "",
         "morphology_proxy": "generic_castro_hint",
+        "review_lane": "low_positive_review",
         "review_reason": "Weak positive ranked low on validation; inspect label noise, morphology and imagery quality."
       }
     },
@@ -4315,9 +4851,13 @@
         "fusion_rank": "1120",
         "max_safety_rank": "41",
         "archetype_only_rank": "36",
+        "specialist_probability": "0.80601749",
+        "specialist_rank": "247",
+        "specialist_mean_rank": "433",
         "rank_delta_fusion_to_max": "1079",
         "negative_type": "",
         "morphology_proxy": "generic_castro_hint",
+        "review_lane": "morphology_rescue_review",
         "review_reason": "Weak positive ranked low on validation; inspect label noise, morphology and imagery quality."
       }
     },
@@ -4347,9 +4887,13 @@
         "fusion_rank": "1111",
         "max_safety_rank": "1505",
         "archetype_only_rank": "1136",
+        "specialist_probability": "0.45058281",
+        "specialist_rank": "528",
+        "specialist_mean_rank": "743",
         "rank_delta_fusion_to_max": "-394",
         "negative_type": "",
         "morphology_proxy": "generic_castro_hint",
+        "review_lane": "low_positive_review",
         "review_reason": "Weak positive ranked low on validation; inspect label noise, morphology and imagery quality."
       }
     },
@@ -4379,9 +4923,13 @@
         "fusion_rank": "1063",
         "max_safety_rank": "26",
         "archetype_only_rank": "23",
+        "specialist_probability": "0.72119453",
+        "specialist_rank": "297",
+        "specialist_mean_rank": "485",
         "rank_delta_fusion_to_max": "1037",
         "negative_type": "",
         "morphology_proxy": "generic_castro_hint",
+        "review_lane": "morphology_rescue_review",
         "review_reason": "Weak positive ranked low on validation; inspect label noise, morphology and imagery quality."
       }
     },
@@ -4411,9 +4959,13 @@
         "fusion_rank": "1044",
         "max_safety_rank": "367",
         "archetype_only_rank": "293",
+        "specialist_probability": "0.34240500",
+        "specialist_rank": "698",
+        "specialist_mean_rank": "853",
         "rank_delta_fusion_to_max": "677",
         "negative_type": "",
         "morphology_proxy": "large_castrexo_civitas_hint",
+        "review_lane": "morphology_rescue_review",
         "review_reason": "Weak positive ranked low on validation; inspect label noise, morphology and imagery quality."
       }
     },
@@ -4443,9 +4995,13 @@
         "fusion_rank": "1024",
         "max_safety_rank": "1402",
         "archetype_only_rank": "1063",
+        "specialist_probability": "0.35506741",
+        "specialist_rank": "675",
+        "specialist_mean_rank": "833",
         "rank_delta_fusion_to_max": "-378",
         "negative_type": "",
         "morphology_proxy": "generic_castro_hint",
+        "review_lane": "low_positive_review",
         "review_reason": "Weak positive ranked low on validation; inspect label noise, morphology and imagery quality."
       }
     },
@@ -4475,9 +5031,13 @@
         "fusion_rank": "1017",
         "max_safety_rank": "1396",
         "archetype_only_rank": "1478",
+        "specialist_probability": "0.32755180",
+        "specialist_rank": "731",
+        "specialist_mean_rank": "869",
         "rank_delta_fusion_to_max": "-379",
         "negative_type": "",
         "morphology_proxy": "generic_castro_hint",
+        "review_lane": "low_positive_review",
         "review_reason": "Weak positive ranked low on validation; inspect label noise, morphology and imagery quality."
       }
     },
@@ -4507,9 +5067,13 @@
         "fusion_rank": "1007",
         "max_safety_rank": "423",
         "archetype_only_rank": "332",
+        "specialist_probability": "0.66256617",
+        "specialist_rank": "335",
+        "specialist_mean_rank": "508",
         "rank_delta_fusion_to_max": "584",
         "negative_type": "",
         "morphology_proxy": "hilltop_hint",
+        "review_lane": "morphology_rescue_review",
         "review_reason": "Weak positive ranked low on validation; inspect label noise, morphology and imagery quality."
       }
     },
@@ -4539,9 +5103,13 @@
         "fusion_rank": "1000",
         "max_safety_rank": "102",
         "archetype_only_rank": "83",
+        "specialist_probability": "0.54223752",
+        "specialist_rank": "440",
+        "specialist_mean_rank": "601",
         "rank_delta_fusion_to_max": "898",
         "negative_type": "",
         "morphology_proxy": "generic_castro_hint",
+        "review_lane": "morphology_rescue_review",
         "review_reason": "Weak positive ranked low on validation; inspect label noise, morphology and imagery quality."
       }
     },
@@ -4571,9 +5139,13 @@
         "fusion_rank": "999",
         "max_safety_rank": "565",
         "archetype_only_rank": "426",
+        "specialist_probability": "0.29259366",
+        "specialist_rank": "801",
+        "specialist_mean_rank": "902",
         "rank_delta_fusion_to_max": "434",
         "negative_type": "",
         "morphology_proxy": "hilltop_hint",
+        "review_lane": "morphology_rescue_review",
         "review_reason": "Weak positive ranked low on validation; inspect label noise, morphology and imagery quality."
       }
     },
@@ -4603,9 +5175,13 @@
         "fusion_rank": "991",
         "max_safety_rank": "1153",
         "archetype_only_rank": "803",
+        "specialist_probability": "0.50892071",
+        "specialist_rank": "473",
+        "specialist_mean_rank": "643",
         "rank_delta_fusion_to_max": "-162",
         "negative_type": "",
         "morphology_proxy": "hilltop_hint",
+        "review_lane": "low_positive_review",
         "review_reason": "Weak positive ranked low on validation; inspect label noise, morphology and imagery quality."
       }
     },
@@ -4635,9 +5211,13 @@
         "fusion_rank": "978",
         "max_safety_rank": "1343",
         "archetype_only_rank": "1670",
+        "specialist_probability": "0.34812548",
+        "specialist_rank": "687",
+        "specialist_mean_rank": "813",
         "rank_delta_fusion_to_max": "-365",
         "negative_type": "",
         "morphology_proxy": "generic_castro_hint",
+        "review_lane": "low_positive_review",
         "review_reason": "Weak positive ranked low on validation; inspect label noise, morphology and imagery quality."
       }
     },
@@ -4667,9 +5247,13 @@
         "fusion_rank": "943",
         "max_safety_rank": "308",
         "archetype_only_rank": "249",
+        "specialist_probability": "0.47915719",
+        "specialist_rank": "506",
+        "specialist_mean_rank": "655",
         "rank_delta_fusion_to_max": "635",
         "negative_type": "",
         "morphology_proxy": "hilltop_hint",
+        "review_lane": "morphology_rescue_review",
         "review_reason": "Weak positive ranked low on validation; inspect label noise, morphology and imagery quality."
       }
     },
@@ -4699,9 +5283,13 @@
         "fusion_rank": "933",
         "max_safety_rank": "1298",
         "archetype_only_rank": "1135",
+        "specialist_probability": "0.25721317",
+        "specialist_rank": "880",
+        "specialist_mean_rank": "915",
         "rank_delta_fusion_to_max": "-365",
         "negative_type": "",
         "morphology_proxy": "generic_castro_hint",
+        "review_lane": "low_positive_review",
         "review_reason": "Weak positive ranked low on validation; inspect label noise, morphology and imagery quality."
       }
     },
@@ -4731,9 +5319,13 @@
         "fusion_rank": "918",
         "max_safety_rank": "1280",
         "archetype_only_rank": "1322",
+        "specialist_probability": "0.39835357",
+        "specialist_rank": "601",
+        "specialist_mean_rank": "724",
         "rank_delta_fusion_to_max": "-362",
         "negative_type": "",
         "morphology_proxy": "generic_castro_hint",
+        "review_lane": "low_positive_review",
         "review_reason": "Weak positive ranked low on validation; inspect label noise, morphology and imagery quality."
       }
     },
@@ -4763,9 +5355,13 @@
         "fusion_rank": "904",
         "max_safety_rank": "1265",
         "archetype_only_rank": "1571",
+        "specialist_probability": "0.14707308",
+        "specialist_rank": "1208",
+        "specialist_mean_rank": "1061",
         "rank_delta_fusion_to_max": "-361",
         "negative_type": "",
         "morphology_proxy": "croa_top_ring_hint",
+        "review_lane": "low_positive_review",
         "review_reason": "Weak positive ranked low on validation; inspect label noise, morphology and imagery quality."
       }
     },
@@ -4795,9 +5391,13 @@
         "fusion_rank": "892",
         "max_safety_rank": "532",
         "archetype_only_rank": "402",
+        "specialist_probability": "0.36450837",
+        "specialist_rank": "660",
+        "specialist_mean_rank": "754",
         "rank_delta_fusion_to_max": "360",
         "negative_type": "",
         "morphology_proxy": "generic_castro_hint",
+        "review_lane": "morphology_rescue_review",
         "review_reason": "Weak positive ranked low on validation; inspect label noise, morphology and imagery quality."
       }
     },
@@ -4827,9 +5427,13 @@
         "fusion_rank": "883",
         "max_safety_rank": "1227",
         "archetype_only_rank": "1105",
+        "specialist_probability": "0.43858019",
+        "specialist_rank": "541",
+        "specialist_mean_rank": "671",
         "rank_delta_fusion_to_max": "-344",
         "negative_type": "",
         "morphology_proxy": "generic_castro_hint",
+        "review_lane": "low_positive_review",
         "review_reason": "Weak positive ranked low on validation; inspect label noise, morphology and imagery quality."
       }
     },
@@ -4859,9 +5463,13 @@
         "fusion_rank": "880",
         "max_safety_rank": "1225",
         "archetype_only_rank": "1100",
+        "specialist_probability": "0.24157695",
+        "specialist_rank": "917",
+        "specialist_mean_rank": "909",
         "rank_delta_fusion_to_max": "-345",
         "negative_type": "",
         "morphology_proxy": "generic_castro_hint",
+        "review_lane": "low_positive_review",
         "review_reason": "Weak positive ranked low on validation; inspect label noise, morphology and imagery quality."
       }
     },
@@ -4891,9 +5499,13 @@
         "fusion_rank": "876",
         "max_safety_rank": "1221",
         "archetype_only_rank": "1587",
+        "specialist_probability": "0.16363305",
+        "specialist_rank": "1154",
+        "specialist_mean_rank": "1017",
         "rank_delta_fusion_to_max": "-345",
         "negative_type": "",
         "morphology_proxy": "generic_castro_hint",
+        "review_lane": "low_positive_review",
         "review_reason": "Weak positive ranked low on validation; inspect label noise, morphology and imagery quality."
       }
     },
@@ -4923,9 +5535,13 @@
         "fusion_rank": "874",
         "max_safety_rank": "739",
         "archetype_only_rank": "531",
+        "specialist_probability": "0.33638880",
+        "specialist_rank": "709",
+        "specialist_mean_rank": "780",
         "rank_delta_fusion_to_max": "135",
         "negative_type": "",
         "morphology_proxy": "generic_castro_hint",
+        "review_lane": "morphology_rescue_review",
         "review_reason": "Weak positive ranked low on validation; inspect label noise, morphology and imagery quality."
       }
     },
@@ -4955,9 +5571,13 @@
         "fusion_rank": "872",
         "max_safety_rank": "373",
         "archetype_only_rank": "298",
+        "specialist_probability": "0.28870568",
+        "specialist_rank": "809",
+        "specialist_mean_rank": "844",
         "rank_delta_fusion_to_max": "499",
         "negative_type": "",
         "morphology_proxy": "coastal_promontory_hint",
+        "review_lane": "morphology_rescue_review",
         "review_reason": "Weak positive ranked low on validation; inspect label noise, morphology and imagery quality."
       }
     },
@@ -4987,9 +5607,13 @@
         "fusion_rank": "863",
         "max_safety_rank": "1209",
         "archetype_only_rank": "1120",
+        "specialist_probability": "0.11118346",
+        "specialist_rank": "1356",
+        "specialist_mean_rank": "1091",
         "rank_delta_fusion_to_max": "-346",
         "negative_type": "",
         "morphology_proxy": "generic_castro_hint",
+        "review_lane": "low_positive_review",
         "review_reason": "Weak positive ranked low on validation; inspect label noise, morphology and imagery quality."
       }
     },
@@ -5019,9 +5643,13 @@
         "fusion_rank": "862",
         "max_safety_rank": "1206",
         "archetype_only_rank": "1786",
+        "specialist_probability": "0.15695109",
+        "specialist_rank": "1178",
+        "specialist_mean_rank": "1018",
         "rank_delta_fusion_to_max": "-344",
         "negative_type": "",
         "morphology_proxy": "generic_castro_hint",
+        "review_lane": "low_positive_review",
         "review_reason": "Weak positive ranked low on validation; inspect label noise, morphology and imagery quality."
       }
     },
@@ -5051,9 +5679,13 @@
         "fusion_rank": "840",
         "max_safety_rank": "448",
         "archetype_only_rank": "351",
+        "specialist_probability": "0.39970530",
+        "specialist_rank": "597",
+        "specialist_mean_rank": "692",
         "rank_delta_fusion_to_max": "392",
         "negative_type": "",
         "morphology_proxy": "generic_castro_hint",
+        "review_lane": "morphology_rescue_review",
         "review_reason": "Weak positive ranked low on validation; inspect label noise, morphology and imagery quality."
       }
     },
@@ -5083,9 +5715,13 @@
         "fusion_rank": "830",
         "max_safety_rank": "808",
         "archetype_only_rank": "580",
+        "specialist_probability": "0.38124555",
+        "specialist_rank": "632",
+        "specialist_mean_rank": "712",
         "rank_delta_fusion_to_max": "22",
         "negative_type": "",
         "morphology_proxy": "castrel_toponym_hint",
+        "review_lane": "morphology_rescue_review",
         "review_reason": "Weak positive ranked low on validation; inspect label noise, morphology and imagery quality."
       }
     },
@@ -5115,9 +5751,13 @@
         "fusion_rank": "828",
         "max_safety_rank": "557",
         "archetype_only_rank": "420",
+        "specialist_probability": "0.14180355",
+        "specialist_rank": "1231",
+        "specialist_mean_rank": "1026",
         "rank_delta_fusion_to_max": "271",
         "negative_type": "",
         "morphology_proxy": "generic_castro_hint",
+        "review_lane": "morphology_rescue_review",
         "review_reason": "Weak positive ranked low on validation; inspect label noise, morphology and imagery quality."
       }
     },
@@ -5147,9 +5787,13 @@
         "fusion_rank": "820",
         "max_safety_rank": "1166",
         "archetype_only_rank": "1755",
+        "specialist_probability": "0.13096398",
+        "specialist_rank": "1269",
+        "specialist_mean_rank": "1045",
         "rank_delta_fusion_to_max": "-346",
         "negative_type": "",
         "morphology_proxy": "generic_castro_hint",
+        "review_lane": "low_positive_review",
         "review_reason": "Weak positive ranked low on validation; inspect label noise, morphology and imagery quality."
       }
     },
@@ -5179,9 +5823,13 @@
         "fusion_rank": "799",
         "max_safety_rank": "1135",
         "archetype_only_rank": "1190",
+        "specialist_probability": "0.46221615",
+        "specialist_rank": "521",
+        "specialist_mean_rank": "625",
         "rank_delta_fusion_to_max": "-336",
         "negative_type": "",
         "morphology_proxy": "generic_castro_hint",
+        "review_lane": "low_positive_review",
         "review_reason": "Weak positive ranked low on validation; inspect label noise, morphology and imagery quality."
       }
     },
@@ -5211,9 +5859,13 @@
         "fusion_rank": "787",
         "max_safety_rank": "398",
         "archetype_only_rank": "316",
+        "specialist_probability": "0.53231845",
+        "specialist_rank": "449",
+        "specialist_mean_rank": "552",
         "rank_delta_fusion_to_max": "389",
         "negative_type": "",
         "morphology_proxy": "generic_castro_hint",
+        "review_lane": "morphology_rescue_review",
         "review_reason": "Weak positive ranked low on validation; inspect label noise, morphology and imagery quality."
       }
     },
@@ -5243,9 +5895,13 @@
         "fusion_rank": "1843",
         "max_safety_rank": "33",
         "archetype_only_rank": "29",
+        "specialist_probability": "0.07845831",
+        "specialist_rank": "1518",
+        "specialist_mean_rank": "1747",
         "rank_delta_fusion_to_max": "1810",
         "negative_type": "",
         "morphology_proxy": "generic_castro_hint",
+        "review_lane": "morphology_rescue_review",
         "review_reason": "Weak positive moved upward by max_safety; inspect as morphology-aware training evidence."
       }
     },
@@ -5275,9 +5931,13 @@
         "fusion_rank": "1841",
         "max_safety_rank": "52",
         "archetype_only_rank": "45",
+        "specialist_probability": "0.06580545",
+        "specialist_rank": "1590",
+        "specialist_mean_rank": "1760",
         "rank_delta_fusion_to_max": "1789",
         "negative_type": "",
         "morphology_proxy": "croa_top_ring_hint",
+        "review_lane": "morphology_rescue_review",
         "review_reason": "Weak positive moved upward by max_safety; inspect as morphology-aware training evidence."
       }
     },
@@ -5307,9 +5967,13 @@
         "fusion_rank": "1842",
         "max_safety_rank": "68",
         "archetype_only_rank": "53",
+        "specialist_probability": "0.15178585",
+        "specialist_rank": "1197",
+        "specialist_mean_rank": "1587",
         "rank_delta_fusion_to_max": "1774",
         "negative_type": "",
         "morphology_proxy": "generic_castro_hint",
+        "review_lane": "morphology_rescue_review",
         "review_reason": "Weak positive moved upward by max_safety; inspect as morphology-aware training evidence."
       }
     },
@@ -5339,9 +6003,13 @@
         "fusion_rank": "1545",
         "max_safety_rank": "111",
         "archetype_only_rank": "89",
+        "specialist_probability": "0.29588960",
+        "specialist_rank": "795",
+        "specialist_mean_rank": "1128",
         "rank_delta_fusion_to_max": "1434",
         "negative_type": "",
         "morphology_proxy": "generic_castro_hint",
+        "review_lane": "morphology_rescue_review",
         "review_reason": "Weak positive moved upward by max_safety; inspect as morphology-aware training evidence."
       }
     },
@@ -5371,9 +6039,13 @@
         "fusion_rank": "1636",
         "max_safety_rank": "262",
         "archetype_only_rank": "210",
+        "specialist_probability": "0.21222451",
+        "specialist_rank": "995",
+        "specialist_mean_rank": "1324",
         "rank_delta_fusion_to_max": "1374",
         "negative_type": "",
         "morphology_proxy": "hilltop_hint",
+        "review_lane": "morphology_rescue_review",
         "review_reason": "Weak positive moved upward by max_safety; inspect as morphology-aware training evidence."
       }
     },
@@ -5403,9 +6075,13 @@
         "fusion_rank": "1447",
         "max_safety_rank": "284",
         "archetype_only_rank": "228",
+        "specialist_probability": "0.21063325",
+        "specialist_rank": "999",
+        "specialist_mean_rank": "1233",
         "rank_delta_fusion_to_max": "1163",
         "negative_type": "",
         "morphology_proxy": "hilltop_hint",
+        "review_lane": "morphology_rescue_review",
         "review_reason": "Weak positive moved upward by max_safety; inspect as morphology-aware training evidence."
       }
     },
@@ -5435,9 +6111,13 @@
         "fusion_rank": "1581",
         "max_safety_rank": "428",
         "archetype_only_rank": "336",
+        "specialist_probability": "0.24772671",
+        "specialist_rank": "901",
+        "specialist_mean_rank": "1227",
         "rank_delta_fusion_to_max": "1153",
         "negative_type": "",
         "morphology_proxy": "generic_castro_hint",
+        "review_lane": "morphology_rescue_review",
         "review_reason": "Weak positive moved upward by max_safety; inspect as morphology-aware training evidence."
       }
     },
@@ -5467,9 +6147,13 @@
         "fusion_rank": "1595",
         "max_safety_rank": "477",
         "archetype_only_rank": "366",
+        "specialist_probability": "0.08242945",
+        "specialist_rank": "1501",
+        "specialist_mean_rank": "1589",
         "rank_delta_fusion_to_max": "1118",
         "negative_type": "",
         "morphology_proxy": "generic_castro_hint",
+        "review_lane": "morphology_rescue_review",
         "review_reason": "Weak positive moved upward by max_safety; inspect as morphology-aware training evidence."
       }
     },
@@ -5499,9 +6183,13 @@
         "fusion_rank": "1120",
         "max_safety_rank": "41",
         "archetype_only_rank": "36",
+        "specialist_probability": "0.80601749",
+        "specialist_rank": "247",
+        "specialist_mean_rank": "433",
         "rank_delta_fusion_to_max": "1079",
         "negative_type": "",
         "morphology_proxy": "generic_castro_hint",
+        "review_lane": "morphology_rescue_review",
         "review_reason": "Weak positive moved upward by max_safety; inspect as morphology-aware training evidence."
       }
     },
@@ -5531,9 +6219,13 @@
         "fusion_rank": "1063",
         "max_safety_rank": "26",
         "archetype_only_rank": "23",
+        "specialist_probability": "0.72119453",
+        "specialist_rank": "297",
+        "specialist_mean_rank": "485",
         "rank_delta_fusion_to_max": "1037",
         "negative_type": "",
         "morphology_proxy": "generic_castro_hint",
+        "review_lane": "morphology_rescue_review",
         "review_reason": "Weak positive moved upward by max_safety; inspect as morphology-aware training evidence."
       }
     },
@@ -5563,9 +6255,13 @@
         "fusion_rank": "1671",
         "max_safety_rank": "686",
         "archetype_only_rank": "502",
+        "specialist_probability": "0.10886848",
+        "specialist_rank": "1366",
+        "specialist_mean_rank": "1565",
         "rank_delta_fusion_to_max": "985",
         "negative_type": "",
         "morphology_proxy": "generic_castro_hint",
+        "review_lane": "morphology_rescue_review",
         "review_reason": "Weak positive moved upward by max_safety; inspect as morphology-aware training evidence."
       }
     },
@@ -5595,9 +6291,13 @@
         "fusion_rank": "1000",
         "max_safety_rank": "102",
         "archetype_only_rank": "83",
+        "specialist_probability": "0.54223752",
+        "specialist_rank": "440",
+        "specialist_mean_rank": "601",
         "rank_delta_fusion_to_max": "898",
         "negative_type": "",
         "morphology_proxy": "generic_castro_hint",
+        "review_lane": "morphology_rescue_review",
         "review_reason": "Weak positive moved upward by max_safety; inspect as morphology-aware training evidence."
       }
     },
@@ -5627,9 +6327,13 @@
         "fusion_rank": "1044",
         "max_safety_rank": "367",
         "archetype_only_rank": "293",
+        "specialist_probability": "0.34240500",
+        "specialist_rank": "698",
+        "specialist_mean_rank": "853",
         "rank_delta_fusion_to_max": "677",
         "negative_type": "",
         "morphology_proxy": "large_castrexo_civitas_hint",
+        "review_lane": "morphology_rescue_review",
         "review_reason": "Weak positive moved upward by max_safety; inspect as morphology-aware training evidence."
       }
     },
@@ -5659,9 +6363,13 @@
         "fusion_rank": "1594",
         "max_safety_rank": "923",
         "archetype_only_rank": "655",
+        "specialist_probability": "0.09781262",
+        "specialist_rank": "1430",
+        "specialist_mean_rank": "1553",
         "rank_delta_fusion_to_max": "671",
         "negative_type": "",
         "morphology_proxy": "hilltop_hint",
+        "review_lane": "morphology_rescue_review",
         "review_reason": "Weak positive moved upward by max_safety; inspect as morphology-aware training evidence."
       }
     },
@@ -5691,9 +6399,13 @@
         "fusion_rank": "943",
         "max_safety_rank": "308",
         "archetype_only_rank": "249",
+        "specialist_probability": "0.47915719",
+        "specialist_rank": "506",
+        "specialist_mean_rank": "655",
         "rank_delta_fusion_to_max": "635",
         "negative_type": "",
         "morphology_proxy": "hilltop_hint",
+        "review_lane": "morphology_rescue_review",
         "review_reason": "Weak positive moved upward by max_safety; inspect as morphology-aware training evidence."
       }
     },
@@ -5723,9 +6435,13 @@
         "fusion_rank": "716",
         "max_safety_rank": "83",
         "archetype_only_rank": "63",
+        "specialist_probability": "0.79598377",
+        "specialist_rank": "249",
+        "specialist_mean_rank": "358",
         "rank_delta_fusion_to_max": "633",
         "negative_type": "",
         "morphology_proxy": "generic_castro_hint",
+        "review_lane": "morphology_rescue_review",
         "review_reason": "Weak positive moved upward by max_safety; inspect as morphology-aware training evidence."
       }
     },
@@ -5755,9 +6471,13 @@
         "fusion_rank": "1007",
         "max_safety_rank": "423",
         "archetype_only_rank": "332",
+        "specialist_probability": "0.66256617",
+        "specialist_rank": "335",
+        "specialist_mean_rank": "508",
         "rank_delta_fusion_to_max": "584",
         "negative_type": "",
         "morphology_proxy": "hilltop_hint",
+        "review_lane": "morphology_rescue_review",
         "review_reason": "Weak positive moved upward by max_safety; inspect as morphology-aware training evidence."
       }
     },
@@ -5787,9 +6507,13 @@
         "fusion_rank": "680",
         "max_safety_rank": "136",
         "archetype_only_rank": "109",
+        "specialist_probability": "0.41470591",
+        "specialist_rank": "578",
+        "specialist_mean_rank": "622",
         "rank_delta_fusion_to_max": "544",
         "negative_type": "",
         "morphology_proxy": "generic_castro_hint",
+        "review_lane": "morphology_rescue_review",
         "review_reason": "Weak positive moved upward by max_safety; inspect as morphology-aware training evidence."
       }
     },
@@ -5819,9 +6543,13 @@
         "fusion_rank": "1400",
         "max_safety_rank": "892",
         "archetype_only_rank": "633",
+        "specialist_probability": "0.34009741",
+        "specialist_rank": "706",
+        "specialist_mean_rank": "999",
         "rank_delta_fusion_to_max": "508",
         "negative_type": "",
         "morphology_proxy": "castrel_toponym_hint",
+        "review_lane": "morphology_rescue_review",
         "review_reason": "Weak positive moved upward by max_safety; inspect as morphology-aware training evidence."
       }
     },
@@ -5851,9 +6579,13 @@
         "fusion_rank": "529",
         "max_safety_rank": "22",
         "archetype_only_rank": "21",
+        "specialist_probability": "0.92441318",
+        "specialist_rank": "155",
+        "specialist_mean_rank": "269",
         "rank_delta_fusion_to_max": "507",
         "negative_type": "",
         "morphology_proxy": "generic_castro_hint",
+        "review_lane": "morphology_rescue_review",
         "review_reason": "Weak positive moved upward by max_safety; inspect as morphology-aware training evidence."
       }
     },
@@ -5883,9 +6615,13 @@
         "fusion_rank": "872",
         "max_safety_rank": "373",
         "archetype_only_rank": "298",
+        "specialist_probability": "0.28870568",
+        "specialist_rank": "809",
+        "specialist_mean_rank": "844",
         "rank_delta_fusion_to_max": "499",
         "negative_type": "",
         "morphology_proxy": "coastal_promontory_hint",
+        "review_lane": "morphology_rescue_review",
         "review_reason": "Weak positive moved upward by max_safety; inspect as morphology-aware training evidence."
       }
     },
@@ -5915,9 +6651,13 @@
         "fusion_rank": "1763",
         "max_safety_rank": "1310",
         "archetype_only_rank": "936",
+        "specialist_probability": "0.04119979",
+        "specialist_rank": "1722",
+        "specialist_mean_rank": "1750",
         "rank_delta_fusion_to_max": "453",
         "negative_type": "",
         "morphology_proxy": "generic_castro_hint",
+        "review_lane": "morphology_rescue_review",
         "review_reason": "Weak positive moved upward by max_safety; inspect as morphology-aware training evidence."
       }
     },
@@ -5947,9 +6687,13 @@
         "fusion_rank": "568",
         "max_safety_rank": "121",
         "archetype_only_rank": "100",
+        "specialist_probability": "0.69514917",
+        "specialist_rank": "308",
+        "specialist_mean_rank": "377",
         "rank_delta_fusion_to_max": "447",
         "negative_type": "",
         "morphology_proxy": "generic_castro_hint",
+        "review_lane": "morphology_rescue_review",
         "review_reason": "Weak positive moved upward by max_safety; inspect as morphology-aware training evidence."
       }
     },
@@ -5979,9 +6723,13 @@
         "fusion_rank": "999",
         "max_safety_rank": "565",
         "archetype_only_rank": "426",
+        "specialist_probability": "0.29259366",
+        "specialist_rank": "801",
+        "specialist_mean_rank": "902",
         "rank_delta_fusion_to_max": "434",
         "negative_type": "",
         "morphology_proxy": "hilltop_hint",
+        "review_lane": "morphology_rescue_review",
         "review_reason": "Weak positive moved upward by max_safety; inspect as morphology-aware training evidence."
       }
     },
@@ -6011,9 +6759,13 @@
         "fusion_rank": "840",
         "max_safety_rank": "448",
         "archetype_only_rank": "351",
+        "specialist_probability": "0.39970530",
+        "specialist_rank": "597",
+        "specialist_mean_rank": "692",
         "rank_delta_fusion_to_max": "392",
         "negative_type": "",
         "morphology_proxy": "generic_castro_hint",
+        "review_lane": "morphology_rescue_review",
         "review_reason": "Weak positive moved upward by max_safety; inspect as morphology-aware training evidence."
       }
     },
@@ -6043,9 +6795,13 @@
         "fusion_rank": "787",
         "max_safety_rank": "398",
         "archetype_only_rank": "316",
+        "specialist_probability": "0.53231845",
+        "specialist_rank": "449",
+        "specialist_mean_rank": "552",
         "rank_delta_fusion_to_max": "389",
         "negative_type": "",
         "morphology_proxy": "generic_castro_hint",
+        "review_lane": "morphology_rescue_review",
         "review_reason": "Weak positive moved upward by max_safety; inspect as morphology-aware training evidence."
       }
     },
@@ -6075,9 +6831,13 @@
         "fusion_rank": "1374",
         "max_safety_rank": "994",
         "archetype_only_rank": "701",
+        "specialist_probability": "0.27372529",
+        "specialist_rank": "837",
+        "specialist_mean_rank": "1090",
         "rank_delta_fusion_to_max": "380",
         "negative_type": "",
         "morphology_proxy": "generic_castro_hint",
+        "review_lane": "morphology_rescue_review",
         "review_reason": "Weak positive moved upward by max_safety; inspect as morphology-aware training evidence."
       }
     },
@@ -6107,9 +6867,13 @@
         "fusion_rank": "635",
         "max_safety_rank": "266",
         "archetype_only_rank": "212",
+        "specialist_probability": "0.26228156",
+        "specialist_rank": "867",
+        "specialist_mean_rank": "758",
         "rank_delta_fusion_to_max": "369",
         "negative_type": "",
         "morphology_proxy": "generic_castro_hint",
+        "review_lane": "morphology_rescue_review",
         "review_reason": "Weak positive moved upward by max_safety; inspect as morphology-aware training evidence."
       }
     },
@@ -6139,9 +6903,13 @@
         "fusion_rank": "892",
         "max_safety_rank": "532",
         "archetype_only_rank": "402",
+        "specialist_probability": "0.36450837",
+        "specialist_rank": "660",
+        "specialist_mean_rank": "754",
         "rank_delta_fusion_to_max": "360",
         "negative_type": "",
         "morphology_proxy": "generic_castro_hint",
+        "review_lane": "morphology_rescue_review",
         "review_reason": "Weak positive moved upward by max_safety; inspect as morphology-aware training evidence."
       }
     },
@@ -6171,9 +6939,13 @@
         "fusion_rank": "1369",
         "max_safety_rank": "1032",
         "archetype_only_rank": "724",
+        "specialist_probability": "0.23937453",
+        "specialist_rank": "923",
+        "specialist_mean_rank": "1147",
         "rank_delta_fusion_to_max": "337",
         "negative_type": "",
         "morphology_proxy": "generic_castro_hint",
+        "review_lane": "morphology_rescue_review",
         "review_reason": "Weak positive moved upward by max_safety; inspect as morphology-aware training evidence."
       }
     },
@@ -6203,9 +6975,13 @@
         "fusion_rank": "485",
         "max_safety_rank": "185",
         "archetype_only_rank": "151",
+        "specialist_probability": "0.42431973",
+        "specialist_rank": "566",
+        "specialist_mean_rank": "527",
         "rank_delta_fusion_to_max": "300",
         "negative_type": "",
         "morphology_proxy": "generic_castro_hint",
+        "review_lane": "morphology_rescue_review",
         "review_reason": "Weak positive moved upward by max_safety; inspect as morphology-aware training evidence."
       }
     },
@@ -6235,9 +7011,13 @@
         "fusion_rank": "360",
         "max_safety_rank": "85",
         "archetype_only_rank": "64",
+        "specialist_probability": "0.98384263",
+        "specialist_rank": "71",
+        "specialist_mean_rank": "207",
         "rank_delta_fusion_to_max": "275",
         "negative_type": "",
         "morphology_proxy": "croa_top_ring_hint",
+        "review_lane": "morphology_rescue_review",
         "review_reason": "Weak positive moved upward by max_safety; inspect as morphology-aware training evidence."
       }
     },
@@ -6267,9 +7047,13 @@
         "fusion_rank": "828",
         "max_safety_rank": "557",
         "archetype_only_rank": "420",
+        "specialist_probability": "0.14180355",
+        "specialist_rank": "1231",
+        "specialist_mean_rank": "1026",
         "rank_delta_fusion_to_max": "271",
         "negative_type": "",
         "morphology_proxy": "generic_castro_hint",
+        "review_lane": "morphology_rescue_review",
         "review_reason": "Weak positive moved upward by max_safety; inspect as morphology-aware training evidence."
       }
     },
@@ -6299,9 +7083,13 @@
         "fusion_rank": "593",
         "max_safety_rank": "343",
         "archetype_only_rank": "272",
+        "specialist_probability": "0.55070327",
+        "specialist_rank": "429",
+        "specialist_mean_rank": "475",
         "rank_delta_fusion_to_max": "250",
         "negative_type": "",
         "morphology_proxy": "generic_castro_hint",
+        "review_lane": "morphology_rescue_review",
         "review_reason": "Weak positive moved upward by max_safety; inspect as morphology-aware training evidence."
       }
     },
@@ -6331,9 +7119,13 @@
         "fusion_rank": "517",
         "max_safety_rank": "275",
         "archetype_only_rank": "220",
+        "specialist_probability": "0.86546890",
+        "specialist_rank": "203",
+        "specialist_mean_rank": "287",
         "rank_delta_fusion_to_max": "242",
         "negative_type": "",
         "morphology_proxy": "generic_castro_hint",
+        "review_lane": "morphology_rescue_review",
         "review_reason": "Weak positive moved upward by max_safety; inspect as morphology-aware training evidence."
       }
     },
@@ -6363,9 +7155,13 @@
         "fusion_rank": "271",
         "max_safety_rank": "40",
         "archetype_only_rank": "34",
+        "specialist_probability": "0.58456270",
+        "specialist_rank": "393",
+        "specialist_mean_rank": "328",
         "rank_delta_fusion_to_max": "231",
         "negative_type": "",
         "morphology_proxy": "coastal_promontory_hint",
+        "review_lane": "morphology_rescue_review",
         "review_reason": "Weak positive moved upward by max_safety; inspect as morphology-aware training evidence."
       }
     },
@@ -6395,9 +7191,13 @@
         "fusion_rank": "1825",
         "max_safety_rank": "1613",
         "archetype_only_rank": "1269",
+        "specialist_probability": "0.03113617",
+        "specialist_rank": "1770",
+        "specialist_mean_rank": "1815",
         "rank_delta_fusion_to_max": "212",
         "negative_type": "",
         "morphology_proxy": "generic_castro_hint",
+        "review_lane": "morphology_rescue_review",
         "review_reason": "Weak positive moved upward by max_safety; inspect as morphology-aware training evidence."
       }
     },
@@ -6427,9 +7227,13 @@
         "fusion_rank": "223",
         "max_safety_rank": "17",
         "archetype_only_rank": "17",
+        "specialist_probability": "0.99659370",
+        "specialist_rank": "35",
+        "specialist_mean_rank": "161",
         "rank_delta_fusion_to_max": "206",
         "negative_type": "",
         "morphology_proxy": "coastal_promontory_hint",
+        "review_lane": "morphology_rescue_review",
         "review_reason": "Weak positive moved upward by max_safety; inspect as morphology-aware training evidence."
       }
     },
@@ -6459,9 +7263,13 @@
         "fusion_rank": "636",
         "max_safety_rank": "440",
         "archetype_only_rank": "347",
+        "specialist_probability": "0.28002483",
+        "specialist_rank": "829",
+        "specialist_mean_rank": "735",
         "rank_delta_fusion_to_max": "196",
         "negative_type": "",
         "morphology_proxy": "generic_castro_hint",
+        "review_lane": "morphology_rescue_review",
         "review_reason": "Weak positive moved upward by max_safety; inspect as morphology-aware training evidence."
       }
     },
@@ -6491,9 +7299,13 @@
         "fusion_rank": "348",
         "max_safety_rank": "166",
         "archetype_only_rank": "131",
+        "specialist_probability": "0.92790170",
+        "specialist_rank": "148",
+        "specialist_mean_rank": "228",
         "rank_delta_fusion_to_max": "182",
         "negative_type": "",
         "morphology_proxy": "generic_castro_hint",
+        "review_lane": "morphology_rescue_review",
         "review_reason": "Weak positive moved upward by max_safety; inspect as morphology-aware training evidence."
       }
     },
@@ -6523,9 +7335,13 @@
         "fusion_rank": "215",
         "max_safety_rank": "64",
         "archetype_only_rank": "52",
+        "specialist_probability": "0.95434089",
+        "specialist_rank": "118",
+        "specialist_mean_rank": "169",
         "rank_delta_fusion_to_max": "151",
         "negative_type": "",
         "morphology_proxy": "generic_castro_hint",
+        "review_lane": "morphology_rescue_review",
         "review_reason": "Weak positive moved upward by max_safety; inspect as morphology-aware training evidence."
       }
     },
@@ -6555,9 +7371,13 @@
         "fusion_rank": "158",
         "max_safety_rank": "12",
         "archetype_only_rank": "12",
+        "specialist_probability": "0.87056269",
+        "specialist_rank": "201",
+        "specialist_mean_rank": "173",
         "rank_delta_fusion_to_max": "146",
         "negative_type": "",
         "morphology_proxy": "coastal_promontory_hint",
+        "review_lane": "morphology_rescue_review",
         "review_reason": "Weak positive moved upward by max_safety; inspect as morphology-aware training evidence."
       }
     },
@@ -6587,9 +7407,13 @@
         "fusion_rank": "672",
         "max_safety_rank": "528",
         "archetype_only_rank": "399",
+        "specialist_probability": "0.50708887",
+        "specialist_rank": "474",
+        "specialist_mean_rank": "538",
         "rank_delta_fusion_to_max": "144",
         "negative_type": "",
         "morphology_proxy": "generic_castro_hint",
+        "review_lane": "morphology_rescue_review",
         "review_reason": "Weak positive moved upward by max_safety; inspect as morphology-aware training evidence."
       }
     },
@@ -6619,9 +7443,13 @@
         "fusion_rank": "216",
         "max_safety_rank": "74",
         "archetype_only_rank": "57",
+        "specialist_probability": "0.82602704",
+        "specialist_rank": "235",
+        "specialist_mean_rank": "213",
         "rank_delta_fusion_to_max": "142",
         "negative_type": "",
         "morphology_proxy": "generic_castro_hint",
+        "review_lane": "morphology_rescue_review",
         "review_reason": "Weak positive moved upward by max_safety; inspect as morphology-aware training evidence."
       }
     },
@@ -6651,9 +7479,13 @@
         "fusion_rank": "874",
         "max_safety_rank": "739",
         "archetype_only_rank": "531",
+        "specialist_probability": "0.33638880",
+        "specialist_rank": "709",
+        "specialist_mean_rank": "780",
         "rank_delta_fusion_to_max": "135",
         "negative_type": "",
         "morphology_proxy": "generic_castro_hint",
+        "review_lane": "morphology_rescue_review",
         "review_reason": "Weak positive moved upward by max_safety; inspect as morphology-aware training evidence."
       }
     },
@@ -6683,9 +7515,13 @@
         "fusion_rank": "252",
         "max_safety_rank": "126",
         "archetype_only_rank": "104",
+        "specialist_probability": "0.71039124",
+        "specialist_rank": "299",
+        "specialist_mean_rank": "266",
         "rank_delta_fusion_to_max": "126",
         "negative_type": "",
         "morphology_proxy": "generic_castro_hint",
+        "review_lane": "morphology_rescue_review",
         "review_reason": "Weak positive moved upward by max_safety; inspect as morphology-aware training evidence."
       }
     },
@@ -6715,9 +7551,13 @@
         "fusion_rank": "552",
         "max_safety_rank": "429",
         "archetype_only_rank": "337",
+        "specialist_probability": "0.67109452",
+        "specialist_rank": "329",
+        "specialist_mean_rank": "383",
         "rank_delta_fusion_to_max": "123",
         "negative_type": "",
         "morphology_proxy": "generic_castro_hint",
+        "review_lane": "morphology_rescue_review",
         "review_reason": "Weak positive moved upward by max_safety; inspect as morphology-aware training evidence."
       }
     },
@@ -6747,9 +7587,13 @@
         "fusion_rank": "229",
         "max_safety_rank": "122",
         "archetype_only_rank": "101",
+        "specialist_probability": "0.97318041",
+        "specialist_rank": "96",
+        "specialist_mean_rank": "168",
         "rank_delta_fusion_to_max": "107",
         "negative_type": "",
         "morphology_proxy": "hilltop_hint",
+        "review_lane": "morphology_rescue_review",
         "review_reason": "Weak positive moved upward by max_safety; inspect as morphology-aware training evidence."
       }
     },
@@ -6779,9 +7623,13 @@
         "fusion_rank": "113",
         "max_safety_rank": "29",
         "archetype_only_rank": "26",
+        "specialist_probability": "0.99588773",
+        "specialist_rank": "42",
+        "specialist_mean_rank": "88",
         "rank_delta_fusion_to_max": "84",
         "negative_type": "",
         "morphology_proxy": "hilltop_hint",
+        "review_lane": "morphology_rescue_review",
         "review_reason": "Weak positive moved upward by max_safety; inspect as morphology-aware training evidence."
       }
     },
@@ -6811,9 +7659,13 @@
         "fusion_rank": "363",
         "max_safety_rank": "282",
         "archetype_only_rank": "227",
+        "specialist_probability": "0.76842607",
+        "specialist_rank": "265",
+        "specialist_mean_rank": "281",
         "rank_delta_fusion_to_max": "81",
         "negative_type": "",
         "morphology_proxy": "generic_castro_hint",
+        "review_lane": "morphology_rescue_review",
         "review_reason": "Weak positive moved upward by max_safety; inspect as morphology-aware training evidence."
       }
     }

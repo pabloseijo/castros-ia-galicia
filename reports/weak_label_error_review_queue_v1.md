@@ -23,14 +23,15 @@ It turns model errors into inspection tasks: high-ranked hard negatives, low-ran
 
 ## O Val Rows In Queue
 
-| Queue | Fusion rank | Max-safety rank | Delta | Class | Name | Reason |
-|---|---:|---:|---:|---:|---|---|
-| `holdout_top_false_positives` | 80 | 99 | -19 | 0 | `Mámoa do Val/Mámoa de Santa Margarida` | Known hard negative ranked high by the main fusion model; inspect as false-positive pattern. |
-| `holdout_low_rank_positives` | 199 | 72 | 127 | 1 | `Castro de Pena Lopesa` | Known positive ranked low by the main fusion model; inspect as false-negative morphology. |
-| `holdout_morphology_rescues` | 199 | 72 | 127 | 1 | `Castro de Pena Lopesa` | Known positive moved upward by max_safety; inspect morphology archetype missed by the main model. |
+| Queue | Lane | Fusion rank | Max-safety rank | Specialist rank | Mean rank | Delta | Class | Name | Reason |
+|---|---|---:|---:|---:|---:|---:|---:|---|---|
+| `holdout_top_false_positives` | `mamoa_false_positive_review` | 80 | 99 | 95 | 90 | -19 | 0 | `Mámoa do Val/Mámoa de Santa Margarida` | Known hard negative ranked high by the main fusion model; inspect as false-positive pattern. |
+| `holdout_low_rank_positives` | `mamoa_specialist_positive_review` | 199 | 72 | 2 | 51 | 127 | 1 | `Castro de Pena Lopesa` | Known positive ranked low by the main fusion model; inspect as false-negative morphology. |
+| `holdout_morphology_rescues` | `mamoa_specialist_positive_review` | 199 | 72 | 2 | 51 | 127 | 1 | `Castro de Pena Lopesa` | Known positive moved upward by max_safety; inspect morphology archetype missed by the main model. |
 
 ## Interpretation
 
 - Start QGIS inspection with `holdout_top_false_positives` and `holdout_low_rank_positives`; these explain what the model confuses in the local target area.
 - Use `holdout_morphology_rescues` as the sanity check for rare forms such as `Castro de Pena Lopesa`.
+- Use `mamoa_false_positive_review` and `mamoa_specialist_positive_review` to separate castro-vs-mamoa confusion from general morphology failure.
 - Validation queues are weak-label queues, not archaeological truth: a high-ranked negative may be a mislabeled absence, not a model error.

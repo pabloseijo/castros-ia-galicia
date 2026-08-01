@@ -71,11 +71,11 @@ This is inspection material for deciding what the model confuses; it is not a di
 
 ## O Val Focus
 
-| Queue | Rank fusion | Rank max | Delta | Class | Name | Focus |
-|---|---:|---:|---:|---:|---|---|
-| `holdout_top_false_positives` | 80 | 99 | -19 | 0 | `Mámoa do Val/Mámoa de Santa Margarida` | negative high in fusion; inspect recurring distractor type |
-| `holdout_low_rank_positives` | 199 | 72 | 127 | 1 | `Castro de Pena Lopesa` | positive low in fusion; inspect visibility, centering and morphology |
-| `holdout_morphology_rescues` | 199 | 72 | 127 | 1 | `Castro de Pena Lopesa` | positive rescued by morphology channel; inspect archetype pattern |
+| Queue | Lane | Rank fusion | Rank max | Specialist rank | Mean rank | Delta | Class | Name | Focus |
+|---|---|---:|---:|---:|---:|---:|---:|---|---|
+| `holdout_top_false_positives` | `mamoa_false_positive_review` | 80 | 99 | 95 | 90 | -19 | 0 | `Mámoa do Val/Mámoa de Santa Margarida` | negative high in fusion; inspect recurring distractor type |
+| `holdout_low_rank_positives` | `mamoa_specialist_positive_review` | 199 | 72 | 2 | 51 | 127 | 1 | `Castro de Pena Lopesa` | positive low in fusion; inspect visibility, centering and morphology |
+| `holdout_morphology_rescues` | `mamoa_specialist_positive_review` | 199 | 72 | 2 | 51 | 127 | 1 | `Castro de Pena Lopesa` | positive rescued by morphology channel; inspect archetype pattern |
 
 ## Reading
 
