@@ -1,0 +1,9 @@
+taxonomy_label	group	training_use	definition	decision_rule
+castro	positive	positive_candidate_after_boundary_review	Recinto castrexo plausible: croa, muralla, foso, terraplén o plataforma coherente con castro.	Aceptar solo con forma/contexto suficiente; si no hay límite visible, dejar como needs_followup.
+mamoa	hard_negative_archaeological	hard_negative_not_absence	Túmulo megalítico o monumento funerario no-castro.	No usar como ausencia arqueológica; sirve para separar castro frente a monumento circular.
+petroglifo	hard_negative_archaeological	hard_negative_not_absence	Superficie de arte rupestre o entidad catalogada de arte rupestre.	Mantener como no-castro arqueológico; no convertir en fondo negativo genérico.
+fortificacion_historica	hard_negative_archaeological	hard_negative_not_absence	Fortificación histórica no castrexa.	Separar de castros por cronología/tipo; puede compartir señal defensiva.
+cantera_mina	hard_negative_modern_or_extractiva	hard_negative_if_confirmed	Corte extractivo, cantera, mina o alteración de terreno no arqueológica.	Aceptar como negativo si PNOA/LiDAR/contexto no sugieren estructura arqueológica.
+ruido_moderno	hard_negative_modern	hard_negative_if_confirmed	Carretera, urbanización, edificio, depósito, pista forestal u otra forma moderna.	Aceptar como negativo tras comprobación visual clara.
+outro_arqueologico	hard_negative_archaeological	hard_negative_not_absence	Elemento arqueológico no-castro que no encaja en las categorías anteriores.	No tratar como fondo; revisar si debe tener especialista propio.
+non_decidible	uncertain	exclude_until_reviewed	Caso ambiguo, sin señal suficiente o con imagen/relieve insuficiente.	Excluir de entrenamiento fuerte hasta revisión adicional.

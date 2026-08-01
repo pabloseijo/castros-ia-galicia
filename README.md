@@ -25,6 +25,7 @@ El objetivo no es declarar nuevos yacimientos por IA. El objetivo defendible es 
 - Manifiesto de ventanas raster: 48 tiles candidatos de 512 m.
 - Readiness de entrenamiento: bloqueado hasta tener polígonos/negativos revisados.
 - Mapa web estático de inspección rápida.
+- Workspace QGIS de errores weak-label por carriles: `213` tareas, `177` puntos únicos y `30` puntos únicos P0 de primera pasada.
 
 O Val queda como holdout narrativo. No se usa para entrenar en la primera versión.
 
@@ -84,6 +85,7 @@ make repo-drift
 make sync-wiki
 make agent-list
 make agent-run
+make weak-label-error-review-workspace
 make verify
 ```
 
@@ -152,6 +154,8 @@ El siguiente paso real es revisar las tareas P0, ajustar buffers a polígonos re
 - `reports/viladonga_pnoa_shape_baseline.md`: baseline PNOA de señal de borde/textura contra plantilla de forma castrexa.
 - `reports/viladonga_relief_shape_baseline.md`: baseline de forma sobre DEM, slope, hillshade y LRM.
 - `reports/viladonga_radial_relief_profile.md`: perfiles/anillos radiales de relieve para separar señal de talud de topografía general.
+- `reports/weak_label_error_review_workspace_v1.md`: workspace QGIS por carriles `review_lane`.
+- `data/weak-label-error-review-workspace-v1/weak_label_error_review_workspace_v1.gpkg`: capas QGIS `p0_unique_first_pass`, `lane_mamoa_false_positive`, `lane_mamoa_specialist_positive`, `lane_morphology_rescue`, etc.
 - `data/review-queues/`: colas TSV por prioridad.
 - `data/raster-prep/candidate_raster_tiles.tsv`: manifiesto de tiles.
 - `data/raster-prep/pnoa_preview_urls.tsv`: enlaces WMS PNOA de solo revisión para cada ventana candidata.
@@ -175,6 +179,19 @@ Para revisar ortofoto PNOA oficial por ventana candidata:
 `webmap/pnoa_preview_index.html`
 
 Ese índice solo prepara enlaces/miniaturas WMS. No descarga rasters fuente ni convierte candidatos en entrenamiento.
+
+Para revisar errores weak-label por carriles:
+
+`data/weak-label-error-review-workspace-v1/weak_label_error_review_workspace_v1.gpkg`
+
+Orden práctico dentro del GPKG:
+
+1. `p0_unique_first_pass`
+2. `lane_mamoa_false_positive`
+3. `lane_mamoa_specialist_positive`
+4. `lane_morphology_rescue`
+
+Campos clave: `review_lane`, `duplicate_count`, `suggested_taxonomy`, `specialist_rank`, `fusion_rank`, `max_safety_rank`.
 
 Cuando existan polígonos aceptados en QGIS, exportar chips PNOA:
 

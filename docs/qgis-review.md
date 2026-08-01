@@ -27,6 +27,31 @@ Los buffers generados no son etiquetas finales.
 Los puntos PBA son candidatos oficiales de localización/reconciliación; tampoco son etiquetas finales.
 Los puntos de equivalencia posible solo sirven para decidir si una fila clásica debe fusionarse o descartarse frente a un registro más fuerte.
 
+## Revisión De Errores Weak-Label
+
+Para revisar los errores de la fusión RGB+relieve por carriles, abrir:
+
+`data/weak-label-error-review-workspace-v1/weak_label_error_review_workspace_v1.gpkg`
+
+Capas recomendadas:
+
+1. `p0_unique_first_pass`
+2. `lane_mamoa_false_positive`
+3. `lane_mamoa_specialist_positive`
+4. `lane_morphology_rescue`
+5. `unique_error_review_points`
+
+Campos clave:
+
+- `review_lane`: tipo de fallo o rescate.
+- `duplicate_count`: si el mismo punto aparece en más de una cola.
+- `suggested_taxonomy`: taxonomía inicial, no verdad final.
+- `specialist_rank`: ranking del especialista castro-vs-mámoa.
+- `fusion_rank`: ranking de la fusión principal.
+- `max_safety_rank`: ranking de rescate morfológico.
+
+La tabla `error_review_decisions` es una plantilla de decisión. No convierte automáticamente un punto en etiqueta de entrenamiento: las etiquetas fuertes siguen entrando por `labels_reviewed` y `negative_areas_reviewed`.
+
 ## Campos recomendados
 
 En `labels_reviewed`:

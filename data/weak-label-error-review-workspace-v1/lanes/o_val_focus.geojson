@@ -1,0 +1,152 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.20522866984784,
+          43.546610330164974
+        ]
+      },
+      "properties": {
+        "review_id": "err-review-0023",
+        "sample_review_key": "wl-neg-neg-es-pba-14299",
+        "duplicate_count": "1",
+        "duplicate_queues": "holdout_top_false_positives",
+        "review_priority": "P0",
+        "queue": "holdout_top_false_positives",
+        "priority_order": "24",
+        "review_lane": "mamoa_false_positive_review",
+        "dataset": "holdouts",
+        "final_split": "test_o_val",
+        "sample_id": "wl-neg-neg-es-pba-14299",
+        "bank_id": "neg-es-pba-14299",
+        "label_class": "0",
+        "label_role": "hard_negative",
+        "suggested_taxonomy": "mamoa",
+        "suggested_decision": "confirm_non_castro_archaeological_hard_negative",
+        "boundary_action": "Confirm mound/non-castro; do not treat as generic absence.",
+        "review_status": "pending",
+        "final_taxonomy": "",
+        "final_decision": "",
+        "name": "Mámoa do Val/Mámoa de Santa Margarida",
+        "municipality": "Narón",
+        "parish": "O Val (Santa María A Maior)",
+        "country": "ES",
+        "fusion_probability": "0.32277415",
+        "fusion_rank": "80",
+        "max_safety_rank": "99",
+        "archetype_only_rank": "83",
+        "specialist_probability": "0.25713143",
+        "specialist_rank": "95",
+        "specialist_mean_rank": "90",
+        "rank_delta_fusion_to_max": "-19",
+        "negative_type": "megalithic_mound",
+        "morphology_proxy": "",
+        "visual_sheet": "reports/figures/weak_label_error_review_v1/holdout-top-false-positives.png",
+        "review_reason": "Known hard negative ranked high by the main fusion model; inspect as false-positive pattern.",
+        "review_notes": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.22594601477777,
+          43.57701844556937
+        ]
+      },
+      "properties": {
+        "review_id": "err-review-0025",
+        "sample_review_key": "wl-pos-pos-es-pba-14588",
+        "duplicate_count": "2",
+        "duplicate_queues": "holdout_low_rank_positives;holdout_morphology_rescues",
+        "review_priority": "P0",
+        "queue": "holdout_low_rank_positives",
+        "priority_order": "1",
+        "review_lane": "mamoa_specialist_positive_review",
+        "dataset": "holdouts",
+        "final_split": "test_o_val",
+        "sample_id": "wl-pos-pos-es-pba-14588",
+        "bank_id": "pos-es-pba-14588",
+        "label_class": "1",
+        "label_role": "positive",
+        "suggested_taxonomy": "castro",
+        "suggested_decision": "inspect_as_positive_rescue",
+        "boundary_action": "If visible, draw croa/muralla/recinto polygon; otherwise mark needs_followup.",
+        "review_status": "pending",
+        "final_taxonomy": "",
+        "final_decision": "",
+        "name": "Castro de Pena Lopesa",
+        "municipality": "Narón",
+        "parish": "O Val (Santa María A Maior)",
+        "country": "ES",
+        "fusion_probability": "0.06230073",
+        "fusion_rank": "199",
+        "max_safety_rank": "72",
+        "archetype_only_rank": "47",
+        "specialist_probability": "1.00000000",
+        "specialist_rank": "2",
+        "specialist_mean_rank": "51",
+        "rank_delta_fusion_to_max": "127",
+        "negative_type": "",
+        "morphology_proxy": "hilltop_hint",
+        "visual_sheet": "reports/figures/weak_label_error_review_v1/holdout-low-rank-positives.png",
+        "review_reason": "Known positive ranked low by the main fusion model; inspect as false-negative morphology.",
+        "review_notes": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.22594601477777,
+          43.57701844556937
+        ]
+      },
+      "properties": {
+        "review_id": "err-review-0028",
+        "sample_review_key": "wl-pos-pos-es-pba-14588",
+        "duplicate_count": "2",
+        "duplicate_queues": "holdout_low_rank_positives;holdout_morphology_rescues",
+        "review_priority": "P0",
+        "queue": "holdout_morphology_rescues",
+        "priority_order": "1",
+        "review_lane": "mamoa_specialist_positive_review",
+        "dataset": "holdouts",
+        "final_split": "test_o_val",
+        "sample_id": "wl-pos-pos-es-pba-14588",
+        "bank_id": "pos-es-pba-14588",
+        "label_class": "1",
+        "label_role": "positive",
+        "suggested_taxonomy": "castro",
+        "suggested_decision": "inspect_as_positive_rescue",
+        "boundary_action": "If visible, draw croa/muralla/recinto polygon; otherwise mark needs_followup.",
+        "review_status": "pending",
+        "final_taxonomy": "",
+        "final_decision": "",
+        "name": "Castro de Pena Lopesa",
+        "municipality": "Narón",
+        "parish": "O Val (Santa María A Maior)",
+        "country": "ES",
+        "fusion_probability": "0.06230073",
+        "fusion_rank": "199",
+        "max_safety_rank": "72",
+        "archetype_only_rank": "47",
+        "specialist_probability": "1.00000000",
+        "specialist_rank": "2",
+        "specialist_mean_rank": "51",
+        "rank_delta_fusion_to_max": "127",
+        "negative_type": "",
+        "morphology_proxy": "hilltop_hint",
+        "visual_sheet": "reports/figures/weak_label_error_review_v1/holdout-morphology-rescues.png",
+        "review_reason": "Known positive moved upward by max_safety; inspect morphology archetype missed by the main model.",
+        "review_notes": ""
+      }
+    }
+  ]
+}
