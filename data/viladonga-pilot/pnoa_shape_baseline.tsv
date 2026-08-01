@@ -1,0 +1,10 @@
+chip_id	label_class	label_kind	template_source	boundary_pixels	context_pixels	edge_boundary_mean	edge_context_mean	edge_ratio	texture_boundary_std	texture_context_std	texture_ratio	luminance_inside_mean	luminance_context_mean	luminance_delta	edge_ratio_rank_desc	status	error
+viladonga-pnoa-positive-1	1	positive	actual_positive_mask	17002	74568	0.384594	0.402506	0.955498	0.183149	0.142609	1.284275	0.634594	0.369195	0.265399	2	ok	
+viladonga-pnoa-negative-2	0	negative	centered_positive_template	17002	74568	0.393670	0.404327	0.973643	0.144706	0.186781	0.774736	0.562023	0.429158	0.132864	1	ok	
+viladonga-pnoa-negative-3	0	negative	centered_positive_template	17002	74568	0.244212	0.290899	0.839508	0.127431	0.157564	0.808759	0.497305	0.501755	-0.004450	7	ok	
+viladonga-pnoa-negative-4	0	negative	centered_positive_template	17002	74568	0.144632	0.201640	0.717276	0.057786	0.134986	0.428089	0.695024	0.620557	0.074468	9	ok	
+viladonga-pnoa-negative-5	0	negative	centered_positive_template	17002	74568	0.257246	0.347546	0.740180	0.095451	0.144697	0.659663	0.393472	0.469601	-0.076129	8	ok	
+viladonga-pnoa-negative-6	0	negative	centered_positive_template	17002	74568	0.348140	0.375113	0.928095	0.136576	0.143339	0.952819	0.375831	0.364140	0.011691	3	ok	
+viladonga-pnoa-negative-7	0	negative	centered_positive_template	17002	74568	0.321879	0.365328	0.881069	0.117342	0.164975	0.711272	0.467881	0.407109	0.060772	4	ok	
+viladonga-pnoa-negative-8	0	negative	centered_positive_template	17002	74568	0.363991	0.433166	0.840304	0.160321	0.165745	0.967273	0.379124	0.438049	-0.058926	6	ok	
+viladonga-pnoa-negative-9	0	negative	centered_positive_template	17002	74568	0.264721	0.306362	0.864082	0.210062	0.223936	0.938046	0.623109	0.497464	0.125644	5	ok	

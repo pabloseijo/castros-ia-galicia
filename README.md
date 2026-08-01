@@ -69,6 +69,7 @@ make viladonga-relief-wcs
 make viladonga-lidar-derivatives
 make viladonga-pnoa-chips
 make viladonga-mask-quality
+make viladonga-shape-baseline
 make viladonga-pilot
 make pba-unlock
 make pba-review
@@ -101,6 +102,7 @@ make viladonga-relief-wcs
 make viladonga-lidar-derivatives
 make viladonga-pnoa-chips
 make viladonga-mask-quality
+make viladonga-shape-baseline
 ```
 
 Documentación: `docs/viladonga-morphology-pilot.md`.
@@ -139,6 +141,7 @@ El siguiente paso real es revisar las tareas P0, ajustar buffers a polígonos re
 - `reports/viladonga_laz_tile_blocker.md`: teselas LAZ correctas que faltan para relieve LiDAR fino.
 - `reports/viladonga_pnoa_chips.md`: chips PNOA y máscaras de segmentación para Viladonga.
 - `reports/viladonga_mask_quality.md`: auditoría de presencia, binariedad y geometría raster de las máscaras Viladonga.
+- `reports/viladonga_pnoa_shape_baseline.md`: baseline PNOA de señal de borde/textura contra plantilla de forma castrexa.
 - `data/review-queues/`: colas TSV por prioridad.
 - `data/raster-prep/candidate_raster_tiles.tsv`: manifiesto de tiles.
 - `data/raster-prep/pnoa_preview_urls.tsv`: enlaces WMS PNOA de solo revisión para cada ventana candidata.
