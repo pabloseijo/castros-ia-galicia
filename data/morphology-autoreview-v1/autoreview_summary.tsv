@@ -1,0 +1,49 @@
+dataset	field	value	count
+p0_all	review_role	negative	459
+p0_all	review_role	positive	380
+p0_all	country	ES	488
+p0_all	country	PT	351
+p0_all	province_or_district	A Coruña	129
+p0_all	province_or_district	Braga	97
+p0_all	province_or_district	Bragança	42
+p0_all	province_or_district	Lugo	160
+p0_all	province_or_district	Ourense	88
+p0_all	province_or_district	Pontevedra	111
+p0_all	province_or_district	Porto	72
+p0_all	province_or_district	Viana do Castelo	98
+p0_all	province_or_district	Vila Real	42
+p0_all	morphology_proxy	coastal_promontory_hint	176
+p0_all	morphology_proxy	earthwork_or_wall_hint	180
+p0_all	morphology_proxy	large_castrexo_civitas_hint	24
+p0_all	negative_type	historic_fortification	81
+p0_all	negative_type	historic_fortification;roman_built_context	2
+p0_all	negative_type	megalithic_mound	352
+p0_all	negative_type	megalithic_mound;rock_art_surface	11
+p0_all	negative_type	mining_or_quarry	1
+p0_all	negative_type	rock_art_surface	4
+p0_all	negative_type	roman_built_context	8
+control_set_v1	review_role	negative	101
+control_set_v1	review_role	positive	100
+control_set_v1	country	ES	117
+control_set_v1	country	PT	84
+control_set_v1	province_or_district	A Coruña	42
+control_set_v1	province_or_district	Braga	34
+control_set_v1	province_or_district	Bragança	12
+control_set_v1	province_or_district	Lugo	46
+control_set_v1	province_or_district	Ourense	18
+control_set_v1	province_or_district	Pontevedra	11
+control_set_v1	province_or_district	Porto	21
+control_set_v1	province_or_district	Viana do Castelo	10
+control_set_v1	province_or_district	Vila Real	7
+control_set_v1	morphology_proxy	coastal_promontory_hint	38
+control_set_v1	morphology_proxy	earthwork_or_wall_hint	38
+control_set_v1	morphology_proxy	large_castrexo_civitas_hint	24
+control_set_v1	negative_type	historic_fortification	30
+control_set_v1	negative_type	historic_fortification;roman_built_context	2
+control_set_v1	negative_type	megalithic_mound	50
+control_set_v1	negative_type	megalithic_mound;rock_art_surface	8
+control_set_v1	negative_type	mining_or_quarry	1
+control_set_v1	negative_type	rock_art_surface	4
+control_set_v1	negative_type	roman_built_context	6
+thumbnails	status	exists	200
+thumbnails	status	failed	1
