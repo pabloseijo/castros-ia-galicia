@@ -29,8 +29,16 @@
         "suggested_decision": "inspect_low_rank_known_positive",
         "boundary_action": "If visible, draw croa/muralla/recinto polygon; otherwise mark needs_followup.",
         "review_status": "pending",
+        "review_notes": "",
         "final_taxonomy": "",
         "final_decision": "",
+        "pretriage_order": "",
+        "pretriage_group": "low_rank_positive",
+        "pretriage_decision": "visibility_or_centroid_review",
+        "pretriage_confidence": "low_pretriage_confidence",
+        "training_use_after_review": "positive_candidate_after_boundary_review",
+        "do_not_use_as": "new_discovery_claim_without_review",
+        "visual_reading": "Known positive remains low in fusion; inspect centering, visibility, vegetation and morphology proxy.",
         "name": "Castro de Santo Estevo",
         "municipality": "Narón",
         "parish": "Sedes (Santo Estevo)",
@@ -46,8 +54,7 @@
         "negative_type": "",
         "morphology_proxy": "generic_castro_hint",
         "visual_sheet": "reports/figures/weak_label_error_review_v1/holdout-low-rank-positives.png",
-        "review_reason": "Known positive ranked low by the main fusion model; inspect as false-negative morphology.",
-        "review_notes": ""
+        "review_reason": "Known positive ranked low by the main fusion model; inspect as false-negative morphology."
       }
     },
     {
@@ -78,8 +85,16 @@
         "suggested_decision": "inspect_low_rank_known_positive",
         "boundary_action": "If visible, draw croa/muralla/recinto polygon; otherwise mark needs_followup.",
         "review_status": "pending",
+        "review_notes": "",
         "final_taxonomy": "",
         "final_decision": "",
+        "pretriage_order": "",
+        "pretriage_group": "low_rank_positive",
+        "pretriage_decision": "visibility_or_centroid_review",
+        "pretriage_confidence": "low_pretriage_confidence",
+        "training_use_after_review": "positive_candidate_after_boundary_review",
+        "do_not_use_as": "new_discovery_claim_without_review",
+        "visual_reading": "Known positive remains low in fusion; inspect centering, visibility, vegetation and morphology proxy.",
         "name": "Castro de Casianes",
         "municipality": "Valdoviño",
         "parish": "Pantín (Santiago)",
@@ -95,8 +110,7 @@
         "negative_type": "",
         "morphology_proxy": "generic_castro_hint",
         "visual_sheet": "reports/figures/weak_label_error_review_v1/holdout-low-rank-positives.png",
-        "review_reason": "Known positive ranked low by the main fusion model; inspect as false-negative morphology.",
-        "review_notes": ""
+        "review_reason": "Known positive ranked low by the main fusion model; inspect as false-negative morphology."
       }
     },
     {
@@ -127,8 +141,16 @@
         "suggested_decision": "inspect_low_rank_known_positive",
         "boundary_action": "If visible, draw croa/muralla/recinto polygon; otherwise mark needs_followup.",
         "review_status": "pending",
+        "review_notes": "",
         "final_taxonomy": "",
         "final_decision": "",
+        "pretriage_order": "",
+        "pretriage_group": "low_rank_positive",
+        "pretriage_decision": "visibility_or_centroid_review",
+        "pretriage_confidence": "low_pretriage_confidence",
+        "training_use_after_review": "positive_candidate_after_boundary_review",
+        "do_not_use_as": "new_discovery_claim_without_review",
+        "visual_reading": "Known positive remains low in fusion; inspect centering, visibility, vegetation and morphology proxy.",
         "name": "Castro e Mina do Pereiro",
         "municipality": "Valdoviño",
         "parish": "Valdoviño (Santaia)",
@@ -144,8 +166,7 @@
         "negative_type": "",
         "morphology_proxy": "generic_castro_hint",
         "visual_sheet": "reports/figures/weak_label_error_review_v1/holdout-low-rank-positives.png",
-        "review_reason": "Known positive ranked low by the main fusion model; inspect as false-negative morphology.",
-        "review_notes": ""
+        "review_reason": "Known positive ranked low by the main fusion model; inspect as false-negative morphology."
       }
     },
     {
@@ -176,8 +197,16 @@
         "suggested_decision": "inspect_low_rank_known_positive",
         "boundary_action": "If visible, draw croa/muralla/recinto polygon; otherwise mark needs_followup.",
         "review_status": "pending",
+        "review_notes": "",
         "final_taxonomy": "",
         "final_decision": "",
+        "pretriage_order": "",
+        "pretriage_group": "low_rank_positive",
+        "pretriage_decision": "visibility_or_centroid_review",
+        "pretriage_confidence": "low_pretriage_confidence",
+        "training_use_after_review": "positive_candidate_after_boundary_review",
+        "do_not_use_as": "new_discovery_claim_without_review",
+        "visual_reading": "Known positive remains low in fusion; inspect centering, visibility, vegetation and morphology proxy.",
         "name": "Castro de Barallobre",
         "municipality": "Fene",
         "parish": "Barallobre (Santiago)",
@@ -193,8 +222,7 @@
         "negative_type": "",
         "morphology_proxy": "generic_castro_hint",
         "visual_sheet": "reports/figures/weak_label_error_review_v1/holdout-low-rank-positives.png",
-        "review_reason": "Known positive ranked low by the main fusion model; inspect as false-negative morphology.",
-        "review_notes": ""
+        "review_reason": "Known positive ranked low by the main fusion model; inspect as false-negative morphology."
       }
     },
     {
@@ -225,8 +253,16 @@
         "suggested_decision": "inspect_low_rank_known_positive",
         "boundary_action": "If visible, draw croa/muralla/recinto polygon; otherwise mark needs_followup.",
         "review_status": "pending",
+        "review_notes": "",
         "final_taxonomy": "",
         "final_decision": "",
+        "pretriage_order": "",
+        "pretriage_group": "low_rank_positive",
+        "pretriage_decision": "visibility_or_centroid_review",
+        "pretriage_confidence": "low_pretriage_confidence",
+        "training_use_after_review": "positive_candidate_after_boundary_review",
+        "do_not_use_as": "new_discovery_claim_without_review",
+        "visual_reading": "Known positive remains low in fusion; inspect centering, visibility, vegetation and morphology proxy.",
         "name": "Castro de Canido",
         "municipality": "Ferrol",
         "parish": "Ferrol",
@@ -242,8 +278,7 @@
         "negative_type": "",
         "morphology_proxy": "generic_castro_hint",
         "visual_sheet": "reports/figures/weak_label_error_review_v1/holdout-low-rank-positives.png",
-        "review_reason": "Known positive ranked low by the main fusion model; inspect as false-negative morphology.",
-        "review_notes": ""
+        "review_reason": "Known positive ranked low by the main fusion model; inspect as false-negative morphology."
       }
     },
     {
@@ -274,8 +309,16 @@
         "suggested_decision": "inspect_low_rank_known_positive",
         "boundary_action": "If visible, draw croa/muralla/recinto polygon; otherwise mark needs_followup.",
         "review_status": "pending",
+        "review_notes": "",
         "final_taxonomy": "",
         "final_decision": "",
+        "pretriage_order": "",
+        "pretriage_group": "low_rank_positive",
+        "pretriage_decision": "visibility_or_centroid_review",
+        "pretriage_confidence": "low_pretriage_confidence",
+        "training_use_after_review": "positive_candidate_after_boundary_review",
+        "do_not_use_as": "new_discovery_claim_without_review",
+        "visual_reading": "Known positive remains low in fusion; inspect centering, visibility, vegetation and morphology proxy.",
         "name": "Castro de Trasancos",
         "municipality": "Narón",
         "parish": "Trasancos (San Mateo)",
@@ -291,8 +334,7 @@
         "negative_type": "",
         "morphology_proxy": "generic_castro_hint",
         "visual_sheet": "reports/figures/weak_label_error_review_v1/holdout-low-rank-positives.png",
-        "review_reason": "Known positive ranked low by the main fusion model; inspect as false-negative morphology.",
-        "review_notes": ""
+        "review_reason": "Known positive ranked low by the main fusion model; inspect as false-negative morphology."
       }
     },
     {
@@ -323,8 +365,16 @@
         "suggested_decision": "inspect_low_rank_known_positive",
         "boundary_action": "If visible, draw croa/muralla/recinto polygon; otherwise mark needs_followup.",
         "review_status": "pending",
+        "review_notes": "",
         "final_taxonomy": "",
         "final_decision": "",
+        "pretriage_order": "",
+        "pretriage_group": "low_rank_positive",
+        "pretriage_decision": "visibility_or_centroid_review",
+        "pretriage_confidence": "low_pretriage_confidence",
+        "training_use_after_review": "positive_candidate_after_boundary_review",
+        "do_not_use_as": "new_discovery_claim_without_review",
+        "visual_reading": "Known positive remains low in fusion; inspect centering, visibility, vegetation and morphology proxy.",
         "name": "Castro de Petouzal/Castro da Croa",
         "municipality": "Narón",
         "parish": "Narón",
@@ -340,8 +390,7 @@
         "negative_type": "",
         "morphology_proxy": "croa_top_ring_hint",
         "visual_sheet": "reports/figures/weak_label_error_review_v1/holdout-low-rank-positives.png",
-        "review_reason": "Known positive ranked low by the main fusion model; inspect as false-negative morphology.",
-        "review_notes": ""
+        "review_reason": "Known positive ranked low by the main fusion model; inspect as false-negative morphology."
       }
     },
     {
@@ -372,8 +421,16 @@
         "suggested_decision": "inspect_low_rank_known_positive",
         "boundary_action": "If visible, draw croa/muralla/recinto polygon; otherwise mark needs_followup.",
         "review_status": "pending",
+        "review_notes": "",
         "final_taxonomy": "",
         "final_decision": "",
+        "pretriage_order": "",
+        "pretriage_group": "low_rank_positive",
+        "pretriage_decision": "visibility_or_centroid_review",
+        "pretriage_confidence": "low_pretriage_confidence",
+        "training_use_after_review": "positive_candidate_after_boundary_review",
+        "do_not_use_as": "new_discovery_claim_without_review",
+        "visual_reading": "Known positive remains low in fusion; inspect centering, visibility, vegetation and morphology proxy.",
         "name": "O Castro",
         "municipality": "Valdoviño",
         "parish": "Lago (Santiago)",
@@ -389,8 +446,7 @@
         "negative_type": "",
         "morphology_proxy": "generic_castro_hint",
         "visual_sheet": "reports/figures/weak_label_error_review_v1/holdout-low-rank-positives.png",
-        "review_reason": "Known positive ranked low by the main fusion model; inspect as false-negative morphology.",
-        "review_notes": ""
+        "review_reason": "Known positive ranked low by the main fusion model; inspect as false-negative morphology."
       }
     },
     {
@@ -421,8 +477,16 @@
         "suggested_decision": "inspect_low_rank_known_positive",
         "boundary_action": "If visible, draw croa/muralla/recinto polygon; otherwise mark needs_followup.",
         "review_status": "pending",
+        "review_notes": "",
         "final_taxonomy": "",
         "final_decision": "",
+        "pretriage_order": "",
+        "pretriage_group": "low_rank_positive",
+        "pretriage_decision": "visibility_or_centroid_review",
+        "pretriage_confidence": "low_pretriage_confidence",
+        "training_use_after_review": "positive_candidate_after_boundary_review",
+        "do_not_use_as": "new_discovery_claim_without_review",
+        "visual_reading": "Known positive remains low in fusion; inspect centering, visibility, vegetation and morphology proxy.",
         "name": "Castro de Marmancón/Castro de Papoi",
         "municipality": "Ferrol",
         "parish": "Marmancón (San Pedro)",
@@ -438,8 +502,7 @@
         "negative_type": "",
         "morphology_proxy": "coastal_promontory_hint",
         "visual_sheet": "reports/figures/weak_label_error_review_v1/holdout-low-rank-positives.png",
-        "review_reason": "Known positive ranked low by the main fusion model; inspect as false-negative morphology.",
-        "review_notes": ""
+        "review_reason": "Known positive ranked low by the main fusion model; inspect as false-negative morphology."
       }
     },
     {
@@ -470,8 +533,16 @@
         "suggested_decision": "inspect_low_rank_known_positive",
         "boundary_action": "If visible, draw croa/muralla/recinto polygon; otherwise mark needs_followup.",
         "review_status": "pending",
+        "review_notes": "",
         "final_taxonomy": "",
         "final_decision": "",
+        "pretriage_order": "",
+        "pretriage_group": "low_rank_positive",
+        "pretriage_decision": "visibility_or_centroid_review",
+        "pretriage_confidence": "low_pretriage_confidence",
+        "training_use_after_review": "positive_candidate_after_boundary_review",
+        "do_not_use_as": "new_discovery_claim_without_review",
+        "visual_reading": "Known positive remains low in fusion; inspect centering, visibility, vegetation and morphology proxy.",
         "name": "Castro de croas de Ramil",
         "municipality": "San Sadurniño",
         "parish": "Lamas (San Xiao)",
@@ -487,8 +558,7 @@
         "negative_type": "",
         "morphology_proxy": "croa_top_ring_hint",
         "visual_sheet": "reports/figures/weak_label_error_review_v1/holdout-low-rank-positives.png",
-        "review_reason": "Known positive ranked low by the main fusion model; inspect as false-negative morphology.",
-        "review_notes": ""
+        "review_reason": "Known positive ranked low by the main fusion model; inspect as false-negative morphology."
       }
     },
     {
@@ -519,8 +589,16 @@
         "suggested_decision": "inspect_low_rank_known_positive",
         "boundary_action": "If visible, draw croa/muralla/recinto polygon; otherwise mark needs_followup.",
         "review_status": "pending",
+        "review_notes": "",
         "final_taxonomy": "",
         "final_decision": "",
+        "pretriage_order": "",
+        "pretriage_group": "low_rank_positive",
+        "pretriage_decision": "visibility_or_centroid_review",
+        "pretriage_confidence": "low_pretriage_confidence",
+        "training_use_after_review": "positive_candidate_after_boundary_review",
+        "do_not_use_as": "new_discovery_claim_without_review",
+        "visual_reading": "Known positive remains low in fusion; inspect centering, visibility, vegetation and morphology proxy.",
         "name": "Porta do Castro/Arco do Cristo",
         "municipality": "Ferrol",
         "parish": "Ferrol",
@@ -536,8 +614,7 @@
         "negative_type": "",
         "morphology_proxy": "generic_castro_hint",
         "visual_sheet": "reports/figures/weak_label_error_review_v1/holdout-low-rank-positives.png",
-        "review_reason": "Known positive ranked low by the main fusion model; inspect as false-negative morphology.",
-        "review_notes": ""
+        "review_reason": "Known positive ranked low by the main fusion model; inspect as false-negative morphology."
       }
     },
     {
@@ -568,8 +645,16 @@
         "suggested_decision": "inspect_low_rank_known_positive",
         "boundary_action": "If visible, draw croa/muralla/recinto polygon; otherwise mark needs_followup.",
         "review_status": "pending",
+        "review_notes": "",
         "final_taxonomy": "",
         "final_decision": "",
+        "pretriage_order": "",
+        "pretriage_group": "low_rank_positive",
+        "pretriage_decision": "visibility_or_centroid_review",
+        "pretriage_confidence": "low_pretriage_confidence",
+        "training_use_after_review": "positive_candidate_after_boundary_review",
+        "do_not_use_as": "new_discovery_claim_without_review",
+        "visual_reading": "Known positive remains low in fusion; inspect centering, visibility, vegetation and morphology proxy.",
         "name": "O Castro",
         "municipality": "Narón",
         "parish": "Castro (Santa María)",
@@ -585,8 +670,7 @@
         "negative_type": "",
         "morphology_proxy": "generic_castro_hint",
         "visual_sheet": "reports/figures/weak_label_error_review_v1/holdout-low-rank-positives.png",
-        "review_reason": "Known positive ranked low by the main fusion model; inspect as false-negative morphology.",
-        "review_notes": ""
+        "review_reason": "Known positive ranked low by the main fusion model; inspect as false-negative morphology."
       }
     },
     {
@@ -617,8 +701,16 @@
         "suggested_decision": "inspect_low_rank_known_positive",
         "boundary_action": "If visible, draw croa/muralla/recinto polygon; otherwise mark needs_followup.",
         "review_status": "pending",
+        "review_notes": "",
         "final_taxonomy": "",
         "final_decision": "",
+        "pretriage_order": "",
+        "pretriage_group": "low_rank_positive",
+        "pretriage_decision": "visibility_or_centroid_review",
+        "pretriage_confidence": "low_pretriage_confidence",
+        "training_use_after_review": "positive_candidate_after_boundary_review",
+        "do_not_use_as": "new_discovery_claim_without_review",
+        "visual_reading": "Known positive remains low in fusion; inspect centering, visibility, vegetation and morphology proxy.",
         "name": "Castro de Sequeiro/Castro de Narón",
         "municipality": "Narón",
         "parish": "San Xiao de Narón (San Xiao)",
@@ -634,8 +726,7 @@
         "negative_type": "",
         "morphology_proxy": "generic_castro_hint",
         "visual_sheet": "reports/figures/weak_label_error_review_v1/holdout-low-rank-positives.png",
-        "review_reason": "Known positive ranked low by the main fusion model; inspect as false-negative morphology.",
-        "review_notes": ""
+        "review_reason": "Known positive ranked low by the main fusion model; inspect as false-negative morphology."
       }
     },
     {
@@ -666,8 +757,16 @@
         "suggested_decision": "inspect_low_rank_known_positive",
         "boundary_action": "If visible, draw croa/muralla/recinto polygon; otherwise mark needs_followup.",
         "review_status": "pending",
+        "review_notes": "",
         "final_taxonomy": "",
         "final_decision": "",
+        "pretriage_order": "",
+        "pretriage_group": "low_rank_positive",
+        "pretriage_decision": "visibility_or_centroid_review",
+        "pretriage_confidence": "low_pretriage_confidence",
+        "training_use_after_review": "positive_candidate_after_boundary_review",
+        "do_not_use_as": "new_discovery_claim_without_review",
+        "visual_reading": "Known positive remains low in fusion; inspect centering, visibility, vegetation and morphology proxy.",
         "name": "Castro de Leixa/A Croa de Leixa",
         "municipality": "Ferrol",
         "parish": "Leixa (San Pedro)",
@@ -683,8 +782,7 @@
         "negative_type": "",
         "morphology_proxy": "croa_top_ring_hint",
         "visual_sheet": "reports/figures/weak_label_error_review_v1/holdout-low-rank-positives.png",
-        "review_reason": "Known positive ranked low by the main fusion model; inspect as false-negative morphology.",
-        "review_notes": ""
+        "review_reason": "Known positive ranked low by the main fusion model; inspect as false-negative morphology."
       }
     },
     {
@@ -715,8 +813,16 @@
         "suggested_decision": "inspect_low_rank_known_positive",
         "boundary_action": "If visible, draw croa/muralla/recinto polygon; otherwise mark needs_followup.",
         "review_status": "pending",
+        "review_notes": "",
         "final_taxonomy": "",
         "final_decision": "",
+        "pretriage_order": "",
+        "pretriage_group": "low_rank_positive",
+        "pretriage_decision": "visibility_or_centroid_review",
+        "pretriage_confidence": "low_pretriage_confidence",
+        "training_use_after_review": "positive_candidate_after_boundary_review",
+        "do_not_use_as": "new_discovery_claim_without_review",
+        "visual_reading": "Known positive remains low in fusion; inspect centering, visibility, vegetation and morphology proxy.",
         "name": "Castro de Santa Cecilia",
         "municipality": "Ferrol",
         "parish": "Santa Cecilia de Trasancos (Santa Cecilia)",
@@ -732,8 +838,7 @@
         "negative_type": "",
         "morphology_proxy": "generic_castro_hint",
         "visual_sheet": "reports/figures/weak_label_error_review_v1/holdout-low-rank-positives.png",
-        "review_reason": "Known positive ranked low by the main fusion model; inspect as false-negative morphology.",
-        "review_notes": ""
+        "review_reason": "Known positive ranked low by the main fusion model; inspect as false-negative morphology."
       }
     },
     {
@@ -764,8 +869,16 @@
         "suggested_decision": "inspect_low_rank_known_positive",
         "boundary_action": "If visible, draw croa/muralla/recinto polygon; otherwise mark needs_followup.",
         "review_status": "pending",
+        "review_notes": "",
         "final_taxonomy": "",
         "final_decision": "",
+        "pretriage_order": "",
+        "pretriage_group": "low_rank_positive",
+        "pretriage_decision": "visibility_or_centroid_review",
+        "pretriage_confidence": "low_pretriage_confidence",
+        "training_use_after_review": "positive_candidate_after_boundary_review",
+        "do_not_use_as": "new_discovery_claim_without_review",
+        "visual_reading": "Known positive remains low in fusion; inspect centering, visibility, vegetation and morphology proxy.",
         "name": "Castro de Ferrol Vello",
         "municipality": "Ferrol",
         "parish": "Ferrol",
@@ -781,8 +894,7 @@
         "negative_type": "",
         "morphology_proxy": "generic_castro_hint",
         "visual_sheet": "reports/figures/weak_label_error_review_v1/holdout-low-rank-positives.png",
-        "review_reason": "Known positive ranked low by the main fusion model; inspect as false-negative morphology.",
-        "review_notes": ""
+        "review_reason": "Known positive ranked low by the main fusion model; inspect as false-negative morphology."
       }
     },
     {
@@ -813,8 +925,16 @@
         "suggested_decision": "inspect_low_rank_known_positive",
         "boundary_action": "If visible, draw croa/muralla/recinto polygon; otherwise mark needs_followup.",
         "review_status": "pending",
+        "review_notes": "",
         "final_taxonomy": "",
         "final_decision": "",
+        "pretriage_order": "",
+        "pretriage_group": "low_rank_positive",
+        "pretriage_decision": "visibility_or_centroid_review",
+        "pretriage_confidence": "low_pretriage_confidence",
+        "training_use_after_review": "positive_candidate_after_boundary_review",
+        "do_not_use_as": "new_discovery_claim_without_review",
+        "visual_reading": "Known positive remains low in fusion; inspect centering, visibility, vegetation and morphology proxy.",
         "name": "O Castro",
         "municipality": "Barreiros",
         "parish": "Cabarcos (San Xulián)",
@@ -830,8 +950,7 @@
         "negative_type": "",
         "morphology_proxy": "generic_castro_hint",
         "visual_sheet": "reports/figures/weak_label_error_review_v1/val-low-rank-weak-positives.png",
-        "review_reason": "Weak positive ranked low on validation; inspect label noise, morphology and imagery quality.",
-        "review_notes": ""
+        "review_reason": "Weak positive ranked low on validation; inspect label noise, morphology and imagery quality."
       }
     },
     {
@@ -862,8 +981,16 @@
         "suggested_decision": "inspect_low_rank_known_positive",
         "boundary_action": "If visible, draw croa/muralla/recinto polygon; otherwise mark needs_followup.",
         "review_status": "pending",
+        "review_notes": "",
         "final_taxonomy": "",
         "final_decision": "",
+        "pretriage_order": "",
+        "pretriage_group": "low_rank_positive",
+        "pretriage_decision": "visibility_or_centroid_review",
+        "pretriage_confidence": "low_pretriage_confidence",
+        "training_use_after_review": "positive_candidate_after_boundary_review",
+        "do_not_use_as": "new_discovery_claim_without_review",
+        "visual_reading": "Known positive remains low in fusion; inspect centering, visibility, vegetation and morphology proxy.",
         "name": "Castro de Candad",
         "municipality": "Chantada",
         "parish": "Pedrafita (Santa Baia)",
@@ -879,8 +1006,7 @@
         "negative_type": "",
         "morphology_proxy": "generic_castro_hint",
         "visual_sheet": "",
-        "review_reason": "Weak positive ranked low on validation; inspect label noise, morphology and imagery quality.",
-        "review_notes": ""
+        "review_reason": "Weak positive ranked low on validation; inspect label noise, morphology and imagery quality."
       }
     },
     {
@@ -911,8 +1037,16 @@
         "suggested_decision": "inspect_low_rank_known_positive",
         "boundary_action": "If visible, draw croa/muralla/recinto polygon; otherwise mark needs_followup.",
         "review_status": "pending",
+        "review_notes": "",
         "final_taxonomy": "",
         "final_decision": "",
+        "pretriage_order": "",
+        "pretriage_group": "low_rank_positive",
+        "pretriage_decision": "visibility_or_centroid_review",
+        "pretriage_confidence": "low_pretriage_confidence",
+        "training_use_after_review": "positive_candidate_after_boundary_review",
+        "do_not_use_as": "new_discovery_claim_without_review",
+        "visual_reading": "Known positive remains low in fusion; inspect centering, visibility, vegetation and morphology proxy.",
         "name": "Xacemento romano do Castro",
         "municipality": "Castrelo do Val",
         "parish": "Castrelo do Val (Santa María)",
@@ -928,8 +1062,7 @@
         "negative_type": "",
         "morphology_proxy": "generic_castro_hint",
         "visual_sheet": "",
-        "review_reason": "Weak positive ranked low on validation; inspect label noise, morphology and imagery quality.",
-        "review_notes": ""
+        "review_reason": "Weak positive ranked low on validation; inspect label noise, morphology and imagery quality."
       }
     },
     {
@@ -960,8 +1093,16 @@
         "suggested_decision": "inspect_low_rank_known_positive",
         "boundary_action": "If visible, draw croa/muralla/recinto polygon; otherwise mark needs_followup.",
         "review_status": "pending",
+        "review_notes": "",
         "final_taxonomy": "",
         "final_decision": "",
+        "pretriage_order": "",
+        "pretriage_group": "low_rank_positive",
+        "pretriage_decision": "visibility_or_centroid_review",
+        "pretriage_confidence": "low_pretriage_confidence",
+        "training_use_after_review": "positive_candidate_after_boundary_review",
+        "do_not_use_as": "new_discovery_claim_without_review",
+        "visual_reading": "Known positive remains low in fusion; inspect centering, visibility, vegetation and morphology proxy.",
         "name": "Castro de Pena Gateira",
         "municipality": "Ourol",
         "parish": "Bravos (Santiago)",
@@ -977,8 +1118,7 @@
         "negative_type": "",
         "morphology_proxy": "hilltop_hint",
         "visual_sheet": "",
-        "review_reason": "Weak positive ranked low on validation; inspect label noise, morphology and imagery quality.",
-        "review_notes": ""
+        "review_reason": "Weak positive ranked low on validation; inspect label noise, morphology and imagery quality."
       }
     },
     {
@@ -1009,8 +1149,16 @@
         "suggested_decision": "inspect_low_rank_known_positive",
         "boundary_action": "If visible, draw croa/muralla/recinto polygon; otherwise mark needs_followup.",
         "review_status": "pending",
+        "review_notes": "",
         "final_taxonomy": "",
         "final_decision": "",
+        "pretriage_order": "",
+        "pretriage_group": "low_rank_positive",
+        "pretriage_decision": "visibility_or_centroid_review",
+        "pretriage_confidence": "low_pretriage_confidence",
+        "training_use_after_review": "positive_candidate_after_boundary_review",
+        "do_not_use_as": "new_discovery_claim_without_review",
+        "visual_reading": "Known positive remains low in fusion; inspect centering, visibility, vegetation and morphology proxy.",
         "name": "Pombal no Castro",
         "municipality": "Touro",
         "parish": "Prevediños (Santiago)",
@@ -1026,8 +1174,7 @@
         "negative_type": "",
         "morphology_proxy": "generic_castro_hint",
         "visual_sheet": "",
-        "review_reason": "Weak positive ranked low on validation; inspect label noise, morphology and imagery quality.",
-        "review_notes": ""
+        "review_reason": "Weak positive ranked low on validation; inspect label noise, morphology and imagery quality."
       }
     },
     {
@@ -1058,8 +1205,16 @@
         "suggested_decision": "inspect_low_rank_known_positive",
         "boundary_action": "If visible, draw croa/muralla/recinto polygon; otherwise mark needs_followup.",
         "review_status": "pending",
+        "review_notes": "",
         "final_taxonomy": "",
         "final_decision": "",
+        "pretriage_order": "",
+        "pretriage_group": "low_rank_positive",
+        "pretriage_decision": "visibility_or_centroid_review",
+        "pretriage_confidence": "low_pretriage_confidence",
+        "training_use_after_review": "positive_candidate_after_boundary_review",
+        "do_not_use_as": "new_discovery_claim_without_review",
+        "visual_reading": "Known positive remains low in fusion; inspect centering, visibility, vegetation and morphology proxy.",
         "name": "Castro do Froxancal",
         "municipality": "Viana do Bolo",
         "parish": "Hedroso (San Román)",
@@ -1075,8 +1230,7 @@
         "negative_type": "",
         "morphology_proxy": "generic_castro_hint",
         "visual_sheet": "",
-        "review_reason": "Weak positive ranked low on validation; inspect label noise, morphology and imagery quality.",
-        "review_notes": ""
+        "review_reason": "Weak positive ranked low on validation; inspect label noise, morphology and imagery quality."
       }
     },
     {
@@ -1107,8 +1261,16 @@
         "suggested_decision": "inspect_low_rank_known_positive",
         "boundary_action": "If visible, draw croa/muralla/recinto polygon; otherwise mark needs_followup.",
         "review_status": "pending",
+        "review_notes": "",
         "final_taxonomy": "",
         "final_decision": "",
+        "pretriage_order": "",
+        "pretriage_group": "low_rank_positive",
+        "pretriage_decision": "visibility_or_centroid_review",
+        "pretriage_confidence": "low_pretriage_confidence",
+        "training_use_after_review": "positive_candidate_after_boundary_review",
+        "do_not_use_as": "new_discovery_claim_without_review",
+        "visual_reading": "Known positive remains low in fusion; inspect centering, visibility, vegetation and morphology proxy.",
         "name": "Castro dos Calixos",
         "municipality": "Barreiros",
         "parish": "Vilamartín Pequeno (San Xoán Degolado)",
@@ -1124,8 +1286,7 @@
         "negative_type": "",
         "morphology_proxy": "generic_castro_hint",
         "visual_sheet": "",
-        "review_reason": "Weak positive ranked low on validation; inspect label noise, morphology and imagery quality.",
-        "review_notes": ""
+        "review_reason": "Weak positive ranked low on validation; inspect label noise, morphology and imagery quality."
       }
     },
     {
@@ -1156,8 +1317,16 @@
         "suggested_decision": "inspect_low_rank_known_positive",
         "boundary_action": "If visible, draw croa/muralla/recinto polygon; otherwise mark needs_followup.",
         "review_status": "pending",
+        "review_notes": "",
         "final_taxonomy": "",
         "final_decision": "",
+        "pretriage_order": "",
+        "pretriage_group": "low_rank_positive",
+        "pretriage_decision": "visibility_or_centroid_review",
+        "pretriage_confidence": "low_pretriage_confidence",
+        "training_use_after_review": "positive_candidate_after_boundary_review",
+        "do_not_use_as": "new_discovery_claim_without_review",
+        "visual_reading": "Known positive remains low in fusion; inspect centering, visibility, vegetation and morphology proxy.",
         "name": "Castro",
         "municipality": "Dodro",
         "parish": "San Xoán de Laíño (San Xoán)",
@@ -1173,8 +1342,7 @@
         "negative_type": "",
         "morphology_proxy": "generic_castro_hint",
         "visual_sheet": "",
-        "review_reason": "Weak positive ranked low on validation; inspect label noise, morphology and imagery quality.",
-        "review_notes": ""
+        "review_reason": "Weak positive ranked low on validation; inspect label noise, morphology and imagery quality."
       }
     },
     {
@@ -1205,8 +1373,16 @@
         "suggested_decision": "inspect_low_rank_known_positive",
         "boundary_action": "If visible, draw croa/muralla/recinto polygon; otherwise mark needs_followup.",
         "review_status": "pending",
+        "review_notes": "",
         "final_taxonomy": "",
         "final_decision": "",
+        "pretriage_order": "",
+        "pretriage_group": "low_rank_positive",
+        "pretriage_decision": "visibility_or_centroid_review",
+        "pretriage_confidence": "low_pretriage_confidence",
+        "training_use_after_review": "positive_candidate_after_boundary_review",
+        "do_not_use_as": "new_discovery_claim_without_review",
+        "visual_reading": "Known positive remains low in fusion; inspect centering, visibility, vegetation and morphology proxy.",
         "name": "Coto do Castro",
         "municipality": "Beade",
         "parish": "Beade (Santa María)",
@@ -1222,8 +1398,7 @@
         "negative_type": "",
         "morphology_proxy": "hilltop_hint",
         "visual_sheet": "",
-        "review_reason": "Weak positive ranked low on validation; inspect label noise, morphology and imagery quality.",
-        "review_notes": ""
+        "review_reason": "Weak positive ranked low on validation; inspect label noise, morphology and imagery quality."
       }
     },
     {
@@ -1254,8 +1429,16 @@
         "suggested_decision": "inspect_low_rank_known_positive",
         "boundary_action": "If visible, draw croa/muralla/recinto polygon; otherwise mark needs_followup.",
         "review_status": "pending",
+        "review_notes": "",
         "final_taxonomy": "",
         "final_decision": "",
+        "pretriage_order": "",
+        "pretriage_group": "low_rank_positive",
+        "pretriage_decision": "visibility_or_centroid_review",
+        "pretriage_confidence": "low_pretriage_confidence",
+        "training_use_after_review": "positive_candidate_after_boundary_review",
+        "do_not_use_as": "new_discovery_claim_without_review",
+        "visual_reading": "Known positive remains low in fusion; inspect centering, visibility, vegetation and morphology proxy.",
         "name": "Conxunto de Castro",
         "municipality": "Dodro",
         "parish": "San Xoán de Laíño (San Xoán)",
@@ -1271,8 +1454,7 @@
         "negative_type": "",
         "morphology_proxy": "generic_castro_hint",
         "visual_sheet": "",
-        "review_reason": "Weak positive ranked low on validation; inspect label noise, morphology and imagery quality.",
-        "review_notes": ""
+        "review_reason": "Weak positive ranked low on validation; inspect label noise, morphology and imagery quality."
       }
     },
     {
@@ -1303,8 +1485,16 @@
         "suggested_decision": "inspect_low_rank_known_positive",
         "boundary_action": "If visible, draw croa/muralla/recinto polygon; otherwise mark needs_followup.",
         "review_status": "pending",
+        "review_notes": "",
         "final_taxonomy": "",
         "final_decision": "",
+        "pretriage_order": "",
+        "pretriage_group": "low_rank_positive",
+        "pretriage_decision": "visibility_or_centroid_review",
+        "pretriage_confidence": "low_pretriage_confidence",
+        "training_use_after_review": "positive_candidate_after_boundary_review",
+        "do_not_use_as": "new_discovery_claim_without_review",
+        "visual_reading": "Known positive remains low in fusion; inspect centering, visibility, vegetation and morphology proxy.",
         "name": "Castro do Castelo",
         "municipality": "Viana do Bolo",
         "parish": "Pinza (Santa María)",
@@ -1320,8 +1510,7 @@
         "negative_type": "",
         "morphology_proxy": "generic_castro_hint",
         "visual_sheet": "",
-        "review_reason": "Weak positive ranked low on validation; inspect label noise, morphology and imagery quality.",
-        "review_notes": ""
+        "review_reason": "Weak positive ranked low on validation; inspect label noise, morphology and imagery quality."
       }
     },
     {
@@ -1352,8 +1541,16 @@
         "suggested_decision": "inspect_low_rank_known_positive",
         "boundary_action": "If visible, draw croa/muralla/recinto polygon; otherwise mark needs_followup.",
         "review_status": "pending",
+        "review_notes": "",
         "final_taxonomy": "",
         "final_decision": "",
+        "pretriage_order": "",
+        "pretriage_group": "low_rank_positive",
+        "pretriage_decision": "visibility_or_centroid_review",
+        "pretriage_confidence": "low_pretriage_confidence",
+        "training_use_after_review": "positive_candidate_after_boundary_review",
+        "do_not_use_as": "new_discovery_claim_without_review",
+        "visual_reading": "Known positive remains low in fusion; inspect centering, visibility, vegetation and morphology proxy.",
         "name": "Capela de San Xoán Degolado en Castro",
         "municipality": "A Fonsagrada",
         "parish": "Cuíñas (San Cristovo)",
@@ -1369,8 +1566,7 @@
         "negative_type": "",
         "morphology_proxy": "generic_castro_hint",
         "visual_sheet": "",
-        "review_reason": "Weak positive ranked low on validation; inspect label noise, morphology and imagery quality.",
-        "review_notes": ""
+        "review_reason": "Weak positive ranked low on validation; inspect label noise, morphology and imagery quality."
       }
     },
     {
@@ -1401,8 +1597,16 @@
         "suggested_decision": "inspect_low_rank_known_positive",
         "boundary_action": "If visible, draw croa/muralla/recinto polygon; otherwise mark needs_followup.",
         "review_status": "pending",
+        "review_notes": "",
         "final_taxonomy": "",
         "final_decision": "",
+        "pretriage_order": "",
+        "pretriage_group": "low_rank_positive",
+        "pretriage_decision": "visibility_or_centroid_review",
+        "pretriage_confidence": "low_pretriage_confidence",
+        "training_use_after_review": "positive_candidate_after_boundary_review",
+        "do_not_use_as": "new_discovery_claim_without_review",
+        "visual_reading": "Known positive remains low in fusion; inspect centering, visibility, vegetation and morphology proxy.",
         "name": "Castro de Fao/A Croa do Castro",
         "municipality": "Touro",
         "parish": "Fao (Santa Uxía)",
@@ -1418,8 +1622,7 @@
         "negative_type": "",
         "morphology_proxy": "croa_top_ring_hint",
         "visual_sheet": "",
-        "review_reason": "Weak positive ranked low on validation; inspect label noise, morphology and imagery quality.",
-        "review_notes": ""
+        "review_reason": "Weak positive ranked low on validation; inspect label noise, morphology and imagery quality."
       }
     },
     {
@@ -1450,8 +1653,16 @@
         "suggested_decision": "inspect_low_rank_known_positive",
         "boundary_action": "If visible, draw croa/muralla/recinto polygon; otherwise mark needs_followup.",
         "review_status": "pending",
+        "review_notes": "",
         "final_taxonomy": "",
         "final_decision": "",
+        "pretriage_order": "",
+        "pretriage_group": "low_rank_positive",
+        "pretriage_decision": "visibility_or_centroid_review",
+        "pretriage_confidence": "low_pretriage_confidence",
+        "training_use_after_review": "positive_candidate_after_boundary_review",
+        "do_not_use_as": "new_discovery_claim_without_review",
+        "visual_reading": "Known positive remains low in fusion; inspect centering, visibility, vegetation and morphology proxy.",
         "name": "Castro de San Vicente de Coucieiro",
         "municipality": "Paderne de Allariz",
         "parish": "Coucieiro (San Vicente)",
@@ -1467,8 +1678,7 @@
         "negative_type": "",
         "morphology_proxy": "generic_castro_hint",
         "visual_sheet": "",
-        "review_reason": "Weak positive ranked low on validation; inspect label noise, morphology and imagery quality.",
-        "review_notes": ""
+        "review_reason": "Weak positive ranked low on validation; inspect label noise, morphology and imagery quality."
       }
     },
     {
@@ -1499,8 +1709,16 @@
         "suggested_decision": "inspect_low_rank_known_positive",
         "boundary_action": "If visible, draw croa/muralla/recinto polygon; otherwise mark needs_followup.",
         "review_status": "pending",
+        "review_notes": "",
         "final_taxonomy": "",
         "final_decision": "",
+        "pretriage_order": "",
+        "pretriage_group": "low_rank_positive",
+        "pretriage_decision": "visibility_or_centroid_review",
+        "pretriage_confidence": "low_pretriage_confidence",
+        "training_use_after_review": "positive_candidate_after_boundary_review",
+        "do_not_use_as": "new_discovery_claim_without_review",
+        "visual_reading": "Known positive remains low in fusion; inspect centering, visibility, vegetation and morphology proxy.",
         "name": "Chao do Castro",
         "municipality": "Ourol",
         "parish": "Miñotos (San Pedro)",
@@ -1516,8 +1734,7 @@
         "negative_type": "",
         "morphology_proxy": "generic_castro_hint",
         "visual_sheet": "",
-        "review_reason": "Weak positive ranked low on validation; inspect label noise, morphology and imagery quality.",
-        "review_notes": ""
+        "review_reason": "Weak positive ranked low on validation; inspect label noise, morphology and imagery quality."
       }
     },
     {
@@ -1548,8 +1765,16 @@
         "suggested_decision": "inspect_low_rank_known_positive",
         "boundary_action": "If visible, draw croa/muralla/recinto polygon; otherwise mark needs_followup.",
         "review_status": "pending",
+        "review_notes": "",
         "final_taxonomy": "",
         "final_decision": "",
+        "pretriage_order": "",
+        "pretriage_group": "low_rank_positive",
+        "pretriage_decision": "visibility_or_centroid_review",
+        "pretriage_confidence": "low_pretriage_confidence",
+        "training_use_after_review": "positive_candidate_after_boundary_review",
+        "do_not_use_as": "new_discovery_claim_without_review",
+        "visual_reading": "Known positive remains low in fusion; inspect centering, visibility, vegetation and morphology proxy.",
         "name": "Os Castros/Tras Os Castros",
         "municipality": "Outeiro de Rei",
         "parish": "Castelo de Rei (San Salvador)",
@@ -1565,8 +1790,7 @@
         "negative_type": "",
         "morphology_proxy": "generic_castro_hint",
         "visual_sheet": "",
-        "review_reason": "Weak positive ranked low on validation; inspect label noise, morphology and imagery quality.",
-        "review_notes": ""
+        "review_reason": "Weak positive ranked low on validation; inspect label noise, morphology and imagery quality."
       }
     },
     {
@@ -1597,8 +1821,16 @@
         "suggested_decision": "inspect_low_rank_known_positive",
         "boundary_action": "If visible, draw croa/muralla/recinto polygon; otherwise mark needs_followup.",
         "review_status": "pending",
+        "review_notes": "",
         "final_taxonomy": "",
         "final_decision": "",
+        "pretriage_order": "",
+        "pretriage_group": "low_rank_positive",
+        "pretriage_decision": "visibility_or_centroid_review",
+        "pretriage_confidence": "low_pretriage_confidence",
+        "training_use_after_review": "positive_candidate_after_boundary_review",
+        "do_not_use_as": "new_discovery_claim_without_review",
+        "visual_reading": "Known positive remains low in fusion; inspect centering, visibility, vegetation and morphology proxy.",
         "name": "Castro de Santa Cristina/Castro de Perillo",
         "municipality": "Oleiros",
         "parish": "Perillo (Santa Locaia)",
@@ -1614,8 +1846,7 @@
         "negative_type": "",
         "morphology_proxy": "generic_castro_hint",
         "visual_sheet": "",
-        "review_reason": "Weak positive ranked low on validation; inspect label noise, morphology and imagery quality.",
-        "review_notes": ""
+        "review_reason": "Weak positive ranked low on validation; inspect label noise, morphology and imagery quality."
       }
     },
     {
@@ -1646,8 +1877,16 @@
         "suggested_decision": "inspect_low_rank_known_positive",
         "boundary_action": "If visible, draw croa/muralla/recinto polygon; otherwise mark needs_followup.",
         "review_status": "pending",
+        "review_notes": "",
         "final_taxonomy": "",
         "final_decision": "",
+        "pretriage_order": "",
+        "pretriage_group": "low_rank_positive",
+        "pretriage_decision": "visibility_or_centroid_review",
+        "pretriage_confidence": "low_pretriage_confidence",
+        "training_use_after_review": "positive_candidate_after_boundary_review",
+        "do_not_use_as": "new_discovery_claim_without_review",
+        "visual_reading": "Known positive remains low in fusion; inspect centering, visibility, vegetation and morphology proxy.",
         "name": "Castro de Fornas de Abaixo",
         "municipality": "Chantada",
         "parish": "Fornas (San Cristovo)",
@@ -1663,8 +1902,7 @@
         "negative_type": "",
         "morphology_proxy": "generic_castro_hint",
         "visual_sheet": "",
-        "review_reason": "Weak positive ranked low on validation; inspect label noise, morphology and imagery quality.",
-        "review_notes": ""
+        "review_reason": "Weak positive ranked low on validation; inspect label noise, morphology and imagery quality."
       }
     },
     {
@@ -1695,8 +1933,16 @@
         "suggested_decision": "inspect_low_rank_known_positive",
         "boundary_action": "If visible, draw croa/muralla/recinto polygon; otherwise mark needs_followup.",
         "review_status": "pending",
+        "review_notes": "",
         "final_taxonomy": "",
         "final_decision": "",
+        "pretriage_order": "",
+        "pretriage_group": "low_rank_positive",
+        "pretriage_decision": "visibility_or_centroid_review",
+        "pretriage_confidence": "low_pretriage_confidence",
+        "training_use_after_review": "positive_candidate_after_boundary_review",
+        "do_not_use_as": "new_discovery_claim_without_review",
+        "visual_reading": "Known positive remains low in fusion; inspect centering, visibility, vegetation and morphology proxy.",
         "name": "O Castro/A Santiña/O Castro de Deixebre",
         "municipality": "Oroso",
         "parish": "Deixebre (Santa María)",
@@ -1712,8 +1958,7 @@
         "negative_type": "",
         "morphology_proxy": "generic_castro_hint",
         "visual_sheet": "",
-        "review_reason": "Weak positive ranked low on validation; inspect label noise, morphology and imagery quality.",
-        "review_notes": ""
+        "review_reason": "Weak positive ranked low on validation; inspect label noise, morphology and imagery quality."
       }
     },
     {
@@ -1744,8 +1989,16 @@
         "suggested_decision": "inspect_low_rank_known_positive",
         "boundary_action": "If visible, draw croa/muralla/recinto polygon; otherwise mark needs_followup.",
         "review_status": "pending",
+        "review_notes": "",
         "final_taxonomy": "",
         "final_decision": "",
+        "pretriage_order": "",
+        "pretriage_group": "low_rank_positive",
+        "pretriage_decision": "visibility_or_centroid_review",
+        "pretriage_confidence": "low_pretriage_confidence",
+        "training_use_after_review": "positive_candidate_after_boundary_review",
+        "do_not_use_as": "new_discovery_claim_without_review",
+        "visual_reading": "Known positive remains low in fusion; inspect centering, visibility, vegetation and morphology proxy.",
         "name": "Pombal cadrado en Castro",
         "municipality": "Dodro",
         "parish": "San Xoán de Laíño (San Xoán)",
@@ -1761,8 +2014,7 @@
         "negative_type": "",
         "morphology_proxy": "generic_castro_hint",
         "visual_sheet": "",
-        "review_reason": "Weak positive ranked low on validation; inspect label noise, morphology and imagery quality.",
-        "review_notes": ""
+        "review_reason": "Weak positive ranked low on validation; inspect label noise, morphology and imagery quality."
       }
     }
   ]

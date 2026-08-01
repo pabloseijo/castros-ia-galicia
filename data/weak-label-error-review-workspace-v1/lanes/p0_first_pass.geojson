@@ -29,8 +29,16 @@
         "suggested_decision": "confirm_non_castro_archaeological_hard_negative",
         "boundary_action": "Confirm mound/non-castro; do not treat as generic absence.",
         "review_status": "pending",
+        "review_notes": "",
         "final_taxonomy": "",
         "final_decision": "",
+        "pretriage_order": "10",
+        "pretriage_group": "mamoa_archaeological_hard_negative",
+        "pretriage_decision": "confirm_mamoa_specific_hard_negative",
+        "pretriage_confidence": "high_taxonomy_medium_confusion",
+        "training_use_after_review": "archaeological_hard_negative_not_generic_absence",
+        "do_not_use_as": "generic_absence",
+        "visual_reading": "Contact sheets show castro-like circular/anular relief distractors; confirm taxonomy and keep as specific archaeological hard negatives.",
         "name": "Mámoa do Monte Marraxón IV-1",
         "municipality": "Fene",
         "parish": "Sillobre (Santa Mariña)",
@@ -46,8 +54,7 @@
         "negative_type": "megalithic_mound",
         "morphology_proxy": "",
         "visual_sheet": "reports/figures/weak_label_error_review_v1/holdout-top-false-positives.png",
-        "review_reason": "Known hard negative ranked high by the main fusion model; inspect as false-positive pattern.",
-        "review_notes": ""
+        "review_reason": "Known hard negative ranked high by the main fusion model; inspect as false-positive pattern."
       }
     },
     {
@@ -78,8 +85,16 @@
         "suggested_decision": "confirm_non_castro_archaeological_hard_negative",
         "boundary_action": "Confirm mound/non-castro; do not treat as generic absence.",
         "review_status": "pending",
+        "review_notes": "",
         "final_taxonomy": "",
         "final_decision": "",
+        "pretriage_order": "8",
+        "pretriage_group": "mamoa_strong_model_confuser",
+        "pretriage_decision": "confirm_mamoa_specific_hard_negative",
+        "pretriage_confidence": "high_taxonomy_high_confusion",
+        "training_use_after_review": "archaeological_hard_negative_not_generic_absence",
+        "do_not_use_as": "generic_absence",
+        "visual_reading": "Contact sheets show castro-like circular/anular relief distractors; confirm taxonomy and keep as specific archaeological hard negatives.",
         "name": "Mámoa do Rego da Moa",
         "municipality": "Fene",
         "parish": "Barallobre (Santiago)",
@@ -95,8 +110,7 @@
         "negative_type": "megalithic_mound",
         "morphology_proxy": "",
         "visual_sheet": "reports/figures/weak_label_error_review_v1/holdout-top-false-positives.png",
-        "review_reason": "Known hard negative ranked high by the main fusion model; inspect as false-positive pattern.",
-        "review_notes": ""
+        "review_reason": "Known hard negative ranked high by the main fusion model; inspect as false-positive pattern."
       }
     },
     {
@@ -127,8 +141,16 @@
         "suggested_decision": "confirm_non_castro_archaeological_hard_negative",
         "boundary_action": "Confirm mound/non-castro; do not treat as generic absence.",
         "review_status": "pending",
+        "review_notes": "",
         "final_taxonomy": "",
         "final_decision": "",
+        "pretriage_order": "15",
+        "pretriage_group": "mamoa_archaeological_hard_negative",
+        "pretriage_decision": "confirm_mamoa_specific_hard_negative",
+        "pretriage_confidence": "high_taxonomy_medium_confusion",
+        "training_use_after_review": "archaeological_hard_negative_not_generic_absence",
+        "do_not_use_as": "generic_absence",
+        "visual_reading": "Contact sheets show castro-like circular/anular relief distractors; confirm taxonomy and keep as specific archaeological hard negatives.",
         "name": "Mámoa de Rioboo 1/Mámoa de Canteiros 1",
         "municipality": "Valdoviño",
         "parish": "Meirás (San Vicente)",
@@ -144,8 +166,7 @@
         "negative_type": "megalithic_mound",
         "morphology_proxy": "",
         "visual_sheet": "reports/figures/weak_label_error_review_v1/holdout-top-false-positives.png",
-        "review_reason": "Known hard negative ranked high by the main fusion model; inspect as false-positive pattern.",
-        "review_notes": ""
+        "review_reason": "Known hard negative ranked high by the main fusion model; inspect as false-positive pattern."
       }
     },
     {
@@ -176,8 +197,16 @@
         "suggested_decision": "confirm_non_castro_archaeological_hard_negative",
         "boundary_action": "Confirm mound/non-castro; do not treat as generic absence.",
         "review_status": "pending",
+        "review_notes": "",
         "final_taxonomy": "",
         "final_decision": "",
+        "pretriage_order": "13",
+        "pretriage_group": "mamoa_archaeological_hard_negative",
+        "pretriage_decision": "confirm_mamoa_specific_hard_negative",
+        "pretriage_confidence": "high_taxonomy_medium_confusion",
+        "training_use_after_review": "archaeological_hard_negative_not_generic_absence",
+        "do_not_use_as": "generic_absence",
+        "visual_reading": "Contact sheets show castro-like circular/anular relief distractors; confirm taxonomy and keep as specific archaeological hard negatives.",
         "name": "Mámoa do Monte dos Niños 05",
         "municipality": "Narón",
         "parish": "Sedes (Santo Estevo)",
@@ -193,8 +222,7 @@
         "negative_type": "megalithic_mound",
         "morphology_proxy": "",
         "visual_sheet": "reports/figures/weak_label_error_review_v1/holdout-top-false-positives.png",
-        "review_reason": "Known hard negative ranked high by the main fusion model; inspect as false-positive pattern.",
-        "review_notes": ""
+        "review_reason": "Known hard negative ranked high by the main fusion model; inspect as false-positive pattern."
       }
     },
     {
@@ -225,8 +253,16 @@
         "suggested_decision": "confirm_non_castro_archaeological_hard_negative",
         "boundary_action": "Confirm mound/non-castro; do not treat as generic absence.",
         "review_status": "pending",
+        "review_notes": "",
         "final_taxonomy": "",
         "final_decision": "",
+        "pretriage_order": "20",
+        "pretriage_group": "mamoa_archaeological_hard_negative",
+        "pretriage_decision": "confirm_mamoa_specific_hard_negative",
+        "pretriage_confidence": "high_taxonomy_medium_confusion",
+        "training_use_after_review": "archaeological_hard_negative_not_generic_absence",
+        "do_not_use_as": "generic_absence",
+        "visual_reading": "Contact sheets show castro-like circular/anular relief distractors; confirm taxonomy and keep as specific archaeological hard negatives.",
         "name": "Mámoa de Muíño do Vento",
         "municipality": "Narón",
         "parish": "Trasancos (San Mateo)",
@@ -242,8 +278,7 @@
         "negative_type": "megalithic_mound",
         "morphology_proxy": "",
         "visual_sheet": "reports/figures/weak_label_error_review_v1/holdout-top-false-positives.png",
-        "review_reason": "Known hard negative ranked high by the main fusion model; inspect as false-positive pattern.",
-        "review_notes": ""
+        "review_reason": "Known hard negative ranked high by the main fusion model; inspect as false-positive pattern."
       }
     },
     {
@@ -274,8 +309,16 @@
         "suggested_decision": "confirm_non_castro_archaeological_hard_negative",
         "boundary_action": "Confirm mound/non-castro; do not treat as generic absence.",
         "review_status": "pending",
+        "review_notes": "",
         "final_taxonomy": "",
         "final_decision": "",
+        "pretriage_order": "14",
+        "pretriage_group": "mamoa_archaeological_hard_negative",
+        "pretriage_decision": "confirm_mamoa_specific_hard_negative",
+        "pretriage_confidence": "high_taxonomy_medium_confusion",
+        "training_use_after_review": "archaeological_hard_negative_not_generic_absence",
+        "do_not_use_as": "generic_absence",
+        "visual_reading": "Contact sheets show castro-like circular/anular relief distractors; confirm taxonomy and keep as specific archaeological hard negatives.",
         "name": "Mámoa de Bardaos",
         "municipality": "San Sadurniño",
         "parish": "Bardaos (Santa María)",
@@ -291,8 +334,7 @@
         "negative_type": "megalithic_mound",
         "morphology_proxy": "",
         "visual_sheet": "reports/figures/weak_label_error_review_v1/holdout-top-false-positives.png",
-        "review_reason": "Known hard negative ranked high by the main fusion model; inspect as false-positive pattern.",
-        "review_notes": ""
+        "review_reason": "Known hard negative ranked high by the main fusion model; inspect as false-positive pattern."
       }
     },
     {
@@ -323,8 +365,16 @@
         "suggested_decision": "confirm_non_castro_archaeological_hard_negative",
         "boundary_action": "Confirm mound/non-castro; do not treat as generic absence.",
         "review_status": "pending",
+        "review_notes": "",
         "final_taxonomy": "",
         "final_decision": "",
+        "pretriage_order": "12",
+        "pretriage_group": "mamoa_archaeological_hard_negative",
+        "pretriage_decision": "confirm_mamoa_specific_hard_negative",
+        "pretriage_confidence": "high_taxonomy_medium_confusion",
+        "training_use_after_review": "archaeological_hard_negative_not_generic_absence",
+        "do_not_use_as": "generic_absence",
+        "visual_reading": "Contact sheets show castro-like circular/anular relief distractors; confirm taxonomy and keep as specific archaeological hard negatives.",
         "name": "Mámoa do Monte de Pena Moura 3",
         "municipality": "Valdoviño",
         "parish": "Valdoviño (Santaia)",
@@ -340,8 +390,7 @@
         "negative_type": "megalithic_mound",
         "morphology_proxy": "",
         "visual_sheet": "reports/figures/weak_label_error_review_v1/holdout-top-false-positives.png",
-        "review_reason": "Known hard negative ranked high by the main fusion model; inspect as false-positive pattern.",
-        "review_notes": ""
+        "review_reason": "Known hard negative ranked high by the main fusion model; inspect as false-positive pattern."
       }
     },
     {
@@ -372,8 +421,16 @@
         "suggested_decision": "confirm_non_castro_archaeological_hard_negative",
         "boundary_action": "Confirm mound/non-castro; do not treat as generic absence.",
         "review_status": "pending",
+        "review_notes": "",
         "final_taxonomy": "",
         "final_decision": "",
+        "pretriage_order": "11",
+        "pretriage_group": "mamoa_archaeological_hard_negative",
+        "pretriage_decision": "confirm_mamoa_specific_hard_negative",
+        "pretriage_confidence": "high_taxonomy_medium_confusion",
+        "training_use_after_review": "archaeological_hard_negative_not_generic_absence",
+        "do_not_use_as": "generic_absence",
+        "visual_reading": "Contact sheets show castro-like circular/anular relief distractors; confirm taxonomy and keep as specific archaeological hard negatives.",
         "name": "Mámoa de Coto da Fraga 2",
         "municipality": "Valdoviño",
         "parish": "Pantín (Santiago)",
@@ -389,8 +446,7 @@
         "negative_type": "megalithic_mound",
         "morphology_proxy": "",
         "visual_sheet": "reports/figures/weak_label_error_review_v1/holdout-top-false-positives.png",
-        "review_reason": "Known hard negative ranked high by the main fusion model; inspect as false-positive pattern.",
-        "review_notes": ""
+        "review_reason": "Known hard negative ranked high by the main fusion model; inspect as false-positive pattern."
       }
     },
     {
@@ -421,8 +477,16 @@
         "suggested_decision": "confirm_non_castro_archaeological_hard_negative",
         "boundary_action": "Confirm mound/non-castro; do not treat as generic absence.",
         "review_status": "pending",
+        "review_notes": "",
         "final_taxonomy": "",
         "final_decision": "",
+        "pretriage_order": "9",
+        "pretriage_group": "mamoa_strong_model_confuser",
+        "pretriage_decision": "confirm_mamoa_specific_hard_negative",
+        "pretriage_confidence": "high_taxonomy_high_confusion",
+        "training_use_after_review": "archaeological_hard_negative_not_generic_absence",
+        "do_not_use_as": "generic_absence",
+        "visual_reading": "Contact sheets show castro-like circular/anular relief distractors; confirm taxonomy and keep as specific archaeological hard negatives.",
         "name": "Mámoa de Pena Moura",
         "municipality": "Valdoviño",
         "parish": "Vilarrube (San Martiño)",
@@ -438,8 +502,7 @@
         "negative_type": "megalithic_mound",
         "morphology_proxy": "",
         "visual_sheet": "reports/figures/weak_label_error_review_v1/holdout-top-false-positives.png",
-        "review_reason": "Known hard negative ranked high by the main fusion model; inspect as false-positive pattern.",
-        "review_notes": ""
+        "review_reason": "Known hard negative ranked high by the main fusion model; inspect as false-positive pattern."
       }
     },
     {
@@ -470,8 +533,16 @@
         "suggested_decision": "confirm_non_castro_archaeological_hard_negative",
         "boundary_action": "Confirm mound/non-castro; do not treat as generic absence.",
         "review_status": "pending",
+        "review_notes": "",
         "final_taxonomy": "",
         "final_decision": "",
+        "pretriage_order": "16",
+        "pretriage_group": "mamoa_archaeological_hard_negative",
+        "pretriage_decision": "confirm_mamoa_specific_hard_negative",
+        "pretriage_confidence": "high_taxonomy_medium_confusion",
+        "training_use_after_review": "archaeological_hard_negative_not_generic_absence",
+        "do_not_use_as": "generic_absence",
+        "visual_reading": "Contact sheets show castro-like circular/anular relief distractors; confirm taxonomy and keep as specific archaeological hard negatives.",
         "name": "Mámoa dos Montes de Brión III-8",
         "municipality": "Ferrol",
         "parish": "Doniños (San Román)",
@@ -487,8 +558,7 @@
         "negative_type": "megalithic_mound",
         "morphology_proxy": "",
         "visual_sheet": "reports/figures/weak_label_error_review_v1/holdout-top-false-positives.png",
-        "review_reason": "Known hard negative ranked high by the main fusion model; inspect as false-positive pattern.",
-        "review_notes": ""
+        "review_reason": "Known hard negative ranked high by the main fusion model; inspect as false-positive pattern."
       }
     },
     {
@@ -519,8 +589,16 @@
         "suggested_decision": "confirm_non_castro_archaeological_hard_negative",
         "boundary_action": "Confirm mound/non-castro; do not treat as generic absence.",
         "review_status": "pending",
+        "review_notes": "",
         "final_taxonomy": "",
         "final_decision": "",
+        "pretriage_order": "18",
+        "pretriage_group": "mamoa_archaeological_hard_negative",
+        "pretriage_decision": "confirm_mamoa_specific_hard_negative",
+        "pretriage_confidence": "high_taxonomy_medium_confusion",
+        "training_use_after_review": "archaeological_hard_negative_not_generic_absence",
+        "do_not_use_as": "generic_absence",
+        "visual_reading": "Contact sheets show castro-like circular/anular relief distractors; confirm taxonomy and keep as specific archaeological hard negatives.",
         "name": "Mámoa dos Montes de Brión VI-1",
         "municipality": "Ferrol",
         "parish": "Brión (Santa María)",
@@ -536,8 +614,7 @@
         "negative_type": "megalithic_mound",
         "morphology_proxy": "",
         "visual_sheet": "reports/figures/weak_label_error_review_v1/holdout-top-false-positives.png",
-        "review_reason": "Known hard negative ranked high by the main fusion model; inspect as false-positive pattern.",
-        "review_notes": ""
+        "review_reason": "Known hard negative ranked high by the main fusion model; inspect as false-positive pattern."
       }
     },
     {
@@ -568,8 +645,16 @@
         "suggested_decision": "confirm_non_castro_archaeological_hard_negative",
         "boundary_action": "Confirm mound/non-castro; do not treat as generic absence.",
         "review_status": "pending",
+        "review_notes": "",
         "final_taxonomy": "",
         "final_decision": "",
+        "pretriage_order": "22",
+        "pretriage_group": "mamoa_archaeological_hard_negative",
+        "pretriage_decision": "confirm_mamoa_specific_hard_negative",
+        "pretriage_confidence": "high_taxonomy_medium_confusion",
+        "training_use_after_review": "archaeological_hard_negative_not_generic_absence",
+        "do_not_use_as": "generic_absence",
+        "visual_reading": "Contact sheets show castro-like circular/anular relief distractors; confirm taxonomy and keep as specific archaeological hard negatives.",
         "name": "Mámoa de Mougá 6",
         "municipality": "Ferrol",
         "parish": "Doniños (San Román)",
@@ -585,8 +670,7 @@
         "negative_type": "megalithic_mound",
         "morphology_proxy": "",
         "visual_sheet": "reports/figures/weak_label_error_review_v1/holdout-top-false-positives.png",
-        "review_reason": "Known hard negative ranked high by the main fusion model; inspect as false-positive pattern.",
-        "review_notes": ""
+        "review_reason": "Known hard negative ranked high by the main fusion model; inspect as false-positive pattern."
       }
     },
     {
@@ -617,8 +701,16 @@
         "suggested_decision": "confirm_non_castro_archaeological_hard_negative",
         "boundary_action": "Confirm mound/non-castro; do not treat as generic absence.",
         "review_status": "pending",
+        "review_notes": "",
         "final_taxonomy": "",
         "final_decision": "",
+        "pretriage_order": "23",
+        "pretriage_group": "mamoa_archaeological_hard_negative",
+        "pretriage_decision": "confirm_mamoa_specific_hard_negative",
+        "pretriage_confidence": "high_taxonomy_medium_confusion",
+        "training_use_after_review": "archaeological_hard_negative_not_generic_absence",
+        "do_not_use_as": "generic_absence",
+        "visual_reading": "Contact sheets show castro-like circular/anular relief distractors; confirm taxonomy and keep as specific archaeological hard negatives.",
         "name": "Mámoa dos Montes de Brión I-7",
         "municipality": "Ferrol",
         "parish": "Brión (Santa María)",
@@ -634,8 +726,7 @@
         "negative_type": "megalithic_mound",
         "morphology_proxy": "",
         "visual_sheet": "reports/figures/weak_label_error_review_v1/holdout-top-false-positives.png",
-        "review_reason": "Known hard negative ranked high by the main fusion model; inspect as false-positive pattern.",
-        "review_notes": ""
+        "review_reason": "Known hard negative ranked high by the main fusion model; inspect as false-positive pattern."
       }
     },
     {
@@ -666,8 +757,16 @@
         "suggested_decision": "confirm_non_castro_archaeological_hard_negative",
         "boundary_action": "Confirm mound/non-castro; do not treat as generic absence.",
         "review_status": "pending",
+        "review_notes": "",
         "final_taxonomy": "",
         "final_decision": "",
+        "pretriage_order": "28",
+        "pretriage_group": "mamoa_archaeological_hard_negative",
+        "pretriage_decision": "confirm_mamoa_specific_hard_negative",
+        "pretriage_confidence": "high_taxonomy_medium_confusion",
+        "training_use_after_review": "archaeological_hard_negative_not_generic_absence",
+        "do_not_use_as": "generic_absence",
+        "visual_reading": "Contact sheets show castro-like circular/anular relief distractors; confirm taxonomy and keep as specific archaeological hard negatives.",
         "name": "Mámoa de Leixa 2",
         "municipality": "Ferrol",
         "parish": "Leixa (San Pedro)",
@@ -683,8 +782,7 @@
         "negative_type": "megalithic_mound",
         "morphology_proxy": "",
         "visual_sheet": "reports/figures/weak_label_error_review_v1/holdout-top-false-positives.png",
-        "review_reason": "Known hard negative ranked high by the main fusion model; inspect as false-positive pattern.",
-        "review_notes": ""
+        "review_reason": "Known hard negative ranked high by the main fusion model; inspect as false-positive pattern."
       }
     },
     {
@@ -715,8 +813,16 @@
         "suggested_decision": "confirm_non_castro_archaeological_hard_negative",
         "boundary_action": "Confirm mound/non-castro; do not treat as generic absence.",
         "review_status": "pending",
+        "review_notes": "",
         "final_taxonomy": "",
         "final_decision": "",
+        "pretriage_order": "29",
+        "pretriage_group": "mamoa_archaeological_hard_negative",
+        "pretriage_decision": "confirm_mamoa_specific_hard_negative",
+        "pretriage_confidence": "high_taxonomy_medium_confusion",
+        "training_use_after_review": "archaeological_hard_negative_not_generic_absence",
+        "do_not_use_as": "generic_absence",
+        "visual_reading": "Contact sheets show castro-like circular/anular relief distractors; confirm taxonomy and keep as specific archaeological hard negatives.",
         "name": "Mámoa de Leixa 3/Mámoa de Trasancos",
         "municipality": "Narón",
         "parish": "Trasancos (San Mateo)",
@@ -732,8 +838,7 @@
         "negative_type": "megalithic_mound",
         "morphology_proxy": "",
         "visual_sheet": "reports/figures/weak_label_error_review_v1/holdout-top-false-positives.png",
-        "review_reason": "Known hard negative ranked high by the main fusion model; inspect as false-positive pattern.",
-        "review_notes": ""
+        "review_reason": "Known hard negative ranked high by the main fusion model; inspect as false-positive pattern."
       }
     },
     {
@@ -764,8 +869,16 @@
         "suggested_decision": "confirm_non_castro_archaeological_hard_negative",
         "boundary_action": "Confirm mound/non-castro; do not treat as generic absence.",
         "review_status": "pending",
+        "review_notes": "",
         "final_taxonomy": "",
         "final_decision": "",
+        "pretriage_order": "26",
+        "pretriage_group": "mamoa_archaeological_hard_negative",
+        "pretriage_decision": "confirm_mamoa_specific_hard_negative",
+        "pretriage_confidence": "high_taxonomy_medium_confusion",
+        "training_use_after_review": "archaeological_hard_negative_not_generic_absence",
+        "do_not_use_as": "generic_absence",
+        "visual_reading": "Contact sheets show castro-like circular/anular relief distractors; confirm taxonomy and keep as specific archaeological hard negatives.",
         "name": "Mámoa de Pena Escrita",
         "municipality": "San Sadurniño",
         "parish": "Lamas (San Xiao)",
@@ -781,8 +894,7 @@
         "negative_type": "megalithic_mound",
         "morphology_proxy": "",
         "visual_sheet": "reports/figures/weak_label_error_review_v1/holdout-top-false-positives.png",
-        "review_reason": "Known hard negative ranked high by the main fusion model; inspect as false-positive pattern.",
-        "review_notes": ""
+        "review_reason": "Known hard negative ranked high by the main fusion model; inspect as false-positive pattern."
       }
     },
     {
@@ -813,8 +925,16 @@
         "suggested_decision": "confirm_non_castro_archaeological_hard_negative",
         "boundary_action": "Confirm mound/non-castro; do not treat as generic absence.",
         "review_status": "pending",
+        "review_notes": "",
         "final_taxonomy": "",
         "final_decision": "",
+        "pretriage_order": "24",
+        "pretriage_group": "mamoa_archaeological_hard_negative",
+        "pretriage_decision": "confirm_mamoa_specific_hard_negative",
+        "pretriage_confidence": "high_taxonomy_medium_confusion",
+        "training_use_after_review": "archaeological_hard_negative_not_generic_absence",
+        "do_not_use_as": "generic_absence",
+        "visual_reading": "Contact sheets show castro-like circular/anular relief distractors; confirm taxonomy and keep as specific archaeological hard negatives.",
         "name": "Mámoa dos Montes de Brión I-1",
         "municipality": "Ferrol",
         "parish": "Doniños (San Román)",
@@ -830,8 +950,7 @@
         "negative_type": "megalithic_mound",
         "morphology_proxy": "",
         "visual_sheet": "reports/figures/weak_label_error_review_v1/holdout-top-false-positives.png",
-        "review_reason": "Known hard negative ranked high by the main fusion model; inspect as false-positive pattern.",
-        "review_notes": ""
+        "review_reason": "Known hard negative ranked high by the main fusion model; inspect as false-positive pattern."
       }
     },
     {
@@ -862,8 +981,16 @@
         "suggested_decision": "confirm_non_castro_archaeological_hard_negative",
         "boundary_action": "Confirm mound/non-castro; do not treat as generic absence.",
         "review_status": "pending",
+        "review_notes": "",
         "final_taxonomy": "",
         "final_decision": "",
+        "pretriage_order": "17",
+        "pretriage_group": "mamoa_archaeological_hard_negative",
+        "pretriage_decision": "confirm_mamoa_specific_hard_negative",
+        "pretriage_confidence": "high_taxonomy_medium_confusion",
+        "training_use_after_review": "archaeological_hard_negative_not_generic_absence",
+        "do_not_use_as": "generic_absence",
+        "visual_reading": "Contact sheets show castro-like circular/anular relief distractors; confirm taxonomy and keep as specific archaeological hard negatives.",
         "name": "Mámoa dos Montes de Brión IV-7",
         "municipality": "Ferrol",
         "parish": "Brión (Santa María)",
@@ -879,8 +1006,7 @@
         "negative_type": "megalithic_mound",
         "morphology_proxy": "",
         "visual_sheet": "reports/figures/weak_label_error_review_v1/holdout-top-false-positives.png",
-        "review_reason": "Known hard negative ranked high by the main fusion model; inspect as false-positive pattern.",
-        "review_notes": ""
+        "review_reason": "Known hard negative ranked high by the main fusion model; inspect as false-positive pattern."
       }
     },
     {
@@ -911,8 +1037,16 @@
         "suggested_decision": "confirm_non_castro_archaeological_hard_negative",
         "boundary_action": "Confirm mound/non-castro; do not treat as generic absence.",
         "review_status": "pending",
+        "review_notes": "",
         "final_taxonomy": "",
         "final_decision": "",
+        "pretriage_order": "21",
+        "pretriage_group": "mamoa_archaeological_hard_negative",
+        "pretriage_decision": "confirm_mamoa_specific_hard_negative",
+        "pretriage_confidence": "high_taxonomy_medium_confusion",
+        "training_use_after_review": "archaeological_hard_negative_not_generic_absence",
+        "do_not_use_as": "generic_absence",
+        "visual_reading": "Contact sheets show castro-like circular/anular relief distractors; confirm taxonomy and keep as specific archaeological hard negatives.",
         "name": "Mámoa de Loira",
         "municipality": "Valdoviño",
         "parish": "Loira (San Pedro)",
@@ -928,8 +1062,7 @@
         "negative_type": "megalithic_mound",
         "morphology_proxy": "",
         "visual_sheet": "reports/figures/weak_label_error_review_v1/holdout-top-false-positives.png",
-        "review_reason": "Known hard negative ranked high by the main fusion model; inspect as false-positive pattern.",
-        "review_notes": ""
+        "review_reason": "Known hard negative ranked high by the main fusion model; inspect as false-positive pattern."
       }
     },
     {
@@ -960,8 +1093,16 @@
         "suggested_decision": "confirm_non_castro_archaeological_hard_negative",
         "boundary_action": "Confirm mound/non-castro; do not treat as generic absence.",
         "review_status": "pending",
+        "review_notes": "",
         "final_taxonomy": "",
         "final_decision": "",
+        "pretriage_order": "30",
+        "pretriage_group": "mamoa_archaeological_hard_negative",
+        "pretriage_decision": "confirm_mamoa_specific_hard_negative",
+        "pretriage_confidence": "high_taxonomy_medium_confusion",
+        "training_use_after_review": "archaeological_hard_negative_not_generic_absence",
+        "do_not_use_as": "generic_absence",
+        "visual_reading": "Contact sheets show castro-like circular/anular relief distractors; confirm taxonomy and keep as specific archaeological hard negatives.",
         "name": "Mámoa de Leixa 1",
         "municipality": "Ferrol",
         "parish": "Leixa (San Pedro)",
@@ -977,8 +1118,7 @@
         "negative_type": "megalithic_mound",
         "morphology_proxy": "",
         "visual_sheet": "reports/figures/weak_label_error_review_v1/holdout-top-false-positives.png",
-        "review_reason": "Known hard negative ranked high by the main fusion model; inspect as false-positive pattern.",
-        "review_notes": ""
+        "review_reason": "Known hard negative ranked high by the main fusion model; inspect as false-positive pattern."
       }
     },
     {
@@ -1009,8 +1149,16 @@
         "suggested_decision": "confirm_non_castro_archaeological_hard_negative",
         "boundary_action": "Confirm mound/non-castro; do not treat as generic absence.",
         "review_status": "pending",
+        "review_notes": "",
         "final_taxonomy": "",
         "final_decision": "",
+        "pretriage_order": "27",
+        "pretriage_group": "mamoa_archaeological_hard_negative",
+        "pretriage_decision": "confirm_mamoa_specific_hard_negative",
+        "pretriage_confidence": "high_taxonomy_medium_confusion",
+        "training_use_after_review": "archaeological_hard_negative_not_generic_absence",
+        "do_not_use_as": "generic_absence",
+        "visual_reading": "Contact sheets show castro-like circular/anular relief distractors; confirm taxonomy and keep as specific archaeological hard negatives.",
         "name": "Mámoa de Rioboo 2/Mámoa de Canteiros 2/M moas do Val",
         "municipality": "Valdoviño",
         "parish": "Meirás (San Vicente)",
@@ -1026,8 +1174,7 @@
         "negative_type": "megalithic_mound",
         "morphology_proxy": "",
         "visual_sheet": "reports/figures/weak_label_error_review_v1/holdout-top-false-positives.png",
-        "review_reason": "Known hard negative ranked high by the main fusion model; inspect as false-positive pattern.",
-        "review_notes": ""
+        "review_reason": "Known hard negative ranked high by the main fusion model; inspect as false-positive pattern."
       }
     },
     {
@@ -1058,8 +1205,16 @@
         "suggested_decision": "confirm_non_castro_archaeological_hard_negative",
         "boundary_action": "Confirm mound/non-castro; do not treat as generic absence.",
         "review_status": "pending",
+        "review_notes": "",
         "final_taxonomy": "",
         "final_decision": "",
+        "pretriage_order": "19",
+        "pretriage_group": "mamoa_archaeological_hard_negative",
+        "pretriage_decision": "confirm_mamoa_specific_hard_negative",
+        "pretriage_confidence": "high_taxonomy_medium_confusion",
+        "training_use_after_review": "archaeological_hard_negative_not_generic_absence",
+        "do_not_use_as": "generic_absence",
+        "visual_reading": "Contact sheets show castro-like circular/anular relief distractors; confirm taxonomy and keep as specific archaeological hard negatives.",
         "name": "Mámoa dos Montes de Brión I-10",
         "municipality": "Ferrol",
         "parish": "Brión (Santa María)",
@@ -1075,8 +1230,7 @@
         "negative_type": "megalithic_mound",
         "morphology_proxy": "",
         "visual_sheet": "reports/figures/weak_label_error_review_v1/holdout-top-false-positives.png",
-        "review_reason": "Known hard negative ranked high by the main fusion model; inspect as false-positive pattern.",
-        "review_notes": ""
+        "review_reason": "Known hard negative ranked high by the main fusion model; inspect as false-positive pattern."
       }
     },
     {
@@ -1107,8 +1261,16 @@
         "suggested_decision": "confirm_non_castro_archaeological_hard_negative",
         "boundary_action": "Confirm mound/non-castro; do not treat as generic absence.",
         "review_status": "pending",
+        "review_notes": "",
         "final_taxonomy": "",
         "final_decision": "",
+        "pretriage_order": "2",
+        "pretriage_group": "o_val_local_first",
+        "pretriage_decision": "confirm_local_mamoa_non_castro_hard_negative",
+        "pretriage_confidence": "high_taxonomy_medium_confusion",
+        "training_use_after_review": "archaeological_hard_negative_not_generic_absence",
+        "do_not_use_as": "generic_absence",
+        "visual_reading": "Contact sheets show castro-like circular/anular relief distractors; confirm taxonomy and keep as specific archaeological hard negatives.",
         "name": "Mámoa do Val/Mámoa de Santa Margarida",
         "municipality": "Narón",
         "parish": "O Val (Santa María A Maior)",
@@ -1124,8 +1286,7 @@
         "negative_type": "megalithic_mound",
         "morphology_proxy": "",
         "visual_sheet": "reports/figures/weak_label_error_review_v1/holdout-top-false-positives.png",
-        "review_reason": "Known hard negative ranked high by the main fusion model; inspect as false-positive pattern.",
-        "review_notes": ""
+        "review_reason": "Known hard negative ranked high by the main fusion model; inspect as false-positive pattern."
       }
     },
     {
@@ -1156,8 +1317,16 @@
         "suggested_decision": "confirm_non_castro_archaeological_hard_negative",
         "boundary_action": "Confirm mound/non-castro; do not treat as generic absence.",
         "review_status": "pending",
+        "review_notes": "",
         "final_taxonomy": "",
         "final_decision": "",
+        "pretriage_order": "25",
+        "pretriage_group": "mamoa_archaeological_hard_negative",
+        "pretriage_decision": "confirm_mamoa_specific_hard_negative",
+        "pretriage_confidence": "high_taxonomy_medium_confusion",
+        "training_use_after_review": "archaeological_hard_negative_not_generic_absence",
+        "do_not_use_as": "generic_absence",
+        "visual_reading": "Contact sheets show castro-like circular/anular relief distractors; confirm taxonomy and keep as specific archaeological hard negatives.",
         "name": "Mámoa dos Montes de Brión I-6",
         "municipality": "Ferrol",
         "parish": "Brión (Santa María)",
@@ -1173,8 +1342,7 @@
         "negative_type": "megalithic_mound",
         "morphology_proxy": "",
         "visual_sheet": "reports/figures/weak_label_error_review_v1/holdout-top-false-positives.png",
-        "review_reason": "Known hard negative ranked high by the main fusion model; inspect as false-positive pattern.",
-        "review_notes": ""
+        "review_reason": "Known hard negative ranked high by the main fusion model; inspect as false-positive pattern."
       }
     },
     {
@@ -1205,8 +1373,16 @@
         "suggested_decision": "inspect_as_positive_rescue",
         "boundary_action": "If visible, draw croa/muralla/recinto polygon; otherwise mark needs_followup.",
         "review_status": "pending",
+        "review_notes": "",
         "final_taxonomy": "",
         "final_decision": "",
+        "pretriage_order": "1",
+        "pretriage_group": "o_val_local_first",
+        "pretriage_decision": "local_positive_boundary_review",
+        "pretriage_confidence": "high_model_signal_boundary_needed",
+        "training_use_after_review": "positive_candidate_after_boundary_review",
+        "do_not_use_as": "new_discovery_claim_without_review",
+        "visual_reading": "Specialist score is strong against mamoa distractors; inspect visible boundary and source context before accepting.",
         "name": "Castro de Pena Lopesa",
         "municipality": "Narón",
         "parish": "O Val (Santa María A Maior)",
@@ -1222,8 +1398,7 @@
         "negative_type": "",
         "morphology_proxy": "hilltop_hint",
         "visual_sheet": "reports/figures/weak_label_error_review_v1/holdout-low-rank-positives.png",
-        "review_reason": "Known positive ranked low by the main fusion model; inspect as false-negative morphology.",
-        "review_notes": ""
+        "review_reason": "Known positive ranked low by the main fusion model; inspect as false-negative morphology."
       }
     },
     {
@@ -1254,8 +1429,16 @@
         "suggested_decision": "inspect_as_positive_rescue",
         "boundary_action": "If visible, draw croa/muralla/recinto polygon; otherwise mark needs_followup.",
         "review_status": "pending",
+        "review_notes": "",
         "final_taxonomy": "",
         "final_decision": "",
+        "pretriage_order": "6",
+        "pretriage_group": "positive_rescue",
+        "pretriage_decision": "positive_boundary_review",
+        "pretriage_confidence": "medium_model_signal_boundary_needed",
+        "training_use_after_review": "positive_candidate_after_boundary_review",
+        "do_not_use_as": "new_discovery_claim_without_review",
+        "visual_reading": "Contact sheets show coastal/promontory morphology; inspect boundary instead of penalizing non-round shape.",
         "name": "Castro da Punta do Vico",
         "municipality": "Valdoviño",
         "parish": "Valdoviño (Santaia)",
@@ -1271,8 +1454,7 @@
         "negative_type": "",
         "morphology_proxy": "coastal_promontory_hint",
         "visual_sheet": "reports/figures/weak_label_error_review_v1/holdout-low-rank-positives.png",
-        "review_reason": "Known positive ranked low by the main fusion model; inspect as false-negative morphology.",
-        "review_notes": ""
+        "review_reason": "Known positive ranked low by the main fusion model; inspect as false-negative morphology."
       }
     },
     {
@@ -1303,8 +1485,16 @@
         "suggested_decision": "inspect_as_positive_rescue",
         "boundary_action": "If visible, draw croa/muralla/recinto polygon; otherwise mark needs_followup.",
         "review_status": "pending",
+        "review_notes": "",
         "final_taxonomy": "",
         "final_decision": "",
+        "pretriage_order": "7",
+        "pretriage_group": "positive_rescue",
+        "pretriage_decision": "positive_boundary_review",
+        "pretriage_confidence": "medium_model_signal_boundary_needed",
+        "training_use_after_review": "positive_candidate_after_boundary_review",
+        "do_not_use_as": "new_discovery_claim_without_review",
+        "visual_reading": "Specialist score is strong against mamoa distractors; inspect visible boundary and source context before accepting.",
         "name": "Castro de Coto Redondo",
         "municipality": "Valdoviño",
         "parish": "Pantín (Santiago)",
@@ -1320,8 +1510,7 @@
         "negative_type": "",
         "morphology_proxy": "hilltop_hint",
         "visual_sheet": "reports/figures/weak_label_error_review_v1/holdout-low-rank-positives.png",
-        "review_reason": "Known positive ranked low by the main fusion model; inspect as false-negative morphology.",
-        "review_notes": ""
+        "review_reason": "Known positive ranked low by the main fusion model; inspect as false-negative morphology."
       }
     },
     {
@@ -1352,8 +1541,16 @@
         "suggested_decision": "inspect_as_positive_rescue",
         "boundary_action": "If visible, draw croa/muralla/recinto polygon; otherwise mark needs_followup.",
         "review_status": "pending",
+        "review_notes": "",
         "final_taxonomy": "",
         "final_decision": "",
+        "pretriage_order": "1",
+        "pretriage_group": "o_val_local_first",
+        "pretriage_decision": "local_positive_boundary_review",
+        "pretriage_confidence": "high_model_signal_boundary_needed",
+        "training_use_after_review": "positive_candidate_after_boundary_review",
+        "do_not_use_as": "new_discovery_claim_without_review",
+        "visual_reading": "Specialist score is strong against mamoa distractors; inspect visible boundary and source context before accepting.",
         "name": "Castro de Pena Lopesa",
         "municipality": "Narón",
         "parish": "O Val (Santa María A Maior)",
@@ -1369,8 +1566,7 @@
         "negative_type": "",
         "morphology_proxy": "hilltop_hint",
         "visual_sheet": "reports/figures/weak_label_error_review_v1/holdout-morphology-rescues.png",
-        "review_reason": "Known positive moved upward by max_safety; inspect morphology archetype missed by the main model.",
-        "review_notes": ""
+        "review_reason": "Known positive moved upward by max_safety; inspect morphology archetype missed by the main model."
       }
     },
     {
@@ -1401,8 +1597,16 @@
         "suggested_decision": "inspect_as_positive_rescue",
         "boundary_action": "If visible, draw croa/muralla/recinto polygon; otherwise mark needs_followup.",
         "review_status": "pending",
+        "review_notes": "",
         "final_taxonomy": "",
         "final_decision": "",
+        "pretriage_order": "6",
+        "pretriage_group": "positive_rescue",
+        "pretriage_decision": "positive_boundary_review",
+        "pretriage_confidence": "medium_model_signal_boundary_needed",
+        "training_use_after_review": "positive_candidate_after_boundary_review",
+        "do_not_use_as": "new_discovery_claim_without_review",
+        "visual_reading": "Contact sheets show coastal/promontory morphology; inspect boundary instead of penalizing non-round shape.",
         "name": "Castro da Punta do Vico",
         "municipality": "Valdoviño",
         "parish": "Valdoviño (Santaia)",
@@ -1418,8 +1622,7 @@
         "negative_type": "",
         "morphology_proxy": "coastal_promontory_hint",
         "visual_sheet": "reports/figures/weak_label_error_review_v1/holdout-morphology-rescues.png",
-        "review_reason": "Known positive moved upward by max_safety; inspect morphology archetype missed by the main model.",
-        "review_notes": ""
+        "review_reason": "Known positive moved upward by max_safety; inspect morphology archetype missed by the main model."
       }
     },
     {
@@ -1450,8 +1653,16 @@
         "suggested_decision": "inspect_as_positive_rescue",
         "boundary_action": "If visible, draw croa/muralla/recinto polygon; otherwise mark needs_followup.",
         "review_status": "pending",
+        "review_notes": "",
         "final_taxonomy": "",
         "final_decision": "",
+        "pretriage_order": "4",
+        "pretriage_group": "positive_rescue",
+        "pretriage_decision": "positive_boundary_review",
+        "pretriage_confidence": "high_model_signal_boundary_needed",
+        "training_use_after_review": "positive_candidate_after_boundary_review",
+        "do_not_use_as": "new_discovery_claim_without_review",
+        "visual_reading": "Contact sheets show coastal/promontory morphology; inspect boundary instead of penalizing non-round shape.",
         "name": "Castro de Punta Frouxeira",
         "municipality": "Valdoviño",
         "parish": "Valdoviño (Santaia)",
@@ -1467,8 +1678,7 @@
         "negative_type": "",
         "morphology_proxy": "coastal_promontory_hint",
         "visual_sheet": "reports/figures/weak_label_error_review_v1/holdout-morphology-rescues.png",
-        "review_reason": "Known positive moved upward by max_safety; inspect morphology archetype missed by the main model.",
-        "review_notes": ""
+        "review_reason": "Known positive moved upward by max_safety; inspect morphology archetype missed by the main model."
       }
     },
     {
@@ -1499,8 +1709,16 @@
         "suggested_decision": "inspect_as_positive_rescue",
         "boundary_action": "If visible, draw croa/muralla/recinto polygon; otherwise mark needs_followup.",
         "review_status": "pending",
+        "review_notes": "",
         "final_taxonomy": "",
         "final_decision": "",
+        "pretriage_order": "3",
+        "pretriage_group": "positive_rescue",
+        "pretriage_decision": "positive_boundary_review",
+        "pretriage_confidence": "high_model_signal_boundary_needed",
+        "training_use_after_review": "positive_candidate_after_boundary_review",
+        "do_not_use_as": "new_discovery_claim_without_review",
+        "visual_reading": "Contact sheets show coastal/promontory morphology; inspect boundary instead of penalizing non-round shape.",
         "name": "Castro de Punta Taraza",
         "municipality": "Valdoviño",
         "parish": "Meirás (San Vicente)",
@@ -1516,8 +1734,7 @@
         "negative_type": "",
         "morphology_proxy": "coastal_promontory_hint",
         "visual_sheet": "reports/figures/weak_label_error_review_v1/holdout-morphology-rescues.png",
-        "review_reason": "Known positive moved upward by max_safety; inspect morphology archetype missed by the main model.",
-        "review_notes": ""
+        "review_reason": "Known positive moved upward by max_safety; inspect morphology archetype missed by the main model."
       }
     },
     {
@@ -1548,8 +1765,16 @@
         "suggested_decision": "inspect_as_positive_rescue",
         "boundary_action": "If visible, draw croa/muralla/recinto polygon; otherwise mark needs_followup.",
         "review_status": "pending",
+        "review_notes": "",
         "final_taxonomy": "",
         "final_decision": "",
+        "pretriage_order": "5",
+        "pretriage_group": "positive_rescue",
+        "pretriage_decision": "positive_boundary_review",
+        "pretriage_confidence": "medium_model_signal_boundary_needed",
+        "training_use_after_review": "positive_candidate_after_boundary_review",
+        "do_not_use_as": "new_discovery_claim_without_review",
+        "visual_reading": "Specialist score is strong against mamoa distractors; inspect visible boundary and source context before accepting.",
         "name": "Necrópole de Santa Comba/Castro de Santa Comba",
         "municipality": "Ferrol",
         "parish": "Covas (San Martiño)",
@@ -1565,8 +1790,7 @@
         "negative_type": "",
         "morphology_proxy": "generic_castro_hint",
         "visual_sheet": "reports/figures/weak_label_error_review_v1/holdout-morphology-rescues.png",
-        "review_reason": "Known positive moved upward by max_safety; inspect morphology archetype missed by the main model.",
-        "review_notes": ""
+        "review_reason": "Known positive moved upward by max_safety; inspect morphology archetype missed by the main model."
       }
     }
   ]

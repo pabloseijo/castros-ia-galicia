@@ -29,8 +29,16 @@
         "suggested_decision": "confirm_non_castro_archaeological_hard_negative",
         "boundary_action": "Confirm mound/non-castro; do not treat as generic absence.",
         "review_status": "pending",
+        "review_notes": "",
         "final_taxonomy": "",
         "final_decision": "",
+        "pretriage_order": "2",
+        "pretriage_group": "o_val_local_first",
+        "pretriage_decision": "confirm_local_mamoa_non_castro_hard_negative",
+        "pretriage_confidence": "high_taxonomy_medium_confusion",
+        "training_use_after_review": "archaeological_hard_negative_not_generic_absence",
+        "do_not_use_as": "generic_absence",
+        "visual_reading": "Contact sheets show castro-like circular/anular relief distractors; confirm taxonomy and keep as specific archaeological hard negatives.",
         "name": "Mámoa do Val/Mámoa de Santa Margarida",
         "municipality": "Narón",
         "parish": "O Val (Santa María A Maior)",
@@ -46,8 +54,7 @@
         "negative_type": "megalithic_mound",
         "morphology_proxy": "",
         "visual_sheet": "reports/figures/weak_label_error_review_v1/holdout-top-false-positives.png",
-        "review_reason": "Known hard negative ranked high by the main fusion model; inspect as false-positive pattern.",
-        "review_notes": ""
+        "review_reason": "Known hard negative ranked high by the main fusion model; inspect as false-positive pattern."
       }
     },
     {
@@ -78,8 +85,16 @@
         "suggested_decision": "inspect_as_positive_rescue",
         "boundary_action": "If visible, draw croa/muralla/recinto polygon; otherwise mark needs_followup.",
         "review_status": "pending",
+        "review_notes": "",
         "final_taxonomy": "",
         "final_decision": "",
+        "pretriage_order": "1",
+        "pretriage_group": "o_val_local_first",
+        "pretriage_decision": "local_positive_boundary_review",
+        "pretriage_confidence": "high_model_signal_boundary_needed",
+        "training_use_after_review": "positive_candidate_after_boundary_review",
+        "do_not_use_as": "new_discovery_claim_without_review",
+        "visual_reading": "Specialist score is strong against mamoa distractors; inspect visible boundary and source context before accepting.",
         "name": "Castro de Pena Lopesa",
         "municipality": "Narón",
         "parish": "O Val (Santa María A Maior)",
@@ -95,8 +110,7 @@
         "negative_type": "",
         "morphology_proxy": "hilltop_hint",
         "visual_sheet": "reports/figures/weak_label_error_review_v1/holdout-low-rank-positives.png",
-        "review_reason": "Known positive ranked low by the main fusion model; inspect as false-negative morphology.",
-        "review_notes": ""
+        "review_reason": "Known positive ranked low by the main fusion model; inspect as false-negative morphology."
       }
     },
     {
@@ -127,8 +141,16 @@
         "suggested_decision": "inspect_as_positive_rescue",
         "boundary_action": "If visible, draw croa/muralla/recinto polygon; otherwise mark needs_followup.",
         "review_status": "pending",
+        "review_notes": "",
         "final_taxonomy": "",
         "final_decision": "",
+        "pretriage_order": "1",
+        "pretriage_group": "o_val_local_first",
+        "pretriage_decision": "local_positive_boundary_review",
+        "pretriage_confidence": "high_model_signal_boundary_needed",
+        "training_use_after_review": "positive_candidate_after_boundary_review",
+        "do_not_use_as": "new_discovery_claim_without_review",
+        "visual_reading": "Specialist score is strong against mamoa distractors; inspect visible boundary and source context before accepting.",
         "name": "Castro de Pena Lopesa",
         "municipality": "Narón",
         "parish": "O Val (Santa María A Maior)",
@@ -144,8 +166,7 @@
         "negative_type": "",
         "morphology_proxy": "hilltop_hint",
         "visual_sheet": "reports/figures/weak_label_error_review_v1/holdout-morphology-rescues.png",
-        "review_reason": "Known positive moved upward by max_safety; inspect morphology archetype missed by the main model.",
-        "review_notes": ""
+        "review_reason": "Known positive moved upward by max_safety; inspect morphology archetype missed by the main model."
       }
     }
   ]

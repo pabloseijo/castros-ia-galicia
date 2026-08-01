@@ -50,8 +50,16 @@ TASK_FIELDS = [
     "suggested_decision",
     "boundary_action",
     "review_status",
+    "review_notes",
     "final_taxonomy",
     "final_decision",
+    "pretriage_order",
+    "pretriage_group",
+    "pretriage_decision",
+    "pretriage_confidence",
+    "training_use_after_review",
+    "do_not_use_as",
+    "visual_reading",
     "name",
     "municipality",
     "parish",
@@ -70,7 +78,6 @@ TASK_FIELDS = [
     "morphology_proxy",
     "visual_sheet",
     "review_reason",
-    "review_notes",
 ]
 
 TAXONOMY_ROWS = [
@@ -209,6 +216,91 @@ def boundary_action(row: dict[str, str]) -> str:
     return "Mark non_decidible unless visual/context evidence is strong."
 
 
+def pretriage_group(row: dict[str, str]) -> str:
+    if row.get("final_split") == "test_o_val":
+        return "o_val_local_first"
+    if row.get("review_lane") == "mamoa_specialist_positive_review":
+        return "positive_rescue"
+    if row.get("review_lane") == "mamoa_false_positive_review" and parse_float(row.get("specialist_rank", "999999")) <= 35:
+        return "mamoa_strong_model_confuser"
+    if row.get("review_lane") == "mamoa_false_positive_review":
+        return "mamoa_archaeological_hard_negative"
+    if row.get("review_lane") == "morphology_rescue_review":
+        return "morphology_rescue"
+    if row.get("review_lane") == "low_positive_review":
+        return "low_rank_positive"
+    return "weak_negative_later"
+
+
+def pretriage_decision(row: dict[str, str]) -> str:
+    lane = row.get("review_lane", "")
+    if row.get("final_split") == "test_o_val" and lane == "mamoa_false_positive_review":
+        return "confirm_local_mamoa_non_castro_hard_negative"
+    if row.get("final_split") == "test_o_val" and lane == "mamoa_specialist_positive_review":
+        return "local_positive_boundary_review"
+    if lane == "mamoa_false_positive_review":
+        return "confirm_mamoa_specific_hard_negative"
+    if lane == "mamoa_specialist_positive_review":
+        return "positive_boundary_review"
+    if lane == "morphology_rescue_review":
+        return "morphology_boundary_review"
+    if lane == "low_positive_review":
+        return "visibility_or_centroid_review"
+    return "defer_weak_negative_review"
+
+
+def pretriage_confidence(row: dict[str, str]) -> str:
+    lane = row.get("review_lane", "")
+    specialist_rank = parse_float(row.get("specialist_rank", "999999"))
+    if lane == "mamoa_false_positive_review" and specialist_rank <= 35:
+        return "high_taxonomy_high_confusion"
+    if lane == "mamoa_false_positive_review":
+        return "high_taxonomy_medium_confusion"
+    if lane == "mamoa_specialist_positive_review" and specialist_rank <= 3:
+        return "high_model_signal_boundary_needed"
+    if lane == "mamoa_specialist_positive_review":
+        return "medium_model_signal_boundary_needed"
+    if lane == "morphology_rescue_review":
+        return "medium_morphology_signal_boundary_needed"
+    return "low_pretriage_confidence"
+
+
+def training_use_after_review(row: dict[str, str]) -> str:
+    taxonomy = suggested_taxonomy(row)
+    if taxonomy == "castro":
+        return "positive_candidate_after_boundary_review"
+    if taxonomy in {"mamoa", "petroglifo", "fortificacion_historica", "outro_arqueologico"}:
+        return "archaeological_hard_negative_not_generic_absence"
+    if taxonomy in {"cantera_mina", "ruido_moderno"}:
+        return "generic_hard_negative_if_confirmed"
+    return "exclude_until_reviewed"
+
+
+def do_not_use_as(row: dict[str, str]) -> str:
+    taxonomy = suggested_taxonomy(row)
+    if taxonomy in {"mamoa", "petroglifo", "fortificacion_historica", "outro_arqueologico"}:
+        return "generic_absence"
+    if taxonomy == "castro":
+        return "new_discovery_claim_without_review"
+    return "training_label_without_review"
+
+
+def visual_reading(row: dict[str, str]) -> str:
+    lane = row.get("review_lane", "")
+    morphology = row.get("morphology_proxy", "")
+    if lane == "mamoa_false_positive_review":
+        return "Contact sheets show castro-like circular/anular relief distractors; confirm taxonomy and keep as specific archaeological hard negatives."
+    if lane == "mamoa_specialist_positive_review" and "coastal_promontory" in morphology:
+        return "Contact sheets show coastal/promontory morphology; inspect boundary instead of penalizing non-round shape."
+    if lane == "mamoa_specialist_positive_review":
+        return "Specialist score is strong against mamoa distractors; inspect visible boundary and source context before accepting."
+    if lane == "morphology_rescue_review":
+        return "Morphology channel raises the point; inspect whether slope/LRM expresses a real enclosure or only terrain edge."
+    if lane == "low_positive_review":
+        return "Known positive remains low in fusion; inspect centering, visibility, vegetation and morphology proxy."
+    return "Weak negative review only after holdout lanes; do not treat as proven absence."
+
+
 def load_visual_sheet_by_sample(path: Path) -> dict[tuple[str, str], str]:
     if not path.exists():
         return {}
@@ -247,10 +339,45 @@ def enrich_tasks(rows: list[dict[str, str]], visual_sheet_by_sample: dict[tuple[
         task["review_status"] = "pending"
         task["final_taxonomy"] = ""
         task["final_decision"] = ""
+        task["pretriage_order"] = ""
+        task["pretriage_group"] = pretriage_group(row)
+        task["pretriage_decision"] = pretriage_decision(row)
+        task["pretriage_confidence"] = pretriage_confidence(row)
+        task["training_use_after_review"] = training_use_after_review(row)
+        task["do_not_use_as"] = do_not_use_as(row)
+        task["visual_reading"] = visual_reading(row)
         task["visual_sheet"] = visual_sheet_by_sample.get((row.get("queue", ""), row.get("sample_id", "")), "")
         task["review_notes"] = ""
         out.append(task)
     return out
+
+
+def pretriage_sort_key(row: dict[str, str]) -> tuple[int, int, int]:
+    group_order = {
+        "o_val_local_first": 0,
+        "positive_rescue": 1,
+        "mamoa_strong_model_confuser": 2,
+        "mamoa_archaeological_hard_negative": 3,
+        "morphology_rescue": 4,
+        "low_rank_positive": 5,
+        "weak_negative_later": 6,
+    }
+    return (
+        group_order.get(row.get("pretriage_group", ""), 99),
+        int(row.get("specialist_rank") or 999999),
+        int(row.get("fusion_rank") or 999999),
+    )
+
+
+def apply_pretriage_order(tasks: list[dict[str, str]]) -> None:
+    p0_unique = sorted(
+        unique_by_sample([row for row in tasks if row["review_priority"] == "P0"]),
+        key=pretriage_sort_key,
+    )
+    order_by_sample = {row["sample_id"]: str(idx) for idx, row in enumerate(p0_unique, start=1)}
+    for row in tasks:
+        if row["sample_id"] in order_by_sample and row["review_priority"] == "P0":
+            row["pretriage_order"] = order_by_sample[row["sample_id"]]
 
 
 def unique_by_sample(rows: list[dict[str, str]]) -> list[dict[str, str]]:
@@ -429,6 +556,7 @@ def build_layers(tasks: list[dict[str, str]]) -> dict[str, list[dict[str, str]]]
     layers["o_val_focus"] = [row for row in tasks if row["final_split"] == "test_o_val"]
     layers["p0_first_pass"] = [row for row in tasks if row["review_priority"] == "P0"]
     layers["p0_unique_first_pass"] = unique_by_sample(layers["p0_first_pass"])
+    layers["p0_pretriage"] = sorted(layers["p0_unique_first_pass"], key=pretriage_sort_key)
     return layers
 
 
@@ -452,7 +580,7 @@ def write_readme(path: Path, layers: dict[str, list[dict[str, str]]]) -> None:
         "",
         "## Recommended Order",
         "",
-        "1. Open `p0_unique_first_pass` first.",
+        "1. Open `p0_pretriage` first.",
         "2. Filter or open `lane_mamoa_false_positive`.",
         "3. Then inspect `lane_mamoa_specialist_positive`.",
         "4. Then inspect `lane_morphology_rescue`.",
@@ -462,6 +590,7 @@ def write_readme(path: Path, layers: dict[str, list[dict[str, str]]]) -> None:
         "",
         "- `review_lane`: why the point is in the workspace.",
         "- `duplicate_count` / `duplicate_queues`: whether the same sample appears in multiple queues.",
+        "- `pretriage_order`, `pretriage_group`, `pretriage_decision`: autonomous first-pass ordering and action.",
         "- `suggested_taxonomy`: first-pass category, not final truth.",
         "- `suggested_decision`: proposed action.",
         "- `boundary_action`: what to draw/confirm in QGIS.",
@@ -522,11 +651,25 @@ def write_report(path: Path, out_dir: Path, layers: dict[str, list[dict[str, str
     lines.extend(
         [
             "",
+            "## P0 Pretriage",
+            "",
+            "| Order | Group | Decision | Confidence | Lane | Specialist rank | Name |",
+            "|---:|---|---|---|---|---:|---|",
+        ]
+    )
+    for row in layers.get("p0_pretriage", []):
+        lines.append(
+            f"| {row['pretriage_order']} | `{row['pretriage_group']}` | `{row['pretriage_decision']}` | `{row['pretriage_confidence']}` | `{row['review_lane']}` | {row['specialist_rank']} | `{row['name']}` |"
+        )
+    lines.extend(
+        [
+            "",
             "## Interpretation",
             "",
             "- This package turns the model-error queue into QGIS layers that can be opened independently.",
             "- `mamoa_false_positive_review` should not be treated as generic background: these are archaeological hard negatives.",
             "- `mamoa_specialist_positive_review` is the key rescue lane for positives that the global fusion suppresses.",
+            "- `p0_pretriage` is an autonomous first-pass triage, not a final archaeological decision.",
             "- No row in this package is a new site claim; every decision remains a review decision.",
         ]
     )
@@ -555,6 +698,7 @@ def main() -> None:
     args = resolve_args(parse_args())
     visual_sheet_by_sample = load_visual_sheet_by_sample(args.visual_batch)
     tasks = enrich_tasks(read_tsv(args.queue), visual_sheet_by_sample)
+    apply_pretriage_order(tasks)
     layers = build_layers(tasks)
 
     args.out_dir.mkdir(parents=True, exist_ok=True)

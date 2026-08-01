@@ -16,7 +16,7 @@ It is a review workspace, not an archaeological discovery report.
 
 ## Recommended Order
 
-1. Open `p0_unique_first_pass` first.
+1. Open `p0_pretriage` first.
 2. Filter or open `lane_mamoa_false_positive`.
 3. Then inspect `lane_mamoa_specialist_positive`.
 4. Then inspect `lane_morphology_rescue`.
@@ -26,6 +26,7 @@ It is a review workspace, not an archaeological discovery report.
 
 - `review_lane`: why the point is in the workspace.
 - `duplicate_count` / `duplicate_queues`: whether the same sample appears in multiple queues.
+- `pretriage_order`, `pretriage_group`, `pretriage_decision`: autonomous first-pass ordering and action.
 - `suggested_taxonomy`: first-pass category, not final truth.
 - `suggested_decision`: proposed action.
 - `boundary_action`: what to draw/confirm in QGIS.
@@ -43,3 +44,4 @@ It is a review workspace, not an archaeological discovery report.
 - `o_val_focus`: 3
 - `p0_first_pass`: 32
 - `p0_unique_first_pass`: 30
+- `p0_pretriage`: 30

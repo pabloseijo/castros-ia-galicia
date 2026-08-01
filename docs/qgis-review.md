@@ -35,7 +35,7 @@ Para revisar los errores de la fusión RGB+relieve por carriles, abrir:
 
 Capas recomendadas:
 
-1. `p0_unique_first_pass`
+1. `p0_pretriage`
 2. `lane_mamoa_false_positive`
 3. `lane_mamoa_specialist_positive`
 4. `lane_morphology_rescue`
@@ -45,6 +45,8 @@ Campos clave:
 
 - `review_lane`: tipo de fallo o rescate.
 - `duplicate_count`: si el mismo punto aparece en más de una cola.
+- `pretriage_order`: orden autónomo de primera pasada P0.
+- `pretriage_decision`: acción recomendada antes de decisión arqueológica final.
 - `suggested_taxonomy`: taxonomía inicial, no verdad final.
 - `specialist_rank`: ranking del especialista castro-vs-mámoa.
 - `fusion_rank`: ranking de la fusión principal.

@@ -29,8 +29,16 @@
         "suggested_decision": "inspect_weak_negative_no_absence_claim",
         "boundary_action": "Confirm non-castro archaeological class; keep separate from generic negatives.",
         "review_status": "pending",
+        "review_notes": "",
         "final_taxonomy": "",
         "final_decision": "",
+        "pretriage_order": "",
+        "pretriage_group": "weak_negative_later",
+        "pretriage_decision": "defer_weak_negative_review",
+        "pretriage_confidence": "low_pretriage_confidence",
+        "training_use_after_review": "archaeological_hard_negative_not_generic_absence",
+        "do_not_use_as": "generic_absence",
+        "visual_reading": "Weak negative review only after holdout lanes; do not treat as proven absence.",
         "name": "Petróglifo do coto de San Xurxo",
         "municipality": "Ferrol",
         "parish": "San Xurxo da Mariña (San Xurxo)",
@@ -46,8 +54,7 @@
         "negative_type": "rock_art_surface",
         "morphology_proxy": "",
         "visual_sheet": "reports/figures/weak_label_error_review_v1/holdout-top-false-positives.png",
-        "review_reason": "Known hard negative ranked high by the main fusion model; inspect as false-positive pattern.",
-        "review_notes": ""
+        "review_reason": "Known hard negative ranked high by the main fusion model; inspect as false-positive pattern."
       }
     },
     {
@@ -78,8 +85,16 @@
         "suggested_decision": "inspect_weak_negative_no_absence_claim",
         "boundary_action": "Confirm non-castro archaeological class; keep separate from generic negatives.",
         "review_status": "pending",
+        "review_notes": "",
         "final_taxonomy": "",
         "final_decision": "",
+        "pretriage_order": "",
+        "pretriage_group": "weak_negative_later",
+        "pretriage_decision": "defer_weak_negative_review",
+        "pretriage_confidence": "low_pretriage_confidence",
+        "training_use_after_review": "archaeological_hard_negative_not_generic_absence",
+        "do_not_use_as": "generic_absence",
+        "visual_reading": "Weak negative review only after holdout lanes; do not treat as proven absence.",
         "name": "O Castelo",
         "municipality": "O Vicedo",
         "parish": "San Román de Vale (San Román)",
@@ -95,8 +110,7 @@
         "negative_type": "historic_fortification",
         "morphology_proxy": "",
         "visual_sheet": "reports/figures/weak_label_error_review_v1/val-top-weak-negatives.png",
-        "review_reason": "Weak-label negative ranked high on validation; inspect before treating it as true absence.",
-        "review_notes": ""
+        "review_reason": "Weak-label negative ranked high on validation; inspect before treating it as true absence."
       }
     },
     {
@@ -127,8 +141,16 @@
         "suggested_decision": "inspect_weak_negative_no_absence_claim",
         "boundary_action": "Confirm non-castro archaeological class; keep separate from generic negatives.",
         "review_status": "pending",
+        "review_notes": "",
         "final_taxonomy": "",
         "final_decision": "",
+        "pretriage_order": "",
+        "pretriage_group": "weak_negative_later",
+        "pretriage_decision": "defer_weak_negative_review",
+        "pretriage_confidence": "low_pretriage_confidence",
+        "training_use_after_review": "archaeological_hard_negative_not_generic_absence",
+        "do_not_use_as": "generic_absence",
+        "visual_reading": "Weak negative review only after holdout lanes; do not treat as proven absence.",
         "name": "O Castelo",
         "municipality": "Chantada",
         "parish": "Pedrafita (Santa Baia)",
@@ -144,8 +166,7 @@
         "negative_type": "historic_fortification",
         "morphology_proxy": "",
         "visual_sheet": "reports/figures/weak_label_error_review_v1/val-top-weak-negatives.png",
-        "review_reason": "Weak-label negative ranked high on validation; inspect before treating it as true absence.",
-        "review_notes": ""
+        "review_reason": "Weak-label negative ranked high on validation; inspect before treating it as true absence."
       }
     },
     {
@@ -176,8 +197,16 @@
         "suggested_decision": "inspect_weak_negative_no_absence_claim",
         "boundary_action": "Confirm non-castro archaeological class; keep separate from generic negatives.",
         "review_status": "pending",
+        "review_notes": "",
         "final_taxonomy": "",
         "final_decision": "",
+        "pretriage_order": "",
+        "pretriage_group": "weak_negative_later",
+        "pretriage_decision": "defer_weak_negative_review",
+        "pretriage_confidence": "low_pretriage_confidence",
+        "training_use_after_review": "archaeological_hard_negative_not_generic_absence",
+        "do_not_use_as": "generic_absence",
+        "visual_reading": "Weak negative review only after holdout lanes; do not treat as proven absence.",
         "name": "Petróglifo do Monte Castelo",
         "municipality": "Cambados",
         "parish": "Castrelo (Santa Cruz)",
@@ -193,8 +222,7 @@
         "negative_type": "rock_art_surface",
         "morphology_proxy": "",
         "visual_sheet": "reports/figures/weak_label_error_review_v1/val-top-weak-negatives.png",
-        "review_reason": "Weak-label negative ranked high on validation; inspect before treating it as true absence.",
-        "review_notes": ""
+        "review_reason": "Weak-label negative ranked high on validation; inspect before treating it as true absence."
       }
     },
     {
@@ -225,8 +253,16 @@
         "suggested_decision": "inspect_weak_negative_no_absence_claim",
         "boundary_action": "Confirm non-castro archaeological class; keep separate from generic negatives.",
         "review_status": "pending",
+        "review_notes": "",
         "final_taxonomy": "",
         "final_decision": "",
+        "pretriage_order": "",
+        "pretriage_group": "weak_negative_later",
+        "pretriage_decision": "defer_weak_negative_review",
+        "pretriage_confidence": "low_pretriage_confidence",
+        "training_use_after_review": "archaeological_hard_negative_not_generic_absence",
+        "do_not_use_as": "generic_absence",
+        "visual_reading": "Weak negative review only after holdout lanes; do not treat as proven absence.",
         "name": "Petróglifo do Piornedo",
         "municipality": "Cervantes",
         "parish": "Donís (San Fiz)",
@@ -242,8 +278,7 @@
         "negative_type": "rock_art_surface",
         "morphology_proxy": "",
         "visual_sheet": "reports/figures/weak_label_error_review_v1/val-top-weak-negatives.png",
-        "review_reason": "Weak-label negative ranked high on validation; inspect before treating it as true absence.",
-        "review_notes": ""
+        "review_reason": "Weak-label negative ranked high on validation; inspect before treating it as true absence."
       }
     },
     {
@@ -274,8 +309,16 @@
         "suggested_decision": "inspect_weak_negative_no_absence_claim",
         "boundary_action": "Confirm non-castro archaeological class; keep separate from generic negatives.",
         "review_status": "pending",
+        "review_notes": "",
         "final_taxonomy": "",
         "final_decision": "",
+        "pretriage_order": "",
+        "pretriage_group": "weak_negative_later",
+        "pretriage_decision": "defer_weak_negative_review",
+        "pretriage_confidence": "low_pretriage_confidence",
+        "training_use_after_review": "archaeological_hard_negative_not_generic_absence",
+        "do_not_use_as": "generic_absence",
+        "visual_reading": "Weak negative review only after holdout lanes; do not treat as proven absence.",
         "name": "Petróglifo do Con das Sete Pías",
         "municipality": "Cambados",
         "parish": "Oubiña (San Vicenzo)",
@@ -291,8 +334,7 @@
         "negative_type": "rock_art_surface",
         "morphology_proxy": "",
         "visual_sheet": "",
-        "review_reason": "Weak-label negative ranked high on validation; inspect before treating it as true absence.",
-        "review_notes": ""
+        "review_reason": "Weak-label negative ranked high on validation; inspect before treating it as true absence."
       }
     },
     {
@@ -323,8 +365,16 @@
         "suggested_decision": "inspect_weak_negative_no_absence_claim",
         "boundary_action": "Confirm non-castro archaeological class; keep separate from generic negatives.",
         "review_status": "pending",
+        "review_notes": "",
         "final_taxonomy": "",
         "final_decision": "",
+        "pretriage_order": "",
+        "pretriage_group": "weak_negative_later",
+        "pretriage_decision": "defer_weak_negative_review",
+        "pretriage_confidence": "low_pretriage_confidence",
+        "training_use_after_review": "archaeological_hard_negative_not_generic_absence",
+        "do_not_use_as": "generic_absence",
+        "visual_reading": "Weak negative review only after holdout lanes; do not treat as proven absence.",
         "name": "Petróglifos da Quenlla dos Castiñeiros",
         "municipality": "A Estrada",
         "parish": "San Miguel de Barcala (San Miguel)",
@@ -340,8 +390,7 @@
         "negative_type": "rock_art_surface",
         "morphology_proxy": "",
         "visual_sheet": "",
-        "review_reason": "Weak-label negative ranked high on validation; inspect before treating it as true absence.",
-        "review_notes": ""
+        "review_reason": "Weak-label negative ranked high on validation; inspect before treating it as true absence."
       }
     },
     {
@@ -372,8 +421,16 @@
         "suggested_decision": "inspect_weak_negative_no_absence_claim",
         "boundary_action": "Confirm non-castro archaeological class; keep separate from generic negatives.",
         "review_status": "pending",
+        "review_notes": "",
         "final_taxonomy": "",
         "final_decision": "",
+        "pretriage_order": "",
+        "pretriage_group": "weak_negative_later",
+        "pretriage_decision": "defer_weak_negative_review",
+        "pretriage_confidence": "low_pretriage_confidence",
+        "training_use_after_review": "archaeological_hard_negative_not_generic_absence",
+        "do_not_use_as": "generic_absence",
+        "visual_reading": "Weak negative review only after holdout lanes; do not treat as proven absence.",
         "name": "Castelo",
         "municipality": "Ourol",
         "parish": "Miñotos (San Pedro)",
@@ -389,8 +446,7 @@
         "negative_type": "historic_fortification",
         "morphology_proxy": "",
         "visual_sheet": "",
-        "review_reason": "Weak-label negative ranked high on validation; inspect before treating it as true absence.",
-        "review_notes": ""
+        "review_reason": "Weak-label negative ranked high on validation; inspect before treating it as true absence."
       }
     },
     {
@@ -421,8 +477,16 @@
         "suggested_decision": "inspect_weak_negative_no_absence_claim",
         "boundary_action": "Confirm non-castro archaeological class; keep separate from generic negatives.",
         "review_status": "pending",
+        "review_notes": "",
         "final_taxonomy": "",
         "final_decision": "",
+        "pretriage_order": "",
+        "pretriage_group": "weak_negative_later",
+        "pretriage_decision": "defer_weak_negative_review",
+        "pretriage_confidence": "low_pretriage_confidence",
+        "training_use_after_review": "archaeological_hard_negative_not_generic_absence",
+        "do_not_use_as": "generic_absence",
+        "visual_reading": "Weak negative review only after holdout lanes; do not treat as proven absence.",
         "name": "Petróglifo de Lomba das Pozas 2",
         "municipality": "Dodro",
         "parish": "San Xoán de Laíño (San Xoán)",
@@ -438,8 +502,7 @@
         "negative_type": "rock_art_surface",
         "morphology_proxy": "",
         "visual_sheet": "",
-        "review_reason": "Weak-label negative ranked high on validation; inspect before treating it as true absence.",
-        "review_notes": ""
+        "review_reason": "Weak-label negative ranked high on validation; inspect before treating it as true absence."
       }
     },
     {
@@ -470,8 +533,16 @@
         "suggested_decision": "inspect_weak_negative_no_absence_claim",
         "boundary_action": "Confirm non-castro archaeological class; keep separate from generic negatives.",
         "review_status": "pending",
+        "review_notes": "",
         "final_taxonomy": "",
         "final_decision": "",
+        "pretriage_order": "",
+        "pretriage_group": "weak_negative_later",
+        "pretriage_decision": "defer_weak_negative_review",
+        "pretriage_confidence": "low_pretriage_confidence",
+        "training_use_after_review": "archaeological_hard_negative_not_generic_absence",
+        "do_not_use_as": "generic_absence",
+        "visual_reading": "Weak negative review only after holdout lanes; do not treat as proven absence.",
         "name": "Petróglifo do Outeiro das Cruces",
         "municipality": "A Cañiza",
         "parish": "Petán (San Xián)",
@@ -487,8 +558,7 @@
         "negative_type": "rock_art_surface",
         "morphology_proxy": "",
         "visual_sheet": "",
-        "review_reason": "Weak-label negative ranked high on validation; inspect before treating it as true absence.",
-        "review_notes": ""
+        "review_reason": "Weak-label negative ranked high on validation; inspect before treating it as true absence."
       }
     },
     {
@@ -519,8 +589,16 @@
         "suggested_decision": "inspect_weak_negative_no_absence_claim",
         "boundary_action": "Confirm non-castro archaeological class; keep separate from generic negatives.",
         "review_status": "pending",
+        "review_notes": "",
         "final_taxonomy": "",
         "final_decision": "",
+        "pretriage_order": "",
+        "pretriage_group": "weak_negative_later",
+        "pretriage_decision": "defer_weak_negative_review",
+        "pretriage_confidence": "low_pretriage_confidence",
+        "training_use_after_review": "archaeological_hard_negative_not_generic_absence",
+        "do_not_use_as": "generic_absence",
+        "visual_reading": "Weak negative review only after holdout lanes; do not treat as proven absence.",
         "name": "Petróglifo de Chan de Moeiras",
         "municipality": "Crecente",
         "parish": "Filgueira (San Pedro)",
@@ -536,8 +614,7 @@
         "negative_type": "rock_art_surface",
         "morphology_proxy": "",
         "visual_sheet": "",
-        "review_reason": "Weak-label negative ranked high on validation; inspect before treating it as true absence.",
-        "review_notes": ""
+        "review_reason": "Weak-label negative ranked high on validation; inspect before treating it as true absence."
       }
     },
     {
@@ -568,8 +645,16 @@
         "suggested_decision": "inspect_weak_negative_no_absence_claim",
         "boundary_action": "Confirm non-castro archaeological class; keep separate from generic negatives.",
         "review_status": "pending",
+        "review_notes": "",
         "final_taxonomy": "",
         "final_decision": "",
+        "pretriage_order": "",
+        "pretriage_group": "weak_negative_later",
+        "pretriage_decision": "defer_weak_negative_review",
+        "pretriage_confidence": "low_pretriage_confidence",
+        "training_use_after_review": "archaeological_hard_negative_not_generic_absence",
+        "do_not_use_as": "generic_absence",
+        "visual_reading": "Weak negative review only after holdout lanes; do not treat as proven absence.",
         "name": "O Castelo/Castelo de Castañoso",
         "municipality": "A Fonsagrada",
         "parish": "Maderne (San Pedro)",
@@ -585,8 +670,7 @@
         "negative_type": "historic_fortification",
         "morphology_proxy": "",
         "visual_sheet": "",
-        "review_reason": "Weak-label negative ranked high on validation; inspect before treating it as true absence.",
-        "review_notes": ""
+        "review_reason": "Weak-label negative ranked high on validation; inspect before treating it as true absence."
       }
     }
   ]
