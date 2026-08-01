@@ -64,6 +64,7 @@ make annotations
 make reports
 make raster-prep
 make viladonga-audit
+make viladonga-cnig-lidar-candidates
 make viladonga-wcs-dem
 make viladonga-relief-wcs
 make viladonga-lidar-derivatives
@@ -100,6 +101,7 @@ La ruta de arranque para detectar forma no depende de Trasancos. Usa el piloto o
 
 ```bash
 make viladonga-audit
+make viladonga-cnig-lidar-candidates
 make viladonga-relief-wcs
 make viladonga-lidar-derivatives
 make viladonga-pnoa-chips
@@ -140,6 +142,7 @@ El siguiente paso real es revisar las tareas P0, ajustar buffers a polígonos re
 - `reports/pnoa_preview_index.md`: estado del índice de previsualización PNOA.
 - `reports/pnoa_chip_export.md`: estado de exportación de chips PNOA desde anotaciones aceptadas.
 - `reports/viladonga_pilot_readiness.md`: auditoría del piloto morfológico de Viladonga.
+- `reports/viladonga_cnig_lidar_candidates.md`: teselas LiDAR CNIG candidatas para sustituir el MDT5 por LAZ fino oficial.
 - `reports/viladonga_mdt_wcs.md`: recorte MDT5 por WCS para desbloquear relieve grueso.
 - `reports/viladonga_lidar_derivatives.md`: derivados LiDAR/relieve generados para Viladonga.
 - `reports/viladonga_laz_tile_blocker.md`: teselas LAZ correctas que faltan para relieve LiDAR fino.

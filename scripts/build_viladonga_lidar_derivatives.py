@@ -255,6 +255,7 @@ def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Build Viladonga LiDAR DEM and derivatives.")
     parser.add_argument("--config", type=Path, default=DEFAULT_CONFIG)
     parser.add_argument("--source-root")
+    parser.add_argument("--laz", action="append", type=Path, help="Explicit LAZ file to use instead of config lidar_laz. Repeatable.")
     parser.add_argument("--out-dir", type=Path, default=DEFAULT_OUT_DIR)
     parser.add_argument("--manifest", type=Path, default=DEFAULT_MANIFEST)
     parser.add_argument("--report", type=Path, default=DEFAULT_REPORT)
@@ -297,7 +298,10 @@ def main() -> int:
             notes.append(f"Loaded existing DEM: {dem_path}")
         else:
             label_path = source_root / config["label_geojson"]
-            laz_paths = [source_root / rel_path for rel_path in config["lidar_laz"]]
+            if args.laz:
+                laz_paths = [path.expanduser() if path.is_absolute() else PROJECT_ROOT / path for path in args.laz]
+            else:
+                laz_paths = [source_root / rel_path for rel_path in config["lidar_laz"]]
             missing_laz = [path for path in laz_paths if not path.exists()]
             if missing_laz:
                 raise RuntimeError("Missing LiDAR LAZ files: " + ", ".join(str(path) for path in missing_laz))

@@ -21,6 +21,7 @@ From the repo root:
 
 ```bash
 make viladonga-audit
+make viladonga-cnig-lidar-candidates
 make viladonga-wcs-dem
 make viladonga-relief-wcs
 make viladonga-lidar-derivatives
@@ -40,6 +41,7 @@ make viladonga-pilot
 ## Outputs
 
 - `reports/viladonga_pilot_readiness.md`
+- `reports/viladonga_cnig_lidar_candidates.md`
 - `reports/viladonga_lidar_derivatives.md`
 - `reports/viladonga_mdt_wcs.md`
 - `reports/viladonga_pnoa_chips.md`
@@ -48,6 +50,7 @@ make viladonga-pilot
 - `reports/viladonga_relief_shape_baseline.md`
 - `reports/viladonga_radial_relief_profile.md`
 - `data/viladonga-pilot/labels_manifest.tsv`
+- `data/viladonga-pilot/cnig_lidar_candidates.tsv`
 - `data/viladonga-pilot/lidar_derivatives_manifest.tsv`
 - `data/viladonga-pilot/pnoa_chip_manifest.tsv`
 - `data/viladonga-pilot/wcs_dem_manifest.tsv`
@@ -75,6 +78,18 @@ rsync -av --exclude 'ortofoto/*.tif' /Users/pabloseijo/Documents/TFG/img/castroV
 ```
 
 The PNOA chip target can use IGN WMS if the 2 GB orthoimage is absent. The LAZ derivative target needs the correct LAZ tiles plus labels. If those tiles are missing, `make viladonga-relief-wcs` can use the public MDT5 WCS as a coarse relief baseline.
+
+To locate the official CNIG LAZ tiles for the current chip bounds:
+
+```bash
+make viladonga-cnig-lidar-candidates
+```
+
+The candidate query is lightweight and writes only a TSV/report. To download the preferred 3rd coverage LAZ files, run:
+
+```bash
+python3 scripts/query_viladonga_cnig_lidar.py --coverage LIDA3 --download-dir data/external/viladonga/cnig-lidar-3a
+```
 
 Current LAZ blocker:
 
