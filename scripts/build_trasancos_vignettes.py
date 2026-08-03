@@ -36,6 +36,14 @@ from collections import Counter, defaultdict
 from concurrent.futures import ProcessPoolExecutor, as_completed
 from pathlib import Path
 
+# El paralelismo util aqui es de proceso, no de hilo: cada viñeta son arrays de
+# 512x512, demasiado pequeños para que BLAS multihilo compense su coordinacion.
+# Sin fijar esto, 3 workers x 5 hilos sobre 4 nucleos dan carga 7.8 y se pelean
+# entre si. Debe ir antes de importar numpy.
+for _v in ("OMP_NUM_THREADS", "OPENBLAS_NUM_THREADS", "MKL_NUM_THREADS",
+           "NUMEXPR_NUM_THREADS"):
+    os.environ.setdefault(_v, "1")
+
 import numpy as np
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
@@ -201,6 +209,13 @@ def process_group(args_tuple):
     import laspy
     half = extent / 2.0
 
+    # Si el grupo entero ya esta cortado, ni se abren los LAZ: son ~45 MB cada
+    # uno y un grupo puede tocar cuatro.
+    pending = [s for s in samples
+               if not (Path(out_dir) / f"{s['sid']}.npz").exists()]
+    if not pending:
+        return len(samples), len(samples)
+
     xs_l, ys_l, zs_l = [], [], []
     for tp in tile_paths:
         las = laspy.read(tp)
@@ -218,6 +233,13 @@ def process_group(args_tuple):
 
     written = 0
     for s in samples:
+        # Reanudacion: esta maquina ha perdido el disco tres veces hoy, asi que
+        # recalcular una viñeta ya escrita es tiempo regalado. Comprobar el
+        # fichero cuesta un stat; recortarla cuesta leer decenas de MB de LAZ.
+        out_npz = Path(out_dir) / f"{s['sid']}.npz"
+        if out_npz.exists() and out_npz.stat().st_size > 0:
+            written += 1
+            continue
         b = (s["x"] - half, s["y"] - half, s["x"] + half, s["y"] + half)
         m = (xs >= b[0]) & (xs <= b[2]) & (ys >= b[1]) & (ys <= b[3])
         if m.sum() < 2000:
