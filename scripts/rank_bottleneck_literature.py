@@ -75,6 +75,24 @@ THEMES = {
           r"augmentation", r"scarce"]),
 }
 
+# OpenAIRE y Zenodo arrastran material autopublicado sin revisar que satura el
+# puntuador con abstracts largos llenos de palabras clave: una pasada trajo
+# "The Biological Hairpin: Cross-Helix Geometry" encabezando "medición". Exigir
+# DOI y revista real cuesta recall pero es la diferencia entre un banco y un
+# vertedero.
+JUNK = re.compile(r"not peer[- ]reviewed|notebook lineage|AI Processing Instructions|"
+                  r"spark-network|driven by ", re.I)
+
+
+def quality(rec) -> bool:
+    if JUNK.search((rec.get("abstract") or "")[:600]):
+        return False
+    if not (rec.get("doi") or "").strip():
+        return False
+    venue = (rec.get("venue") or "").strip().lower()
+    return bool(venue) and venue not in ("zenodo", "figshare", "preprints")
+
+
 def score(rec, spec):
     blob = f"{rec.get('title','')} {rec.get('abstract','')}".lower()
     title = (rec.get("title") or "").lower()
@@ -100,6 +118,8 @@ def main():
                 if len((r.get("abstract") or "").strip()) >= 150]
         scored = []
         for r in rows:
+            if not quality(r):
+                continue
             s = score(r, spec)
             if s is not None:
                 scored.append((s, r))
