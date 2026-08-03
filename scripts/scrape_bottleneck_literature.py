@@ -1,0 +1,223 @@
+#!/usr/bin/env python3
+"""Literature aimed at the nine measured bottlenecks of the castro detector.
+
+Not a general survey. Each theme maps to one bottleneck quantified on this
+project's own data, so the bank can be read as "what does the field do about
+*our* problem" instead of "what is published about archaeology and CNNs".
+
+The ordering follows severity as measured:
+
+  1. base_rate            1 castro per 474 cells forces precision ~0.25
+  2. measurement          68 positives give a +-0.21 CI on recall
+  3. prior_shift          trained at 25:1, deployed at 474:1
+  4. review_budget        Galicia's top 1% is 241 h of expert time
+  5. spatial_validation   52 blocks, median 1 positive each
+  6. spatial_leakage      12 of 68 positives sit within 512 m of another
+  7. weak_supervision     no masks, so segmentation is blocked
+  8. label_noise          the toponymic filter still leaks ~16%
+  9. data_efficiency      few labels, no domain-pretrained weights available
+
+Reuses the fetchers of scrape_archaeology_bank.py; only the queries and the
+relevance gate differ, because here the subject is method, not castros.
+"""
+from __future__ import annotations
+
+import argparse
+import csv
+import re
+import sys
+import time
+from collections import Counter, defaultdict
+from concurrent.futures import ThreadPoolExecutor, as_completed
+from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+
+import scrape_archaeology_bank as base  # noqa: E402
+
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
+OUT_DIR = PROJECT_ROOT / "data/literature-bank-bottlenecks"
+REPORT = PROJECT_ROOT / "reports/literature_bank_bottlenecks.md"
+
+QUERIES: dict[str, list[str]] = {
+    "1_base_rate": [
+        "class imbalance rare object detection remote sensing large scale",
+        "base rate precision rare event detection machine learning",
+        "cascade classifier coarse to fine screening large search space",
+        "archaeological predictive modelling site location probability",
+        "region proposal reduce search space aerial survey detection",
+        "needle in haystack detection extreme class imbalance imagery",
+        "modelo predictivo localizacion yacimientos arqueologicos SIG",
+    ],
+    "2_measurement": [
+        "confidence interval small sample evaluation machine learning",
+        "model selection few labelled examples reliable evaluation",
+        "statistical power detection benchmark small test set",
+        "evaluation protocol scarce positives remote sensing",
+        "bootstrap confidence interval precision recall small n",
+    ],
+    "3_prior_shift": [
+        "prior shift label shift correction classifier deployment",
+        "calibration under class imbalance neural network",
+        "positive unlabeled learning class prior estimation",
+        "domain shift train test distribution mismatch remote sensing",
+        "probability calibration rare class post hoc adjustment",
+    ],
+    "4_review_budget": [
+        "active learning annotation budget object detection",
+        "human in the loop verification remote sensing candidates",
+        "expert review cost archaeological remote sensing validation",
+        "query strategy uncertainty sampling limited labelling budget",
+        "crowdsourcing archaeological site verification imagery",
+    ],
+    "5_spatial_validation": [
+        "spatial cross validation blocking autocorrelation model evaluation",
+        "spatial leakage machine learning geographic data",
+        "block cross validation ecological species distribution model",
+        "nested spatial cross validation hyperparameter selection",
+    ],
+    "6_spatial_leakage": [
+        "group split overlapping samples data leakage evaluation",
+        "buffered leave one out spatial dependence prediction",
+        "autocorrelation inflated accuracy geospatial machine learning",
+    ],
+    "7_weak_supervision": [
+        "point supervised instance segmentation weak labels",
+        "box supervised segmentation weakly supervised remote sensing",
+        "pseudo label mask generation from point annotations",
+        "weakly supervised semantic segmentation aerial imagery",
+        "self training pseudo masks object delineation",
+    ],
+    "8_label_noise": [
+        "learning with noisy labels robust training deep network",
+        "label noise detection cleaning training set",
+        "confident learning noisy label identification",
+        "incomplete inventory bias species distribution presence only",
+    ],
+    "9_data_efficiency": [
+        "few shot learning remote sensing segmentation limited labels",
+        "self supervised pretraining small labelled dataset earth observation",
+        "transfer learning limited annotations aerial imagery detection",
+        "data augmentation scarce positives object detection",
+        "foundation model fine tuning few labels geospatial",
+    ],
+}
+
+# Method-oriented gate: the paper must be about learning/statistics/detection,
+# not about castros. Archaeology terms are welcome but not required.
+METHOD = re.compile(
+    r"machine learning|deep learning|neural|classifier|classification|detection|"
+    r"segmentation|calibration|cross[- ]validation|sampling|active learning|"
+    r"label|annotation|imbalance|precision|recall|bayes|probabilit|estimat|"
+    r"remote sensing|lidar|satellite|aerial|geospatial|spatial", re.I)
+JUNK = re.compile(r"retracted|erratum|corrigendum", re.I)
+
+
+def relevant(rec) -> bool:
+    blob = f"{rec.get('title','')} {rec.get('abstract','')}"
+    if len(rec.get("title", "")) < 12:
+        return False
+    if JUNK.search(blob):
+        return False
+    return bool(METHOD.search(blob))
+
+
+_done = 0
+
+
+def job(theme, query, source, total, lock):
+    global _done
+    recs = []
+    try:
+        recs = base.FETCH[source](query) or []
+        for r in recs:
+            r["theme"], r["query"] = theme, query
+    except Exception:
+        pass
+    with lock:
+        _done += 1
+        if _done % 20 == 0 or _done == total:
+            print(f"  progress {_done}/{total}", flush=True)
+    return recs
+
+
+def main():
+    ap = argparse.ArgumentParser(description=__doc__)
+    ap.add_argument("--workers", type=int, default=6)
+    ap.add_argument("--sources", default="openalex,crossref,openaire")
+    args = ap.parse_args()
+
+    import threading
+    lock = threading.Lock()
+    OUT_DIR.mkdir(parents=True, exist_ok=True)
+    srcs = [s for s in args.sources.split(",") if s in base.FETCH]
+
+    tasks = [(t, q, s) for t, qs in QUERIES.items() for q in qs for s in srcs]
+    total = len(tasks)
+    print(f"temas {len(QUERIES)} | consultas {sum(len(v) for v in QUERIES.values())} "
+          f"| fuentes {len(srcs)} | tareas {total} | workers {args.workers}", flush=True)
+
+    raw = []
+    t0 = time.time()
+    with ThreadPoolExecutor(max_workers=args.workers) as ex:
+        futs = [ex.submit(job, t, q, s, total, lock) for t, q, s in tasks]
+        for f in as_completed(futs):
+            raw.extend(f.result())
+
+    kept, dropped, seen = [], 0, set()
+    for r in raw:
+        if not relevant(r):
+            dropped += 1
+            continue
+        key = (r.get("doi") or "").lower() or re.sub(r"\W+", "", r.get("title", "").lower())[:90]
+        if not key or key in seen:
+            continue
+        seen.add(key)
+        kept.append(r)
+
+    fields = ["theme", "query", "source", "title", "year", "venue", "cited_by",
+              "is_oa", "doi", "pdf_url", "language", "abstract"]
+
+    def dump(path, rows):
+        with open(path, "w", newline="", encoding="utf-8") as fh:
+            w = csv.DictWriter(fh, delimiter="\t", fieldnames=fields, extrasaction="ignore")
+            w.writeheader()
+            for r in rows:
+                w.writerow(r)
+
+    dump(OUT_DIR / "literature_all.tsv", kept)
+    by = defaultdict(list)
+    for r in kept:
+        by[r["theme"]].append(r)
+    for t, rows in by.items():
+        dump(OUT_DIR / f"literature_{t}.tsv", rows)
+
+    withabs = [r for r in kept if len((r.get("abstract") or "").strip()) >= 120]
+    lines = ["# Literatura por cuello de botella", "",
+             f"`{len(kept)}` registros únicos relevantes de `{len(raw)}` brutos "
+             f"(descartados `{dropped}`). Con abstract usable: `{len(withabs)}` "
+             f"(`{100*len(withabs)/max(len(kept),1):.0f}%`). Con PDF abierto: "
+             f"`{sum(1 for r in kept if r.get('pdf_url'))}`.", "",
+             "Cada tema corresponde a un cuello medido sobre los datos del proyecto.",
+             "", "| cuello | registros | con abstract |", "|---|---:|---:|"]
+    for t, rows in sorted(by.items()):
+        wa = sum(1 for r in rows if len((r.get("abstract") or "").strip()) >= 120)
+        lines.append(f"| `{t}` | `{len(rows)}` | `{wa}` |")
+
+    for t, rows in sorted(by.items()):
+        lines += ["", f"## {t}", "", "| cit | año | título | revista |", "|---:|---:|---|---|"]
+        for r in sorted(rows, key=lambda r: -int(r.get("cited_by") or 0))[:12]:
+            ti = (r.get("title") or "")[:88].replace("|", "/")
+            lines.append(f"| {r.get('cited_by')} | {r.get('year')} | {ti} | "
+                         f"{(r.get('venue') or '')[:34]} |")
+    REPORT.parent.mkdir(parents=True, exist_ok=True)
+    REPORT.write_text("\n".join(lines) + "\n", encoding="utf-8")
+
+    print(f"\nlisto en {(time.time()-t0)/60:.1f} min | {len(kept)} únicos "
+          f"| {len(withabs)} con abstract | salida {OUT_DIR}", flush=True)
+    for t, rows in sorted(by.items()):
+        print(f"   {t}: {len(rows)}", flush=True)
+
+
+if __name__ == "__main__":
+    main()
