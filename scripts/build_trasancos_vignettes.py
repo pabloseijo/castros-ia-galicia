@@ -67,12 +67,19 @@ def in_bbox(lon, lat, bbox):
     return w <= lon <= e and s <= lat <= n
 
 
-def load_samples():
-    """Positives, mound hard negatives and named modern/natural negatives."""
+def load_samples(scope: str = "trasancos"):
+    """Positives, mound hard negatives and named modern/natural negatives.
+
+    `scope="trasancos"` keeps the six-council pilot. `scope="galicia"` opens it
+    to every trainable positive in the catalogue, which is what the
+    label-centred LiDAR sampling exists to serve: 747 positives spread over 286
+    blocks instead of 68 in one comarca, and a +-0.033 interval on sensitivity
+    instead of +-0.109.
+    """
     samples = []
     if MASTER.exists():
         for r in csv.DictReader(open(MASTER, encoding="utf-8"), delimiter="\t"):
-            if (r.get("municipality") or "") not in TRASANCOS:
+            if scope == "trasancos" and (r.get("municipality") or "") not in TRASANCOS:
                 continue
             try:
                 lon, lat = float(r["longitude"]), float(r["latitude"])
@@ -89,6 +96,10 @@ def load_samples():
             elif "megalithic" in (r.get("negative_type") or ""):
                 samples.append({"label": 0, "group": "mamoa",
                                 "name": r.get("name", ""), "lon": lon, "lat": lat})
+    # Los negativos con nombre se extrajeron sobre el bbox de Trasancos, asi que
+    # en alcance galicia entran igual pero solo cubriran esa zona. El resto de
+    # Galicia aporta por ahora negativos de catalogo (mamoas), y hara falta una
+    # pasada de Overpass a escala gallega antes de entrenar en serio.
     if HARD_NEG.exists():
         for r in csv.DictReader(open(HARD_NEG, encoding="utf-8"), delimiter="\t"):
             try:
@@ -98,9 +109,11 @@ def load_samples():
             samples.append({"label": 0, "group": r.get("negative_class", "other"),
                             "name": r.get("name", ""), "lon": lon, "lat": lat})
 
-    for s in samples:
-        s["x"], s["y"] = lonlat_to_utm29(s["lon"], s["lat"])
-        s["split"] = "test_o_val" if in_bbox(s["lon"], s["lat"], O_VAL) else "pool"
+    for smp in samples:
+        smp["x"], smp["y"] = lonlat_to_utm29(smp["lon"], smp["lat"])
+        # O Val permanece intocable en ambos alcances: lleva Pena Lopesa, el caso
+        # de control historico del proyecto, y nunca debe entrar en entrenamiento.
+        smp["split"] = "test_o_val" if in_bbox(smp["lon"], smp["lat"], O_VAL) else "pool"
     return samples
 
 
@@ -244,12 +257,15 @@ def main():
     ap.add_argument("--extent-m", type=float, default=EXTENT_M)
     ap.add_argument("--res-m", type=float, default=PIXEL_M)
     ap.add_argument("--workers", type=int, default=3)
+    ap.add_argument("--scope", choices=("trasancos", "galicia"), default="trasancos")
+    ap.add_argument("--val-every", type=int, default=5,
+                    help="1 de cada N bloques espaciales va a validacion")
     args = ap.parse_args()
 
     arr_dir = args.out_dir / "arrays"
     arr_dir.mkdir(parents=True, exist_ok=True)
 
-    samples = load_samples()
+    samples = load_samples(args.scope)
     for i, s in enumerate(samples):
         s["sid"] = f"{s['label']}_{s['group']}_{i:05d}"
     pos = sum(1 for s in samples if s["label"] == 1)
@@ -299,7 +315,7 @@ def main():
                       "block": blk, "split": s["split"]})
 
     blocks = sorted({r["block"] for r in index if r["split"] == "pool"})
-    val_blocks = set(blocks[::5])  # every 5th block -> validation
+    val_blocks = set(blocks[::args.val_every])  # 1 de cada N bloques
     for r in index:
         if r["split"] == "pool":
             r["split"] = "val" if r["block"] in val_blocks else "train"

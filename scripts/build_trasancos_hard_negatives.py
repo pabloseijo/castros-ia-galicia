@@ -45,7 +45,13 @@ UA = "castros-ia-galicia/0.1 (archaeological research; contact via repo)"
 
 # Generous envelope over the six Trasancos councils; the council filter below
 # is what actually decides membership.
-BBOX = (43.42, -8.40, 43.72, -7.95)  # S, W, N, E for Overpass
+BBOX = (43.42, -8.40, 43.72, -7.95)          # S, W, N, E for Overpass
+BBOX_GALICIA = (41.80, -9.40, 43.85, -6.70)  # toda Galicia
+
+# Overpass rechaza o agota una consulta que cubra Galicia entera para clases
+# densas como highway=track, asi que el area grande se trocea y cada trozo se
+# cachea por separado: si una peticion falla solo se reintenta ese trozo.
+SUBTILE_DEG = 0.5
 
 TRASANCOS = {"Ferrol", "Narón", "Naron", "Neda", "Fene", "Valdoviño",
              "Valdovino", "San Sadurniño", "San Sadurnino"}
@@ -113,10 +119,26 @@ def overpass(query: str, attempts: int = 3, timeout: int = 180) -> dict | None:
     return None
 
 
-def build_query(selectors: list[str]) -> str:
-    s, w, n, e = BBOX
+def build_query(selectors: list[str], bbox) -> str:
+    s, w, n, e = bbox
     parts = "".join(f"  {sel}({s},{w},{n},{e});\n" for sel in selectors)
     return f"[out:json][timeout:180];\n(\n{parts});\nout center tags;\n"
+
+
+def subtiles(bbox, step=SUBTILE_DEG):
+    """Trocea un bbox grande en cuadros manejables para Overpass."""
+    s, w, n, e = bbox
+    if (n - s) <= step and (e - w) <= step:
+        return [bbox]
+    out = []
+    lat = s
+    while lat < n:
+        lon = w
+        while lon < e:
+            out.append((lat, lon, min(lat + step, n), min(lon + step, e)))
+            lon += step
+        lat += step
+    return out
 
 
 def centroid(el: dict):
@@ -169,7 +191,9 @@ def main():
     ap.add_argument("--min-sep-m", type=float, default=120.0,
                     help="minimum distance between two negatives")
     ap.add_argument("--seed", type=int, default=20260803)
+    ap.add_argument("--scope", choices=("trasancos", "galicia"), default="trasancos")
     args = ap.parse_args()
+    args.bbox = BBOX_GALICIA if args.scope == "galicia" else BBOX
 
     args.out_dir.mkdir(parents=True, exist_ok=True)
     rng = random.Random(args.seed)
@@ -190,12 +214,29 @@ def main():
             data = json.loads(cache.read_text(encoding="utf-8"))
             print(f"[{cls}] from cache", flush=True)
         else:
-            print(f"[{cls}] querying {len(selectors)} selectors...", flush=True)
-            data = overpass(build_query(selectors))
-            if not data:
-                print(f"[{cls}] FAILED, skipping (rerun to retry just this one)",
-                      flush=True)
+            tiles = subtiles(args.bbox)
+            print(f"[{cls}] {len(selectors)} selectores x {len(tiles)} trozos...",
+                  flush=True)
+            elements, failed = [], 0
+            for i, tb in enumerate(tiles, 1):
+                sub = cache_dir / f"{cls}__{i:03d}.json"
+                if sub.exists():
+                    elements += json.loads(sub.read_text(encoding="utf-8")).get("elements", [])
+                    continue
+                d = overpass(build_query(selectors, tb))
+                if not d:
+                    failed += 1
+                    continue
+                sub.write_text(json.dumps(d), encoding="utf-8")
+                elements += d.get("elements", [])
+                time.sleep(2)
+            if failed:
+                print(f"[{cls}] {failed}/{len(tiles)} trozos fallaron; relanzar "
+                      f"para reintentar solo esos", flush=True)
+            if not elements:
+                print(f"[{cls}] sin elementos, se salta", flush=True)
                 continue
+            data = {"elements": elements}
             cache.write_text(json.dumps(data), encoding="utf-8")
         els = data.get("elements") or []
         cand = []
