@@ -1,0 +1,305 @@
+#!/usr/bin/env python3
+"""Stage 1: cut 1 m relief vignettes for the Trasancos classifier.
+
+Landauer et al. (2025) swept 180.000 km2 with a *classifier* over 768x768 m
+LiDAR vignettes, not a segmenter. That matters here: a classifier needs one
+point and one label per sample, while segmentation needs drawn masks, and
+Trasancos only has 8 OSM polygons. So the classifier is the route that is
+actually unblocked today.
+
+Three channels, all from the bare-earth point cloud, chosen to be what a
+model pretrained on natural images can still read:
+
+  0. normalised DTM   - min/max scaled height. Landauer found raw normalised
+                        elevation beat hillshade, which is worth respecting.
+  1. local relief     - DTM minus a smoothed DTM, so the hillside is removed
+                        and the rampart survives. This is the channel that
+                        works under canopy.
+  2. slope            - degrees; ditches and scarps read as edges here.
+
+Runs on the Raspberry: needs only laspy and numpy, no torch and no GPU. Output
+is a compact .npz cache that the training stage consumes anywhere.
+
+Concurrent over LAZ tiles with progress, because reading a 45 MB tile is slow
+and there are ~700 of them.
+"""
+from __future__ import annotations
+
+import argparse
+import csv
+import json
+import math
+import os
+import sys
+import time
+from collections import Counter, defaultdict
+from concurrent.futures import ProcessPoolExecutor, as_completed
+from pathlib import Path
+
+import numpy as np
+
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
+LAZ_DIR = PROJECT_ROOT / "data/external/lidar-trasancos-v1"
+OUT_DIR = PROJECT_ROOT / "data/trasancos-vignettes-v1"
+MASTER = PROJECT_ROOT / "data/weak-label-splits-v1/weak_label_master.tsv"
+HARD_NEG = PROJECT_ROOT / "data/trasancos-hard-negatives-v1/trasancos_hard_negatives.tsv"
+
+TRASANCOS = {"Ferrol", "Narón", "Naron", "Neda", "Fene", "Valdoviño",
+             "Valdovino", "San Sadurniño", "San Sadurnino"}
+# O Val is the untouched final holdout: it carries Pena Lopesa, the project's
+# historical control case, and it must never be trained on.
+O_VAL = (-8.2411, 43.5346, -8.1932, 43.5890)  # W, S, E, N
+
+GROUND_CLASS = 2
+EXTENT_M = 512.0      # vignette side; a 114 m castro fills ~22% of the frame
+PIXEL_M = 1.0
+BLOCK_M = 2000.0      # spatial block size for the train/val split
+
+
+def lonlat_to_utm29(lon, lat):
+    from pyproj import Transformer
+    return Transformer.from_crs("EPSG:4326", "EPSG:25829",
+                                always_xy=True).transform(lon, lat)
+
+
+def in_bbox(lon, lat, bbox):
+    w, s, e, n = bbox
+    return w <= lon <= e and s <= lat <= n
+
+
+def load_samples():
+    """Positives, mound hard negatives and named modern/natural negatives."""
+    samples = []
+    if MASTER.exists():
+        for r in csv.DictReader(open(MASTER, encoding="utf-8"), delimiter="\t"):
+            if (r.get("municipality") or "") not in TRASANCOS:
+                continue
+            try:
+                lon, lat = float(r["longitude"]), float(r["latitude"])
+            except (KeyError, TypeError, ValueError):
+                continue
+            split = r.get("final_split") or ""
+            if r.get("label_class") == "1":
+                # excluded_review holds the toponymic noise the project already
+                # flagged: streets, buildings and chapels named "Castro".
+                if split == "excluded_review":
+                    continue
+                samples.append({"label": 1, "group": "castro",
+                                "name": r.get("name", ""), "lon": lon, "lat": lat})
+            elif "megalithic" in (r.get("negative_type") or ""):
+                samples.append({"label": 0, "group": "mamoa",
+                                "name": r.get("name", ""), "lon": lon, "lat": lat})
+    if HARD_NEG.exists():
+        for r in csv.DictReader(open(HARD_NEG, encoding="utf-8"), delimiter="\t"):
+            try:
+                lon, lat = float(r["longitude"]), float(r["latitude"])
+            except (KeyError, TypeError, ValueError):
+                continue
+            samples.append({"label": 0, "group": r.get("negative_class", "other"),
+                            "name": r.get("name", ""), "lon": lon, "lat": lat})
+
+    for s in samples:
+        s["x"], s["y"] = lonlat_to_utm29(s["lon"], s["lat"])
+        s["split"] = "test_o_val" if in_bbox(s["lon"], s["lat"], O_VAL) else "pool"
+    return samples
+
+
+def grid_from_points(xs, ys, zs, bounds, res):
+    """Lowest ground return per cell, then fill gaps by nearest valid neighbour."""
+    minx, miny, maxx, maxy = bounds
+    w = int(round((maxx - minx) / res))
+    h = int(round((maxy - miny) / res))
+    if w < 8 or h < 8:
+        return None
+    ix = np.clip(((xs - minx) / res).astype(np.int64), 0, w - 1)
+    iy = np.clip(((maxy - ys) / res).astype(np.int64), 0, h - 1)
+    flat = iy * w + ix
+    dem = np.full(w * h, np.inf, dtype=np.float64)
+    np.minimum.at(dem, flat, zs)
+    dem = dem.reshape(h, w)
+    valid = np.isfinite(dem)
+    if valid.mean() < 0.30:
+        return None
+    if not valid.all():
+        from scipy import ndimage  # optional; fall back to median fill
+        try:
+            idx = ndimage.distance_transform_edt(
+                ~valid, return_distances=False, return_indices=True)
+            dem = dem[tuple(idx)]
+        except Exception:
+            dem[~valid] = np.median(dem[valid])
+    return dem.astype(np.float32)
+
+
+def boxblur(a, radius):
+    """Separable mean filter via summed-area table; no scipy dependency."""
+    if radius < 1:
+        return a
+    pad = np.pad(a, radius, mode="edge")
+    c = np.cumsum(np.cumsum(pad, axis=0), axis=1)
+    c = np.pad(c, ((1, 0), (1, 0)))
+    k = 2 * radius + 1
+    h, w = a.shape
+    tot = (c[k:k + h, k:k + w] - c[0:h, k:k + w]
+           - c[k:k + h, 0:w] + c[0:h, 0:w])
+    return (tot / (k * k)).astype(np.float32)
+
+
+def channels_from_dem(dem, res, lrm_radius_m=60.0):
+    """Normalised DTM, local relief and slope, each scaled to [0, 1]."""
+    def mm(a):
+        lo, hi = np.nanpercentile(a, 1), np.nanpercentile(a, 99)
+        if not np.isfinite(lo) or not np.isfinite(hi) or hi - lo < 1e-6:
+            return np.zeros_like(a, dtype=np.float32)
+        return np.clip((a - lo) / (hi - lo), 0, 1).astype(np.float32)
+
+    ndtm = mm(dem)
+    lrm = dem - boxblur(dem, int(round(lrm_radius_m / res)))
+    lrm = mm(lrm)
+    gy, gx = np.gradient(dem, res)
+    slope = np.degrees(np.arctan(np.hypot(gx, gy)))
+    slope = np.clip(slope / 45.0, 0, 1).astype(np.float32)
+    return np.stack([ndtm, lrm, slope], axis=0)
+
+
+_BOUNDS_CACHE: dict[str, tuple] = {}
+
+
+def laz_bounds(path):
+    import laspy
+    key = str(path)
+    if key not in _BOUNDS_CACHE:
+        with laspy.open(path) as rd:
+            h = rd.header
+            _BOUNDS_CACHE[key] = (float(h.mins[0]), float(h.mins[1]),
+                                  float(h.maxs[0]), float(h.maxs[1]))
+    return _BOUNDS_CACHE[key]
+
+
+def process_tile(args_tuple):
+    """All vignettes whose full extent fits inside one tile."""
+    tile_path, samples, extent, res, out_dir = args_tuple
+    import laspy
+    name = Path(tile_path).name
+    half = extent / 2.0
+    minx, miny, maxx, maxy = laz_bounds(tile_path)
+
+    mine = [s for s in samples
+            if minx + half <= s["x"] <= maxx - half
+            and miny + half <= s["y"] <= maxy - half]
+    if not mine:
+        return name, 0, 0
+
+    las = laspy.read(tile_path)
+    cls = np.asarray(las.classification)
+    keep = cls == GROUND_CLASS
+    if keep.sum() < 5000:
+        return name, 0, len(mine)
+    xs = np.asarray(las.x)[keep]
+    ys = np.asarray(las.y)[keep]
+    zs = np.asarray(las.z)[keep]
+
+    written = 0
+    for s in mine:
+        b = (s["x"] - half, s["y"] - half, s["x"] + half, s["y"] + half)
+        m = (xs >= b[0]) & (xs <= b[2]) & (ys >= b[1]) & (ys <= b[3])
+        if m.sum() < 2000:
+            continue
+        dem = grid_from_points(xs[m], ys[m], zs[m], b, res)
+        if dem is None:
+            continue
+        arr = channels_from_dem(dem, res)
+        out = Path(out_dir) / f"{s['sid']}.npz"
+        np.savez_compressed(out, x=arr.astype(np.float16), label=s["label"])
+        written += 1
+    return name, written, len(mine)
+
+
+def main():
+    ap = argparse.ArgumentParser(description=__doc__)
+    ap.add_argument("--laz-dir", type=Path, default=LAZ_DIR)
+    ap.add_argument("--out-dir", type=Path, default=OUT_DIR)
+    ap.add_argument("--extent-m", type=float, default=EXTENT_M)
+    ap.add_argument("--res-m", type=float, default=PIXEL_M)
+    ap.add_argument("--workers", type=int, default=3)
+    args = ap.parse_args()
+
+    arr_dir = args.out_dir / "arrays"
+    arr_dir.mkdir(parents=True, exist_ok=True)
+
+    samples = load_samples()
+    for i, s in enumerate(samples):
+        s["sid"] = f"{s['label']}_{s['group']}_{i:05d}"
+    pos = sum(1 for s in samples if s["label"] == 1)
+    print(f"samples: {len(samples)} ({pos} positives, {len(samples)-pos} negatives)",
+          flush=True)
+    for g, n in Counter(s["group"] for s in samples).most_common():
+        print(f"   {g}: {n}", flush=True)
+
+    tiles = sorted(str(p) for p in args.laz_dir.glob("*.laz"))
+    if not tiles:
+        print(f"no LAZ tiles in {args.laz_dir}; run download_trasancos_lidar.py first")
+        return 1
+    print(f"tiles: {len(tiles)} | workers {args.workers}", flush=True)
+
+    slim = [{k: s[k] for k in ("sid", "x", "y", "label")} for s in samples]
+    tasks = [(t, slim, args.extent_m, args.res_m, str(arr_dir)) for t in tiles]
+
+    written = 0
+    t0 = time.time()
+    with ProcessPoolExecutor(max_workers=args.workers) as ex:
+        futs = {ex.submit(process_tile, t): t for t in tasks}
+        for i, f in enumerate(as_completed(futs), 1):
+            try:
+                name, w, tried = f.result()
+                written += w
+            except Exception as exc:
+                print(f"  FAIL {Path(futs[f][0]).name}: {exc}", flush=True)
+            if i % 25 == 0 or i == len(tasks):
+                print(f"  progress {i}/{len(tasks)} tiles, {written} vignettes",
+                      flush=True)
+
+    # Spatial blocks, so train and val never share a hillside. O Val stays out.
+    made = {p.stem for p in arr_dir.glob("*.npz")}
+    index = []
+    for s in samples:
+        if s["sid"] not in made:
+            continue
+        blk = f"{int(s['x'] // BLOCK_M)}_{int(s['y'] // BLOCK_M)}"
+        index.append({"sid": s["sid"], "label": s["label"], "group": s["group"],
+                      "name": s["name"], "lon": s["lon"], "lat": s["lat"],
+                      "block": blk, "split": s["split"]})
+
+    blocks = sorted({r["block"] for r in index if r["split"] == "pool"})
+    val_blocks = set(blocks[::5])  # every 5th block -> validation
+    for r in index:
+        if r["split"] == "pool":
+            r["split"] = "val" if r["block"] in val_blocks else "train"
+
+    with open(args.out_dir / "index.tsv", "w", newline="", encoding="utf-8") as fh:
+        w = csv.DictWriter(fh, delimiter="\t",
+                           fieldnames=["sid", "label", "group", "name",
+                                       "lon", "lat", "block", "split"])
+        w.writeheader()
+        for r in index:
+            w.writerow(r)
+
+    stats = defaultdict(Counter)
+    for r in index:
+        stats[r["split"]][r["label"]] += 1
+    meta = {"extent_m": args.extent_m, "res_m": args.res_m,
+            "channels": ["normalised_dtm", "local_relief", "slope"],
+            "blocks": len(blocks), "val_blocks": len(val_blocks),
+            "counts": {k: dict(v) for k, v in stats.items()}}
+    (args.out_dir / "meta.json").write_text(json.dumps(meta, indent=2), encoding="utf-8")
+
+    print(f"\ndone in {(time.time()-t0)/60:.1f} min | {len(index)} vignettes indexed",
+          flush=True)
+    for sp in ("train", "val", "test_o_val"):
+        c = stats[sp]
+        print(f"   {sp}: {c[1]} positives, {c[0]} negatives", flush=True)
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())
