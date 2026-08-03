@@ -112,6 +112,75 @@ def review_hours(k: int, precision: float) -> dict:
     return {"screen_h": screen, "verify_h": verify, "total_h": screen + verify}
 
 
+# --- Marco de precisión diagnóstica -------------------------------------
+# La medicina separa dos pares que visión por computador mezcla: sensibilidad
+# y especificidad no dependen de la prevalencia y se trasladan del conjunto
+# etiquetado al barrido; VPP y VPN sí dependen y hay que recalcularlos. Esa
+# distinción es la que hace que un número de validación signifique algo.
+
+DEPLOY_PREVALENCE = SWEEP_POSITIVES / SWEEP_CELLS
+
+
+def ppv_from(sens: float, spec: float, prevalence: float = DEPLOY_PREVALENCE) -> float:
+    """Valor predictivo positivo a una prevalencia dada (Bayes)."""
+    tp = sens * prevalence
+    fp = (1 - spec) * (1 - prevalence)
+    return tp / (tp + fp) if (tp + fp) > 0 else float("nan")
+
+
+def specificity_needed(target_ppv: float, sens: float,
+                       prevalence: float = DEPLOY_PREVALENCE) -> float:
+    """Especificidad exigida para alcanzar un VPP objetivo.
+
+    Se despeja de la fórmula de Bayes. Es una meta mucho mejor formulada que
+    "precisión 0.75", porque la especificidad se mide en el conjunto
+    etiquetado y se traslada, mientras que el VPP no significa nada sin decir
+    a qué prevalencia se calcula.
+    """
+    if not (0 < target_ppv < 1):
+        return float("nan")
+    fpr = sens * prevalence * (1 - target_ppv) / (target_ppv * (1 - prevalence))
+    return 1 - fpr
+
+
+def number_needed_to_screen(ppv: float) -> float:
+    """Celdas que hay que abrir en QGIS por cada castro hallado.
+
+    El NNS viene de Rembold (BMJ 1998) y comunica la carga de revisión mucho
+    mejor que una tasa de falsa alarma con cuatro ceros.
+    """
+    return 1.0 / ppv if ppv and ppv > 0 else float("inf")
+
+
+def diagnostic_block(scores, labels, thresholds=(0.5,)) -> dict:
+    s, l = np.asarray(scores, float), np.asarray(labels, int)
+    npos, nneg = int(l.sum()), int((1 - l).sum())
+    out = {"prevalence_deploy": DEPLOY_PREVALENCE, "by_threshold": {}}
+    for t in thresholds:
+        pred = (s >= t).astype(int)
+        tp = int(((pred == 1) & (l == 1)).sum())
+        tn = int(((pred == 0) & (l == 0)).sum())
+        sens = tp / npos if npos else float("nan")
+        spec = tn / nneg if nneg else float("nan")
+        ppv_d = ppv_from(sens, spec)
+        out["by_threshold"][t] = {
+            "sensitivity": sens,
+            "sensitivity_ci95": list(wilson(tp, npos)) if npos else [0, 1],
+            "specificity": spec,
+            "specificity_ci95": list(wilson(tn, nneg)) if nneg else [0, 1],
+            "ppv_at_deploy_prevalence": ppv_d,
+            "number_needed_to_screen": number_needed_to_screen(ppv_d),
+        }
+    out["specificity_targets"] = {
+        f"ppv_{p:.2f}": {
+            "specificity_needed": specificity_needed(p, 0.70),
+            "false_positives_in_sweep":
+                (1 - specificity_needed(p, 0.70)) * (SWEEP_CELLS - SWEEP_POSITIVES),
+        } for p in (0.25, 0.50, 0.75)
+    }
+    return out
+
+
 def evaluate(scores, labels, ratio_obs=None, ks=(10, 25, 50, 100)) -> dict:
     s = np.asarray(scores, float)
     l = np.asarray(labels, int)
@@ -156,6 +225,10 @@ def evaluate(scores, labels, ratio_obs=None, ks=(10, 25, 50, 100)) -> dict:
                       "precision": hits / k,
                       "recall_ci95": list(wilson(hits, npos)) if npos else [0, 1]}
 
+    # Marco diagnóstico: la parte trasladable del resultado.
+    qs = np.quantile(s, [0.5, 0.75, 0.9]) if len(s) else [0.5]
+    out["diagnostic"] = diagnostic_block(s, l, thresholds=tuple(float(q) for q in qs))
+
     # What this test set can and cannot resolve.
     lo, hi = wilson(round(0.70 * npos), npos) if npos else (0, 1)
     out["resolving_power"] = {
@@ -189,6 +262,29 @@ def render(res: dict) -> str:
                  f"**`{d['precision_at_deploy_base_rate']:.2f}`** | "
                  f"`{d['recall']:.2f}` | `{d['review']['total_h']:.1f} h` |")
     rp = res["resolving_power"]
+    d = res.get("diagnostic", {})
+    if d:
+        L += ["", "## Marco diagnóstico (lo que sí se traslada al barrido)", "",
+              "Sensibilidad y especificidad no dependen de la prevalencia: se miden aquí",
+              "y valen igual en el barrido. El VPP sí depende, y se recalcula a la",
+              f"prevalencia real (`1:{1/d['prevalence_deploy']:.0f}`).", "",
+              "| umbral | sensibilidad | especificidad | VPP a tasa real | celdas por castro |",
+              "|---:|---|---|---:|---:|"]
+        for t, b in d["by_threshold"].items():
+            L.append(f"| `{t:.3f}` | `{b['sensitivity']:.2f}` "
+                     f"`[{b['sensitivity_ci95'][0]:.2f}, {b['sensitivity_ci95'][1]:.2f}]` | "
+                     f"`{b['specificity']:.4f}` "
+                     f"`[{b['specificity_ci95'][0]:.3f}, {b['specificity_ci95'][1]:.3f}]` | "
+                     f"**`{b['ppv_at_deploy_prevalence']:.3f}`** | "
+                     f"`{b['number_needed_to_screen']:.1f}` |")
+        L += ["", "### La meta, formulada como especificidad", "",
+              "«Precisión `0.75`» no significa nada sin prevalencia. Esto sí:", "",
+              "| VPP objetivo | especificidad necesaria | falsos positivos en el barrido |",
+              "|---:|---:|---:|"]
+        for k, v in res["diagnostic"]["specificity_targets"].items():
+            L.append(f"| `{k.split('_')[1]}` | `{v['specificity_needed']:.5f}` | "
+                     f"`{v['false_positives_in_sweep']:.0f}` |")
+
     L += ["", "## Qué puede resolver este conjunto", "",
           f"Anchura del IC95% al estimar un recall de `0.70`: "
           f"**`{rp['ci_width_at_recall_070']:.2f}`**.", ""]
