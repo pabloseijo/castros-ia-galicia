@@ -28,12 +28,18 @@ say "0. Comprobaciones previas"
 mountpoint -q "$MOUNT" || fail "$MOUNT no esta montado"
 
 # La comprobacion que de verdad importa: un disco puede figurar montado y
-# estar colgado. Solo una escritura real con timeout lo distingue.
-if ! timeout 10 touch "$MOUNT/.pilot-precheck" 2>/dev/null; then
-  fail "$MOUNT montado pero NO escribible: el disco esta colgado"
+# estar colgado, y `mountpoint` no lo detecta. Solo una escritura real con
+# timeout lo distingue.
+#
+# Se escribe dentro del workspace, no en la raiz del montaje: /srv/data es
+# root:root, asi que un touch ahi da "Permission denied" y no dice nada sobre
+# la salud del disco. Probarlo en la raiz hacia fallar este guarda siempre.
+PROBE="$WORKSPACE/.pilot-precheck"
+if ! timeout 10 touch "$PROBE" 2>/dev/null; then
+  fail "$WORKSPACE no escribible: disco colgado, o permisos rotos"
 fi
-rm -f "$MOUNT/.pilot-precheck"
-echo "  escritura real en $MOUNT: OK"
+rm -f "$PROBE"
+echo "  escritura real en $WORKSPACE: OK"
 
 FREE_GB=$(df -BG --output=avail "$MOUNT" | tail -1 | tr -dc '0-9')
 echo "  espacio libre: ${FREE_GB} GB"
