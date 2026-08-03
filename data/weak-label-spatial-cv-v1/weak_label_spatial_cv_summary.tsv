@@ -1,0 +1,5 @@
+regime	feature_set	folds	roc_auc_mean	roc_auc_std	roc_auc_min	roc_auc_max	average_precision_mean	average_precision_std	average_precision_min	average_precision_max
+block	fusion	5	0.913092	0.006893	0.902997	0.922278	0.790352	0.025928	0.749181	0.829383
+random	fusion	5	0.914506	0.002401	0.911451	0.918586	0.792346	0.010721	0.775423	0.807986
+block	fusion_plus_msrm	5	0.931854	0.005982	0.921660	0.940035	0.826888	0.019509	0.792055	0.851978
+random	fusion_plus_msrm	5	0.933045	0.002883	0.927785	0.935805	0.828926	0.012090	0.809117	0.843598

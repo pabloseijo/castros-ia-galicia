@@ -63,6 +63,25 @@ RELIEF_FEATURE_NAMES = [
     "ring_sector_balance",
 ]
 
+# Multi-scale relief columns, added only when --msrm-features is supplied.
+# The fixed-radius relief features above answer one castro size; these carry
+# the scale each row actually responds to.
+MSRM_FEATURE_NAMES = [
+    "msrm_abs_ratio",
+    "msrm_core_delta",
+    "msrm_ring_coverage",
+    "msrm_ring_balance",
+    "best_ring_radius_m",
+    "best_ring_coverage",
+    "best_ring_balance",
+    "best_ring_abs_ratio",
+    "ring_radius_sharpness",
+    "dominant_scale_m",
+    "dominant_scale_ratio",
+    "scale_ratio_spread",
+    "scale_response_entropy",
+]
+
 FUSION_FEATURE_NAMES = [
     *[f"rgb__{name}" for name in RGB_FEATURE_NAMES],
     *[f"relief__{name}" for name in RELIEF_FEATURE_NAMES],
@@ -130,6 +149,33 @@ def dataset_from_relief_path(path: Path) -> str:
     return stem[len(prefix) :] if stem.startswith(prefix) else stem
 
 
+def enable_msrm_features() -> list[str]:
+    """Extend the fusion vector with MSRM columns, in place.
+
+    FEATURE_FIELDS copied FUSION_FEATURE_NAMES at import time, so both have to
+    grow together or the features TSV silently drops the new columns.
+    """
+    columns = [f"msrm__{name}" for name in MSRM_FEATURE_NAMES]
+    new_columns = [name for name in columns if name not in FUSION_FEATURE_NAMES]
+    if not new_columns:
+        return columns
+    FUSION_FEATURE_NAMES.extend(new_columns)
+    insert_at = FEATURE_FIELDS.index("error")
+    FEATURE_FIELDS[insert_at:insert_at] = new_columns
+    return columns
+
+
+def load_msrm_feature_rows(paths: list[Path]) -> dict[str, dict[str, str]]:
+    out: dict[str, dict[str, str]] = {}
+    for path in paths:
+        if not path.exists():
+            continue
+        for row in read_tsv(path):
+            if row.get("status") == "ok":
+                out[row.get("sample_id", "")] = row
+    return out
+
+
 def load_relief_feature_rows(paths: list[Path]) -> dict[str, dict[str, str]]:
     out: dict[str, dict[str, str]] = {}
     for path in paths:
@@ -167,7 +213,12 @@ def variant_scores(row: dict[str, str], scaler: dict[str, tuple[float, float]]) 
     return scores
 
 
-def build_feature_rows(rgb_rows: list[dict[str, str]], relief_by_sample: dict[str, dict[str, str]], train_dataset: str) -> list[dict[str, str]]:
+def build_feature_rows(
+    rgb_rows: list[dict[str, str]],
+    relief_by_sample: dict[str, dict[str, str]],
+    train_dataset: str,
+    msrm_by_sample: dict[str, dict[str, str]] | None = None,
+) -> list[dict[str, str]]:
     train_relief_rows = [
         relief_by_sample[row["sample_id"]]
         for row in rgb_rows
@@ -197,12 +248,15 @@ def build_feature_rows(rgb_rows: list[dict[str, str]], relief_by_sample: dict[st
             "status": "failed",
             "error": "",
         }
+        msrm_row = msrm_by_sample.get(rgb_row.get("sample_id", "")) if msrm_by_sample else None
         if rgb_row.get("status") != "ok":
             result["error"] = f"rgb_status:{rgb_row.get('status', '')}:{rgb_row.get('error', '')}"
         elif relief_row is None:
             result["error"] = "missing_relief_features"
         elif relief_row.get("status") != "ok":
             result["error"] = f"relief_status:{relief_row.get('status', '')}:{relief_row.get('error', '')}"
+        elif msrm_by_sample is not None and msrm_row is None:
+            result["error"] = "missing_msrm_features"
         else:
             for name in RGB_FEATURE_NAMES:
                 result[f"rgb__{name}"] = rgb_row.get(name, "0")
@@ -210,6 +264,9 @@ def build_feature_rows(rgb_rows: list[dict[str, str]], relief_by_sample: dict[st
                 result[f"relief__{name}"] = relief_row.get(name, "0")
             for name, value in variant_scores(relief_row, scaler).items():
                 result[f"relief_variant__{name}"] = f"{value:.8f}"
+            if msrm_row is not None:
+                for name in MSRM_FEATURE_NAMES:
+                    result[f"msrm__{name}"] = msrm_row.get(name, "0")
             result["status"] = "ok"
         out.append(result)
     return out
@@ -462,6 +519,13 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--rgb-metrics", type=Path, default=DEFAULT_RGB_METRICS)
     parser.add_argument("--relief-features", type=Path, action="append", default=None)
     parser.add_argument("--relief-metrics", type=Path, action="append", default=None)
+    parser.add_argument(
+        "--msrm-features",
+        type=Path,
+        action="append",
+        default=None,
+        help="Multi-scale relief feature TSV; adds MSRM columns to the fusion vector.",
+    )
     parser.add_argument("--out-dir", type=Path, default=OUT_DIR)
     parser.add_argument("--artifact-prefix", default="weak_label_rgb_relief")
     parser.add_argument("--report", type=Path, default=DEFAULT_REPORT)
@@ -483,6 +547,10 @@ def resolve_args(args: argparse.Namespace) -> argparse.Namespace:
         path if path.is_absolute() else PROJECT_ROOT / path
         for path in (args.relief_metrics or DEFAULT_RELIEF_METRICS)
     ]
+    if args.msrm_features:
+        args.msrm_features = [
+            path if path.is_absolute() else PROJECT_ROOT / path for path in args.msrm_features
+        ]
     args.out_dir = args.out_dir if args.out_dir.is_absolute() else PROJECT_ROOT / args.out_dir
     if not args.artifact_prefix or any(char in args.artifact_prefix for char in "/\\"):
         raise SystemExit("--artifact-prefix must be a non-empty file-name prefix, not a path.")
@@ -495,7 +563,13 @@ def main() -> None:
     args = resolve_args(parse_args())
     rgb_rows = read_tsv(args.rgb_features)
     relief_by_sample = load_relief_feature_rows(args.relief_features)
-    feature_rows = build_feature_rows(rgb_rows, relief_by_sample, args.train_dataset)
+    msrm_by_sample = None
+    if args.msrm_features:
+        enable_msrm_features()
+        msrm_by_sample = load_msrm_feature_rows(args.msrm_features)
+        if not msrm_by_sample:
+            raise SystemExit("--msrm-features given but no usable MSRM rows found")
+    feature_rows = build_feature_rows(rgb_rows, relief_by_sample, args.train_dataset, msrm_by_sample)
     train_rows = [row for row in feature_rows if row["dataset"] == args.train_dataset and row["status"] == "ok"]
     if not train_rows:
         raise SystemExit("No valid train rows found for fusion baseline.")

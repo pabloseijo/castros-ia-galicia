@@ -16,6 +16,24 @@ venv/
 # Heavy geospatial data
 data/external/**
 !data/external/README.md
+
+# Blind-grid inference output: holds precise coordinates of uncatalogued
+# cells the model ranked highly. Nothing here has been reviewed by an
+# archaeologist, and publishing unverified site locations can get them
+# looted or damaged. The reports under reports/ round coordinates to ~1 km
+# and are the publishable surface; these files stay local.
+data/trasancos-inference-v1/*.tsv
+data/trasancos-inference-v1/*.geojson
+data/trasancos-centered-v1/*.tsv
+data/trasancos-centered-v1/*.geojson
+data/oval-dense-grid-v1/*.tsv
+data/oval-dense-grid-v1/*.geojson
+data/trasancos-dense-v1/*.tsv
+data/trasancos-dense-v1/*.geojson
+data/galicia-sweep-v1/**/*.tsv
+data/galicia-sweep-v1/**/*.geojson
+data/lidar-trasancos-v1/*.tsv
+data/lidar-trasancos-v1/*.geojson
 *.tif
 *.tiff
 *.laz

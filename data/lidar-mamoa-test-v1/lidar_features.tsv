@@ -1,0 +1,41 @@
+sample_id	name	site_class	lidar_best_ring_coverage	lidar_msrm_core_delta	lidar_msrm_abs_ratio	lidar_best_ring_balance	lidar_dominant_scale_ratio	status	error
+wl-pos-pos-es-pba-14328	Monte do Castro (Castro de Vilasuso)	castro	0.94444444	0.23350845	0.73154049	0.80273786	2.03291665	ok	
+wl-pos-pos-es-pba-14367	O Castro (Castro de Quintá)	castro	0.88888889	1.17835940	1.54280090	0.63676426	3.89989302	ok	
+wl-pos-pos-es-pba-14553	Castro da Pedreira	castro	0.83333333	1.01986955	0.73480798	0.77350830	1.67469556	ok	
+wl-pos-pos-es-pba-14588	Castro de Pena Lopesa	castro	0.44444444	-0.31140964	1.15652122	0.47217475	1.15652122	ok	
+wl-pos-pos-es-pba-8704	Castro das Pías/Castro de Cardoeiro	castro	0.63888889	0.96462820	1.33311379	0.56034890	1.89163971	ok	
+wl-pos-pos-es-pba-8705	Castro de Barallobre	castro	0.52777778	0.34170392	0.98463808	0.65593829	1.28672884	ok	
+wl-pos-pos-es-pba-8706	Castro de Magalofes	castro	0.66666667	0.57510949	1.94034575	0.86087095	1.20942221	ok	
+wl-pos-pos-es-pba-8707	Castro de Orra	castro	0.69444444	0.58498259	1.31367826	0.64034286	1.41628753	ok	
+wl-pos-pos-es-pba-8708	Castro de Prismos	castro	0.83333333	0.96969754	0.77491495	0.87290756	1.30293175	ok	
+wl-pos-pos-es-pba-8709	Castro do Río Castro	castro	0.72222222	-0.17552793	1.16398482	0.70079939	1.33590617	ok	
+wl-pos-pos-es-pba-10165	Monte do Castro/Castro de Vilela	castro	0.41666667	0.02794673	0.85322315	0.61869996	1.11308084	ok	
+wl-pos-pos-es-pba-10262	Necrópole de Santa Comba/Castro de Santa Comba	castro	0.61111111	0.21115232	1.95040348	0.73877906	1.22183103	ok	
+wl-pos-pos-es-pba-10266	Os Castros de Mandiá	castro	0.77777778	0.89681357	0.65224785	0.68847848	1.64108202	ok	
+wl-pos-pos-es-pba-9072	A Croa/Castro da Croa de Fontá	castro	0.61111111	0.24565772	0.78305582	0.69322527	1.44604559	ok	
+wl-pos-pos-es-pba-9152	Castro de Canido	castro	0.55555556	0.38555440	1.13010705	0.80389327	1.07862878	ok	
+wl-pos-pos-es-pba-9153	Castro de Ferrol Vello	castro	0.58333333	0.12076952	1.36250675	0.61565908	1.48998363	ok	
+wl-pos-pos-es-pba-9154	Castro de Leixa/A Croa de Leixa	castro	0.75000000	0.40035936	0.80819986	0.69587913	1.48781327	ok	
+wl-pos-pos-es-pba-9155	Castro de Lobariz	castro	0.94444444	1.01342334	2.88851013	0.71758636	2.13159946	ok	
+wl-pos-pos-es-pba-9183	Castro de Marmancón/Castro de Papoi	castro	0.41666667	-0.32858219	1.44275341	0.72961785	1.01471905	ok	
+wl-pos-pos-es-pba-9184	Castro de Santa Cecilia	castro	0.41666667	0.23750775	0.95242442	0.68592134	1.09219715	ok	
+wl-neg-neg-es-pba-14299	Mámoa do Val/Mámoa de Santa Margarida	mamoa	0.58333333	0.28600706	1.17255933	0.69343847	1.10491384	ok	
+wl-neg-neg-es-pba-8678	Mámoa do Monte Marraxón III-3	mamoa	0.50000000	0.23097812	0.84070479	0.85847996	1.17518743	ok	
+wl-neg-neg-es-pba-8679	Mámoa do Monte Marraxón III-4	mamoa	0.47222222	0.29861791	0.89981601	0.61007699	0.91983639	ok	
+wl-neg-neg-es-pba-8680	Mámoa do Monte Marraxón III-5	mamoa	0.36111111	0.20256427	0.98463628	0.67135926	0.98463628	ok	
+wl-neg-neg-es-pba-8681	Mámoa do Monte Marraxón III-6	mamoa	0.38888889	0.22546902	0.95428237	0.74086198	0.86777666	ok	
+wl-neg-neg-es-pba-8682	Mámoa do Monte Marraxón IV-1	mamoa	0.94444444	1.05944900	1.29277833	0.89015702	1.56939826	ok	
+wl-neg-neg-es-pba-8683	Mámoa do Monte Marraxón IV-2	mamoa	0.72222222	0.24997893	0.88835018	0.80020136	1.34082119	ok	
+wl-neg-neg-es-pba-8684	Mámoa do Monte Marraxón IV-3	mamoa	0.61111111	0.26412046	0.73904944	0.85666162	1.20269975	ok	
+wl-neg-neg-es-pba-8685	Mámoa do Monte Marraxón IV-4	mamoa	0.50000000	0.07501563	1.13738627	0.75038191	1.08730069	ok	
+wl-neg-neg-es-pba-8713	Mámoa do Monte Marraxón IV-5	mamoa	0.72222222	0.38678831	1.43732973	0.77010238	1.43732973	ok	
+wl-neg-neg-es-pba-8714	Mámoa do Monte Marraxón IV-6	mamoa	0.47222222	0.17403130	0.82377820	0.63368408	0.87453826	ok	
+wl-neg-neg-es-pba-8715	Mámoa do Rego da Moa	mamoa	0.47222222	0.16315974	1.57545548	0.74361018	1.21545128	ok	
+wl-neg-neg-es-pba-9173	Mámoa do Monte Marraxón I-1	mamoa	0.47222222	0.09001014	0.87134805	0.63395888	0.93960200	ok	
+wl-neg-neg-es-pba-9201	Mámoa do Monte Marraxón I-2	mamoa	0.75000000	0.32558215	2.23910728	0.60058186	1.53139657	ok	
+wl-neg-neg-es-pba-9202	Mámoa do Monte Marraxón I-3	mamoa	0.38888889	0.37898469	0.82216732	0.75398886	1.01323110	ok	
+wl-neg-neg-es-pba-9203	Mámoa do Monte Marraxón I-4	mamoa	0.50000000	0.07351321	0.89676244	0.60177210	0.92194819	ok	
+wl-neg-neg-es-pba-9204	Mámoa do Monte Marraxón I-5	mamoa	0.66666667	0.08015165	0.81131697	0.76669739	1.18066037	ok	
+wl-neg-neg-es-pba-9205	Mámoa do Monte Marraxón I-6	mamoa	0.41666667	0.10697520	0.68846496	0.77294899	1.11001176	ok	
+wl-neg-neg-es-pba-9206	Mámoa do Monte Marraxón II-1	mamoa	0.52777778	0.21274416	0.80565028	0.88601324	1.09832595	ok	
+wl-neg-neg-es-pba-9207	Mámoa do Monte Marraxón III-1	mamoa	0.38888889	0.35595537	0.89556523	0.81432943	1.03915049	ok	

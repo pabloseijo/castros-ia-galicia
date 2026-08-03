@@ -1,0 +1,8 @@
+subset	variant	rows	positives	negatives	roc_auc	average_precision	precision_at_50	recall_at_50	median_positive_rank
+all	msrm_standalone	13079	2799	10280	0.850794	0.661306	1.000000	0.017864	2057.0
+train	msrm_standalone	8641	1844	6797	0.850654	0.659415	1.000000	0.027115	1364.5
+val	msrm_standalone	1851	359	1492	0.858301	0.654879	0.900000	0.125348	266.0
+test	msrm_standalone	2383	528	1855	0.847127	0.663795	0.900000	0.085227	381.0
+holdouts	msrm_standalone	204	68	136	0.848508	0.765596	0.760000	0.558824	42.5
+test_trasancos	msrm_standalone	199	64	135	0.839352	0.739730	0.720000	0.562500	42.5
+test_o_val	msrm_standalone	5	4	1	1.000000	1.000000	0.800000	1.000000	2.5

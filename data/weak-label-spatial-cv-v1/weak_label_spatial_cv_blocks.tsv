@@ -1,0 +1,307 @@
+spatial_block_id	province_or_district	municipality	rows	positives	held_out_in_fold	positives_recovered_top_decile	recall_top_decile	median_positive_rank_pct
+ES|A Coruña|Oroso	A Coruña	Oroso	39	18	2	0	0.000000	0.267796
+ES|A Coruña|Sada	A Coruña	Sada	13	13	4	0	0.000000	0.248872
+ES|A Coruña|Dodro	A Coruña	Dodro	21	8	1	0	0.000000	0.271810
+ES|A Coruña|Oleiros	A Coruña	Oleiros	9	8	2	0	0.000000	0.181015
+ES|A Coruña|A Baña	A Coruña	A Baña	75	8	5	0	0.000000	0.163086
+ES|A Coruña|Mugardos	A Coruña	Mugardos	6	6	2	0	0.000000	0.222112
+ES|Pontevedra|Meis	Pontevedra	Meis	35	6	4	0	0.000000	0.265540
+ES|Ourense|O Irixo	Ourense	O Irixo	82	6	4	0	0.000000	0.181359
+ES|Pontevedra|Moraña	Pontevedra	Moraña	38	6	5	0	0.000000	0.271733
+ES|Ourense|Vilar de Barrio	Ourense	Vilar de Barrio	6	4	2	0	0.000000	0.177307
+ES|A Coruña|Padrón	A Coruña	Padrón	10	4	2	0	0.000000	0.209037
+ES|Pontevedra|A Guarda	Pontevedra	A Guarda	39	4	3	0	0.000000	0.309045
+ES|Ourense|Beade	Ourense	Beade	4	4	3	0	0.000000	0.347542
+ES|Pontevedra|Cerdedo Cotobade	Pontevedra	Cerdedo Cotobade	8	4	3	0	0.000000	0.817685
+ES|Ourense|Baños de Molgas	Ourense	Baños de Molgas	42	4	4	0	0.000000	0.275900
+ES|Ourense|Sarreaus	Ourense	Sarreaus	6	4	4	0	0.000000	0.220850
+ES|Ourense|Castrelo do Val	Ourense	Castrelo do Val	6	3	5	0	0.000000	0.228917
+ES|Ourense|Beariz	Ourense	Beariz	58	3	5	0	0.000000	0.149323
+ES|Ourense|Cualedro	Ourense	Cualedro	10	3	5	0	0.000000	0.239391
+ES|A Coruña|Oza Cesuras	A Coruña	Oza Cesuras	2	2	2	0	0.000000	0.448849
+ES|Ourense|Piñor	Ourense	Piñor	29	2	2	0	0.000000	0.141028
+ES|Ourense|Os Blancos	Ourense	Os Blancos	4	2	2	0	0.000000	0.135523
+ES|Ourense|Oímbra	Ourense	Oímbra	8	2	3	0	0.000000	0.458865
+ES|Pontevedra|Catoira	Pontevedra	Catoira	17	2	4	0	0.000000	0.168170
+ES|Ourense|O Carballiño	Ourense	O Carballiño	6	2	5	0	0.000000	0.150661
+ES|Pontevedra|Pazos de Borbén	Pontevedra	Pazos de Borbén	57	2	5	0	0.000000	0.200895
+ES|Ourense|San Cibrao das Viñas	Ourense	San Cibrao das Viñas	13	1	1	0	0.000000	0.101537
+ES|Lugo|Pastoriza	Lugo	Pastoriza	1	1	1	0	0.000000	0.345974
+ES|Ourense|Ramirás	Ourense	Ramirás	4	1	2	0	0.000000	0.270204
+ES|Pontevedra|Soutomaior	Pontevedra	Soutomaior	12	1	2	0	0.000000	0.185870
+ES|Pontevedra|Ribadumia	Pontevedra	Ribadumia	1	1	2	0	0.000000	0.121492
+ES|Ourense|Bande	Ourense	Bande	45	1	2	0	0.000000	0.395596
+ES|A Coruña|O Porto do Son	A Coruña	O Porto do Son	1	1	3	0	0.000000	0.642251
+ES|Pontevedra|A Caniza	Pontevedra	A Caniza	1	1	4	0	0.000000	0.838443
+ES|Ourense|Vilar de Santos	Ourense	Vilar de Santos	3	1	4	0	0.000000	0.289930
+ES|A Coruña|A Pobra do Caramiñal	A Coruña	A Pobra do Caramiñal	22	1	4	0	0.000000	0.106889
+ES|A Coruña|Frades	A Coruña	Frades	55	22	1	1	0.045455	0.473928
+ES|A Coruña|O Pino	A Coruña	O Pino	31	12	1	1	0.083333	0.251548
+ES|A Coruña|Muros	A Coruña	Muros	51	10	1	1	0.100000	0.154867
+ES|Lugo|Xermade	Lugo	Xermade	143	10	2	1	0.100000	0.156969
+ES|Lugo|Barreiros	Lugo	Barreiros	20	10	5	1	0.100000	0.235760
+ES|A Coruña|Oza-Cesuras	A Coruña	Oza-Cesuras	73	18	1	2	0.111111	0.214581
+ES|Lugo|Outeiro de Rei	Lugo	Outeiro de Rei	72	9	3	1	0.111111	0.176619
+ES|Pontevedra|Valga	Pontevedra	Valga	24	9	4	1	0.111111	0.221347
+ES|Lugo|Begonte	Lugo	Begonte	58	9	5	1	0.111111	0.150929
+ES|A Coruña|Arzúa	A Coruña	Arzúa	64	25	2	3	0.120000	0.248566
+ES|Ourense|A Peroxa	Ourense	A Peroxa	14	8	5	1	0.125000	0.142174
+ES|Lugo|A Pastoriza	Lugo	A Pastoriza	58	15	5	2	0.133333	0.192140
+ES|A Coruña|Ordes	A Coruña	Ordes	62	37	4	5	0.135135	0.213931
+ES|Lugo|Lugo	Lugo	Lugo	106	49	1	7	0.142857	0.231210
+ES|A Coruña|Rianxo	A Coruña	Rianxo	127	7	1	1	0.142857	0.174019
+ES|Ourense|A Merca	Ourense	A Merca	7	7	2	1	0.142857	0.229834
+ES|A Coruña|Valdoviño	A Coruña	Valdoviño	33	20	3	3	0.150000	0.173140
+ES|Lugo|Foz	Lugo	Foz	23	13	1	2	0.153846	0.177537
+ES|A Coruña|Santiso	A Coruña	Santiso	35	13	5	2	0.153846	0.163086
+ES|Pontevedra|Campo Lameiro	Pontevedra	Campo Lameiro	246	12	2	2	0.166667	0.225285
+ES|Lugo|Muras	Lugo	Muras	42	6	2	1	0.166667	0.170464
+ES|A Coruña|Noia	A Coruña	Noia	11	6	2	1	0.166667	0.197569
+ES|Ourense|A Mezquita	Ourense	A Mezquita	7	6	2	1	0.166667	0.275633
+ES|A Coruña|Moeche	A Coruña	Moeche	9	6	3	1	0.166667	0.187820
+ES|Ourense|Maside	Ourense	Maside	35	6	4	1	0.166667	0.202271
+ES|A Coruña|Pontedeume	A Coruña	Pontedeume	17	6	5	1	0.166667	0.274371
+ES|A Coruña|Zas	A Coruña	Zas	95	11	2	2	0.181818	0.194587
+ES|Pontevedra|Tui	Pontevedra	Tui	46	11	3	2	0.181818	0.131126
+ES|A Coruña|Santa Comba	A Coruña	Santa Comba	37	15	1	3	0.200000	0.115911
+ES|A Coruña|A Laracha	A Coruña	A Laracha	25	15	1	3	0.200000	0.176925
+ES|Pontevedra|Caldas de Reis	Pontevedra	Caldas de Reis	40	10	1	2	0.200000	0.222723
+ES|Pontevedra|Rodeiro	Pontevedra	Rodeiro	147	10	3	2	0.200000	0.150126
+ES|A Coruña|Aranga	A Coruña	Aranga	126	5	1	1	0.200000	0.126845
+ES|A Coruña|Ribeira	A Coruña	Ribeira	39	5	2	1	0.200000	0.168744
+ES|Pontevedra|Dozón	Pontevedra	Dozón	45	5	2	1	0.200000	0.174708
+ES|Pontevedra|Vilanova de Arousa	Pontevedra	Vilanova de Arousa	17	5	3	1	0.200000	0.105666
+ES|Pontevedra|Poio	Pontevedra	Poio	38	5	4	1	0.200000	0.286108
+ES|A Coruña|Cerdido	A Coruña	Cerdido	5	5	5	1	0.200000	0.161327
+ES|Ourense|San Amaro	Ourense	San Amaro	17	5	5	1	0.200000	0.271657
+ES|Ourense|Punxín	Ourense	Punxín	13	5	5	1	0.200000	0.386192
+ES|Lugo|Friol	Lugo	Friol	305	28	3	6	0.214286	0.189196
+ES|A Coruña|Boimorto	A Coruña	Boimorto	20	14	4	3	0.214286	0.317379
+ES|A Coruña|Abegondo	A Coruña	Abegondo	48	18	4	4	0.222222	0.145844
+ES|Lugo|Castro de Rei	Lugo	Castro de Rei	143	21	4	5	0.238095	0.175166
+ES|A Coruña|Curtis	A Coruña	Curtis	51	24	5	6	0.250000	0.131967
+ES|A Coruña|Narón	A Coruña	Narón	38	16	5	4	0.250000	0.196842
+ES|A Coruña|Cedeira	A Coruña	Cedeira	29	12	1	3	0.250000	0.195390
+ES|A Coruña|Vedra	A Coruña	Vedra	20	8	1	2	0.250000	0.178913
+ES|Ourense|Boborás	Ourense	Boborás	47	8	2	2	0.250000	0.157466
+ES|A Coruña|Carral	A Coruña	Carral	11	8	2	2	0.250000	0.164730
+ES|A Coruña|Boiro	A Coruña	Boiro	106	8	3	2	0.250000	0.210261
+ES|A Coruña|As Pontes de García Rodríguez	A Coruña	As Pontes de García Rodríguez	139	8	4	2	0.250000	0.195963
+ES|Ourense|Muíños	Ourense	Muíños	48	4	1	1	0.250000	0.151158
+ES|Ourense|Allariz	Ourense	Allariz	11	4	1	1	0.250000	0.228649
+ES|Ourense|A Bola	Ourense	A Bola	5	4	2	1	0.250000	0.142633
+ES|Ourense|Nogueira de Ramuín	Ourense	Nogueira de Ramuín	17	4	3	1	0.250000	0.268981
+ES|A Coruña|Miño	A Coruña	Miño	7	4	5	1	0.250000	0.255677
+ES|Lugo|Vilalba	Lugo	Vilalba	223	30	2	8	0.266667	0.187209
+ES|Lugo|Antas de Ulla	Lugo	Antas de Ulla	86	15	4	4	0.266667	0.141142
+ES|Lugo|Guntín	Lugo	Guntín	93	15	5	4	0.266667	0.121110
+ES|Ourense|A Veiga	Ourense	A Veiga	19	11	5	3	0.272727	0.156740
+ES|A Coruña|Tordoia	A Coruña	Tordoia	55	18	5	5	0.277778	0.218786
+ES|A Coruña|Touro	A Coruña	Touro	39	21	2	6	0.285714	0.219742
+ES|Lugo|O Corgo	Lugo	O Corgo	50	21	5	6	0.285714	0.174631
+ES|A Coruña|Ferrol	A Coruña	Ferrol	84	14	3	4	0.285714	0.165188
+ES|A Coruña|Vimianzo	A Coruña	Vimianzo	155	14	4	4	0.285714	0.156052
+ES|Ourense|A Pobra de Trives	Ourense	A Pobra de Trives	7	7	1	2	0.285714	0.194434
+ES|Pontevedra|O Rosal	Pontevedra	O Rosal	30	7	1	2	0.285714	0.211713
+ES|Lugo|Abadín	Lugo	Abadín	25	7	2	2	0.285714	0.164997
+ES|Ourense|A Gudiña	Ourense	A Gudiña	21	7	2	2	0.285714	0.266458
+ES|Ourense|Maceda	Ourense	Maceda	15	7	3	2	0.285714	0.178607
+ES|Pontevedra|As Neves	Pontevedra	As Neves	46	7	4	2	0.285714	0.146189
+ES|Pontevedra|Cangas	Pontevedra	Cangas	26	7	5	2	0.285714	0.143589
+ES|Lugo|Ribadeo	Lugo	Ribadeo	17	10	2	3	0.300000	0.148941
+ES|Pontevedra|Oia	Pontevedra	Oia	194	10	4	3	0.300000	0.247037
+ES|A Coruña|Vilasantar	A Coruña	Vilasantar	38	16	4	5	0.312500	0.140875
+ES|Pontevedra|Vila de Cruces	Pontevedra	Vila de Cruces	68	24	4	8	0.333333	0.171955
+ES|A Coruña|Val do Dubra	A Coruña	Val do Dubra	35	15	3	5	0.333333	0.134108
+ES|Pontevedra|Salvaterra de Miño	Pontevedra	Salvaterra de Miño	14	12	1	4	0.333333	0.269669
+ES|A Coruña|Cabana de Bergantiños	A Coruña	Cabana de Bergantiños	52	9	1	3	0.333333	0.164156
+ES|Lugo|Viveiro	Lugo	Viveiro	27	9	2	3	0.333333	0.156434
+ES|Pontevedra|Mos	Pontevedra	Mos	61	9	4	3	0.333333	0.113311
+ES|Ourense|Xinzo de Limia	Ourense	Xinzo de Limia	9	6	2	2	0.333333	0.189617
+ES|A Coruña|Ares	A Coruña	Ares	6	6	3	2	0.333333	0.110750
+ES|Lugo|Ourol	Lugo	Ourol	36	6	4	2	0.333333	0.160639
+ES|A Coruña|Fene	A Coruña	Fene	27	6	5	2	0.333333	0.303884
+ES|Ourense|Verea	Ourense	Verea	15	3	1	1	0.333333	0.146571
+ES|Ourense|Amoeiro	Ourense	Amoeiro	12	3	2	1	0.333333	0.174555
+ES|Ourense|Riós	Ourense	Riós	4	3	3	1	0.333333	0.179295
+ES|Lugo|Meira	Lugo	Meira	21	3	3	1	0.333333	0.283049
+ES|Ourense|Vilamarín	Ourense	Vilamarín	28	3	3	1	0.333333	0.150011
+ES|Lugo|Burela	Lugo	Burela	4	3	4	1	0.333333	0.143283
+ES|Ourense|Calvos de Randín	Ourense	Calvos de Randín	28	3	4	1	0.333333	0.116446
+ES|Lugo|Guitiriz	Lugo	Guitiriz	211	17	2	6	0.352941	0.150776
+ES|A Coruña|Melide	A Coruña	Melide	62	17	3	6	0.352941	0.154446
+ES|A Coruña|Carballo	A Coruña	Carballo	47	28	2	10	0.357143	0.172032
+ES|Pontevedra|Cuntis	Pontevedra	Cuntis	85	14	2	5	0.357143	0.150164
+ES|A Coruña|Muxía	A Coruña	Muxía	59	14	4	5	0.357143	0.159416
+ES|Lugo|Palas de Rei	Lugo	Palas de Rei	115	25	3	9	0.360000	0.146647
+ES|Pontevedra|Forcarei	Pontevedra	Forcarei	98	11	2	4	0.363636	0.126692
+ES|A Coruña|Outes	A Coruña	Outes	33	11	3	4	0.363636	0.123175
+ES|A Coruña|Santiago de Compostela	A Coruña	Santiago de Compostela	165	30	1	11	0.366667	0.122830
+ES|Lugo|Taboada	Lugo	Taboada	54	19	1	7	0.368421	0.144201
+ES|Lugo|Portomarín	Lugo	Portomarín	39	8	4	3	0.375000	0.120651
+ES|A Coruña|Lousame	A Coruña	Lousame	30	8	5	3	0.375000	0.131623
+ES|Lugo|Cospeito	Lugo	Cospeito	106	13	3	5	0.384615	0.128832
+ES|A Coruña|Negreira	A Coruña	Negreira	78	13	3	5	0.384615	0.130362
+ES|Lugo|Castroverde	Lugo	Castroverde	89	33	5	13	0.393939	0.110177
+ES|A Coruña|Sobrado	A Coruña	Sobrado	88	15	3	6	0.400000	0.117134
+ES|A Coruña|Cerceda	A Coruña	Cerceda	29	10	5	4	0.400000	0.120193
+ES|Ourense|Castrelo de Miño	Ourense	Castrelo de Miño	12	5	1	2	0.400000	0.265005
+ES|Pontevedra|Vilagarcía de Arousa	Pontevedra	Vilagarcía de Arousa	25	5	1	2	0.400000	0.139842
+ES|Pontevedra|Baiona	Pontevedra	Baiona	43	5	2	2	0.400000	0.145883
+ES|Ourense|Cenlle	Ourense	Cenlle	7	5	4	2	0.400000	0.197798
+ES|Ourense|Monterrei	Ourense	Monterrei	8	5	4	2	0.400000	0.129368
+ES|Lugo|Paradela	Lugo	Paradela	82	12	2	5	0.416667	0.129674
+ES|Lugo|A Pobra do Brollón	Lugo	A Pobra do Brollón	17	12	2	5	0.416667	0.134261
+ES|A Coruña|Coristanco	A Coruña	Coristanco	67	12	4	5	0.416667	0.129177
+ES|A Coruña|Ponteceso	A Coruña	Ponteceso	51	14	2	6	0.428571	0.140148
+ES|Pontevedra|Agolada	Pontevedra	Agolada	278	14	5	6	0.428571	0.190993
+ES|Pontevedra|Tomiño	Pontevedra	Tomiño	64	7	1	3	0.428571	0.357902
+ES|Ourense|Cartelle	Ourense	Cartelle	31	7	2	3	0.428571	0.121416
+ES|A Coruña|Paderne	A Coruña	Paderne	9	7	3	3	0.428571	0.101231
+ES|A Coruña|Boqueixón	A Coruña	Boqueixón	11	7	3	3	0.428571	0.110865
+ES|Ourense|Laza	Ourense	Laza	12	7	4	3	0.428571	0.109871
+ES|Pontevedra|Arbo	Pontevedra	Arbo	39	7	5	3	0.428571	0.154064
+ES|Pontevedra|Cerdedo-Cotobade	Pontevedra	Cerdedo-Cotobade	138	20	1	9	0.450000	0.111323
+ES|A Coruña|Porto do Son	A Coruña	Porto do Son	201	11	1	5	0.454545	0.117287
+ES|Pontevedra|Ponteareas	Pontevedra	Ponteareas	48	13	5	6	0.461538	0.100543
+ES|Pontevedra|Lalín	Pontevedra	Lalín	142	30	3	14	0.466667	0.108686
+ES|Lugo|Mondoñedo	Lugo	Mondoñedo	31	18	4	9	0.500000	0.095344
+ES|Ourense|Viana do Bolo	Ourense	Viana do Bolo	18	18	5	9	0.500000	0.116790
+ES|Lugo|Monforte de Lemos	Lugo	Monforte de Lemos	20	14	2	7	0.500000	0.100925
+ES|Lugo|Monterroso	Lugo	Monterroso	97	12	5	6	0.500000	0.125239
+ES|A Coruña|Mesía	A Coruña	Mesía	31	12	5	6	0.500000	0.099090
+ES|A Coruña|Cambre	A Coruña	Cambre	11	10	1	5	0.500000	0.111400
+ES|Pontevedra|Pontevedra	Pontevedra	Pontevedra	65	10	2	5	0.500000	0.105971
+ES|A Coruña|Mazaricos	A Coruña	Mazaricos	98	10	4	5	0.500000	0.104710
+ES|A Coruña|Cariño	A Coruña	Cariño	14	8	1	4	0.500000	0.087774
+ES|Pontevedra|Sanxenxo	Pontevedra	Sanxenxo	37	6	1	3	0.500000	0.090259
+ES|Pontevedra|Barro	Pontevedra	Barro	20	6	1	3	0.500000	0.131547
+ES|A Coruña|Cabanas	A Coruña	Cabanas	50	6	4	3	0.500000	0.139575
+ES|A Coruña|Carnota	A Coruña	Carnota	55	4	1	2	0.500000	0.377896
+ES|Ourense|O Bolo	Ourense	O Bolo	7	4	1	2	0.500000	0.123060
+ES|A Coruña|Irixoa	A Coruña	Irixoa	30	4	3	2	0.500000	0.120422
+ES|Ourense|Trasmiras	Ourense	Trasmiras	4	4	4	2	0.500000	0.112623
+ES|Ourense|Baltar	Ourense	Baltar	13	4	5	2	0.500000	0.101040
+ES|Ourense|O Pereiro de Aguiar	Ourense	O Pereiro de Aguiar	11	4	5	2	0.500000	0.055929
+ES|Lugo|Trabada	Lugo	Trabada	11	4	5	2	0.500000	0.107424
+ES|A Coruña|Corcubión	A Coruña	Corcubión	2	2	1	1	0.500000	0.165915
+ES|Ourense|Ribadavia	Ourense	Ribadavia	10	2	1	1	0.500000	0.076955
+ES|Ourense|San Xoán de Río	Ourense	San Xoán de Río	6	2	2	1	0.500000	0.111362
+ES|A Coruña|Camariñas	A Coruña	Camariñas	5	2	2	1	0.500000	0.100313
+ES|Ourense|Barbadás	Ourense	Barbadás	3	2	2	1	0.500000	0.168209
+ES|Ourense|Taboadela	Ourense	Taboadela	14	2	3	1	0.500000	0.393876
+ES|Pontevedra|Pontecesures	Pontevedra	Pontecesures	2	2	3	1	0.500000	0.140225
+ES|Pontevedra|O Grove	Pontevedra	O Grove	2	2	3	1	0.500000	0.356105
+ES|Ourense|Paderne de Allariz	Ourense	Paderne de Allariz	3	2	4	1	0.500000	0.235377
+ES|Pontevedra|Ponte Caldelas	Pontevedra	Ponte Caldelas	73	2	4	1	0.500000	0.081084
+ES|Ourense|Melón	Ourense	Melón	8	2	4	1	0.500000	0.225055
+ES|Pontevedra|O Porriño	Pontevedra	O Porriño	18	2	5	1	0.500000	0.094923
+ES|Ourense|Entrimo	Ourense	Entrimo	14	2	5	1	0.500000	0.125315
+ES|Ourense|Vilariño de Conso	Ourense	Vilariño de Conso	2	2	5	1	0.500000	0.115529
+ES|A Coruña|Laxe	A Coruña	Laxe	7	2	5	1	0.500000	0.119313
+ES|Pontevedra|Silleda	Pontevedra	Silleda	125	25	1	13	0.520000	0.094885
+ES|Lugo|O Páramo	Lugo	O Páramo	32	17	2	9	0.529412	0.096338
+ES|Ourense|O Barco de Valdeorras	Ourense	O Barco de Valdeorras	18	15	2	8	0.533333	0.080511
+ES|Lugo|Chantada	Lugo	Chantada	54	26	5	14	0.538462	0.087621
+ES|A Coruña|Rois	A Coruña	Rois	25	9	3	5	0.555556	0.089915
+ES|Lugo|Ribeira de Piquín	Lugo	Ribeira de Piquín	36	9	4	5	0.555556	0.047251
+ES|Ourense|Rubiá	Ourense	Rubiá	34	9	5	5	0.555556	0.035553
+ES|A Coruña|San Sadurniño	A Coruña	San Sadurniño	17	9	5	5	0.555556	0.099549
+ES|Lugo|Baleira	Lugo	Baleira	40	14	1	8	0.571429	0.075197
+ES|Lugo|Carballedo	Lugo	Carballedo	26	14	1	8	0.571429	0.085825
+ES|A Coruña|Monfero	A Coruña	Monfero	53	7	1	4	0.571429	0.085251
+ES|Lugo|Alfoz do Castrodouro	Lugo	Alfoz do Castrodouro	9	7	5	4	0.571429	0.092515
+ES|A Coruña|Dumbría	A Coruña	Dumbría	92	12	3	7	0.583333	0.087774
+ES|Lugo|Pol	Lugo	Pol	127	12	3	7	0.583333	0.086169
+ES|Lugo|Sober	Lugo	Sober	53	17	1	10	0.588235	0.084410
+ES|Pontevedra|Vigo	Pontevedra	Vigo	131	30	5	18	0.600000	0.064110
+ES|A Coruña|Arteixo	A Coruña	Arteixo	27	20	5	12	0.600000	0.074165
+ES|Lugo|A Pontenova	Lugo	A Pontenova	19	10	3	6	0.600000	0.077682
+ES|Lugo|Xove	Lugo	Xove	36	10	3	6	0.600000	0.056962
+ES|Pontevedra|Cambados	Pontevedra	Cambados	12	5	1	3	0.600000	0.081811
+ES|Lugo|Cervo	Lugo	Cervo	12	5	3	3	0.600000	0.085481
+ES|Ourense|Vilardevós	Ourense	Vilardevós	12	5	3	3	0.600000	0.083263
+ES|Ourense|Celanova	Ourense	Celanova	15	5	5	3	0.600000	0.094426
+ES|Lugo|O Saviñao	Lugo	O Saviñao	79	23	2	14	0.608696	0.083493
+ES|A Coruña|Toques	A Coruña	Toques	74	18	3	11	0.611111	0.084334
+ES|Lugo|Láncara	Lugo	Láncara	59	31	4	19	0.612903	0.076458
+ES|Lugo|Pantón	Lugo	Pantón	67	16	3	10	0.625000	0.069271
+ES|Pontevedra|Nigrán	Pontevedra	Nigrán	93	8	3	5	0.625000	0.059446
+ES|A Coruña|Teo	A Coruña	Teo	110	8	4	5	0.625000	0.078561
+ES|Pontevedra|Gondomar	Pontevedra	Gondomar	101	11	5	7	0.636364	0.052603
+ES|Pontevedra|A Estrada	Pontevedra	A Estrada	132	27	1	18	0.666667	0.062237
+ES|A Coruña|Ames	A Coruña	Ames	64	9	1	6	0.666667	0.063843
+ES|Pontevedra|Salceda de Caselas	Pontevedra	Salceda de Caselas	14	9	2	6	0.666667	0.088998
+ES|Lugo|Bóveda	Lugo	Bóveda	21	6	1	4	0.666667	0.084066
+ES|A Coruña|Brión	A Coruña	Brión	28	6	2	4	0.666667	0.074165
+ES|Lugo|Triacastela	Lugo	Triacastela	7	6	3	4	0.666667	0.073744
+ES|Lugo|O Valadouro	Lugo	O Valadouro	48	6	3	4	0.666667	0.038803
+ES|Pontevedra|Bueu	Pontevedra	Bueu	32	6	3	4	0.666667	0.075350
+ES|Ourense|Avión	Ourense	Avión	41	3	1	2	0.666667	0.081658
+ES|Pontevedra|A Lama	Pontevedra	A Lama	57	3	1	2	0.666667	0.054668
+ES|A Coruña|Cee	A Coruña	Cee	18	3	1	2	0.666667	0.087927
+ES|A Coruña|Fisterra	A Coruña	Fisterra	15	3	1	2	0.666667	0.030430
+ES|Ourense|Leiro	Ourense	Leiro	3	3	2	2	0.666667	0.065907
+ES|Pontevedra|Fornelos de Montes	Pontevedra	Fornelos de Montes	28	3	2	2	0.666667	0.056656
+ES|Pontevedra|Marín	Pontevedra	Marín	32	3	3	2	0.666667	0.033565
+ES|A Coruña|Neda	A Coruña	Neda	5	3	4	2	0.666667	0.096796
+ES|Pontevedra|Vilaboa	Pontevedra	Vilaboa	31	3	5	2	0.666667	0.087086
+ES|Lugo|Sarria	Lugo	Sarria	113	39	3	27	0.692308	0.089762
+ES|Lugo|Navia de Suarna	Lugo	Navia de Suarna	51	20	2	14	0.700000	0.033642
+ES|Pontevedra|Mondariz	Pontevedra	Mondariz	27	10	1	7	0.700000	0.059523
+ES|Lugo|Baralla	Lugo	Baralla	46	34	5	24	0.705882	0.063040
+ES|Lugo|A Fonsagrada	Lugo	A Fonsagrada	264	41	2	29	0.707317	0.028060
+ES|A Coruña|Malpica de Bergantiños	A Coruña	Malpica de Bergantiños	28	7	4	5	0.714286	0.068354
+ES|A Coruña|Bergondo	A Coruña	Bergondo	7	7	4	5	0.714286	0.082652
+ES|Pontevedra|Moaña	Pontevedra	Moaña	63	7	5	5	0.714286	0.044117
+ES|Lugo|O Incio	Lugo	O Incio	66	25	3	18	0.720000	0.051533
+ES|Lugo|Folgoso do Courel	Lugo	Folgoso do Courel	39	27	4	20	0.740741	0.022249
+ES|A Coruña|Ortigueira	A Coruña	Ortigueira	71	12	4	9	0.750000	0.054171
+ES|A Coruña|Mañón	A Coruña	Mañón	64	4	2	3	0.750000	0.058873
+ES|Ourense|San Cristovo de Cea	Ourense	San Cristovo de Cea	16	4	4	3	0.750000	0.064340
+ES|Lugo|Samos	Lugo	Samos	54	19	4	15	0.789474	0.043199
+ES|Lugo|Quiroga	Lugo	Quiroga	104	29	4	23	0.793103	0.023320
+ES|Pontevedra|Meaño	Pontevedra	Meaño	12	5	3	4	0.800000	0.079287
+ES|A Coruña|Betanzos	A Coruña	Betanzos	5	5	3	4	0.800000	0.089533
+ES|Pontevedra|Crecente	Pontevedra	Crecente	17	5	4	4	0.800000	0.079134
+ES|Lugo|Becerreá	Lugo	Becerreá	32	21	3	17	0.809524	0.042129
+ES|Lugo|Lourenzá	Lugo	Lourenzá	20	11	4	9	0.818182	0.073782
+ES|Pontevedra|A Cañiza	Pontevedra	A Cañiza	81	6	4	5	0.833333	0.069730
+ES|A Coruña|Culleredo	A Coruña	Culleredo	25	6	5	5	0.833333	0.058491
+ES|Lugo|O Vicedo	Lugo	O Vicedo	17	7	3	6	0.857143	0.070189
+ES|Lugo|As Nogais	Lugo	As Nogais	7	7	5	6	0.857143	0.034865
+ES|A Coruña|Trazo	A Coruña	Trazo	23	11	4	10	0.909091	0.047634
+ES|Lugo|Pedrafita do Cebreiro	Lugo	Pedrafita do Cebreiro	16	8	3	8	1.000000	0.006346
+ES|Lugo|Cervantes	Lugo	Cervantes	24	6	1	6	1.000000	0.006958
+ES|Ourense|Ourense	Ourense	Ourense	26	5	1	5	1.000000	0.043658
+ES|Pontevedra|Covelo	Pontevedra	Covelo	55	5	5	5	1.000000	0.046410
+ES|Ourense|Gomesende	Ourense	Gomesende	15	4	2	4	1.000000	0.037541
+ES|Lugo|Ribas de Sil	Lugo	Ribas de Sil	15	4	2	4	1.000000	0.017738
+ES|Ourense|Coles	Ourense	Coles	3	3	2	3	1.000000	0.041670
+ES|Ourense|Rairiz de Veiga	Ourense	Rairiz de Veiga	17	3	4	3	1.000000	0.047098
+ES|Ourense|Carballeda de Valdeorras	Ourense	Carballeda de Valdeorras	11	3	4	3	1.000000	0.028901
+ES|Ourense|Carballeda de Avia	Ourense	Carballeda de Avia	5	3	5	3	1.000000	0.050386
+ES|Ourense|Petín	Ourense	Petín	2	2	1	2	1.000000	0.052909
+ES|Pontevedra|Portas	Pontevedra	Portas	5	2	1	2	1.000000	0.070533
+ES|Ourense|A Arnoia	Ourense	A Arnoia	6	2	1	2	1.000000	0.016133
+ES|Ourense|Chandrexa de Queixa	Ourense	Chandrexa de Queixa	8	2	1	2	1.000000	0.055547
+ES|Ourense|A Teixeira	Ourense	A Teixeira	4	2	1	2	1.000000	0.050654
+ES|A Coruña|Vilarmaior	A Coruña	Vilarmaior	147	2	3	2	1.000000	0.026072
+ES|Ourense|Vilamartín de Valdeorras	Ourense	Vilamartín de Valdeorras	2	2	3	2	1.000000	0.047825
+ES|Ourense|Castro Caldelas	Ourense	Castro Caldelas	3	2	4	2	1.000000	0.072636
+ES|Ourense|Larouco	Ourense	Larouco	2	2	4	2	1.000000	0.063078
+ES|Pontevedra|Redondela	Pontevedra	Redondela	83	2	4	2	1.000000	0.041593
+ES|Lugo|Riotorto	Lugo	Riotorto	2	2	5	2	1.000000	0.006919
+ES|Ourense|Sandiás	Ourense	Sandiás	4	1	1	1	1.000000	0.037923
+ES|Ourense|Cortegada	Ourense	Cortegada	3	1	1	1	1.000000	0.032113
+ES|Ourense|Parada de Sil	Ourense	Parada de Sil	1	1	2	1	1.000000	0.020567
+ES|Ourense|Esgos	Ourense	Esgos	1	1	2	1	1.000000	0.018044
+ES|Ourense|Padrenda	Ourense	Padrenda	8	1	3	1	1.000000	0.030507
+ES|Ourense|Xunqueira de Ambía	Ourense	Xunqueira de Ambía	4	1	3	1	1.000000	0.060249
+ES|A Coruña|A Coruña	A Coruña	A Coruña	7	1	3	1	1.000000	0.061243
+ES|Lugo|Negueira de Muñiz	Lugo	Negueira de Muñiz	7	1	3	1	1.000000	0.000153
+ES|A Coruña|A Capela	A Coruña	A Capela	31	1	4	1	1.000000	0.087468
+ES|A Coruña|Coirós	A Coruña	Coirós	37	1	5	1	1.000000	0.004740
+ES|Ourense|Manzaneda	Ourense	Manzaneda	1	1	5	1	1.000000	0.027296
+ES|Ourense|Xunqueira de Espadanedo	Ourense	Xunqueira de Espadanedo	10	1	5	1	1.000000	0.059943
+ES|Ourense|Montederramo	Ourense	Montederramo	2	1	5	1	1.000000	0.086016

@@ -1,0 +1,814 @@
+osm_id	osm_type	label_class	site_class	name	confidence	evidence	archaeological_site	civilization	fortification_type	wikidata	centroid_lon	centroid_lat	area_m2	perimeter_m	equivalent_radius_m	circularity	vertices	matched_catalogue_id	matched_catalogue_name	matched_distance_m
+62941352	way	0	mound	A Pena Molexa	high	archaeological_site=megalith	megalith			Q10348271	-8.22062646	43.56897870	92.5	35.5	5.4	0.9221	11	wl-pos-pos-es-pba-14328	Monte do Castro (Castro de Vilasuso)	221
+70240593	way	1	castro	Castro de Beróbriga	high	fortification_type=hill_fort	fortification		hill_fort	Q59285847	-8.86078125	42.27676852	4962.7	379.1	39.7	0.4339	19			
+128195333	way	1	castro	Castro de Troña	high	fortification_type=hill_fort	fortification	celtic	hill_fort	Q11680611	-8.49015803	42.21391995	8734.3	633.6	52.7	0.2734	52			
+158906200	way	1	castro	Castro de Elviña	high	fortification_type=hill_fort	fortification	celtic	hill_fort	Q389930	-8.41692663	43.32922607	134522.0	1537.7	206.9	0.7149	56			
+160480096	way	1	castro	Forte de Lovelhe	medium	site=fortification,civ=none	fortification		sea_fort		-8.74215443	41.95169330	4780.7	473.2	39.0	0.2684	43			
+162506081	way	1	castro	Castro de Viladonga	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort	Q2941521	-7.38888945	43.16092692	17412.8	507.9	74.4	0.8483	32			
+165545723	way	0	mound	Mamoas do Mezio	high	archaeological_site=megalith	megalith				-8.31307617	41.87972711	5785.2	330.9	42.9	0.6638	8			
+168328185	way	1	castro	Castro Maior	high	fortification_type=hill_fort	fortification	celtic	hill_fort	Q12385708	-8.32929191	43.17394543	13264.9	434.5	65.0	0.8829	26	wl-pos-pos-es-pba-113	Castro Maior	22
+172999707	way	1	castro	Castro das Travesas	medium	site=fortification,civ=celtic	fortification	celtic		Q20550506	-8.35882498	43.16558804	20187.1	546.8	80.2	0.8485	41	wl-pos-pos-es-pba-6564	Castro das Travesas	27
+173993062	way	0	mound	Mámoa Auga Apozada-Nenos	high	archaeological_site=tumulus	tumulus				-8.12420031	43.56255649	586.0	89.3	13.7	0.9233	9	wl-neg-neg-es-pba-14261	Mámoa do Monte dos Niños 07	4
+174788687	way	1	castro	Castro de Pastoriza	high	fortification_type=hill_fort	fortification	celtic	hill_fort	Q12385752	-8.47274994	43.33708847	16805.7	484.3	73.1	0.9006	14	wl-pos-pos-es-pba-1653	Castro da Pastoriza	7
+183927955	way	1	castro	Forte de São Jorge	high	fortification_type=hill_fort	fortification		hill_fort		-8.66406871	41.96814529	18822.3	770.1	77.4	0.3988	17	wl-neg-neg-pt-dgpc-108516	Forte de São Jorge/ Fortificação do Monte da Chãs/ Forte da Silva	40
+187312467	way	1	castro	Forte de Belém	medium	site=fortification,civ=none	fortification		sconce	Q116178108	-8.64874125	42.00086148	2518.5	272.1	28.3	0.4275	13	wl-neg-neg-pt-dgpc-113811	Forte de Belém	5
+190137031	way	1	castro	Castro de Xaz	high	fortification_type=hill_fort	fortification	celtic	hill_fort	Q12385776	-8.32522566	43.35259743	33160.0	671.4	102.7	0.9243	16	wl-pos-pos-es-pba-15428	Castro de Xaz/Castro de Abeleiras/Os Redondos	9
+191993585	way	1	castro	Castro de Laxobre	high	fortification_type=hill_fort	fortification	celtic	hill_fort		-8.49149471	43.31313971	7952.1	321.1	50.3	0.9691	14	wl-pos-pos-es-pba-1689	Castro de Laxobre/Coto do Castro	12
+203378621	way	0	mound	Mámoa de San Cibrao 5	high	archaeological_site=tumulus	tumulus				-7.53065402	43.02110545	674.5	92.5	14.7	0.9896	21			
+206162331	way	1	castro	Castro de Centulle	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.78573483	42.61286747	12955.9	415.7	64.2	0.9421	17	wl-pos-pos-es-pba-29398	Castro de Centulle	43
+230095314	way	1	castro	Castro da Torre de Sobredo	high	civilization=castro_culture	settlement	castro_culture		Q94397615	-7.18466981	42.61811001	700.1	101.7	14.9	0.8505	14	wl-pos-pos-es-pba-29063	Castro de Sobredo	50
+237686211	way	0	mound		high	archaeological_site=tumulus	tumulus				-8.79118050	42.30590384	894.6	122.4	16.9	0.7505	9	wl-neg-neg-es-pba-61295	Mámoa de Tomada de Martínez 2	42
+268534208	way	1	castro	Castro Cercio	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.78446701	42.82580349	22915.1	562.1	85.4	0.9114	17	wl-pos-pos-es-pba-35342	Castro Cercio	28
+268534218	way	1	castro	Castro de Castromaior	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort	Q20550533	-7.71976457	42.83328822	6133.7	287.3	44.2	0.9337	23	wl-pos-pos-es-pba-38430	Castro de Castromaior	70
+286866416	way	1	castro	Castro de Noville	medium	site=settlement,civ=celtic	settlement	celtic		Q20542363	-8.22907478	43.45551979	21191.8	542.8	82.1	0.9038	9			
+291619253	way	0	mound	Círculo Lítico da Roda	high	archaeological_site=megalith	megalith			Q31283162	-7.16923893	43.53950012	1560.3	143.2	22.3	0.9556	12			
+300617285	way	1	castro	Castro de Leiro	medium	site=fortification,civ=none	fortification			Q12385738	-8.27375268	43.19613966	9209.2	348.0	54.1	0.9553	15	wl-pos-pos-es-pba-87	Castro de Leiro	20
+306813080	way	1	castro	Castro de San Cibrao de Las	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort	Q2742973	-8.03013635	42.36005433	100660.1	1173.3	179.0	0.9188	25			
+312307690	way	0	mound	Mámoa de Santa Margarida	high	archaeological_site=tumulus	tumulus				-8.20528032	43.54669367	1069.1	122.8	18.4	0.8912	9	wl-neg-neg-es-pba-14299	Mámoa do Val/Mámoa de Santa Margarida	10
+313112532	way	1	castro	Castro da Abeleira	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.82914502	43.24436946	13690.0	429.3	66.0	0.9336	16	wl-pos-pos-es-pba-30079	Castro das Modias	92
+313112534	way	1	castro	Castro de Fraga do Pazo	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.72111604	43.21036608	13873.0	438.0	66.5	0.9086	12	wl-pos-pos-es-pba-30075	Castro da Fraga do Pazo	5
+313112535	way	1	castro	Castro da Modia da Fraga do Rei	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.80807564	43.22321872	14818.7	439.6	68.7	0.9636	14	wl-pos-pos-es-pba-30076	Castro da Modia da Fraga do Rei	3
+313112536	way	1	castro	Castro de Quintán	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.80585978	43.18781442	5454.5	276.1	41.7	0.8991	11	wl-pos-pos-es-pba-32093	Os Castros de Quintán	50
+313112537	way	1	castro	Castro de San Salvador de Parga	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.83177393	43.20321935	13543.9	423.0	65.7	0.9512	13	wl-pos-pos-es-pba-30117	Castro de Vigo	12
+314480610	way	1	castro	Castro de Portomouro de Arriba	medium	site=fortification,civ=celtic	fortification	celtic			-8.64128090	42.96205798	658.2	97.0	14.5	0.8786	9	wl-pos-pos-es-pba-24437	Castro de Portomouro	23
+317236422	way	0	mound	Corro dos Mouros	high	archaeological_site=megalith	megalith				-7.61799795	43.01942066	2060.9	162.0	25.6	0.9871	17	wl-pos-pos-es-pba-32817	O Castrillón	3
+321060298	way	1	castro	Castro da Rodela	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.68169361	43.04499403	12063.3	401.1	62.0	0.9421	16	wl-pos-pos-es-pba-31498	A Castronela/A Rodela	14
+332278595	way	1	castro	Castro de São Caetano	high	fortification_type=hill_fort	fortification		hill_fort	Q17390126	-8.44369902	42.03956696	129051.3	1321.8	202.7	0.9282	40	wl-neg-neg-pt-dgpc-111207	Monte Crasto / S. Caetano	107
+332399998	way	1	castro	Monte do Castro	medium	site=fortification,civ=celtic	fortification	celtic		Q20546098	-8.73944723	42.52359238	18474.6	591.5	76.7	0.6635	19	wl-pos-pos-es-pba-71346	Castro de Lameán de Arriba/Monte do Castro/O Castro	10
+332400381	way	1	castro	Castro de Borneiro	medium	site=fortification,civ=celtic	fortification	celtic		Q2513122	-8.95222880	43.19468508	5775.3	325.9	42.9	0.6835	23	wl-neg-neg-es-pba-4283	Mámoa de Prado Garrido	244
+337411036	way	1	castro	Castro de Xermán	medium	site=fortification,civ=none	fortification				-8.66082098	42.96263158	4731.9	259.3	38.8	0.8843	21	wl-pos-pos-es-pba-24373	Bico do Castro	8
+337834014	way	1	castro	Castelo de Portomeiro	medium	site=fortification,civ=none	fortification				-8.61252785	42.97745147	2637.8	194.9	29.0	0.8722	19			
+346092369	way	1	castro	Castro de Soutelo	medium	site=fortification,civ=celtic	fortification	celtic		Q20550078	-8.30397146	43.11196955	11899.3	423.0	61.5	0.8356	11	wl-pos-pos-es-pba-12469	Castro de Soutelo	13
+346092370	way	1	castro	Castro de Mesía	medium	site=fortification,civ=celtic	fortification	celtic		Q20550346	-8.27505405	43.11988840	6848.0	295.9	46.7	0.9832	15	wl-pos-pos-es-pba-12466	Castro de Mesía	21
+351963981	way	1	castro	Castro de Bordelle	high	fortification_type=hill_fort	fortification		hill_fort	Q12385721	-8.34005734	43.21241552	6189.4	280.2	44.4	0.9909	20	wl-pos-pos-es-pba-83	Castro de Bordelle	5
+363397371	way	1	castro	Castro da Portela	medium	site=settlement,civ=prehistoric	settlement	prehistoric			-8.41421442	43.10558976	13099.6	422.6	64.6	0.9218	14	wl-pos-pos-es-pba-15377	Os Castros/A Medorra/Castro de Portela	11
+363823066	way	1	castro	Castro de Cestaños	medium	site=settlement,civ=prehistoric	settlement	prehistoric			-8.44660573	43.09640014	7920.4	331.7	50.2	0.9044	21	wl-pos-pos-es-pba-15915	O Castro/Castro de Cestaños	12
+363823073	way	1	castro	Castro de Parada	medium	site=settlement,civ=prehistoric	settlement	prehistoric			-8.44757635	43.06295497	6617.1	297.5	45.9	0.9398	12	wl-pos-pos-es-pba-15467	A Medorra/Castro de Parada	31
+363823074	way	1	castro	Castro do Pumariño	medium	site=settlement,civ=prehistoric	settlement	prehistoric			-8.44602178	43.06024729	18614.1	499.9	77.0	0.9358	12	wl-pos-pos-es-pba-15375	O Castro/Castro de Pumariño	44
+363823075	way	1	castro	Castro da Medorra de Gavión	medium	site=settlement,civ=prehistoric	settlement	prehistoric			-8.44173072	43.05967555	21263.7	540.1	82.3	0.9160	12	wl-pos-pos-es-pba-15436	A Medorra do Gavián/Castro da Medorra do Gavión	34
+364032612	way	1	castro	Castro do Dono	medium	site=settlement,civ=prehistoric	settlement	prehistoric			-8.42663633	43.03798355	13428.3	439.6	65.4	0.8731	12	wl-pos-pos-es-pba-15658	Castro do Dono	72
+364821175	way	1	castro	Castro de Carrás	medium	site=settlement,civ=prehistoric	settlement	prehistoric			-8.40641800	43.02927032	30636.0	658.8	98.8	0.8871	10	wl-pos-pos-es-pba-15914	O Castro/Castro de Carras	20
+365835671	way	1	castro	Castro da Torre	medium	site=settlement,civ=prehistoric	settlement	prehistoric			-8.37750276	43.09738961	16180.6	473.4	71.8	0.9074	14	wl-pos-pos-es-pba-15473	A Torre/Castro da Torre	33
+365835672	way	1	castro	Castro de Buscás	medium	site=settlement,civ=prehistoric	settlement	prehistoric			-8.38277699	43.09783951	15743.2	462.5	70.8	0.9248	14	wl-pos-pos-es-pba-15406	Os Castros/Castro de Buscás	55
+366393979	way	1	castro	Castro da Devesa	medium	site=settlement,civ=prehistoric	settlement	prehistoric			-8.35018106	43.05000716	41680.7	754.4	115.2	0.9203	11	wl-pos-pos-es-pba-15625	Castro da Devesa	34
+366982747	way	1	castro	Castro de Poulo	medium	site=settlement,civ=prehistoric	settlement	prehistoric			-8.37935178	43.06337298	29454.9	658.8	96.8	0.8528	9	wl-pos-pos-es-pba-15374	O Castro/Castro de Poulo	52
+366990106	way	1	castro	Castro de Barreiros	medium	site=fortification,civ=celtic	fortification	celtic			-8.34322864	43.07063593	36607.1	681.4	107.9	0.9909	20	wl-pos-pos-es-pba-15913	O Castro/Castro de Barreiros	16
+366990115	way	1	castro	Castro de Pereira	medium	site=settlement,civ=prehistoric	settlement	prehistoric			-8.39709858	43.04795537	23531.2	574.2	86.5	0.8968	12	wl-pos-pos-es-pba-15373	O Castro/Castro de Pereira	34
+366990145	way	1	castro	Castro da Ponte da Viña	medium	site=settlement,civ=prehistoric	settlement	prehistoric			-8.38255802	43.01750327	40456.7	733.1	113.5	0.9459	11	wl-pos-pos-es-pba-15917	O Castro/Castro de Fonte da Viña	33
+367004485	way	1	castro	As Cenecas	medium	site=settlement,civ=prehistoric	settlement	prehistoric			-8.37764615	43.02448769	21677.4	524.3	83.1	0.9908	20	wl-pos-pos-es-pba-15505	As Cenicas/Castro de Vilasuso	84
+367004486	way	1	castro	Castro de Recouso	medium	site=settlement,civ=celtic	settlement	celtic		Q136521212	-8.37534940	43.03586882	65960.0	914.6	144.9	0.9908	20	wl-neg-neg-es-pba-15384	Mámoa do Coto do Lobo 3	32
+368211443	way	1	castro	O Castro da Cidá	high	fortification_type=hill_fort	settlement	celtic	hill_fort	Q2513720	-9.01378053	42.56120409	3114.2	235.5	31.5	0.7059	11	wl-pos-pos-es-pba-19118	Castro da Cidá	11
+368530953	way	1	castro	Castelo do Carbedo	medium	site=fortification,civ=none	fortification			Q20550285	-7.12470589	42.63543559	384.1	95.5	11.1	0.5297	37			
+368767989	way	1	castro	Castro de Portela	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.26995160	42.54140166	1794.3	171.1	23.9	0.7705	5	wl-pos-pos-es-pba-29067	Castro Portela	70
+372279820	way	0	mound	Túmulo 1 de Montes do Gato	high	archaeological_site=tumulus	tumulus				-8.10454696	43.19241995	523.4	81.5	12.9	0.9909	20	wl-neg-neg-es-pba-26617	Mámoa do Monte do Gato 01	3
+372529917	way	1	castro	Castro da Xoxa	high	fortification_type=hill_fort	fortification	celtic	hill_fort		-8.30764908	43.30050169	19657.5	499.3	79.1	0.9908	20	wl-pos-pos-es-pba-3698	Castro de Pravio	24
+376583043	way	1	castro	Os Castros de Salgueiros	medium	site=fortification,civ=celtic	fortification	celtic			-7.76018555	42.82873532	15047.0	458.8	69.2	0.8983	10	wl-pos-pos-es-pba-34958	Os Castros/Corga Maior/Corga do Castro/Corga	30
+410310338	way	1	castro	Castro de Covas	medium	site=fortification,civ=celtic	fortification	celtic		Q61388067	-8.27393538	43.43921088	5864.5	282.1	43.2	0.9261	18	wl-pos-pos-es-pba-1685	Castro de Cervás	9
+413317376	way	0	mound	Túmulo 12 de Montes do Gato	high	archaeological_site=tumulus	tumulus				-8.09882081	43.18338743	1126.0	119.5	18.9	0.9909	20	wl-neg-neg-es-pba-26679	Mámoa do Monte do Gato 12	23
+413317377	way	0	mound	Túmulo 14 de Montes do Gato	high	archaeological_site=tumulus	tumulus				-8.09883045	43.18173640	1616.7	143.2	22.7	0.9908	20	wl-neg-neg-es-pba-26681	Mámoa do Monte do Gato 14	21
+429120938	way	1	castro	Castro de Castrelo	medium	site=fortification,civ=celtic	fortification	celtic			-8.19498055	43.40052707	21821.4	526.1	83.3	0.9908	20	wl-pos-pos-es-pba-18252	Castro de Centroña	58
+429499614	way	1	castro	Castro de Santa María	medium	site=fortification,civ=celtic	fortification	celtic		Q61389822	-8.19188483	43.36360772	7338.3	305.1	48.3	0.9908	20	wl-pos-pos-es-pba-13918	Igrexa de Castro (Parroquial de Santa María)	22
+429622011	way	1	castro	Castro de Punta Roza	high	fortification_type=hill_fort	fortification	celtic	hill_fort	Q20544603	-8.31781188	43.40093497	40965.4	825.0	114.2	0.7564	12	wl-pos-pos-es-pba-15425	Castro de Punta Roza	41
+429763330	way	1	castro	Castro da Punta Torrella	high	fortification_type=hill_fort	fortification	celtic	hill_fort	Q20544616	-8.30735421	43.40277168	11431.4	400.1	60.3	0.8975	10	wl-neg-neg-es-pba-16203	Batería de Punta Torrella	36
+430399173	way	1	castro	Castro de Canzobre	high	fortification_type=hill_fort	fortification	celtic	hill_fort		-8.46891989	43.27764440	13959.9	431.1	66.7	0.9441	12			
+456457348	way	0	mound	Coto da Esmorga (30)	high	archaeological_site=tumulus	tumulus				-8.30496273	43.47461174	524.3	84.9	12.9	0.9145	9	wl-neg-neg-es-pba-10098	Mámoa dos Montes de Brión IV-3	12
+456651505	way	0	mound	Mámoa da Planeira (9)	high	archaeological_site=tumulus	tumulus				-8.28841978	43.48385068	484.6	80.9	12.4	0.9297	9	wl-neg-neg-es-pba-10009	Mámoa dos Montes de Brión I-2	12
+459047171	way	0	mound	Mámoa das Teixoeiras	high	archaeological_site=tumulus	tumulus				-8.29122320	43.46935323	518.7	81.1	12.8	0.9909	20	wl-neg-neg-es-pba-9946	Mámoa de Ferreiros	2
+459465434	way	0	mound	Mámoa da Chaeira (36)	high	archaeological_site=tumulus	tumulus				-8.27802600	43.47725229	374.4	68.9	10.9	0.9908	20	wl-neg-neg-es-pba-10135	Mámoa dos Montes de Brión VI-5	32
+459465435	way	0	mound	Mámoa da Chaeira (38)	high	archaeological_site=tumulus	tumulus				-8.27690057	43.47779946	454.2	86.1	12.0	0.7703	9	wl-neg-neg-es-pba-10133	Mámoa dos Montes de Brión VI-3	14
+459465436	way	0	mound	Mámoa da Chaeira (37)	high	archaeological_site=tumulus	tumulus				-8.27756649	43.47752082	320.3	70.6	10.1	0.8074	9	wl-neg-neg-es-pba-10134	Mámoa dos Montes de Brión VI-4	26
+459898944	way	0	mound	Mámoa da Planeira (6)	high	archaeological_site=tumulus	tumulus				-8.28722218	43.48330638	552.7	86.5	13.3	0.9272	10	wl-neg-neg-es-pba-10012	Mámoa dos Montes de Brión I-5	7
+460106303	way	0	mound	Mámoa da Chaeira (35)	high	archaeological_site=tumulus	tumulus				-8.27744179	43.47711858	576.9	85.5	13.6	0.9909	20	wl-neg-neg-es-pba-10135	Mámoa dos Montes de Brión VI-5	36
+460218631	way	0	mound	Mámoa da Planeira (8)	high	archaeological_site=tumulus	tumulus				-8.28794267	43.48356629	340.3	68.9	10.4	0.9007	10	wl-neg-neg-es-pba-10011	Mámoa dos Montes de Brión I-4	26
+460996744	way	0	mound	Mámoa da Madorra	high	archaeological_site=tumulus	tumulus				-8.29164925	43.48107493	502.4	79.8	12.6	0.9909	20	wl-neg-neg-es-pba-10103	Mámoa dos Montes de Brión IV-8	8
+461036665	way	0	mound	Mámoa das Campeiras	high	archaeological_site=tumulus	tumulus				-8.29520624	43.47841521	447.8	75.4	11.9	0.9908	20	wl-neg-neg-es-pba-10101	Mámoa dos Montes de Brión IV-6	41
+461036666	way	0	mound	Mámoa	high	archaeological_site=tumulus	tumulus				-8.29935877	43.48077407	189.4	50.0	7.8	0.9522	11	wl-neg-neg-es-pba-10072	Mámoa dos Montes de Brión IV-1	3
+461125482	way	0	mound		high	archaeological_site=tumulus	tumulus				-8.29533666	43.48397926	234.2	56.3	8.6	0.9270	11	wl-neg-neg-es-pba-10043	Mámoa dos Montes de Brión III-2	54
+461125483	way	0	mound		high	archaeological_site=tumulus	tumulus				-8.29377321	43.48513782	269.3	60.3	9.3	0.9303	10	wl-neg-neg-es-pba-10042	Mámoa dos Montes de Brión III-1	34
+461125484	way	0	mound		high	archaeological_site=tumulus	tumulus				-8.29127370	43.48489151	287.6	63.4	9.6	0.9000	9	wl-neg-neg-es-pba-10041	Mámoa dos Montes de Brión II-2	66
+461125485	way	0	mound		high	archaeological_site=tumulus	tumulus				-8.29048347	43.48568406	962.4	110.5	17.5	0.9908	20	wl-neg-neg-es-pba-10040	Mámoa dos Montes de Brión II-1	53
+461125486	way	0	mound	Mámoa de Pico do Ponte	high	archaeological_site=tumulus	tumulus				-8.28917140	43.48429237	436.9	74.4	11.8	0.9909	20	wl-neg-neg-es-pba-9983	Mámoa dos Montes de Brión I-1	4
+461125487	way	0	mound		high	archaeological_site=tumulus	tumulus				-8.28624595	43.48153246	336.7	67.3	10.4	0.9339	10	wl-neg-neg-es-pba-10015	Mámoa dos Montes de Brión I-8	61
+461125490	way	0	mound		high	archaeological_site=tumulus	tumulus				-8.30408204	43.47867426	456.3	78.7	12.1	0.9263	12	wl-neg-neg-es-pba-10076	Mámoa dos Montes de Brión IV-2	51
+461125491	way	0	mound		high	archaeological_site=tumulus	tumulus				-8.30334600	43.47852508	124.5	41.9	6.3	0.8918	11	wl-neg-neg-es-pba-10076	Mámoa dos Montes de Brión IV-2	24
+461125492	way	0	mound		high	archaeological_site=tumulus	tumulus				-8.30360442	43.47735696	93.8	35.4	5.5	0.9430	10	wl-neg-neg-es-pba-10104	Mámoa dos Montes de Brión IV-9	22
+461125493	way	0	mound		high	archaeological_site=tumulus	tumulus				-8.30335903	43.47592235	285.7	60.2	9.5	0.9908	20	wl-neg-neg-es-pba-10075	Mámoa dos Montes de Brión IV-12	39
+461125494	way	0	mound	Mámoa do Coto Grande	high	archaeological_site=tumulus	tumulus				-8.29729749	43.47502265	483.8	78.3	12.4	0.9909	20	wl-neg-neg-es-pba-10099	Mámoa dos Montes de Brión IV-4	80
+461144969	way	0	mound		high	archaeological_site=tumulus	tumulus				-8.28705290	43.48200804	508.5	81.9	12.7	0.9518	11	wl-neg-neg-es-pba-10015	Mámoa dos Montes de Brión I-8	23
+461144971	way	0	mound	Mámoa da Planeira (5)	high	archaeological_site=tumulus	tumulus				-8.28595548	43.48275264	537.7	85.2	13.1	0.9316	10	wl-neg-neg-es-pba-10013	Mámoa dos Montes de Brión I-6	8
+461227297	way	0	mound	Mámoa da Planeira (7)	high	archaeological_site=tumulus	tumulus				-8.28782558	43.48319418	162.7	46.9	7.2	0.9298	9	wl-neg-neg-es-pba-10011	Mámoa dos Montes de Brión I-4	27
+461366119	way	0	mound		high	archaeological_site=tumulus	tumulus				-8.30192142	43.48029777	331.0	64.8	10.3	0.9909	20	wl-neg-neg-es-pba-10136	Mámoas de Brión	73
+463730626	way	0	mound		high	archaeological_site=tumulus	tumulus				-8.12512326	43.56170630	1487.9	142.3	21.8	0.9236	10	wl-neg-neg-es-pba-14297	Mámoa do Monte dos Niños 15	53
+463742669	way	0	mound		high	archaeological_site=tumulus	tumulus				-8.12543846	43.56242892	1113.8	127.3	18.8	0.8641	8	wl-neg-neg-es-pba-14297	Mámoa do Monte dos Niños 15	67
+464581180	way	0	mound		high	archaeological_site=tumulus	tumulus				-8.10669024	43.55302563	491.9	83.3	12.5	0.8899	7			
+464823228	way	0	mound	Mámoa de Montes da Marola (20)	high	archaeological_site=tumulus	tumulus				-8.10654462	43.55417846	1253.0	126.1	20.0	0.9909	20			
+464823233	way	0	mound	Mámoa Alto de Pedroso (24)	high	archaeological_site=tumulus	tumulus				-8.09552283	43.55064520	922.9	115.5	17.1	0.8686	7			
+464823234	way	0	mound	Mámoa Alto de Pedroso (23)	high	archaeological_site=tumulus	tumulus				-8.09737716	43.55102876	542.8	90.6	13.1	0.8319	7			
+464978826	way	0	mound		high	archaeological_site=tumulus	tumulus				-8.10241771	43.54958566	1124.5	128.3	18.9	0.8583	7			
+465786232	way	0	mound	Túmulo 18 de Montes do Gato	high	archaeological_site=tumulus	tumulus				-8.09651488	43.18243170	1117.8	119.1	18.9	0.9909	20	wl-neg-neg-es-pba-26710	Mámoa do Monte do Gato 18	47
+465786233	way	0	mound	Montículo 11 de Montes do Gato	high	archaeological_site=tumulus	tumulus				-8.10115245	43.18557795	438.1	74.5	11.8	0.9908	20	wl-neg-neg-es-pba-26678	Mámoa do Monte do Gato 11	6
+467508195	way	0	mound	Túmulo 13 de Montes do Gato	high	archaeological_site=tumulus	tumulus				-8.09875845	43.18295849	782.8	99.6	15.8	0.9909	20	wl-neg-neg-es-pba-26680	Mámoa do Monte do Gato 13	27
+467546586	way	0	mound	Montículo 7 de Montes do Gato	high	archaeological_site=tumulus	tumulus				-8.10308563	43.18897318	575.6	85.4	13.5	0.9908	20	wl-neg-neg-es-pba-26649	Mámoa do Monte do Gato 07	2
+467667524	way	0	mound	Túmulo 17 de Montes do Gato	high	archaeological_site=tumulus	tumulus				-8.09937617	43.18311208	584.5	86.1	13.6	0.9909	20	wl-neg-neg-es-pba-26684	Mámoa do Monte do Gato 17	36
+468561420	way	0	mound	Túmulo 10 de Montes do Gato	high	archaeological_site=tumulus	tumulus				-8.10294165	43.18659412	556.6	84.0	13.3	0.9909	20	wl-neg-neg-es-pba-26677	Mámoa do Monte do Gato 10	2
+468561425	way	0	mound	Túmulo 2 de Montes do Gato	high	archaeological_site=tumulus	tumulus				-8.10510636	43.19172491	677.7	92.7	14.7	0.9909	20	wl-neg-neg-es-pba-26618	Mámoa do Monte do Gato 02	21
+468561427	way	0	mound	Túmulo 6 de Montes do Gato	high	archaeological_site=tumulus	tumulus				-8.10190058	43.19049439	1054.2	115.6	18.3	0.9909	20	wl-neg-neg-es-pba-26648	Mámoa do Monte do Gato 06	5
+469231568	way	0	mound	Pena dos Canteiros	high	archaeological_site=tumulus	tumulus				-8.29157036	43.47754480	161.2	48.4	7.2	0.8650	8	wl-neg-neg-es-pba-10102	Mámoa dos Montes de Brión IV-7	18
+469588627	way	0	mound		high	archaeological_site=tumulus	tumulus				-8.09854274	43.16772888	1519.0	138.8	22.0	0.9909	20	wl-neg-neg-es-pba-27031	Mámoa de Codeseiras	19
+469589593	way	0	mound	Mámoa	high	archaeological_site=tumulus	tumulus				-8.09653178	43.18018392	953.3	110.0	17.4	0.9908	20	wl-neg-neg-es-pba-27067	Mámoa de Mazarelas I-4	17
+469589594	way	0	mound	Túmulo 7 de Mazarelas I	high	archaeological_site=tumulus	tumulus				-8.09738366	43.17794200	210.7	54.8	8.2	0.8823	8	wl-neg-neg-es-pba-27070	Mámoa de Mazarelas I-7	3
+469589595	way	0	mound	Túmulo 1 Mazarelas I	high	archaeological_site=tumulus	tumulus				-8.09897163	43.17753983	237.9	58.1	8.7	0.8844	7	wl-neg-neg-es-pba-27064	Mámoa de Mazarelas I-1	7
+469589596	way	0	mound	Túmulo Mazarelas I	high	archaeological_site=tumulus	tumulus				-8.09814189	43.17723444	357.5	71.5	10.7	0.8777	7	wl-neg-neg-es-pba-27066	Mámoa de Mazarelas I-3	7
+469589597	way	0	mound	Túmulo 2 Mazarelas I	high	archaeological_site=tumulus	tumulus				-8.09937449	43.17725195	306.8	66.4	9.9	0.8747	8	wl-neg-neg-es-pba-27065	Mámoa de Mazarelas I-2	4
+469589599	way	0	mound	Túmulo 2 de Mazarelas II	high	archaeological_site=tumulus	tumulus				-8.09664994	43.17262652	1083.4	123.0	18.6	0.9004	8	wl-neg-neg-es-pba-26576	Mámoa de Mazarelas II-1	16
+469589600	way	0	mound	Túmulo 5 de Mazarelas II	high	archaeological_site=tumulus	tumulus				-8.09781030	43.17460986	647.8	98.7	14.4	0.8359	7	wl-neg-neg-es-pba-26580	Mámoa de Mazarelas II-5	16
+469589601	way	0	mound	Túmulo 3 de Mazarelas II	high	archaeological_site=tumulus	tumulus				-8.09641560	43.17298749	526.4	85.8	12.9	0.8987	8	wl-neg-neg-es-pba-26581	Mámoa de Mazarelas II-6	5
+469775243	way	0	mound		high	archaeological_site=tumulus	tumulus				-8.12363737	43.56102635	2669.7	192.0	29.2	0.9100	8	wl-neg-neg-es-pba-14259	Mámoa do Monte dos Niños 05	41
+469775245	way	0	mound		high	archaeological_site=tumulus	tumulus				-8.11948860	43.56082732	1360.6	138.9	20.8	0.8867	8	wl-neg-neg-es-pba-14260	Mámoa do Monte dos Niños 06	139
+472080625	way	0	mound		high	archaeological_site=tumulus	tumulus				-8.12112040	43.17080031	599.7	93.1	13.8	0.8688	7	wl-neg-neg-es-pba-26582	Mámoa de Sexelle 1	58
+472080626	way	0	mound		high	archaeological_site=tumulus	tumulus				-8.12184286	43.16949934	597.1	91.8	13.8	0.8904	7	wl-neg-neg-es-pba-26614	Mámoa de Sexelle 4	2
+472080628	way	0	mound		high	archaeological_site=tumulus	tumulus				-8.11939243	43.16974266	1054.1	122.0	18.3	0.8894	7	wl-neg-neg-es-pba-26612	Mámoa de Sexelle 2	7
+472080629	way	0	mound		high	archaeological_site=tumulus	tumulus				-8.12017606	43.16914377	824.1	108.1	16.2	0.8858	7	wl-neg-neg-es-pba-26613	Mámoa de Sexelle 3	21
+473084125	way	0	mound	Túmulo 1 de Mazarelas II	high	archaeological_site=tumulus	tumulus				-8.09757599	43.17346319	652.7	95.7	14.4	0.8964	7	wl-neg-neg-es-pba-26578	Mámoa de Mazarelas II-3	16
+473429803	way	0	mound	Túmulo 4 de Montes de Gato	high	archaeological_site=tumulus	tumulus				-8.10576990	43.19339794	1241.8	125.5	19.9	0.9908	20	wl-neg-neg-es-pba-26646	Mámoa do Monte do Gato 04	19
+473429804	way	0	mound		high	archaeological_site=tumulus	tumulus				-8.10898052	43.19768489	604.1	87.5	13.9	0.9908	20			
+473440850	way	0	mound	Túmulo 3 de Montes do Gato	high	archaeological_site=tumulus	tumulus				-8.10693677	43.19415275	639.5	90.1	14.3	0.9908	20	wl-neg-neg-es-pba-26645	Mámoa do Monte do Gato 03	8
+474627401	way	1	castro	Castro de Dine	medium	site=fortification,civ=none	fortification				-6.92925532	41.91053459	634.5	95.1	14.2	0.8817	14			
+478511940	way	0	mound	Túmulo 15 de Montes do Gato	high	archaeological_site=tumulus	tumulus				-8.10022465	43.18570895	566.2	84.7	13.4	0.9908	20	wl-neg-neg-es-pba-26682	Mámoa do Monte do Gato 15	30
+479960979	way	0	mound	Mámoa 2 de Vallo	high	archaeological_site=tumulus	tumulus				-8.08633037	43.18656029	2332.6	172.0	27.2	0.9909	20	wl-neg-neg-es-pba-1603	Mámoa de Vallo 2	7
+479960980	way	0	mound	Mámoa 1 de Vallo	high	archaeological_site=tumulus	tumulus				-8.08665305	43.18579330	1097.0	117.9	18.7	0.9909	20	wl-neg-neg-es-pba-1602	Mámoa de Vallo 1	21
+479960989	way	0	mound	Mámoa 5 de Vallo	high	archaeological_site=tumulus	tumulus				-8.08761455	43.18519559	1647.2	144.5	22.9	0.9908	20	wl-neg-neg-es-pba-1633	Mámoa de Vallo 5	13
+479960990	way	0	mound	Mámoa 3 de Vallo	high	archaeological_site=tumulus	tumulus				-8.08439810	43.18663963	1416.2	134.0	21.2	0.9908	20	wl-neg-neg-es-pba-1604	Mámoa de Vallo 3	11
+479961262	way	0	mound	Túmulo 4 de Vallo	high	archaeological_site=tumulus	tumulus				-8.08120592	43.18773233	6692.0	291.2	46.2	0.9914	21	wl-neg-neg-es-pba-1605	Mámoa de Vallo 4	0
+480497204	way	0	mound	Túmulo 5 Montes do Gato	high	archaeological_site=tumulus	tumulus				-8.10425903	43.19072630	470.4	77.2	12.2	0.9909	20	wl-neg-neg-es-pba-26647	Mámoa do Monte do Gato 05	11
+480745664	way	0	mound	Mámoa 8 de Portomoeiro	high	archaeological_site=tumulus	tumulus				-8.09121263	43.18379496	1267.7	126.8	20.1	0.9908	20	wl-neg-neg-es-pba-2113	Mámoa de Portomoeiro 8	18
+480745666	way	0	mound		high	archaeological_site=tumulus	tumulus				-8.09280036	43.18205340	400.8	71.3	11.3	0.9908	20	wl-neg-neg-es-pba-2110	Mámoa de Portomoeiro 5	18
+480745667	way	0	mound		high	archaeological_site=tumulus	tumulus				-8.09237291	43.18231098	224.1	53.3	8.4	0.9908	20	wl-neg-neg-es-pba-2082	Mámoa de Portomoeiro 2	5
+480745668	way	0	mound		high	archaeological_site=tumulus	tumulus				-8.09137837	43.18266913	355.0	67.1	10.6	0.9908	20	wl-neg-neg-es-pba-2109	Mámoa de Portomoeiro 4	15
+481110414	way	0	mound	Mámoa da Serra do Galiñeiro I-2	high	archaeological_site=tumulus	tumulus				-7.94733019	43.28520431	261.1	61.2	9.1	0.8755	9	wl-neg-neg-es-pba-980	Mámoa da Serra do Galiñeiro I-02	3
+481333493	way	0	mound	Mámoa da Serra do Galiñeiro II-3	high	archaeological_site=tumulus	tumulus				-7.94247383	43.27965828	251.0	58.4	8.9	0.9254	9	wl-neg-neg-es-pba-986	Mámoa da Serra do Galiñeiro II-03	2
+481333494	way	0	mound	Mámoa da Serra do Galiñeiro II-1	high	archaeological_site=tumulus	tumulus				-7.94258045	43.28019601	272.4	60.0	9.3	0.9519	11	wl-neg-neg-es-pba-984	Mámoa da Serra do Galiñeiro II-01	2
+481333495	way	0	mound	Mámoa da Serra do Galiñeiro II-5	high	archaeological_site=tumulus	tumulus				-7.94144841	43.27907188	164.9	47.3	7.2	0.9269	9	wl-neg-neg-es-pba-1909	Mámoa da Serra do Galiñeiro II-05	1
+481333496	way	0	mound	Mámoa da Serra do Galiñeiro II-6	high	archaeological_site=tumulus	tumulus				-7.94134071	43.27878660	191.5	50.6	7.8	0.9409	10	wl-neg-neg-es-pba-1910	Mámoa da Serra do Galiñeiro II-06	1
+481333497	way	0	mound	Mámoa da Serra do Galiñeiro II-2	high	archaeological_site=tumulus	tumulus				-7.94173558	43.27986847	673.0	94.3	14.6	0.9514	12	wl-neg-neg-es-pba-985	Mámoa da Serra do Galiñeiro II-02	9
+481333498	way	0	mound	Mámoa da Serra do Galiñeiro I-4	high	archaeological_site=tumulus	tumulus				-7.94510272	43.28069431	266.3	59.7	9.2	0.9387	10	wl-neg-neg-es-pba-982	Mámoa da Serra do Galiñeiro I-04	2
+481333509	way	0	mound	Medoña do Porco	high	archaeological_site=tumulus	tumulus				-7.94495522	43.28536297	394.3	72.3	11.2	0.9481	9	wl-neg-neg-es-pba-31931	Medoña do Porco	2
+481333511	way	0	mound	Medoña do Galiñeiro 1	high	archaeological_site=tumulus	tumulus				-7.94101586	43.27930055	222.0	54.7	8.4	0.9327	10	wl-neg-neg-es-pba-31887	Medoña do Galiñeiro 1/Medo¤a de Caínzos	2
+496990993	way	0	mound	Mámoas de Mama Cavada	high	archaeological_site=tumulus	tumulus				-8.19526495	42.43057537	2029.2	175.6	25.4	0.8265	6	wl-neg-neg-es-pba-47458	Mámoa de Mama Cavada 2	52
+497028948	way	1	castro	Castro da Vila de Castro	medium	site=settlement,civ=celtic	settlement	celtic		Q61388164	-8.00753661	43.11902214	11497.8	396.2	60.5	0.9202	9	wl-pos-pos-es-pba-9413	Castro de Vila do Castro	49
+497154240	way	1	castro	Castro de Meá	medium	site=fortification,civ=none	fortification			Q61385891	-8.24565340	43.46027966	5841.3	296.9	43.1	0.8325	13	wl-pos-pos-es-pba-13821	Castro de Mehá	50
+506550912	way	0	mound	Mámoa 1 da necrópole de Monte Grande ou do Grupo Rechinol	high	archaeological_site=tumulus	tumulus	neolithic			-8.01796228	42.89763881	76.7	32.9	4.9	0.8899	12	wl-neg-neg-es-pba-12219	Mámoa de Monte Grande 1	18
+509117903	way	0	mound	Mámoas de Moimentos	high	archaeological_site=tumulus	tumulus				-8.10811328	43.55933620	4622.0	262.9	38.4	0.8402	6	wl-neg-neg-es-pba-20408	Mámoa de Moimentos 1	21
+510890414	way	0	mound	Mámoa do Calvario	high	archaeological_site=tumulus	tumulus				-8.21914190	43.52623531	572.2	90.3	13.5	0.8819	7	wl-neg-neg-es-pba-14226	Mámoa do Calvario	49
+512160992	way	0	mound	Megálito M5 Outeiro de Cavaladre	high	archaeological_site=megalith	megalith	prehistoric			-7.91643348	41.92352453	710.5	98.5	15.0	0.9207	9	wl-neg-neg-es-pba-52127	Mámoa do Outeiro do Cavaladre 05	3
+512160993	way	0	mound	Megálito M1 Outeiro de Cavaladre	high	archaeological_site=megalith	megalith	prehistoric			-7.91884895	41.92444480	293.9	63.9	9.7	0.9058	21	wl-neg-neg-es-pba-52097	Mámoa do Outeiro do Cavaladre 01	3
+516408118	way	0	mound	Dolmen de Aiazo	high	archaeological_site=megalith	megalith	prehistoric			-8.29348283	43.01630121	479.3	78.0	12.4	0.9908	20	wl-neg-neg-es-pba-11918	Mámoa da Peneda de Guntín	4
+518060640	way	1	castro	Castro das Barreiras	medium	site=fortification,civ=celtic	fortification	celtic		Q31280835	-9.04194780	43.09854817	9853.1	370.2	56.0	0.9034	20	wl-pos-pos-es-pba-25969	Castro das Barreiras	5
+542771430	way	0	mound	Mámoa de Souto	high	archaeological_site=tumulus	tumulus				-8.15087274	43.23562278	12434.1	397.1	62.9	0.9908	20	wl-neg-neg-es-pba-5800	Mámoa de Souto	171
+542837177	way	0	mound	Mámoa de Pena do Toxo	high	archaeological_site=tumulus	tumulus				-7.92603099	43.27431042	298.3	62.3	9.7	0.9669	11	wl-neg-neg-es-pba-2080	Mámoa de Pena do Toxo	2
+542981187	way	1	castro	Castelo de Aranga	medium	site=settlement,civ=prehistoric	settlement	prehistoric		Q25509221	-8.00814086	43.22573337	9639.0	349.6	55.4	0.9908	20			
+543066767	way	0	mound	Mámoa de Outeiro Queimado	high	archaeological_site=tumulus	tumulus	prehistoric			-7.96192027	43.19612550	478.2	80.3	12.3	0.9319	8	wl-neg-neg-es-pba-1700	Mámoa do Outeiro Queimado	2
+544197800	way	0	mound	Medorra de Fanegas	high	archaeological_site=tumulus	tumulus			Q20544221	-8.04536992	43.08420434	3177.2	200.7	31.8	0.9908	20			
+544197821	way	1	castro	Castro da Pena Grande	medium	site=settlement,civ=celtic	settlement	celtic			-7.99093100	43.08743662	30806.6	625.1	99.0	0.9909	20	wl-pos-pos-es-pba-23949	Castro de Penagrande/Castro de Grixalba	37
+544635216	way	1	castro	Castro	medium	site=settlement,civ=prehistoric	settlement	prehistoric			-8.23332533	43.31622959	8396.8	326.3	51.7	0.9909	20	wl-pos-pos-es-pba-1271	Castro de Carrío	24
+544635219	way	1	castro	Castro	medium	site=settlement,civ=prehistoric	settlement	prehistoric			-8.21951719	43.32356446	10129.6	358.4	56.8	0.9909	20	wl-pos-pos-es-pba-1272	Castro de Montecelo e Pazos	19
+545086401	way	1	castro	Castro de Meirás	high	fortification_type=hill_fort	fortification	celtic	hill_fort		-8.29708938	43.36282699	52284.4	814.3	129.0	0.9909	22	wl-pos-pos-es-pba-20759	Castro de Mazón/Castro de Meirás	44
+559912893	way	1	castro	Castro de Belote	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.87710254	43.18433543	10453.1	370.8	57.7	0.9554	19	wl-pos-pos-es-pba-30082	Castro de Belote/O Castro	5
+559914512	way	1	castro	Castro de Aurela	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.91024589	43.14792133	6352.9	288.1	45.0	0.9616	12	wl-pos-pos-es-pba-30043	Castro da Cuíña/A Aurela	9
+559915539	way	1	castro	Castro de Recimil	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.86620261	43.17432457	4750.6	248.6	38.9	0.9658	18	wl-pos-pos-es-pba-30042	Castro a Medoña de Becín	7
+559916705	way	1	castro	Castro de Carelo	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.85923413	43.26947773	7477.7	313.6	48.8	0.9554	14	wl-pos-pos-es-pba-30118	Castro do Carelo	23
+559919583	way	1	castro	Castro de Margá	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.87353855	43.31795051	4632.1	249.7	38.4	0.9334	13	wl-pos-pos-es-pba-30084	Castro de Margá	4
+559919585	way	1	castro	Castro das Penas	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.87699341	43.30368825	11093.6	380.5	59.4	0.9630	15	wl-pos-pos-es-pba-30080	Castro das Penas	25
+559938149	way	1	castro	Castro de Facoi	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.69145319	42.99726974	11581.9	390.5	60.7	0.9546	14	wl-pos-pos-es-pba-33474	Cotón do Castro/Penas do Castro	4
+560147053	way	1	castro	Castro de Coeses	high	civilization=castro_culture	settlement	castro_culture			-7.52516866	42.94069245	13947.8	426.0	66.6	0.9657	18	wl-pos-pos-es-pba-31433	Castro da Madalena	14
+560151338	way	1	castro	A Modia das Arroas	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.86479787	43.23847577	7150.3	311.7	47.7	0.9251	12	wl-pos-pos-es-pba-30081	Castro das Reixas	4
+560190796	way	1	castro	Castro de Xoibán	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.62550342	43.19489959	10541.6	376.3	57.9	0.9354	15	wl-pos-pos-es-pba-43460	Castro de Xoibán	13
+560196851	way	1	castro	Castro de Francelos de Arriba	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.38337431	43.04177095	9960.1	374.9	56.3	0.8904	11	wl-pos-pos-es-pba-27906	Castro de Francelos de Arriba	10
+560197874	way	1	castro	O Castro	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.86401555	42.86052558	18598.3	514.7	76.9	0.8821	16	wl-pos-pos-es-pba-37743	Castro de Marzá	16
+560203341	way	1	castro	Castro de Narla	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.78896530	43.06788645	10359.7	388.4	57.4	0.8632	13	wl-pos-pos-es-pba-31163	Castro de Narla	25
+560204114	way	1	castro	Castro de Teixeiro	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.61720374	43.22153301	17403.8	485.0	74.4	0.9298	13	wl-pos-pos-es-pba-29195	Castro de Teixeiro/Os Castros	8
+560284981	way	1	castro	Castro de Vilar	medium	site=settlement,civ=celtic	settlement	celtic			-7.23843860	42.99097586	7078.2	306.2	47.5	0.9486	19	wl-pos-pos-es-pba-28722	Castro de Vilar	2
+560286241	way	1	castro	Castro de Cabo	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.43625565	42.53653550	10927.8	377.3	59.0	0.9644	13	wl-pos-pos-es-pba-33668	Castro de Cabo	51
+560288131	way	1	castro	Castro de Maxide	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.34129728	43.10883424	8718.7	338.7	52.7	0.9551	14	wl-pos-pos-es-pba-27909	Castro de Maxide/As Croas	9
+560288334	way	1	castro	O Castro Aberto	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.30080774	43.12486744	14892.1	470.8	68.8	0.8444	22	wl-pos-pos-es-pba-38977	Castro de Brea	8
+560288949	way	1	castro	Castro de Duarría	medium	site=settlement,civ=celtic	settlement	celtic			-7.48479959	43.12829188	8298.2	329.7	51.4	0.9591	13	wl-pos-pos-es-pba-27848	Castro de Duarría	9
+560290587	way	1	castro	Castro de Gontá	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.87650774	42.83285406	10628.6	375.5	58.2	0.9472	13	wl-pos-pos-es-pba-37741	Castro de Gontá	55
+560341701	way	1	castro	A Aurela	medium	site=settlement,civ=celtic	settlement	celtic			-7.95902762	42.96165243	8385.1	341.7	51.7	0.9024	16	wl-pos-pos-es-pba-24983	Castro de San Xiao	11
+560344687	way	1	castro	Castro da Ermida	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.37134569	42.88139229	8394.5	333.3	51.7	0.9498	14	wl-pos-pos-es-pba-31584	Castro da Ermida	23
+560346795	way	1	castro	Castro de Vence	medium	site=settlement,civ=celtic	settlement	celtic			-7.93901304	42.65070900	12296.7	399.4	62.6	0.9685	17	wl-pos-pos-es-pba-70361	Castro de Casa Soa/Castro de Vence	14
+560347375	way	1	castro	O Castro	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.48419132	42.99777251	10737.7	378.7	58.5	0.9408	17	wl-pos-pos-es-pba-32818	O Castro	13
+560352247	way	1	castro	Castro de Formigueiros	high	civilization=castro_culture	settlement	castro_culture		Q20547628	-7.35334347	42.70588463	10524.9	375.2	57.9	0.9397	12	wl-pos-pos-es-pba-32335	Castro de Formigueiros	24
+560352809	way	1	castro	Castro de Loureiro	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.31540576	42.74598987	10644.8	372.5	58.2	0.9638	18	wl-pos-pos-es-pba-40045	Castro de Roxofrei/Castro de Loureiro	20
+560353340	way	1	castro	Castro de Castrelo	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.55954364	42.79696971	7079.6	308.6	47.5	0.9342	14	wl-pos-pos-es-pba-37201	Castro de Castrelo/Agro do Castro/A Modorra	11
+560355439	way	1	castro	Castro de Vigo	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.38216629	42.90112444	5796.5	276.4	43.0	0.9538	14	wl-pos-pos-es-pba-31655	Castro de Vigo/Monte do Castro	5
+560355798	way	1	castro	Castro de Reboredo	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.40948719	42.88759444	8184.6	327.6	51.0	0.9584	15			
+560356746	way	1	castro	O Castro de Castrorramil	medium	site=settlement,civ=celtic	settlement	celtic			-7.85880092	43.35751949	4687.3	245.5	38.6	0.9774	20	wl-pos-pos-es-pba-30510	O Castro/O Castro Ramil	6
+560393366	way	1	castro	Castro de Arriba	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.44508457	43.08765260	18811.8	513.9	77.4	0.8950	19	wl-pos-pos-es-pba-27819	Castro de Arriba	11
+560394804	way	1	castro	Castro de Sa	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.34181131	43.25218237	10390.2	366.2	57.5	0.9735	16	wl-pos-pos-es-pba-36835	Castro de Saa	37
+560395865	way	1	castro	Castro de Seixalbo	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.74751519	43.00677922	11500.0	387.5	60.5	0.9624	19	wl-pos-pos-es-pba-31046	A Rodela/O Castro/Medorras do Castro	5
+560526215	way	1	castro	Castro de Guítara	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.68232405	42.49917233	25941.1	587.9	90.9	0.9433	16	wl-pos-pos-es-pba-37381	Castro de Guítara	12
+560527708	way	1	castro	Csatro de Vilalle	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.30140307	43.02496197	5451.0	277.3	41.7	0.8911	18	wl-pos-pos-es-pba-27944	Castro de Vilalle	11
+560529540	way	1	castro	Castro da Croa	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.27437424	42.96766296	12618.7	428.2	63.4	0.8650	16	wl-pos-pos-es-pba-27871	Castro da Croa/Croa da Casiña	32
+560529860	way	1	castro	Castro do Penedo do Castro	high	fortification_type=hill_fort	fortification	celtic	hill_fort		-7.18607563	43.02030601	8701.9	356.7	52.6	0.8596	14	wl-pos-pos-es-pba-28380	Pena do Castro	8
+560530163	way	1	castro	Castro da Coroa	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort	Q135525701	-7.15135709	42.86428575	6083.8	287.6	44.0	0.9244	14	wl-pos-pos-es-pba-28424	Castro de Oselle	4
+560531299	way	1	castro	Castro de Abuíme	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.63380268	42.60369983	10310.8	375.7	57.3	0.9180	19	wl-pos-pos-es-pba-41965	Castro de Abuime	18
+560532561	way	1	castro	Castro de Xesteda	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.31204388	42.88220236	8538.5	351.5	52.1	0.8685	14	wl-pos-pos-es-pba-44472	Castro de Xesteda	67
+560533960	way	1	castro	Castro de Crescón	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.32300741	42.88188909	9174.0	353.2	54.0	0.9243	14	wl-pos-pos-es-pba-44434	Castro de Crescón	23
+560535068	way	1	castro	A Croa de Soutomerille	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.39597537	43.02610154	5601.8	276.5	42.2	0.9206	12	wl-pos-pos-es-pba-27971	A Croa de Soutomerille	22
+560535581	way	1	castro	O Castro de San Miguel	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.44733066	42.83198459	10549.6	383.3	57.9	0.9025	18	wl-pos-pos-es-pba-42077	Castro de Vilapedre	32
+560535719	way	1	castro	O Castro de Seteventos	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.33713914	42.79435492	12823.3	412.6	63.9	0.9466	15	wl-pos-pos-es-pba-42072	Castro de Seteventos/Castro de Fonteaguín	31
+560537018	way	1	castro	Castro de Arrubial	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.28477956	42.94782948	9830.4	386.8	55.9	0.8257	19	wl-pos-pos-es-pba-29781	O Castro Arrubial	9
+560537724	way	1	castro	A Castronela	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.67103248	42.96934773	10400.3	375.1	57.5	0.9290	19	wl-pos-pos-es-pba-31500	A Castronela/O Castro	4
+560538007	way	1	castro	A Croa de Masoucos	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.27939369	42.99676969	8898.0	350.8	53.2	0.9088	15	wl-pos-pos-es-pba-27908	Castro de Masoucos	11
+612610322	way	1	castro	Citânia do Monte da Assunção	high	fortification_type=hill_fort	fortification	prehistoric;iberian;ancient_roman	hill_fort	Q98686631	-8.40809321	42.05765126	12337.1	442.1	62.7	0.7932	34			
+619509670	way	1	castro	Castro de Agra do Castro	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.67993055	43.09061594	13040.9	420.0	64.4	0.9289	11	wl-pos-pos-es-pba-36108	Castro de Aspai/O Castro	41
+619518728	way	1	castro	Castro de Guntín	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.86626367	43.03251693	5487.7	271.2	41.8	0.9375	12	wl-pos-pos-es-pba-31127	Castro de Guntín	2
+619772596	way	1	castro	Castro de Cabreiros	medium	site=settlement,civ=celtic	settlement	celtic			-7.77717154	43.39463570	14513.4	443.8	68.0	0.9258	17	wl-pos-pos-es-pba-30509	O Castro	23
+619789555	way	1	castro	As Engrovias da Croa	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.39588326	43.54421153	16710.1	486.9	72.9	0.8859	16	wl-pos-pos-es-pba-26868	Castro das Engrovias da Croa	13
+619889351	way	1	castro	Castro da Croa	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.32603015	42.95672363	4906.5	257.2	39.5	0.9320	10	wl-pos-pos-es-pba-27870	Castro da Croa ou de Folgosa	57
+619891945	way	1	castro	Os Castros de Lence	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.44298275	42.90753177	12625.1	413.7	63.4	0.9268	11	wl-pos-pos-es-pba-28965	Os Castros de Lence/As Croas	32
+619894036	way	1	castro	Castro da Groba	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.49254948	42.92037252	9384.4	362.3	54.7	0.8985	9	wl-pos-pos-es-pba-29948	Castro da Grova	19
+619895871	way	1	castro	Castro da Pobra de Parga	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.83865020	43.15833691	15619.4	454.2	70.5	0.9516	13	wl-pos-pos-es-pba-30077	Castro da Pobra de Parga	41
+619897346	way	1	castro	O Castro da Torre	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.91594322	43.30119969	4310.1	258.2	37.0	0.8126	13	wl-pos-pos-es-pba-30078	Castro da Torre	6
+619901066	way	1	castro	Castro do Canedo	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.64318857	42.97567416	6906.7	305.9	46.9	0.9278	13	wl-pos-pos-es-pba-31499	A Castronela/Castro Canedo	4
+619901186	way	1	castro	Castro de Taboeiro	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.72737898	42.95700328	7090.0	309.5	47.5	0.9303	13	wl-pos-pos-es-pba-31649	Castro de Taboeiro/Os Castros	21
+619901192	way	1	castro	Castro de Valín	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.70936123	42.97524835	7506.5	314.6	48.9	0.9532	11	wl-pos-pos-es-pba-31651	Castro de Valín/A Castronela	6
+619901223	way	1	castro	Chousa do Castro	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort	Q140179667	-7.69416226	42.98066881	5562.0	282.2	42.1	0.8774	15	wl-pos-pos-es-pba-31471	Chousa do Castro	2
+619901377	way	1	castro	Castro de Matelo	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.63841611	43.00326922	13089.2	432.9	64.5	0.8776	15	wl-pos-pos-es-pba-31543	Castro de Matelo/A Castronela	7
+619901398	way	1	castro	Castro da Caderna	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.65508973	43.01710800	7029.5	306.1	47.3	0.9429	13	wl-pos-pos-es-pba-31496	A Caderna/O Castro	3
+619901475	way	1	castro	A Castronela	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.59647405	43.03568662	7745.2	328.1	49.7	0.9043	10	wl-pos-pos-es-pba-31497	A Castronela	7
+619901494	way	1	castro	Os Castros de San Vicente de Pías	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.55790084	43.06102402	7400.6	317.8	48.5	0.9208	12	wl-pos-pos-es-pba-32820	Os Castros de San Vicente de Pías	11
+619901810	way	1	castro	Castro A Cubela	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.53605962	43.04996623	7200.8	323.1	47.9	0.8669	9	wl-pos-pos-es-pba-31530	A Cubela/A Cubela/Agra do Castro	2
+619901922	way	1	castro	Leiro do Castro	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.50674212	43.05830167	5261.7	268.5	40.9	0.9171	13	wl-pos-pos-es-pba-32459	Leiro do Castro	3
+619902167	way	1	castro	Castro Sillar	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.48341719	43.01752356	7884.4	326.2	50.1	0.9311	14	wl-pos-pos-es-pba-31652	Castro Sillar	8
+621302524	way	1	castro	Os Castros de Mourence	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort	Q130241372	-7.69922978	43.31854921	8697.0	341.0	52.6	0.9396	12	wl-pos-pos-es-pba-43308	Os Castros de Mourence	14
+621303423	way	1	castro	O Castro de Oleiros	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.63559106	43.24902938	9308.1	360.9	54.4	0.8982	11	wl-pos-pos-es-pba-43419	Castro de Oleiros	5
+621304051	way	1	castro	Castro de Vixil	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort	Q130210584	-7.70035947	43.27099036	7754.9	327.6	49.7	0.9079	12	wl-pos-pos-es-pba-43412	Castro de Cunca de Vixil	6
+621306287	way	1	castro	Castro de Codesido	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort	Q130214554	-7.76311401	43.32345098	9108.8	350.0	53.8	0.9343	12	wl-pos-pos-es-pba-43410	Castro de Codesido	17
+621307309	way	1	castro	Castro de Lanzós	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort	Q130236002	-7.66196708	43.34199249	7201.1	331.3	47.9	0.8243	10	wl-pos-pos-es-pba-43417	Castro de Lanzós	12
+621307418	way	1	castro	Castro de San Simón da Costa	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort	Q130236025	-7.61643002	43.38700450	10340.2	396.1	57.4	0.8282	9	wl-pos-pos-es-pba-43459	Castro de Vilamaior	11
+621309472	way	1	castro	O Castro de Eirexe	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.73205479	43.12154397	6098.1	289.5	44.1	0.9143	10	wl-pos-pos-es-pba-28317	Castro de Eirexe	29
+621311398	way	1	castro	Castro da Medorra	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.57413589	42.97825755	5315.0	272.7	41.1	0.8984	12	wl-pos-pos-es-pba-32640	Medorra da Barrela/Castro da Medorra	20
+621312129	way	1	castro	A Croa de Xivil	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.33419040	43.04512884	11961.0	399.0	61.7	0.9444	15	wl-pos-pos-es-pba-27972	A Croa de Xivil	68
+621319158	way	1	castro	Os Castros de Pacios	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.72847423	43.17093138	10504.0	377.8	57.8	0.9249	13	wl-pos-pos-es-pba-28674	Os Castros de Pacios	1
+621328663	way	1	castro	Castro de Sante	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.13964929	43.44761037	12020.7	403.8	61.9	0.9262	12	wl-pos-pos-es-pba-41057	Castro de Sante	20
+621329299	way	1	castro	Castro de Trasmonte	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.79684816	43.10357155	6476.8	299.1	45.4	0.9099	13	wl-pos-pos-es-pba-31198	Castro de Trasmonte	23
+621329877	way	1	castro	Castro da Silvela	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.88181968	43.02518439	15020.0	466.4	69.1	0.8677	15	wl-pos-pos-es-pba-31123	Castro da Silvela	10
+621333898	way	1	castro	Castro de Aurela	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.89501883	42.91401272	6984.0	299.6	47.1	0.9780	16	wl-pos-pos-es-pba-37738	Castro da Ourela de Carballal	47
+621334371	way	1	castro	Castro de Santa Marta	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.35823323	42.72868265	7421.5	319.6	48.6	0.9132	10	wl-pos-pos-es-pba-40227	Castro de Castroncán/Castro de Santa Marta/O Castro	11
+621334612	way	1	castro	Castro de Armea	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.30948418	42.83002028	9734.9	358.1	55.7	0.9541	13	wl-pos-pos-es-pba-31588	Castro de Armea/Castro de Leirado	23
+621340171	way	1	castro	Castro de Miraz	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.17162324	42.66217655	6055.7	324.1	43.9	0.7243	13	wl-pos-pos-es-pba-28919	Castro de Miraz	29
+621422098	way	1	castro	O Castro da Margarida	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.31354585	42.72561815	14638.2	448.6	68.3	0.9140	11	wl-pos-pos-es-pba-32296	Castro da Margarida/A Ciudá	29
+621424863	way	1	castro	Castro de Castrodelo	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.27010632	42.84375002	7509.8	313.7	48.9	0.9590	12	wl-pos-pos-es-pba-31689	Castrodelo	10
+621426087	way	1	castro	Castro de Trabada	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.19496679	43.44846975	7534.0	329.1	49.0	0.8741	13	wl-pos-pos-es-pba-41058	Castro de Trabada	17
+642848411	way	1	castro	Castro de Cimadevila	medium	site=settlement,civ=prehistoric	settlement	prehistoric			-8.29211480	43.03336271	7572.2	309.9	49.1	0.9906	20	wl-pos-pos-es-pba-11695	Castro de Cimadevila	14
+642848418	way	1	castro		medium	site=fortification,civ=celtic	fortification	celtic			-8.27223948	43.05460811	9113.2	340.0	53.9	0.9909	20	wl-pos-pos-es-pba-11752	Castro de Papucín	106
+642887063	way	1	castro		medium	site=fortification,civ=celtic	fortification	celtic			-8.31752206	43.08131989	43137.0	769.4	117.2	0.9158	9	wl-pos-pos-es-pba-11692	Castro de Abellá	72
+642887069	way	1	castro		medium	site=fortification,civ=celtic	fortification	celtic			-8.30492882	43.08860972	19478.0	497.0	78.7	0.9909	20	wl-pos-pos-es-pba-11722	Castro de Fontemouro	33
+643084215	way	1	castro		medium	site=fortification,civ=celtic	fortification	celtic			-8.52674619	42.99270387	20321.9	534.3	80.4	0.8947	13	wl-pos-pos-es-pba-24730	Castro de Vilouchada	6
+643132434	way	1	castro		medium	site=fortification,civ=celtic	fortification	celtic			-8.49207133	42.99207608	19451.3	510.2	78.7	0.9391	12	wl-pos-pos-es-pba-24701	Castro de Breixo	48
+643132462	way	1	castro		medium	site=fortification,civ=celtic	fortification	celtic			-8.56395074	42.99483618	19352.5	495.4	78.5	0.9908	20	wl-pos-pos-es-pba-24731	Castro de Xavestre	17
+643162568	way	1	castro		medium	site=fortification,civ=celtic	fortification	celtic			-8.51740626	42.96594902	26568.1	580.5	92.0	0.9909	20	wl-pos-pos-es-pba-24732	Castro Pereiro	26
+643183681	way	0	mound		high	archaeological_site=tumulus	tumulus	prehistoric			-8.58458434	43.04386900	2464.6	201.4	28.0	0.7638	5			
+644519595	way	1	castro	Castro de Xemerás ou de Lavandeiras	medium	site=fortification,civ=celtic	fortification	celtic			-8.08292801	43.08960032	14198.0	446.5	67.2	0.8951	13	wl-pos-pos-es-pba-26002	Castro de Xemerás	5
+644519596	way	1	castro	Castro de Liñares	medium	site=fortification,civ=celtic	fortification	celtic			-8.06157208	43.07689917	21535.0	522.6	82.8	0.9908	20	wl-pos-pos-es-pba-26520	Castro de Liñares	1
+644519597	way	1	castro	Os Castros de Peteiro	medium	site=fortification,civ=celtic	fortification	celtic			-8.07070760	43.10108173	12898.9	459.5	64.1	0.7678	16	wl-pos-pos-es-pba-26214	Os Castros de Peteiro	28
+644530161	way	1	castro	Castro de Armental	medium	site=fortification,civ=celtic	fortification	celtic			-8.10153546	43.07489343	17144.8	658.8	73.9	0.4964	34	wl-pos-pos-es-pba-26515	Castro de Armental	55
+644530188	way	0	mound	Mámoas da Ponte do Sapo	high	archaeological_site=tumulus	tumulus	prehistoric			-8.12185994	43.05393409	95444.4	1100.2	174.3	0.9908	20	wl-neg-neg-es-pba-26110	Mámoa da Ponte do Sapo	32
+644538503	way	1	castro	Castro de Cernadas	medium	site=fortification,civ=celtic	fortification	celtic			-8.15076941	43.05567810	1732.4	199.6	23.5	0.5465	9	wl-pos-pos-es-pba-26516	Castro de Cernadas	98
+644538515	way	1	castro	A Roda de Igrexafeita	medium	site=fortification,civ=celtic	fortification	celtic			-8.13615371	43.08164342	11465.5	389.9	60.4	0.9478	13			
+646064581	way	1	castro	Castro do Castelo	medium	site=fortification,civ=celtic	fortification	celtic			-9.04058774	42.96141331	13214.1	424.9	64.9	0.9196	16	wl-pos-pos-es-pba-9624	Castro do Castelo	22
+646104103	way	1	castro	Castro das Teixoeiras	medium	site=fortification,civ=celtic	fortification	celtic			-9.08329182	42.93589732	22295.4	574.4	84.2	0.8493	17	wl-pos-pos-es-pba-9086	Os Castros de Teixoeiras	16
+646416695	way	1	castro	Castro de Basadre	medium	site=fortification,civ=celtic	fortification	celtic			-7.99530352	42.84367540	2523.7	178.9	28.3	0.9908	20	wl-pos-pos-es-pba-66199	Castro de Basadre/Eira Vella/Castriño	29
+646416713	way	1	castro	Castro de Eidián	medium	site=fortification,civ=celtic	fortification	celtic			-8.00775464	42.82648614	3549.2	212.2	33.6	0.9909	20			
+646511805	way	1	castro		medium	site=fortification,civ=celtic	fortification	celtic			-8.03748466	42.81140231	3387.0	207.3	32.8	0.9909	20			
+646576387	way	1	castro	Castro do Marquesado	medium	site=settlement,civ=celtic	settlement	celtic			-8.11749372	42.83891236	3709.8	216.9	34.4	0.9908	20	wl-pos-pos-es-pba-66238	Castro de Marquesado/Coto do Castro/O Castro	1
+646576396	way	1	castro	Castro do Sino, Tras do Castro ou do Prato das Gobias	medium	site=fortification,civ=celtic	fortification	celtic			-8.08404166	42.81316585	11206.9	377.0	59.7	0.9908	20	wl-pos-pos-es-pba-66240	Castro do Sino/Tras do Castro	9
+648526397	way	1	castro	Castro de San Román	medium	site=fortification,civ=celtic	fortification	celtic			-8.08568901	42.90360444	16089.2	463.8	71.6	0.9398	14	wl-pos-pos-es-pba-23912	Castro de San Romao	13
+648706898	way	1	castro	Castro de Liñares	medium	site=fortification,civ=celtic	fortification	celtic			-8.05287972	42.88261605	32312.7	715.2	101.4	0.7938	19	wl-pos-pos-es-pba-23909	Castro de Liñares/A Roda do Castro	63
+648706899	way	1	castro	Castro de Novela	medium	site=fortification,civ=celtic	fortification	celtic			-8.05704911	42.87065310	45354.1	758.4	120.2	0.9909	20	wl-pos-pos-es-pba-23911	Castro de Novela/Castro de Alemparte/Castro de Pezobres	33
+648725998	way	1	castro	Castro de Vimianzo	medium	site=fortification,civ=celtic	fortification	celtic			-8.00672263	42.87858395	4486.4	266.2	37.8	0.7954	11	wl-pos-pos-es-pba-23940	Castro de Vimianzo/Coto da Aurela	14
+650338330	way	1	castro		medium	site=fortification,civ=celtic	fortification	celtic			-8.78150912	43.04496663	7371.9	305.8	48.4	0.9908	20	wl-pos-pos-es-pba-20128	Castro de Montouto	5
+650338350	way	1	castro	Castro de Boaña de Arriba	medium	site=fortification,civ=celtic	fortification	celtic			-8.79046299	43.09691089	10644.1	373.9	58.2	0.9567	15	wl-pos-pos-es-pba-20303	Castro de Boaña	21
+650559597	way	1	castro	Castro de Turnes	medium	site=fortification,civ=celtic	fortification	celtic			-8.71822165	43.06430932	8399.0	350.8	51.7	0.8578	10	wl-pos-pos-es-pba-20131	Castro de Turnes/Castro Pombo	9
+650568596	way	1	castro	Castro de Ventosa	medium	site=fortification,civ=celtic	fortification	celtic			-8.81403365	43.02537879	18286.2	481.6	76.3	0.9909	20	wl-pos-pos-es-pba-20132	Castro de Ventosa	8
+651245964	way	1	castro	Castro dos Mouros	medium	site=fortification,civ=celtic	fortification	celtic			-7.94998214	42.95124849	8331.3	333.7	51.5	0.9400	15	wl-pos-pos-es-pba-24956	Castro de Cardelle	18
+652072291	way	1	castro	Castro de Aldemunde	medium	site=fortification,civ=celtic	fortification	celtic			-8.59911043	43.15491224	7859.9	328.8	50.0	0.9138	10	wl-pos-pos-es-pba-3510	Castro de Aldemunde	21
+652072292	way	1	castro	Castro da Ribeira	high	fortification_type=hill_fort	fortification	celtic	hill_fort		-8.66475014	43.16057120	21951.1	527.6	83.6	0.9908	20	wl-pos-pos-es-pba-3509	Castro da Ribeira/Castro de Nogareda	9
+652103188	way	1	castro	Castro de Sabrexo	high	fortification_type=hill_fort	fortification	celtic	hill_fort		-8.20865997	42.79065942	10294.7	379.9	57.2	0.8964	17	wl-pos-pos-es-pba-75421	Castro de Sabrexo/Zarra dos Castros/O Castro	11
+652103192	way	1	castro	Castro de Besexos	high	fortification_type=hill_fort	fortification	celtic	hill_fort		-8.16935606	42.77551856	4954.8	261.8	39.7	0.9087	16	wl-pos-pos-es-pba-75291	Castro de Besexos/A Croa de Caxide	16
+652103201	way	1	castro	Roda do Castro	high	fortification_type=hill_fort	fortification	celtic	hill_fort		-8.20337290	42.77324022	3071.5	205.9	31.3	0.9106	16	wl-pos-pos-es-pba-75555	Coto do Castro/Coto da Roda/A Roda do Castro	3
+652103210	way	0	mound	Túmulos do Marco de Oirós	high	archaeological_site=tumulus	tumulus	prehistoric			-8.16503359	42.75903019	59173.0	1051.3	137.2	0.6728	15	wl-neg-neg-es-pba-74616	Mámoa do Marco do Camballón 06	53
+652450646	way	1	castro	Castro de Santa Baia	high	fortification_type=hill_fort	fortification	celtic	hill_fort		-8.20683375	42.74558948	9118.3	340.7	53.9	0.9871	17	wl-pos-pos-es-pba-67233	Castro de Santa Baia de Losón/Monte do Castro	21
+652450647	way	1	castro	Castro do Coto Grande de Asorei	high	fortification_type=hill_fort	fortification	celtic	hill_fort		-8.16386918	42.74944862	2294.2	173.1	27.0	0.9622	12			
+652450648	way	1	castro	Castro do Outeiro Grande	high	fortification_type=hill_fort	fortification		hill_fort		-8.14024214	42.73470436	5247.9	259.3	40.9	0.9805	14	wl-neg-neg-es-pba-67209	Mámoa de Outeiro Grande-Riádigos 8	242
+652450649	way	0	mound	Mámoas do Outeiro Grande	high	archaeological_site=tumulus	tumulus	prehistoric			-8.14238769	42.73703347	12043.6	443.4	61.9	0.7699	13	wl-neg-neg-es-pba-67173	Mámoa de Outeiro Grande-Riádigos 1	11
+652450650	way	0	mound	Mámoas dos Cotarros	high	archaeological_site=tumulus	tumulus	prehistoric			-8.14956059	42.74687233	3910.2	252.1	35.3	0.7734	10	wl-neg-neg-es-pba-67351	Mámoa dos Cotarros 1	21
+652456735	way	1	castro	Castro de Alcobre	high	fortification_type=hill_fort	fortification	celtic	hill_fort		-8.25048448	42.79331812	12865.1	406.2	64.0	0.9799	16			
+652497210	way	1	castro	Castro de Pastoriza	high	fortification_type=hill_fort	fortification	celtic	hill_fort		-8.21519357	42.80416652	8227.7	328.0	51.2	0.9608	24	wl-pos-pos-es-pba-75420	Castro de Pastoriza	9
+653084985	way	1	castro	Castro de Costenla	medium	site=fortification,civ=celtic	fortification	celtic			-8.62867363	43.29489140	11208.1	377.0	59.7	0.9908	20	wl-pos-pos-es-pba-3514	Castro de Constenla	9
+655235234	way	1	castro	Castro de Torres	medium	site=fortification,civ=celtic	fortification	celtic			-8.12621226	43.34266718	7356.2	305.4	48.4	0.9908	20	wl-pos-pos-es-pba-26120	Os Castros, Castro de Torres	4
+655250244	way	0	mound	Mámoas de Espeldoña	high	archaeological_site=tumulus	tumulus	prehistoric			-8.09206111	43.33935204	50877.3	1634.3	127.3	0.2394	14	wl-neg-neg-es-pba-26459	Mámoa 3 de Espeldoña	102
+655250253	way	1	castro		medium	site=fortification,civ=celtic	fortification	celtic			-8.12418813	43.32894441	12720.6	401.7	63.6	0.9909	20	wl-pos-pos-es-pba-26357	Castro de Goimil	42
+656608869	way	1	castro	Castro de Andrade	medium	site=fortification,civ=celtic	fortification	celtic			-8.16558851	43.37359835	12534.3	398.7	63.2	0.9909	20	wl-pos-pos-es-pba-18251	Castro de Andrade	24
+657849396	way	1	castro	Xacemento da Pena Grande	medium	site=fortification,civ=none	fortification				-7.96368788	42.92999448	9435.3	407.0	54.8	0.7156	5			
+658005484	way	1	castro	Castro de Cumeiro	high	fortification_type=hill_fort	fortification	celtic	hill_fort		-8.19000168	42.80651690	8038.4	321.1	50.6	0.9800	28	wl-pos-pos-es-pba-75293	Castro de Cumeiro/A Croa do Castro	5
+658256115	way	1	castro	Castro da Contiña	high	fortification_type=hill_fort	fortification	celtic	hill_fort		-8.15285879	42.81445440	5877.3	311.0	43.3	0.7634	27	wl-pos-pos-es-pba-75557	Coto do Chelo/Castro da Contiña	4
+658256122	way	1	castro	Castro de Xordedo	high	fortification_type=hill_fort	fortification	celtic	hill_fort		-8.18819503	42.84036854	4185.5	235.1	36.5	0.9513	29	wl-pos-pos-es-pba-75425	Castro de Xordedo/Os Castros	16
+660444365	way	1	castro	Castro de Redonda	medium	site=fortification,civ=celtic	fortification	celtic			-9.20650048	42.92042266	9258.4	342.7	54.3	0.9909	20	wl-pos-pos-es-pba-5978	Castro de Redonda	31
+660444370	way	1	castro	Castro de Quenxe	medium	site=fortification,civ=celtic	fortification	celtic			-9.19084739	42.93281765	6024.2	276.4	43.8	0.9909	20	wl-pos-pos-es-pba-5977	Castro de Quenxe	49
+662603156	way	1	castro	Castro	medium	site=fortification,civ=prehistoric	fortification	prehistoric			-8.10922162	43.44685549	6170.4	286.2	44.3	0.9464	19	wl-pos-pos-es-pba-3898	Castro de Piñeiros	6
+662603157	way	1	castro	O Castro	medium	site=fortification,civ=prehistoric	fortification	prehistoric		Q61388076	-8.20609819	43.43728001	62346.7	924.0	140.9	0.9176	16	wl-pos-pos-es-pba-1956	A Roda do Castro	55
+675320128	way	1	castro	Castro de Chousa	medium	site=fortification,civ=celtic	fortification	celtic			-7.85562716	43.65966193	7050.4	299.0	47.4	0.9908	20	wl-pos-pos-es-pba-17471	Castro de Chouso/Castro de Saa	14
+679538625	way	1	castro	Castro do Monte Aro	medium	site=fortification,civ=celtic	fortification	celtic			-8.96401587	42.95649240	15902.5	456.2	71.1	0.9603	15	wl-pos-pos-es-pba-12380	Castro do Monte Aro	1
+691726594	way	1	castro	O Castro das Varelas	medium	site=fortification,civ=celtic	fortification	celtic			-8.07802936	42.89436051	15519.7	459.1	70.3	0.9255	16	wl-pos-pos-es-pba-12423	Castro das Varelas	4
+697248821	way	1	castro	Castro de Taibó	high	fortification_type=hill_fort	fortification	celtic	hill_fort		-8.28162436	43.37313354	747.0	155.8	15.4	0.3869	5	wl-pos-pos-es-pba-20761	Castro de Taibó	78
+713378960	way	1	castro	Atalaia de Candaira	medium	site=fortification,civ=none	fortification				-6.72465637	41.83288617	395.9	70.8	11.2	0.9932	23			
+713428477	way	1	castro	Ruínas do Forte de Modorra	medium	site=fortification,civ=none	fortification			Q66813540	-6.94853282	41.83972340	36.9	24.6	3.4	0.7653	5	wl-neg-neg-pt-dgpc-108898	Modorro	1
+714797387	way	0	mound	Mamoa da Coroa	high	archaeological_site=megalith	megalith				-7.00357630	41.91482236	269.3	58.4	9.3	0.9918	21			
+736838722	way	1	castro	Castro de Galegos	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.60487838	42.96659925	16175.9	473.8	71.8	0.9054	13			
+760066296	way	1	castro	Castro da Croa	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.40468157	43.06302107	3130.1	203.6	31.6	0.9492	13	wl-pos-pos-es-pba-27869	Castro da Croa de Xan da Torre	12
+770929804	way	1	castro	O Castro das Croas	medium	site=fortification,civ=celtic	fortification	celtic			-8.05578840	43.64449772	7125.4	307.6	47.6	0.9460	11	wl-pos-pos-es-pba-6217	Castro As Croas	11
+770934288	way	1	castro	Castro de Espiñuda	medium	site=fortification,civ=none	fortification				-8.13352574	43.58416301	17568.2	493.9	74.8	0.9051	11	wl-pos-pos-es-pba-24675	Castro de Aviño	25
+771174358	way	1	castro	Castro de Bardaos	medium	site=fortification,civ=celtic	fortification	celtic		Q2511592	-8.03292890	43.57792477	12438.6	432.4	62.9	0.8361	7	wl-pos-pos-es-pba-20265	Coto da Croa	10
+793301355	way	1	castro	Castro de Pedreda	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.50733740	43.04361862	11506.3	397.5	60.5	0.9152	16	wl-pos-pos-es-pba-31544	Castro de Pedreda/O Castro	23
+793304122	way	1	castro	Castro Valente	high	civilization=castro_culture	settlement	castro_culture			-7.53706975	42.95775487	6608.7	298.4	45.9	0.9328	11	wl-pos-pos-es-pba-31467	Castro Valente	3
+793304543	way	1	castro	Castro de Piñeiro	high	civilization=castro_culture	settlement	castro_culture			-7.53868591	42.91191658	6518.9	293.7	45.6	0.9495	11	wl-pos-pos-es-pba-31645	Castro de Piñeiro/O Castro	4
+793306647	way	1	castro	Castro de Cimadevila	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.56475457	42.87737014	8318.7	334.6	51.5	0.9339	12	wl-pos-pos-es-pba-32242	Castro de Cimadevila	11
+793307057	way	1	castro	Croa do Castro	medium	site=settlement,civ=celtic	settlement	celtic			-7.60515911	42.86666737	7191.9	339.2	47.8	0.7857	12	wl-pos-pos-es-pba-32283	Croa do Castro	24
+793307397	way	1	castro	Castro de Piñeiras	medium	site=settlement,civ=celtic	settlement	celtic			-7.60939976	42.85074957	7030.8	314.5	47.3	0.8934	15	wl-pos-pos-es-pba-32248	Castro de Piñeiras	14
+796249987	way	0	mound	Mámoa do Monte Montouto	high	archaeological_site=tumulus	tumulus				-7.71860228	43.49010775	632.8	91.1	14.2	0.9586	11	wl-neg-neg-es-pba-34663	Mámoa do Monte Montouto	3
+809189630	way	1	castro	Castro	high	fortification_type=hill_fort	fortification	celtic	hill_fort		-8.66597794	43.12251417	3922.4	222.3	35.3	0.9974	37	wl-pos-pos-es-pba-3541	Castro de Ouxas/Castro de Oureas	3
+809372059	way	1	castro	Castro do Castropombo	high	fortification_type=hill_fort	fortification	celtic	hill_fort		-8.74944522	43.03989024	172106.9	1749.2	234.1	0.7069	25	wl-pos-pos-es-pba-20157	Castro Pombo	208
+842710925	way	1	castro	Castro de Torroso	high	civilization=castro_culture		castro_culture		Q13582021	-8.62964601	42.19660726	4066.7	243.0	36.0	0.8655	17	wl-pos-pos-es-pba-67872	Castro de Torroso/Castro do Retiro	11
+865123133	way	1	castro	Castro de Xanceda	medium	site=fortification,civ=celtic	fortification	celtic		Q20549563	-8.24504369	43.08072578	6739.3	292.3	46.3	0.9909	20	wl-pos-pos-es-pba-12470	Castro de Xanceda	35
+865610301	way	0	mound	O Prado das Chantas	high	archaeological_site=megalith	megalith	prehistoric			-7.50075630	43.52992739	6972.5	312.5	47.1	0.8973	25			
+871676748	way	1	castro	Os Castros de Brañas	high	fortification_type=hill_fort	fortification		hill_fort		-7.95245441	43.01598667	13097.3	462.4	64.6	0.7696	21	wl-pos-pos-es-pba-24901	Os Castros	60
+880331946	way	1	castro	Castro de Pardiñas	medium	site=settlement,civ=prehistoric	settlement	prehistoric			-8.36639109	43.08686138	9391.2	353.3	54.7	0.9455	14	wl-pos-pos-es-pba-15919	O Castro/Castro de Pardiñas	9
+896131247	way	1	castro	Castro de Montealegre	high	civilization=castro_culture	settlement	castro_culture			-8.67052722	42.29313863	5495.7	372.9	41.8	0.4968	32	wl-pos-pos-es-pba-66598	Castro de Montealegre	36
+941566479	way	1	castro	A Rodela de Balmonte	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.39225006	43.16499742	12995.1	418.7	64.3	0.9314	14			
+948293779	way	1	castro	Castro de Vizoño	medium	site=fortification,civ=celtic	fortification	celtic		Q12385777	-8.32315091	43.15844235	5068.6	258.4	40.2	0.9538	13	wl-pos-pos-es-pba-109	Castro de Vizoño	25
+965889849	way	0	mound	Mámoa Nº 2 do Faílde	high	archaeological_site=tumulus	tumulus	prehistoric			-8.74498984	42.99643829	707.3	94.5	15.0	0.9943	25			
+965889850	way	0	mound	Mámoa Nº 1 do Faílde	high	archaeological_site=tumulus	tumulus	prehistoric			-8.74483004	42.99611303	707.3	94.5	15.0	0.9943	25			
+965889851	way	0	mound	Mámoa Nº 2 do Vilar	high	archaeological_site=tumulus	tumulus	prehistoric			-8.74677108	42.99409356	707.3	94.6	15.0	0.9943	25	wl-neg-neg-es-pba-1554	Mámoa de Vilar 2	3
+965889852	way	0	mound	Mámoa Nº 1 do Vilar	high	archaeological_site=tumulus	tumulus	prehistoric			-8.74730202	42.99468811	707.2	94.5	15.0	0.9943	25	wl-neg-neg-es-pba-1553	Mámoa de Vilar 1	4
+965958568	way	0	mound	Mámoa Nº 2 do Cruceiro Grande	high	archaeological_site=tumulus	tumulus	prehistoric			-8.74154114	42.99646029	707.3	94.5	15.0	0.9943	25	wl-neg-neg-es-pba-1050	Mámoa do Cruceiro Grande 2	13
+965958569	way	0	mound	Mámoa Nº 1 do Cruceiro Grande	high	archaeological_site=tumulus	tumulus	prehistoric			-8.74177154	42.99598709	707.3	94.5	15.0	0.9943	25	wl-neg-neg-es-pba-1049	Mámoa do Cruceiro Grande 1	4
+965962034	way	1	castro	Castro de Suevos	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort	Q139832114	-8.76270848	42.99019046	15625.2	486.5	70.5	0.8296	29	wl-pos-pos-es-pba-1191	Castro de Suevos	11
+965968991	way	1	castro	Castro do Castelo da Carballa - Castillo de Pilas	high	fortification_type=ringfort	fortification	medieval_christianity	ringfort		-8.76415363	42.97806310	11898.8	422.6	61.5	0.8373	24			
+965980251	way	1	castro	Castro de Liñares	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort	Q139832103	-8.77093771	42.97303771	14440.4	438.9	67.8	0.9420	20	wl-pos-pos-es-pba-1190	Castro de Liñares	2
+970364919	way	1	castro	Castro da Armada	medium	site=fortification,civ=none	fortification				-7.94948491	42.99511207	4559.6	248.6	38.1	0.9271	14	wl-pos-pos-es-pba-24955	Castro das Fervenzas	18
+971244054	way	1	castro	Castro do Campo do Castro	medium	site=fortification,civ=celtic	fortification	celtic		Q61388572	-8.07221567	43.66056735	731.1	138.0	15.3	0.4823	13	wl-pos-pos-es-pba-6059	Campo do Castro	111
+976378757	way	1	castro	Castro de Armea	medium	site=settlement,civ=celtic	settlement	celtic		Q20550523	-7.79337447	42.24594268	2936.4	207.4	30.6	0.8581	10	wl-pos-pos-es-pba-44646	Castro de Armeá	84
+988768747	way	1	castro	Castro de Sucastro	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.81288776	42.76345241	23733.6	569.1	86.9	0.9209	12	wl-pos-pos-es-pba-34923	O Castro	16
+988770863	way	1	castro	Castro de Mandín	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.85195310	43.06753184	5797.0	287.5	43.0	0.8811	7	wl-pos-pos-es-pba-31161	Castro de Mandín	7
+988772743	way	1	castro	Castro de Céltigos	medium	site=fortification,civ=celtic	fortification	celtic			-7.76844627	43.71263477	10832.3	376.5	58.7	0.9601	13	wl-pos-pos-es-pba-17476	Castro/Castro de Céltigos	7
+993447166	way	1	castro	O Castro Maior	medium	site=fortification,civ=none	fortification				-8.59051045	42.95800087	8696.3	347.4	52.6	0.9054	22	wl-pos-pos-es-pba-20240	Castromaior/Castro de Fecha	16
+1006937312	way	1	castro	A Croa	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.35936321	43.55944309	28337.3	610.0	95.0	0.9571	15	wl-pos-pos-es-pba-31194	A Croa	4
+1006938429	way	1	castro	A Croa	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort	Q20547484	-7.60000900	43.61875635	3889.9	228.4	35.2	0.9369	11	wl-pos-pos-es-pba-43437	A Croa/Castro da Forca	5
+1009125760	way	1	castro	Castro de Ver	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.48741768	42.61130770	8423.7	334.8	51.8	0.9441	11	wl-pos-pos-es-pba-28795	Castro de Ver/Castro de San Victorio	53
+1009126244	way	1	castro	Castro de Vilacaíz	medium	site=settlement,civ=celtic	settlement	celtic			-7.62791137	42.70331667	7555.8	321.8	49.0	0.9172	16	wl-pos-pos-es-pba-41661	Castro de Vilacaiz	12
+1009130133	way	1	castro	O Castro Tourón	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.60704304	43.07293824	7545.8	324.2	49.0	0.9020	10	wl-pos-pos-es-pba-35864	Os Castros	10
+1009130953	way	1	castro	O Adro	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.41386478	43.24497267	10108.9	414.4	56.7	0.7396	16			
+1009671852	way	1	castro	Castro de Goián	medium	site=settlement,civ=celtic	settlement	celtic			-7.37570976	42.82321406	13931.6	446.1	66.6	0.8796	14	wl-pos-pos-es-pba-41994	Castro de Goián	20
+1010074057	way	1	castro	Castro de Toiriz	high	fortification_type=hill_fort	fortification	celtic	hill_fort		-7.56831368	42.98417857	14742.2	459.3	68.5	0.8780	12	wl-pos-pos-es-pba-31529	A Croa	21
+1010076717	way	1	castro	Castro de Laxes	medium	site=settlement,civ=celtic	settlement	celtic			-7.28781529	42.85495856	12411.7	403.7	62.9	0.9572	14	wl-pos-pos-es-pba-44432	Castro de Berselos	25
+1010232063	way	1	castro	Castro de Triacastela	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.23447850	42.75986957	12284.5	404.6	62.5	0.9429	15	wl-pos-pos-es-pba-41403	Castro de Triacastela	43
+1010232430	way	1	castro	Castro do Coto	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.92687052	42.78383397	8693.8	353.9	52.6	0.8724	17	wl-pos-pos-es-pba-27025	Castro do Coto	36
+1013203818	way	1	castro	Castro de Marzán	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.26324188	43.57024689	7732.8	321.1	49.6	0.9423	13	wl-pos-pos-es-pba-30962	O Castro/Pico do Castro/Cu do Castro de Marzán	15
+1016902693	way	1	castro	Castro de Grolos	medium	site=settlement,civ=celtic	settlement	celtic			-7.62526214	42.87550985	12373.3	399.9	62.8	0.9725	16	wl-pos-pos-es-pba-32244	Castro de Grolos	4
+1016903747	way	1	castro	Castrodá	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.72068179	43.02899781	6460.0	302.7	45.3	0.8858	15	wl-pos-pos-es-pba-31201	Castrodá/O Castro	4
+1017474667	way	1	castro	Castro da Penela	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.37694250	42.91508972	6282.0	286.3	44.7	0.9629	16			
+1017931590	way	1	castro	Torres de Altamira	high	fortification_type=hill_fort	fortification	medieval	hill_fort	Q54380	-8.68748931	42.87744187	3053.2	201.8	31.2	0.9421	15	wl-pos-pos-es-pba-2672	Castro de Altamira	19
+1062427315	way	1	castro	Castro de Castrolandín	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort	Q21155953	-8.55232955	42.63685602	4145.7	237.6	36.3	0.9226	61	wl-pos-pos-es-pba-64599	Castro de Castrolandín	8
+1075192762	way	1	castro	Castro de San Migueliño	medium	site=settlement,civ=prehistoric	settlement	prehistoric			-8.35535799	42.95058233	19533.5	556.3	78.9	0.7932	28	wl-pos-pos-es-pba-17008	O Castro/O Castro de San Migueliño	14
+1103536514	way	1	castro	Castro da Capela	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.35016850	42.90046073	12002.7	397.8	61.8	0.9533	18	wl-pos-pos-es-pba-31552	Castro da Capela	37
+1103536737	way	1	castro	Castro do Monte das Penas	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.35335234	42.91060168	5646.5	279.8	42.4	0.9066	13	wl-pos-pos-es-pba-31659	Castro do Monte das Penas	3
+1120074646	way	0	mound	Mámoa da Follateira	high	archaeological_site=tumulus	tumulus				-7.68135548	42.66621596	157.7	48.7	7.1	0.8348	11	wl-neg-neg-es-pba-41062	Mámoa da Cheda 2	3
+1123158114	way	1	castro	Castro da Subidá	medium	site=settlement,civ=celtic	settlement	celtic		Q12385714	-8.70840422	42.38193027	7120.0	342.0	47.6	0.7650	6	wl-pos-pos-es-pba-67187	Castro da Subidá	114
+1127628677	way	1	castro	Castro Zapateiro	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.63316320	43.03825470	7343.7	315.0	48.3	0.9302	11	wl-pos-pos-es-pba-31468	Castro Zapateiro	13
+1127646259	way	1	castro	Castro de Taboelle	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.60243501	43.01114351	7770.1	337.2	49.7	0.8588	16	wl-pos-pos-es-pba-31650	Castro de Taboelle/O Castro	4
+1127867790	way	1	castro	Castro da Graña	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.32765540	43.10730614	9983.7	363.8	56.4	0.9478	14	wl-pos-pos-es-pba-27874	Castro da Graña	21
+1127867930	way	1	castro	A Croa dos Mouros	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.35216340	43.08609220	6929.9	306.5	47.0	0.9269	11	wl-pos-pos-es-pba-27973	A Croa dos Mouros	15
+1130713488	way	1	castro	Castro do Mouro	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.31971781	42.78005053	29471.7	656.9	96.9	0.8582	16	wl-pos-pos-es-pba-31660	Castro do Mouro	37
+1135960433	way	1	castro	Castro de Pereira	medium	site=settlement,civ=celtic	settlement	celtic			-7.27238000	42.97918304	9776.7	356.2	55.8	0.9681	16	wl-pos-pos-es-pba-27912	Castro de Pereiro	8
+1147420107	way	0	mound	Círculo Lítico de Coeses	high	archaeological_site=megalith	megalith				-7.53866227	42.95527675	2716.6	193.0	29.4	0.9165	12			
+1147423087	way	0	mound		high	archaeological_site=megalith	megalith				-7.40944952	42.53836578	2209.5	171.7	26.5	0.9414	10			
+1148339283	way	0	mound	Madorra da Granxa	high	archaeological_site=tumulus	tumulus				-7.49708668	43.16079932	2530.0	184.7	28.4	0.9324	10	wl-neg-neg-es-pba-28093	Madorra da Granxa	4
+1148981618	way	1	castro	A Rodela	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.74612078	42.98602244	10389.6	420.0	57.5	0.7400	14			
+1148984245	way	1	castro	Castro de Lobengos	high	civilization=castro_culture	settlement	castro_culture			-7.77249456	43.01080021	6317.2	307.0	44.8	0.8421	11	wl-pos-pos-es-pba-31159	Castro de Lobengos	7
+1148997123	way	1	castro	As Croas	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.32658805	42.91378917	11226.5	399.5	59.8	0.8838	14	wl-pos-pos-es-pba-44441	Castro de Sobredo/Castro de Picato/As Croas	40
+1150568810	way	1	castro	Castro da Moura	medium	site=settlement,civ=celtic	settlement	celtic			-7.25563079	42.68264713	8741.1	361.8	52.7	0.8391	13	wl-pos-pos-es-pba-40040	Castro de Moura	27
+1150571410	way	1	castro	Castro de Láncara	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.34234067	42.86756323	11514.2	393.4	60.5	0.9351	12	wl-pos-pos-es-pba-31617	Castro de Láncara	16
+1151370699	way	0	mound	Medorra de Brea	high	archaeological_site=tumulus	tumulus	prehistoric			-7.44046621	43.02390865	186.4	50.1	7.7	0.9326	11	wl-neg-neg-es-pba-32670	Modorra de Brea	2
+1151370700	way	1	castro	Castro da Brea	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.44127885	43.02369390	2487.2	181.0	28.1	0.9536	12	wl-pos-pos-es-pba-31439	Castro de Brea	4
+1152764073	way	1	castro	Castro de Cerrón	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.74572879	42.99887058	7654.5	332.1	49.4	0.8719	12	wl-pos-pos-es-pba-31124	Castro de Cerrón	5
+1153487006	way	1	castro	Castro de Santalla	high	civilization=castro_culture	settlement	castro_culture			-7.42398512	42.69099885	7411.7	323.6	48.6	0.8896	19	wl-pos-pos-es-pba-32377	Castro de Santalla	21
+1153487264	way	1	castro	Castro do Castelo	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.44074418	42.68990807	5360.9	268.8	41.3	0.9327	22	wl-pos-pos-es-pba-32301	Castro de Castelo	20
+1158310329	way	1	castro		high	civilization=castro_culture	settlement	castro_culture			-7.70470490	42.16915807	19828.1	531.8	79.4	0.8812	8			
+1159068376	way	0	mound	Mámoa de Lamaboa	high	archaeological_site=tumulus	tumulus				-7.63036153	43.02090855	138.1	43.1	6.6	0.9348	11			
+1160873916	way	1	castro	Castro de Todón	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.19604884	42.90315736	13816.9	456.0	66.3	0.8350	11	wl-pos-pos-es-pba-28428	Castro de Todón	11
+1160954779	way	1	castro	Castro de Montaña de Agra	high	civilization=castro_culture	settlement	castro_culture			-7.14178527	42.87548397	9968.4	372.2	56.3	0.9042	15	wl-pos-pos-es-pba-28389	Castro da Montaña da Agra	32
+1161756161	way	1	castro	Castro de Vilamane	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.10735278	42.91823141	21517.5	609.9	82.8	0.7269	19	wl-pos-pos-es-pba-28455	Castro de Vilamane	7
+1161757021	way	1	castro	Castro de San Xoán	high	civilization=castro_culture	settlement	castro_culture			-7.31947768	42.78768865	11333.2	391.1	60.1	0.9309	15	wl-pos-pos-es-pba-31654	Castro de Toldaos	35
+1162545272	way	1	castro	Castro do Reguengo	high	civilization=castro_culture	settlement	castro_culture			-7.26318887	42.92285634	21712.8	546.9	83.1	0.9123	13	wl-pos-pos-es-pba-44438	Castro de Reguengo	11
+1162815103	way	1	castro	Castro de Lebruxo	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.30708033	42.87788152	9499.6	351.4	55.0	0.9668	14	wl-pos-pos-es-pba-44431	Castro da Igrexa/Castro de Lebruxo	13
+1162893427	way	1	castro	Castro da Igrexa dos Vaos	high	civilization=castro_culture	settlement	castro_culture			-7.16606033	43.17931533	33284.3	705.7	102.9	0.8398	15	wl-pos-pos-es-pba-40335	Castro da Teixeira/Castro da Igrexa dos Vaos	12
+1162938472	way	0	mound	Mámoa de Costa de Mera 2	high	archaeological_site=tumulus	tumulus				-7.74333180	43.01154859	440.7	77.0	11.8	0.9338	9	wl-neg-neg-es-pba-30557	Mámoa de Costa de Mera 2	3
+1162938473	way	0	mound	Mámoa de Costa de Mera 3	high	archaeological_site=tumulus	tumulus				-7.74356022	43.01130655	403.4	74.8	11.3	0.9063	8	wl-neg-neg-es-pba-30558	Mámoa de Costa de Mera 3	6
+1162938474	way	0	mound	Mámoa de Costa de Mera 1	high	archaeological_site=tumulus	tumulus				-7.74520469	43.01031754	722.8	98.9	15.2	0.9287	10	wl-neg-neg-es-pba-30556	Mámoa de Costa de Mera 1	5
+1162939829	way	1	castro	Castro do Rebordelo	high	civilization=castro_culture	settlement	castro_culture			-7.75323819	42.96075793	11594.4	393.7	60.8	0.9401	10	wl-pos-pos-es-pba-32249	Castro de Rebordelo	23
+1163025976	way	0	mound	Henge de Lavandeiras	high	archaeological_site=megalith	megalith	neolithic			-7.52025983	43.68432245	3638.2	218.7	34.0	0.9556	12			
+1163031257	way	1	castro	Castro do Pico Pequeno	high	civilization=castro_culture	settlement	castro_culture			-7.43925301	43.66645245	8814.9	355.6	53.0	0.8762	11	wl-pos-pos-es-pba-29985	Castro Pico Pequeño/Monte da Sara	4
+1163032402	way	0	mound	Henge de A Mourisca 2	high	archaeological_site=megalith	megalith				-7.42802253	43.66318741	1348.9	130.5	20.7	0.9958	29			
+1163032403	way	0	mound	Henge de A Mourisca 1	high	archaeological_site=megalith	megalith				-7.42958780	43.66467835	1634.7	143.6	22.8	0.9963	31			
+1163037883	way	1	castro	Os Castros	high	civilization=castro_culture	settlement	castro_culture			-7.22671601	43.49301438	16838.6	474.1	73.2	0.9414	12	wl-pos-pos-es-pba-28735	Os Castros	3
+1163058603	way	1	castro	Castro da Lavacolla	high	civilization=castro_culture	settlement	castro_culture			-8.44502403	42.89460998	14113.6	435.7	67.0	0.9341	14	wl-pos-pos-es-pba-20186	Castro de Lavacolla/Castro de Mendes	52
+1163492885	way	1	castro	Castro de Lagouzos	high	civilization=castro_culture	settlement	castro_culture			-7.71406368	43.04815215	7398.1	310.8	48.5	0.9622	13	wl-pos-pos-es-pba-31128	Castro de Lagouzos	59
+1165162135	way	0	mound	Mámoa da Gándara de Narla 16	high	archaeological_site=tumulus	tumulus	prehistoric			-7.75529995	43.05383108	2805.0	191.8	29.9	0.9586	13	wl-neg-neg-es-pba-30933	Mámoa da Gándara de Narla 16/Medorra Aberta	2
+1168142336	way	0	mound	Madorra de Montouto 1	high	archaeological_site=tumulus	tumulus				-7.22733331	42.83711396	320.0	64.8	10.1	0.9577	14	wl-neg-neg-es-pba-31274	Madorra de Montouto 1	3
+1168142909	way	1	castro	O Castro	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.27472326	42.88813886	14313.1	442.3	67.5	0.9193	10	wl-pos-pos-es-pba-44635	O Castro	57
+1168143415	way	1	castro	Castro	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.36261798	42.86602778	11292.9	386.0	60.0	0.9523	13	wl-pos-pos-es-pba-31342	A Croa	36
+1171823155	way	1	castro	Castro de Ferreiros	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.81033207	43.23540309	7807.0	360.7	49.9	0.7541	12			
+1171832842	way	1	castro	Castro da Coroa de Penas Rubias	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.17557941	42.53453020	2399.9	182.1	27.6	0.9096	11	wl-pos-pos-es-pba-37882	Castro da Coroa de Penas Rubias	2
+1172593343	way	1	castro	Castro de Valbón	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.30094467	42.70360806	13327.2	428.4	65.1	0.9126	18	wl-pos-pos-es-pba-32409	Castro de Valbón	25
+1178111883	way	0	mound	Mámoa do Cerraque	high	archaeological_site=tumulus	tumulus				-8.27098363	42.14594183	1877.7	159.0	24.4	0.9328	10	wl-neg-neg-es-pba-65034	Mámoa de Cerraque 1	6
+1178153559	way	1	castro	Castro de Vilaseñor	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.78604967	42.91794116	22905.9	593.7	85.4	0.8166	14	wl-pos-pos-es-pba-37748	Castro de Vilaseñor	19
+1186348645	way	1	castro	Castro de Lea	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.81668772	43.05980469	3622.5	219.6	34.0	0.9438	10	wl-pos-pos-es-pba-31158	Castro de Lea/O Castriño de Lea	2
+1186348690	way	0	mound	Forno da Moura	high	archaeological_site=tumulus	tumulus				-7.81035597	43.05641358	227.8	54.4	8.5	0.9669	11	wl-neg-neg-es-pba-30555	Mámoa de Corral de Abaixo	91
+1186348703	way	0	mound	Mámoa de Corral de Abaixo	high	archaeological_site=tumulus	tumulus				-7.80949048	43.05696628	295.3	62.2	9.7	0.9591	10	wl-neg-neg-es-pba-30555	Mámoa de Corral de Abaixo	2
+1186348754	way	0	mound	Mámoa de Porta Carballeira 2	high	archaeological_site=tumulus	tumulus				-7.81490795	43.06154389	275.3	59.1	9.4	0.9918	21	wl-neg-neg-es-pba-30321	Mámoa de Porta Carballeira 2	2
+1186348755	way	0	mound	Mámoa de Porta Carballeira 1	high	archaeological_site=tumulus	tumulus				-7.81438445	43.06116194	232.4	54.3	8.6	0.9898	19	wl-neg-neg-es-pba-30293	Mámoa de Porta Carballeira 1	1
+1187940266	way	0	mound	Medorra de Acebedo 1	high	archaeological_site=tumulus	tumulus	prehistoric			-7.64859446	43.07774381	235.8	54.7	8.7	0.9898	19	wl-neg-neg-es-pba-35743	Medorra de Acebedo 2	103
+1187940276	way	0	mound	Medorra de Acebedo 2	high	archaeological_site=tumulus	tumulus	prehistoric			-7.64957628	43.07714717	161.0	45.2	7.2	0.9898	19	wl-neg-neg-es-pba-35743	Medorra de Acebedo 2	3
+1191378909	way	0	mound	O Castrillón	high	archaeological_site=megalith	megalith				-7.50338643	42.88359288	1966.6	157.5	25.0	0.9968	33			
+1192341457	way	1	castro	Castelo do Portelo	high	fortification_type=hill_fort	fortification		hill_fort		-7.76493869	41.89701453	4551.0	281.3	38.1	0.7225	44			
+1204891150	way	1	castro	O Castro Pequeno	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.90058766	42.73153717	5677.7	289.6	42.5	0.8506	12	wl-pos-pos-es-pba-70492	Castro Pequeno	9
+1204891151	way	1	castro	Castro de Casares	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.90201748	42.73331445	7305.8	312.3	48.2	0.9416	12	wl-pos-pos-es-pba-26988	Castro da Pena Grande	12
+1217583447	way	1	castro	O Castrelo	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.59940395	42.99742831	4289.4	239.3	37.0	0.9416	11			
+1218122984	way	1	castro	Castro de Albazoi	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.66193984	42.99291196	10902.9	383.2	58.9	0.9328	10	wl-pos-pos-es-pba-31436	Castro de Albazoi/A Castronela	16
+1218125403	way	1	castro	A Castronela	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.68569577	42.96478391	5453.0	267.7	41.7	0.9563	16	wl-pos-pos-es-pba-31641	As Castronelas/O Castro	4
+1218340738	way	1	castro	O Castro de Betote	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.41037036	42.79921053	12122.8	412.0	62.1	0.8975	16	wl-pos-pos-es-pba-41952	Castro de Betote	42
+1218906858	way	1	castro	Castro de Marrondo	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.31086137	43.00352342	7317.4	321.8	48.3	0.8881	9	wl-pos-pos-es-pba-29782	O Castro Marrondo	9
+1218908168	way	1	castro	Castro de Perrelos	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.25461521	43.02148239	9601.7	373.2	55.3	0.8665	11	wl-pos-pos-es-pba-28379	Os Castros de Perrelos	27
+1219327633	way	1	castro	O Castro Redondo	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.64784945	43.73773380	32442.1	667.1	101.6	0.9161	15	wl-pos-pos-es-pba-42989	Castro da Tarroeira/Castro de Abeladal	8
+1221436051	way	1	castro	O Alto do Castro	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.52667762	43.20046546	7872.3	332.6	50.1	0.8943	10	wl-pos-pos-es-pba-29157	O Alto do Castro	10
+1222741226	way	1	castro	Castro	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.82174136	43.21321406	2859.0	198.3	30.2	0.9137	14			
+1222807243	way	1	castro	Castro de Recimil	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.49086677	42.98004677	21237.6	525.1	82.2	0.9679	14	wl-pos-pos-es-pba-31647	Castro de Recimil/O Castro	5
+1223883313	way	1	castro	Castro de Coroto	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.23498446	43.13406554	4710.5	254.1	38.7	0.9169	11	wl-pos-pos-es-pba-28723	Castro do Coroto	22
+1223958384	way	1	castro	Cotorro do Castro	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.15719724	42.66126225	12380.1	418.6	62.8	0.8880	13	wl-pos-pos-es-pba-29072	Cotorro do Castro ou Cerca de Sucastro	67
+1223965674	way	1	castro	Castro da Madorra	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.22910120	42.67790257	21257.4	609.4	82.3	0.7193	13	wl-pos-pos-es-pba-40223	Castro da Modorra	13
+1223969641	way	1	castro	Castro de Romelle	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.33680403	42.75240522	5602.9	297.4	42.2	0.7959	12	wl-pos-pos-es-pba-40044	Castro de Romelle	10
+1223969960	way	1	castro	Castro de Ribas	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.31419195	42.75190585	20366.6	526.4	80.5	0.9237	11	wl-pos-pos-es-pba-40222	Castro da Debesa de Ribas	18
+1223971656	way	1	castro	Castro de Viládiga	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.32233610	42.79592953	10093.0	368.6	56.7	0.9333	13	wl-pos-pos-es-pba-31656	Castro de Viládiga	18
+1223973174	way	1	castro	Castro de Pontón	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.26750048	42.86463227	13482.6	433.8	65.5	0.9002	8	wl-pos-pos-es-pba-44437	Castro de Pontón/Castro de Méndez	7
+1223973242	way	1	castro	Castro de Pol	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.25585219	42.86683338	17571.7	486.8	74.8	0.9318	9	wl-pos-pos-es-pba-44436	Castro de Pol	9
+1223974234	way	1	castro	O Castro	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.26993734	42.87887974	5345.2	278.5	41.2	0.8661	7	wl-pos-pos-es-pba-44639	O Castro/Os Castros	41
+1225043803	way	1	castro	Castelo de Xan da Mariña	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.31981136	43.39690336	3837.6	227.0	35.0	0.9360	11	wl-neg-neg-es-pba-33728	O Castelo de Xan da Mariña	9
+1225777335	way	1	castro	Castro da Devesa do Rei	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.13485916	42.64291514	12026.0	404.1	61.9	0.9253	14	wl-pos-pos-es-pba-28882	Castro da Devesa do Rei	6
+1227024793	way	1	castro	Castro de San Martín de Robledo	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.08988941	43.23241697	8808.4	391.6	53.0	0.7219	11	wl-pos-pos-es-pba-30757	Castro de San Martiño de Robledo/Cerro do Castro	5
+1228537266	way	0	mound	Medorra do Cotón	high	archaeological_site=tumulus	tumulus				-7.81049530	43.13514037	443.5	75.9	11.9	0.9669	11	wl-neg-neg-es-pba-32052	Medorra do Cotón	1
+1228537487	way	0	mound	Medorra da Reguiña 2	high	archaeological_site=tumulus	tumulus				-7.77661998	43.14541899	260.9	58.8	9.1	0.9481	9	wl-neg-neg-es-pba-32321	Medoña da Regina 2	2
+1228537504	way	0	mound	Medorra da Reguiña 3	high	archaeological_site=tumulus	tumulus				-7.77666177	43.14642814	306.9	63.2	9.9	0.9669	11	wl-neg-neg-es-pba-32322	Medoña da Regina 3	2
+1228537517	way	0	mound	Medoña do Cabaliño 1	high	archaeological_site=tumulus	tumulus				-7.76976250	43.14831110	366.7	69.0	10.8	0.9669	11	wl-neg-neg-es-pba-32361	Medoña de Cabaliño 1	1
+1228537522	way	0	mound	Medoña do Cabaliño 3	high	archaeological_site=tumulus	tumulus				-7.77287764	43.14814219	176.5	48.1	7.5	0.9591	10	wl-neg-neg-es-pba-32390	Medoña de Cabaliño 3	111
+1228537565	way	0	mound	Medoña do Monte do Fro 2	high	archaeological_site=tumulus	tumulus				-7.78564614	43.15417892	240.4	56.9	8.7	0.9319	8	wl-neg-neg-es-pba-31892	Medoña do Monte de Fro 2	1
+1228537566	way	0	mound	Medoña do Monte do Fro 1	high	archaeological_site=tumulus	tumulus				-7.78529513	43.15413188	244.1	56.3	8.8	0.9669	11	wl-neg-neg-es-pba-31893	Medoña do Monte do Fro 1	0
+1228537567	way	0	mound	Medoña do Monte do Fro 3	high	archaeological_site=tumulus	tumulus				-7.78424197	43.15441554	334.2	66.6	10.3	0.9481	9	wl-neg-neg-es-pba-31894	Medoña do Monte do Fro 3	0
+1228537588	way	0	mound	Medorra do Semillero 1	high	archaeological_site=tumulus	tumulus				-7.78261379	43.16041391	199.2	50.3	8.0	0.9898	19	wl-neg-neg-es-pba-32087	Medorra do Semillero 1	2
+1228537589	way	0	mound	Medorra do Semillero 2	high	archaeological_site=tumulus	tumulus				-7.78218087	43.16055488	186.4	48.6	7.7	0.9898	19	wl-neg-neg-es-pba-31934	Medoña do Semillero 2	2
+1228537637	way	0	mound	Medoña de Por riba do Aro	high	archaeological_site=tumulus	tumulus				-7.76985540	43.12295126	378.4	69.2	11.0	0.9925	22	wl-neg-neg-es-pba-32438	Medoña de Por Riba do Aro	1
+1228538122	way	0	mound	Medorra do Alto da Cintinela 2	high	archaeological_site=tumulus	tumulus				-7.83285753	43.12903980	325.9	64.3	10.2	0.9918	21	wl-neg-neg-es-pba-32013	Medorra do Alto da Cintinela 2	1
+1228538386	way	0	mound	Medorra do Monte da Croa	high	archaeological_site=tumulus	tumulus				-7.88222449	43.13869540	275.0	59.0	9.4	0.9918	21	wl-pos-pos-es-pba-32056	Medorra do Monte da Croa	2
+1228538387	way	0	mound	Mámoa da Rocha 2	high	archaeological_site=tumulus	tumulus	prehistoric			-7.85720738	43.12587550	253.8	56.7	9.0	0.9918	21	wl-neg-neg-es-pba-30705	Mámoa da Rocha 2	1
+1228538397	way	0	mound	Medorra do Monte de Vilar 2	high	archaeological_site=tumulus	tumulus				-7.89838323	43.13088233	240.9	55.3	8.8	0.9898	19	wl-neg-neg-es-pba-32058	Medorra do Monte de Vilar 2	2
+1229125254	way	0	mound	Túmulo do Colmeiro	high	archaeological_site=tumulus	tumulus				-7.76499214	43.12335893	206.2	51.2	8.1	0.9898	19	wl-neg-neg-es-pba-30161	Mámoa do Colmeiro	1
+1229125255	way	0	mound	Medorra da Gándara 2	high	archaeological_site=tumulus	tumulus				-7.75593224	43.15194169	270.8	58.6	9.3	0.9918	21	wl-neg-neg-es-pba-32312	Medoña da Gándara 2	2
+1229126290	way	0	mound	Medoña da Retorta 2	high	archaeological_site=tumulus	tumulus				-7.81851581	43.16872904	14.3	13.6	2.1	0.9804	14	wl-neg-neg-es-pba-32352	Medoña da Retorta 2	5
+1229658842	way	1	castro	O Castrelao	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.39138386	42.48186120	11763.8	407.1	61.2	0.8922	14	wl-pos-pos-es-pba-38613	O Castrelado	52
+1229677644	way	1	castro	Castro de Xunqueiro	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.55358438	42.53258331	17380.2	549.8	74.4	0.7225	13	wl-pos-pos-es-pba-33666	Castro de Avide	50
+1230100076	way	1	castro	Castro de Abaixo	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.45054189	43.09295264	17939.4	489.5	75.6	0.9409	10	wl-pos-pos-es-pba-27816	Castro de Abaixo	6
+1230337732	way	0	mound	Monte da Curiscada 3	high	archaeological_site=tumulus	tumulus				-7.67308651	43.00810806	217.5	52.6	8.3	0.9898	19			
+1230337733	way	0	mound	Monte da Curiscada 2	high	archaeological_site=tumulus	tumulus				-7.67347430	43.00812757	290.7	60.7	9.6	0.9918	21			
+1230337734	way	0	mound	Monte da Curiscada 1	high	archaeological_site=tumulus	tumulus				-7.67779655	43.00969916	366.9	68.2	10.8	0.9918	21			
+1230354199	way	0	mound	Mámoa de Castrodá	high	archaeological_site=tumulus	tumulus				-7.71643523	43.03029579	436.5	74.3	11.8	0.9932	23	wl-pos-pos-es-pba-30521	Mámoa de Castrodá	1
+1230435753	way	0	mound	Mámoa de Monte Ameneiros 1	high	archaeological_site=tumulus	tumulus				-7.77562935	43.04761850	365.2	68.0	10.8	0.9918	21	wl-neg-neg-es-pba-30045	Mámoa de Monte Ameneiros 1	2
+1230435754	way	0	mound	Medorra de Monteirón	high	archaeological_site=tumulus	tumulus				-7.76248816	43.04972324	2160.7	165.0	26.2	0.9968	33	wl-neg-neg-es-pba-30893	Mámoa da Gándara de Narla 01/Medorra de Monteirón	1
+1230436045	way	0	mound	Medorra de Sucastro	high	archaeological_site=tumulus	tumulus				-7.78774888	43.04717130	1141.7	120.0	19.1	0.9958	29	wl-pos-pos-es-pba-30568	Medorra de Sucastro	3
+1230436046	way	0	mound	Mámoa de Monte de Fofe	high	archaeological_site=tumulus	tumulus				-7.78417500	43.04702982	604.0	87.4	13.9	0.9943	25	wl-neg-neg-es-pba-30139	Mámoa de Monte de Fofe	2
+1230438312	way	0	mound	Mámoa de Pena de Locai 4	high	archaeological_site=tumulus	tumulus				-7.65807529	43.01971979	82.9	32.6	5.1	0.9832	15	wl-neg-neg-es-pba-32567	Mámoa de Pena de Locai 4	1
+1230438325	way	0	mound	Mámoa de Pena de Locai 2	high	archaeological_site=tumulus	tumulus				-7.66004204	43.02062336	191.7	49.3	7.8	0.9898	19	wl-neg-neg-es-pba-32565	Mámoa de Pena de Locai 2	2
+1230438508	way	0	mound	Monte da Grela	high	archaeological_site=tumulus	tumulus				-7.67790066	43.02723094	189.9	49.1	7.8	0.9898	19			
+1230438509	way	0	mound	Riba da Chousa	high	archaeological_site=tumulus	tumulus				-7.67338435	43.02393201	278.0	59.3	9.4	0.9918	21			
+1230438510	way	0	mound	Tras Cima de Campo Vello	high	archaeological_site=tumulus	tumulus				-7.67043784	43.02362464	402.1	71.3	11.3	0.9932	23			
+1230438803	way	0	mound	Medorra de Corra	high	archaeological_site=tumulus	tumulus				-7.68356032	43.03550780	599.5	87.0	13.8	0.9943	25	wl-neg-neg-es-pba-30563	Medorra de Corra	3
+1230444316	way	0	mound	Mámoa de Pena de Fornos 1	high	archaeological_site=tumulus	tumulus				-7.69987491	42.95232723	288.2	60.4	9.6	0.9918	21	wl-neg-neg-es-pba-32535	Mámoa de Pena de Fornos 1	0
+1230444832	way	0	mound	Mámoa de Pena de Fornos 3	high	archaeological_site=tumulus	tumulus				-7.69873915	42.95190160	162.4	45.4	7.2	0.9898	19	wl-neg-neg-es-pba-32563	Mámoa de Pena de Fornos 3	66
+1231363005	way	0	mound	Medorra da Cenlla 1	high	archaeological_site=tumulus	tumulus				-7.29681908	43.18458908	312.3	62.9	10.0	0.9918	21	wl-neg-neg-es-pba-38722	Medorra da Ceña 1	1
+1231375039	way	1	castro	O Castelo de Montedarca	high	fortification_type=hill_fort	fortification	iron-age	hill_fort		-7.34570875	43.41482029	14095.9	465.7	67.0	0.8167	13	wl-neg-neg-es-pba-34396	Castelo do Monte da Arca	16
+1231770407	way	1	castro	Castro de Guitián	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.47185593	42.69349869	8686.8	343.4	52.6	0.9256	10	wl-pos-pos-es-pba-32337	Castro de Guitián	17
+1233444696	way	1	castro	Castro da Torre	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.11668851	42.66556956	12379.9	424.6	62.8	0.8629	9	wl-pos-pos-es-pba-37088	Castro da Torre	16
+1238963161	way	0	mound	Mámoa de Pena María 1	high	archaeological_site=tumulus	tumulus				-7.84644540	43.17341559	64.5	28.7	4.5	0.9832	15	wl-neg-neg-es-pba-30351	Mámoa de Pena María 1	46
+1238963162	way	0	mound	Mámoa de Pena María 4	high	archaeological_site=tumulus	tumulus				-7.84751310	43.17341913	64.6	28.7	4.5	0.9832	15	wl-neg-neg-es-pba-30351	Mámoa de Pena María 1	78
+1238963163	way	0	mound	Medorra do Cordal 1	high	archaeological_site=tumulus	tumulus				-7.74869986	43.10141867	324.0	66.5	10.2	0.9212	9	wl-neg-neg-es-pba-28671	Medorra do Cordal 1	2
+1238963164	way	0	mound	A Medorra de Xoana	high	archaeological_site=tumulus	tumulus				-7.75948750	43.04276555	174.8	48.3	7.5	0.9415	11	wl-neg-neg-es-pba-31044	A Medorra de Xoana	1
+1238963165	way	0	mound	Mámoa da Gándara de Narla 10	high	archaeological_site=tumulus	tumulus				-7.74988516	43.05173828	250.7	56.4	8.9	0.9918	21	wl-neg-neg-es-pba-30902	Mámoa da Gándara de Narla 10	0
+1238963166	way	0	mound	Mámoa da Gándara de Narla 09	high	archaeological_site=tumulus	tumulus				-7.75066741	43.05309301	391.0	70.3	11.2	0.9932	23	wl-neg-neg-es-pba-30901	Mámoa da Gándara de Narla 09	4
+1238963167	way	0	mound	Mámoa da Gándara de Narla 03	high	archaeological_site=tumulus	tumulus				-7.75360956	43.05549151	544.1	83.0	13.2	0.9932	23	wl-neg-neg-es-pba-30895	Mámoa da Gándara de Narla 03	2
+1238963168	way	0	mound	Mámoa da Gándara de Narla 08	high	archaeological_site=tumulus	tumulus				-7.75542833	43.05270476	669.9	92.0	14.6	0.9943	25	wl-neg-neg-es-pba-30900	Mámoa da Gándara de Narla 08	2
+1238963169	way	0	mound	Medorra de Acebedo 5	high	archaeological_site=tumulus	tumulus				-7.64916721	43.08203620	274.6	59.0	9.3	0.9918	21	wl-neg-neg-es-pba-35746	Medorra de Acebedo 5	1
+1239676641	way	1	castro	Castro de Cereixido	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.31281624	42.71556638	16698.9	552.2	72.9	0.6882	12	wl-pos-pos-es-pba-32334	Castro de Cereixedo/Os Castros	15
+1241460119	way	0	mound	Mámoa do alto da Goia 13	high	archaeological_site=tumulus	tumulus				-7.67960265	42.90263704	622.5	89.9	14.1	0.9678	13	wl-neg-neg-es-pba-31982	Mámoa do Alto da Goia 13	2
+1241460120	way	0	mound	Mámoa do alto da Goia 11	high	archaeological_site=tumulus	tumulus				-7.68095048	42.90344690	254.7	58.5	9.0	0.9341	13	wl-neg-neg-es-pba-31980	Mámoa do Alto da Goia 11	0
+1241460121	way	0	mound	Mámoa do alto da Goia 02	high	archaeological_site=tumulus	tumulus				-7.67603854	42.90997341	292.2	64.0	9.6	0.8956	12	wl-neg-neg-es-pba-31941	Mámoa do Alto da Goia 02	2
+1241460122	way	0	mound	Mámoa do alto da Goia 06	high	archaeological_site=tumulus	tumulus				-7.67029932	42.91176152	263.7	57.8	9.2	0.9918	21	wl-neg-neg-es-pba-31945	Mámoa do Alto da Goia 06	2
+1241473182	way	0	mound	Necrópole de Moura	high	archaeological_site=tumulus	tumulus				-7.71779519	42.42209529	7037.7	340.0	47.3	0.7650	10	wl-neg-neg-es-pba-54230	Mámoa das Cabanas 5	18
+1241682245	way	0	mound	A Medorra Pequena	high	archaeological_site=tumulus	tumulus				-7.40931819	42.92684425	286.8	61.3	9.6	0.9590	10	wl-neg-neg-es-pba-28889	Medorra Pequena	2
+1241682246	way	0	mound	A Medorra Grande	high	archaeological_site=tumulus	tumulus				-7.40908313	42.92760233	1017.4	116.1	18.0	0.9481	9	wl-neg-neg-es-pba-28887	Medorra Grande	2
+1245660701	way	1	castro	Os Castros	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.50368593	43.35833978	19324.9	505.3	78.4	0.9510	15	wl-pos-pos-es-pba-26587	Os Castros	6
+1245673373	way	1	castro	Castro de Xunto á Igrexa	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.27371045	43.51203373	14058.9	435.6	66.9	0.9310	13	wl-pos-pos-es-pba-28734	Os Castros	14
+1248319902	way	0	mound	Mámoa de Cornas	high	archaeological_site=tumulus	tumulus				-7.56591002	43.36641501	465.4	76.7	12.2	0.9932	23	wl-neg-neg-es-pba-43380	Mámoa de Cornas	3
+1252098193	way	1	castro	Castro de Eixibrón	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.17759440	42.83454011	12676.8	407.9	63.5	0.9576	14	wl-pos-pos-es-pba-28460	Castros de Eixibrón	30
+1253343337	way	1	castro	Castro de Santalla	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.29754776	42.80753931	18280.5	501.4	76.3	0.9137	18	wl-pos-pos-es-pba-31623	Castro de Santalla	39
+1254638524	way	0	mound	Mámoa do Penido Vello 1	high	archaeological_site=tumulus	tumulus				-7.54121708	43.54169545	114.9	38.2	6.0	0.9871	17	wl-neg-neg-es-pba-35922	Mámoa do Penido Vello 1	2
+1254663709	way	0	mound	Mámoa de Monte das Lamas 7	high	archaeological_site=tumulus	tumulus				-7.77140443	42.99891482	245.0	55.8	8.8	0.9898	19	wl-neg-neg-es-pba-30135	Mámoa de Monte das Lamas 7	2
+1254669443	way	0	mound	Mámoa de Monte de Lamas 6	high	archaeological_site=tumulus	tumulus				-7.75636937	42.99535511	225.1	53.5	8.5	0.9898	19	wl-neg-neg-es-pba-30168	Mámoa de Monte de Lamas 6	2
+1254692869	way	0	mound	Monte das Casiñas 2	high	archaeological_site=tumulus	tumulus				-7.67643840	42.99535301	371.6	68.6	10.9	0.9918	21			
+1254693800	way	0	mound	Monte das Casiñas 1	high	archaeological_site=tumulus	tumulus				-7.67456795	42.99738175	179.3	47.7	7.6	0.9898	19			
+1254699688	way	0	mound	Monte das Abertoinas 2	high	archaeological_site=tumulus	tumulus				-7.68536544	42.98842334	138.9	42.0	6.6	0.9871	17			
+1254704258	way	0	mound	Mámoa da Rexidoira 1	high	archaeological_site=tumulus	tumulus				-7.73658665	43.04583886	230.7	54.1	8.6	0.9898	19	wl-neg-neg-es-pba-30700	Mámoa da Rexidoira 1	2
+1254708277	way	0	mound	Mámoa do Alto da Mámoa 2	high	archaeological_site=tumulus	tumulus				-7.87962514	43.08071170	642.4	92.6	14.3	0.9424	16	wl-neg-neg-es-pba-30372	Mámoa do Alto da Mámoa 2	1
+1254708278	way	0	mound	Mámoa de Monte do Espiño 2	high	archaeological_site=tumulus	tumulus				-7.86872469	43.08249171	87.7	33.5	5.3	0.9832	15	wl-neg-neg-es-pba-30174	Mámoa de Monte do Espiño 2	3
+1254708279	way	0	mound	Mámoa de Monte do Espiño 1	high	archaeological_site=tumulus	tumulus				-7.86964578	43.08251357	236.8	54.8	8.7	0.9898	19	wl-neg-neg-es-pba-30173	Mámoa de Monte do Espiño 1	2
+1254709192	way	0	mound	Mámoa de Monte Vilaldar 5	high	archaeological_site=tumulus	tumulus				-7.85797751	43.10418000	522.6	81.3	12.9	0.9932	23	wl-neg-neg-es-pba-30248	Mámoa de Monte Vilaldar 5	2
+1254709193	way	0	mound	Mámoa de Monte Vilaldar 4	high	archaeological_site=tumulus	tumulus				-7.85635226	43.10427629	378.2	69.2	11.0	0.9918	21	wl-neg-neg-es-pba-30247	Mámoa de Monte Vilaldar 4	3
+1254724525	way	0	mound	Medorra da Lente	high	archaeological_site=tumulus	tumulus				-7.79176426	43.07407290	1305.0	131.2	20.4	0.9526	11	wl-neg-neg-es-pba-30530	Medorra da Lente	3
+1254724785	way	0	mound	Mámoa de Pedra do Couto 4	high	archaeological_site=tumulus	tumulus				-7.76673537	43.10068415	309.6	62.6	9.9	0.9918	21	wl-neg-neg-es-pba-30971	Mámoa da Pedra do Couto 4	2
+1254724817	way	0	mound	Mámoa de Pedra do Couto 1	high	archaeological_site=tumulus	tumulus				-7.76566926	43.09751868	348.3	66.4	10.5	0.9918	21	wl-neg-neg-es-pba-30941	Mámoa da Pedra do Couto 1	1
+1254725787	way	0	mound	Mámoa do Cordal de Ousá 2	high	archaeological_site=tumulus	tumulus				-7.74264866	43.09538969	242.1	55.4	8.8	0.9898	19	wl-neg-neg-es-pba-30414	Mámoa do Cordal de Ousá 2	2
+1254725788	way	0	mound	Mámoa do Cordal de Ousá	high	archaeological_site=tumulus	tumulus				-7.74235113	43.09581158	423.9	73.2	11.6	0.9932	23	wl-neg-neg-es-pba-28638	Mámoa do Cordal de Ousá	1
+1254726400	way	0	mound	Mámoa da Pena da Cabra	high	archaeological_site=tumulus	tumulus				-7.71570418	43.08633025	382.5	70.5	11.0	0.9666	14	wl-neg-neg-es-pba-30972	Mámoa da Pena da Cabra	1
+1259762877	way	0	mound	Mámoa do Chao de Mazós 3	high	archaeological_site=tumulus	tumulus				-7.73951015	43.10704188	430.6	74.6	11.7	0.9727	12	wl-neg-neg-es-pba-28564	Mámoa de Chao de Mazós 3	4
+1259762878	way	0	mound	Mámoa do Chao de Mazós 1	high	archaeological_site=tumulus	tumulus				-7.73889482	43.10868354	275.9	59.9	9.4	0.9669	11	wl-neg-neg-es-pba-28538	Mámoa de Chao de Mazós 1	2
+1259763577	way	0	mound	Mámoa do Castelo 3	high	archaeological_site=tumulus	tumulus				-7.75563376	43.09012236	328.9	65.4	10.2	0.9669	11	wl-neg-neg-es-pba-30412	Mámoa do Castelo 3	2
+1260679995	way	0	mound	Mámoa da Monte da Gándara	high	archaeological_site=tumulus	tumulus				-7.63660222	43.12749807	151.2	44.3	6.9	0.9669	11	wl-neg-neg-es-pba-28639	Mámoa do Monte da Gándara	1
+1262634674	way	0	mound	Medorra de Agra Branca	high	archaeological_site=tumulus	tumulus				-7.80295778	43.14551621	336.4	65.7	10.3	0.9805	14	wl-neg-neg-es-pba-31975	Medorra de Agra Branca	1
+1262634787	way	0	mound	Mámoa de San Cibrao 1	high	archaeological_site=tumulus	tumulus				-7.52801911	43.02204429	131.3	40.9	6.5	0.9871	17			
+1262634788	way	0	mound	Mámoa de San Cibrao 3	high	archaeological_site=tumulus	tumulus				-7.52756628	43.02094223	116.8	38.6	6.1	0.9871	17			
+1265313799	way	1	castro	Pena do Castro	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.23590829	42.57528436	11231.4	438.1	59.8	0.7355	19	wl-pos-pos-es-pba-29031	Pena do Castro	19
+1265637265	way	0	mound		high	archaeological_site=tumulus	tumulus				-7.59298541	43.16935241	118.1	40.8	6.1	0.8899	11	wl-neg-neg-es-pba-28982	Mámoas. San Roque	3
+1265638188	way	0	mound	Madorro de Pumares 3	high	archaeological_site=tumulus	tumulus				-7.59077960	43.19328629	157.2	44.7	7.1	0.9898	19	wl-neg-neg-es-pba-28815	Madorro de Pumares 3	1
+1265638189	way	0	mound	Madorro de Pumares 5	high	archaeological_site=tumulus	tumulus				-7.58727316	43.18931157	254.7	56.8	9.0	0.9918	21	wl-neg-neg-es-pba-28817	Madorro de Pumares 5	1
+1265639398	way	0	mound	Medorra da Millarada 21	high	archaeological_site=tumulus	tumulus				-7.58169783	43.20323204	900.8	114.7	16.9	0.8605	10	wl-neg-neg-es-pba-29085	Medorra da Millarada 21	3
+1265639399	way	0	mound	Medorra da Millarada 15	high	archaeological_site=tumulus	tumulus				-7.58792341	43.20572154	120.6	39.2	6.2	0.9871	17	wl-neg-neg-es-pba-29052	Medorra da Millarada 15	2
+1265639400	way	0	mound	Medorra da Millarada 08	high	archaeological_site=tumulus	tumulus				-7.58387233	43.20943628	287.9	62.3	9.6	0.9333	13	wl-neg-neg-es-pba-29016	Medorra da Millarada 08	1
+1267800892	way	0	mound	Mámoa de Pena de Rei 1	high	archaeological_site=tumulus	tumulus				-7.64432531	43.01937190	595.5	88.0	13.8	0.9660	14	wl-neg-neg-es-pba-32570	Mámoa de Pena do Rei 1	1
+1268782259	way	0	mound	Medoña do Cordal do Bernaldo 3	high	archaeological_site=tumulus	tumulus				-7.89771777	43.30145118	215.5	53.6	8.3	0.9428	10	wl-neg-neg-es-pba-31856	Medoña do Cordal de Bernaldo	1
+1268782293	way	0	mound	Medorra de Pegureiros 2	high	archaeological_site=tumulus	tumulus				-7.89820890	43.11717404	564.7	85.7	13.4	0.9669	11	wl-neg-neg-es-pba-32010	Medorra de Pegureiros 2	1
+1268782294	way	0	mound	Medorra do Cotarro 12	high	archaeological_site=tumulus	tumulus				-7.89760825	43.12155881	207.4	51.9	8.1	0.9669	11	wl-neg-neg-es-pba-32051	Medorra do Cotarro 12	1
+1268782295	way	0	mound	Medorra do Cotarro 09	high	archaeological_site=tumulus	tumulus				-7.89964560	43.12045035	264.5	58.6	9.2	0.9669	11	wl-neg-neg-es-pba-32050	Medorra do Cotarro 09	5
+1268782296	way	0	mound	Medorra do Cotarro 08	high	archaeological_site=tumulus	tumulus				-7.89839995	43.12074636	155.2	44.9	7.0	0.9669	11	wl-neg-neg-es-pba-32049	Medorra do Cotarro 08	0
+1268782297	way	0	mound	Medorra do Cotarro 07	high	archaeological_site=tumulus	tumulus				-7.90087489	43.11977663	399.6	71.6	11.3	0.9805	14	wl-neg-neg-es-pba-32048	Medorra do Cotarro 07	5
+1268782298	way	0	mound	Medorra do Cotarro 06	high	archaeological_site=tumulus	tumulus				-7.90175110	43.11998236	332.1	65.5	10.3	0.9727	12	wl-neg-neg-es-pba-32018	Medorra do Cotarro 06	1
+1268782299	way	0	mound	Medorra do Cotarro 05	high	archaeological_site=tumulus	tumulus				-7.90122782	43.12002551	448.9	76.4	12.0	0.9669	11	wl-neg-neg-es-pba-32017	Medorra do Cotarro 05	3
+1268782300	way	0	mound	Medorra do Cotarro 04	high	archaeological_site=tumulus	tumulus				-7.90139184	43.11965369	178.1	48.3	7.5	0.9590	10	wl-neg-neg-es-pba-32016	Medorra do Cotarro 04	1
+1268782301	way	0	mound	Medorra do Cotarro 03	high	archaeological_site=tumulus	tumulus				-7.90007643	43.11979362	262.7	58.3	9.1	0.9727	12	wl-neg-neg-es-pba-32015	Medorra do Cotarro 03	2
+1268782302	way	0	mound	Medorra do Cotarro 02	high	archaeological_site=tumulus	tumulus				-7.90040589	43.11994085	161.2	46.0	7.2	0.9590	10	wl-neg-neg-es-pba-32014	Medorra do Cotarro 02	2
+1268782303	way	0	mound	Medorra de Pegureiros 1	high	archaeological_site=tumulus	tumulus				-7.89919659	43.11817087	148.4	43.5	6.9	0.9871	17	wl-neg-neg-es-pba-32009	Medorra de Pegureiros 1	1
+1268790730	way	0	mound	Medoña do Outeiro 1	high	archaeological_site=tumulus	tumulus				-7.87684675	43.26941650	159.8	45.6	7.1	0.9669	11	wl-neg-neg-es-pba-31895	Medoña do Outeiro 1	1
+1268790731	way	0	mound	Medoña do Outeiro 3	high	archaeological_site=tumulus	tumulus				-7.87647220	43.27008110	352.9	67.7	10.6	0.9669	11	wl-neg-neg-es-pba-31929	Medoña do Pilreo 3	0
+1268790732	way	0	mound	Medoña da Roza da Modia Grande I - 1	high	archaeological_site=tumulus	tumulus				-7.87045079	43.27156993	233.7	55.0	8.6	0.9727	12	wl-neg-neg-es-pba-32353	Medoña da Roza da Modia Grande I-1	1
+1268790733	way	0	mound	Medoña da Roza da Modia Grande II - 2	high	archaeological_site=tumulus	tumulus				-7.86745952	43.27277948	503.1	80.6	12.7	0.9727	12	wl-neg-neg-es-pba-32355	Medoña da Roza da Modia Grande II-2	2
+1268790734	way	0	mound	Medoña do Cruceiro de Riotorto	high	archaeological_site=tumulus	tumulus				-7.86942080	43.27466099	399.5	72.1	11.3	0.9669	11	wl-neg-neg-es-pba-31886	Medoña do Cruceiro de Riotorto	3
+1268813976	way	0	mound	Mámoa de Vilasilvestre 2	high	archaeological_site=tumulus	tumulus				-7.79966287	43.26214921	521.1	81.2	12.9	0.9932	23	wl-neg-neg-es-pba-43100	Mámoa de Villasilvestre 2	1
+1268813977	way	0	mound	Mámoa de Vilasilvestre 1	high	archaeological_site=tumulus	tumulus				-7.79900120	43.25700913	440.0	74.6	11.8	0.9932	23	wl-neg-neg-es-pba-43095	Mámoa de Vilasilvestre 1	2
+1268814641	way	0	mound	Mámoa do Tarambolo	high	archaeological_site=tumulus	tumulus				-7.81038005	43.26971977	479.3	78.7	12.4	0.9712	15	wl-neg-neg-es-pba-32274	Mámoa do Tarambolo	0
+1268815930	way	0	mound	Medorra de Tras os Curros 2	high	archaeological_site=tumulus	tumulus				-7.81367905	43.21676248	519.4	81.7	12.9	0.9770	13	wl-neg-neg-es-pba-31847	Medoña de Tras os Curros 2	1
+1268816796	way	0	mound	A Modorra	high	archaeological_site=tumulus	tumulus				-7.82286491	43.22079772	318.7	63.5	10.1	0.9918	21			
+1268823319	way	0	mound	Medoña do Vieiro 2	high	archaeological_site=tumulus	tumulus				-7.80458323	43.22005460	261.8	57.6	9.1	0.9918	21	wl-neg-neg-es-pba-31936	Medoña do Vieiro 2	4
+1268823320	way	0	mound	Medoña do Vieiro 1	high	archaeological_site=tumulus	tumulus				-7.80499582	43.22034479	125.2	39.9	6.3	0.9871	17	wl-neg-neg-es-pba-31935	Medoña do Vieiro 1	2
+1268825371	way	0	mound	Mámoa das Modias 4	high	archaeological_site=tumulus	tumulus				-7.78486695	43.22108214	274.2	58.9	9.3	0.9918	21	wl-neg-neg-es-pba-30239	Mámoa das Modias 4	2
+1268825372	way	0	mound	Mámoa das Modias 3	high	archaeological_site=tumulus	tumulus				-7.78473453	43.22149499	459.6	76.3	12.1	0.9932	23	wl-neg-neg-es-pba-30238	Mámoa das Modias 3	1
+1268825373	way	0	mound	Mámoa das Modias 2	high	archaeological_site=tumulus	tumulus				-7.78384362	43.22196580	283.4	59.9	9.5	0.9918	21	wl-neg-neg-es-pba-30237	Mámoa das Modias 2	2
+1268825374	way	0	mound	Mámoa das Modias 1	high	archaeological_site=tumulus	tumulus				-7.78366188	43.22146626	514.8	80.7	12.8	0.9932	23	wl-neg-neg-es-pba-30236	Mámoa das Modias 1	0
+1268826995	way	0	mound	Medoña de Carabuxa 1 do Bico da Croa	high	archaeological_site=tumulus	tumulus				-7.86707920	43.20651885	377.3	69.1	11.0	0.9918	21	wl-pos-pos-es-pba-31851	Medoña do Bico da Croa	2
+1268827473	way	0	mound	Medoña do Pastizal da Croa	high	archaeological_site=tumulus	tumulus				-7.86591782	43.20234350	342.9	65.9	10.4	0.9918	21	wl-pos-pos-es-pba-31926	Medoña do Pastizal da Croa	5
+1268827803	way	0	mound	Medoña de Avieira	high	archaeological_site=tumulus	tumulus				-7.87068002	43.19854401	344.9	66.1	10.5	0.9918	21	wl-neg-neg-es-pba-32277	Medoña da Avieira	1
+1268829986	way	0	mound	Medoña de Lavamás 2	high	archaeological_site=tumulus	tumulus				-7.87847913	43.20376950	504.0	79.9	12.7	0.9932	23	wl-neg-neg-es-pba-32397	Medoña de Lavamás 2	2
+1268829987	way	0	mound	Medoña de Lavamás 1	high	archaeological_site=tumulus	tumulus				-7.87681732	43.20423075	477.1	77.7	12.3	0.9932	23	wl-neg-neg-es-pba-32396	Medoña de Lavamás 1	2
+1268832393	way	0	mound	Medoña da Picota 1	high	archaeological_site=tumulus	tumulus				-7.92655470	43.17296200	166.8	46.0	7.3	0.9898	19	wl-neg-neg-es-pba-32317	Medoña da Picota 1	2
+1268835932	way	0	mound	Mámoa Xur da Medoña 2	high	archaeological_site=tumulus	tumulus				-7.93736082	43.17453555	354.2	69.2	10.6	0.9284	10	wl-neg-neg-es-pba-30159	Mámoa de Xur da Medoña 2	2
+1268835933	way	0	mound	Mámoa de Xur da Medoña 1	high	archaeological_site=tumulus	tumulus				-7.93633038	43.17238217	239.7	55.2	8.7	0.9898	19	wl-neg-neg-es-pba-30158	Mámoa de Xur da Medoña 1	1
+1268837023	way	0	mound	Medoñado Rego da Loba 1	high	archaeological_site=tumulus	tumulus				-7.95210857	43.18274710	305.2	62.2	9.9	0.9918	21	wl-neg-neg-es-pba-31932	Medoña do Rego da Loba 1	1
+1268837024	way	0	mound	Medoña do Rego da Loba 2	high	archaeological_site=tumulus	tumulus				-7.95250483	43.18180644	403.8	71.5	11.3	0.9932	23	wl-neg-neg-es-pba-31933	Medoña do Rego da Loba 2	2
+1268837025	way	0	mound	Mámoa Xur da Medoña 2da Revolta Grande 2	high	archaeological_site=tumulus	tumulus				-7.95072785	43.17341668	352.4	66.8	10.6	0.9918	21	wl-neg-neg-es-pba-9564	Mámoa da Revolta Grande 2	1
+1268837026	way	0	mound	Mámoa da Revolta Grande 1	high	archaeological_site=tumulus	tumulus				-7.94995869	43.17041670	371.2	68.6	10.9	0.9918	21	wl-neg-neg-es-pba-9563	Mámoa da Revolta Grande 1/Medoña da Cabana	1
+1269142778	way	0	mound	Mámoa de Purreira 2	high	archaeological_site=tumulus	tumulus				-7.76596851	43.08896082	351.7	68.3	10.6	0.9480	11	wl-neg-neg-es-pba-30976	Mámoa da Purreira 2/Medorra das Pallotas	5
+1269142779	way	0	mound	Mámoa de Xea	high	archaeological_site=tumulus	tumulus				-7.91441826	43.17499718	684.3	97.2	14.8	0.9106	10	wl-neg-neg-es-pba-30157	Mámoa de Xea	3
+1270467677	way	0	mound	Mámoa de Pena de Rei 4	high	archaeological_site=tumulus	tumulus				-7.64216225	43.02275174	603.7	88.6	13.9	0.9669	11	wl-neg-neg-es-pba-32569	Mámoa de Pena de Rei 4	3
+1270467713	way	0	mound	Mámoa de Pena de Rei 3	high	archaeological_site=tumulus	tumulus				-7.64606683	43.02183704	176.6	47.3	7.5	0.9898	19	wl-neg-neg-es-pba-32568	Mámoa de Pena de Rei 3	1
+1270467867	way	0	mound	Mámoa do Cordal de Ombreiro	high	archaeological_site=tumulus	tumulus				-7.63256169	43.02939898	216.9	54.5	8.3	0.9187	12			
+1270963998	way	1	castro	Castro de Montellos	medium	site=fortification,civ=celtic	fortification	celtic			-8.90539679	42.93073312	9183.6	344.1	54.1	0.9746	15	wl-pos-pos-es-pba-12377	Castro de Montellos	38
+1273943726	way	0	mound	As Medorras 3	high	archaeological_site=tumulus	tumulus				-7.60507437	43.05316079	486.4	80.1	12.4	0.9522	13	wl-neg-neg-es-pba-31643	As Modorras 3	2
+1273943727	way	0	mound	As Medorras 2	high	archaeological_site=tumulus	tumulus				-7.60551924	43.05350669	459.7	76.3	12.1	0.9932	23	wl-neg-neg-es-pba-31642	As Modorras 2	1
+1273943728	way	0	mound	As Medorras 1	high	archaeological_site=tumulus	tumulus				-7.60662956	43.05388259	248.0	56.1	8.9	0.9898	19	wl-neg-neg-es-pba-36006	As Medorras 1	1
+1277897038	way	0	mound	Medorra do Monte e Santa Mariña 9	high	archaeological_site=tumulus	tumulus				-7.59913367	43.10934820	365.4	68.0	10.8	0.9918	21	wl-neg-neg-es-pba-35937	Medorra do Monte de Santa Mariña 9	1
+1283757155	way	1	castro	Castro de Raxal	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.66967080	43.13429706	2377.0	198.1	27.5	0.7615	9	wl-pos-pos-es-pba-28319	Castro de Raxal	17
+1290647616	way	0	mound	Medorra de Francos 3	high	archaeological_site=tumulus	tumulus				-7.68602377	43.10510573	126.6	40.1	6.3	0.9871	17	wl-neg-neg-es-pba-36012	Medorra do Cotón de Francos 1	1
+1292485691	way	0	mound	Mámoada Pena Ventosa	high	archaeological_site=tumulus	tumulus				-7.89760818	43.10199331	226.2	53.6	8.5	0.9898	19	wl-neg-neg-es-pba-30283	Mámoa de Pena Ventosa/Mámoa do Colado	1
+1293400337	way	0	mound	Mámoa da Eirexe 2	high	archaeological_site=tumulus	tumulus				-7.77631889	43.05997933	376.6	69.1	10.9	0.9918	21	wl-neg-neg-es-pba-30560	Mámoa de Eirexe 2	2
+1293400338	way	0	mound	Mámoa da Eirexe 1	high	archaeological_site=tumulus	tumulus				-7.77902093	43.06151974	160.5	45.1	7.1	0.9898	19	wl-neg-neg-es-pba-30559	Mámoa de Eirexe 1	1
+1293408481	way	1	castro		high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.82089795	43.00706233	6638.3	319.5	46.0	0.8172	15			
+1293670335	way	1	castro	O Castro	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-8.46627155	43.05207747	9711.7	373.9	55.6	0.8730	21	wl-pos-pos-es-pba-25251	O Castro/Casas do Castro	33
+1293850763	way	0	mound	Medorra do Monte da Pena de Cotá 3	high	archaeological_site=tumulus	tumulus				-7.70515917	43.06024430	229.9	55.2	8.6	0.9481	9	wl-neg-neg-es-pba-30605	Medorra do Monte da Pena de Cotá 3	3
+1294717669	way	0	mound	Medorra Rozas de Tumbo 1	high	archaeological_site=tumulus	tumulus				-7.50888050	43.13195457	174.6	49.0	7.5	0.9137	9	wl-neg-neg-es-pba-35898	Medorra de Rozas/Rozas de Tumbo 1	2
+1295495123	way	0	mound	Medorra do Alto da Devesa	high	archaeological_site=tumulus	tumulus				-7.78567592	42.87041157	302.7	63.8	9.8	0.9336	11	wl-neg-neg-es-pba-34833	Medorra do Alto da Devesa	7
+1297487889	way	0	mound	Mámoa do alto da Goia 07	high	archaeological_site=tumulus	tumulus				-7.66769328	42.91385363	340.9	67.4	10.4	0.9432	12	wl-neg-neg-es-pba-31946	Mámoa do Alto da Goia 07	1
+1297778754	way	1	castro	Castro do Pacio	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.44642768	43.19445904	16076.8	463.4	71.5	0.9408	14	wl-pos-pos-es-pba-29231	Castro do Pacio/O Castro	9
+1299113275	way	0	mound	Medoña de Pena do Toxo 3	high	archaeological_site=tumulus	tumulus				-7.91937291	43.27218305	111.2	37.6	5.9	0.9871	17	wl-neg-neg-es-pba-32434	Medoña de Pena do Toxo 3	1
+1299113427	way	0	mound	Medoña de Pena do Toxo 1	high	archaeological_site=tumulus	tumulus				-7.91245727	43.27206612	133.8	41.3	6.5	0.9871	17	wl-neg-neg-es-pba-32432	Medoña de Pena do Toxo 1	1
+1299114230	way	0	mound	Mámoa da Serra do Galiñeiro III-4	high	archaeological_site=tumulus	tumulus				-7.93540945	43.27447905	140.4	43.0	6.7	0.9564	13	wl-neg-neg-es-pba-1913	Mámoa da Serra do Galiñeiro III-2	1
+1299114231	way	0	mound	Mámoa da Serra do Galiñeiro III-3	high	archaeological_site=tumulus	tumulus				-7.93501039	43.27459727	198.3	51.0	7.9	0.9570	14	wl-neg-neg-es-pba-1914	Mámoa da Serra do Galiñeiro III-3	1
+1299114232	way	0	mound	Mámoa da Serra do Galiñeiro III-1	high	archaeological_site=tumulus	tumulus				-7.93490025	43.27429314	189.2	49.9	7.8	0.9564	13	wl-neg-neg-es-pba-1915	Mámoa da Serra do Galiñeiro III-4	1
+1299115077	way	0	mound	Mámoa da Serra do Galiñeiro I-5	high	archaeological_site=tumulus	tumulus				-7.94469004	43.28213002	241.9	56.7	8.8	0.9458	11	wl-neg-neg-es-pba-983	Mámoa da Serra do Galiñeiro I-05	3
+1299116298	way	0	mound	Medoña do Galiñeiro	high	archaeological_site=tumulus	tumulus				-7.94949108	43.28553543	545.1	84.9	13.2	0.9506	12	wl-neg-neg-es-pba-980	Mámoa da Serra do Galiñeiro I-02	178
+1299116299	way	0	mound	Medoña do Galiñeiro 2	high	archaeological_site=tumulus	tumulus				-7.94594344	43.28422051	129.4	41.4	6.4	0.9481	9	wl-neg-neg-es-pba-31888	Medoña do Galiñeiro 2	2
+1299117398	way	0	mound	Mámoa da Pena dentre as Irmáns	high	archaeological_site=tumulus	tumulus				-7.92757608	43.24561185	120.5	40.3	6.2	0.9329	10	wl-neg-neg-es-pba-30434	Mámoa da Pena dentre as Irmás	1
+1299130898	way	1	castro	Castro de Bexo	medium	site=settlement,civ=celtic	settlement	celtic			-8.75062220	42.70020947	46289.6	828.7	121.4	0.8471	6	wl-pos-pos-es-pba-9492	Castro de Bexo	23
+1299386185	way	0	mound	Mámoa da Louzaneta 3	high	archaeological_site=tumulus	tumulus				-7.58000015	42.99042672	140.4	42.3	6.7	0.9871	17	wl-neg-neg-es-pba-32499	Mámoa de Louzaneta 2	35
+1299386186	way	0	mound	Mámoa da Louzaneta 2	high	archaeological_site=tumulus	tumulus				-7.57984284	42.99013855	98.6	35.4	5.6	0.9871	17	wl-neg-neg-es-pba-32499	Mámoa de Louzaneta 2	1
+1299386187	way	0	mound	Mámoa da Louzaneta 1	high	archaeological_site=tumulus	tumulus				-7.57890060	42.99005672	146.0	43.1	6.8	0.9871	17	wl-neg-neg-es-pba-32498	Mámoa de Louzaneta 1	1
+1299615009	way	0	mound	Mámoa de San Cibrao 2	high	archaeological_site=tumulus	tumulus				-7.52777217	43.02127428	163.6	46.3	7.2	0.9591	10			
+1300317899	way	0	mound	A Modorra do Alto dos Coios	high	archaeological_site=tumulus	tumulus				-7.63328217	42.80425615	299.5	61.6	9.8	0.9918	21	wl-neg-neg-es-pba-38582	Mámoa do Alto dos Coios	0
+1300350012	way	0	mound	Mámoa da Cruz de Garamallo	high	archaeological_site=tumulus	tumulus				-7.62488813	43.51363956	167.1	46.9	7.3	0.9558	12	wl-neg-neg-es-pba-35091	Mámoa da Cruz de Garamallo 1/Mámoa de Pena Carreirosa	1
+1300350446	way	0	mound	Mámoa da Cruz de Garamallo 3	high	archaeological_site=tumulus	tumulus				-7.62585112	43.50386123	290.3	61.9	9.6	0.9527	11	wl-neg-neg-es-pba-35093	Mámoa da Cruz de Garamallo 3/Mámoa do Chao das Modias 2	1
+1300350447	way	0	mound	Mámoa da Cruz de Garamallo 2	high	archaeological_site=tumulus	tumulus				-7.62587407	43.50461737	298.9	62.4	9.8	0.9636	12	wl-neg-neg-es-pba-35092	Mámoa da Cruz de Garamallo 2/Mámoa do Chao das Modias 1	1
+1302755792	way	0	mound	Mámoa das Gándaras de Relucín 6	high	archaeological_site=tumulus	tumulus				-7.84209686	43.02350001	279.3	59.5	9.4	0.9918	21	wl-neg-neg-es-pba-30475	Mámoa das Gándaras de Relucín 6	4
+1302755793	way	0	mound	Mámoa das Gándaras de Relucín 5	high	archaeological_site=tumulus	tumulus				-7.84372684	43.02397122	184.6	48.4	7.7	0.9898	19	wl-neg-neg-es-pba-30474	Mámoa das Gándaras de Relucín 5	1
+1302864467	way	1	castro	Castro de Lodeiro	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort	Q130219868	-7.71727773	43.24810546	9796.3	361.2	55.8	0.9438	12	wl-pos-pos-es-pba-43418	Castro de Lodeiro	13
+1303315342	way	1	castro	Castro de Vilamirón	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.68969708	42.47930131	18627.7	511.5	77.0	0.8948	14	wl-pos-pos-es-pba-37412	Castro de Vilamirón	36
+1303315345	way	1	castro	Castro de Santa Mariña	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.66624020	42.52894801	65610.5	920.9	144.5	0.9722	16	wl-pos-pos-es-pba-37384	Castro de Santa Mariña	23
+1303590747	way	1	castro	Castro de Belesar	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.42430881	42.65347322	4938.2	271.9	39.6	0.8392	15	wl-pos-pos-es-pba-32299	Castro de Belesar	20
+1303945227	way	1	castro	Castro de Xerdimil	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.89437949	42.79468446	4552.3	245.0	38.1	0.9528	15	wl-pos-pos-es-pba-27024	Castro de Xerdimil	17
+1304117131	way	0	mound	Mámoa de Penelas	high	archaeological_site=tumulus	tumulus	prehistoric			-7.58395086	43.09258872	326.9	64.4	10.2	0.9918	21	wl-neg-neg-es-pba-35711	Mámoa de Penelas	1
+1305285821	way	1	castro	Castro de Soaxe	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.26742961	42.83276557	11178.3	402.3	59.7	0.8679	12	wl-pos-pos-es-pba-31624	Castro de Suaxe	87
+1305286989	way	1	castro	O Castro	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.17085126	42.94725824	7932.0	335.3	50.2	0.8866	16	wl-pos-pos-es-pba-44633	O Castro	9
+1305287227	way	1	castro	O Castrón	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.16407957	43.05602023	16352.7	463.5	72.1	0.9565	20			
+1305297059	way	1	castro	Castro da Coroa	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.48822537	42.41374833	8448.4	332.7	51.9	0.9594	15	wl-pos-pos-es-pba-41534	Castro da Coroa/A Medorra	33
+1305297129	way	1	castro	Castro de Vilaescura	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.60995219	42.47248459	8073.6	330.8	50.7	0.9270	15	wl-pos-pos-es-pba-40999	Castro de Vilaescura	11
+1305299680	way	1	castro	Castro de Ferreiros	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.32415356	43.20089368	12216.5	402.4	62.4	0.9479	13	wl-pos-pos-es-pba-38978	Castro de Ferreiros/Castro de Gomesende/A Santa	13
+1305307348	way	1	castro	Castro de Baiobre de Branzá	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-8.23140453	42.89755260	14585.6	442.4	68.1	0.9367	23	wl-pos-pos-es-pba-25007	Castro de Baiobre de Branzá	10
+1308678216	way	0	mound	Medoña da Regiña 5	high	archaeological_site=tumulus	tumulus	prehistoric			-7.77812206	43.14659252	1147.3	120.3	19.1	0.9958	29	wl-neg-neg-es-pba-32322	Medoña da Regina 3	120
+1308678217	way	0	mound	Medoña da Regiña 4	high	archaeological_site=tumulus	tumulus	prehistoric			-7.77835798	43.14634319	315.1	63.2	10.0	0.9918	21	wl-neg-neg-es-pba-32322	Medoña da Regina 3	138
+1308902353	way	1	castro	Castro de Paradela	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.72504869	43.00880651	4563.0	244.3	38.1	0.9609	14	wl-pos-pos-es-pba-31165	Castro de Paradela	6
+1308903073	way	0	mound	Medorra de Rolfe	high	archaeological_site=tumulus	tumulus	prehistoric			-7.74285119	43.00909588	174.0	47.0	7.4	0.9898	19	wl-neg-neg-es-pba-30567	Medorra de Rolfe	1
+1312628174	way	1	castro	Castro de Rea de Cruz	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.29050880	43.27398196	14204.3	450.6	67.2	0.8790	9	wl-pos-pos-es-pba-36834	Castro de Rea de Cruz	1
+1312629797	way	1	castro	Castro da Azúmara	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.37917856	43.19269991	13791.8	427.1	66.3	0.9500	14	wl-pos-pos-es-pba-27820	Castro de Azúmara	8
+1312630493	way	0	mound	Medorra da Rodela de Ludrio	high	archaeological_site=tumulus	tumulus	prehistoric			-7.41945481	43.13154287	509.1	81.9	12.7	0.9549	12	wl-neg-neg-es-pba-27858	Medorra de Rodela de Ludrio	1
+1313060967	way	0	mound	Medoña de Albardillas	high	archaeological_site=tumulus	tumulus	prehistoric			-7.76393789	43.20552155	436.0	75.3	11.8	0.9667	13	wl-neg-neg-es-pba-32360	Medoña de Albardillas	2
+1314935553	way	1	castro	Castro do Pazo	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.91002898	42.80004892	8719.9	338.8	52.7	0.9548	20	wl-pos-pos-es-pba-27026	Castro do Pazo	24
+1316030586	way	1	castro	Castro do Pazo	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.67447823	43.06455530	3922.4	240.1	35.3	0.8547	14	wl-pos-pos-es-pba-36112	Castro do Pazo	2
+1316759105	way	0	mound	Mámoa da Fraga das Forcas 2	high	archaeological_site=tumulus	tumulus	prehistoric			-7.91820646	43.13202538	236.3	55.3	8.7	0.9727	12			
+1316763223	way	0	mound	Mámoa do Monte do Seixo	high	archaeological_site=tumulus	tumulus	prehistoric			-7.89147950	43.08322143	189.6	49.6	7.8	0.9669	11	wl-neg-neg-es-pba-30452	Mámoa do Monte do Seixo	2
+1317036706	way	0	mound	Mámoa do Cordal da Cova da Serpe 1	high	archaeological_site=tumulus	tumulus	prehistoric			-7.92622362	43.10977039	213.7	52.4	8.2	0.9770	13	wl-neg-neg-es-pba-30162	Mámoa do Cordal da Cova da Serpe 1	1
+1319871968	way	1	castro	Castro de Oca	medium	site=settlement,civ=celtic	settlement	celtic			-8.73122196	43.19682646	14099.0	426.1	67.0	0.9759	16	wl-pos-pos-es-pba-5918	Castro de Oca	15
+1320403291	way	1	castro	Castro da Croa de Salgueiredo	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.54946794	42.84845268	20331.8	524.6	80.4	0.9285	17	wl-pos-pos-es-pba-37235	Castro de Ribeira/Castro da Coroa	20
+1320417727	way	1	castro	O Castro	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.81978474	42.86610070	14582.9	440.1	68.1	0.9460	13	wl-pos-pos-es-pba-37777	Castro do Ferreiro	13
+1320827574	way	0	mound	Mámoa das Gándaras	high	archaeological_site=tumulus	tumulus	prehistoric			-7.53879918	43.04063772	420.1	73.7	11.6	0.9727	12	wl-neg-neg-es-pba-32463	Mámoa das Gándaras	2
+1324406864	way	0	mound	Medoña do Galiñeiro 4	high	archaeological_site=tumulus	tumulus	prehistoric			-7.94367602	43.28674936	214.0	52.1	8.3	0.9898	19	wl-neg-neg-es-pba-31890	Medoña do Galiñeiro 4	1
+1324475083	way	0	mound	Mámoa da Esvaradoira	high	archaeological_site=tumulus	tumulus	prehistoric			-7.31897212	43.06355862	236.3	55.4	8.7	0.9669	11	wl-neg-neg-es-pba-29885	Mámoa da Esvaradoira	2
+1324477235	way	0	mound	Mámoa de Serra de Monciro 1	high	archaeological_site=tumulus	tumulus	prehistoric			-7.35549751	43.06660846	662.3	93.0	14.5	0.9613	13	wl-neg-neg-es-pba-29915	Mámoa da Lagoa-Serra de Monciro 1	2
+1329466535	way	1	castro	A Castronela	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.98265101	43.00158901	4536.9	244.7	38.0	0.9522	17	wl-pos-pos-es-pba-24957	Castro de Lobos/Castronela de Lobos	32
+1329597071	way	1	castro	Castro de Carballido	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.28878527	43.14041718	15556.3	457.5	70.4	0.9338	16	wl-pos-pos-es-pba-38902	As Coroas/Os Castros/Monte das Croas/A Croa do Carballido	13
+1329597079	way	1	castro	Castro de Ribeiro	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.30528568	43.17986261	14235.4	461.2	67.3	0.8412	12	wl-pos-pos-es-pba-38980	Castro de Ribeiro/Castro da Poula/O Castro	9
+1329850488	way	1	castro	O Castro	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.37972239	42.74765179	14320.1	438.2	67.5	0.9370	14	wl-pos-pos-es-pba-40225	Castro de Aián	77
+1331462840	way	0	mound	Medorra de Adai 5	high	archaeological_site=tumulus	tumulus	prehistoric			-7.62630741	43.01994335	429.2	73.7	11.7	0.9932	23			
+1331462841	way	0	mound	Medorra de Adai 4	high	archaeological_site=tumulus	tumulus	prehistoric			-7.62377284	43.01974165	384.0	69.7	11.1	0.9932	23			
+1331462842	way	0	mound	Medorra de Adai 3	high	archaeological_site=tumulus	tumulus	prehistoric			-7.62014186	43.01977592	403.5	71.6	11.3	0.9898	19	wl-pos-pos-es-pba-32817	O Castrillón	178
+1331462843	way	0	mound	Medorra de Adai 2	high	archaeological_site=tumulus	tumulus	prehistoric			-7.61957202	43.02012359	516.2	81.5	12.8	0.9770	13	wl-pos-pos-es-pba-32817	O Castrillón	148
+1332863540	way	1	castro	Os Castros	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.56338122	43.13053460	6918.1	300.1	46.9	0.9654	13	wl-pos-pos-es-pba-35865	Os Castros de Vilanova	7
+1333032567	way	0	mound	Mámoa da Carballosa	high	archaeological_site=tumulus	tumulus	prehistoric			-7.61162735	42.58060117	678.6	92.6	14.7	0.9943	25			
+1333032611	way	0	mound	Mámoa de Espiñeiro	high	archaeological_site=tumulus	tumulus	prehistoric			-7.29982489	42.51236656	453.3	75.7	12.0	0.9932	23			
+1333032614	way	0	mound	Mámoa do Val do Campelo	high	archaeological_site=tumulus	tumulus	prehistoric			-7.18035090	42.45349468	304.5	62.1	9.8	0.9918	21			
+1333032638	way	0	mound	Mámoa do Portaleiro	high	archaeological_site=tumulus	tumulus	prehistoric			-7.34074189	42.43732682	345.1	66.1	10.5	0.9918	21			
+1333032646	way	1	castro	Castro da Regueira das Vellas	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.55092574	42.55380807	21631.8	535.7	83.0	0.9474	12			
+1333032653	way	1	castro	Castro da Miouteira	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.36086068	42.62122503	4079.4	250.8	36.0	0.8148	12			
+1333333535	way	1	castro	Castro Pico de Santa Bárbara	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.33903124	42.62518466	5176.8	260.5	40.6	0.9585	14			
+1334377743	way	0	mound	A Madorra do Carballal	high	archaeological_site=tumulus	tumulus	prehistoric			-7.56070993	43.15842959	330.2	65.3	10.3	0.9727	12	wl-neg-neg-es-pba-35709	Madorra do Curro de Lerois	2
+1334554006	way	1	castro	Castro da Frairía	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.29059314	43.00635538	6240.6	285.2	44.6	0.9644	14	wl-pos-pos-es-pba-27942	Castro de Santa María da Frairía	5
+1335065329	way	1	castro	Castro de Miranda	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.31778537	42.96762563	10952.3	376.2	59.0	0.9726	15	wl-pos-pos-es-pba-27910	Castro de Miranda	30
+1335066648	way	1	castro	Castro de Faxilde	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.32641734	42.98465855	16383.0	460.9	72.2	0.9690	14	wl-pos-pos-es-pba-27873	Castro da Ermida de Santa Cristina	28
+1335068434	way	1	castro	Castro da Eirexe	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.34307334	42.97940242	15162.7	446.2	69.5	0.9570	13	wl-pos-pos-es-pba-27943	Castro de Uriz	13
+1335972195	way	1	castro	Castro de Vilaxoán	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.60660272	43.20175895	11910.5	395.9	61.6	0.9550	11	wl-pos-pos-es-pba-29194	Castro de San Vicente/O Castro	13
+1336318270	way	1	castro	Castro de Goi	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.35476929	42.97957770	9312.2	350.5	54.4	0.9524	11	wl-pos-pos-es-pba-27907	Castro de Goi	9
+1338625085	way	1	castro	Castro de Muro	medium	site=settlement,civ=celtic	settlement	celtic			-7.40599533	42.85331035	12437.5	403.7	62.9	0.9589	16	wl-pos-pos-es-pba-31581	Castro da Eirexa/Castro de San Xoán	36
+1340403693	way	0	mound	Mámoa da Millarada	high	archaeological_site=tumulus	tumulus	prehistoric			-7.48708638	43.20315293	356.7	68.8	10.7	0.9475	12	wl-neg-neg-es-pba-28862	Mámoa da Millarada	3
+1340403710	way	0	mound	Mámoa de Pedrabranca 3	high	archaeological_site=tumulus	tumulus	prehistoric			-7.52894601	43.22163842	885.1	105.7	16.8	0.9951	27	wl-neg-neg-es-pba-28938	Mámoa de Pedrabranca 3	3
+1340403711	way	0	mound	Mámoa de Pedrabranca 1	high	archaeological_site=tumulus	tumulus	prehistoric			-7.53024051	43.22162849	372.4	68.7	10.9	0.9918	21	wl-neg-neg-es-pba-28936	Mámoa de Pedrabranca 1	2
+1340403712	way	0	mound	Mámoa de Pedrabranca 2	high	archaeological_site=tumulus	tumulus	prehistoric			-7.53039149	43.22123144	338.6	65.5	10.4	0.9918	21	wl-neg-neg-es-pba-28937	Mámoa de Pedrabranca 2	2
+1340403713	way	0	mound	Mámoa de Pedrabranca 4	high	archaeological_site=tumulus	tumulus	prehistoric			-7.53365341	43.22050428	383.0	69.6	11.0	0.9932	23	wl-neg-neg-es-pba-28939	Mámoa de Pedrabranca 4	0
+1340403714	way	0	mound	Mámoa de Roza Moura 1	high	archaeological_site=tumulus	tumulus	prehistoric			-7.52955871	43.21836373	282.1	59.8	9.5	0.9918	21	wl-neg-neg-es-pba-28975	Mámoa de Roza Moura 1	2
+1340403772	way	0	mound	Mámoa de Legua Dereita 4	high	archaeological_site=tumulus	tumulus	prehistoric			-7.66098926	43.23545288	302.5	61.9	9.8	0.9918	21	wl-neg-neg-es-pba-43473	Mámoa de Legua Dereita 4	2
+1340403773	way	0	mound	Mámoa de Legua Dereita 14	high	archaeological_site=tumulus	tumulus	prehistoric			-7.65830087	43.23304458	249.8	56.8	8.9	0.9727	12	wl-neg-neg-es-pba-43468	Mámoa de Legua Dereita 14	1
+1340403774	way	0	mound	Mámoa de Legua Dereita 7	high	archaeological_site=tumulus	tumulus	prehistoric			-7.65779731	43.23215228	180.1	47.8	7.6	0.9898	19	wl-neg-neg-es-pba-43476	Mámoa de Legua Dereita 7	2
+1340403775	way	0	mound	Mámoa de Legua Dereita 8	high	archaeological_site=tumulus	tumulus	prehistoric			-7.65888352	43.23031519	1259.5	127.9	20.0	0.9669	15	wl-neg-neg-es-pba-42826	Mámoa de Legua Dereita 8	2
+1343893915	way	1	castro	Castro de Seoane	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.79056549	42.96764614	5493.1	269.7	41.8	0.9490	12	wl-pos-pos-es-pba-31197	Castro de Seoane	5
+1343895161	way	0	mound	Mámoa de Monte de Chao 1	high	archaeological_site=tumulus	tumulus	prehistoric			-7.72421580	43.01736976	323.1	64.0	10.1	0.9918	21	wl-neg-neg-es-pba-30138	Mámoa de Monte de Chao 1	1
+1346971660	way	1	castro	Castro de Bermún	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.39444446	42.69174323	21586.6	573.3	82.9	0.8253	17	wl-pos-pos-es-pba-32300	Castro de Bermún	21
+1346972403	way	1	castro	Castro de Teilonxe	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.42493130	42.74065745	5979.0	285.8	43.6	0.9198	15	wl-pos-pos-es-pba-42073	Castro de Teilonxe/Castro de San Pedro	16
+1346972957	way	1	castro	Castro das Paredes	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.43360999	42.77143284	19151.6	503.5	78.1	0.9492	14	wl-pos-pos-es-pba-42030	Castro de Paredes	28
+1346976692	way	1	castro	Castro do Vilar	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.31322246	42.99838654	61361.6	910.8	139.8	0.9294	19	wl-pos-pos-es-pba-29780	O Castro	52
+1347106269	way	1	castro	A Cunca do Castro	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.71731413	42.84651556	5780.2	280.6	42.9	0.9223	10	wl-pos-pos-es-pba-38503	Cunca do Castro	3
+1347107809	way	0	mound	Monte da Pena da Cruz e das Tenzas 04	high	archaeological_site=tumulus	tumulus	prehistoric			-7.69938039	42.98263783	267.8	59.0	9.2	0.9652	15			
+1347429827	way	1	castro	Castro da Besta	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.67467137	42.63798378	9341.1	347.7	54.5	0.9711	25	wl-pos-pos-es-pba-41928	Castro da Besta ou de Vilelos	3
+1348862595	way	1	castro	Povoado Fortificado de Cossourado	medium	site=fortification,civ=prehistoric	fortification	prehistoric			-8.63805415	41.91549711	374878.3	2395.6	345.4	0.8209	47	wl-pos-pos-pt-dgpc-108405	Cividade de Cossourado	71
+1359167047	way	1	castro	Castrolovirxe	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.64430369	42.79342140	9423.3	367.4	54.8	0.8775	15	wl-pos-pos-es-pba-38465	Castrolovirxe	9
+1360759209	way	1	castro	O Castro	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.81089286	42.89567070	7040.0	304.3	47.3	0.9556	13	wl-pos-pos-es-pba-37623	A Castronela	28
+1363126000	way	1	castro	Castro de Brandomil	medium	site=settlement,civ=celtic	settlement	celtic			-8.92314939	43.00749996	12331.0	400.7	62.7	0.9651	17	wl-pos-pos-es-pba-27160	Castro de Brandomil	12
+1370095108	way	1	castro	O Castro	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.15055681	43.16966605	27420.5	641.5	93.4	0.8372	13	wl-pos-pos-es-pba-40345	O Castro	28
+1374865051	way	1	castro	Castro de Vilar de Frades	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.14223830	42.88418752	18767.4	520.2	77.3	0.8715	13	wl-pos-pos-es-pba-28457	Castro de Vilar de Frades	12
+1374869350	way	1	castro	Alto da Croa	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.23855262	42.88100873	20728.5	540.5	81.2	0.8916	16	wl-pos-pos-es-pba-42398	As Croas/Os Castros	26
+1374873773	way	1	castro	Castro de Zaide	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.63410219	42.89589578	17448.6	514.7	74.5	0.8278	19	wl-pos-pos-es-pba-32252	Castro de Zaíde	23
+1374874261	way	0	mound	Mámoado Marco da Estrela	high	archaeological_site=tumulus	tumulus	prehistoric			-7.68767083	42.90560723	169.2	46.3	7.3	0.9898	19	wl-neg-neg-es-pba-32061	Mámoa do Marco da Estrela	3
+1378761446	way	1	castro	Alto do Castro	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.54536594	43.07206620	9885.7	393.4	56.1	0.8025	13	wl-pos-pos-es-pba-31636	Alto do Castro	16
+1378993691	way	0	mound	Necrópole megalítica de San Cibrao	high	archaeological_site=tumulus	tumulus	prehistoric			-7.52630492	43.02073382	202264.0	2764.1	253.7	0.3327	13			
+1381249812	way	1	castro	A Croa de Mouriz	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.38271951	43.05027316	5184.7	270.3	40.6	0.8917	16	wl-pos-pos-es-pba-27968	A Croa de Mouriz	17
+1381250642	way	1	castro	Castro de Pademe	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.40639448	43.01117750	8648.1	354.1	52.5	0.8666	11	wl-pos-pos-es-pba-27911	Castro de Paderne	16
+1381255645	way	1	castro	Castro de Vedro	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.63965542	42.82683823	31363.5	651.1	99.9	0.9298	15	wl-pos-pos-es-pba-38429	Castro de Bedro/Pena do Castro/Castrolázaro	9
+1381261093	way	1	castro	Castro de Folgosa	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.33362316	42.94314556	11128.6	409.1	59.5	0.8354	18	wl-pos-pos-es-pba-29986	Castro de Folgosa	36
+1381262039	way	1	castro	O Coto de Francos	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.57521886	42.83514029	4952.9	260.5	39.7	0.9169	14			
+1381262040	way	1	castro	Castro do Coto	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.29453563	42.98679372	18891.7	512.9	77.5	0.9024	26	wl-pos-pos-es-pba-29779	O Castro	4
+1381262041	way	1	castro	Castro de Longalai	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.53365119	42.90333241	6823.7	299.9	46.6	0.9534	19	wl-pos-pos-es-pba-32246	Castro de Longalai	16
+1385471711	way	0	mound	Mámoa da Roza Grande 2	high	archaeological_site=tumulus	tumulus				-7.57405411	43.17022842	603.6	89.7	13.9	0.9427	14	wl-neg-neg-es-pba-28897	Mámoa da Roza Grande 2	3
+1385471712	way	0	mound	Mámoa da Roza Grande 3	high	archaeological_site=tumulus	tumulus				-7.57360761	43.16999142	486.8	80.0	12.4	0.9567	13	wl-neg-neg-es-pba-28898	Mámoa da Roza Grande 3	0
+1385471713	way	0	mound	Mámoa da Roza Grande 1	high	archaeological_site=tumulus	tumulus				-7.57493316	43.17171458	287.4	60.9	9.6	0.9723	14	wl-neg-neg-es-pba-28896	Mámoa da Roza Grande 1	1
+1385593912	way	1	castro	O Castro de Seixas	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.61362588	43.24012632	14979.9	439.5	69.1	0.9746	16	wl-pos-pos-es-pba-29160	Os Castros	10
+1385606159	way	0	mound	Modia da Pigaroa	high	archaeological_site=tumulus	tumulus	prehistoric			-7.83387679	43.31847420	387.7	70.0	11.1	0.9932	23	wl-neg-neg-es-pba-30387	Modia da Pigaroa	2
+1385633683	way	0	mound	Medoña de Formosa 3	high	archaeological_site=tumulus	tumulus	prehistoric			-7.88885775	43.33323600	292.9	63.4	9.7	0.9148	13	wl-neg-neg-es-pba-32395	Medoña de Formosa 3	0
+1385634773	way	0	mound	Medoña da Cotarella 2	high	archaeological_site=tumulus	tumulus	prehistoric			-7.79186289	43.35642725	265.2	59.1	9.2	0.9541	15	wl-neg-neg-es-pba-30578	Medoña da Cotarella 2	2
+1385634774	way	0	mound	Medoña da Cotarella 1	high	archaeological_site=tumulus	tumulus	prehistoric			-7.78911327	43.35607364	283.7	61.9	9.5	0.9296	14	wl-neg-neg-es-pba-30577	Medoña da Cotarella 1	1
+1385635711	way	0	mound	Modia Pena do Ramallo	high	archaeological_site=tumulus	tumulus	prehistoric			-7.71961665	43.35271041	224.1	54.2	8.4	0.9595	15	wl-neg-neg-es-pba-43299	Modia Pena do Ramallo	1
+1385635712	way	0	mound	Mámoa de Pena Grande 01	high	archaeological_site=tumulus	tumulus	prehistoric			-7.72188764	43.35370886	408.7	73.1	11.4	0.9602	16	wl-neg-neg-es-pba-42915	Mámoa de Pena Grande 01/Pena do Ramallo	1
+1385635713	way	0	mound	Mámoa de Pena Grande 07	high	archaeological_site=tumulus	tumulus	prehistoric			-7.72661489	43.35596359	211.7	52.4	8.2	0.9702	13	wl-neg-neg-es-pba-42920	Mámoa de Pena Grande 07/Pena do Ramallo	2
+1389652372	way	1	castro	Agra dos Castros	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.57608663	43.02362909	9452.3	372.9	54.9	0.8542	9	wl-pos-pos-es-pba-31568	Agra dos Castros	59
+1389906757	way	1	castro	Castro das Coroas	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.37584413	43.27352571	10766.4	376.0	58.5	0.9570	16	wl-pos-pos-es-pba-37143	Casa con Forno nas Croas	172
+1389937190	way	1	castro	O Castro de Pape	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.41801141	42.75327882	12084.0	407.3	62.0	0.9152	16	wl-pos-pos-es-pba-41992	Castro de Cesar	24
+1389937207	way	1	castro	O Castro de Rosende	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.45366431	42.79230254	11643.3	389.7	60.9	0.9635	17	wl-pos-pos-es-pba-42031	Castro de Rosende	12
+1389937627	way	1	castro	Finca dos Ladrillos	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.60036019	42.93719167	10757.5	380.7	58.5	0.9326	18	wl-pos-pos-es-pba-32819	O Castro/Finca dos Ladrillos/A Zanxa	7
+1395009129	way	1	castro	Castro de Boado	medium	site=settlement,civ=celtic	settlement	celtic		Q20543697	-8.19340752	43.04147651	10746.6	374.8	58.5	0.9615	12	wl-pos-pos-es-pba-12438	Castro de Boado	22
+1413476506	way	1	castro	A Coroa	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort	Q12385747	-7.08643169	43.06920171	12762.1	414.2	63.7	0.9346	12	wl-pos-pos-es-pba-29140	A Croa/Os Castros	3
+1413561759	way	0	mound	Medorra de Hospital Novo 4	high	archaeological_site=tumulus	tumulus	prehistoric			-7.14194361	43.09046305	336.0	66.5	10.3	0.9541	14	wl-neg-neg-es-pba-31227	Medorra de Hospital Novo 4	2
+1413835198	way	0	mound	Mámoas de Pena Corval	high	archaeological_site=tumulus	tumulus	prehistoric			-7.58849182	43.50211278	49883.2	943.0	126.0	0.7050	10	wl-neg-neg-es-pba-35153	Mámoa de Pena Corval 11	27
+1413835539	way	0	mound	Mámoa de Pena Corval 1	high	archaeological_site=tumulus	tumulus	prehistoric			-7.59405399	43.50458748	274.3	59.9	9.3	0.9604	14	wl-neg-neg-es-pba-35127	Mámoa de Pena Corval 1	1
+1413912282	way	1	castro	Castro de Illade	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.56140725	43.70626843	15486.1	459.3	70.2	0.9225	17	wl-pos-pos-es-pba-32116	Castro de Illade/Castro	25
+1414343052	way	0	mound	Medoñas de Monte Barreiro II	high	archaeological_site=tumulus	tumulus	prehistoric			-7.76846186	43.41364729	107067.9	1443.6	184.6	0.6456	8	wl-neg-neg-es-pba-30031	Medoña de Monte Barreiro II-06	103
+1415657549	way	0	mound	Mámoa de Monte Candaíde 4	high	archaeological_site=tumulus	tumulus	prehistoric			-7.86943790	43.01722797	368.3	68.3	10.8	0.9918	21	wl-neg-neg-es-pba-30050	Mámoa de Monte Candaíde 4	2
+1415657550	way	0	mound	Mámoa de Monte Candaíde 3	high	archaeological_site=tumulus	tumulus	prehistoric			-7.86968493	43.01704317	321.3	63.8	10.1	0.9918	21	wl-neg-neg-es-pba-30049	Mámoa de Monte Candaíde 3	1
+1415657551	way	0	mound	Mámoa de Monte Candaíde 1	high	archaeological_site=tumulus	tumulus	prehistoric			-7.86900501	43.01687322	210.9	51.7	8.2	0.9898	19	wl-neg-neg-es-pba-30047	Mámoa de Monte Candaíde 1	2
+1415657552	way	0	mound	Mámoa de Monte Candaíde 2	high	archaeological_site=tumulus	tumulus	prehistoric			-7.86952328	43.01667005	187.0	48.7	7.7	0.9898	19	wl-neg-neg-es-pba-30048	Mámoa de Monte Candaíde 2	1
+1415657553	way	0	mound	Mámoa de Monte Candaíde 6	high	archaeological_site=tumulus	tumulus	prehistoric			-7.87086314	43.01664072	176.4	47.3	7.5	0.9898	19	wl-neg-neg-es-pba-30052	Mámoa de Monte Candaíde 6	5
+1422388594	way	1	castro	Os Castros	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.30782054	43.61036355	1552.9	147.1	22.2	0.9016	16	wl-pos-pos-es-pba-30964	Os Castros	2
+1422645412	way	1	castro	Castro da Rueta	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.40148945	43.68270640	10383.8	372.9	57.5	0.9382	11	wl-pos-pos-es-pba-29984	Castro de Ruela/Os Castros de Rueta	28
+1423642150	way	0	mound	Mámoa das Olgas 1	high	archaeological_site=tumulus	tumulus	prehistoric			-7.33335436	43.18581430	284.1	60.0	9.5	0.9918	21	wl-neg-neg-es-pba-38566	Mámoa das Olgas 1	1
+1423642151	way	0	mound	Medorra de Auga Labada 1	high	archaeological_site=tumulus	tumulus	prehistoric			-7.30414893	43.20104060	323.6	64.0	10.1	0.9918	21	wl-neg-neg-es-pba-34649	Medorras de Auga Labada 1	2
+1423642152	way	0	mound	Medorra do Alto do Campeliño 3	high	archaeological_site=tumulus	tumulus	prehistoric			-7.30091547	43.19274825	366.1	68.1	10.8	0.9918	21	wl-neg-neg-es-pba-38871	Medorras do Alto do Campeliño 3	1
+1423642153	way	0	mound	Medorra do Alto do Campeliño 4	high	archaeological_site=tumulus	tumulus	prehistoric			-7.29979842	43.19351420	196.2	49.9	7.9	0.9898	19	wl-neg-neg-es-pba-38872	Medorras do Alto do Campeliño 4	2
+1423642154	way	0	mound	Mámoa do Alto do Campeliño 1	high	archaeological_site=tumulus	tumulus	prehistoric			-7.29118110	43.19675015	380.2	69.4	11.0	0.9918	21	wl-neg-neg-es-pba-34639	Mámoa do Alto do Campeliño 1	2
+1423642155	way	0	mound	Medorra de Labrada do Conde 2	high	archaeological_site=tumulus	tumulus	prehistoric			-7.28310754	43.18786711	148.1	43.4	6.9	0.9871	17	wl-neg-neg-es-pba-34089	Medorras de Labrada do Conde 2	1
+1423642156	way	0	mound	Medorra de Labrada do Conde 1	high	archaeological_site=tumulus	tumulus	prehistoric			-7.28231730	43.19019621	361.0	67.6	10.7	0.9918	21	wl-neg-neg-es-pba-34088	Medorras de Labrada do Conde 1	1
+1423642157	way	0	mound	Medorra de Monte Ribón 16	high	archaeological_site=tumulus	tumulus	prehistoric			-7.27324190	43.16673212	102.9	36.2	5.7	0.9871	17	wl-neg-neg-es-pba-38794	Medorra de Monte Ribón 16	1
+1423642158	way	0	mound	Medorra de Campolongo 07	high	archaeological_site=tumulus	tumulus	prehistoric			-7.28453880	43.17018699	346.6	66.3	10.5	0.9918	21	wl-neg-neg-es-pba-38762	Medorra de Campolongo 07/Mámoa do Monte de Ribón	4
+1423642159	way	0	mound	Medorra de Campolongo 08	high	archaeological_site=tumulus	tumulus	prehistoric			-7.28404845	43.16950713	469.9	77.1	12.2	0.9932	23	wl-neg-neg-es-pba-38763	Medorra de Campolongo 08/Mámoa do Monte de Ribón	1
+1423642160	way	0	mound	Cruz de Candal 9	high	archaeological_site=tumulus	tumulus	prehistoric			-7.28363555	43.17600810	221.3	53.0	8.4	0.9898	19	wl-neg-neg-es-pba-38913	Monte do Ribón/Cruz do Candal 9/Entre as Madorras	1
+1423642161	way	0	mound	Medorra de Campolongo 11	high	archaeological_site=tumulus	tumulus	prehistoric			-7.28517857	43.17440963	351.4	66.7	10.6	0.9918	21	wl-neg-neg-es-pba-38792	Medorra de Campolongo 11	1
+1423642162	way	0	mound	Medorra de Campolongo 03	high	archaeological_site=tumulus	tumulus	prehistoric			-7.28370520	43.17637249	573.6	85.1	13.5	0.9943	25	wl-neg-neg-es-pba-38758	Medorra de Campolongo 03/Mámoa de Monte do Ribón	1
+1423642163	way	0	mound	Medorra de Campolongo 10	high	archaeological_site=tumulus	tumulus	prehistoric			-7.28525730	43.17547042	512.5	80.5	12.8	0.9932	23	wl-neg-neg-es-pba-38791	Medorra de Campolongo 10/Mámoa do Monte do Ribó	3
+1423642164	way	0	mound	Medorra de Campolongo 09	high	archaeological_site=tumulus	tumulus	prehistoric			-7.28461466	43.17577131	282.7	59.8	9.5	0.9918	21	wl-neg-neg-es-pba-38790	Medorra de Campolongo 09/Mámoa do Monte do Ribón	2
+1423642165	way	0	mound	A Madorra do Viso 2	high	archaeological_site=tumulus	tumulus	prehistoric			-7.27038778	43.17762709	135.0	41.5	6.6	0.9871	17	wl-neg-neg-es-pba-38874	Medorras do Viso 2	2
+1423642166	way	0	mound	A Madorra do Viso 1	high	archaeological_site=tumulus	tumulus	prehistoric			-7.26931250	43.17806811	327.9	64.5	10.2	0.9918	21	wl-neg-neg-es-pba-38873	Medorras do Viso 1	1
+1423642167	way	0	mound	Medorra de Acebreira 8	high	archaeological_site=tumulus	tumulus	prehistoric			-7.25821119	43.18401201	225.4	53.5	8.5	0.9898	19	wl-neg-neg-es-pba-38724	Medorra de Acebreira 8	3
+1423642168	way	0	mound	Medorra de Acebreira 5	high	archaeological_site=tumulus	tumulus	prehistoric			-7.25340974	43.18926927	237.1	54.9	8.7	0.9898	19	wl-neg-neg-es-pba-38867	Medorras de Acebreira 5	1
+1423642169	way	0	mound	Medorra de Acebreira 7	high	archaeological_site=tumulus	tumulus	prehistoric			-7.25471642	43.18851681	581.6	85.7	13.6	0.9943	25	wl-neg-neg-es-pba-34645	Medorra de Acebreira 7	1
+1426847721	way	0	mound	A Medorra de Hospital	high	archaeological_site=tumulus	tumulus	prehistoric			-7.72964383	42.83987177	389.5	72.9	11.1	0.9211	11	wl-neg-neg-es-pba-38387	A Medorra de Hospital	4
+1427390866	way	0	mound	Mámoa da Portela de Abelleira	high	archaeological_site=tumulus	tumulus	prehistoric			-7.88830919	43.36214522	147.9	43.4	6.9	0.9871	17	wl-neg-neg-es-pba-13724	Mámoa da Portela de Abelleira	3
+1427390867	way	0	mound	Medoña do Serrón do Lobo 2	high	archaeological_site=tumulus	tumulus	prehistoric			-7.88443065	43.36197298	597.3	86.9	13.8	0.9943	25	wl-neg-neg-es-pba-13811	Mámoa do Serrón do Lobo 3	68
+1427390868	way	0	mound	Medoña do Serrón do Lobo 1	high	archaeological_site=tumulus	tumulus	prehistoric			-7.88441652	43.36081769	102.9	36.2	5.7	0.9871	17	wl-neg-neg-es-pba-13811	Mámoa do Serrón do Lobo 3	86
+1427390869	way	0	mound	Medoña do Campo da Ucera	high	archaeological_site=tumulus	tumulus	prehistoric			-7.88275654	43.35609869	295.7	62.6	9.7	0.9478	14			
+1429531113	way	1	castro	Castro de Rozavales	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.41787064	42.48577236	12963.0	421.5	64.2	0.9169	13	wl-pos-pos-es-pba-33673	Castro de Rozabales	81
+1429811187	way	1	castro	Castro de Noceda	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.46063270	42.67625818	11104.6	380.3	59.5	0.9649	17	wl-pos-pos-es-pba-32297	Castro de Airexe/Castro de Noceda	32
+1432217414	way	0	mound	Mámoas do Outeiro das Moas	high	archaeological_site=tumulus	tumulus	prehistoric			-7.88446536	41.92798630	1071.0	137.1	18.5	0.7157	5	wl-neg-neg-es-pba-47475	Mámoa do Outeiro das Moas 1	6
+1433410040	way	0	mound	Mámoa do Marco	high	archaeological_site=tumulus	tumulus	prehistoric			-7.77065779	42.88434502	122.7	40.1	6.3	0.9606	20	wl-neg-neg-es-pba-37479	Mámoa do Marco	1
+1436779022	way	1	castro	Castro da Portela	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.72003778	42.59401661	4599.8	259.4	38.3	0.8592	16	wl-pos-pos-es-pba-41659	Castro de Portela	12
+1444762966	way	1	castro	A Torre dos Mouros	medium	site=fortification,civ=none	fortification			Q25509523	-9.11449062	42.79661724	11629.9	412.3	60.8	0.8598	19			
+1450977097	way	1	castro	Castro de Lastres	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-7.29837125	42.74591205	2400.4	176.9	27.6	0.9639	23	wl-pos-pos-es-pba-40038	Castro de Lastres/Castro do Foral/Castro	6
+1452041765	way	0	mound	Medorra de Parada 2	high	archaeological_site=tumulus	tumulus	prehistoric			-7.65789150	43.06155384	130.3	40.7	6.4	0.9871	17			
+1452041782	way	0	mound	Medorra da Roza das Presas	high	archaeological_site=tumulus	tumulus				-7.64857773	43.08534362	51.1	25.6	4.0	0.9832	15			
+1457635794	way	1	castro	Castro de Carres	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort		-8.23257137	43.19380500	19857.3	527.4	79.5	0.8972	19	wl-pos-pos-es-pba-27194	Castro de Carres/Castro de Vilar de Corna	4
+1500811674	way	1	castro	Castro de Cruceiro	high	fortification_type=hill_fort	fortification	castro_culture	hill_fort	Q130241442	-7.75156361	43.27908945	15301.1	476.3	69.8	0.8476	19	wl-pos-pos-es-pba-43411	Castro de Cuceiro	6
+1521074107	way	0	mound	Medoña de Penas do Fro	high	archaeological_site=tumulus	tumulus				-7.77907458	43.15558160	207.5	51.3	8.1	0.9898	19	wl-neg-neg-es-pba-32437	Medoña de Penas do Fro	2
+1527542104	way	1	castro	Castro da Aldeola	medium	site=fortification,civ=celtic	fortification	celtic			-8.79177703	43.28738171	12216.4	425.3	62.4	0.8487	20	wl-pos-pos-es-pba-12795	Croa de Castro/Castro de Aldeola	6
+1528148503	way	1	castro	Castro de Barizo	medium	site=fortification,civ=celtic	fortification	celtic			-8.87240404	43.30678721	8411.2	329.5	51.7	0.9738	17	wl-pos-pos-es-pba-12761	Castro de Barizo	7
+1543052361	way	0	mound	Mámoa da Pena do Lagarto 2	high	archaeological_site=tumulus	tumulus	prehistoric			-7.60924988	42.90970206	319.5	63.6	10.1	0.9918	21	wl-neg-neg-es-pba-31864	Mámoa da Pena do Lagarto 2	3
+1543052362	way	0	mound	Mámoa da Pena do Lagarto 3	high	archaeological_site=tumulus	tumulus	prehistoric			-7.61041512	42.91007044	584.7	86.0	13.6	0.9943	25	wl-neg-neg-es-pba-31865	Mámoa da Pena do Lagarto 3	1
+1543052622	way	0	mound	Mámoa da Pena Ancha 1	high	archaeological_site=tumulus	tumulus	prehistoric			-7.60275271	42.91041663	237.1	54.9	8.7	0.9898	19	wl-neg-neg-es-pba-31858	Mámoa da Pena Ancha 1	4
+1543052623	way	0	mound	Mámoa da Pena Ancha 2	high	archaeological_site=tumulus	tumulus	prehistoric			-7.60254882	42.90982728	724.8	95.7	15.2	0.9943	25	wl-neg-neg-es-pba-31859	Mámoa da Pena Ancha 2	2

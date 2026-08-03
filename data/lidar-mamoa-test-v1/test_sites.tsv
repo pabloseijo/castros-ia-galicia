@@ -1,0 +1,41 @@
+sample_id	tile_id	name	site_class	longitude	latitude	final_split
+wl-pos-pos-es-pba-14328	wl-tile-v1-02532	Monte do Castro (Castro de Vilasuso)	castro	-8.22038749289567	43.56699829005009	test_o_val
+wl-pos-pos-es-pba-14367	wl-tile-v1-02533	O Castro (Castro de Quintá)	castro	-8.214396988420809	43.55274573295716	test_o_val
+wl-pos-pos-es-pba-14553	wl-tile-v1-02534	Castro da Pedreira	castro	-8.229105393271073	43.56083091186418	test_o_val
+wl-pos-pos-es-pba-14588	wl-tile-v1-02535	Castro de Pena Lopesa	castro	-8.22594601477777	43.57701844556937	test_o_val
+wl-pos-pos-es-pba-8704	wl-tile-v1-02671	Castro das Pías/Castro de Cardoeiro	castro	-8.171572505093756	43.47427554901182	test_trasancos
+wl-pos-pos-es-pba-8705	wl-tile-v1-02672	Castro de Barallobre	castro	-8.178759499653474	43.46407350807626	test_trasancos
+wl-pos-pos-es-pba-8706	wl-tile-v1-02673	Castro de Magalofes	castro	-8.147308718619547	43.45066167519628	test_trasancos
+wl-pos-pos-es-pba-8707	wl-tile-v1-02674	Castro de Orra	castro	-8.152626845317162	43.47117366486548	test_trasancos
+wl-pos-pos-es-pba-8708	wl-tile-v1-02675	Castro de Prismos	castro	-8.181906273273144	43.445376672260515	test_trasancos
+wl-pos-pos-es-pba-8709	wl-tile-v1-02676	Castro do Río Castro	castro	-8.186321260418124	43.42396916091138	test_trasancos
+wl-pos-pos-es-pba-10165	wl-tile-v1-02677	Monte do Castro/Castro de Vilela	castro	-8.239830294287893	43.524029972263946	test_trasancos
+wl-pos-pos-es-pba-10262	wl-tile-v1-02678	Necrópole de Santa Comba/Castro de Santa Comba	castro	-8.282642845995516	43.559082757693524	test_trasancos
+wl-pos-pos-es-pba-10266	wl-tile-v1-02679	Os Castros de Mandiá	castro	-8.231249927366063	43.514526844891975	test_trasancos
+wl-pos-pos-es-pba-9072	wl-tile-v1-02680	A Croa/Castro da Croa de Fontá	castro	-8.30888795518832	43.48731411879081	test_trasancos
+wl-pos-pos-es-pba-9152	wl-tile-v1-02681	Castro de Canido	castro	-8.242723079720715	43.48378570961132	test_trasancos
+wl-pos-pos-es-pba-9153	wl-tile-v1-02682	Castro de Ferrol Vello	castro	-8.242683156451365	43.47962400888347	test_trasancos
+wl-pos-pos-es-pba-9154	wl-tile-v1-02683	Castro de Leixa/A Croa de Leixa	castro	-8.20836441392536	43.522706975089974	test_trasancos
+wl-pos-pos-es-pba-9155	wl-tile-v1-02684	Castro de Lobariz	castro	-8.328772268544135	43.50827264612299	test_trasancos
+wl-pos-pos-es-pba-9183	wl-tile-v1-02685	Castro de Marmancón/Castro de Papoi	castro	-8.249128691469277	43.539632953340096	test_trasancos
+wl-pos-pos-es-pba-9184	wl-tile-v1-02686	Castro de Santa Cecilia	castro	-8.199972868867611	43.51103121295041	test_trasancos
+wl-neg-neg-es-pba-14299	wl-tile-v1-02531	Mámoa do Val/Mámoa de Santa Margarida	mamoa	-8.20522866984784	43.546610330164974	test_o_val
+wl-neg-neg-es-pba-8678	wl-tile-v1-02536	Mámoa do Monte Marraxón III-3	mamoa	-8.127409775048788	43.471412463118476	test_trasancos
+wl-neg-neg-es-pba-8679	wl-tile-v1-02537	Mámoa do Monte Marraxón III-4	mamoa	-8.127868081506296	43.47140653859354	test_trasancos
+wl-neg-neg-es-pba-8680	wl-tile-v1-02538	Mámoa do Monte Marraxón III-5	mamoa	-8.12669761732147	43.47070311758196	test_trasancos
+wl-neg-neg-es-pba-8681	wl-tile-v1-02539	Mámoa do Monte Marraxón III-6	mamoa	-8.126671560495467	43.47049961431615	test_trasancos
+wl-neg-neg-es-pba-8682	wl-tile-v1-02540	Mámoa do Monte Marraxón IV-1	mamoa	-8.132051265443264	43.4784901008791	test_trasancos
+wl-neg-neg-es-pba-8683	wl-tile-v1-02541	Mámoa do Monte Marraxón IV-2	mamoa	-8.132203389808597	43.48034533422504	test_trasancos
+wl-neg-neg-es-pba-8684	wl-tile-v1-02542	Mámoa do Monte Marraxón IV-3	mamoa	-8.132757100304113	43.4801561460703	test_trasancos
+wl-neg-neg-es-pba-8685	wl-tile-v1-02543	Mámoa do Monte Marraxón IV-4	mamoa	-8.13310706061615	43.48200900716367	test_trasancos
+wl-neg-neg-es-pba-8713	wl-tile-v1-02544	Mámoa do Monte Marraxón IV-5	mamoa	-8.133915386756012	43.48256454207971	test_trasancos
+wl-neg-neg-es-pba-8714	wl-tile-v1-02545	Mámoa do Monte Marraxón IV-6	mamoa	-8.129390539583051	43.473496113438	test_trasancos
+wl-neg-neg-es-pba-8715	wl-tile-v1-02546	Mámoa do Rego da Moa	mamoa	-8.175129668390355	43.450897497780126	test_trasancos
+wl-neg-neg-es-pba-9173	wl-tile-v1-02548	Mámoa do Monte Marraxón I-1	mamoa	-8.129405105815305	43.47322342871526	test_trasancos
+wl-neg-neg-es-pba-9201	wl-tile-v1-02549	Mámoa do Monte Marraxón I-2	mamoa	-8.135980367490042	43.48430886721332	test_trasancos
+wl-neg-neg-es-pba-9202	wl-tile-v1-02550	Mámoa do Monte Marraxón I-3	mamoa	-8.128966079674703	43.47352701685848	test_trasancos
+wl-neg-neg-es-pba-9203	wl-tile-v1-02551	Mámoa do Monte Marraxón I-4	mamoa	-8.130049105768018	43.4734183190081	test_trasancos
+wl-neg-neg-es-pba-9204	wl-tile-v1-02552	Mámoa do Monte Marraxón I-5	mamoa	-8.130207231944917	43.47369038170261	test_trasancos
+wl-neg-neg-es-pba-9205	wl-tile-v1-02553	Mámoa do Monte Marraxón I-6	mamoa	-8.130729717836411	43.47359625612157	test_trasancos
+wl-neg-neg-es-pba-9206	wl-tile-v1-02554	Mámoa do Monte Marraxón II-1	mamoa	-8.128441144065667	43.47267573864787	test_trasancos
+wl-neg-neg-es-pba-9207	wl-tile-v1-02555	Mámoa do Monte Marraxón III-1	mamoa	-8.127852254162555	43.47115125074126	test_trasancos
