@@ -1,0 +1,50 @@
+sid	name	group	label	score
+0_mamoa_00000	Mámoa do Val/Mámoa de Santa Margarida	mamoa	0	0.135821
+1_castro_00001	Monte do Castro (Castro de Vilasuso)	castro	1	0.477419
+1_castro_00002	O Castro (Castro de Quintá)	castro	1	0.801359
+1_castro_00003	Castro da Pedreira	castro	1	0.297385
+1_castro_00004	Castro de Pena Lopesa	castro	1	-0.109775
+0_mamoa_00096	Mámoa de Vespasante/Arca de Vespasante	mamoa	0	-0.044577
+0_mamoa_00127	Igrexa de San Martiño de Valdetires	mamoa	0	0.026692
+0_mamoa_00135	Mámoa de Rioboo 1/Mámoa de Canteiros 1	mamoa	0	0.325272
+0_mamoa_00136	Mámoa de Rioboo 2/Mámoa de Canteiros 2/M moas do Val	mamoa	0	0.067495
+1_castro_00157	As Croas	castro	1	0.362087
+1_castro_00167	Castro de Trasancos	castro	1	0.099301
+1_castro_00181	O Castrillón	castro	1	0.442801
+0_forest_track_00271		forest_track	0	-0.070452
+0_forest_track_00327		forest_track	0	-0.161443
+0_forest_track_00335		forest_track	0	-0.191552
+0_forest_track_00341		forest_track	0	-0.236071
+0_forest_track_00349	Senda Litoral Costa Ártabra	forest_track	0	-0.120379
+0_forest_track_00368		forest_track	0	-0.102932
+0_forest_track_00373		forest_track	0	-0.098205
+0_forest_track_00378		forest_track	0	0.144241
+0_forest_track_00394		forest_track	0	-0.222376
+0_medieval_structure_00407	Igrexa de Santa María a Maior do Val	medieval_structure	0	0.193030
+0_hilltop_settlement_00577	Os Canteiros	hilltop_settlement	0	-0.165325
+0_hilltop_settlement_00616	O Codesal	hilltop_settlement	0	-0.198079
+0_hilltop_settlement_00618	O Vilar	hilltop_settlement	0	0.008347
+0_hilltop_settlement_00732	As Chousas	hilltop_settlement	0	-0.089076
+0_hilltop_settlement_00749	Casa do Martuxo	hilltop_settlement	0	-0.280501
+0_hilltop_settlement_00810	Corval	hilltop_settlement	0	0.362404
+0_hilltop_settlement_00871	O Grandal	hilltop_settlement	0	-0.111344
+0_hilltop_settlement_00873	O Cádavo	hilltop_settlement	0	-0.066393
+0_natural_landform_00936	Coto da Modia	natural_landform	0	0.144403
+0_natural_landform_00959		natural_landform	0	-0.082484
+0_natural_landform_00967	Monte Painceira	natural_landform	0	0.420110
+0_natural_landform_01000		natural_landform	0	-0.042162
+0_natural_landform_01037	Coto das Penas	natural_landform	0	0.472049
+0_natural_landform_01062	Coto de Vilasuso	natural_landform	0	0.393157
+0_natural_landform_01095		natural_landform	0	0.311792
+0_natural_landform_01106	Pena Grande	natural_landform	0	0.451216
+0_natural_landform_01110	Montes da Lagoa	natural_landform	0	0.207176
+0_modern_infrastructure_01132		modern_infrastructure	0	-0.003054
+0_modern_infrastructure_01202	Rúa dos Carboeiros	modern_infrastructure	0	-0.086291
+0_modern_infrastructure_01207		modern_infrastructure	0	-0.227824
+0_modern_infrastructure_01338		modern_infrastructure	0	-0.318251
+0_modern_infrastructure_01436	Rúa dos Carboeiros	modern_infrastructure	0	-0.244311
+0_agricultural_enclosure_01493		agricultural_enclosure	0	0.091666
+0_agricultural_enclosure_01642		agricultural_enclosure	0	-0.087324
+0_agricultural_enclosure_01649		agricultural_enclosure	0	-0.179022
+0_agricultural_enclosure_01666		agricultural_enclosure	0	-0.035580
+0_agricultural_enclosure_01672		agricultural_enclosure	0	-0.015399
