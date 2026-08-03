@@ -176,31 +176,35 @@ def laz_bounds(path):
     return _BOUNDS_CACHE[key]
 
 
-def process_tile(args_tuple):
-    """All vignettes whose full extent fits inside one tile."""
-    tile_path, samples, extent, res, out_dir = args_tuple
+def process_group(args_tuple):
+    """Cut every vignette in a group that needs the same set of LAZ tiles.
+
+    CNIG ships 1 km tiles and a vignette is 512 m, so a site anywhere but the
+    middle of a tile straddles two or four of them. Requiring the extent to sit
+    inside a single tile silently drops about three quarters of the samples,
+    so the tiles are unioned per group instead.
+    """
+    tile_paths, samples, extent, res, out_dir = args_tuple
     import laspy
-    name = Path(tile_path).name
     half = extent / 2.0
-    minx, miny, maxx, maxy = laz_bounds(tile_path)
 
-    mine = [s for s in samples
-            if minx + half <= s["x"] <= maxx - half
-            and miny + half <= s["y"] <= maxy - half]
-    if not mine:
-        return name, 0, 0
-
-    las = laspy.read(tile_path)
-    cls = np.asarray(las.classification)
-    keep = cls == GROUND_CLASS
-    if keep.sum() < 5000:
-        return name, 0, len(mine)
-    xs = np.asarray(las.x)[keep]
-    ys = np.asarray(las.y)[keep]
-    zs = np.asarray(las.z)[keep]
+    xs_l, ys_l, zs_l = [], [], []
+    for tp in tile_paths:
+        las = laspy.read(tp)
+        keep = np.asarray(las.classification) == GROUND_CLASS
+        if not keep.any():
+            continue
+        xs_l.append(np.asarray(las.x)[keep])
+        ys_l.append(np.asarray(las.y)[keep])
+        zs_l.append(np.asarray(las.z)[keep])
+    if not xs_l:
+        return 0, len(samples)
+    xs = np.concatenate(xs_l)
+    ys = np.concatenate(ys_l)
+    zs = np.concatenate(zs_l)
 
     written = 0
-    for s in mine:
+    for s in samples:
         b = (s["x"] - half, s["y"] - half, s["x"] + half, s["y"] + half)
         m = (xs >= b[0]) & (xs <= b[2]) & (ys >= b[1]) & (ys <= b[3])
         if m.sum() < 2000:
@@ -209,10 +213,28 @@ def process_tile(args_tuple):
         if dem is None:
             continue
         arr = channels_from_dem(dem, res)
-        out = Path(out_dir) / f"{s['sid']}.npz"
-        np.savez_compressed(out, x=arr.astype(np.float16), label=s["label"])
+        np.savez_compressed(Path(out_dir) / f"{s['sid']}.npz",
+                            x=arr.astype(np.float16), label=s["label"])
         written += 1
-    return name, written, len(mine)
+    return written, len(samples)
+
+
+def group_samples_by_tiles(samples, tiles, extent):
+    """Map each sample to the tiles its vignette overlaps, then group by that set."""
+    half = extent / 2.0
+    bounds = {t: laz_bounds(t) for t in tiles}
+    groups = defaultdict(list)
+    orphans = 0
+    for s in samples:
+        b = (s["x"] - half, s["y"] - half, s["x"] + half, s["y"] + half)
+        need = tuple(sorted(
+            t for t, (mnx, mny, mxx, mxy) in bounds.items()
+            if not (b[2] < mnx or b[0] > mxx or b[3] < mny or b[1] > mxy)))
+        if not need:
+            orphans += 1
+            continue
+        groups[need].append(s)
+    return groups, orphans
 
 
 def main():
@@ -243,20 +265,26 @@ def main():
     print(f"tiles: {len(tiles)} | workers {args.workers}", flush=True)
 
     slim = [{k: s[k] for k in ("sid", "x", "y", "label")} for s in samples]
-    tasks = [(t, slim, args.extent_m, args.res_m, str(arr_dir)) for t in tiles]
+    groups, orphans = group_samples_by_tiles(slim, tiles, args.extent_m)
+    covered = sum(len(v) for v in groups.values())
+    print(f"groups: {len(groups)} | samples covered by LiDAR: {covered} "
+          f"| outside coverage: {orphans}", flush=True)
+
+    tasks = [(list(k), v, args.extent_m, args.res_m, str(arr_dir))
+             for k, v in groups.items()]
 
     written = 0
     t0 = time.time()
     with ProcessPoolExecutor(max_workers=args.workers) as ex:
-        futs = {ex.submit(process_tile, t): t for t in tasks}
+        futs = {ex.submit(process_group, t): t for t in tasks}
         for i, f in enumerate(as_completed(futs), 1):
             try:
-                name, w, tried = f.result()
+                w, tried = f.result()
                 written += w
             except Exception as exc:
-                print(f"  FAIL {Path(futs[f][0]).name}: {exc}", flush=True)
+                print(f"  FAIL group of {len(futs[f][1])}: {exc}", flush=True)
             if i % 25 == 0 or i == len(tasks):
-                print(f"  progress {i}/{len(tasks)} tiles, {written} vignettes",
+                print(f"  progress {i}/{len(tasks)} groups, {written} vignettes",
                       flush=True)
 
     # Spatial blocks, so train and val never share a hillside. O Val stays out.

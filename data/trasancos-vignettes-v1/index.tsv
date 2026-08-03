@@ -1,0 +1,42 @@
+sid	label	group	name	lon	lat	block	split
+1_castro_00001	1	castro	Monte do Castro (Castro de Vilasuso)	-8.22038749289567	43.56699829005009	281_2412	test_o_val
+1_castro_00002	1	castro	O Castro (Castro de Quintá)	-8.214396988420809	43.55274573295716	281_2411	test_o_val
+1_castro_00003	1	castro	Castro da Pedreira	-8.229105393271073	43.56083091186418	281_2411	test_o_val
+1_castro_00004	1	castro	Castro de Pena Lopesa	-8.22594601477777	43.57701844556937	281_2412	test_o_val
+0_mamoa_00096	0	mamoa	Mámoa de Vespasante/Arca de Vespasante	-8.215332878828047	43.54485015561609	281_2410	test_o_val
+1_castro_00157	1	castro	As Croas	-8.222309428322422	43.543889071619255	281_2410	test_o_val
+1_castro_00167	1	castro	Castro de Trasancos	-8.220621570398505	43.54366705275839	281_2410	test_o_val
+0_forest_track_00245	0	forest_track		-8.2321002	43.5308118	281_2410	val
+0_forest_track_00271	0	forest_track		-8.2144552	43.5829414	281_2412	test_o_val
+0_forest_track_00335	0	forest_track		-8.210426	43.5782191	281_2412	test_o_val
+0_forest_track_00341	0	forest_track		-8.2136552	43.5798486	281_2412	test_o_val
+0_forest_track_00349	0	forest_track	Senda Litoral Costa Ártabra	-8.2359188	43.5674983	280_2412	test_o_val
+0_forest_track_00359	0	forest_track		-8.2101877	43.5907084	281_2413	train
+0_forest_track_00368	0	forest_track		-8.2278341	43.5358679	281_2410	test_o_val
+0_forest_track_00373	0	forest_track		-8.2110528	43.574436	281_2412	test_o_val
+0_forest_track_00378	0	forest_track		-8.2166847	43.5748522	281_2412	test_o_val
+0_forest_track_00394	0	forest_track		-8.2310267	43.5638718	281_2411	test_o_val
+0_medieval_structure_00407	0	medieval_structure	Igrexa de Santa María a Maior do Val	-8.2114711	43.5549857	281_2411	test_o_val
+0_hilltop_settlement_00616	0	hilltop_settlement	O Codesal	-8.2165282	43.5695216	281_2412	test_o_val
+0_hilltop_settlement_00618	0	hilltop_settlement	O Vilar	-8.225561	43.5414507	281_2410	test_o_val
+0_hilltop_settlement_00732	0	hilltop_settlement	As Chousas	-8.2206233	43.5545303	281_2411	test_o_val
+0_hilltop_settlement_00749	0	hilltop_settlement	Casa do Martuxo	-8.2396605	43.56133	280_2411	test_o_val
+0_hilltop_settlement_00871	0	hilltop_settlement	O Grandal	-8.2174072	43.5621364	281_2411	test_o_val
+0_natural_landform_00936	0	natural_landform	Coto da Modia	-8.2203541	43.5718996	281_2412	test_o_val
+0_natural_landform_00959	0	natural_landform		-8.2362566	43.5725793	280_2412	test_o_val
+0_natural_landform_00967	0	natural_landform	Monte Painceira	-8.233845	43.5499535	280_2411	test_o_val
+0_natural_landform_01000	0	natural_landform		-8.230015	43.5749951	281_2412	test_o_val
+0_natural_landform_01037	0	natural_landform	Coto das Penas	-8.2179627	43.5739057	281_2412	test_o_val
+0_natural_landform_01062	0	natural_landform	Coto de Vilasuso	-8.2240591	43.5681735	281_2412	test_o_val
+0_natural_landform_01091	0	natural_landform	Pena Branca	-8.2155874	43.5918686	281_2413	train
+0_natural_landform_01095	0	natural_landform		-8.233774	43.5456034	280_2410	test_o_val
+0_natural_landform_01106	0	natural_landform	Pena Grande	-8.2381691	43.5534497	280_2411	test_o_val
+0_natural_landform_01110	0	natural_landform	Montes da Lagoa	-8.2336209	43.5650187	280_2411	test_o_val
+0_modern_infrastructure_01132	0	modern_infrastructure		-8.2104266	43.5461786	281_2410	test_o_val
+0_modern_infrastructure_01202	0	modern_infrastructure	Rúa dos Carboeiros	-8.2086478	43.5409937	281_2410	test_o_val
+0_modern_infrastructure_01338	0	modern_infrastructure		-8.2124046	43.5420854	281_2410	test_o_val
+0_agricultural_enclosure_01493	0	agricultural_enclosure		-8.2155951	43.5617081	281_2411	test_o_val
+0_agricultural_enclosure_01642	0	agricultural_enclosure		-8.2150043	43.5596784	281_2411	test_o_val
+0_agricultural_enclosure_01649	0	agricultural_enclosure		-8.207515	43.5502201	282_2411	test_o_val
+0_agricultural_enclosure_01666	0	agricultural_enclosure		-8.2213753	43.5499211	281_2411	test_o_val
+0_agricultural_enclosure_01672	0	agricultural_enclosure		-8.2104664	43.5432675	281_2410	test_o_val
