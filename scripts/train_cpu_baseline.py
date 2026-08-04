@@ -36,7 +36,7 @@ for _v in ("OMP_NUM_THREADS", "OPENBLAS_NUM_THREADS", "MKL_NUM_THREADS"):
 import numpy as np
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from honest_eval import evaluate, render  # noqa: E402
+from honest_eval import evaluate, render, wilson as wilson_ci  # noqa: E402
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 
@@ -83,13 +83,17 @@ def features(arr: np.ndarray) -> np.ndarray:
     return np.asarray(out, dtype=np.float32)
 
 
-def load_split(vig_dir: Path):
+def load_split(vig_dir: Path, multiclass: bool = False):
     idx = vig_dir / "index.tsv"
     if not idx.exists():
         raise SystemExit(f"falta {idx}: ejecuta antes build_trasancos_vignettes.py")
     rows = list(csv.DictReader(open(idx, encoding="utf-8"), delimiter="\t"))
     arr_dir = vig_dir / "arrays"
     X, y, meta = [], [], []
+    # En multiclase la etiqueta sale del grupo: castro=1, mámoa=2, resto=0.
+    # Gomes et al. (2024) montaron justo estas tres clases y su modelo detectó
+    # CERO túmulos mientras reportaba 94% de precisión. Por eso aquí las
+    # métricas van por clase: una clase que colapsa tiene que verse.
     t0 = time.time()
     for i, r in enumerate(rows, 1):
         f = arr_dir / f"{r['sid']}.npz"
@@ -100,7 +104,11 @@ def load_split(vig_dir: Path):
         except Exception:
             continue
         X.append(features(a))
-        y.append(int(r["label"]))
+        if multiclass:
+            g = (r.get("group") or "").strip()
+            y.append(1 if g == "castro" else (2 if g == "mamoa" else 0))
+        else:
+            y.append(int(r["label"]))
         meta.append(r)
         if i % 500 == 0:
             print(f"  features {i}/{len(rows)} ({time.time()-t0:.0f}s)", flush=True)
@@ -112,6 +120,8 @@ def main():
     ap.add_argument("--vig-dir", type=Path, required=True)
     ap.add_argument("--out-dir", type=Path, required=True)
     ap.add_argument("--seed", type=int, default=20260803)
+    ap.add_argument("--multiclass", action="store_true",
+                    help="castro / mámoa / fondo en vez de binario")
     args = ap.parse_args()
     args.out_dir.mkdir(parents=True, exist_ok=True)
 
@@ -121,7 +131,7 @@ def main():
     except ImportError:
         raise SystemExit("hace falta scikit-learn")
 
-    X, y, meta = load_split(args.vig_dir)
+    X, y, meta = load_split(args.vig_dir, args.multiclass)
     print(f"muestras: {len(y)} | positivos {int(y.sum())} | "
           f"features {X.shape[1]}", flush=True)
     if int(y.sum()) < 10:
@@ -140,6 +150,41 @@ def main():
     # No se reequilibra por remuestreo: está medido que degrada la calibración
     # (RUS multiplica el error de calibración por 6.6 a razón 1:20). Se pesa la
     # clase y se calibra después, que es lo que da menor error de calibración.
+    if args.multiclass:
+        from collections import Counter as _C
+        print("clases:", dict(_C(y.tolist())), flush=True)
+        clf = HistGradientBoostingClassifier(
+            max_iter=300, learning_rate=0.06, early_stopping=True,
+            validation_fraction=0.15, random_state=args.seed,
+            class_weight="balanced")
+        clf.fit(X[tr], y[tr])
+        names = {0: "fondo", 1: "castro", 2: "mamoa"}
+        out = {"mode": "multiclass", "n_features": int(X.shape[1]), "per_class": {}}
+        for sname, mask in (("val", va), ("test_o_val", te)):
+            if mask.sum() == 0:
+                continue
+            pred, yt = clf.predict(X[mask]), y[mask]
+            out["per_class"][sname] = {}
+            print(f"\n  {sname}:", flush=True)
+            for c, nm in names.items():
+                n = int((yt == c).sum())
+                if n == 0:
+                    continue
+                tp = int(((pred == c) & (yt == c)).sum())
+                fp = int(((pred == c) & (yt != c)).sum())
+                rec = tp / n
+                prec = tp / (tp + fp) if tp + fp else 0.0
+                lo, hi = wilson_ci(tp, n)
+                flag = "  <-- COLAPSADA" if rec == 0 else ""
+                print(f"    {nm:8s} n={n:5d}  recall {rec:.3f} "
+                      f"[{lo:.2f},{hi:.2f}]  precision {prec:.3f}{flag}", flush=True)
+                out["per_class"][sname][nm] = {"n": n, "recall": rec,
+                    "recall_ci95": [lo, hi], "precision": prec,
+                    "collapsed": rec == 0}
+        (args.out_dir / "metrics.json").write_text(
+            json.dumps(out, indent=2, default=float), encoding="utf-8")
+        return 0
+
     npos, nneg = int(y[tr].sum()), int((~y[tr].astype(bool)).sum())
     w = np.where(y[tr] == 1, nneg / max(npos, 1), 1.0)
 
