@@ -27,6 +27,7 @@ from __future__ import annotations
 
 import argparse
 import csv
+import hashlib
 import json
 import math
 import os
@@ -75,7 +76,7 @@ def in_bbox(lon, lat, bbox):
     return w <= lon <= e and s <= lat <= n
 
 
-def load_samples(scope: str = "trasancos"):
+def load_samples(scope: str = "trasancos", extra_negatives=None):
     """Positives, mound hard negatives and named modern/natural negatives.
 
     `scope="trasancos"` keeps the six-council pilot. `scope="galicia"` opens it
@@ -108,8 +109,11 @@ def load_samples(scope: str = "trasancos"):
     # en alcance galicia entran igual pero solo cubriran esa zona. El resto de
     # Galicia aporta por ahora negativos de catalogo (mamoas), y hara falta una
     # pasada de Overpass a escala gallega antes de entrenar en serio.
-    if HARD_NEG.exists():
-        for r in csv.DictReader(open(HARD_NEG, encoding="utf-8"), delimiter="\t"):
+    neg_files = [HARD_NEG] + [Path(p) for p in (extra_negatives or [])]
+    for nf in neg_files:
+        if not Path(nf).exists():
+            continue
+        for r in csv.DictReader(open(nf, encoding="utf-8"), delimiter="\t"):
             try:
                 lon, lat = float(r["longitude"]), float(r["latitude"])
             except (KeyError, TypeError, ValueError):
@@ -280,6 +284,8 @@ def main():
     ap.add_argument("--res-m", type=float, default=PIXEL_M)
     ap.add_argument("--workers", type=int, default=3)
     ap.add_argument("--scope", choices=("trasancos", "galicia"), default="trasancos")
+    ap.add_argument("--extra-negatives", nargs="*", default=None,
+                    help="TSV adicionales de negativos (mismo formato)")
     ap.add_argument("--val-every", type=int, default=5,
                     help="1 de cada N bloques espaciales va a validacion")
     args = ap.parse_args()
@@ -287,9 +293,26 @@ def main():
     arr_dir = args.out_dir / "arrays"
     arr_dir.mkdir(parents=True, exist_ok=True)
 
-    samples = load_samples(args.scope)
-    for i, s in enumerate(samples):
-        s["sid"] = f"{s['label']}_{s['group']}_{i:05d}"
+    samples = load_samples(args.scope, args.extra_negatives)
+    # El identificador se deriva de las coordenadas, no del índice en la lista.
+    # Con el índice, añadir una fuente de negativos desplaza a todos los demás
+    # y la reanudación empieza a saltar ficheros que corresponden a otro sitio:
+    # datos corruptos en silencio, que es peor que recalcular.
+    for s in samples:
+        key = f"{s['lon']:.6f},{s['lat']:.6f}".encode()
+        s["sid"] = (f"{s['label']}_{s['group']}_"
+                    f"{hashlib.sha1(key).hexdigest()[:10]}")
+    seen = set()
+    unique = []
+    for s in samples:
+        if s["sid"] in seen:
+            continue
+        seen.add(s["sid"])
+        unique.append(s)
+    if len(unique) != len(samples):
+        print(f"  {len(samples)-len(unique)} duplicados por coordenada descartados",
+              flush=True)
+    samples = unique
     pos = sum(1 for s in samples if s["label"] == 1)
     print(f"samples: {len(samples)} ({pos} positives, {len(samples)-pos} negatives)",
           flush=True)
