@@ -243,6 +243,32 @@ def render(res: dict) -> str:
     L = ["# Evaluación honesta", ""]
     L += [f"`{res['n']}` muestras: `{res['n_positives']}` positivos, "
           f"`{res['n_negatives']}` negativos.", ""]
+
+    # Aviso en cabecera, no en una nota al pie. La noche del 2026-08-03 una
+    # etapa del pipeline falló en silencio, el conjunto quedó con más positivos
+    # que negativos y el AP salió `0.961`. Parecía un éxito y no medía nada.
+    gap = res.get("ratio_gap", float("nan"))
+    ratio = res.get("ratio_observed", float("nan"))
+    alarms = []
+    if ratio == ratio and ratio < 1:
+        alarms.append(
+            f"**Hay más positivos que negativos** (`1:{ratio:.2f}`). En un barrido "
+            f"real la proporción es `1:{res['ratio_deploy']:.0f}`. Este conjunto "
+            "no representa el problema: cualquier métrica de precisión que salga "
+            "de aquí es ficción.")
+    elif gap == gap and gap > 50:
+        alarms.append(
+            f"**Desajuste de proporción de `{gap:.0f}x`** entre este conjunto "
+            f"(`1:{ratio:.0f}`) y el barrido real (`1:{res['ratio_deploy']:.0f}`). "
+            "Sospecha de que falta una fuente de negativos.")
+    if res["n_positives"] < 30:
+        alarms.append(
+            f"Solo `{res['n_positives']}` positivos: el intervalo será demasiado "
+            "ancho para comparar modelos.")
+    if alarms:
+        L += ["> [!] **AVISOS**", ">"]
+        L += [f"> - {a}" for a in alarms]
+        L += [""]
     gap = res["ratio_gap"]
     L += ["| magnitud | valor |", "|---|---:|",
           f"| ratio neg:pos observado | `1:{res['ratio_observed']:.0f}` |",
