@@ -65,10 +65,24 @@ PIXEL_M = 1.0
 BLOCK_M = 2000.0      # spatial block size for the train/val split
 
 
+_TRANSFORMER = None
+
+
 def lonlat_to_utm29(lon, lat):
-    from pyproj import Transformer
-    return Transformer.from_crs("EPSG:4326", "EPSG:25829",
-                                always_xy=True).transform(lon, lat)
+    """Convierte a UTM 29N reutilizando el transformador y aceptando secuencias.
+
+    Antes construia un `Transformer` nuevo en cada llamada, y como se llamaba una
+    vez por muestra, a escala Galicia eran `41.259` construcciones: cada una abre
+    `proj.db` y cuesta milisegundos, asi que la carga de muestras se comia varios
+    minutos al `100%` de un nucleo antes de imprimir la primera linea. Construirlo
+    una vez y pasarle los arrays completos deja eso en milisegundos.
+    """
+    global _TRANSFORMER
+    if _TRANSFORMER is None:
+        from pyproj import Transformer
+        _TRANSFORMER = Transformer.from_crs("EPSG:4326", "EPSG:25829",
+                                            always_xy=True)
+    return _TRANSFORMER.transform(lon, lat)
 
 
 def in_bbox(lon, lat, bbox):
@@ -121,8 +135,13 @@ def load_samples(scope: str = "trasancos", extra_negatives=None):
             samples.append({"label": 0, "group": r.get("negative_class", "other"),
                             "name": r.get("name", ""), "lon": lon, "lat": lat})
 
+    # Una sola llamada con los arrays completos, no una por muestra.
+    if samples:
+        xs, ys = lonlat_to_utm29([s["lon"] for s in samples],
+                                 [s["lat"] for s in samples])
+        for smp, x, y in zip(samples, xs, ys):
+            smp["x"], smp["y"] = x, y
     for smp in samples:
-        smp["x"], smp["y"] = lonlat_to_utm29(smp["lon"], smp["lat"])
         # O Val permanece intocable en ambos alcances: lleva Pena Lopesa, el caso
         # de control historico del proyecto, y nunca debe entrar en entrenamiento.
         smp["split"] = "test_o_val" if in_bbox(smp["lon"], smp["lat"], O_VAL) else "pool"
