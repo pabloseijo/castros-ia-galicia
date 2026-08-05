@@ -70,3 +70,5 @@ reports/repo_drift_status.md
 # trasancos-inference-v1 y oval-dense-grid-v1, que ya estaban protegidos.
 data/sweep_*.tsv
 data/cola_revision_*.tsv
+data/cola_triada_*.tsv
+data/triaje_*.tsv
