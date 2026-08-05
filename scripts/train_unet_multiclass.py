@@ -80,13 +80,27 @@ def label_of(row: dict) -> int:
     return 1 if g == "castro" else (2 if g == "mamoa" else 0)
 
 
+def _desplazar(a, dy, dx, t):
+    """Desplaza rellenando por reflejo. Ver la nota en `Vignettes.__getitem__`."""
+    _, h, w = a.shape
+    pad = np.pad(a, ((0, 0), (t, t), (t, t)), mode="reflect")
+    return pad[:, t-dy:t-dy+h, t-dx:t-dx+w]
+
+
 class Vignettes(Dataset):
     def __init__(self, rows, arr_dir: Path, augment: bool = False,
-                 translate: int = 0):
+                 translate: int = 0, val_translate: int = 0):
         self.rows = rows
         self.arr_dir = arr_dir
         self.augment = augment
         self.translate = translate
+        # Descentrado **determinista** de la validación: el despliegue nunca
+        # centra, así que una métrica de selección medida sobre viñetas centradas
+        # elige el checkpoint por lo que no se va a usar. Determinista y no
+        # aleatorio porque la métrica tiene que ser comparable entre épocas: si
+        # cada época ve un desplazamiento distinto, la mejora y el ruido del
+        # sorteo se mezclan y «mejor modelo» deja de significar nada.
+        self.val_translate = val_translate
 
     def __len__(self) -> int:
         return len(self.rows)
@@ -117,11 +131,14 @@ class Vignettes(Dataset):
                 # en el terreno; con `t=128` sobre `512 px` eso sería un cuarto de
                 # la viñeta enseñando un artefacto aprendible.
                 t = self.translate
-                dy, dx = random.randint(-t, t), random.randint(-t, t)
-                _, h, w = a.shape
-                pad = np.pad(a, ((0, 0), (t, t), (t, t)), mode="reflect")
-                a = pad[:, t-dy:t-dy+h, t-dx:t-dx+w]
+                a = _desplazar(a, random.randint(-t, t), random.randint(-t, t), t)
             a = np.ascontiguousarray(a)
+        elif self.val_translate:
+            t = self.val_translate
+            rng = np.random.default_rng(20260805 + i)
+            a = np.ascontiguousarray(
+                _desplazar(a, int(rng.integers(-t, t+1)),
+                           int(rng.integers(-t, t+1)), t))
         # El corpus ya viene normalizado a [0,1]; se centra en cero para que la
         # primera convolución preentrenada reciba un rango parecido al suyo.
         return torch.from_numpy((a - 0.5) / 0.5), label_of(r), i
@@ -279,6 +296,9 @@ def main() -> int:
     ap.add_argument("--lr", type=float, default=3e-4)
     ap.add_argument("--weight-decay", type=float, default=1e-4)
     ap.add_argument("--lse-r", type=float, default=8.0)
+    ap.add_argument("--val-translate", type=int, default=0,
+                    help="descentrado determinista de la validación; con esto la "
+                         "métrica de selección mide despliegue y no centrado")
     ap.add_argument("--translate", type=int, default=0,
                     help="desplazamiento aleatorio en píxeles (=metros a 1 m)")
     ap.add_argument("--workers", type=int, default=4)
@@ -329,7 +349,8 @@ def main() -> int:
     print(f"  pesos de clase: {[round(float(x), 3) for x in w]}", flush=True)
 
     mk = lambda rr, aug, shuf: DataLoader(
-        Vignettes(rr, arr_dir, augment=aug, translate=args.translate),
+        Vignettes(rr, arr_dir, augment=aug, translate=args.translate,
+                  val_translate=0 if aug else args.val_translate),
         batch_size=args.batch, shuffle=shuf, num_workers=args.workers,
         pin_memory=(device == "cuda"), drop_last=False,
         persistent_workers=args.workers > 0)
