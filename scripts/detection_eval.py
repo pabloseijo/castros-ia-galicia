@@ -229,14 +229,20 @@ def main() -> int:
     print(f"\nmejor F1: {mejor['f1']:.3f} en umbral {mejor['umbral']:.2f} "
           f"(recall {mejor['recall']:.3f} "
           f"IC95% [{mejor['recall_ci95'][0]:.2f}, {mejor['recall_ci95'][1]:.2f}])")
-    print("referencias del campo: Landauer 0.36 (Inglaterra entera), "
-          "Canedo 0.66 (tras minería de negativos duros)")
-    if mejor["f1"] >= 0.66:
-        print("  -> por encima de Canedo")
-    elif mejor["f1"] >= 0.36:
-        print("  -> por encima de Landauer, por debajo de Canedo")
-    else:
-        print("  -> por debajo de ambas referencias")
+    # Aquí había un veredicto automático —«por encima de Landauer, por debajo de
+    # Canedo»— y **hay que no volver a escribirlo**. La propia revisión del
+    # estado del arte de este proyecto lo prohíbe por escrito: «las métricas no
+    # son comparables entre sí: cada trabajo define positivo, unidad de
+    # evaluación y umbral de forma distinta. F1 66% de Canedo y F1 38% de
+    # Landauer no miden lo mismo». Y el 0.66 de Canedo es **posterior** a que dos
+    # arqueólogos revisaran su salida; compararle un número pre-revisión es
+    # compararse contra otra etapa del proceso, no contra otro método.
+    print("\nContexto, y NO es una comparación:")
+    print("  Landauer et al. 2025 reporta F1 0.36 sobre Inglaterra entera.")
+    print("  Canedo et al. 2025 reporta F1 0.66 TRAS una ronda de minería con")
+    print("  dos arqueólogos revisando su salida.")
+    print("  Ninguna de las dos define positivo, unidad ni umbral como aquí.")
+    print("  Colocarse en esa escala exige replicar su protocolo, no su cifra.")
 
     if args.out_json:
         args.out_json.write_text(json.dumps(
