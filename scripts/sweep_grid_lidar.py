@@ -45,6 +45,73 @@ from build_trasancos_vignettes import (channels_from_dem,  # noqa: E402
 GROUND_CLASS = 2
 
 
+def cortar_desde_dem(args_tuple):
+    """Igual que `cortar_grupo`, pero leyendo el DEM ya rasterizado.
+
+    Medido el `2026-08-06`: el barrido gasta el **`87,6%`** del tiempo
+    descomprimiendo LAZ y además lo hace **`8,4` veces por tesela** —`5.145`
+    lecturas para `611` teselas únicas—, porque agrupa celdas por conjunto de
+    teselas y cada grupo vuelve a abrir las suyas. Rasterizar es el `1,1%`.
+
+    Con la caché de `laz_a_dem.py` cada tesela se descomprimió **una vez**, y
+    aquí solo se recorta del ráster.
+
+    **No está lista, y el motivo está medido.** Comparada contra la vía del
+    `.laz` sobre las mismas celdas: la orientación es correcta —correlación
+    `0.987` tal cual, frente a `0.16` volteada— pero queda una diferencia media
+    de `0,23 m` de cota, y tras `channels_from_dem`, que normaliza por ventana,
+    la correlación de los canales baja hasta `0.53` en el peor caso.
+
+    La causa es **desalineamiento sub-píxel**: el DEM bina desde el borde de su
+    tesela, redondeado a metro entero (`np.floor(x.min())`), mientras que la
+    rejilla del barrido arranca en `lonlat_to_utm29(bbox)`, una coordenada
+    arbitraria. `int(round(...))` al recortar snapea hasta medio metro, y medio
+    metro horizontal en ladera son decímetros de cota.
+
+    **El arreglo es alinear la rejilla del barrido a metro entero de UTM**, no
+    tocar la caché: así ambos binados caen en la misma retícula y el recorte es
+    exacto. Queda pendiente de hacer y de volver a pasar `verificar_dem.py`, que
+    es quien cazó esto.
+    """
+    dem_paths, celdas, extent, res = args_tuple
+    half = extent / 2.0
+    trozos = []
+    for dp in dem_paths:
+        try:
+            z = np.load(dp)
+        except Exception:
+            continue
+        trozos.append((z["dem"], z["bounds"], float(z["res"])))
+    if not trozos:
+        return []
+    salida = []
+    for c in celdas:
+        b = (c["x"] - half, c["y"] - half, c["x"] + half, c["y"] + half)
+        n = int(round(extent / res))
+        mosaico = np.full((n, n), np.nan, dtype=np.float32)
+        for dem, bounds, r in trozos:
+            minx, miny, maxx, maxy = [float(v) for v in bounds]
+            # indices del recorte dentro de esta tesela, en pixeles
+            c0 = int(round((b[0] - minx) / r)); c1 = c0 + n
+            f0 = int(round((maxy - b[3]) / r)); f1 = f0 + n
+            sc0, sf0 = max(c0, 0), max(f0, 0)
+            sc1, sf1 = min(c1, dem.shape[1]), min(f1, dem.shape[0])
+            if sc1 <= sc0 or sf1 <= sf0:
+                continue
+            hueco = np.isnan(mosaico[sf0-f0:sf1-f0, sc0-c0:sc1-c0])
+            parche = dem[sf0:sf1, sc0:sc1]
+            destino = mosaico[sf0-f0:sf1-f0, sc0-c0:sc1-c0]
+            destino[hueco] = parche[hueco]
+        cubierto = np.isfinite(mosaico)
+        if cubierto.mean() < 0.30:
+            continue
+        if not cubierto.all():
+            mosaico[~cubierto] = float(np.median(mosaico[cubierto]))
+        arr = channels_from_dem(mosaico, res).astype(np.float16)
+        salida.append((c["id"], c["lon"], c["lat"], arr))
+    return salida
+
+
 def cortar_grupo(args_tuple):
     """Corta todas las celdas de un grupo que comparte teselas. Devuelve arrays."""
     tile_paths, celdas, extent, res = args_tuple
@@ -103,6 +170,11 @@ def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--laz-dir", type=Path, nargs="+", required=True)
+    ap.add_argument("--dem-dir", type=Path, default=None,
+                    help="caché de DEM de laz_a_dem.py. NO USAR TODAVÍA: la "
+                         "rejilla del barrido no está alineada con el ráster y "
+                         "sale un desfase sub-píxel. Ver la nota en "
+                         "`cortar_desde_dem`")
     ap.add_argument("--checkpoint", type=Path, required=True)
     ap.add_argument("--out", type=Path, required=True)
     ap.add_argument("--bbox", type=float, nargs=4, required=True,
@@ -140,8 +212,33 @@ def main() -> int:
           f"con paso {step:.0f} m ({100*(1-step/args.extent_m):.0f}% de solape)",
           flush=True)
 
-    tiles = sorted({str(p) for d in args.laz_dir for p in Path(d).glob("*.laz")})
-    grupos, huerfanas = group_samples_by_tiles(celdas, tiles, args.extent_m)
+    if args.dem_dir:
+        # Agrupar por tesela de DEM: se leen sus recuadros del propio .npz, que
+        # es barato, en vez de deducirlos del nombre del fichero.
+        demf = sorted(Path(args.dem_dir).glob("*.npz"))
+        cajas = []
+        for f in demf:
+            try:
+                b = np.load(f)["bounds"]
+                cajas.append((str(f), float(b[0]), float(b[1]), float(b[2]), float(b[3])))
+            except Exception:
+                continue
+        print(f"caché de DEM: {len(cajas)} teselas", flush=True)
+        half = args.extent_m / 2.0
+        grupos, huerfanas = {}, 0
+        for c in celdas:
+            cx0, cy0 = c["x"] - half, c["y"] - half
+            cx1, cy1 = c["x"] + half, c["y"] + half
+            toca = tuple(sorted(f for f, x0, y0, x1, y1 in cajas
+                                if not (x1 < cx0 or x0 > cx1 or y1 < cy0 or y0 > cy1)))
+            if not toca:
+                huerfanas += 1
+                continue
+            grupos.setdefault(toca, []).append(c)
+        tiles = [f for f, *_ in cajas]
+    else:
+        tiles = sorted({str(p) for d in args.laz_dir for p in Path(d).glob("*.laz")})
+        grupos, huerfanas = group_samples_by_tiles(celdas, tiles, args.extent_m)
     cubiertas = sum(len(v) for v in grupos.values())
     print(f"teselas: {len(tiles)} | celdas con LiDAR: {cubiertas} | "
           f"fuera de cobertura: {huerfanas}", flush=True)
@@ -179,7 +276,8 @@ def main() -> int:
 
     t0, hechos = time.time(), 0
     with ProcessPoolExecutor(max_workers=args.workers) as ex:
-        futs = [ex.submit(cortar_grupo, t) for t in tareas]
+        cortador = cortar_desde_dem if args.dem_dir else cortar_grupo
+        futs = [ex.submit(cortador, t) for t in tareas]
         lote_meta, lote_arr = [], []
 
         def vaciar():
