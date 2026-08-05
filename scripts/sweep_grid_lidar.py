@@ -50,20 +50,40 @@ def cortar_grupo(args_tuple):
     tile_paths, celdas, extent, res = args_tuple
     import laspy
     half = extent / 2.0
+
+    # Recuadro que de verdad hace falta: la union de las celdas del grupo.
+    # Sin esto se cargaban los puntos de hasta cuatro teselas enteras en float64,
+    # y con varios obreros a la vez el OOM killer se llevo el barrido dos veces
+    # el 2026-08-05, la segunda ya con solo tres obreros. Filtrar al leer y
+    # guardar en float32 es la diferencia entre caber y no caber en 8 GB.
+    ux0 = min(c["x"] for c in celdas) - half
+    ux1 = max(c["x"] for c in celdas) + half
+    uy0 = min(c["y"] for c in celdas) - half
+    uy1 = max(c["y"] for c in celdas) + half
+
     xs_l, ys_l, zs_l = [], [], []
     for tp in tile_paths:
         las = laspy.read(tp)
         keep = np.asarray(las.classification) == GROUND_CLASS
         if not keep.any():
+            del las
             continue
-        xs_l.append(np.asarray(las.x)[keep])
-        ys_l.append(np.asarray(las.y)[keep])
-        zs_l.append(np.asarray(las.z)[keep])
+        x = np.asarray(las.x)[keep]
+        y = np.asarray(las.y)[keep]
+        z = np.asarray(las.z)[keep]
+        del las
+        dentro = (x >= ux0) & (x <= ux1) & (y >= uy0) & (y <= uy1)
+        if not dentro.any():
+            continue
+        xs_l.append(x[dentro].astype(np.float32))
+        ys_l.append(y[dentro].astype(np.float32))
+        zs_l.append(z[dentro].astype(np.float32))
+        del x, y, z
     if not xs_l:
         return []
-    xs = np.concatenate(xs_l)
-    ys = np.concatenate(ys_l)
-    zs = np.concatenate(zs_l)
+    xs = np.concatenate(xs_l); del xs_l
+    ys = np.concatenate(ys_l); del ys_l
+    zs = np.concatenate(zs_l); del zs_l
 
     salida = []
     for c in celdas:
