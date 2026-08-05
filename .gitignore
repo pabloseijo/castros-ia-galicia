@@ -64,3 +64,9 @@ reports/repo_drift_status.md
 
 # Keep lightweight generated review artifacts versionable for the MVP.
 .lit-cache/
+
+# Salidas de barrido y colas de revision: llevan coordenadas de candidatos no
+# verificados, y la politica del proyecto es no publicarlas. Misma categoria que
+# trasancos-inference-v1 y oval-dense-grid-v1, que ya estaban protegidos.
+data/sweep_*.tsv
+data/cola_revision_*.tsv
