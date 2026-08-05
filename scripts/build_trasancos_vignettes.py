@@ -278,7 +278,11 @@ def group_samples_by_tiles(samples, tiles, extent):
 
 def main():
     ap = argparse.ArgumentParser(description=__doc__)
-    ap.add_argument("--laz-dir", type=Path, default=LAZ_DIR)
+    # Varios directorios, y no uno, porque las teselas viven separadas por cómo
+    # se descargaron —`lidar-positives-v1` centrado en positivos, `lidar-trasancos-v1`
+    # cubriendo la comarca— y usar solo el primero dejaba fuera el 93% de los
+    # negativos con nombre. La cobertura es la union de todos.
+    ap.add_argument("--laz-dir", type=Path, nargs="+", default=[LAZ_DIR])
     ap.add_argument("--out-dir", type=Path, default=OUT_DIR)
     ap.add_argument("--extent-m", type=float, default=EXTENT_M)
     ap.add_argument("--res-m", type=float, default=PIXEL_M)
@@ -319,10 +323,12 @@ def main():
     for g, n in Counter(s["group"] for s in samples).most_common():
         print(f"   {g}: {n}", flush=True)
 
-    tiles = sorted(str(p) for p in args.laz_dir.glob("*.laz"))
+    tiles = sorted({str(p) for d in args.laz_dir for p in Path(d).glob("*.laz")})
     if not tiles:
         print(f"no LAZ tiles in {args.laz_dir}; run download_trasancos_lidar.py first")
         return 1
+    for d in args.laz_dir:
+        print(f"   {d}: {len(list(Path(d).glob('*.laz')))} teselas", flush=True)
     print(f"tiles: {len(tiles)} | workers {args.workers}", flush=True)
 
     slim = [{k: s[k] for k in ("sid", "x", "y", "label")} for s in samples]

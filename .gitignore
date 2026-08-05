@@ -63,3 +63,4 @@ reports/annotation_backup_status.md
 reports/repo_drift_status.md
 
 # Keep lightweight generated review artifacts versionable for the MVP.
+.lit-cache/
