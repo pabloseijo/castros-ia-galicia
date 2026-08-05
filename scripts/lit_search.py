@@ -141,6 +141,19 @@ FETCHERS = {"openalex": from_openalex, "crossref": from_crossref,
             "europepmc": from_europepmc}
 
 
+def normalizar_ano(v):
+    """Europe PMC devuelve `pubYear` como texto y las otras APIs como entero.
+
+    Sin esto, ordenar por año revienta con `TypeError: bad operand type for
+    unary -: 'str'` en cuanto se mezcla Europe PMC con OpenAlex o Crossref, que
+    es justo lo que pasa al ampliar la búsqueda a imagen médica.
+    """
+    try:
+        return int(str(v)[:4])
+    except (TypeError, ValueError):
+        return 0
+
+
 def search_one(bucket: str, query: str, args, cache_dir: Path):
     key = hashlib.sha1(f"{bucket}|{query}|{args.year_from}".encode()).hexdigest()[:16]
     cf = cache_dir / f"{key}.json"
@@ -154,6 +167,7 @@ def search_one(bucket: str, query: str, args, cache_dir: Path):
     qtok = tokens(query)
     for r in rows:
         r["bucket"], r["query"] = bucket, query
+        r["year"] = normalizar_ano(r.get("year"))
         # Relevancia por solapamiento lexico, NO por citas.
         r["relevance"] = round(len(tokens(r["title"]) & qtok) / max(len(qtok), 1), 3)
         r["is_preprint"] = (r.get("venue") or "").strip().lower() in PREPRINT_VENUES
