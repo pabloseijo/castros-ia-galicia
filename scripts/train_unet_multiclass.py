@@ -106,12 +106,21 @@ class Vignettes(Dataset):
             if k:
                 a = np.rot90(a, k, axes=(1, 2))
             if self.translate:
-                # Descentrado deliberado. El barrido ciego de Trasancos hundió
-                # el recall al 18% por depender del centrado del chip; entrenar
-                # con desplazamiento es la respuesta directa a ese fallo.
+                # Descentrado deliberado, porque el despliegue nunca centra. Medido
+                # sobre v3: un castro centrado saca mediana `0.988` y el mismo
+                # castro visto desde la celda del barrido saca `0.386` —cruza el
+                # umbral—, mientras que los negativos no se mueven (`0.030` a
+                # `0.024`). Descentrar solo destruye la señal positiva.
+                #
+                # Relleno por reflejo y no `np.roll`: envolver la imagen pega el
+                # borde norte contra el sur y crea una costura recta que no existe
+                # en el terreno; con `t=128` sobre `512 px` eso sería un cuarto de
+                # la viñeta enseñando un artefacto aprendible.
                 t = self.translate
                 dy, dx = random.randint(-t, t), random.randint(-t, t)
-                a = np.roll(a, (dy, dx), axis=(1, 2))
+                _, h, w = a.shape
+                pad = np.pad(a, ((0, 0), (t, t), (t, t)), mode="reflect")
+                a = pad[:, t-dy:t-dy+h, t-dx:t-dx+w]
             a = np.ascontiguousarray(a)
         # El corpus ya viene normalizado a [0,1]; se centra en cero para que la
         # primera convolución preentrenada reciba un rango parecido al suyo.

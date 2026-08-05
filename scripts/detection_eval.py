@@ -118,7 +118,15 @@ def leer_tsv(path, cols=("lon", "lat")):
     return filas
 
 
-def evaluar(pred, truth, umbral, enlace_m, min_celdas, margen_m, tol_m, lat0):
+def evaluar(pred, truth, umbral, enlace_m, min_celdas, margen_m, tol_m, lat0,
+            mascara=None):
+    """`mascara` son yacimientos que el modelo vio en entrenamiento.
+
+    Una detección que cae sobre uno de ellos no es prospección: es memoria. No
+    puede sumar como acierto, pero tampoco es justo restarla como falso positivo
+    —el sitio existe—. Se excluye de ambos recuentos, que es como se trata la
+    contaminación de conjunto en cualquier evaluación honesta.
+    """
     sel = [p for p in pred if p["score"] >= umbral]
     if not sel:
         return {"umbral": umbral, "detecciones": 0, "tp": 0, "fp": 0,
@@ -141,20 +149,29 @@ def evaluar(pred, truth, umbral, enlace_m, min_celdas, margen_m, tol_m, lat0):
                    and y0 + margen_m <= c[1] <= y1 - margen_m]
 
     tx, ty = a_metros([t["lon"] for t in truth], [t["lat"] for t in truth], lat0)
+    if mascara:
+        mx, my = a_metros([m["lon"] for m in mascara],
+                          [m["lat"] for m in mascara], lat0)
     encontrado = [False] * len(truth)
     tp = 0
+    enmascaradas = 0
     for cx, cy, _ in centros:
         d = np.hypot(tx - cx, ty - cy)
         j = int(np.argmin(d)) if len(d) else -1
         if j >= 0 and d[j] <= tol_m:
             tp += 1
             encontrado[j] = True
-    fp = len(centros) - tp
+            continue
+        if mascara and np.hypot(mx - cx, my - cy).min() <= tol_m:
+            enmascaradas += 1          # yacimiento visto en entrenamiento: no cuenta
+    fp = len(centros) - tp - enmascaradas
     fn = sum(1 for e in encontrado if not e)
-    prec = tp / len(centros) if centros else 0.0
+    evaluables = len(centros) - enmascaradas
+    prec = tp / evaluables if evaluables > 0 else 0.0
     rec = sum(encontrado) / len(truth) if truth else float("nan")
     f1 = 2 * prec * rec / (prec + rec) if (prec + rec) > 0 else 0.0
     return {"umbral": umbral, "detecciones": len(centros), "tp": tp, "fp": fp,
+            "enmascaradas": enmascaradas,
             "fn": fn, "precision": prec, "recall": rec, "f1": f1,
             "recall_ci95": list(wilson(sum(encontrado), len(truth))) if truth else [0, 1]}
 
@@ -174,6 +191,9 @@ def main() -> int:
     ap.add_argument("--margen-m", type=float, default=0.0)
     ap.add_argument("--umbrales", type=float, nargs="+",
                     default=[0.5, 0.7, 0.8, 0.9, 0.95])
+    ap.add_argument("--mascara", type=Path,
+                    help="TSV de yacimientos vistos en entrenamiento; las "
+                         "detecciones sobre ellos se excluyen del recuento")
     ap.add_argument("--out-json", type=Path)
     args = ap.parse_args()
 
@@ -182,6 +202,7 @@ def main() -> int:
     for p in pred:
         p["score"] = float(p["score"])
     truth = leer_tsv(args.truth)
+    mascara = leer_tsv(args.mascara) if args.mascara else None
     print(f"predicciones: {len(pred)} | yacimientos conocidos: {len(truth)}",
           flush=True)
     if not pred or not truth:
@@ -194,7 +215,7 @@ def main() -> int:
           f"{'prec':>6} {'recall':>7} {'F1':>7} {'VPP@1:475':>10}")
     for u in args.umbrales:
         r = evaluar(pred, truth, u, args.enlace_m, args.min_celdas,
-                    args.margen_m, args.tolerancia_m, lat0)
+                    args.margen_m, args.tolerancia_m, lat0, mascara)
         # El VPP se recalcula a la prevalencia real, que es lo unico trasladable.
         espec = 1 - (r["fp"] / max(len(pred), 1))
         r["vpp_tasa_real"] = ppv_from(r["recall"], espec, PREVALENCIA_DESPLIEGUE) \

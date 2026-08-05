@@ -72,3 +72,7 @@ data/sweep_*.tsv
 data/cola_revision_*.tsv
 data/cola_triada_*.tsv
 data/triaje_*.tsv
+
+# Recortes de revision visual: la ortofoto y el relieve de un candidato no
+# verificado revelan su posicion igual que sus coordenadas. Misma politica.
+data/revision-visual-v1/
