@@ -196,13 +196,20 @@ def main():
     ap.add_argument("--workers", type=int, default=CNIG_CONCURRENCY)
     ap.add_argument("--limit", type=int, default=0, help="0 = all tiles")
     ap.add_argument("--min-free-gb", type=float, default=60.0)
+    # El bbox estaba fijo en TRASANCOS. Se abre para poder bajar los bloques de
+    # validacion fuera del piloto, que es lo unico que mide si el metodo
+    # generaliza: el 98,2% de los negativos del corpus vive a menos de 5 km de un
+    # castro conocido, asi que Trasancos no responde esa pregunta.
+    ap.add_argument("--bbox", type=float, nargs=4, default=None,
+                    metavar=("W", "S", "E", "N"),
+                    help="por defecto, el area del piloto de Trasancos")
     args = ap.parse_args()
 
     args.out_dir.mkdir(parents=True, exist_ok=True)
     args.laz_dir.mkdir(parents=True, exist_ok=True)
     DEFAULT_LOG_DIR.mkdir(parents=True, exist_ok=True)
 
-    points = utm29_grid(TRASANCOS)
+    points = utm29_grid(tuple(args.bbox) if args.bbox else TRASANCOS)
     if args.limit:
         points = points[: args.limit]
     total = len(points)
