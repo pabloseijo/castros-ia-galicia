@@ -196,6 +196,22 @@ def cmd_tomar(args):
         if libro["timers"]:
             anotar("  temporizadores parados: %s" % ", ".join(libro["timers"]))
 
+    # El candado de verdad. Hasta aqui «la GPU es nuestra» era una convencion:
+    # se paraba lo conocido y se confiaba en que nadie mas entrase.
+    # EXCLUSIVE_PROCESS lo impone el driver — un solo contexto CUDA a la vez—,
+    # asi que deja de depender de que nos acordemos de parar algo.
+    # Ojo: `-c 1` es Exclusive_Thread y esta obsoleto; el bueno es `-c 3`.
+    modo = sh("nvidia-smi -q | grep -i 'compute mode'")
+    libro["compute_mode_previo"] = (modo.stdout.split(":")[-1].strip()
+                                    if modo.returncode == 0 else "")
+    r = sh("sudo -n /usr/bin/nvidia-smi -c 3")
+    if r.returncode == 0 and "EXCLUSIVE_PROCESS" in (r.stdout + r.stderr).upper():
+        anotar("  GPU en EXCLUSIVE_PROCESS: el driver bloquea a cualquier otro")
+    else:
+        anotar("  NO se pudo poner el candado de la GPU: %s"
+               % (r.stderr or r.stdout or "").strip()[:70])
+    sh("sudo -n /usr/bin/nvidia-smi -pm 1")
+
     # La GPU, al final: lo anterior es lo que suele tener algo cargado.
     time.sleep(3)
     for p in procesos_gpu(mi_pid, args.proteger_pid, args.proteger_patron):
@@ -249,6 +265,11 @@ def cmd_soltar(args):
         anotar("  contenedores arrancados: %s" % ", ".join(libro["docker"]))
         if r.returncode != 0:
             anotar("  aviso: %s" % (r.stderr or "").strip()[:120])
+    prev = libro.get("compute_mode_previo", "")
+    if prev and "EXCLUSIVE" not in prev.upper():
+        r = sh("sudo -n /usr/bin/nvidia-smi -c 0")
+        anotar("  GPU devuelta a modo %s: %s"
+               % (prev, "ok" if r.returncode == 0 else "FALLO, hazlo a mano"))
     if libro.get("gpu_matados"):
         anotar("  NO se restauran solos (se mataron por PID): %s"
                % ", ".join(p["cmdline"][:40] for p in libro["gpu_matados"]))
