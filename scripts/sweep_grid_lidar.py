@@ -157,6 +157,56 @@ def cortar_desde_dem(args_tuple):
     return salida
 
 
+_CACHE_TESELA = {}
+_CACHE_ORDEN = []
+_CACHE_MAX = 4
+
+
+def _puntos_de_tesela(tp, laspy):
+    """Puntos de suelo de una tesela, con caché LRU dentro del obrero.
+
+    Aquí muere la redundancia de `8,4x`. El barrido agrupa celdas por conjunto
+    de teselas y luego cada grupo abre las suyas, así que una tesela compartida
+    por ocho grupos se descomprime ocho veces: `5.145` lecturas para `611`
+    teselas únicas. Y descomprimir es el `87,6%` del coste — `0,194 s` de CPU por
+    MB—, de modo que Galicia son `953` horas-CPU en vez de `113`.
+
+    Como las tareas van ordenadas por conjunto de teselas, los grupos que
+    comparten tesela caen seguidos y una caché de cuatro entradas convierte casi
+    todas las relecturas en aciertos. **Es exacto por construcción**: devuelve
+    los mismos puntos, así que no hay nada que verificar — al contrario que la
+    caché de DEM, que exige reproducir el otro camino.
+
+    Cuatro entradas y no más porque un grupo toca cuatro teselas como máximo
+    (medido: mediana `2`, máximo `4`) y cada una son ~`400 MB` en memoria.
+    """
+    if tp in _CACHE_TESELA:
+        _CACHE_ORDEN.remove(tp)
+        _CACHE_ORDEN.append(tp)
+        return _CACHE_TESELA[tp]
+    xs_l, ys_l, zs_l = [], [], []
+    try:
+        with laspy.open(tp) as fh:
+            for puntos in fh.chunk_iterator(4_000_000):
+                keep = np.asarray(puntos.classification) == GROUND_CLASS
+                if not keep.any():
+                    continue
+                xs_l.append(np.asarray(puntos.x)[keep].astype(np.float32))
+                ys_l.append(np.asarray(puntos.y)[keep].astype(np.float32))
+                zs_l.append(np.asarray(puntos.z)[keep].astype(np.float32))
+    except Exception:
+        return None
+    if not xs_l:
+        dato = None
+    else:
+        dato = (np.concatenate(xs_l), np.concatenate(ys_l), np.concatenate(zs_l))
+    _CACHE_TESELA[tp] = dato
+    _CACHE_ORDEN.append(tp)
+    while len(_CACHE_ORDEN) > _CACHE_MAX:
+        _CACHE_TESELA.pop(_CACHE_ORDEN.pop(0), None)
+    return dato
+
+
 def cortar_grupo(args_tuple):
     """Corta todas las celdas de un grupo que comparte teselas. Devuelve arrays."""
     tile_paths, celdas, extent, res, dens_obj = args_tuple
@@ -175,33 +225,14 @@ def cortar_grupo(args_tuple):
 
     xs_l, ys_l, zs_l = [], [], []
     for tp in tile_paths:
-        # **Por trozos, no `laspy.read()`.** Medido el 2026-08-06: cada obrero
-        # llegaba a ~1 GB y dos barridos simultáneos no cabían en 7,3 GB, con el
-        # OOM llevándose el trabajo cuatro veces. El culpable no era el tamaño
-        # del grupo —mediana 2 teselas, máximo 4— sino que `read()` carga la
-        # tesela **entera y con todas sus dimensiones** (intensidad, retorno,
-        # ángulo, RGB…) para quedarnos con `x, y, z` de clase suelo, que es una
-        # fracción. Leyendo en trozos, el pico deja de depender del tamaño de la
-        # tesela y pasa a estar acotado por el trozo.
-        try:
-            with laspy.open(tp) as fh:
-                for puntos in fh.chunk_iterator(4_000_000):
-                    keep = np.asarray(puntos.classification) == GROUND_CLASS
-                    if not keep.any():
-                        continue
-                    x = np.asarray(puntos.x)[keep]
-                    y = np.asarray(puntos.y)[keep]
-                    z = np.asarray(puntos.z)[keep]
-                    dentro = ((x >= ux0) & (x <= ux1)
-                              & (y >= uy0) & (y <= uy1))
-                    if not dentro.any():
-                        continue
-                    xs_l.append(x[dentro].astype(np.float32))
-                    ys_l.append(y[dentro].astype(np.float32))
-                    zs_l.append(z[dentro].astype(np.float32))
-                    del x, y, z, keep, dentro
-        except Exception:
+        dato = _puntos_de_tesela(tp, laspy)
+        if dato is None:
             continue
+        x, y, z = dato
+        dentro = (x >= ux0) & (x <= ux1) & (y >= uy0) & (y <= uy1)
+        if not dentro.any():
+            continue
+        xs_l.append(x[dentro]); ys_l.append(y[dentro]); zs_l.append(z[dentro])
     if not xs_l:
         return []
     xs = np.concatenate(xs_l); del xs_l
@@ -262,7 +293,25 @@ def main() -> int:
     res = args.res_m
 
     import math
+    import signal as _sig
     import torch
+
+    # **Matar a los obreros si muere el padre.** Es el fallo que mas veces ha
+    # parado esta maquina: el OOM se lleva al padre, los obreros quedan vivos, y
+    # `pgrep` sigue encontrando algo — asi que quien espera al barrido espera
+    # para siempre. Peor desde que la GPU esta en EXCLUSIVE_PROCESS: el contexto
+    # CUDA del padre muerto lo mantienen abierto sus hijos y **bloquea la maquina
+    # entera**. Paso cuatro veces el 2026-08-06, la ultima dejando una cadena
+    # parada 1h 18m.
+    #
+    # `prctl(PR_SET_PDEATHSIG)` hace que el kernel envie SIGKILL al hijo en
+    # cuanto muere su padre. Se instala en cada obrero al arrancar.
+    def _morir_con_el_padre():
+        try:
+            import ctypes
+            ctypes.CDLL("libc.so.6").prctl(1, _sig.SIGKILL)  # PR_SET_PDEATHSIG
+        except Exception:
+            pass
     from train_unet_multiclass import UNetMulticlass
 
     # --- rejilla ---
@@ -358,6 +407,13 @@ def main() -> int:
             tareas.append((list(k), pend, args.extent_m, args.res_m,
                            args.densidad_suelo))
 
+    # **Ordenar por conjunto de teselas.** Sin esto la caché LRU no sirve: los
+    # grupos que comparten tesela llegan salteados y cada uno la vuelve a
+    # descomprimir. Ordenados, caen seguidos y la caché de cuatro entradas
+    # convierte casi todas las relecturas en aciertos. El orden no cambia ningún
+    # resultado —cada celda se puntúa igual— solo cuándo se lee cada fichero.
+    tareas.sort(key=lambda t: tuple(sorted(t[0])))
+
     nuevo = not args.out.exists()
     fh = open(args.out, "a", newline="", encoding="utf-8")
     wr = csv.writer(fh, delimiter="\t")
@@ -365,7 +421,8 @@ def main() -> int:
         wr.writerow(["id", "lon", "lat", "score", "p_fondo", "p_castro", "p_mamoa"])
 
     t0, hechos = time.time(), 0
-    with ProcessPoolExecutor(max_workers=args.workers) as ex:
+    with ProcessPoolExecutor(max_workers=args.workers,
+                             initializer=_morir_con_el_padre) as ex:
         cortador = cortar_desde_dem if args.dem_dir else cortar_grupo
         futs = [ex.submit(cortador, t) for t in tareas]
         lote_meta, lote_arr = [], []

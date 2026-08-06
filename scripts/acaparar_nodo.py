@@ -209,6 +209,19 @@ def cmd_tomar(args):
     # EXCLUSIVE_PROCESS lo impone el driver — un solo contexto CUDA a la vez—,
     # asi que deja de depender de que nos acordemos de parar algo.
     # Ojo: `-c 1` es Exclusive_Thread y esta obsoleto; el bueno es `-c 3`.
+    # Antes de bloquear, limpiar: con EXCLUSIVE_PROCESS un contexto huerfano
+    # —padre muerto cuyos obreros siguen vivos— impide arrancar cualquier
+    # trabajo. Bloquear sin limpiar deja la maquina inutilizable.
+    for _p in procesos_gpu(mi_pid, args.proteger_pid, args.proteger_patron):
+        if "sin /proc" in _p["cmdline"]:
+            anotar("  contexto huerfano en la GPU (pid %d): buscando sus hijos"
+                   % _p["pid"])
+            for _h in sh("pgrep -P %d" % _p["pid"]).stdout.split():
+                try:
+                    os.kill(int(_h), signal.SIGKILL)
+                    anotar("    hijo %s eliminado" % _h)
+                except Exception:
+                    pass
     modo = sh("nvidia-smi -q | grep -i 'compute mode'")
     libro["compute_mode_previo"] = (modo.stdout.split(":")[-1].strip()
                                     if modo.returncode == 0 else "")
