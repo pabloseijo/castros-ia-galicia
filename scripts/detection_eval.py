@@ -185,12 +185,21 @@ def main() -> int:
                     help="TSV de yacimientos conocidos con lon, lat")
     ap.add_argument("--tolerancia-m", type=float, default=500.0,
                     help="distancia de acierto; 500 m es lo que usa Landauer")
-    ap.add_argument("--enlace-m", type=float, default=256.0,
+    # Medido en Lugo el 2026-08-06 y validado dejando un concello fuera: la
+    # configuración anterior (`enlace 256`, `min-celdas 2`) estaba **al revés**.
+    # Exigía dos celdas a un umbral tan bajo que el ruido también produce
+    # parejas, y a la vez fundía detecciones vecinas en cúmulos cuyo centro se
+    # aleja del yacimiento. Lo correcto es **enlace corto y aceptar celda
+    # única**, dejando que el umbral haga el filtrado: 8 de los 9 pliegues
+    # eligieron `0.70 / 128 / 1` por su cuenta. F1 honesto `0.618` contra `0.590`.
+    ap.add_argument("--enlace-m", type=float, default=128.0,
                     help="distancia para unir detecciones vecinas")
-    ap.add_argument("--min-celdas", type=int, default=2)
+    ap.add_argument("--min-celdas", type=int, default=1,
+                    help="un castro puede caer en una sola celda; filtrar por "
+                         "tamaño de cúmulo cuesta más recall del que ahorra")
     ap.add_argument("--margen-m", type=float, default=0.0)
     ap.add_argument("--umbrales", type=float, nargs="+",
-                    default=[0.5, 0.7, 0.8, 0.9, 0.95])
+                    default=[0.3, 0.5, 0.6, 0.7, 0.8])
     ap.add_argument("--mascara", type=Path,
                     help="TSV de yacimientos vistos en entrenamiento; las "
                          "detecciones sobre ellos se excluyen del recuento")
