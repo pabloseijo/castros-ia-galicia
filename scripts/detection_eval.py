@@ -211,6 +211,11 @@ def main() -> int:
     ap.add_argument("--margen-m", type=float, default=0.0)
     ap.add_argument("--umbrales", type=float, nargs="+",
                     default=[0.3, 0.5, 0.6, 0.7, 0.8])
+    ap.add_argument("--romper-precinto", metavar="MOTIVO", default=None,
+                    help="obligatorio para evaluar sobre el conjunto de prueba "
+                         "precintado (norte de Portugal). Cada mirada al test lo "
+                         "convierte en validación: se rompe una vez, al final. "
+                         "Ver data/PRECINTO-TEST.md")
     ap.add_argument("--mascara", type=Path,
                     help="TSV de yacimientos vistos en entrenamiento; las "
                          "detecciones sobre ellos se excluyen del recuento")
@@ -221,6 +226,21 @@ def main() -> int:
             if "score" in p]
     for p in pred:
         p["score"] = float(p["score"])
+    if "portugal" in str(args.truth).lower() or "-test-" in str(args.truth).lower():
+        if not args.romper_precinto:
+            raise SystemExit(
+                "PRECINTO: '%s' es conjunto de PRUEBA y no se toca hasta cerrar "
+                "el modelo sobre Galicia.\nSi de verdad toca romperlo, pasa "
+                "--romper-precinto \"motivo\". Lee data/PRECINTO-TEST.md primero."
+                % args.truth.name)
+        import datetime as _dt
+        _pre = Path(__file__).resolve().parent.parent / "data/PRECINTO-TEST.md"
+        if _pre.exists():
+            with open(_pre, "a", encoding="utf-8") as _fh:
+                _fh.write("\n- **%s** — %s (verdad: `%s`)\n"
+                          % (_dt.date.today().isoformat(),
+                             args.romper_precinto, args.truth.name))
+        print("*** PRECINTO ROTO: %s ***" % args.romper_precinto, flush=True)
     truth = leer_tsv(args.truth)
     mascara = leer_tsv(args.mascara) if args.mascara else None
     print(f"predicciones: {len(pred)} | yacimientos conocidos: {len(truth)}",
