@@ -250,6 +250,23 @@ def main() -> int:
 
     # Una sola latitud de referencia para todo, o las distancias no comparan.
     lat0 = float(np.mean([t["lat"] for t in truth]))
+
+    # **La cobertura, antes de cualquier cifra.** Un barrido que se paró a medias
+    # da un F1 plausible y falso: mide los agujeros, no el modelo. Ha pasado tres
+    # veces —el primer Lugo al 59%, Pontevedra al 76%, el Lugo de v5 al 74%— y
+    # cada vez la cifra parecía razonable. Va aquí y no en el guion de turno,
+    # porque el guion se olvida y esto no.
+    _px, _py = a_metros([p["lon"] for p in pred], [p["lat"] for p in pred], lat0)
+    _tx, _ty = a_metros([t["lon"] for t in truth], [t["lat"] for t in truth], lat0)
+    _d = np.array([float(np.hypot(_px - _tx[i], _py - _ty[i]).min())
+                   for i in range(len(_tx))])
+    _cob = float((_d <= 256.0).mean())
+    print("cobertura: %d de %d yacimientos con celda a <256 m (%.0f%%)"
+          % ((_d <= 256).sum(), len(_d), 100 * _cob))
+    if _cob < 0.95:
+        print("*** AVISO: cobertura %.0f%%. Las cifras de abajo miden el barrido,"
+              " no el modelo. %d yacimientos sin celda a <512 m. ***"
+              % (100 * _cob, int((_d > 512).sum())), flush=True)
     filas = []
     print(f"\n{'umbral':>7} {'detec':>7} {'TP':>5} {'FP':>6} {'FN':>5} "
           f"{'prec':>6} {'recall':>7} {'F1':>7} {'VPP@1:475':>10}")
