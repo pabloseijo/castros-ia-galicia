@@ -424,7 +424,20 @@ def main() -> int:
     with ProcessPoolExecutor(max_workers=args.workers,
                              initializer=_morir_con_el_padre) as ex:
         cortador = cortar_desde_dem if args.dem_dir else cortar_grupo
-        futs = [ex.submit(cortador, t) for t in tareas]
+        # **Set, no lista.** `Future.result()` no libera nada: el objeto se queda
+        # con su resultado en `_result` para siempre. Con una lista viva durante
+        # todo el barrido, cada grupo ya procesado seguía ocupando memoria por los
+        # arrays que ya se habían volcado a `lote_arr` — 8.658 celdas de Lugo por
+        # ~1,5 MB (512x512x3 float16) son ~13 GB en una máquina de 8. Es la fuga
+        # que mató en silencio los barridos del 2026-08-05 y 06 (confirmado por
+        # `dmesg`: seis OOM-kill de este mismo proceso, con `anon-rss` subiendo de
+        # forma sostenida hasta cortar sobre el 55-75% de cobertura, según cuánto
+        # llevara corriendo). El wrapper (`cadena_v5.sh`/`cadena_v6.sh`) no
+        # comprobaba el `rc` de este paso —a diferencia del de entrenamiento—, así
+        # que el `SIGKILL` no dejaba rastro ni en el log ni en el código de salida
+        # que se miraba. `futs.discard(f)` suelta la única referencia que queda
+        # tras consumir el resultado, y con ella el array.
+        futs = {ex.submit(cortador, t) for t in tareas}
         lote_meta, lote_arr = [], []
 
         def vaciar():
@@ -449,6 +462,7 @@ def main() -> int:
                 lote_arr.append(arr)
                 if len(lote_arr) >= args.batch:
                     vaciar()
+            futs.discard(f)
             if i % 25 == 0 or i == len(tareas):
                 print(f"  {i}/{len(tareas)} grupos, {hechos} celdas puntuadas "
                       f"({time.time()-t0:.0f}s)", flush=True)

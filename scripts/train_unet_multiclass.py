@@ -244,6 +244,42 @@ def per_class_block(pred: np.ndarray, true: np.ndarray) -> dict:
     return out
 
 
+class FocalLoss(nn.Module):
+    """Focal loss (Lin et al. 2017, `10.1109/iccv.2017.324`).
+
+    `CrossEntropyLoss(weight=w)` pesa por **frecuencia de clase**: dentro de
+    "fondo" un negativo duro (una viñeta de campo de fútbol que el modelo
+    puntúa 0.9 como castro) pesa exactamente igual que un negativo trivial que
+    ya acierta con confianza. Medido el 2026-08-06: con `balanced` los 534
+    negativos duros minados de OSM son el 4,9% de las viñetas de "fondo" y se
+    llevan ~1,6% del gradiente total — 16 de 26 falsos positivos de Pontevedra
+    resultaron estar a 1 m de un sitio visto así en entrenamiento y aun así el
+    modelo lo puntuaba 0.82-0.99. La dilución es invisible en el recall
+    agregado de "fondo" porque perder el 100% de esos 534 solo le costaría ~5
+    puntos.
+
+    `FL(p_t) = -alpha_t * (1-p_t)^gamma * log(p_t)` reescala cada ejemplo por
+    lo mal que el modelo lo tiene clasificado en ese momento, no por la
+    frecuencia de su clase. Un negativo duro que el modelo sigue puntuando
+    alto sigue pesando fuerte en cada época; uno que ya aprendió a suprimir
+    pesa casi cero. `alpha` sigue siendo el balanceo por clase existente —
+    focal loss lo complementa, no lo sustituye.
+    """
+
+    def __init__(self, alpha: torch.Tensor, gamma: float = 2.0):
+        super().__init__()
+        self.alpha = alpha
+        self.gamma = gamma
+
+    def forward(self, logits: torch.Tensor, target: torch.Tensor) -> torch.Tensor:
+        logp = F.log_softmax(logits, dim=1)
+        logp_t = logp.gather(1, target.unsqueeze(1)).squeeze(1)
+        p_t = logp_t.exp()
+        alpha_t = self.alpha[target]
+        loss = -alpha_t * (1 - p_t).pow(self.gamma) * logp_t
+        return loss.mean()
+
+
 def selection_score(block: dict) -> float:
     """F1 macro de castro y mámoa: las dos clases que importan.
 
@@ -296,6 +332,15 @@ def main() -> int:
     ap.add_argument("--lr", type=float, default=3e-4)
     ap.add_argument("--weight-decay", type=float, default=1e-4)
     ap.add_argument("--lse-r", type=float, default=8.0)
+    ap.add_argument("--loss", default="focal", choices=("ce", "focal"),
+                    help="focal (Lin et al. 2017, 10.1109/iccv.2017.324) pesa "
+                         "cada ejemplo por su dificultad, no solo por la "
+                         "frecuencia de su clase — necesario para que los "
+                         "negativos duros minados no se diluyan dentro de "
+                         "'fondo'. ce es el CrossEntropyLoss balanceado por "
+                         "clase que usaban v3-v6")
+    ap.add_argument("--focal-gamma", type=float, default=2.0,
+                    help="foco sobre lo difícil; 2.0 es el valor de Lin et al.")
     ap.add_argument("--val-translate", type=int, default=0,
                     help="descentrado determinista de la validación; con esto la "
                          "métrica de selección mide despliegue y no centrado")
@@ -368,7 +413,11 @@ def main() -> int:
                             weight_decay=args.weight_decay)
     sched = torch.optim.lr_scheduler.CosineAnnealingLR(opt, T_max=args.epochs)
     scaler = torch.amp.GradScaler("cuda", enabled=amp)
-    crit = nn.CrossEntropyLoss(weight=w)
+    crit = FocalLoss(w, args.focal_gamma) if args.loss == "focal" \
+        else nn.CrossEntropyLoss(weight=w)
+    print(f"  pérdida: {args.loss}"
+          + (f" (gamma {args.focal_gamma})" if args.loss == "focal" else ""),
+          flush=True)
 
     ck_last, ck_best = args.out_dir / "last.pt", args.out_dir / "best.pt"
     start, best, history = 0, -1.0, []
