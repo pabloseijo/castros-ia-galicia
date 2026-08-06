@@ -38,15 +38,37 @@ def main() -> int:
                     default=RAIZ / "data/galicia-vignettes-v3/index.tsv")
     ap.add_argument("--out-dir", type=Path, default=RAIZ / "data")
     ap.add_argument("--tolerancia-m", type=float, default=300.0)
+    ap.add_argument("--barrido", type=Path, default=None,
+                    help="TSV del barrido. Con esto la verdad se toma del "
+                         "TERRENO REALMENTE BARRIDO y no del bbox, que es lo "
+                         "correcto: las teselas de 1 km se desbordan del bbox y "
+                         "los castros de ese borde se contaban como falsos "
+                         "positivos. Pasó en Trasancos (6 castros) y otra vez en "
+                         "Lugo (4 de los 20 mejores candidatos).")
     args = ap.parse_args()
 
     W, S, E, N = args.bbox
-    M = [r for r in csv.DictReader(open(args.maestro, encoding="utf-8"),
-                                   delimiter="\t")
-         if r["label_class"] == "1"
-         and r["weak_label_status"] == "weak_positive_candidate"
-         and r["longitude"] and r["latitude"]
-         and W <= float(r["longitude"]) <= E and S <= float(r["latitude"]) <= N]
+    limpios = [r for r in csv.DictReader(open(args.maestro, encoding="utf-8"),
+                                          delimiter="\t")
+               if r["label_class"] == "1"
+               and r["weak_label_status"] == "weak_positive_candidate"
+               and r["longitude"] and r["latitude"]]
+    if args.barrido:
+        sw = list(csv.DictReader(open(args.barrido, encoding="utf-8"),
+                                 delimiter="\t"))
+        la0 = float(np.mean([float(r["lat"]) for r in sw]))
+        kk = 111320.0
+        kkx = kk * np.cos(np.radians(la0))
+        bx = np.array([float(r["lon"]) for r in sw]) * kkx
+        by = np.array([float(r["lat"]) for r in sw]) * kk
+        M = [r for r in limpios
+             if np.hypot(bx - float(r["longitude"]) * kkx,
+                         by - float(r["latitude"]) * kk).min() <= 400.0]
+        print("verdad tomada del terreno barrido (%d celdas): %d castros"
+              % (len(sw), len(M)))
+    else:
+        M = [r for r in limpios
+             if W <= float(r["longitude"]) <= E and S <= float(r["latitude"]) <= N]
     if not M:
         raise SystemExit("el bloque no contiene castros catalogados")
 
