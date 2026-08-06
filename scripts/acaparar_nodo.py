@@ -138,6 +138,14 @@ def procesos_gpu(mi_pid, proteger_pids=(), proteger_patrones=()):
         try:
             cmd = Path("/proc/%d/cmdline" % pid).read_bytes().decode(errors="replace")
         except Exception:
+            # PID con VRAM pero sin `/proc`. **No es un contexto filtrado del
+            # driver**, aunque lo parezca: es un padre muerto cuyos obreros
+            # siguen vivos y mantienen su contexto CUDA abierto. Pasó el
+            # 2026-08-06 con 1,2 GB de los 8, y se liberaron solos al matar a los
+            # dos obreros huérfanos. Buscarlos por su línea de comandos.
+            fuera.append({"pid": pid, "cmdline": "<sin /proc: padre muerto con "
+                                                 "obreros vivos reteniendo su "
+                                                 "contexto CUDA>"})
             continue
         cmd = cmd.replace("\x00", " ")
         if any(pat and pat in cmd for pat in proteger_patrones):
