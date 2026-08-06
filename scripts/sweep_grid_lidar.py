@@ -39,10 +39,43 @@ import numpy as np
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from build_trasancos_vignettes import (channels_from_dem,  # noqa: E402
-                                       grid_from_points, group_samples_by_tiles,
-                                       laz_bounds, lonlat_to_utm29)
+                                       diezmar_a_densidad, grid_from_points,
+                                       group_samples_by_tiles, laz_bounds,
+                                       lonlat_to_utm29)
 
 GROUND_CLASS = 2
+
+
+# --- PENDIENTE, y es la palanca grande del proyecto ---------------------------
+#
+# **La redundancia de 8,4x no es un problema de formato: es el orden del bucle.**
+# `group_samples_by_tiles` agrupa celdas por su *conjunto* de teselas, y despues
+# cada grupo abre las suyas. Una tesela compartida por ocho grupos se descomprime
+# ocho veces: 5.145 lecturas para 611 teselas unicas.
+#
+# Medido el 2026-08-06: la descompresion es el 87,6% del coste y son 0,194 s de
+# CPU por MB. Galicia son 113 horas-CPU en una pasada limpia, contra 953 con la
+# redundancia actual — de 9,4 h de reloj a 79 h sobre 12 hilos. Y no lo arregla
+# mas paralelismo: cada `laspy.read()` ya usa ~5 hilos, asi que con 2 obreros la
+# maquina de 12 nucleos **ya esta saturada**.
+#
+# Dos arreglos, ambos **exactos por construccion** —mismos puntos, mismos
+# numeros, nada que verificar—, al contrario que la cache de DEM, que exige
+# reproducir el otro camino y ahi lleva tres intentos fallidos:
+#
+#   1. **Cache LRU de teselas.** Ordenar las tareas para que los grupos que
+#      comparten teselas vayan seguidos, y retener las ultimas 6-8 leidas. Un
+#      grupo toca 4 teselas como maximo, asi que la mayoria de relecturas pasan a
+#      ser aciertos. ~15 lineas, captura la mayor parte del 8,4x.
+#
+#   2. **Recorrer por tesela y no por grupo.** Leer cada tesela una vez y volcar
+#      sus puntos en todas las ventanas que la necesiten, cerrando ventanas segun
+#      se completan. Es el 8,4x entero. Con ventanas de 512 m sobre teselas de
+#      1 km, una ventana toca 4 teselas, asi que en orden de filas el numero de
+#      ventanas abiertas queda acotado (~1,4 GB estimados, cabe).
+#
+# Prioridad alta: la descarga se paga una vez —ya hay 106 GB en disco— pero la
+# redundancia se paga en **cada** barrido, y van siete en dos dias.
 
 
 def cortar_desde_dem(args_tuple):
@@ -106,7 +139,19 @@ def cortar_desde_dem(args_tuple):
         if cubierto.mean() < 0.30:
             continue
         if not cubierto.all():
-            mosaico[~cubierto] = float(np.median(mosaico[cubierto]))
+            # **Vecino más próximo, no la mediana.** `grid_from_points` rellena
+            # los huecos con `distance_transform_edt`, y rellenarlos aquí con la
+            # mediana de la ventana daba valores completamente distintos justo en
+            # las zonas sin retorno — que es donde más se nota, porque son
+            # bosque cerrado, que es donde vive el castro que se busca. Era la
+            # causa de que la caché no reprodujera el camino del `.laz`.
+            try:
+                from scipy import ndimage
+                idx = ndimage.distance_transform_edt(
+                    ~cubierto, return_distances=False, return_indices=True)
+                mosaico = mosaico[tuple(idx)]
+            except Exception:
+                mosaico[~cubierto] = float(np.median(mosaico[cubierto]))
         arr = channels_from_dem(mosaico, res).astype(np.float16)
         salida.append((c["id"], c["lon"], c["lat"], arr))
     return salida
@@ -114,7 +159,7 @@ def cortar_desde_dem(args_tuple):
 
 def cortar_grupo(args_tuple):
     """Corta todas las celdas de un grupo que comparte teselas. Devuelve arrays."""
-    tile_paths, celdas, extent, res = args_tuple
+    tile_paths, celdas, extent, res, dens_obj = args_tuple
     import laspy
     half = extent / 2.0
 
@@ -130,27 +175,47 @@ def cortar_grupo(args_tuple):
 
     xs_l, ys_l, zs_l = [], [], []
     for tp in tile_paths:
-        las = laspy.read(tp)
-        keep = np.asarray(las.classification) == GROUND_CLASS
-        if not keep.any():
-            del las
+        # **Por trozos, no `laspy.read()`.** Medido el 2026-08-06: cada obrero
+        # llegaba a ~1 GB y dos barridos simultáneos no cabían en 7,3 GB, con el
+        # OOM llevándose el trabajo cuatro veces. El culpable no era el tamaño
+        # del grupo —mediana 2 teselas, máximo 4— sino que `read()` carga la
+        # tesela **entera y con todas sus dimensiones** (intensidad, retorno,
+        # ángulo, RGB…) para quedarnos con `x, y, z` de clase suelo, que es una
+        # fracción. Leyendo en trozos, el pico deja de depender del tamaño de la
+        # tesela y pasa a estar acotado por el trozo.
+        try:
+            with laspy.open(tp) as fh:
+                for puntos in fh.chunk_iterator(4_000_000):
+                    keep = np.asarray(puntos.classification) == GROUND_CLASS
+                    if not keep.any():
+                        continue
+                    x = np.asarray(puntos.x)[keep]
+                    y = np.asarray(puntos.y)[keep]
+                    z = np.asarray(puntos.z)[keep]
+                    dentro = ((x >= ux0) & (x <= ux1)
+                              & (y >= uy0) & (y <= uy1))
+                    if not dentro.any():
+                        continue
+                    xs_l.append(x[dentro].astype(np.float32))
+                    ys_l.append(y[dentro].astype(np.float32))
+                    zs_l.append(z[dentro].astype(np.float32))
+                    del x, y, z, keep, dentro
+        except Exception:
             continue
-        x = np.asarray(las.x)[keep]
-        y = np.asarray(las.y)[keep]
-        z = np.asarray(las.z)[keep]
-        del las
-        dentro = (x >= ux0) & (x <= ux1) & (y >= uy0) & (y <= uy1)
-        if not dentro.any():
-            continue
-        xs_l.append(x[dentro].astype(np.float32))
-        ys_l.append(y[dentro].astype(np.float32))
-        zs_l.append(z[dentro].astype(np.float32))
-        del x, y, z
     if not xs_l:
         return []
     xs = np.concatenate(xs_l); del xs_l
     ys = np.concatenate(ys_l); del ys_l
     zs = np.concatenate(zs_l); del zs_l
+
+    # Igualar la densidad antes de rasterizar. Medido el 2026-08-06: las teselas
+    # de Trasancos traen `1,56 pt/m2` de suelo y las de Lugo `2,44` —misma serie
+    # `PNOA-2024-GAL`, pero entregas separadas nueve meses—, así que el `F1 0.415`
+    # contra `0.743` podía ser densidad y no geografía. Y el conjunto de prueba
+    # portugués vuela a `10 pt/m2`: sin igualar, una caída allí no se podría
+    # separar en «no generaliza» contra «otro sensor».
+    if dens_obj:
+        xs, ys, zs = diezmar_a_densidad(xs, ys, zs, dens_obj)
 
     salida = []
     for c in celdas:
@@ -186,9 +251,17 @@ def main() -> int:
     ap.add_argument("--workers", type=int, default=4,
                     help="lo limita la RAM por obrero, no el numero de hilos")
     ap.add_argument("--batch", type=int, default=16)
+    ap.add_argument("--densidad-suelo", type=float, default=None,
+                    metavar="PT_M2",
+                    help="diezma la nube a esta densidad de puntos de suelo "
+                         "antes de rasterizar, para que dos bloques con vuelos "
+                         "distintos sean comparables. No hace nada si la nube ya "
+                         "es igual o más pobre")
     args = ap.parse_args()
     step = args.step_m or args.extent_m / 2.0
+    res = args.res_m
 
+    import math
     import torch
     from train_unet_multiclass import UNetMulticlass
 
@@ -196,6 +269,22 @@ def main() -> int:
     w, s, e, n = args.bbox
     x0, y0 = lonlat_to_utm29(w, s)
     x1, y1 = lonlat_to_utm29(e, n)
+    # **Alinear la rejilla a metro entero de UTM.** `lonlat_to_utm29` devuelve una
+    # coordenada arbitraria, mientras que la caché de DEM bina desde el borde de
+    # su tesela redondeado a entero (`np.floor(x.min())`). Con los dos orígenes
+    # desfasados, recortar del ráster snapea hasta medio metro, y medio metro
+    # horizontal en ladera son decímetros de cota que `channels_from_dem`
+    # amplifica al normalizar por ventana: la correlación de los canales caía a
+    # `0.53` y por eso `--dem-dir` estaba desactivado.
+    #
+    # Con la rejilla en enteros los dos binados caen en la misma retícula y el
+    # recorte es exacto. Es lo que desbloquea la caché, y con ella el `8,4×`:
+    # está medido que cada tesela se descomprime `8,4` veces —`5.145` lecturas
+    # para `611` teselas— y que eso es el `87,6%` del coste del barrido.
+    x0 = float(math.floor(x0 / res) * res)
+    y0 = float(math.floor(y0 / res) * res)
+    x1 = float(math.ceil(x1 / res) * res)
+    y1 = float(math.ceil(y1 / res) * res)
     from pyproj import Transformer
     inv = Transformer.from_crs("EPSG:25829", "EPSG:4326", always_xy=True)
     celdas = []
@@ -266,7 +355,8 @@ def main() -> int:
     for k, v in grupos.items():
         pend = [c for c in v if c["id"] not in hechas]
         if pend:
-            tareas.append((list(k), pend, args.extent_m, args.res_m))
+            tareas.append((list(k), pend, args.extent_m, args.res_m,
+                           args.densidad_suelo))
 
     nuevo = not args.out.exists()
     fh = open(args.out, "a", newline="", encoding="utf-8")

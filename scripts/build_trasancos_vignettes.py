@@ -148,6 +148,48 @@ def load_samples(scope: str = "trasancos", extra_negatives=None):
     return samples
 
 
+def diezmar_a_densidad(xs, ys, zs, objetivo_pt_m2, semilla=20260806):
+    """Reduce la nube a una densidad objetivo de puntos de suelo por m².
+
+    Existe porque **el conjunto de prueba tiene otro sensor**. El LiDAR de la DGT
+    portuguesa vuela a `10 pt/m²`; el PNOA con el que se entrenó, no. Y sin
+    igualarlo, una caída de rendimiento en Portugal no se podría separar en «no
+    generaliza geográficamente» contra «no generaliza a otra densidad», y esa
+    ambigüedad no tiene arreglo a posteriori.
+
+    Pero medir la densidad propia destapó algo que no se sabía: **nuestros dos
+    bloques tampoco son iguales**. Suelo, medido el `2026-08-06`:
+
+    | bloque | total | suelo |
+    |---|---:|---:|
+    | Trasancos | `4,11 pt/m²` | `1,67` (min `0,13`) |
+    | Lugo | `10,46 pt/m²` | `2,33` (min `1,53`) |
+
+    Son vuelos distintos del PNOA. Así que parte de la diferencia entre el
+    `F1 0.415` de Trasancos y el `0.743` de Lugo puede ser densidad y no
+    geografía — y esta función es también la forma de comprobarlo, diezmando
+    Lugo a la densidad de Trasancos y volviendo a medir.
+
+    El diezmado es **aleatorio uniforme y con semilla fija**: no reproduce el
+    patrón de barrido de un vuelo menos denso, pero es la aproximación estándar y
+    es reproducible, que es lo que exige un conjunto de prueba.
+    """
+    n = len(xs)
+    if n == 0 or objetivo_pt_m2 is None or objetivo_pt_m2 <= 0:
+        return xs, ys, zs
+    area = (float(xs.max()) - float(xs.min())) * (float(ys.max()) - float(ys.min()))
+    if area <= 0:
+        return xs, ys, zs
+    actual = n / area
+    if actual <= objetivo_pt_m2:
+        return xs, ys, zs                 # ya es igual o más pobre: no se toca
+    quedan = int(round(objetivo_pt_m2 * area))
+    rng = np.random.default_rng(semilla)
+    idx = rng.choice(n, size=quedan, replace=False)
+    idx.sort()                            # conservar el orden espacial original
+    return xs[idx], ys[idx], zs[idx]
+
+
 def grid_from_points(xs, ys, zs, bounds, res):
     """Lowest ground return per cell, then fill gaps by nearest valid neighbour."""
     minx, miny, maxx, maxy = bounds
