@@ -106,7 +106,11 @@ def cortar_desde_dem(args_tuple):
     exacto. Queda pendiente de hacer y de volver a pasar `verificar_dem.py`, que
     es quien cazó esto.
     """
-    dem_paths, celdas, extent, res = args_tuple
+    # Las tareas se arman en un solo sitio y llevan siete elementos; esta via
+    # solo usa los cuatro primeros. Se desempaqueta con holgura para no reventar
+    # con un `ValueError` opaco el dia que alguien reactive `--dem-dir`, que
+    # esta desactivado desde el 2026-08-06 por el desfase de binado.
+    dem_paths, celdas, extent, res = args_tuple[:4]
     half = extent / 2.0
     trozos = []
     for dp in dem_paths:
@@ -220,7 +224,15 @@ def _puntos_de_tesela(tp, laspy):
 
 def cortar_grupo(args_tuple):
     """Corta todas las celdas de un grupo que comparte teselas. Devuelve arrays."""
-    tile_paths, celdas, extent, res, dens_obj, con_apertura = args_tuple
+    # El septimo elemento es la ortofoto y llega solo cuando el checkpoint pide
+    # siete canales. Se desempaqueta por longitud para no romper las llamadas
+    # viejas, que es como ya se hizo con `con_apertura`.
+    if len(args_tuple) == 7:
+        (tile_paths, celdas, extent, res, dens_obj, con_apertura,
+         orto) = args_tuple
+    else:
+        tile_paths, celdas, extent, res, dens_obj, con_apertura = args_tuple
+        orto = None
     import laspy
     half = extent / 2.0
 
@@ -270,6 +282,24 @@ def cortar_grupo(args_tuple):
             continue
         arr = channels_from_dem(dem, res,
                                 con_apertura=con_apertura).astype(np.float16)
+        if orto is not None:
+            # Mismos tres canales y mismo orden que en el entrenamiento, y el
+            # mismo relleno neutro `0.5` cuando falta la imagen: tras la
+            # normalizacion `(x-0.5)/0.5` un cero seria `-1`, que es negro y es
+            # una senal, no una ausencia. Si aqui se rellenara distinto que al
+            # entrenar, el modelo veria en despliegue algo que nunca vio.
+            d_orto, pref = orto
+            f = Path(d_orto) / f"{pref}{c['id']}.jpg"
+            if f.exists():
+                from PIL import Image
+                im = Image.open(f).convert("RGB")
+                if im.size != (arr.shape[2], arr.shape[1]):
+                    im = im.resize((arr.shape[2], arr.shape[1]))
+                rgb = (np.asarray(im, np.float32).transpose(2, 0, 1)
+                       / 255.0).astype(np.float16)
+            else:
+                rgb = np.full((3,) + arr.shape[1:], 0.5, np.float16)
+            arr = np.concatenate([arr, rgb], axis=0)
         salida.append((c["id"], c["lon"], c["lat"], arr))
     return salida
 
@@ -299,6 +329,11 @@ def main() -> int:
                          "que comparten tesela caigan en el mismo obrero y "
                          "acierten en su caché: medido, de 1 a 200 la "
                          "redundancia de lectura baja de 3.82x a 1.96x")
+    ap.add_argument("--ortofoto-dir", type=Path, default=None,
+                    help="cache de ortofotos por celda ({prefijo}{id}.jpg). "
+                         "Obligatorio si el checkpoint pide 7 canales")
+    ap.add_argument("--ortofoto-prefijo", default="",
+                    help="prefijo del bloque en la cache, p.ej. `lugo_`")
     ap.add_argument("--densidad-suelo", type=float, default=None,
                     metavar="PT_M2",
                     help="diezma la nube a esta densidad de puntos de suelo "
@@ -412,7 +447,25 @@ def main() -> int:
                             in_ch=in_ch).to(dev)
     modelo.load_state_dict(st["model"])
     modelo.eval()
-    con_apertura = in_ch >= 4
+    # `7 = 4 topograficos + 3 de ortofoto`; `4 = con apertura`; `3 = el de
+    # siempre`. Se deduce del checkpoint y no de una bandera para que no se pueda
+    # barrer con canales distintos a los del entrenamiento.
+    n_rgb = 3 if in_ch >= 7 else 0
+    con_apertura = (in_ch - n_rgb) >= 4
+    # **Si el modelo pide ortofoto y no se le da, se para.** Sin esto el barrido
+    # rellenaria las 8.658 celdas con el gris neutro y puntuaria un modelo de
+    # siete canales como si tres de ellos no existieran: no fallaria, daria
+    # cifras peores y nadie sabria por que. Es exactamente la forma de error que
+    # este proyecto lleva todo el dia encontrando.
+    orto = None
+    if n_rgb:
+        if not args.ortofoto_dir:
+            raise SystemExit(
+                f"el checkpoint pide {in_ch} canales, o sea {n_rgb} de ortofoto,"
+                f" y falta --ortofoto-dir")
+        if not Path(args.ortofoto_dir).is_dir():
+            raise SystemExit(f"no existe {args.ortofoto_dir}")
+        orto = (str(args.ortofoto_dir), args.ortofoto_prefijo)
     print(f"modelo: cabeza {cfg.get('head')} | epoca {st.get('epoch', -1)+1} "
           f"| canales {in_ch}{' (con apertura)' if con_apertura else ''} "
           f"| dispositivo {dev}", flush=True)
@@ -430,7 +483,7 @@ def main() -> int:
         pend = [c for c in v if c["id"] not in hechas]
         if pend:
             tareas.append((list(k), pend, args.extent_m, args.res_m,
-                           args.densidad_suelo, con_apertura))
+                           args.densidad_suelo, con_apertura, orto))
 
     # **Ordenar por conjunto de teselas.** Sin esto la caché LRU no sirve: los
     # grupos que comparten tesela llegan salteados y cada uno la vuelve a
