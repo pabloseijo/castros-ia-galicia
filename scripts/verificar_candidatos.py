@@ -513,11 +513,16 @@ def main() -> int:
             del X, Y, Z
         if len(proms) >= 5:
             u_prom, s_prom = calibrar(proms)
-            prom_conocidas = list(proms)
-            print(f"calibrado con {len(proms)} castros conocidos del bloque: "
-                  f"umbral {u_prom:.1f} m, sigma {s_prom:.1f} m "
-                  f"| mediana {np.median(proms):.1f} m, rango "
-                  f"{min(proms):.1f}-{max(proms):.1f} m", flush=True)
+            # **Se informa del rango QUE SE USA, no del crudo.** Antes decia
+            # «rango -36.1-69.9 m» justo despues de haber descartado esa lectura
+            # de -36,1 por no fisica: la linea contradecia a la de arriba y
+            # hacia dudar de si el filtro se estaba aplicando.
+            prom_conocidas = [x for x in proms if x > 0]
+            print(f"calibrado con {len(prom_conocidas)} castros conocidos del "
+                  f"bloque: umbral {u_prom:.1f} m, sigma {s_prom:.1f} m "
+                  f"| mediana {np.median(prom_conocidas):.1f} m, rango "
+                  f"{min(prom_conocidas):.1f}-{max(prom_conocidas):.1f} m",
+                  flush=True)
         else:
             print(f"solo {len(proms)} castros con lectura: se usan los valores "
                   f"de Ourense (umbral {u_prom} m)", flush=True)
