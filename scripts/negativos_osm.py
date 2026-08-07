@@ -61,6 +61,26 @@ FAMILIAS = {
     "vertedero":    '["landuse"="landfill"]',
     "enlace_via":   '["highway"="motorway_junction"]',
     "obra":         '["landuse"="construction"]',
+    # --- confusor AGRICOLA, anadido el 2026-08-07 ---
+    # Las diez familias de arriba son obra moderna, y con ellas la precision de
+    # Pontevedra subio de `0.179` a `0.235`. Pero Ourense salio a `0.372`
+    # —parecido a la ria de Vigo pese a ser interior rural, rompiendo la
+    # explicacion «interior contra costa»— y al bajar la ortofoto de sus falsos
+    # positivos **no aparecio ni una infraestructura moderna**: lo que hay es
+    # **vinnedo en bancales y laderas aterrazadas**. O Ribeiro entero esta
+    # socalcado, y un bancal tiene la misma firma de relieve que un parapeto.
+    #
+    # Ninguna de las diez familias anteriores lo cubria, asi que el corpus no
+    # tenia de donde aprenderlo. Estas tres van a buscarlo a proposito.
+    #
+    # **Cautela al usarlas:** al contrario que una cantera, un bancal es
+    # antiguo y a veces esta ENCIMA de un yacimiento —se cultivo la ladera del
+    # castro—. Hay que comprobar que estos negativos no caen sobre castros
+    # catalogados antes de meterlos al corpus, o se le ensena a la red a
+    # apagar justo lo que busca.
+    "vinnedo":      '["landuse"="vineyard"]',
+    "frutal":       '["landuse"="orchard"]',
+    "bancal":       '["man_made"="embankment"]',
 }
 
 
@@ -88,6 +108,17 @@ def main() -> int:
     ap.add_argument("--max", type=int, default=2000)
     ap.add_argument("--separacion-m", type=float, default=300.0,
                     help="mínima entre negativos, para no repetir el mismo sitio")
+    # **Sin esto, las familias agrícolas envenenan el corpus.** Un bancal o un
+    # viñedo no es como una cantera: es antiguo y muchas veces está ENCIMA del
+    # yacimiento, porque la ladera del castro se cultivó. Meter esa viñeta como
+    # negativo le enseña a la red a apagar exactamente lo que busca, y el fallo
+    # no se ve en ninguna métrica —solo baja el recall y parece que el modelo es
+    # peor—. Ya había indicio con las familias modernas: un campo de fútbol caía
+    # sobre `1` de `17` castros.
+    ap.add_argument("--excluir-cerca-de", type=Path, default=None,
+                    help="TSV de yacimientos conocidos; se descarta cualquier "
+                         "negativo a menos de --margen-castro de uno")
+    ap.add_argument("--margen-castro", type=float, default=250.0)
     args = ap.parse_args()
 
     # Recuadro de lo que hay con LiDAR: no sirve un negativo sin datos.
@@ -127,6 +158,25 @@ def main() -> int:
             k += 1
         print("  %-12s %d" % (nombre, k), flush=True)
         time.sleep(4)
+
+    # Fuera lo que caiga sobre un yacimiento conocido. Ver la nota del argumento.
+    if args.excluir_cerca_de and Path(args.excluir_cerca_de).exists():
+        sitios = []
+        with open(args.excluir_cerca_de, encoding="utf-8") as fh:
+            for r in csv.DictReader(fh, delimiter="\t"):
+                lo = r.get("lon") or r.get("longitude")
+                la = r.get("lat") or r.get("latitude")
+                try:
+                    sitios.append((float(lo), float(la)))
+                except (TypeError, ValueError):
+                    continue
+        antes = len(filas)
+        filas = [r for r in filas
+                 if all(math.hypot((r["lat"]-la)*111320,
+                                   (r["lon"]-lo)*111320*math.cos(math.radians(la)))
+                        > args.margen_castro for lo, la in sitios)]
+        print("\ndescartados por caer sobre un yacimiento conocido (<%.0f m): %d"
+              % (args.margen_castro, antes - len(filas)), flush=True)
 
     # Separar: dos naves contiguas son el mismo negativo para una ventana de 512 m.
     filas.sort(key=lambda r: r["familia"])
