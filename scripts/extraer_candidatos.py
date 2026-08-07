@@ -51,6 +51,19 @@ def main() -> int:
     ap.add_argument("--pred", type=Path, required=True)
     ap.add_argument("--truth", type=Path, required=True)
     ap.add_argument("--mascara", type=Path, default=None)
+    # **Sin esto se re-proponen castros conocidos del borde.** La verdad del
+    # bloque se construye desde un bbox, pero las teselas de 1 km se desbordan y
+    # el barrido puntua terreno de fuera. Un castro que caiga 300 m mas alla del
+    # borde no esta en la verdad, asi que su deteccion sale como «sin
+    # catalogar». Paso el 2026-08-07 con el Castro da Igrexa/Castro de Lebruxo:
+    # a 22 m de un candidato de Lugo, catalogado, y a 0,003 grados por encima
+    # del bbox. Es la tercera vez que este desborde muerde —ya paso en Trasancos
+    # con 6 castros y en Lugo con 4 de los 20 mejores— y por eso la comprobacion
+    # va contra el catalogo ENTERO, no contra el recorte del bloque.
+    ap.add_argument("--catalogo-completo", type=Path,
+                    default=Path("data/weak_label_master_fusionado.tsv"),
+                    help="maestro con TODOS los castros, para no re-proponer "
+                         "los que caen justo fuera del recuadro")
     ap.add_argument("--umbral", type=float, default=0.7)
     ap.add_argument("--enlace-m", type=float, default=512.0)
     ap.add_argument("--tolerancia-m", type=float, default=500.0)
@@ -63,6 +76,17 @@ def main() -> int:
         p["score"] = float(p["score"])
     truth = leer_tsv(args.truth)
     masc = leer_tsv(args.mascara) if args.mascara else []
+    todos = []
+    if args.catalogo_completo and Path(args.catalogo_completo).exists():
+        with open(args.catalogo_completo, encoding="utf-8") as fh:
+            for r in csv.DictReader(fh, delimiter="\t"):
+                if r.get("label_class") != "1":
+                    continue
+                lo, la = r.get("longitude"), r.get("latitude")
+                try:
+                    todos.append({"lon": float(lo), "lat": float(la)})
+                except (TypeError, ValueError):
+                    continue
     sel = [p for p in pred if p["score"] >= args.umbral]
     if not sel:
         raise SystemExit("ninguna celda supera el umbral")
@@ -73,8 +97,11 @@ def main() -> int:
     if masc:
         mx, my = a_metros([m["lon"] for m in masc],
                           [m["lat"] for m in masc], lat0)
+    if todos:
+        gx, gy = a_metros([t_["lon"] for t_ in todos],
+                          [t_["lat"] for t_ in todos], lat0)
 
-    filas, n_conocidos, n_masc = [], 0, 0
+    filas, n_conocidos, n_masc, n_borde = [], 0, 0, 0
     for g in agrupar(px, py, args.enlace_m):
         cx, cy = float(np.mean(px[g])), float(np.mean(py[g]))
         sc = max(sel[i]["score"] for i in g)
@@ -83,6 +110,9 @@ def main() -> int:
             continue
         if masc and np.hypot(mx - cx, my - cy).min() <= args.tolerancia_m:
             n_masc += 1
+            continue
+        if todos and np.hypot(gx - cx, gy - cy).min() <= args.tolerancia_m:
+            n_borde += 1
             continue
         lon = cx / (6371000.0 * math.cos(math.radians(lat0))) * 180 / math.pi
         lat = cy / 6371000.0 * 180 / math.pi
@@ -98,9 +128,10 @@ def main() -> int:
         w.writerows(filas)
 
     print(f"umbral {args.umbral} | detecciones agrupadas: "
-          f"{len(filas)+n_conocidos+n_masc}")
+          f"{len(filas)+n_conocidos+n_masc+n_borde}")
     print(f"  sobre castro catalogado: {n_conocidos}")
     print(f"  sobre la máscara (visto en entrenamiento): {n_masc}")
+    print(f"  sobre un castro del catálogo fuera del recuadro: {n_borde}")
     print(f"  **SIN CATALOGAR, a revisar: {len(filas)}**")
     print(f"\nescrito: {args.out}")
     if filas:
