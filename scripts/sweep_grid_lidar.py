@@ -28,7 +28,7 @@ import csv
 import os
 import sys
 import time
-from concurrent.futures import ProcessPoolExecutor, as_completed
+from concurrent.futures import ProcessPoolExecutor
 from pathlib import Path
 
 for _v in ("OMP_NUM_THREADS", "OPENBLAS_NUM_THREADS", "MKL_NUM_THREADS",
@@ -159,7 +159,18 @@ def cortar_desde_dem(args_tuple):
 
 _CACHE_TESELA = {}
 _CACHE_ORDEN = []
-_CACHE_MAX = 4
+# **Ocho, y no cuatro.** La nota de abajo decía «cada una son ~400 MB en
+# memoria» y por eso la caché se dejó en cuatro entradas. Medido el 2026-08-07
+# sobre una tesela real de Lugo: `1.700.024` puntos de suelo, `x`,`y`,`z` en
+# `float32` = **`20 MB`**, no `400`. El comentario erraba por veinte veces y
+# estaba limitando la caché por un coste que no existe.
+#
+# Simulado sobre las `2.337` tareas del bloque de Lugo, con `2` obreros y lotes
+# de `200`: con `4` entradas la redundancia es `2.83x` y con `8` baja a
+# **`1.96x`**. De `8` en adelante no mejora —un grupo toca `4` teselas como
+# máximo y el reúso se agota—, así que ocho es el punto donde deja de rendir.
+# Cuesta `0,31 GB` entre los dos obreros.
+_CACHE_MAX = 8
 
 
 def _puntos_de_tesela(tp, laspy):
@@ -282,6 +293,11 @@ def main() -> int:
     ap.add_argument("--workers", type=int, default=4,
                     help="lo limita la RAM por obrero, no el numero de hilos")
     ap.add_argument("--batch", type=int, default=16)
+    ap.add_argument("--chunk", type=int, default=200,
+                    help="tareas consecutivas por obrero. Grande para que las "
+                         "que comparten tesela caigan en el mismo obrero y "
+                         "acierten en su caché: medido, de 1 a 200 la "
+                         "redundancia de lectura baja de 3.82x a 1.96x")
     ap.add_argument("--densidad-suelo", type=float, default=None,
                     metavar="PT_M2",
                     help="diezma la nube a esta densidad de puntos de suelo "
@@ -435,9 +451,36 @@ def main() -> int:
         # llevara corriendo). El wrapper (`cadena_v5.sh`/`cadena_v6.sh`) no
         # comprobaba el `rc` de este paso —a diferencia del de entrenamiento—, así
         # que el `SIGKILL` no dejaba rastro ni en el log ni en el código de salida
-        # que se miraba. `futs.discard(f)` suelta la única referencia que queda
-        # tras consumir el resultado, y con ella el array.
-        futs = {ex.submit(cortador, t) for t in tareas}
+        # que se miraba.
+        #
+        # **`map` con lotes grandes, y no `submit` uno a uno.** Con `submit`, los
+        # obreros van sacando tareas alternadas de una cola compartida, así que
+        # dos tareas vecinas —que comparten teselas— caen en obreros distintos y
+        # **cada uno la descomprime por su cuenta**: la caché de cada obrero se
+        # llena de teselas que el otro ya tenía. Medido sobre Lugo: con reparto
+        # alterno la redundancia es `3.82x` y con lotes de `200` tareas
+        # consecutivas baja a **`1.96x`**, la mitad de descompresiones para el
+        # mismo resultado. Y como descomprimir es el `87,6%` del coste, eso son
+        # ~`1,75x` de barrido real.
+        #
+        # `Executor.map` además **suelta cada future al entregarla** —las va
+        # sacando de su propia lista—, así que no reintroduce la fuga de memoria
+        # que mató los barridos del 2026-08-05 y 06: la lista completa de
+        # `Future` viva retenía cada resultado ya consumido, `~1,5 MB` por celda,
+        # `~13 GB` en Lugo sobre una máquina de `8`. Seis OOM-kill confirmados en
+        # `dmesg`, y ninguno visible en el log porque el wrapper no miraba el
+        # `rc`.
+        # **Y el lote no puede ser mayor que el trabajo dividido entre obreros.**
+        # Con `81` tareas y lotes de `200`, `map` mete las `81` en un solo lote,
+        # se lo da a un obrero y **el otro se queda de brazos cruzados** toda la
+        # ejecución. Se ve como una mejora pobre —`132 s` a `116 s` en vez del
+        # `1,75x` esperado— y no como el fallo que es. Con tres lotes por obrero
+        # hay margen para que ninguno acabe antes y quede ocioso.
+        chunk = max(1, min(args.chunk, len(tareas) // (args.workers * 3) or 1))
+        if chunk != args.chunk:
+            print(f"  lote ajustado a {chunk} para que los {args.workers} "
+                  f"obreros tengan trabajo ({len(tareas)} tareas)", flush=True)
+        resultados = ex.map(cortador, tareas, chunksize=chunk)
         lote_meta, lote_arr = [], []
 
         def vaciar():
@@ -456,13 +499,13 @@ def main() -> int:
             fh.flush()
             lote_meta, lote_arr = [], []
 
-        for i, f in enumerate(as_completed(futs), 1):
-            for cid, lon, lat, arr in f.result():
+        for i, res in enumerate(resultados, 1):
+            for cid, lon, lat, arr in res:
                 lote_meta.append((cid, lon, lat))
                 lote_arr.append(arr)
                 if len(lote_arr) >= args.batch:
                     vaciar()
-            futs.discard(f)
+            del res
             if i % 25 == 0 or i == len(tareas):
                 print(f"  {i}/{len(tareas)} grupos, {hechos} celdas puntuadas "
                       f"({time.time()-t0:.0f}s)", flush=True)
