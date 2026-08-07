@@ -121,6 +121,25 @@ CONFUSOR = ('["landuse"~"vineyard|orchard|plant_nursery"]',
 CONFUSOR_VALS = ("vineyard", "orchard", "plant_nursery", "embankment",
                  "retaining_wall")
 
+# **La comprobacion tiene que saber cuando esta ciega.** Medido el 2026-08-07
+# sobre un recuadro de `~420 km²` que cubre el corazon do Ribeiro —Leiro, Beade,
+# Ribadavia, Castrelo de Minno—, OSM tiene `67` poligonos de vinnedo, `0` de
+# frutal y `63` de bosque. En una de las comarcas de vinna aterrazada mas
+# intensivas de Galicia, donde deberia haber millares de parcelas. Los `15` de
+# `16` candidatos que salieron «sin confusor» no dicen «no hay vinna»: dicen
+# «OSM no la ve».
+#
+# Ausencia de evidencia solo es evidencia de ausencia si uno habria visto la
+# cosa de haber estado. Asi que antes de dar por limpio un candidato se mide la
+# densidad local de uso del suelo, y si es demasiado baja se responde **«sin
+# datos»** en vez de «ninguno».
+#
+# El umbral sale de esa misma medida y no de la intuicion: `130` poligonos de
+# uso en `420 km²` son `0,31` por `km²`, o sea unos `4` esperados en un circulo
+# de `2 km`. Por debajo de `3` la zona esta sin mapear.
+RADIO_COBERTURA_M = 2000
+MIN_POLIGONOS_USO = 3
+
 
 def overpass(consulta, intentos=4):
     for i in range(intentos):
@@ -142,13 +161,19 @@ def consultar_osm(lon, lat, radio=250):
     for f in MODERNO + CONFUSOR:
         partes.append(f'nwr{f}(around:{radio},{lat},{lon});')
     partes.append(f'nwr["name"](around:{radio*2},{lat},{lon});')
+    # Sonda de cobertura: cuanto uso del suelo hay mapeado alrededor. Sin esto,
+    # «no hay vinnedo» y «nadie ha mapeado esta comarca» son indistinguibles.
+    # Ver `MIN_POLIGONOS_USO`.
+    partes.append(f'way["landuse"](around:{RADIO_COBERTURA_M},{lat},{lon});')
     q = f"[out:json][timeout:120];({''.join(partes)});out center tags;"
     d = overpass(q)
     if d is None:
-        return None, None, None
-    moderno, confusor, nombres = [], [], []
+        return None, None, None, None
+    moderno, confusor, nombres, n_uso = [], [], [], 0
     for el in d.get("elements", []):
         t = el.get("tags", {})
+        if t.get("landuse"):
+            n_uso += 1
         for k in ("landuse", "man_made", "barrier"):
             if t.get(k) in CONFUSOR_VALS:
                 confusor.append(t[k])
@@ -166,7 +191,8 @@ def consultar_osm(lon, lat, radio=250):
             if t.get(k) in ("quarry", "industrial", "landfill", "construction",
                             "dam", "pitch", "golf_course", "stadium"):
                 moderno.append(t[k])
-    return sorted(set(moderno)), sorted(set(confusor)), sorted(set(nombres))
+    return (sorted(set(moderno)), sorted(set(confusor)), sorted(set(nombres)),
+            n_uso)
 
 
 def tipicidad(valor, conocidos):
@@ -457,8 +483,10 @@ def main() -> int:
         lon, lat, sc = float(r["lon"]), float(r["lat"]), float(r["score"])
         d_cast, info_c = dist(lon, lat, cast)
         d_patr, info_p = dist(lon, lat, patr)
-        mod, conf, nombres = (None, None, None) if args.sin_osm else \
-            consultar_osm(lon, lat, args.radio_osm)
+        mod, conf, nombres, n_uso = (None, None, None, None) if args.sin_osm \
+            else consultar_osm(lon, lat, args.radio_osm)
+        # ¿Se puede fiar uno de que «no hay confusor»? Ver `MIN_POLIGONOS_USO`.
+        ciego = n_uso is not None and n_uso < MIN_POLIGONOS_USO
         if not args.sin_osm:
             time.sleep(3)
         tp_p, tp_n = puntuar_toponimo(nombres, info_p[1])
@@ -504,6 +532,11 @@ def main() -> int:
             # Resta poco y no descalifica: ver `CONFUSOR`.
             pts -= 0.5
             motivos.append("relieve dudoso por " + ", ".join(conf[:3]))
+        elif ciego:
+            # No resta: no se sabe. Pero se dice, para que nadie lea el hueco
+            # como si fuera un aprobado. Ver `MIN_POLIGONOS_USO`.
+            motivos.append(f"confusor SIN COMPROBAR (OSM sin uso del suelo "
+                           f"aquí: {n_uso} polígonos en {RADIO_COBERTURA_M//1000} km)")
         if tp_p >= 2:
             pts += tp_p; motivos.append(f"topónimo «{tp_n}»")
         # **El «paisaje arqueológico próximo» ya NO puntúa.** Sonaba razonable
@@ -538,7 +571,9 @@ def main() -> int:
             "pct_domina": f"{100*t['pct_entorno_debajo']:.0f}" if t else "",
             "densidad_suelo": f"{dd:.2f}" if dd else "",
             "obra_moderna": ", ".join(mod[:3]) if mod else "",
-            "confusor_relieve": ", ".join(conf[:3]) if conf else "",
+            "confusor_relieve": (", ".join(conf[:3]) if conf
+                                 else ("SIN COMPROBAR" if ciego else "ninguno")),
+            "cobertura_osm_uso": "" if n_uso is None else str(n_uso),
             "d_patrimonio_m": f"{d_patr:.0f}",
             "toponimo": tp_n,
             "motivos": " | ".join(motivos),
