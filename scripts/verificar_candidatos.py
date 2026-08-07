@@ -125,42 +125,67 @@ def consultar_osm(lon, lat, radio=250):
     return sorted(set(moderno)), sorted(set(nombres))
 
 
+def calibrar(valores, cola=2.0, piso=0.05, minimo_fisico=0.0):
+    """Deriva umbral y sigma de los ejemplos conocidos, sin elegirlos a mano.
+
+    **El umbral no es el minimo muestral.** Con `n = 12` el menor de los doce es
+    una estimacion sesgada hacia arriba del suelo real de la poblacion: la
+    probabilidad de que ninguno de doce cayera por debajo es alta. Los castros
+    conocidos de Ourense dan media `39,7 m` y desviacion `10,6 m`, cuyo minimo
+    muestral es `23,0` — pero el **percentil `2` estimado de la poblacion** esta
+    en `17,9`. Usar `23` como corte descartaba el Castro do Coto do Mosteiro,
+    que tiene `19,0 m` y esta excavado desde `1984`.
+
+    **Y sigma tampoco se elige: se despeja.** Se pide que el caso fisicamente
+    imposible —prominencia `0`, terreno llano— valga `piso`, y de ahi sale
+    `sigma = umbral / sqrt(2 ln(1/piso))`. Asi el unico parametro que queda es
+    interpretable: *«cuanto quiero que puntue un llano»*.
+
+    Sobre los `12` de Ourense, con `cola = 2%` y `piso = 0.05`:
+
+    | prominencia | factor |
+    |---:|---:|
+    | `23,0 m` (minimo conocido) | `1.00` |
+    | **`19,0 m` (Coto do Mosteiro)** | **`1.00`** |
+    | `15,0 m` | `0.93` |
+    | `11,3 m` | `0.67` |
+    | `5,0 m` | `0.21` |
+    | `0,0 m` (llano) | `0.05` |
+
+    Un candidato a cuatro metros del minimo conocido **no pierde nada**, que es
+    lo razonable: quien levanto estos recintos no llevaba cinta metrica, y cuatro
+    metros de diferencia no distinguen un castro de otra cosa.
+    """
+    v = np.asarray([x for x in valores if np.isfinite(x)], dtype=float)
+    if len(v) < 5:
+        raise ValueError("hacen falta al menos 5 ejemplos para calibrar")
+    from statistics import NormalDist
+    z = NormalDist().inv_cdf(cola / 100.0)          # negativo
+    umbral = max(float(v.mean() + z * v.std(ddof=1)), minimo_fisico)
+    sigma = max(umbral - minimo_fisico, 1e-6) / math.sqrt(2 * math.log(1 / piso))
+    return umbral, sigma
+
+
 def decae(valor, umbral, sigma, mayor_mejor=True):
-    """Decaimiento gaussiano en vez de umbral duro: `exp(-deficit^2 / 2*sigma^2)`.
+    """Decaimiento gaussiano en vez de umbral duro: `exp(-deficit^2 / 2 sigma^2)`.
 
-    Es la idea de **Soft-NMS** (Bodla et al. 2017, `10.1109/iccv.2017.593`)
-    trasladada aqui: en vez de eliminar lo que no llega al umbral, **rebajarle la
-    puntuacion en proporcion a cuanto le falta**. Y es la misma que Pablo ya uso
-    en su TFG —lambda adaptativo por percentil en lugar de umbrales fijos—.
+    Es **Soft-NMS** (Bodla et al. 2017, `10.1109/iccv.2017.593`) trasladado: en
+    vez de eliminar lo que no llega al umbral, **rebajarle la puntuacion en
+    proporcion a cuanto le falta**. Es tambien lo que Pablo hizo en su TFG —
+    lambda adaptativo por percentil en lugar de umbrales fijos—.
 
-    **Lo pedia un caso concreto y caro.** El criterio topografico se calibro
-    contra los `12` castros conocidos del bloque de Ourense, que dan `23`-`53 m`
-    de prominencia, y se fijo el corte en `23`. Con umbral duro, el candidato
-    `OU-1` quedaba fuera por tener `19,0 m`... y `OU-1` resulto ser el **Castro
-    do Coto do Mosteiro**, excavado en `1984`, publicado y con material en el
-    Museo Arqueoloxico de Ourense. **Un umbral derivado de doce ejemplos habria
-    tirado un castro de la Edad del Hierro por cuatro metros.**
+    **Lo pedia un caso caro.** Con umbral duro en `23 m`, el candidato `OU-1`
+    quedaba fuera por tener `19,0`... y `OU-1` es el **Castro do Coto do
+    Mosteiro**, excavado en `1984`, publicado, con material en el Museo
+    Arqueoloxico de Ourense. Un corte sacado de doce ejemplos habria tirado un
+    castro de la Edad del Hierro por cuatro metros.
 
-    Con `sigma = 8` sobre ese mismo caso: a `4 m` por debajo conserva el `88%`
-    de la puntuacion, a `11 m` el `39%`, y a `18 m` solo el `8%`. Baja poco lo
-    que falla poco y hunde lo que falla mucho, que es justo lo que se queria.
-
-    El fondo del asunto: **con `n = 12` el minimo muestral no es el minimo
-    poblacional**. Un umbral duro trata una estimacion ruidosa como si fuera una
-    frontera fisica.
+    Los dos parametros salen de `calibrar`, no de la intuicion.
     """
     d = (umbral - valor) if mayor_mejor else (valor - umbral)
     if d <= 0:
         return 1.0
     return float(math.exp(-(d * d) / (2.0 * sigma * sigma)))
-
-
-# Lo que NO cuenta aunque lleve la raiz dentro. Medido el 2026-08-07: el
-# emparejador marcaba «Castrelo de Miño» —que es el nombre del concello y sale
-# en todos sus candidatos— y «Rúa do Outeiro», que es una calle. Un nombre
-# administrativo o de viario no dice nada del punto concreto.
-VIARIO = ("rúa ", "rua ", "calle ", "avenida ", "camiño ", "camino ",
-          "estrada ", "carretera ", "praza ", "plaza ", "travesía ")
 
 
 def puntuar_toponimo(nombres, concello=""):
@@ -193,6 +218,9 @@ def main() -> int:
     ap.add_argument("--laz-dir", type=Path, nargs="+", required=True)
     ap.add_argument("--out", type=Path, required=True)
     ap.add_argument("--radio-osm", type=float, default=250.0)
+    ap.add_argument("--calibrar-con", type=Path, default=None,
+                    help="TSV de castros conocidos del mismo bloque; de ellos "
+                         "salen umbral y sigma en vez de constantes")
     ap.add_argument("--sin-osm", action="store_true",
                     help="salta Overpass; útil si el servicio está caído")
     args = ap.parse_args()
@@ -271,6 +299,60 @@ def main() -> int:
         del X, Y, Z
     print(f"topografía leída: {len(topo)}/{len(filas)}", flush=True)
 
+    # **Calibrar contra castros conocidos del propio bloque**, no contra
+    # constantes. Si no los hay, se usa el valor de Ourense como respaldo y se
+    # dice, para que nadie confunda una calibracion local con una heredada.
+    u_prom, s_prom = 17.9, 7.3
+    if args.calibrar_con and Path(args.calibrar_con).exists():
+        conocidos = list(csv.DictReader(open(args.calibrar_con, encoding="utf-8"),
+                                        delimiter="\t"))
+        cel2, proms = [], []
+        for j, r in enumerate(conocidos[:40]):
+            x2, y2 = lonlat_to_utm29(float(r["lon"]), float(r["lat"]))
+            cel2.append({"id": j, "x": x2, "y": y2,
+                         "lon": float(r["lon"]), "lat": float(r["lat"])})
+        g2, _ = group_samples_by_tiles(cel2, tiles, ext)
+        for tp, cs in g2.items():
+            xs, ys, zs = [], [], []
+            for tt in tp:
+                try:
+                    with laspy.open(tt) as fh:
+                        for pp in fh.chunk_iterator(4_000_000):
+                            kk = np.asarray(pp.classification) == 2
+                            if not kk.any():
+                                continue
+                            xs.append(np.asarray(pp.x)[kk].astype(np.float32))
+                            ys.append(np.asarray(pp.y)[kk].astype(np.float32))
+                            zs.append(np.asarray(pp.z)[kk].astype(np.float32))
+                except Exception:
+                    continue
+            if not xs:
+                continue
+            X = np.concatenate(xs); Y = np.concatenate(ys); Z = np.concatenate(zs)
+            for c in cs:
+                h = ext / 2.0
+                b = (c["x"]-h, c["y"]-h, c["x"]+h, c["y"]+h)
+                m = (X >= b[0]) & (X <= b[2]) & (Y >= b[1]) & (Y <= b[3])
+                if m.sum() < 2000:
+                    continue
+                dem = grid_from_points(X[m], Y[m], Z[m], b, res)
+                if dem is None or np.ndim(dem) != 2:
+                    continue
+                rr = medir(dem, res, 60.0, 250.0)
+                if rr:
+                    proms.append(rr["prominencia_m"])
+            del X, Y, Z
+        if len(proms) >= 5:
+            u_prom, s_prom = calibrar(proms)
+            print(f"calibrado con {len(proms)} castros conocidos del bloque: "
+                  f"umbral {u_prom:.1f} m, sigma {s_prom:.1f} m", flush=True)
+        else:
+            print(f"solo {len(proms)} castros con lectura: se usan los valores "
+                  f"de Ourense (umbral {u_prom} m)", flush=True)
+    else:
+        print(f"sin --calibrar-con: valores de Ourense "
+              f"(umbral {u_prom} m, sigma {s_prom} m)", flush=True)
+
     # --- 3-6. OSM, toponimo, patrimonio --------------------------------------
     salida = []
     for i, r in enumerate(filas):
@@ -296,7 +378,7 @@ def main() -> int:
         if f_lejos > 0.3:
             pts += 1 * f_lejos; motivos.append("lejos de lo catalogado")
         if t:
-            f_prom = decae(t["prominencia_m"], 23.0, 8.0)
+            f_prom = decae(t["prominencia_m"], u_prom, s_prom)
             pts += 2 * f_prom
             motivos.append(f"prominencia {t['prominencia_m']:.0f} m "
                            f"(x{f_prom:.2f})")
