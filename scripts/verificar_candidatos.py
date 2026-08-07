@@ -134,6 +134,18 @@ CONFUSOR_VALS = ("vineyard", "orchard", "plant_nursery", "embankment",
 # densidad local de uso del suelo, y si es demasiado baja se responde **«sin
 # datos»** en vez de «ninguno».
 #
+# **CAUTELA: esta sonda no basta, y hay que saberlo.** Mide si hay uso del suelo
+# mapeado *en general*, no si esta mapeado *el vinnedo*. En O Ribeiro OSM tiene
+# bosque y labrantio de sobra —la sonda da la zona por observable y responde
+# `ninguno`— pero solo esos `67` poligonos de vinna. Que una fuente mapee una
+# clase no implica que mapee otra, y la sonda no distingue las dos cosas.
+#
+# Asi que un `ninguno` en `confusor_relieve` **no significa que no haya
+# socalcos**: significa que OSM no los tiene. La comprobacion vale como indicio
+# en un solo sentido —si aparece vinna, aparece— y no vale nada en el otro.
+# Contestar la pregunta de verdad pide **SIGPAC**, que lleva codigo de vinnedo a
+# nivel de parcela y es oficial.
+#
 # El umbral sale de esa misma medida y no de la intuicion: `130` poligonos de
 # uso en `420 km²` son `0,31` por `km²`, o sea unos `4` esperados en un circulo
 # de `2 km`. Por debajo de `3` la zona esta sin mapear.
