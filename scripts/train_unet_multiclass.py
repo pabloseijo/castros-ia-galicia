@@ -89,9 +89,22 @@ def _desplazar(a, dy, dx, t):
 
 class Vignettes(Dataset):
     def __init__(self, rows, arr_dir: Path, augment: bool = False,
-                 translate: int = 0, val_translate: int = 0):
+                 translate: int = 0, val_translate: int = 0,
+                 rgb_dir=None):
         self.rows = rows
         self.arr_dir = arr_dir
+        # **La ortofoto entra como canal, no como corpus aparte.** Los arrays
+        # topograficos de v7 pesan `15,8 GB` y los de v8 `21 GB`; duplicarlos
+        # para anadir tres canales de color serian `37 GB` de copia. Se leen de
+        # un directorio paralelo y se concatenan al vuelo, asi que v8 y v9
+        # comparten el relieve y solo cambia lo que se le suma.
+        #
+        # Es la fusion temprana de Peker (`2026`, `10.1017/aap.2025.10142`), que
+        # gano a la intermedia, a la tardia y a la base solo-RGB con `IoU 0.754`.
+        # **No es la criba de ortofoto refutada el 2026-08-07**: aquella era un
+        # clasificador aparte que filtraba candidatos ya detectados y salio
+        # anticorrelada. Aqui la red ve color y relieve juntos desde la entrada.
+        self.rgb_dir = Path(rgb_dir) if rgb_dir else None
         self.augment = augment
         self.translate = translate
         # Descentrado **determinista** de la validación: el despliegue nunca
@@ -108,6 +121,30 @@ class Vignettes(Dataset):
     def __getitem__(self, i: int):
         r = self.rows[i]
         a = np.load(self.arr_dir / f"{r['sid']}.npz")["x"].astype(np.float32)
+        if self.rgb_dir is not None:
+            # Se concatena ANTES de aumentar, para que el volteo, el giro y el
+            # descentrado se apliquen a color y relieve a la vez. Si se anadiera
+            # despues, la ortofoto quedaria girada respecto a su propio terreno y
+            # la red aprenderia a ignorarla, que es la forma silenciosa de que un
+            # canal nuevo no sirva para nada.
+            # Se lee el JPEG tal cual lo dejo la descarga: `~60 KB` cada uno
+            # contra los `~200 KB` que ocuparia en `npz`, la decodificacion son
+            # unos milisegundos, y asi no hay un paso de conversion mas que
+            # pueda desincronizarse del original.
+            f = self.rgb_dir / f"{r['sid']}.jpg"
+            if f.exists():
+                from PIL import Image
+                im = Image.open(f).convert("RGB")
+                if im.size != (a.shape[2], a.shape[1]):
+                    im = im.resize((a.shape[2], a.shape[1]))
+                rgb = np.asarray(im, np.float32).transpose(2, 0, 1) / 255.0
+                a = np.concatenate([a, rgb], axis=0)
+            else:
+                # Sin ortofoto se rellena con el valor neutro del canal ya
+                # centrado, no con ceros: un cero tras la normalizacion `(x-0.5)/0.5`
+                # es `-1`, que es negro y es una senal, no una ausencia.
+                a = np.concatenate(
+                    [a, np.full((3,) + a.shape[1:], 0.5, np.float32)], axis=0)
         if self.augment:
             # El relieve no tiene orientación privilegiada y un recinto es
             # aproximadamente circular: los ocho elementos del grupo diedro son
@@ -366,6 +403,12 @@ def main() -> int:
     ap.add_argument("--val-translate", type=int, default=0,
                     help="descentrado determinista de la validación; con esto la "
                          "métrica de selección mide despliegue y no centrado")
+    ap.add_argument("--rgb-dir", type=Path, default=None,
+                    help="directorio con la ortofoto por vinneta ({sid}.npz con "
+                         "clave 'rgb', uint8). Anade 3 canales en FUSION "
+                         "TEMPRANA: la red ve color y relieve juntos desde la "
+                         "entrada, que es lo que gana en Peker 2026. No "
+                         "duplica el corpus: se concatena al vuelo")
     ap.add_argument("--translate", type=int, default=0,
                     help="desplazamiento aleatorio en píxeles (=metros a 1 m)")
     ap.add_argument("--workers", type=int, default=4)
@@ -417,7 +460,8 @@ def main() -> int:
 
     mk = lambda rr, aug, shuf: DataLoader(
         Vignettes(rr, arr_dir, augment=aug, translate=args.translate,
-                  val_translate=0 if aug else args.val_translate),
+                  val_translate=0 if aug else args.val_translate,
+                  rgb_dir=args.rgb_dir),
         batch_size=args.batch, shuffle=shuf, num_workers=args.workers,
         pin_memory=(device == "cuda"), drop_last=False,
         persistent_workers=args.workers > 0)
