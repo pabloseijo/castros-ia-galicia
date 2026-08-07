@@ -439,8 +439,22 @@ def main() -> int:
     print("\nLas columnas `veredicto`, `revisor` y `notas` van vacías a "
           "propósito:\nse rellenan al revisar y ese resultado vuelve al corpus. "
           "Ver regla 16.")
-    alto = [r for r in salida if float(r["triaje"]) >= 3]
-    print(f"\nprioridad alta (triaje >= 3): {len(alto)} de {len(salida)}")
+    # **El corte de prioridad es relativo al bloque, no absoluto.** Un umbral
+    # fijo no vale porque la puntuacion no significa lo mismo en dos sitios: la
+    # calibracion de la prominencia sale de los castros conocidos del propio
+    # bloque —`10,8 m` en Ourense, `5,6 m` en Lugo— asi que el mismo candidato
+    # sacaria notas distintas segun donde este. Con corte fijo en `3` salian `14
+    # de 16` en Ourense y `2 de 6` en A Coruna, que no compara nada.
+    #
+    # El cuartil superior siempre selecciona la misma fraccion, que es lo que
+    # una cola de revision necesita: «los mejores de aqui», no «los que pasan de
+    # una nota que me invente».
+    v = np.array([float(r["triaje"]) for r in salida])
+    corte = float(np.percentile(v, 75)) if len(v) >= 4 else v.min()
+    alto = [r for r in salida if float(r["triaje"]) >= corte]
+    print(f"\nrango de triaje en este bloque: {v.min():.2f} a {v.max():.2f}")
+    print(f"prioridad alta (cuartil superior, corte {corte:.2f}): "
+          f"{len(alto)} de {len(salida)}")
     for r in alto[:10]:
         print(f"  #{r['n']:>3} triaje {r['triaje']:>5} | {r['lat']},{r['lon']} "
               f"| {r['motivos'][:80]}")
