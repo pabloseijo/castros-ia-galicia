@@ -11,9 +11,18 @@
 # encuentra y no baja nada: solo consulta metadatos. Los enlaces se borran como
 # borraria los .laz —`unlink` sobre un enlace no toca el original—.
 #
-# El control es que las celdas barridas en streaming den las MISMAS
-# puntuaciones que el barrido normal sobre el mismo terreno. Si el halo
-# estuviera mal, las celdas del borde saldrian distintas o no saldrian.
+# El control NO puede ser «las mismas puntuaciones celda a celda», y conviene
+# saber por que: `sweep_grid_lidar` ancla su rejilla en la esquina del bbox que
+# recibe, y en streaming cada bloque recibe el suyo. Las dos rejillas quedan
+# desfasadas y NINGUNA celda cae en el mismo sitio. La primera version de esta
+# prueba comparaba por coordenada exacta, saco «0 comunes» y concluyo que el
+# streaming perdia celdas: la conclusion era falsa y la comparacion, imposible
+# por construccion.
+#
+# Lo que si se puede comprobar, y es lo que importa, es la COBERTURA: que cada
+# celda del barrido normal tenga una del streaming a menos de un paso (256 m).
+# Si el halo estuviera mal, las celdas del borde de bloque no se puntuarian y
+# apareceria un hueco.
 set -u
 cd "$HOME/castros" || exit 1
 LOG=logs/prueba_streaming.log
@@ -66,26 +75,30 @@ say "control rc=$?"
 
 say "=== comparacion ==="
 .venv-gpu/bin/python - <<'PY' >> "$LOG" 2>&1
-import csv
+import csv, math
+import numpy as np
 def leer(p):
-    d = {}
+    xs, ys, sc = [], [], []
     for r in csv.DictReader(open(p, encoding='utf-8'), delimiter='\t'):
-        d[(round(float(r['lon']), 6), round(float(r['lat']), 6))] = float(r['score'])
-    return d
+        xs.append(float(r['lon'])); ys.append(float(r['lat']))
+        sc.append(float(r['score']))
+    return np.array(xs), np.array(ys), np.array(sc)
 try:
-    a = leer('data/sweep_streaming_prueba.tsv')
-    b = leer('data/streaming-prueba/control.tsv')
+    ax, ay, asc = leer('data/sweep_streaming_prueba.tsv')
+    bx, by, bsc = leer('data/streaming-prueba/control.tsv')
 except FileNotFoundError as e:
     print('FALTA UN FICHERO:', e); raise SystemExit(1)
-comunes = set(a) & set(b)
-print(f'celdas streaming: {len(a)} | celdas control: {len(b)} | comunes: {len(comunes)}')
-print(f'solo en streaming: {len(set(a)-set(b))} | solo en control: {len(set(b)-set(a))}')
-if comunes:
-    difs = [abs(a[k]-b[k]) for k in comunes]
-    peor = max(difs)
-    print(f'diferencia maxima de puntuacion: {peor:.6f}')
-    print('VEREDICTO:', 'IDENTICO' if peor < 1e-6 else ('CASI (float)' if peor < 1e-3 else '*** DISCREPA ***'))
-if set(b) - set(a):
-    print('*** el streaming PERDIO celdas que el barrido normal si puntua ***')
+k = 111320.0
+lat0 = float(np.mean(by))
+m = lambda x, y: (x * k * math.cos(math.radians(lat0)), y * k)
+AX, AY = m(ax, ay); BX, BY = m(bx, by)
+d = np.array([np.hypot(AX - BX[i], AY - BY[i]).min() for i in range(len(BX))])
+print(f'celdas streaming {len(ax)} | control {len(bx)}')
+print('distancia de cada celda del CONTROL a la mas proxima del STREAMING:')
+print(f'  mediana {np.median(d):.1f} m | p95 {np.percentile(d,95):.1f} m | max {d.max():.1f} m')
+cob = (d <= 256).mean()
+print(f'  cubiertas a menos de un paso (256 m): {(d<=256).sum()}/{len(d)} ({100*cob:.0f}%)')
+print('VEREDICTO:', 'COBERTURA COMPLETA' if cob == 1.0
+      else f'*** HUECOS: {(d>256).sum()} celdas del control sin vecino ***')
 PY
 say "=== prueba completa ==="
