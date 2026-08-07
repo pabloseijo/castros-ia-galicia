@@ -220,7 +220,7 @@ def _puntos_de_tesela(tp, laspy):
 
 def cortar_grupo(args_tuple):
     """Corta todas las celdas de un grupo que comparte teselas. Devuelve arrays."""
-    tile_paths, celdas, extent, res, dens_obj = args_tuple
+    tile_paths, celdas, extent, res, dens_obj, con_apertura = args_tuple
     import laspy
     half = extent / 2.0
 
@@ -268,7 +268,8 @@ def cortar_grupo(args_tuple):
         dem = grid_from_points(xs[m], ys[m], zs[m], b, res)
         if dem is None:
             continue
-        arr = channels_from_dem(dem, res).astype(np.float16)
+        arr = channels_from_dem(dem, res,
+                                con_apertura=con_apertura).astype(np.float16)
         salida.append((c["id"], c["lon"], c["lat"], arr))
     return salida
 
@@ -401,11 +402,19 @@ def main() -> int:
     dev = "cuda" if torch.cuda.is_available() else "cpu"
     st = torch.load(args.checkpoint, map_location=dev, weights_only=False)
     cfg = st.get("args", {})
+    # **Cuantos canales quiere este checkpoint lo dice el propio checkpoint.**
+    # Se lee de la forma de `stem.0.weight`, que es `[64, in_ch, 7, 7]`. Fijarlo
+    # a 3 obligaria a recordar con que corpus se entreno cada `.pt`, y el dia que
+    # se olvide el barrido no falla: carga mal y puntua ruido.
+    in_ch = int(st["model"]["stem.0.weight"].shape[1])
     modelo = UNetMulticlass(3, cfg.get("encoder", "resnet34"),
-                            cfg.get("head", "cls"), pretrained=False).to(dev)
+                            cfg.get("head", "cls"), pretrained=False,
+                            in_ch=in_ch).to(dev)
     modelo.load_state_dict(st["model"])
     modelo.eval()
+    con_apertura = in_ch >= 4
     print(f"modelo: cabeza {cfg.get('head')} | epoca {st.get('epoch', -1)+1} "
+          f"| canales {in_ch}{' (con apertura)' if con_apertura else ''} "
           f"| dispositivo {dev}", flush=True)
 
     # --- reanudacion: no recortar lo ya puntuado ---
@@ -421,7 +430,7 @@ def main() -> int:
         pend = [c for c in v if c["id"] not in hechas]
         if pend:
             tareas.append((list(k), pend, args.extent_m, args.res_m,
-                           args.densidad_suelo))
+                           args.densidad_suelo, con_apertura))
 
     # **Ordenar por conjunto de teselas.** Sin esto la caché LRU no sirve: los
     # grupos que comparten tesela llegan salteados y cada uno la vuelve a

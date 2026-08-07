@@ -34,7 +34,7 @@ print("por caché de DEM: %d celdas cortadas" % len(por_dem))
 laz = sorted(Path("data/external/lidar-trasancos-v1").glob("*.laz"))
 nombres = {d.stem for d in dems}
 laz_usadas = tuple(str(p) for p in laz if p.stem in nombres)
-por_laz = cortar_grupo((laz_usadas, celdas, EXT, RES))
+por_laz = cortar_grupo((laz_usadas, celdas, EXT, RES, None, False))
 print("por .laz directo : %d celdas cortadas" % len(por_laz))
 
 d1 = {c[0]: c[3] for c in por_dem}

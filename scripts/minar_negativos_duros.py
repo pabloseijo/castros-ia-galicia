@@ -44,6 +44,9 @@ def main() -> int:
     ap.add_argument("--salida", type=Path, required=True)
     ap.add_argument("--grupo", default="hard_negative_barrido")
     ap.add_argument("--workers", type=int, default=2)
+    ap.add_argument("--con-apertura", action="store_true",
+                    help="corta con el cuarto canal de apertura. Debe coincidir "
+                         "con el corpus al que se anaden estos negativos")
     args = ap.parse_args()
 
     args.salida.mkdir(parents=True, exist_ok=True)
@@ -88,7 +91,11 @@ def main() -> int:
               % (sum(len(v) for v in grupos.values()), huerf), flush=True)
 
         from concurrent.futures import ProcessPoolExecutor, as_completed
-        tareas = [(list(k), v, EXTENT, RES, None) for k, v in grupos.items()]
+        # El sexto elemento es `con_apertura`: los negativos duros se cortan con
+        # los mismos canales que el corpus al que se anaden, o la red recibiria
+        # vinnetas de distinta forma en el mismo lote.
+        tareas = [(list(k), v, EXTENT, RES, None, args.con_apertura)
+                  for k, v in grupos.items()]
         hechas = 0
         with ProcessPoolExecutor(max_workers=args.workers) as ex:
             futs = [ex.submit(cortar_grupo, t) for t in tareas]

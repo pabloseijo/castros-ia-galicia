@@ -231,8 +231,28 @@ def boxblur(a, radius):
     return (tot / (k * k)).astype(np.float32)
 
 
-def channels_from_dem(dem, res, lrm_radius_m=60.0):
-    """Normalised DTM, local relief and slope, each scaled to [0, 1]."""
+def channels_from_dem(dem, res, lrm_radius_m=60.0, con_apertura=False):
+    """Normalised DTM, local relief and slope, each scaled to [0, 1].
+
+    Con `con_apertura=True` anade un cuarto canal: la **apertura topografica**.
+
+    Se anade por lo que paso con `OU-8` el `2026-08-07`. Tenia el mejor perfil
+    topografico de sus 27 —49,3 m de prominencia, 100% del entorno debajo— y en
+    el sombreado se veian arcos concentricos envolviendo la cima. Eran **pistas
+    forestales**, y lo delato la ortofoto: ninguno de estos tres canales las
+    distingue de un parapeto.
+
+    La razon es fisica. Una pista es **un corte**: un rasgo lineal fino de un
+    solo tono. Un parapeto es **caballon mas foso**: un alto y un bajo pegados.
+    El MDT normalizado da la altura, el relieve local quita la ladera y la
+    pendiente da la inclinacion, pero **ninguno mira si hay un alto y un bajo
+    juntos**, que es la firma que los separa.
+
+    La apertura si (Doneus 2013, `10.3390/rs5126427`): sin sesgo direccional,
+    sin desplazamiento horizontal, y resaltando a la vez lo mas alto y lo mas
+    bajo. Verificado sobre dato propio: un castro conocido sale como anillo
+    cerrado de tono doble y `OU-8` como lineas finas de tono unico.
+    """
     def mm(a):
         lo, hi = np.nanpercentile(a, 1), np.nanpercentile(a, 99)
         if not np.isfinite(lo) or not np.isfinite(hi) or hi - lo < 1e-6:
@@ -245,7 +265,10 @@ def channels_from_dem(dem, res, lrm_radius_m=60.0):
     gy, gx = np.gradient(dem, res)
     slope = np.degrees(np.arctan(np.hypot(gx, gy)))
     slope = np.clip(slope / 45.0, 0, 1).astype(np.float32)
-    return np.stack([ndtm, lrm, slope], axis=0)
+    if not con_apertura:
+        return np.stack([ndtm, lrm, slope], axis=0)
+    from openness import canal_rapido
+    return np.stack([ndtm, lrm, slope, canal_rapido(dem, res)], axis=0)
 
 
 _BOUNDS_CACHE: dict[str, tuple] = {}

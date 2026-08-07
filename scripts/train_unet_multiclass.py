@@ -172,7 +172,8 @@ class UNetMulticlass(nn.Module):
     """
 
     def __init__(self, n_classes: int = 3, encoder: str = "resnet34",
-                 head: str = "mil", pretrained: bool = True, lse_r: float = 8.0):
+                 head: str = "mil", pretrained: bool = True, lse_r: float = 8.0,
+                 in_ch: int = 3):
         super().__init__()
         import torchvision.models as tvm
 
@@ -182,6 +183,27 @@ class UNetMulticlass(nn.Module):
         net = getattr(tvm, encoder)(weights=weights)
         self.head_kind = head
         self.lse_r = lse_r
+
+        # **Cuarto canal sin tirar el preentrenamiento.** ImageNet trae `conv1`
+        # con 3 canales de entrada, y al anadir la apertura hacen falta 4. En vez
+        # de crear la capa de cero —que perderia lo que la red ya sabe de bordes
+        # y texturas, que es justo lo util aqui— se copian los pesos de los 3
+        # canales y el cuarto se inicializa con **la media de los otros tres**.
+        # Es lo estandar al inflar un `conv1` preentrenado: el canal nuevo entra
+        # comportandose como el promedio de los que habia, y el entrenamiento lo
+        # especializa desde ahi en vez de desde ruido.
+        if in_ch != 3:
+            w = net.conv1.weight.data
+            c1 = nn.Conv2d(in_ch, w.shape[0], kernel_size=net.conv1.kernel_size,
+                           stride=net.conv1.stride, padding=net.conv1.padding,
+                           bias=False)
+            with torch.no_grad():
+                if in_ch > 3:
+                    c1.weight[:, :3] = w
+                    c1.weight[:, 3:] = w.mean(dim=1, keepdim=True)
+                else:
+                    c1.weight[:] = w[:, :in_ch]
+            net.conv1 = c1
 
         self.stem = nn.Sequential(net.conv1, net.bn1, net.relu)  # /2
         self.pool = net.maxpool
@@ -404,8 +426,14 @@ def main() -> int:
         if by_split[k]:
             loaders[k] = mk(by_split[k], False, False)
 
+    # El numero de canales lo dice el corpus, no una constante: v7 y anteriores
+    # traen 3 y el corpus con apertura trae 4.
+    _m0 = np.load(arr_dir / f"{by_split['train'][0]['sid']}.npz")["x"]
+    in_ch = int(_m0.shape[0])
+    print(f"  canales de entrada: {in_ch}", flush=True)
     model = UNetMulticlass(3, args.encoder, args.head,
-                           not args.no_pretrained, args.lse_r).to(device)
+                           not args.no_pretrained, args.lse_r,
+                           in_ch=in_ch).to(device)
     n_par = sum(p.numel() for p in model.parameters() if p.requires_grad)
     print(f"  parámetros entrenables: {n_par/1e6:.1f} M", flush=True)
 

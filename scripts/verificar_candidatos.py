@@ -1,0 +1,353 @@
+#!/usr/bin/env python3
+"""Triaje automático de candidatos: todo lo comprobable sin pisar el monte.
+
+Diseñado para lo que viene. Hoy se ha barrido el `8,5%` de Galicia y han salido
+`50` candidatos sin catalogar; a esa densidad, Galicia entera daría del orden de
+`590`. Revisarlos a mano de uno en uno no escala, y **la mayor parte del descarte
+no exige criterio arqueológico**: una cantera es una cantera y un terraplén de
+autovía es un terraplén de autovía.
+
+Así que esto hace las comprobaciones que una máquina puede hacer, deja cada
+candidato con una **puntuación y un motivo escrito**, y produce la lista ordenada
+que un humano sí tiene que mirar. No decide: **prioriza y explica**.
+
+Sigue el bucle de Bickler y colegas (*Scientific Reports* `2023`,
+`10.1038/s41598-023-36015-5`): el modelo propone, el experto revisa en su SIG, y
+**sus veredictos vuelven al conjunto de entrenamiento**. Por eso la salida es un
+CSV con columna `veredicto` vacía para rellenar, y no un informe cerrado.
+
+## Las seis comprobaciones, y por qué cada una
+
+1. **¿Ya está catalogado?** Distancia al yacimiento conocido más próximo, de
+   cualquier clase. Un candidato a `60 m` de un castro conocido no es hallazgo:
+   es el mismo sitio con la coordenada corrida.
+2. **¿Está donde va un castro?** Prominencia, dominancia y llaneza, calibradas
+   contra castros conocidos: los `12` de Ourense dan **`23`-`53 m` de
+   prominencia, sin excepción**.
+3. **¿Hay obra moderna encima?** Se pregunta a OpenStreetMap por cantera,
+   polígono, vertedero, presa, enlace de autovía o edificio en el radio. Se usa
+   **el vector, no la imagen**: un clasificador de ortofoto se probó el
+   `2026-08-07` y salió **anticorrelado** —consideraba los castros reales más
+   modernos que los falsos positivos, porque aprendió «rural contra urbano» y en
+   la ría de Vigo los castros están rodeados de urbanización—.
+4. **¿Lo dice el topónimo?** `castro`, `croa`, `cividade`, `coto`, `medorra`,
+   `cerca`... En Galicia el nombre del sitio recuerda lo que hubo mucho después
+   de que el sitio deje de verse. Es la comprobación más barata y de las más
+   informativas.
+5. **¿Se puede fiar uno del dato?** Densidad de puntos de suelo. Con el `14%` de
+   retornos llegando al suelo —medido en `LU-8`— el modelo digital es ruido y
+   cualquier lectura morfológica vale poco.
+6. **¿Hay paisaje arqueológico alrededor?** Mámoas y petroglifos cerca no prueban
+   nada por sí solos, pero un castro aparece antes donde ya hay prehistoria
+   documentada que en medio de la nada.
+
+**Ninguna de las seis confirma nada.** Sirven para **descartar barato** y para
+ordenar la cola. La confirmación empieza donde acaba esto: regla `16`.
+
+Uso:
+    python3 scripts/verificar_candidatos.py --candidatos data/candidatos_ourense.tsv \\
+        --laz-dir data/external/lidar-val-ourense --out data/triaje_ourense
+"""
+from __future__ import annotations
+
+import argparse
+import csv
+import json
+import math
+import sys
+import time
+import urllib.parse
+import urllib.request
+from pathlib import Path
+
+import numpy as np
+
+RAIZ = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(RAIZ / "scripts"))
+
+MAESTRO = RAIZ / "data/weak-label-splits-v1/weak_label_master.tsv"
+ESPEJOS = ("https://overpass-api.de/api/interpreter",
+           "https://overpass.kumi.systems/api/interpreter")
+UA = "castros-ia (investigacion arqueologica)"
+
+# Raices de toponimo que en Galicia delatan un yacimiento. `croa` es la
+# plataforma superior de un castro; `cividade` y `castro` son literales;
+# `medorra` es tumulo; `coto` y `cerca` son mas debiles y puntuan menos.
+TOPONIMOS = {"castro": 3, "castrom": 3, "cividade": 3, "croa": 3, "crus": 0,
+             "medorra": 2, "mamoa": 2, "modorra": 2, "cast": 1,
+             "coto": 1, "cerca": 1, "torre": 1, "outeiro": 1}
+
+# Lo que descalifica: si esto esta encima, el relieve es moderno.
+MODERNO = ('["landuse"~"quarry|industrial|landfill|construction"]',
+           '["man_made"~"storage_tank|water_tower|wastewater_plant"]',
+           '["waterway"="dam"]', '["highway"="motorway_junction"]',
+           '["leisure"~"pitch|golf_course|stadium"]')
+
+
+def overpass(consulta, intentos=4):
+    for i in range(intentos):
+        url = ESPEJOS[i % len(ESPEJOS)]
+        try:
+            req = urllib.request.Request(
+                url, data=urllib.parse.urlencode({"data": consulta}).encode(),
+                headers={"User-Agent": UA})
+            with urllib.request.urlopen(req, timeout=180) as r:
+                return json.load(r)
+        except Exception:
+            time.sleep(6 * (i + 1))
+    return None
+
+
+def consultar_osm(lon, lat, radio=250):
+    """Obra moderna y topónimos en el entorno, en una sola consulta."""
+    partes = []
+    for f in MODERNO:
+        partes.append(f'nwr{f}(around:{radio},{lat},{lon});')
+    partes.append(f'nwr["name"](around:{radio*2},{lat},{lon});')
+    q = f"[out:json][timeout:120];({''.join(partes)});out center tags;"
+    d = overpass(q)
+    if d is None:
+        return None, None
+    moderno, nombres = [], []
+    for el in d.get("elements", []):
+        t = el.get("tags", {})
+        if any(k in t for k in ("landuse", "man_made", "waterway", "highway",
+                                "leisure")) and not t.get("name"):
+            moderno.append(t.get("landuse") or t.get("man_made")
+                           or t.get("waterway") or t.get("highway")
+                           or t.get("leisure"))
+        if t.get("name"):
+            nombres.append(t["name"])
+        for k in ("landuse", "man_made", "waterway", "leisure"):
+            if t.get(k) in ("quarry", "industrial", "landfill", "construction",
+                            "dam", "pitch", "golf_course", "stadium"):
+                moderno.append(t[k])
+    return sorted(set(moderno)), sorted(set(nombres))
+
+
+def decae(valor, umbral, sigma, mayor_mejor=True):
+    """Decaimiento gaussiano en vez de umbral duro: `exp(-deficit^2 / 2*sigma^2)`.
+
+    Es la idea de **Soft-NMS** (Bodla et al. 2017, `10.1109/iccv.2017.593`)
+    trasladada aqui: en vez de eliminar lo que no llega al umbral, **rebajarle la
+    puntuacion en proporcion a cuanto le falta**. Y es la misma que Pablo ya uso
+    en su TFG —lambda adaptativo por percentil en lugar de umbrales fijos—.
+
+    **Lo pedia un caso concreto y caro.** El criterio topografico se calibro
+    contra los `12` castros conocidos del bloque de Ourense, que dan `23`-`53 m`
+    de prominencia, y se fijo el corte en `23`. Con umbral duro, el candidato
+    `OU-1` quedaba fuera por tener `19,0 m`... y `OU-1` resulto ser el **Castro
+    do Coto do Mosteiro**, excavado en `1984`, publicado y con material en el
+    Museo Arqueoloxico de Ourense. **Un umbral derivado de doce ejemplos habria
+    tirado un castro de la Edad del Hierro por cuatro metros.**
+
+    Con `sigma = 8` sobre ese mismo caso: a `4 m` por debajo conserva el `88%`
+    de la puntuacion, a `11 m` el `39%`, y a `18 m` solo el `8%`. Baja poco lo
+    que falla poco y hunde lo que falla mucho, que es justo lo que se queria.
+
+    El fondo del asunto: **con `n = 12` el minimo muestral no es el minimo
+    poblacional**. Un umbral duro trata una estimacion ruidosa como si fuera una
+    frontera fisica.
+    """
+    d = (umbral - valor) if mayor_mejor else (valor - umbral)
+    if d <= 0:
+        return 1.0
+    return float(math.exp(-(d * d) / (2.0 * sigma * sigma)))
+
+
+# Lo que NO cuenta aunque lleve la raiz dentro. Medido el 2026-08-07: el
+# emparejador marcaba «Castrelo de Miño» —que es el nombre del concello y sale
+# en todos sus candidatos— y «Rúa do Outeiro», que es una calle. Un nombre
+# administrativo o de viario no dice nada del punto concreto.
+VIARIO = ("rúa ", "rua ", "calle ", "avenida ", "camiño ", "camino ",
+          "estrada ", "carretera ", "praza ", "plaza ", "travesía ")
+
+
+def puntuar_toponimo(nombres, concello=""):
+    """El mejor topónimo delator del entorno, o `0` si ninguno lo es.
+
+    **Ojo con lo que parece topónimo y no lo es.** Se descartan los nombres de
+    viario —una «Rúa do Outeiro» no dice que ahí hubiera un outeiro
+    arqueológico— y el nombre del propio concello, porque sale en todos sus
+    candidatos por igual y no distingue nada. `Castrelo de Miño` marcaba `castr`
+    en cuatro candidatos de Ourense sin aportar ni un bit.
+    """
+    mejor, cual = 0, ""
+    conc = (concello or "").lower().strip()
+    for n in nombres or []:
+        b = n.lower().strip()
+        if any(b.startswith(v) for v in VIARIO):
+            continue
+        if conc and (b == conc or b.startswith(conc)):
+            continue
+        for raiz, p in TOPONIMOS.items():
+            if raiz in b and p > mejor:
+                mejor, cual = p, n
+    return mejor, cual
+
+
+def main() -> int:
+    ap = argparse.ArgumentParser(description=__doc__,
+                                 formatter_class=argparse.RawDescriptionHelpFormatter)
+    ap.add_argument("--candidatos", type=Path, required=True)
+    ap.add_argument("--laz-dir", type=Path, nargs="+", required=True)
+    ap.add_argument("--out", type=Path, required=True)
+    ap.add_argument("--radio-osm", type=float, default=250.0)
+    ap.add_argument("--sin-osm", action="store_true",
+                    help="salta Overpass; útil si el servicio está caído")
+    args = ap.parse_args()
+    args.out.mkdir(parents=True, exist_ok=True)
+
+    filas = list(csv.DictReader(open(args.candidatos, encoding="utf-8"),
+                                delimiter="\t"))
+    print(f"candidatos: {len(filas)}", flush=True)
+
+    # --- 1. catalogo ---------------------------------------------------------
+    cast, patr = [], []
+    with open(MAESTRO, encoding="utf-8") as fh:
+        for r in csv.DictReader(fh, delimiter="\t"):
+            try:
+                p = (float(r["longitude"]), float(r["latitude"]),
+                     r.get("name", ""), r.get("municipality", ""))
+            except (KeyError, TypeError, ValueError):
+                continue
+            patr.append(p)
+            if r["label_class"] == "1":
+                cast.append(p)
+    k = 111320.0
+
+    def dist(lon, lat, pts):
+        best, info = 1e9, ("", "")
+        for x, y, n, m in pts:
+            d = math.hypot((lon-x)*k*math.cos(math.radians(lat)), (lat-y)*k)
+            if d < best:
+                best, info = d, (n, m)
+        return best, info
+
+    # --- 2. topografia -------------------------------------------------------
+    from contexto_topografico import medir
+    from build_trasancos_vignettes import (grid_from_points,
+                                           group_samples_by_tiles,
+                                           lonlat_to_utm29)
+    import laspy
+    ext, res = 540.0, 2.0
+    celdas = [{"id": i, "x": lonlat_to_utm29(float(r["lon"]), float(r["lat"]))[0],
+               "y": lonlat_to_utm29(float(r["lon"]), float(r["lat"]))[1],
+               "lon": float(r["lon"]), "lat": float(r["lat"])}
+              for i, r in enumerate(filas)]
+    tiles = sorted(str(p) for d in args.laz_dir for p in Path(d).glob("*.laz"))
+    grupos, _ = group_samples_by_tiles(celdas, tiles, ext)
+    topo, dens = {}, {}
+    for tp, cs in grupos.items():
+        xs, ys, zs = [], [], []
+        for t in tp:
+            try:
+                with laspy.open(t) as fh:
+                    for p in fh.chunk_iterator(4_000_000):
+                        kk = np.asarray(p.classification) == 2
+                        if not kk.any():
+                            continue
+                        xs.append(np.asarray(p.x)[kk].astype(np.float32))
+                        ys.append(np.asarray(p.y)[kk].astype(np.float32))
+                        zs.append(np.asarray(p.z)[kk].astype(np.float32))
+            except Exception:
+                continue
+        if not xs:
+            continue
+        X = np.concatenate(xs); Y = np.concatenate(ys); Z = np.concatenate(zs)
+        for c in cs:
+            h = ext / 2.0
+            b = (c["x"]-h, c["y"]-h, c["x"]+h, c["y"]+h)
+            m = (X >= b[0]) & (X <= b[2]) & (Y >= b[1]) & (Y <= b[3])
+            if m.sum() < 2000:
+                continue
+            dens[c["id"]] = float(m.sum() / (ext*ext))
+            dem = grid_from_points(X[m], Y[m], Z[m], b, res)
+            if dem is None or np.ndim(dem) != 2:
+                continue
+            r = medir(dem, res, 60.0, 250.0)
+            if r:
+                topo[c["id"]] = r
+        del X, Y, Z
+    print(f"topografía leída: {len(topo)}/{len(filas)}", flush=True)
+
+    # --- 3-6. OSM, toponimo, patrimonio --------------------------------------
+    salida = []
+    for i, r in enumerate(filas):
+        lon, lat, sc = float(r["lon"]), float(r["lat"]), float(r["score"])
+        d_cast, info_c = dist(lon, lat, cast)
+        d_patr, info_p = dist(lon, lat, patr)
+        mod, nombres = (None, None) if args.sin_osm else \
+            consultar_osm(lon, lat, args.radio_osm)
+        if not args.sin_osm:
+            time.sleep(3)
+        tp_p, tp_n = puntuar_toponimo(nombres, info_p[1])
+        t = topo.get(i, {})
+
+        # Puntuacion: suma de indicios, con el motivo escrito al lado.
+        pts, motivos = 0.0, []
+        # Todo lo continuo entra con decaimiento gaussiano, no con umbral duro.
+        # Ver `decae` y el caso del Castro do Coto do Mosteiro.
+        f_dup = decae(d_cast, 400.0, 250.0)          # cerca de un conocido: penaliza
+        if f_dup < 0.9:
+            pts -= 3 * (1 - f_dup)
+            motivos.append(f"a {d_cast:.0f} m de castro conocido")
+        f_lejos = decae(d_cast, 1000.0, 500.0)
+        if f_lejos > 0.3:
+            pts += 1 * f_lejos; motivos.append("lejos de lo catalogado")
+        if t:
+            f_prom = decae(t["prominencia_m"], 23.0, 8.0)
+            pts += 2 * f_prom
+            motivos.append(f"prominencia {t['prominencia_m']:.0f} m "
+                           f"(x{f_prom:.2f})")
+            f_dom = decae(t["pct_entorno_debajo"], 0.85, 0.20)
+            pts += 1 * f_dom
+            if f_dom > 0.5:
+                motivos.append(f"domina el {100*t['pct_entorno_debajo']:.0f}%")
+        if mod:
+            pts -= 3; motivos.append("obra moderna: " + ", ".join(mod[:3]))
+        if tp_p >= 2:
+            pts += tp_p; motivos.append(f"topónimo «{tp_n}»")
+        if d_patr < 1500:
+            pts += 0.5; motivos.append("paisaje arqueológico próximo")
+        dd = dens.get(i)
+        if dd is not None:
+            f_den = decae(dd, 1.0, 0.4)
+            if f_den < 0.9:
+                pts -= 1 * (1 - f_den)
+                motivos.append(f"LiDAR pobre ({dd:.2f} pt/m²)")
+
+        salida.append({
+            "n": i+1, "lon": f"{lon:.6f}", "lat": f"{lat:.6f}",
+            "score_modelo": f"{sc:.3f}", "triaje": f"{pts:.1f}",
+            "d_castro_m": f"{d_cast:.0f}", "castro_proximo": info_c[0][:36],
+            "concello": info_p[1][:22],
+            "prominencia_m": f"{t.get('prominencia_m', float('nan')):.1f}" if t else "",
+            "pct_domina": f"{100*t['pct_entorno_debajo']:.0f}" if t else "",
+            "densidad_suelo": f"{dd:.2f}" if dd else "",
+            "obra_moderna": ", ".join(mod[:3]) if mod else "",
+            "toponimo": tp_n,
+            "motivos": " | ".join(motivos),
+            "veredicto": "", "revisor": "", "notas": "",
+        })
+        print(f"  {i+1}/{len(filas)} triaje {pts:+.1f}", flush=True)
+
+    salida.sort(key=lambda r: -float(r["triaje"]))
+    dest = args.out / (args.candidatos.stem + "_triaje.csv")
+    with open(dest, "w", newline="", encoding="utf-8") as fh:
+        w = csv.DictWriter(fh, fieldnames=list(salida[0].keys()))
+        w.writeheader(); w.writerows(salida)
+    print(f"\nescrito: {dest}")
+    print("\nLas columnas `veredicto`, `revisor` y `notas` van vacías a "
+          "propósito:\nse rellenan al revisar y ese resultado vuelve al corpus. "
+          "Ver regla 16.")
+    alto = [r for r in salida if float(r["triaje"]) >= 3]
+    print(f"\nprioridad alta (triaje >= 3): {len(alto)} de {len(salida)}")
+    for r in alto[:10]:
+        print(f"  #{r['n']:>3} triaje {r['triaje']:>5} | {r['lat']},{r['lon']} "
+              f"| {r['motivos'][:80]}")
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())
