@@ -65,7 +65,29 @@ import numpy as np
 RAIZ = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(RAIZ / "scripts"))
 
-MAESTRO = RAIZ / "data/weak-label-splits-v1/weak_label_master.tsv"
+# **El maestro FUSIONADO, no el original.** Hasta el 2026-08-07 esto apuntaba a
+# `weak-label-splits-v1/weak_label_master.tsv`, que tiene `3.929` castros: los de
+# la Xunta y nada mas. El fusionado tiene `4.080` porque incorpora los `151` de
+# patrimoniogalego. Con el maestro viejo, un candidato plantado encima de un
+# castro que solo conoce el catalogo social salia como «lejos de lo catalogado»
+# y subia en la cola. Todo el trabajo de fusionar catalogos no servia de nada si
+# el triaje seguia preguntandole al de antes.
+MAESTRO = RAIZ / "data/weak_label_master_fusionado.tsv"
+
+# Distancia por debajo de la cual un candidato NO es un hallazgo, sino el mismo
+# sitio con la coordenada corrida. No es una constante elegida a ojo: es el
+# contrato de `extraer_candidatos.py`, que ya descarta con `--tolerancia-m 500`
+# contra el catalogo entero. Si algo llega aqui por debajo de eso, la entrada
+# esta rancia o se genero sin el arreglo del desborde de recuadro.
+#
+# **Hizo falta porque el decaimiento gaussiano no basta.** Un candidato a `22 m`
+# del Castro da Igrexa/Castro de Lebruxo cobraba `-2,0` por cercania y luego
+# recuperaba `+2` de prominencia y `+1` de dominancia —porque ES un castro y por
+# eso su topografia es inmejorable— y acababa **tercero de la lista**. La
+# gaussiana esta bien para la zona ambigua, la del Coto do Mosteiro a `104 m`,
+# donde de verdad puede haber dos sitios distintos. Por debajo, ninguna
+# topografia excelente debe rescatar nada: es el mismo monumento.
+DIST_MISMO_SITIO_M = 500.0
 ESPEJOS = ("https://overpass-api.de/api/interpreter",
            "https://overpass.kumi.systems/api/interpreter")
 UA = "castros-ia (investigacion arqueologica)"
@@ -384,6 +406,11 @@ def main() -> int:
 
         # Puntuacion: suma de indicios, con el motivo escrito al lado.
         pts, motivos = 0.0, []
+        # **Guardian de sitio ya catalogado, antes de puntuar nada.** Ver
+        # `DIST_MISMO_SITIO_M`. Se marca en `veredicto` en vez de borrarlo, para
+        # que quede el rastro de por que no esta en la cola: un candidato que
+        # desaparece sin explicacion se vuelve a proponer en el siguiente barrido.
+        ya = d_cast < DIST_MISMO_SITIO_M
         # Todo lo continuo entra con decaimiento gaussiano, no con umbral duro.
         # Ver `decae` y el caso del Castro do Coto do Mosteiro.
         f_dup = decae(d_cast, 400.0, 250.0)          # cerca de un conocido: penaliza
@@ -426,9 +453,12 @@ def main() -> int:
             "obra_moderna": ", ".join(mod[:3]) if mod else "",
             "toponimo": tp_n,
             "motivos": " | ".join(motivos),
-            "veredicto": "", "revisor": "", "notas": "",
+            "veredicto": "YA CATALOGADO" if ya else "",
+            "revisor": "guardián automático" if ya else "", "notas": "",
         })
-        print(f"  {i+1}/{len(filas)} triaje {pts:+.1f}", flush=True)
+        print(f"  {i+1}/{len(filas)} triaje {pts:+.1f}"
+              + (f"  *** YA CATALOGADO: {d_cast:.0f} m de "
+                 f"{info_c[0][:40]} ***" if ya else ""), flush=True)
 
     salida.sort(key=lambda r: -float(r["triaje"]))
     dest = args.out / (args.candidatos.stem + "_triaje.csv")
@@ -449,12 +479,27 @@ def main() -> int:
     # El cuartil superior siempre selecciona la misma fraccion, que es lo que
     # una cola de revision necesita: «los mejores de aqui», no «los que pasan de
     # una nota que me invente».
-    v = np.array([float(r["triaje"]) for r in salida])
+    #
+    # Los marcados `YA CATALOGADO` salen del calculo del cuartil ademas de salir
+    # de la cola: si no, tres castros conocidos con topografia inmejorable suben
+    # el percentil 75 y expulsan de la lista a candidatos que si eran nuevos.
+    revisables = [r for r in salida if r["veredicto"] != "YA CATALOGADO"]
+    n_ya = len(salida) - len(revisables)
+    if n_ya:
+        print(f"\n*** {n_ya} descartados por el guardián: a menos de "
+              f"{DIST_MISMO_SITIO_M:.0f} m de un castro catalogado.")
+        print("    No son hallazgos, es el mismo sitio. Si aparecen aquí, la "
+              "entrada\n    viene sin el arreglo del desborde de recuadro "
+              "(extraer_candidatos.py).")
+    if not revisables:
+        print("\nno queda ningún candidato revisable en este bloque")
+        return 0
+    v = np.array([float(r["triaje"]) for r in revisables])
     corte = float(np.percentile(v, 75)) if len(v) >= 4 else v.min()
-    alto = [r for r in salida if float(r["triaje"]) >= corte]
+    alto = [r for r in revisables if float(r["triaje"]) >= corte]
     print(f"\nrango de triaje en este bloque: {v.min():.2f} a {v.max():.2f}")
     print(f"prioridad alta (cuartil superior, corte {corte:.2f}): "
-          f"{len(alto)} de {len(salida)}")
+          f"{len(alto)} de {len(revisables)} revisables")
     for r in alto[:10]:
         print(f"  #{r['n']:>3} triaje {r['triaje']:>5} | {r['lat']},{r['lon']} "
               f"| {r['motivos'][:80]}")
