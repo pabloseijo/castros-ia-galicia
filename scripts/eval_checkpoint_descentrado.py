@@ -81,14 +81,15 @@ def main() -> int:
     print("validación: %d viñetas | castro %d | mámoa %d"
           % (len(filas), (y == 1).sum(), (y == 2).sum()), flush=True)
 
-    print("\n%-26s %5s %5s %10s %10s %8s"
-          % ("checkpoint", "ép", "tr", "F1 centr.", "F1 desc.", "caída"))
-    print("-" * 72)
+    print("\n%-26s %5s %5s %10s %10s %8s %9s %9s"
+          % ("checkpoint", "ép", "tr", "F1 centr.", "F1 desc.", "caída",
+             "P@2% ctr", "P@2% desc"))
+    print("-" * 92)
     for ck in args.ckpt:
         modelo, ep, tr = cargar(ck, dev)
-        res = {}
+        res, prec = {}, {}
         for cond in ("centrado", "descentrado"):
-            preds = []
+            preds, probs = [], []
             with torch.no_grad():
                 for i in range(0, len(filas), args.lote):
                     trozo = filas[i:i+args.lote]
@@ -105,13 +106,38 @@ def main() -> int:
                     x = torch.from_numpy((np.stack(arrs)-0.5)/0.5).float().to(dev)
                     lg, _ = modelo(x)
                     preds.append(lg.argmax(1).cpu().numpy())
+                    probs.append(torch.softmax(lg.float(), 1)[:, 1].cpu().numpy())
             res[cond] = f1_macro(np.concatenate(preds), y)[0]
-        print("%-26s %5s %5s %10.4f %10.4f %+8.4f"
+            # **Precisión en el extremo alto, que es donde se usa esto.**
+            # El F1 por `argmax` mide UN punto de operación implícito, y este
+            # proyecto no despliega ahí: barre con umbral alto y sacrifica
+            # recall a propósito, para que un humano no tenga que abrir
+            # cientos de candidatos. Los dos números pueden ordenar al revés, y
+            # el 2026-08-07 lo hicieron: la criba puso a `v6-focal` el último
+            # por F1 descentrado (`0.2316`) mientras el barrido real le daba la
+            # mejor precisión de todo el proyecto —`0.957` en Lugo, `34`
+            # candidatos y **un** falso positivo—. Elegir por F1 habría tirado
+            # el mejor resultado que hay.
+            S = np.concatenate(probs)
+            k = max(1, int(0.02 * len(S)))   # top 2%: el orden del barrido real
+            res_top = (y[np.argsort(-S)[:k]] == 1)
+            prec[cond] = float(res_top.mean())
+        print("%-26s %5s %5s %10.4f %10.4f %+8.4f %9.3f %9.3f"
               % (str(ck)[-24:], ep, tr, res["centrado"], res["descentrado"],
-                 res["descentrado"] - res["centrado"]))
+                 res["descentrado"] - res["centrado"],
+                 prec["centrado"], prec["descentrado"]))
         del modelo
         if dev == "cuda":
             torch.cuda.empty_cache()
+    print("\n`P@2% desc` es la fracción de aciertos entre el 2% mejor puntuado,")
+    print("descentrado. Se añadió porque el F1 mide UN punto de operación y este")
+    print("proyecto despliega en el extremo alto del umbral — y ordenan al revés.")
+    print("\nPERO NINGUNA DE LAS DOS PREDICE EL BARRIDO, y hay que saber por qué:")
+    print("aquí la tasa base es ~6% de castros (180 de 2.991) y en el barrido")
+    print("ciego es 1:475, o sea 0,2%. Treinta veces menos. Una precisión alta")
+    print("sobre viñetas curadas no se traslada a una rejilla donde casi todo es")
+    print("terreno vacío. Esta criba sirve para DESCARTAR un checkpoint roto en")
+    print("minutos; para elegir el mejor prospector no hay atajo — hay que barrer.")
     print("\nEl barrido debe lanzarse con el mejor en la columna DESCENTRADA:")
     print("es la única que se parece a lo que ve el modelo en despliegue.")
     return 0
