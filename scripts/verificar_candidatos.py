@@ -105,6 +105,22 @@ MODERNO = ('["landuse"~"quarry|industrial|landfill|construction"]',
            '["waterway"="dam"]', '["highway"="motorway_junction"]',
            '["leisure"~"pitch|golf_course|stadium"]')
 
+# **Confusor, que NO es lo mismo que obra moderna.** Un socalco de vinna visto en
+# LiDAR es un talud con plataforma llana encima: exactamente la firma de un
+# parapeto. Pero muchos castros gallegos tienen vinna plantada dentro, asi que
+# esto **no descalifica** — avisa de que la lectura morfologica del relieve no es
+# fiable ahi, y por eso resta poco y se escribe en su propia columna.
+#
+# Lo motiva Ourense: de sus `16` candidatos, `4` estan en Leiro y los demas se
+# reparten por Beade, Castrelo de Minno, Ribadavia y Melon. Es **O Ribeiro**, la
+# comarca de vinnedo aterrazado de Galicia, y los falsos positivos ya conocidos
+# de Ourense son «laderas aterrazadas». La consulta anterior no preguntaba por
+# vinnedo, asi que la hipotesis nunca se comprobo.
+CONFUSOR = ('["landuse"~"vineyard|orchard|plant_nursery"]',
+            '["man_made"="embankment"]', '["barrier"="retaining_wall"]')
+CONFUSOR_VALS = ("vineyard", "orchard", "plant_nursery", "embankment",
+                 "retaining_wall")
+
 
 def overpass(consulta, intentos=4):
     for i in range(intentos):
@@ -121,30 +137,67 @@ def overpass(consulta, intentos=4):
 
 
 def consultar_osm(lon, lat, radio=250):
-    """Obra moderna y topónimos en el entorno, en una sola consulta."""
+    """Obra moderna, confusores del relieve y topónimos, en una sola consulta."""
     partes = []
-    for f in MODERNO:
+    for f in MODERNO + CONFUSOR:
         partes.append(f'nwr{f}(around:{radio},{lat},{lon});')
     partes.append(f'nwr["name"](around:{radio*2},{lat},{lon});')
     q = f"[out:json][timeout:120];({''.join(partes)});out center tags;"
     d = overpass(q)
     if d is None:
-        return None, None
-    moderno, nombres = [], []
+        return None, None, None
+    moderno, confusor, nombres = [], [], []
     for el in d.get("elements", []):
         t = el.get("tags", {})
+        for k in ("landuse", "man_made", "barrier"):
+            if t.get(k) in CONFUSOR_VALS:
+                confusor.append(t[k])
         if any(k in t for k in ("landuse", "man_made", "waterway", "highway",
                                 "leisure")) and not t.get("name"):
-            moderno.append(t.get("landuse") or t.get("man_made")
-                           or t.get("waterway") or t.get("highway")
-                           or t.get("leisure"))
+            v = (t.get("landuse") or t.get("man_made") or t.get("waterway")
+                 or t.get("highway") or t.get("leisure"))
+            # Un confusor no cuenta como obra moderna: descalificaria a castros
+            # con vinna plantada dentro, que en Galicia son muchos.
+            if v not in CONFUSOR_VALS:
+                moderno.append(v)
         if t.get("name"):
             nombres.append(t["name"])
         for k in ("landuse", "man_made", "waterway", "leisure"):
             if t.get(k) in ("quarry", "industrial", "landfill", "construction",
                             "dam", "pitch", "golf_course", "stadium"):
                 moderno.append(t[k])
-    return sorted(set(moderno)), sorted(set(nombres))
+    return sorted(set(moderno)), sorted(set(confusor)), sorted(set(nombres))
+
+
+def tipicidad(valor, conocidos):
+    """Cómo de TÍPICO es este valor para un castro del bloque. Dos colas.
+
+    **Arregla que el triaje dejara de ordenar.** `decae` solo penaliza por
+    debajo del umbral, asi que por encima todo vale `1.00` y los candidatos se
+    empatan. En Ourense pasó de forma flagrante: seis empatados a `4.5`, entre
+    ellos uno de `63,9 m` de prominencia y otro de `21,1 m`, indistinguibles
+    para el sistema.
+
+    Y el empate escondia informacion real, porque **mas prominencia no es
+    mejor**. Los castros conocidos del bloque de Ourense van de `7,6` a `53 m`:
+    un candidato de `63,9 m` esta FUERA del rango observado y es mas probable
+    que sea una cima natural que un recinto. La forma correcta no es monotona
+    creciente, es una densidad — «cuanto se parece esto a un castro de aqui».
+
+    Se usa la funcion de distribucion empirica de los castros conocidos, sin
+    ajustar ninguna curva ni elegir ningun parametro:
+
+        tipicidad = 2 * min(F(x), 1 - F(x))
+
+    Vale `1.00` en la mediana de los castros conocidos y cae hacia `0` en las
+    dos colas. Entra con peso pequeno y **solo como desempate**: la evidencia
+    principal sigue siendo la de `decae`, y esto ordena dentro del empate.
+    """
+    v = np.asarray([x for x in conocidos if np.isfinite(x)], dtype=float)
+    if len(v) < 5 or not np.isfinite(valor):
+        return float("nan")
+    F = float((v <= valor).mean())
+    return 2.0 * min(F, 1.0 - F)
 
 
 def calibrar(valores, cola=2.0, piso=0.05, minimo_fisico=0.0):
@@ -341,6 +394,10 @@ def main() -> int:
     # constantes. Si no los hay, se usa el valor de Ourense como respaldo y se
     # dice, para que nadie confunda una calibracion local con una heredada.
     u_prom, s_prom = 17.9, 7.3
+    # Las prominencias crudas de los castros conocidos del bloque, que `calibrar`
+    # resume en dos numeros. `tipicidad` necesita la distribucion entera, no el
+    # resumen: la mediana y las dos colas no se recuperan del umbral y la sigma.
+    prom_conocidas = []
     if args.calibrar_con and Path(args.calibrar_con).exists():
         conocidos = list(csv.DictReader(open(args.calibrar_con, encoding="utf-8"),
                                         delimiter="\t"))
@@ -382,8 +439,11 @@ def main() -> int:
             del X, Y, Z
         if len(proms) >= 5:
             u_prom, s_prom = calibrar(proms)
+            prom_conocidas = list(proms)
             print(f"calibrado con {len(proms)} castros conocidos del bloque: "
-                  f"umbral {u_prom:.1f} m, sigma {s_prom:.1f} m", flush=True)
+                  f"umbral {u_prom:.1f} m, sigma {s_prom:.1f} m "
+                  f"| mediana {np.median(proms):.1f} m, rango "
+                  f"{min(proms):.1f}-{max(proms):.1f} m", flush=True)
         else:
             print(f"solo {len(proms)} castros con lectura: se usan los valores "
                   f"de Ourense (umbral {u_prom} m)", flush=True)
@@ -397,7 +457,7 @@ def main() -> int:
         lon, lat, sc = float(r["lon"]), float(r["lat"]), float(r["score"])
         d_cast, info_c = dist(lon, lat, cast)
         d_patr, info_p = dist(lon, lat, patr)
-        mod, nombres = (None, None) if args.sin_osm else \
+        mod, conf, nombres = (None, None, None) if args.sin_osm else \
             consultar_osm(lon, lat, args.radio_osm)
         if not args.sin_osm:
             time.sleep(3)
@@ -420,6 +480,7 @@ def main() -> int:
         f_lejos = decae(d_cast, 1000.0, 500.0)
         if f_lejos > 0.3:
             pts += 1 * f_lejos; motivos.append("lejos de lo catalogado")
+        tip = float("nan")
         if t:
             f_prom = decae(t["prominencia_m"], u_prom, s_prom)
             pts += 2 * f_prom
@@ -429,12 +490,37 @@ def main() -> int:
             pts += 1 * f_dom
             if f_dom > 0.5:
                 motivos.append(f"domina el {100*t['pct_entorno_debajo']:.0f}%")
+            # Desempate por tipicidad. Ver `tipicidad`: peso pequeno a proposito,
+            # solo ordena dentro del empate que crea la saturacion de `decae`.
+            tip = tipicidad(t["prominencia_m"], prom_conocidas)
+            if np.isfinite(tip):
+                pts += 0.5 * tip
+                if tip < 0.35:
+                    motivos.append(f"prominencia atípica para el bloque "
+                                   f"(tipicidad {tip:.2f})")
         if mod:
             pts -= 3; motivos.append("obra moderna: " + ", ".join(mod[:3]))
+        if conf:
+            # Resta poco y no descalifica: ver `CONFUSOR`.
+            pts -= 0.5
+            motivos.append("relieve dudoso por " + ", ".join(conf[:3]))
         if tp_p >= 2:
             pts += tp_p; motivos.append(f"topónimo «{tp_n}»")
+        # **El «paisaje arqueológico próximo» ya NO puntúa.** Sonaba razonable
+        # —los castros se agrupan— pero mide **esfuerzo de prospección** tanto
+        # como potencial arqueológico: en una zona bien prospectada lo que hay
+        # cerca está registrado, y en una zona en blanco la ausencia de registro
+        # no es ausencia de yacimientos. Con `+0.5` se penalizaba justo a los
+        # candidatos de las zonas vacías, que es **donde por definición está lo
+        # que nadie ha encontrado**.
+        #
+        # Lo delató el candidato de San Amaro: la mayor confianza del modelo de
+        # los cuatro bloques (`0.902`), `41,4 m` de prominencia y dominando el
+        # `94%`, y bajaba de `4.5` a `4.0` por no tener nada catalogado a menos
+        # de `1.500 m`, en la provincia peor catalogada de Galicia. Se conserva
+        # como columna informativa, fuera de la puntuación.
         if d_patr < 1500:
-            pts += 0.5; motivos.append("paisaje arqueológico próximo")
+            motivos.append("paisaje arqueológico próximo (no puntúa)")
         dd = dens.get(i)
         if dd is not None:
             f_den = decae(dd, 1.0, 0.4)
@@ -448,9 +534,12 @@ def main() -> int:
             "d_castro_m": f"{d_cast:.0f}", "castro_proximo": info_c[0][:36],
             "concello": info_p[1][:22],
             "prominencia_m": f"{t.get('prominencia_m', float('nan')):.1f}" if t else "",
+            "tipicidad": f"{tip:.2f}" if np.isfinite(tip) else "",
             "pct_domina": f"{100*t['pct_entorno_debajo']:.0f}" if t else "",
             "densidad_suelo": f"{dd:.2f}" if dd else "",
             "obra_moderna": ", ".join(mod[:3]) if mod else "",
+            "confusor_relieve": ", ".join(conf[:3]) if conf else "",
+            "d_patrimonio_m": f"{d_patr:.0f}",
             "toponimo": tp_n,
             "motivos": " | ".join(motivos),
             "veredicto": "YA CATALOGADO" if ya else "",
