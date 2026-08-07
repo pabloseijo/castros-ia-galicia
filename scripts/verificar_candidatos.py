@@ -182,15 +182,42 @@ def consultar_osm(lon, lat, radio=250):
     if d is None:
         return None, None, None, None
     moderno, confusor, nombres, n_uso = [], [], [], 0
+
+    def lejos_de(el, metros):
+        """`True` si el elemento cae fuera del radio pedido.
+
+        **Overpass devuelve todo junto y sin distancia.** La consulta pide obra
+        moderna a `250 m`, nombres a `500 m` y uso del suelo a `2 km`; la
+        respuesta es una sola lista. Sin filtrar por distancia, la sonda de
+        cobertura arrastraba canteras y poligonos de hasta `2 km` a la lista de
+        obra moderna y **el radio de penalizacion se expandio de `250 m` a `2 km`
+        sin que nadie lo decidiera**: en Ourense pasaron de `2` a `7` los
+        candidatos penalizados, y uno de `35,7 m` de prominencia y tipicidad
+        `0,72` cayo de `4.5` a `1.3` por una cantera lejana.
+        """
+        c = el.get("center") or el
+        try:
+            elon, elat = float(c["lon"]), float(c["lat"])
+        except (KeyError, TypeError, ValueError):
+            return False            # sin geometria: no se descarta por distancia
+        dx = (elon - lon) * 111320.0 * math.cos(math.radians(lat))
+        dy = (elat - lat) * 110540.0
+        return math.hypot(dx, dy) > metros
+
     for el in d.get("elements", []):
         t = el.get("tags", {})
         if t.get("landuse"):
-            n_uso += 1
+            n_uso += 1                       # la cobertura SI cuenta a 2 km
+        # Cada cosa en su radio, que es como estaba pensada la consulta:
+        # obra moderna y confusores a `radio`, toponimos a `radio*2`, cobertura
+        # a `RADIO_COBERTURA_M`. Antes de este filtro los tres se mezclaban.
+        if not lejos_de(el, radio * 2) and t.get("name"):
+            nombres.append(t["name"])
+        if lejos_de(el, radio):
+            continue
         for k in ("landuse", "man_made", "barrier"):
             if t.get(k) in CONFUSOR_VALS:
                 confusor.append(t[k])
-        if t.get("name"):
-            nombres.append(t["name"])
         # Solo lo de la lista blanca descalifica. Ver `MODERNO_VALS`: sin ella,
         # la sonda de cobertura mete `farmland` y `forest` como obra moderna.
         for k in ("landuse", "man_made", "waterway", "highway", "leisure"):
