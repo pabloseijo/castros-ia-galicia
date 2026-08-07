@@ -159,9 +159,18 @@ def calibrar(valores, cola=2.0, piso=0.05, minimo_fisico=0.0):
     v = np.asarray([x for x in valores if np.isfinite(x)], dtype=float)
     if len(v) < 5:
         raise ValueError("hacen falta al menos 5 ejemplos para calibrar")
-    from statistics import NormalDist
-    z = NormalDist().inv_cdf(cola / 100.0)          # negativo
-    umbral = max(float(v.mean() + z * v.std(ddof=1)), minimo_fisico)
+    # **Percentil empirico, no ajuste normal.** Se probo con la normal y falla:
+    # la distribucion de prominencias tiene un SUELO —un castro no se pone en un
+    # llano— y la cola inferior no es gaussiana. Sobre los 36 castros del bloque
+    # de Ourense (media 29,6, desviacion 13,6, minimo real 7,6) el ajuste normal
+    # situaba el percentil 2 en **1,7 m**, muy por debajo del castro mas bajo que
+    # existe, y con `sigma = 0,7` el criterio dejaba de discriminar: todo lo que
+    # pasara de 1,7 m sacaba la puntuacion entera.
+    #
+    # El percentil empirico lo da el propio dato: `p5 = 10,8 m` con `n = 36`, que
+    # es practicamente el segundo mas bajo observado. Respeta la distribucion en
+    # vez de extrapolarla.
+    umbral = max(float(np.percentile(v, cola * 2.5)), minimo_fisico)
     sigma = max(umbral - minimo_fisico, 1e-6) / math.sqrt(2 * math.log(1 / piso))
     return umbral, sigma
 
@@ -186,6 +195,13 @@ def decae(valor, umbral, sigma, mayor_mejor=True):
     if d <= 0:
         return 1.0
     return float(math.exp(-(d * d) / (2.0 * sigma * sigma)))
+
+
+# Lo que NO cuenta aunque lleve la raiz dentro. Medido el 2026-08-07: el
+# emparejador marcaba «Castrelo de Miño» —nombre del concello, sale en todos sus
+# candidatos por igual— y «Rúa do Outeiro», que es una calle.
+VIARIO = ("rúa ", "rua ", "calle ", "avenida ", "camiño ", "camino ",
+          "estrada ", "carretera ", "praza ", "plaza ", "travesía ")
 
 
 def puntuar_toponimo(nombres, concello=""):
