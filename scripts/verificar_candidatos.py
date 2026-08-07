@@ -140,6 +140,18 @@ CONFUSOR_VALS = ("vineyard", "orchard", "plant_nursery", "embankment",
 RADIO_COBERTURA_M = 2000
 MIN_POLIGONOS_USO = 3
 
+# **Los valores que de verdad descalifican, en lista blanca.** Antes bastaba con
+# que el elemento tuviera etiqueta de `landuse` y no tuviera nombre para contar
+# como obra moderna. Mientras la consulta solo pedia lo de `MODERNO` eso era
+# inofensivo. Al anadir la sonda de cobertura —que pide TODO el `landuse` en
+# `2 km`— dejo de serlo: `farmland`, `forest` y `residential` empezaron a contar
+# como obra moderna y **los 16 candidatos de Ourense perdieron 3 puntos de
+# golpe**, de `2` penalizados a `15`. Un bosque no descalifica un castro; la
+# mitad de los castros de Galicia estan bajo eucalipto.
+MODERNO_VALS = ("quarry", "industrial", "landfill", "construction",
+                "storage_tank", "water_tower", "wastewater_plant", "dam",
+                "motorway_junction", "pitch", "golf_course", "stadium")
+
 
 def overpass(consulta, intentos=4):
     for i in range(intentos):
@@ -177,19 +189,12 @@ def consultar_osm(lon, lat, radio=250):
         for k in ("landuse", "man_made", "barrier"):
             if t.get(k) in CONFUSOR_VALS:
                 confusor.append(t[k])
-        if any(k in t for k in ("landuse", "man_made", "waterway", "highway",
-                                "leisure")) and not t.get("name"):
-            v = (t.get("landuse") or t.get("man_made") or t.get("waterway")
-                 or t.get("highway") or t.get("leisure"))
-            # Un confusor no cuenta como obra moderna: descalificaria a castros
-            # con vinna plantada dentro, que en Galicia son muchos.
-            if v not in CONFUSOR_VALS:
-                moderno.append(v)
         if t.get("name"):
             nombres.append(t["name"])
-        for k in ("landuse", "man_made", "waterway", "leisure"):
-            if t.get(k) in ("quarry", "industrial", "landfill", "construction",
-                            "dam", "pitch", "golf_course", "stadium"):
+        # Solo lo de la lista blanca descalifica. Ver `MODERNO_VALS`: sin ella,
+        # la sonda de cobertura mete `farmland` y `forest` como obra moderna.
+        for k in ("landuse", "man_made", "waterway", "highway", "leisure"):
+            if t.get(k) in MODERNO_VALS:
                 moderno.append(t[k])
     return (sorted(set(moderno)), sorted(set(confusor)), sorted(set(nombres)),
             n_uso)
@@ -258,6 +263,22 @@ def calibrar(valores, cola=2.0, piso=0.05, minimo_fisico=0.0):
     metros de diferencia no distinguen un castro de otra cosa.
     """
     v = np.asarray([x for x in valores if np.isfinite(x)], dtype=float)
+    # **Una prominencia negativa no es un castro bajito: es una medida fallida.**
+    # `medir` calcula `percentil90(sitio) - mediana(entorno)`, asi que sale
+    # negativa cuando el punto catalogado esta en un VALLE respecto a su
+    # entorno — que es justo donde estan una fuente, un puente o un molino, y el
+    # 15,4% del catalogo son cosas asi (ver `auditar_catalogo.py`). Tambien lo
+    # produce una coordenada corrida o un borde de cobertura LiDAR.
+    #
+    # Colandose en la calibracion arrastran el percentil hacia abajo y **dejan
+    # el criterio sin poder discriminar**: el bloque de A Coruna daba mediana
+    # `8,4 m` y minimo `-1,4 m`, de donde salia un umbral de `4,0 m` que todo
+    # candidato superaba. El de Lugo llegaba a `-36,1 m`.
+    n0 = len(v)
+    v = v[v > minimo_fisico]
+    if n0 - len(v):
+        print(f"  calibración: {n0-len(v)} de {n0} lecturas descartadas por "
+              f"prominencia no física (<= {minimo_fisico:g} m)", flush=True)
     if len(v) < 5:
         raise ValueError("hacen falta al menos 5 ejemplos para calibrar")
     # **Percentil empirico, no ajuste normal.** Se probo con la normal y falla:
