@@ -105,3 +105,31 @@ def canal(dem, res=1.0, radio_m=30.0, direcciones=16):
     if not np.isfinite(lo) or not np.isfinite(hi) or hi - lo < 1e-9:
         return np.zeros_like(d, dtype=np.float32)
     return np.clip((d - lo) / (hi - lo), 0, 1).astype(np.float32)
+
+
+def canal_rapido(dem, res=1.0, radio_m=30.0, direcciones=8):
+    """La misma medida, asequible para reconstruir un corpus entero.
+
+    Medido sobre `512x512` de dato real, contra la version de `16` direcciones a
+    resolucion plena:
+
+    | variante                | tiempo | corr. OU-8 | corr. castro |
+    |-------------------------|-------:|-----------:|-------------:|
+    | `8` dir, sin reducir    | `1,59 s` | **`0,993`** | **`0,995`** |
+    | `12` dir, sin reducir   | `2,59 s` | `0,998`   | `0,998`      |
+    | `16` dir, **reducir 2x**| `0,31 s` | `0,512`   | `0,695`      |
+    | `8` dir, **reducir 2x** | `0,11 s` | `0,504`   | `0,690`      |
+
+    **La reduccion espacial es la que rompe la medida, no el numero de
+    direcciones**, y hay que decirlo porque la intuicion dice lo contrario: la
+    apertura es una estadistica de vecindad de `30 m`, asi que parecia que
+    calcularla a `2 m` daria lo mismo. No lo da —ni siquiera promediando
+    bloques, que es el filtro correcto— porque los angulos al horizonte cercano
+    dependen del detalle fino del perfil, y ese detalle es justo el parapeto.
+
+    Con `8` direcciones y sin reducir queda en `0,993` de correlacion y `2,6x`
+    mas rapido: `1,59 s` por vinneta, `6,8 h` para las `15.311` del corpus en un
+    hilo, minutos repartido entre obreros. Es el punto donde ahorrar deja de
+    salir gratis.
+    """
+    return canal(dem, res, radio_m, direcciones)
