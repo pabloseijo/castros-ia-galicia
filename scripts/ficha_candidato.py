@@ -147,6 +147,47 @@ def perfil_radial(apert, res, rmax_m=140.0, ancho_m=3.0):
     return rs, perf, v
 
 
+def pico_del_perfil(rs, perf, rmin_m=25.0):
+    """Radio del anillo: **maximo LOCAL**, no el global. Devuelve `(j, contraste)`.
+
+    **El maximo global cae siempre en el radio mas pequenno**, y no por casualidad:
+    la apertura decae desde la cima porque el centro de un alto es, por
+    definicion, lo mas abierto de su entorno. Buscar el maximo global es medir esa
+    tendencia, no el anillo.
+
+    Es exactamente el sesgo que refuto a la transformada de Hough aqui —devolvia
+    siempre el radio minimo del rango— y sobrevivio al cambio de metodo. Se vio
+    en la primera ficha mirada: el candidato 1 de Ourense declaraba `r=6 m`
+    —seis metros de radio, que no es un recinto de nada— cuando en la curva se
+    ve un segundo maximo hacia los `57 m`.
+
+    Asi que se buscan **maximos locales** —puntos mas altos que sus dos vecinos—
+    a partir de `rmin_m`. El suelo esta en `25 m` porque un recinto castrexo con
+    parapeto no baja de ahi: los castros gallegos van de `50` a `200 m` de
+    diametro, y el Coto do Mosteiro, medido a ojo sobre el sombreado, ronda los
+    `170 m`.
+
+    Si no hay ningun maximo local, **se devuelve `None`** en vez de inventarse
+    uno. «No se ve anillo» es una lectura util y es la honesta.
+    """
+    r = np.asarray(rs, float)
+    y = np.asarray(perf, float)
+    ok = r >= rmin_m
+    if ok.sum() < 3:
+        return None, float("nan")
+    idx = np.where(ok)[0]
+    locales = [i for i in idx[1:-1]
+               if np.isfinite(y[i]) and y[i] > y[i-1] and y[i] > y[i+1]]
+    if not locales:
+        return None, float("nan")
+    j = max(locales, key=lambda i: y[i])
+    # Contraste contra el tramo evaluado, no contra el perfil entero: incluir el
+    # arranque cerca del centro infla el numero en todos los casos por igual.
+    tramo = y[idx]
+    contraste = float((y[j] - np.nanmedian(tramo)) / (np.nanstd(tramo) + 1e-9))
+    return int(j), contraste
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
@@ -238,10 +279,8 @@ def main() -> int:
             r = filas[c["id"]]
             sh = sombreado(dem, res)
             rs, perf, ap_ = perfil_radial(dem, res)
-            j = int(np.nanargmax(perf))
-            radio_pico = float(rs[j])
-            contraste = float((perf[j] - np.nanmedian(perf))
-                              / (np.nanstd(perf) + 1e-9))
+            j, contraste = pico_del_perfil(rs, perf)
+            radio_pico = float(rs[j]) if j is not None else float("nan")
 
             orto = None if args.sin_orto else ortofoto(c["x"], c["y"], L)
             if not args.sin_orto:
@@ -275,15 +314,23 @@ def main() -> int:
             # etiquetado con su contraste, porque es una lectura del perfil y no
             # una delineacion. Quien mire decide si se lo cree.
             cxm = cym = n * res / 2
-            axes[3].add_patch(Circle((cxm, cym), radio_pico, fill=False,
-                                     color="red", lw=1.6, ls=":"))
             axes[3].plot(cxm, cym, "x", color="cyan", ms=9, mew=2)
-            axes[3].text(cxm, cym - radio_pico - 18,
-                         f"r={radio_pico:.0f} m  (contraste {contraste:.2f})",
-                         color="red", ha="center", fontsize=9)
+            if j is not None:
+                axes[3].add_patch(Circle((cxm, cym), radio_pico, fill=False,
+                                         color="red", lw=1.6, ls=":"))
+                axes[3].text(cxm, cym - radio_pico - 18,
+                             f"r={radio_pico:.0f} m  (contraste {contraste:.2f})",
+                             color="red", ha="center", fontsize=9)
+            else:
+                # **«No se ve anillo» es una lectura, y de las utiles.** Antes se
+                # dibujaba igual el maximo global, que caia siempre en el radio
+                # minimo; ahora, si no hay maximo local, se dice.
+                axes[3].text(cxm, cym * 0.25, "sin anillo detectable",
+                             color="red", ha="center", fontsize=10)
 
             axes[4].plot(rs, perf, "-", color="#333", lw=1.6)
-            axes[4].axvline(radio_pico, color="red", ls=":", lw=1.4)
+            if j is not None:
+                axes[4].axvline(radio_pico, color="red", ls=":", lw=1.4)
             axes[4].set_title("perfil radial de apertura", fontsize=11)
             axes[4].set_xlabel("radio (m)", fontsize=9)
             axes[4].set_ylabel("apertura media del anillo", fontsize=9)
@@ -293,15 +340,16 @@ def main() -> int:
             sub = (f"puntuación del modelo {float(col(r, 'score', 'score_modelo', d=0)):.3f}  ·  "
                    f"{float(r['lat']):.5f}, {float(r['lon']):.5f}  ·  "
                    f"ventana {L:.0f} m")
-            sub += (f"  ·  pico del perfil a r={radio_pico:.0f} m "
-                    f"(contraste {contraste:.2f})")
+            sub += (f"  ·  anillo a r={radio_pico:.0f} m "
+                    f"(contraste {contraste:.2f})" if j is not None
+                    else "  ·  sin anillo detectable")
             fig.suptitle(f"Candidato {c['id']+1} — {args.candidatos.stem}\n{sub}",
                          fontsize=12)
             fig.text(0.5, 0.015,
                      "x cian: centro de la deteccion (rejilla de 256 m: error "
                      "posicional de hasta 128 m, medido 104 m en el Coto do "
-                     "Mosteiro)   |   circulo rojo punteado: radio del maximo "
-                     "del perfil radial, que es una LECTURA y no una "
+                     "Mosteiro)   |   circulo rojo punteado: primer maximo LOCAL "
+                     "del perfil a partir de 25 m, que es una LECTURA y no una "
                      "delineacion. Sin calibrar: sobre 4 castros el contraste "
                      "va de 2,2 a 2,8 y sobre 3 falsos positivos de 0,8 a 2,0, "
                      "y se solapan. El perfil entero esta en el ultimo panel: "
