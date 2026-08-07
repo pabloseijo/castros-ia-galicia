@@ -112,7 +112,18 @@ def pedir(x, y, lado, px, intentos=4):
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("--index", type=Path, required=True)
+    ap.add_argument("--index", type=Path, required=True,
+                    help="TSV con columnas de identificador, lon y lat. Vale el "
+                         "index.tsv de un corpus (sid) y vale un barrido ya "
+                         "hecho (id), que trae la rejilla entera: el barrido de "
+                         "v9 necesita ortofoto por CELDA, no solo por vinneta, y "
+                         "las celdas de la rejilla ya estan listadas ahi")
+    ap.add_argument("--col-id", default="sid",
+                    help="columna del identificador: `sid` en un corpus, `id` "
+                         "en un barrido")
+    ap.add_argument("--prefijo", default="",
+                    help="prefijo del nombre de fichero, para no mezclar la "
+                         "cache de dos bloques que empiecen su id en 0")
     ap.add_argument("--cache", type=Path, required=True)
     ap.add_argument("--lado-m", type=float, default=512.0)
     ap.add_argument("--px", type=int, default=512)
@@ -127,8 +138,18 @@ def main() -> int:
         filas = filas[:args.limite]
     print(f"viñetas en el índice: {len(filas)}", flush=True)
 
+    def nombre(r):
+        return f"{args.prefijo}{r[args.col_id]}"
+
+    faltan_col = [c for c in (args.col_id, "lon", "lat")
+                  if c not in (filas[0] if filas else {})]
+    if faltan_col:
+        print(f"al fichero le faltan columnas: {faltan_col}")
+        print(f"tiene: {list(filas[0]) if filas else '(vacio)'}")
+        return 1
+
     pend = [r for r in filas
-            if not (args.cache / f"{r['sid']}.jpg").exists()]
+            if not (args.cache / f"{nombre(r)}.jpg").exists()]
     print(f"ya en caché: {len(filas)-len(pend)} | pendientes: {len(pend)}",
           flush=True)
     if not pend:
@@ -148,7 +169,7 @@ def main() -> int:
             with _LOCK:
                 fallos += 1
             return False
-        (args.cache / f"{r['sid']}.jpg").write_bytes(d)
+        (args.cache / f"{nombre(r)}.jpg").write_bytes(d)
         with _LOCK:
             hechas += 1
             if hechas % 200 == 0:
