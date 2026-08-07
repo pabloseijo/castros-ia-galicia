@@ -286,7 +286,13 @@ def main() -> int:
             if not args.sin_orto:
                 time.sleep(0.5)
 
-            fig, axes = plt.subplots(1, 5, figsize=(23, 5.2))
+            # **Dos filas, no una tira de cinco.** En `1x5` la figura salia de
+            # `2530x572 px`: cada panel minusculo y una relacion de aspecto que no
+            # entra en ninguna pagina. En `2x3` cada panel es legible y la figura
+            # cabe en una columna doble de revista.
+            fig, axes = plt.subplots(2, 3, figsize=(15, 10.5))
+            axes = axes.ravel()
+            axes[5].axis("off")
             n = dem.shape[0]
             ext = [0, n*res, 0, n*res]
             for ax_, img, tit, cmap in (
@@ -299,14 +305,27 @@ def main() -> int:
                              transform=ax_.transAxes)
                     ax_.set_xticks([]); ax_.set_yticks([])
                 else:
-                    ax_.imshow(img, cmap=cmap, extent=ext, origin="upper")
+                    # **Contraste por percentiles, no por rango completo.** La
+                    # apertura tiene colas largas —un talud aislado o un borde de
+                    # tesela se lleva todo el rango— y con `vmin/vmax` al minimo
+                    # y maximo el panel salia gris uniforme e ilegible, que es
+                    # justo el panel del que sale el metodo. Recortar al `2-98`
+                    # deja ver el caballon y el foso.
+                    kw = {}
+                    if cmap is not None and np.ndim(img) == 2:
+                        lo, hi = np.nanpercentile(img, (2, 98))
+                        if np.isfinite(lo) and np.isfinite(hi) and hi > lo:
+                            kw = {"vmin": lo, "vmax": hi}
+                    ax_.imshow(img, cmap=cmap, extent=ext, origin="upper", **kw)
                 ax_.set_title(tit, fontsize=11)
                 ax_.set_xticks([]); ax_.set_yticks([])
 
             # escala de 100 m en el primer panel
-            axes[0].plot([20, 120], [25, 25], "-", color="yellow", lw=3)
-            axes[0].text(22, 38, "100 m", color="yellow", fontsize=10)
-            axes[0].annotate("N", xy=(n*res-35, n*res-70), xytext=(n*res-35, n*res-25),
+            axes[0].plot([20, 120], [30, 30], "-", color="yellow", lw=3)
+            axes[0].text(70, 45, "100 m", color="yellow", fontsize=10,
+                         ha="center",
+                         bbox=dict(fc="black", alpha=0.45, ec="none", pad=1.5))
+            axes[0].annotate("N", xy=(n*res-40, n*res-90), xytext=(n*res-40, n*res-40),
                              color="yellow", ha="center", fontsize=12,
                              arrowprops=dict(arrowstyle="->", color="yellow"))
 
@@ -318,15 +337,23 @@ def main() -> int:
             if j is not None:
                 axes[3].add_patch(Circle((cxm, cym), radio_pico, fill=False,
                                          color="red", lw=1.6, ls=":"))
-                axes[3].text(cxm, cym - radio_pico - 18,
-                             f"r={radio_pico:.0f} m  (contraste {contraste:.2f})",
-                             color="red", ha="center", fontsize=9)
+                # Etiqueta en una esquina y con fondo, no pegada al circulo:
+                # encima del propio anillo era ilegible.
+                axes[3].text(0.03, 0.04,
+                             f"r={radio_pico:.0f} m  ·  contraste "
+                             f"{contraste:.2f}", transform=axes[3].transAxes,
+                             color="red", fontsize=10, ha="left", va="bottom",
+                             bbox=dict(fc="white", alpha=0.75, ec="red",
+                                       lw=0.8, pad=2.5))
             else:
                 # **«No se ve anillo» es una lectura, y de las utiles.** Antes se
                 # dibujaba igual el maximo global, que caia siempre en el radio
                 # minimo; ahora, si no hay maximo local, se dice.
-                axes[3].text(cxm, cym * 0.25, "sin anillo detectable",
-                             color="red", ha="center", fontsize=10)
+                axes[3].text(0.03, 0.04, "sin anillo detectable",
+                             transform=axes[3].transAxes, color="red",
+                             fontsize=10, ha="left", va="bottom",
+                             bbox=dict(fc="white", alpha=0.75, ec="red",
+                                       lw=0.8, pad=2.5))
 
             axes[4].plot(rs, perf, "-", color="#333", lw=1.6)
             if j is not None:
@@ -344,18 +371,18 @@ def main() -> int:
                     f"(contraste {contraste:.2f})" if j is not None
                     else "  ·  sin anillo detectable")
             fig.suptitle(f"Candidato {c['id']+1} — {args.candidatos.stem}\n{sub}",
-                         fontsize=12)
-            fig.text(0.5, 0.015,
-                     "x cian: centro de la deteccion (rejilla de 256 m: error "
-                     "posicional de hasta 128 m, medido 104 m en el Coto do "
-                     "Mosteiro)   |   circulo rojo punteado: primer maximo LOCAL "
-                     "del perfil a partir de 25 m, que es una LECTURA y no una "
-                     "delineacion. Sin calibrar: sobre 4 castros el contraste "
-                     "va de 2,2 a 2,8 y sobre 3 falsos positivos de 0,8 a 2,0, "
-                     "y se solapan. El perfil entero esta en el ultimo panel: "
-                     "miralo antes de creerte el pico.",
-                     ha="center", fontsize=8.5, color="#444")
-            fig.tight_layout(rect=[0, 0.04, 1, 0.90])
+                         fontsize=13)
+            fig.text(0.5, 0.012,
+                     "x cian: centro de la deteccion. La rejilla es de 256 m, "
+                     "asi que el error posicional llega a 128 m (medido: 104 m "
+                     "en el Coto do Mosteiro).\n"
+                     "Circulo rojo punteado: primer maximo LOCAL del perfil a "
+                     "partir de 25 m. Es una LECTURA, no una delineacion, y no "
+                     "esta calibrada: sobre 4 castros el contraste va de 2,2 a "
+                     "2,8 y sobre 3 falsos positivos de 0,8 a 2,0, y se solapan.\n"
+                     "Mira el perfil entero antes de creerte el pico.",
+                     ha="center", va="bottom", fontsize=8.5, color="#444")
+            fig.tight_layout(rect=[0, 0.075, 1, 0.93])
             dest = args.out / f"cand-{c['id']+1:03d}.png"
             fig.savefig(dest, dpi=110)
             plt.close(fig)
