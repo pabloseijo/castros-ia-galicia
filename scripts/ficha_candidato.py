@@ -19,26 +19,36 @@ mostrarlas juntas:
   pero delata una cantera.
 - **Interpretacion** — el recinto dibujado sobre el sombreado.
 
-## Como se delinea, y de donde sale el metodo
+## Como se delinea, y por que NO se dibuja un circulo
 
-**Transformada de Hough circular** sobre la apertura. Es lo que uso el equipo que
-buscaba fortalezas vikingas en Dinamarca (`10.3390/rs11161881`): detectaron
-`202.048` rasgos circulares en todo el pais y los redujeron a `199` candidatos
-por propiedades geometricas. Un castro es un recinto aproximadamente circular u
-oval, asi que el metodo encaja.
+**Con un perfil radial de la apertura, no con Hough.** La transformada de Hough
+circular se probo —es lo que uso el equipo de las fortalezas vikingas danesas,
+`10.3390/rs11161881`— y **no sirve aqui**: sus objetivos son circunferencias casi
+perfectas de trazado limpio y un castro gallego no lo es. Medido sobre el Castro
+do Coto do Mosteiro, cuyo recinto se ve a simple vista y mide `~170 m`, Hough
+devolvia siempre el radio **minimo** del rango (`30-34 m`) y a `100-170 m` del
+centro, incluso centrando la ventana en el yacimiento: el acumulador favorece los
+circulos pequenos, que la textura del monte produce a montones.
 
-**El circulo ajustado es una hipotesis, no una medicion.** Se dibuja con trazo
-discontinuo a proposito: dice «el recinto anda por aqui y mide esto», no «el
-parapeto pasa exactamente por esta linea». Un castro rara vez es un circulo
-perfecto y muchos tienen varios recintos concentricos.
+El perfil radial aprovecha lo que este problema **si** da —la posicion
+aproximada ya la tiene el barrido, y lo que falta es el radio—: un parapeto con
+su foso deja un maximo del perfil a la distancia del anillo.
+
+**Y no se dibuja ninguna circunferencia, a proposito.** El perfil no esta
+calibrado: sobre `4` castros conocidos el contraste del pico va de `2,21` a
+`2,77` y sobre `3` falsos positivos de `0,79` a `2,03`, o sea **se solapan**. Con
+esas muestras no hay umbral defendible, asi que la ficha **ensena el perfil** y
+deja que lo lea quien mire. Una circunferencia dibujada se leeria como una
+medicion, y aqui no la hay.
 
 ## La cautela sobre la posicion
 
 El barrido pone una celda cada `256 m`, asi que **el centro de una deteccion
 puede estar hasta `128 m` del centro real** — medido en el Castro do Coto do
-Mosteiro, donde el desfase fue de `104 m`. Por eso la ficha centra la ventana en
-el **circulo ajustado** cuando Hough encuentra uno, y no en la deteccion: el
-ajuste corrige buena parte de ese error.
+Mosteiro, donde el desfase fue de `104 m`. Por eso la ventana se dibuja amplia
+—`600 m` de lado— y el perfil radial se mide desde el centro de la deteccion: si
+el recinto esta descentrado, su anillo aparece igual en el perfil, solo que mas
+ancho.
 
 Uso:
     python3 scripts/ficha_candidato.py --candidatos data/candidatos_ourense.tsv \\
@@ -160,8 +170,33 @@ def main() -> int:
                                            lonlat_to_utm29)
     from openness import apertura
 
+    # **Acepta TSV y CSV.** Los barridos y `extraer_candidatos.py` escriben con
+    # tabulador; `verificar_candidatos.py` escribe el triaje con coma. Leyendo
+    # siempre como TSV, un fichero de triaje daba una sola columna llamada
+    # «n,lon,lat,...» y reventaba con `KeyError: 'lon'`. Se decide por la
+    # cabecera, que es dato y no suposicion.
+    with open(args.candidatos, encoding="utf-8") as fh:
+        cabecera = fh.readline()
+    sep = "\t" if cabecera.count("\t") >= cabecera.count(",") else ","
     filas = list(csv.DictReader(open(args.candidatos, encoding="utf-8"),
-                                delimiter="\t"))
+                                delimiter=sep))
+    def col(r, *nombres, d=""):
+        """Primera columna que exista, de varios nombres posibles.
+
+        `extraer_candidatos.py` llama `score` a la puntuacion del modelo y
+        `verificar_candidatos.py` la llama `score_modelo`. La ficha tiene que
+        poder dibujar las dos salidas, que es justo el caso de uso: se mira la
+        cruda para explorar y la triada para revisar.
+        """
+        for n in nombres:
+            if r.get(n) not in (None, ""):
+                return r[n]
+        return d
+
+    if not filas or "lon" not in filas[0]:
+        raise SystemExit(f"{args.candidatos}: no encuentro columnas lon/lat. "
+                         f"Cabecera leida con separador {sep!r}: "
+                         f"{list(filas[0]) if filas else '(vacio)'}")
     if args.max:
         filas = filas[:args.max]
     L, res = args.lado_m, args.res_m
@@ -255,7 +290,7 @@ def main() -> int:
             axes[4].tick_params(labelsize=8)
             axes[4].grid(alpha=0.3)
 
-            sub = (f"puntuación del modelo {float(r['score']):.3f}  ·  "
+            sub = (f"puntuación del modelo {float(col(r, 'score', 'score_modelo', d=0)):.3f}  ·  "
                    f"{float(r['lat']):.5f}, {float(r['lon']):.5f}  ·  "
                    f"ventana {L:.0f} m")
             sub += (f"  ·  pico del perfil a r={radio_pico:.0f} m "
@@ -277,7 +312,7 @@ def main() -> int:
             fig.savefig(dest, dpi=110)
             plt.close(fig)
             resumen.append({"n": c["id"]+1, "lon": r["lon"], "lat": r["lat"],
-                            "score": r["score"],
+                            "score": col(r, "score", "score_modelo"),
                             "radio_pico_m": f"{radio_pico:.0f}",
                             "contraste": f"{contraste:.2f}",
                             "ficha": dest.name})
