@@ -383,6 +383,8 @@ def main():
                          "Cuesta 1,6 s por vinneta y separa un parapeto —que es "
                          "caballon mas foso— de una pista forestal, que solo es "
                          "un corte. Los tres canales actuales no distinguen eso")
+    ap.add_argument("--cuarentena-o-val", action="store_true",
+                    help="excluye de train/val los bloques que tocan la caja de O Val")
     ap.add_argument("--val-every", type=int, default=5,
                     help="1 de cada N bloques espaciales va a validacion")
     args = ap.parse_args()
@@ -460,6 +462,53 @@ def main():
         index.append({"sid": s["sid"], "label": s["label"], "group": s["group"],
                       "name": s["name"], "lon": s["lon"], "lat": s["lat"],
                       "block": blk, "split": s["split"]})
+
+    # **Cuarentena de los bloques que tocan O Val.**
+    #
+    # `test_o_val` se asigna por caja envolvente, ANTES de trocear en bloques de
+    # `2 km`. Un bloque que cruza el borde de la caja queda partido: parte de sus
+    # viñetas caen en `test_o_val` y parte en `pool`, y de ahi pasan a `train`.
+    #
+    # Medido el 2026-08-08 sobre el corpus de v7: **`9` bloques de `1.108`**
+    # repartidos asi, y `1` de los `7` castros de O Val —O Castrillon— acaba a
+    # `461 m` de una viñeta de entrenamiento, cuando las viñetas miden `512 m`.
+    # O sea, se solapan. Con `n = 7`, ese caso pesa el `14%` de la unica cifra
+    # que mide el pueblo de casa.
+    #
+    # El arreglo es tratar el bloque como la unidad indivisible que dice ser: si
+    # un bloque contiene UNA viñeta de `test_o_val`, el bloque entero queda fuera
+    # de `train` y de `val`. Cuesta unas pocas viñetas y elimina la fuga de raiz.
+    #
+    # ## Por que es una opcion y no el comportamiento por defecto
+    #
+    # La cuarentena saca tambien `37` viñetas de `val`, y eso **cambia el
+    # conjunto de validacion**. El proyecto compara variantes por su
+    # `selection_best`, que se calcula sobre `val`: si `val` cambia, la cifra deja
+    # de ser comparable con v7, v8 y v9, y con ella se cae la regla de cribado.
+    #
+    # Asi que la regla de uso es:
+    #
+    # - **Experimentos comparativos** (v11p, v11, cualquier variante que se mida
+    #   contra v7): **sin** cuarentena, y el sesgo de O Val se declara. Es
+    #   identico en los dos lados de la comparacion, luego no la sesga.
+    # - **El modelo final**, ese cuya cifra de O Val se vaya a publicar: **con**
+    #   cuarentena, porque ahi la cifra de O Val ya no es un metadato sino un
+    #   resultado.
+    #
+    # Elegir lo contrario —limpiar el experimento y ensuciar el resultado— es el
+    # error facil, y por eso queda escrito aqui y no en la memoria de nadie.
+    tocados = {r["block"] for r in index if r["split"] == "test_o_val"}
+    n_cuarentena = sum(1 for r in index
+                       if r["split"] == "pool" and r["block"] in tocados)
+    if args.cuarentena_o_val:
+        for r in index:
+            if r["split"] == "pool" and r["block"] in tocados:
+                r["split"] = "excluido_frontera"
+        print(f"  cuarentena: {n_cuarentena} viñetas en los {len(tocados)} bloques "
+              f"que tocan O Val quedan fuera de train/val", flush=True)
+    elif n_cuarentena:
+        print(f"  AVISO: {n_cuarentena} viñetas comparten bloque con O Val y van "
+              f"a train/val (usa --cuarentena-o-val para excluirlas)", flush=True)
 
     blocks = sorted({r["block"] for r in index if r["split"] == "pool"})
     val_blocks = set(blocks[::args.val_every])  # 1 de cada N bloques

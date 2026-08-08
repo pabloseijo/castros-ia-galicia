@@ -49,6 +49,34 @@ if [ "$TRAIN" -lt 1200 ]; then
   exit 1
 fi
 
+# ## Los controles del preregistro, ANTES de entrenar
+#
+# El `PREREGISTRO-v11` los exige antes de mirar ningun `F1`. Se ejecutan aqui
+# para que no dependan de que yo me acuerde.
+#
+# **Que aborta y que no.** Abortan las dos cosas que harian la comparacion
+# invalida: que el conjunto de validacion no sea el mismo que el de v7 —entonces
+# `selection_best` deja de ser comparable— y que el precinto de Portugal este
+# comprometido. **No aborta** la mezcla de bloques con `test_o_val`: es un
+# defecto **preexistente e identico en v7**, medido el 2026-08-08 en `1` de los
+# `7` castros de O Val (O Castrillon, a `461 m`), y como afecta igual a los dos
+# lados de la comparacion, no la sesga. Se declara y se sigue.
+say "=== controles del preregistro ==="
+scripts/../.venv-gpu/bin/python scripts/controles_v11.py \
+  --nuevo data/galicia-vignettes-v11p \
+  --referencia data/galicia-vignettes-v7 >> "$LOG" 2>&1
+say "controles rc=$? (el codigo 1 puede ser solo la mezcla de bloques, ver arriba)"
+
+if grep -q "PRECINTO COMPROMETIDO\|precinto: NO se puede comprobar\|FALLA:.*sellados" "$LOG"; then
+  say "*** PRECINTO COMPROMETIDO: abortando, esto no se entrena ***"
+  exit 1
+fi
+if grep -q "selection_best NO es comparable" "$LOG"; then
+  say "*** la validacion no coincide con v7: la dosis no seria comparable, abortando ***"
+  exit 1
+fi
+say "controles: nada que impida entrenar (la mezcla de bloques queda declarada)"
+
 # la GPU, justo antes de usarla
 say "esperando GPU libre"
 while systemctl --user is-active castros-barrido-lugo-v10.scope >/dev/null 2>&1 \
