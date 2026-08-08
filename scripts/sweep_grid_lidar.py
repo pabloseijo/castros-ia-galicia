@@ -329,6 +329,10 @@ def main() -> int:
                          "que comparten tesela caigan en el mismo obrero y "
                          "acierten en su caché: medido, de 1 a 200 la "
                          "redundancia de lectura baja de 3.82x a 1.96x")
+    ap.add_argument("--max-celdas-tarea", type=int, default=40,
+                    help="techo de celdas por tarea. Acota el recuadro union "
+                         "que carga cada obrero, que es lo que reventó la RAM "
+                         "el 2026-08-08 (un obrero a 4,86 GB)")
     ap.add_argument("--ortofoto-dir", type=Path, default=None,
                     help="cache de ortofotos por celda ({prefijo}{id}.jpg). "
                          "Obligatorio si el checkpoint pide 7 canales")
@@ -478,11 +482,22 @@ def main() -> int:
                 hechas.add(int(r["id"]))
         print(f"reanudando: {len(hechas)} celdas ya puntuadas", flush=True)
 
+    # **Los grupos grandes se parten.** `cortar_grupo` carga el recuadro UNION de
+    # las celdas del grupo, asi que un grupo con muchas celdas repartidas trae un
+    # rectangulo enorme de puntos. El `2026-08-08` el OOM killer se llevo un
+    # obrero con `4,86 GB` de RSS —no los `1,7 GB` tipicos— y con el, cuatro
+    # horas de barrido de v8.
+    #
+    # Partir por numero de celdas acota el recuadro sin cambiar ningun resultado:
+    # cada celda se puntua igual. Y no cuesta relecturas, porque las tareas van
+    # ordenadas por conjunto de teselas y la cache LRU de `_CACHE_MAX` entradas
+    # las sirve seguidas.
     tareas = []
     for k, v in grupos.items():
         pend = [c for c in v if c["id"] not in hechas]
-        if pend:
-            tareas.append((list(k), pend, args.extent_m, args.res_m,
+        for i in range(0, len(pend), args.max_celdas_tarea):
+            trozo = pend[i:i + args.max_celdas_tarea]
+            tareas.append((list(k), trozo, args.extent_m, args.res_m,
                            args.densidad_suelo, con_apertura, orto))
 
     # **Ordenar por conjunto de teselas.** Sin esto la caché LRU no sirve: los
