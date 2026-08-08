@@ -7,9 +7,9 @@
 # llegado que provoco la presion sobrevive. Con un cgroup por trabajo, el que se
 # pasa de su presupuesto muere EL y los demas ni se enteran.
 #
-# ## Dos fallos ya cometidos EN ESTE MISMO GUION
+# ## TRES fallos ya cometidos EN ESTE MISMO GUION
 #
-# El calculo de `MemoryHigh` ha fallado dos veces, y las dos de forma silenciosa:
+# El calculo de `MemoryHigh` ha fallado tres veces, y las tres en silencio:
 #
 # 1. Con `sed 's/G$//'` y una entrada de `200M`, awk leia `200M*0.85` como
 #    concatenacion y salia `MemoryHigh=2000G`: ningun aviso.
@@ -18,8 +18,25 @@
 #    asi: llego al techo y lo mataron en seco, sin fase de ralentizacion, y el
 #    log termina a media frase sin excepcion ninguna.
 #
-# Por eso ahora se convierte todo a **bytes** y se calcula en enteros: sin
-# unidades que interpretar y sin redondeos que se coman el margen.
+# 3. Puesto al `85%` de `MemoryMax`, **estrangulo el corte del corpus de v11p**.
+#    `MemoryHigh` no es un aviso: es un ACELERADOR AL REVES. Cuando el cgroup lo
+#    supera, el kernel duerme a sus procesos con retardo creciente para forzar
+#    reclamo. Un trabajo cuyo conjunto de trabajo vive de forma natural por encima
+#    del `85%` de su techo se queda ahi para siempre: el obrero aparecio con
+#    `3 h` de CPU, en `mem_cgroup_handle_over_high`, y `26` minutos sin escribir un
+#    solo fichero. **No murio: se paralizo**, que es el peor de los dos mundos
+#    porque desde fuera parece que sigue trabajando.
+#
+# Por eso ahora se convierte todo a **bytes**, se calcula en enteros —sin unidades
+# que interpretar ni redondeos que se coman el margen— y `MemoryHigh` va al
+# **`95%`**, no al `85%`: solo debe actuar en el ultimo tramo antes del limite
+# duro. Para un trabajo por lotes es preferible morir y reintentar con mas techo
+# que arrastrarse indefinidamente sin que nadie se entere.
+#
+# **La leccion de fondo, que es sobre mi.** Este guion se escribio para proteger
+# trabajos largos y hoy ha matado uno y paralizado otro. Una capa de seguridad
+# anadida deprisa es una superficie de fallo nueva, y encima de las silenciosas:
+# los tres fallos se manifestaron como «el trabajo va raro», nunca como un error.
 #
 # La leccion que vale mas que el arreglo: **un limite mal calculado que no
 # protege es peor que no ponerlo**, porque da falsa seguridad. Los dos fallos se
@@ -41,7 +58,7 @@ case "$UNI" in
   *) echo "unidad no reconocida en $MEM"; exit 2;;
 esac
 MAX=$((NUM * MUL))
-HIGH=$((MAX * 85 / 100))
+HIGH=$((MAX * 95 / 100))
 [ "$HIGH" -ge "$MAX" ] && { echo "ERROR: MemoryHigh >= MemoryMax, revisa el calculo"; exit 2; }
 
 echo "[$(date +%H:%M)] '$NOMBRE': Max=$((MAX/1048576))M High=$((HIGH/1048576))M"
