@@ -227,12 +227,16 @@ def cortar_grupo(args_tuple):
     # El septimo elemento es la ortofoto y llega solo cuando el checkpoint pide
     # siete canales. Se desempaqueta por longitud para no romper las llamadas
     # viejas, que es como ya se hizo con `con_apertura`.
-    if len(args_tuple) == 7:
-        (tile_paths, celdas, extent, res, dens_obj, con_apertura,
-         orto) = args_tuple
-    else:
-        tile_paths, celdas, extent, res, dens_obj, con_apertura = args_tuple
-        orto = None
+    # **Desempaquetado tolerante a la longitud.** Esta funcion la llaman tres
+    # sitios con firmas distintas: el barrido (7 elementos, con ortofoto),
+    # `minar_negativos_duros.py` (5, sin densidad ni apertura) y las llamadas
+    # antiguas (6). Fijar una longitud rompe a los otros dos en silencio hasta
+    # que revientan en un obrero, que es como se perdio la cadena de v10 el
+    # 2026-08-08 con «expected 6, got 5».
+    tile_paths, celdas, extent, res = args_tuple[:4]
+    dens_obj = args_tuple[4] if len(args_tuple) > 4 else None
+    con_apertura = args_tuple[5] if len(args_tuple) > 5 else False
+    orto = args_tuple[6] if len(args_tuple) > 6 else None
     import laspy
     half = extent / 2.0
 
