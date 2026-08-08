@@ -66,6 +66,26 @@ Criterios:
 - confianza_castro: 0.0 a 1.0, cuánto se parece a un recinto fortificado
   prehistórico y no a otra cosa."""
 
+ESQUEMA = {
+    "type": "object",
+    "properties": {
+        "recinto_cerrado": {"type": "string", "enum": ["si", "parcial", "no"]},
+        "aterrazamiento": {"type": "string", "enum": ["si", "no"]},
+        "parcelario_agricola": {"type": "string", "enum": ["si", "no"]},
+        "obra_moderna": {"type": "string", "enum": ["cantera", "desmonte",
+                                                    "autovia", "edificacion",
+                                                    "finca_cerrada", "ninguna"]},
+        "entorno": {"type": "string", "enum": ["monte", "bosque", "agricola",
+                                               "periurbano", "urbano"]},
+        "cima_natural": {"type": "string", "enum": ["si", "no"]},
+        "confianza_castro": {"type": "number"},
+        "nota": {"type": "string"},
+    },
+    "required": ["recinto_cerrado", "aterrazamiento", "parcelario_agricola",
+                 "obra_moderna", "entorno", "cima_natural", "confianza_castro",
+                 "nota"],
+}
+
 CLAVES = ["recinto_cerrado", "aterrazamiento", "parcelario_agricola",
           "obra_moderna", "entorno", "cima_natural", "confianza_castro", "nota"]
 
@@ -77,6 +97,13 @@ def preguntar(modelo, img: Path, timeout=300):
         "prompt": PROMPT,
         "images": [base64.b64encode(img.read_bytes()).decode()],
         "stream": False,
+        # **Salida estructurada.** Sin esto el modelo devolvio JSON ilegible en
+        # `31` de `54` fichas (2026-08-08): un `43%` de exito, y las que fallan
+        # no son aleatorias sino las mas ambiguas, que son justo las que
+        # interesan. Ollama admite un esquema JSON y obliga al decodificador a
+        # respetarlo, asi que deja de haber respuestas a medias o envueltas en
+        # prosa. Es mas barato que reintentar y no sesga la muestra.
+        "format": ESQUEMA,
         # **Este script SOLO se ejecuta con la GPU libre**, y por eso no fuerza
         # `num_gpu`. Medido el 2026-08-08: con un barrido en marcha, Ollama
         # devuelve «CUDA-capable device(s) is/are busy» y falla ficha a ficha; y

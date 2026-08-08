@@ -74,6 +74,48 @@ CLASS_NAMES = {0: "fondo", 1: "castro", 2: "mamoa"}
 
 # --- Datos ---------------------------------------------------------------
 
+def cupo_vram(dev):
+    """Limita la VRAM de ESTE proceso a la fraccion de `CASTROS_VRAM_FRAC`.
+
+    Contexto (2026-08-08). La GPU del nodo estaba en `Exclusive_Process`: un solo
+    contexto CUDA a la vez, aunque sobraran `7` de los `8` GB. Eso serializaba
+    todo el trabajo de GPU y era la causa real de que el entrenamiento de v10 y
+    el modelo de vision fallaran con «device is busy».
+
+    Al pasarla a `Default` los procesos ya conviven, pero aparece el problema
+    contrario: **compiten por la VRAM** y el que llega segundo muere con
+    `CUDA error: out of memory`. Le paso al barrido de A Coruna nada mas
+    arrancar el entrenamiento.
+
+    El cupo lo arregla: cada proceso reserva como mucho su fraccion, asi que
+    ninguno puede vaciarle la memoria a otro. Repartir `1.0` entre los procesos
+    que vayan a convivir — p. ej. `0.45` el entrenamiento y `0.15` cada barrido.
+
+    Es lo que hace un planificador de verdad (Slurm, Ray) al declarar recursos;
+    aqui se hace a mano porque no hay ninguno instalado todavia.
+    """
+    import os
+
+    import torch          # importado aqui: el modulo lo carga tarde a proposito
+
+    if dev != "cuda":
+        return
+    f = os.environ.get("CASTROS_VRAM_FRAC")
+    if not f:
+        return
+    try:
+        frac = float(f)
+    except ValueError:
+        print(f"CASTROS_VRAM_FRAC no numerico: {f!r} — sin cupo", flush=True)
+        return
+    if not 0.0 < frac <= 1.0:
+        print(f"CASTROS_VRAM_FRAC fuera de (0,1]: {frac} — sin cupo", flush=True)
+        return
+    torch.cuda.set_per_process_memory_fraction(frac)
+    tot = torch.cuda.get_device_properties(0).total_memory / 2**30
+    print(f"cupo de VRAM: {frac:.0%} de {tot:.1f} GB = {frac*tot:.1f} GB", flush=True)
+
+
 def label_of(row: dict) -> int:
     """castro=1, mámoa=2, todo lo demás=0. Misma convención que la línea base."""
     g = (row.get("group") or "").strip()
@@ -444,6 +486,7 @@ def main() -> int:
     torch.backends.cudnn.benchmark = True
 
     device = "cuda" if torch.cuda.is_available() else "cpu"
+    cupo_vram(device)
     amp = (device == "cuda") and not args.no_amp
     if device == "cpu":
         print("[!] sin GPU: esto va a ser lento", flush=True)

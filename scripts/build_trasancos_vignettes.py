@@ -293,7 +293,11 @@ def process_group(args_tuple):
     inside a single tile silently drops about three quarters of the samples,
     so the tiles are unioned per group instead.
     """
-    tile_paths, samples, extent, res, out_dir = args_tuple
+    if len(args_tuple) == 6:
+        tile_paths, samples, extent, res, out_dir, con_apertura = args_tuple
+    else:
+        tile_paths, samples, extent, res, out_dir = args_tuple
+        con_apertura = False
     import laspy
     half = extent / 2.0
 
@@ -335,7 +339,7 @@ def process_group(args_tuple):
         dem = grid_from_points(xs[m], ys[m], zs[m], b, res)
         if dem is None:
             continue
-        arr = channels_from_dem(dem, res)
+        arr = channels_from_dem(dem, res, con_apertura=con_apertura)
         np.savez_compressed(Path(out_dir) / f"{s['sid']}.npz",
                             x=arr.astype(np.float16), label=s["label"])
         written += 1
@@ -374,6 +378,11 @@ def main():
     ap.add_argument("--scope", choices=("trasancos", "galicia"), default="trasancos")
     ap.add_argument("--extra-negatives", nargs="*", default=None,
                     help="TSV adicionales de negativos (mismo formato)")
+    ap.add_argument("--con-apertura", action="store_true",
+                    help="anade la apertura topografica como cuarto canal. "
+                         "Cuesta 1,6 s por vinneta y separa un parapeto —que es "
+                         "caballon mas foso— de una pista forestal, que solo es "
+                         "un corte. Los tres canales actuales no distinguen eso")
     ap.add_argument("--val-every", type=int, default=5,
                     help="1 de cada N bloques espaciales va a validacion")
     args = ap.parse_args()
@@ -421,8 +430,11 @@ def main():
     print(f"groups: {len(groups)} | samples covered by LiDAR: {covered} "
           f"| outside coverage: {orphans}", flush=True)
 
-    tasks = [(list(k), v, args.extent_m, args.res_m, str(arr_dir))
-             for k, v in groups.items()]
+    tasks = [(list(k), v, args.extent_m, args.res_m, str(arr_dir),
+              args.con_apertura) for k, v in groups.items()]
+    if args.con_apertura:
+        print("cortando CON el cuarto canal de apertura (~1,6 s extra por "
+              "vinneta)", flush=True)
 
     written = 0
     t0 = time.time()

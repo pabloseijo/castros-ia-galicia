@@ -53,6 +53,16 @@ def main() -> int:
                     help="TSV con lon/lat de terreno sin castro")
     ap.add_argument("--laz-dir", type=Path, nargs="+", required=True)
     ap.add_argument("--n", type=int, default=60, help="por clase")
+    ap.add_argument("--negativos-aleatorios", action="store_true",
+                    help="genera los negativos DENTRO del bloque en vez de "
+                         "leerlos de un fichero. Hace falta: los negativos "
+                         "globales estan repartidos por Galicia y en Lugo solo "
+                         "1 de 50 caia dentro del LiDAR, lo que dejo la "
+                         "calibracion sin muestra")
+    ap.add_argument("--maestro", type=Path,
+                    default=Path("data/weak_label_master_fusionado.tsv"),
+                    help="para no sortear un negativo encima de un castro")
+    ap.add_argument("--lejos-m", type=float, default=500.0)
     ap.add_argument("--lado-m", type=float, default=600.0)
     ap.add_argument("--res-m", type=float, default=1.0)
     ap.add_argument("--out", type=Path, default=None)
@@ -81,7 +91,37 @@ def main() -> int:
         return out
 
     puntos = leer(args.truth, "lon", "lat", 1)
-    if args.negativos and args.negativos.exists():
+    if args.negativos_aleatorios:
+        # Terreno al azar dentro de la cobertura LiDAR del bloque, a mas de
+        # `--lejos-m` de cualquier yacimiento catalogado. Es la clase «lo que hay
+        # de fondo», que es contra lo que de verdad compite un candidato.
+        from build_trasancos_vignettes import laz_bounds
+        tt = sorted(str(q) for d in args.laz_dir for q in Path(d).glob("*.laz"))
+        bb = [laz_bounds(q) for q in tt]
+        mnx = min(b[0] for b in bb); mny = min(b[1] for b in bb)
+        mxx = max(b[2] for b in bb); mxy = max(b[3] for b in bb)
+        cat = []
+        if args.maestro.exists():
+            for r in csv.DictReader(open(args.maestro, encoding="utf-8"),
+                                    delimiter="\t"):
+                try:
+                    cat.append(lonlat_to_utm29(float(r["longitude"]),
+                                               float(r["latitude"])))
+                except (KeyError, TypeError, ValueError):
+                    continue
+        cat = np.array(cat) if cat else np.zeros((0, 2))
+        hechos, intentos = 0, 0
+        while hechos < args.n and intentos < args.n * 200:
+            intentos += 1
+            x = random.uniform(mnx + 400, mxx - 400)
+            y = random.uniform(mny + 400, mxy - 400)
+            if len(cat) and np.hypot(cat[:, 0] - x, cat[:, 1] - y).min() < args.lejos_m:
+                continue
+            puntos.append((x, y, 0))     # ya en UTM: se marca con la bandera
+            hechos += 1
+        print(f"negativos sorteados dentro del bloque: {hechos} "
+              f"(en {intentos} intentos)", flush=True)
+    elif args.negativos and args.negativos.exists():
         cab = open(args.negativos, encoding="utf-8").readline()
         lc = "lon" if "\tlon\t" in cab or cab.startswith("lon") else "longitude"
         la = "lat" if "\tlat\t" in cab or "\tlat" in cab else "latitude"
@@ -90,8 +130,10 @@ def main() -> int:
           f"{sum(1 for p in puntos if p[2]==0)} negativos", flush=True)
 
     celdas = []
-    for i, (lon, lat, y) in enumerate(puntos):
-        x, yy = lonlat_to_utm29(lon, lat)
+    for i, (a, b, y) in enumerate(puntos):
+        # Los positivos vienen en lon/lat; los negativos sorteados ya en UTM.
+        # Se distinguen por magnitud: una coordenada UTM pasa de mil.
+        x, yy = (a, b) if abs(a) > 1000 else lonlat_to_utm29(a, b)
         celdas.append({"id": i, "x": x, "y": yy, "lab": y})
     teselas = sorted(str(p) for d in args.laz_dir for p in Path(d).glob("*.laz"))
     grupos, fuera = group_samples_by_tiles(celdas, teselas, args.lado_m + 40)
