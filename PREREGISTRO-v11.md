@@ -41,14 +41,26 @@ entrenamiento no es una hipótesis fina: es la única palanca que la literatura
 señala sin ambigüedad, y si no mueve nada el proyecto tiene un problema mucho más
 grave que la elección de canales. Así que:
 
-- **Éxito**: `F1` medio sobre los cuatro bloques **`≥ 0,60`** (referencia v7:
-  `0,542`). Es `+0,058`, casi el doble del listón habitual, porque el cambio es
-  mucho mayor que los anteriores.
-- **Resultado neutro y decepcionante**: entre `0,542` y `0,60`. Se reporta como
-  «el dato ayuda menos de lo que la literatura promete» y **no** se presenta como
-  victoria.
-- **Fracaso**: por debajo de `0,542`. Si triplicar los positivos empeora, hay un
-  fallo en el corpus nuevo (contaminación, mal registro, positivos de mala
+> **Corrección del 2026-08-08 a las 21:1x, antes de que exista ninguna cifra de
+> v11.** La primera versión de este preregistro llamaba «referencia v7» a
+> `0,542`. Está mal: **`0,512` es la referencia** —el `F1` medio de v7 sobre los
+> cuatro bloques, remedido hoy de forma independiente y reproducido exacto— y
+> `0,542` es **el listón** de los preregistros anteriores, o sea `0,512 + 0,03`.
+> Confundir la vara con la marca infla el listón real sin que se note. Se corrige
+> ahora, que es cuando se puede corregir sin sospecha.
+
+- **Éxito**: `F1` medio sobre los cuatro bloques **`≥ 0,60`**. Sobre la
+  referencia real (`0,512`) eso es **`+0,088`**, casi tres veces el listón
+  habitual de `+0,03`, y se pide así de alto a propósito: triplicar los positivos
+  no es un ajuste fino, y si solo diera `+0,03` la conclusión útil sería que el
+  dato importa mucho menos de lo que la literatura promete.
+- **Resultado neutro y decepcionante**: entre `0,542` y `0,60`. Bate el listón
+  ordinario pero no el de esta hipótesis. Se reporta como «el dato ayuda, pero
+  menos de lo prometido» y **no** se presenta como victoria.
+- **Sin efecto**: entre `0,512` y `0,542`. Indistinguible de v7 con `n` de `36` a
+  `75` castros por bloque.
+- **Fracaso**: por debajo de `0,512`. Si triplicar los positivos **empeora**, hay
+  un fallo en el corpus nuevo (contaminación, mal registro, positivos de mala
   calidad) y **hay que buscarlo antes de tocar nada más**.
 
 ## Lo que hay que comprobar antes de creerse cualquier cifra
@@ -68,8 +80,9 @@ Tres controles, y los tres se hacen **antes** de mirar el `F1`:
 
 ## La predicción, escrita antes
 
-Con la regla de cribado formulada hoy —`selection_best` ordena igual que el
-barrido en `n = 4`—, la predicción es que v11 dé **`selection_best ≥ 0,50`**. Si
+Con la regla de cribado formulada hoy —y con su límite ya medido: el corte de
+`0,40` separa lo muerto de lo vivo, pero **el orden por encima del corte no vale**,
+porque v6 tiene la mejor métrica interna y solo el segundo `F1`—, la predicción es que v11 dé **`selection_best ≥ 0,50`**. Si
 sale por debajo de `0,40`, **no se barre** y se busca el fallo del corpus.
 
 Anotar aquí lo que se espera obliga a reconocer después si se acertó, y la regla
