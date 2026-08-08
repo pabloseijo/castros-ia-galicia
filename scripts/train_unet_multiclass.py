@@ -90,8 +90,9 @@ def _desplazar(a, dy, dx, t):
 class Vignettes(Dataset):
     def __init__(self, rows, arr_dir: Path, augment: bool = False,
                  translate: int = 0, val_translate: int = 0,
-                 rgb_dir=None):
+                 rgb_dir=None, peso_duro: float = 1.0):
         self.rows = rows
+        self.peso_duro = peso_duro
         self.arr_dir = arr_dir
         # **La ortofoto entra como canal, no como corpus aparte.** Los arrays
         # topograficos de v7 pesan `15,8 GB` y los de v8 `21 GB`; duplicarlos
@@ -178,7 +179,13 @@ class Vignettes(Dataset):
                            int(rng.integers(-t, t+1)), t))
         # El corpus ya viene normalizado a [0,1]; se centra en cero para que la
         # primera convolución preentrenada reciba un rango parecido al suyo.
-        return torch.from_numpy((a - 0.5) / 0.5), label_of(r), i
+        # **Peso por muestra, no solo por clase.** Ver `--peso-negativo-duro`:
+        # un negativo minado del barrido y un trozo de monte al azar son los dos
+        # `fondo` y comparten peso de clase, pero no valen lo mismo para
+        # aprender. El primero es una equivocacion medida del modelo.
+        g = (r.get("group") or "")
+        peso = self.peso_duro if g.startswith("hard_negative") else 1.0
+        return torch.from_numpy((a - 0.5) / 0.5), label_of(r), float(peso)
 
 
 # --- Modelo --------------------------------------------------------------
@@ -330,12 +337,17 @@ class FocalLoss(nn.Module):
         self.alpha = alpha
         self.gamma = gamma
 
-    def forward(self, logits: torch.Tensor, target: torch.Tensor) -> torch.Tensor:
+    def forward(self, logits: torch.Tensor, target: torch.Tensor,
+                peso: torch.Tensor | None = None) -> torch.Tensor:
         logp = F.log_softmax(logits, dim=1)
         logp_t = logp.gather(1, target.unsqueeze(1)).squeeze(1)
         p_t = logp_t.exp()
         alpha_t = self.alpha[target]
         loss = -alpha_t * (1 - p_t).pow(self.gamma) * logp_t
+        if peso is not None:
+            # Media PONDERADA, no media simple: si se dividiera por `len` el peso
+            # extra se diluiria en el tamano del lote y no haria nada.
+            return (loss * peso).sum() / peso.sum().clamp(min=1e-8)
         return loss.mean()
 
 
@@ -403,6 +415,12 @@ def main() -> int:
     ap.add_argument("--val-translate", type=int, default=0,
                     help="descentrado determinista de la validación; con esto la "
                          "métrica de selección mide despliegue y no centrado")
+    ap.add_argument("--peso-negativo-duro", type=float, default=1.0,
+                    help="multiplicador de perdida para los grupos "
+                         "`hard_negative_*`. v7 tenia 534 negativos duros contra "
+                         "10.742 de terreno aleatorio, todos con el mismo peso: "
+                         "el 3,8% de la clase fondo. Con peso 8 pesan como la "
+                         "mitad de los faciles, que es la palanca de Canedo")
     ap.add_argument("--rgb-dir", type=Path, default=None,
                     help="directorio con la ortofoto por vinneta ({sid}.npz con "
                          "clave 'rgb', uint8). Anade 3 canales en FUSION "
@@ -461,7 +479,8 @@ def main() -> int:
     mk = lambda rr, aug, shuf: DataLoader(
         Vignettes(rr, arr_dir, augment=aug, translate=args.translate,
                   val_translate=0 if aug else args.val_translate,
-                  rgb_dir=args.rgb_dir),
+                  rgb_dir=args.rgb_dir,
+                  peso_duro=args.peso_negativo_duro if aug else 1.0),
         batch_size=args.batch, shuffle=shuf, num_workers=args.workers,
         pin_memory=(device == "cuda"), drop_last=False,
         persistent_workers=args.workers > 0)
@@ -512,13 +531,15 @@ def main() -> int:
     for ep in range(start, args.epochs):
         model.train()
         t0, tot, seen = time.time(), 0.0, 0
-        for bi, (x, y, _) in enumerate(loaders["train"], 1):
+        for bi, (x, y, pw) in enumerate(loaders["train"], 1):
             x = x.to(device, non_blocking=True)
             y = y.to(device, non_blocking=True)
+            pw = pw.to(device, non_blocking=True).float()
             opt.zero_grad(set_to_none=True)
             with torch.autocast("cuda", enabled=amp):
                 logits, _ = model(x)
-                loss = crit(logits, y)
+                loss = (crit(logits, y, pw) if isinstance(crit, FocalLoss)
+                        else crit(logits, y))
             scaler.scale(loss).backward()
             scaler.step(opt); scaler.update()
             tot += float(loss.detach()) * len(y); seen += len(y)
