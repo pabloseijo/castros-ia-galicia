@@ -110,7 +110,13 @@ def preguntar(modelo, img: Path, timeout=300):
         # forzado a CPU devuelve vacio tras `81 s` por imagen. La revision de
         # fichas no es urgente, asi que espera en vez de pelear: ver
         # `vision_cuando_libre.sh`.
-        "options": {"temperature": 0.1, "num_predict": 300},
+        # **`num_gpu` alto fuerza TODAS las capas a la GPU.** Sin esto, el
+        # 2026-08-08 Ollama repartio `qwen2.5vl:7b` al `41% CPU / 59% GPU` —aun
+        # habiendo `3 GB` de VRAM libres— y la revision paso de `30 s` a `236 s`
+        # por ficha, con la carga del nodo en `21` sobre `12` nucleos. Ollama es
+        # conservador al decidir cuantas capas descarga; si el modelo cabe, hay
+        # que decirselo.
+        "options": {"temperature": 0.1, "num_predict": 300, "num_gpu": 99},
     }
     try:
         p = subprocess.run(
