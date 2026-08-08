@@ -186,9 +186,13 @@ def main() -> int:
     fh.close()
     print(f"\nrevisadas {ok} | sin respuesta {fallo}")
     print(f"escrito: {args.out}")
-    print("\nSIGUIENTE PASO OBLIGATORIO: medir el acuerdo contra las 25 fichas")
-    print("revisadas a mano antes de fiarse de las otras 29. Si el acuerdo es")
-    print("pobre, esto vale como descripción y no como clasificación.")
+    print("\nMEDIDO EL 2026-08-08, Y NO FUNCIONA: contra las 8 lecturas manuales,")
+    print("qwen2.5vl:3b acierta 5/8 (p=0.088, no se distingue del azar) y deja")
+    print("cuatro de sus seis campos constantes; qwen2.5vl:7b varía los campos")
+    print("pero acierta 2/8, POR DEBAJO del azar, y ve cantera en 23 de 30 fichas.")
+    print("Entre ellos coinciden del 20% al 37%. Usar esta salida como criterio")
+    print("de orden o de descarte sería inventarse una cola. Ver la wiki:")
+    print("vision-local-control-2026-08-08.")
     return 0
 
 
