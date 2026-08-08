@@ -472,9 +472,17 @@ def main() -> int:
 
     # El numero de canales lo dice el corpus, no una constante: v7 y anteriores
     # traen 3 y el corpus con apertura trae 4.
-    _m0 = np.load(arr_dir / f"{by_split['train'][0]['sid']}.npz")["x"]
-    in_ch = int(_m0.shape[0])
-    print(f"  canales de entrada: {in_ch}", flush=True)
+    #
+    # **Y se pregunta al Dataset, no al npz crudo.** Con `--rgb-dir` el Dataset
+    # concatena 3 canales de ortofoto al vuelo, asi que el npz dice 4 y el lote
+    # trae 7. La primera version media el npz: v9 construyo un modelo de 4
+    # canales, recibio lotes de 7 y reventó en la primera pasada — DESPUES de
+    # que la cadena hubiera barrido toda la noche. Preguntar a la misma pieza
+    # que produce los lotes hace imposible ese desajuste.
+    _x0, _, _ = loaders["train"].dataset[0]
+    in_ch = int(_x0.shape[0])
+    print(f"  canales de entrada: {in_ch}"
+          + (" (con ortofoto)" if args.rgb_dir else ""), flush=True)
     model = UNetMulticlass(3, args.encoder, args.head,
                            not args.no_pretrained, args.lse_r,
                            in_ch=in_ch).to(device)
