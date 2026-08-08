@@ -34,12 +34,20 @@ El perfil radial aprovecha lo que este problema **si** da —la posicion
 aproximada ya la tiene el barrido, y lo que falta es el radio—: un parapeto con
 su foso deja un maximo del perfil a la distancia del anillo.
 
-**Y no se dibuja ninguna circunferencia, a proposito.** El perfil no esta
-calibrado: sobre `4` castros conocidos el contraste del pico va de `2,21` a
-`2,77` y sobre `3` falsos positivos de `0,79` a `2,03`, o sea **se solapan**. Con
-esas muestras no hay umbral defendible, asi que la ficha **ensena el perfil** y
-deja que lo lea quien mire. Una circunferencia dibujada se leeria como una
-medicion, y aqui no la hay.
+**Y no se dibuja ninguna circunferencia, a proposito.** El perfil se calibro el
+`2026-08-08` con `163` castros catalogados contra `160` puntos de terreno
+sorteados dentro de los mismos bloques —ver `calibrar_contraste_perfil.py`— y el
+resultado es **`AUC 0.663`, intervalo `[0.60, 0.72]`**: informativo, pero lejos de
+decisivo. Medianas `2.38` contra `1.90`, con los rangos completos solapados
+(`0,86-3,89` contra `0,45-3,97`).
+
+Asi que el contraste **ordena, no decide**, y a umbral `2.5` la precision seria
+`0.69` — uno de cada tres que pasan no es castro. Una circunferencia dibujada se
+leeria como una medicion; el perfil entero, no.
+
+La version anterior de este texto decia «sobre 4 castros el contraste va de 2,2 a
+2,8 y sobre 3 falsos positivos de 0,8 a 2,0». Era cierto y era enganoso: cuatro
+contra tres da rangos estrechos que insinuan una separacion que no existe.
 
 ## La cautela sobre la posicion
 
@@ -377,10 +385,13 @@ def main() -> int:
                      "asi que el error posicional llega a 128 m (medido: 104 m "
                      "en el Coto do Mosteiro).\n"
                      "Circulo rojo punteado: primer maximo LOCAL del perfil a "
-                     "partir de 25 m. Es una LECTURA, no una delineacion, y no "
-                     "esta calibrada: sobre 4 castros el contraste va de 2,2 a "
-                     "2,8 y sobre 3 falsos positivos de 0,8 a 2,0, y se solapan.\n"
-                     "Mira el perfil entero antes de creerte el pico.",
+                     "partir de 25 m. Es una LECTURA, no una delineacion.\n"
+                     "CALIBRADO el 2026-08-08 con 163 castros catalogados contra "
+                     "160 puntos de terreno sorteados dentro de los mismos "
+                     "bloques: AUC 0.663 [0.60-0.72]. ORDENA, NO DECIDE.\n"
+                     "Medianas 2.38 (castro) contra 1.90 (terreno), con los "
+                     "rangos solapados. A umbral 2.5 la precision seria 0.69: "
+                     "uno de cada tres que pasan no es castro.",
                      ha="center", va="bottom", fontsize=8.5, color="#444")
             fig.tight_layout(rect=[0, 0.075, 1, 0.93])
             dest = args.out / f"cand-{c['id']+1:03d}.png"
