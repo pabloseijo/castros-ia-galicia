@@ -29,13 +29,20 @@ for i, ln in enumerate(texto):
         blo, mod = m.group(1), m.group(2)
         continue
     if mod and blo:
-        # las lineas de detection_eval traen «umbral 0.70 ... F1 0.xxx»
-        mm = re.search(r"umbral\s+" + UMBRAL + r"\b.*?F1\s+([0-9.]+)", ln)
-        if not mm:
-            mm = re.search(r"^\s*" + UMBRAL + r"\s+.*?([0-9.]+)\s*$", ln)
-        if mm:
-            res.setdefault(mod, {})[blo] = float(mm.group(1))
-            mod = blo = None
+        # **Se parsea por POSICION de columna, no por expresion regular.** La
+        # tabla de `detection_eval` es:
+        #   umbral  detec  TP  FP  FN  prec  recall  F1  VPP@1:475
+        # y una regex que buscaba «el ultimo numero de la linea» capturaba el
+        # VPP en vez del F1. No fallaba: daba 0.171 de media para v8 en vez de
+        # 0.466, o sea un modelo catastrofico en vez de uno algo peor. Cazado el
+        # 2026-08-08 porque los numeros no cuadraban con los del log.
+        campos = ln.split()
+        if len(campos) == 9 and campos[0] == UMBRAL:
+            try:
+                res.setdefault(mod, {})[blo] = float(campos[7])   # F1
+                mod = blo = None
+            except ValueError:
+                pass
 
 print("F1 por bloque a umbral %s, metro fusionado\n" % UMBRAL)
 print("%-8s%10s%10s%10s%12s%10s" % ("modelo", "lugo", "coruna", "ourense",
