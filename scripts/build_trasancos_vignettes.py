@@ -580,6 +580,46 @@ def main():
         print(f"  AVISO: {n_cuarentena} viñetas comparten bloque con O Val y van "
               f"a train/val (usa --cuarentena-o-val para excluirlas)", flush=True)
 
+    # ## Fuga L1.4: el mismo sitio a los dos lados de la particion
+    #
+    # Kapoor y Narayanan (`10.1016/j.patter.2023.100804`) listan los duplicados
+    # como uno de los ocho tipos de fuga. Medido aqui por primera vez el
+    # 2026-08-09: en v11p, **«Mamoa de Pena de Locai 1» aparece en `train` y en
+    # `val`** a menos de `100 m`, y con ella tres positivos cruzan la particion
+    # —el `1,0%` de los `302` positivos del examen—. En v7 son otros tres.
+    #
+    # Pasa porque el corpus fusiona tres fuentes (catalogo oficial, OSM y el
+    # maestro debil) y el mismo sitio llega con nombre distinto y coordenadas a
+    # pocos metros: no comparte `sid`, asi que ningun control por identificador lo
+    # ve. Solo se detecta **midiendo metros**.
+    #
+    # El arreglo: cualquier viñeta a menos de `DEDUP_M` de otra ya colocada hereda
+    # **su mismo split**. No se borra nada —seria tirar dato— pero deja de estar a
+    # los dos lados.
+    DEDUP_M = 100.0
+    colocadas = []          # (lat, lon, split)
+    movidas = 0
+    for r in sorted(index, key=lambda x: x["sid"]):
+        try:
+            la, lo = float(r["lat"]), float(r["lon"])
+        except (TypeError, ValueError, KeyError):
+            continue
+        for cla, clo, csp in colocadas:
+            if abs(cla - la) > 0.0015:
+                continue
+            dlat = (cla - la) * 111320.0
+            dlon = (clo - lo) * 111320.0 * math.cos(math.radians((cla + la) / 2))
+            if math.hypot(dlat, dlon) <= DEDUP_M:
+                if r["split"] != csp:
+                    r["split"] = csp
+                    movidas += 1
+                break
+        else:
+            colocadas.append((la, lo, r["split"]))
+    if movidas:
+        print(f"  dedup L1.4: {movidas} viñetas movidas al split de su gemelo "
+              f"(a menos de {DEDUP_M:.0f} m)", flush=True)
+
     # ## Heredar el examen, para que el experimento sea controlado
     #
     # Un experimento de dosis varia el conjunto de ENTRENAMIENTO y deja fijo el de

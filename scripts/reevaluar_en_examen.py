@@ -44,9 +44,23 @@ def main() -> int:
     dev = "cuda" if torch.cuda.is_available() else "cpu"
     st = torch.load(args.checkpoint, map_location=dev, weights_only=False)
     a = st.get("args", {})
+    # **Los canales se leen del checkpoint, no se suponen.** v8 entrena con `4`
+    # (apertura) y v9 con `7` (apertura mas ortofoto): cargarlos en un modelo de
+    # `3` revienta con un `size mismatch` de `stem.0.weight`. Y no es un fallo que
+    # arreglar: un modelo de `7` canales **no puede** evaluarse sobre un corpus de
+    # `3`, porque le faltan entradas. Se dice y se salta, en vez de volcar un
+    # traceback que parece un error del guion.
+    w = st["model"].get("stem.0.weight")
+    in_ch = int(w.shape[1]) if w is not None else 3
+    z0 = np.load(next((args.vig_dir / "arrays").glob("*.npz")))
+    ch_corpus = int(z0["x"].shape[0])
+    if in_ch != ch_corpus:
+        print(f"  SALTADO: {args.checkpoint.parent.name} espera {in_ch} canales y "
+              f"el corpus tiene {ch_corpus}. No son comparables en este examen.")
+        return 0
     model = UNetMulticlass(n_classes=3, encoder=a.get("encoder", "resnet34"),
                            head=a.get("head", "cls"), pretrained=False,
-                           in_ch=3).to(dev)
+                           in_ch=in_ch).to(dev)
     model.load_state_dict(st["model"])
     model.eval()
 
@@ -65,27 +79,42 @@ def main() -> int:
         g = (g or "").strip()
         return 1 if g == "castro" else (2 if g == "mamoa" else 0)
 
+    # **Por lotes, sin acumular.** La primera version cargaba las `587` viñetas
+    # enteras antes de puntuar: `587 x 3 x 512 x 512` en `float32` son `1,8 GB`, y
+    # con el modelo y las copias de torch el pico llego a `2,9 GB` y el cgroup lo
+    # mato. No hace falta tenerlas todas: se leen, se puntuan y se sueltan.
     arr = args.vig_dir / "arrays"
-    xs, ys = [], []
+    ys, pred = [], []
+    lote_x, lote_y = [], []
+
+    def _vaciar():
+        if not lote_x:
+            return
+        with torch.no_grad():
+            b = torch.from_numpy(np.stack(lote_x)).to(dev)
+            o = model(b)
+            lg = o[0] if isinstance(o, (tuple, list)) else o
+            pred.extend(lg.argmax(1).cpu().numpy().tolist())
+        ys.extend(lote_y)
+        lote_x.clear(); lote_y.clear()
+
+    leidas = 0
     for r in filas:
         f = arr / f"{r['sid']}.npz"
         if not f.exists():
             continue
         z = np.load(f)
-        xs.append(z["x"].astype(np.float32))
-        ys.append(clase(r.get("group")))
-    print(f"  leidas {len(xs)} | reparto real: "
+        lote_x.append(z["x"].astype(np.float32))
+        lote_y.append(clase(r.get("group")))
+        leidas += 1
+        if len(lote_x) >= args.batch:
+            _vaciar()
+    _vaciar()
+    xs = None
+    print(f"  leidas {leidas} | reparto real: "
           f"{dict(zip(*np.unique(ys, return_counts=True)))}")
 
-    pred = []
-    with torch.no_grad():
-        for i in range(0, len(xs), args.batch):
-            b = torch.from_numpy(np.stack(xs[i:i+args.batch])).to(dev)
-            out = model(b)
-            # el modelo devuelve una tupla (logits, mapa); solo interesan los logits
-            logits = out[0] if isinstance(out, (tuple, list)) else out
-            pred.append(logits.argmax(1).cpu().numpy())
-    pred = np.concatenate(pred) if pred else np.array([])
+    pred = np.array(pred)
     ys = np.array(ys)
 
     bloque = {}

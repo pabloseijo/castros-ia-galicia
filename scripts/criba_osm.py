@@ -58,9 +58,19 @@ def overpass(consulta, intentos=4):
 
 
 def contexto(puntos, radio_m=200, lote=25):
-    """Devuelve, por punto, las etiquetas modernas a menos de `radio_m`."""
+    """Devuelve, por punto, las etiquetas modernas a menos de `radio_m`.
+
+    Y **cuenta los lotes que fallan**. El 2026-08-09 Overpass devolvio `429` y
+    `504` en todas las consultas y esta funcion siguio adelante con un `continue`
+    silencioso: la criba escribio un fichero con `descartado 0` para los `362`
+    puntos, indistinguible de «ninguno tenia causa moderna». Nunca llego a
+    preguntar. Un fichero de salida que parece un resultado y no lo es hace mas
+    dano que un error.
+    """
     fuera = [[] for _ in puntos]
+    lotes = fallos = 0
     for ini in range(0, len(puntos), lote):
+        lotes += 1
         trozo = puntos[ini:ini+lote]
         partes = []
         for lon, lat in trozo:
@@ -70,6 +80,7 @@ def contexto(puntos, radio_m=200, lote=25):
             partes.append('nwr(around:%d,%f,%f)["building"];' % (radio_m, lat, lon))
         d = overpass("[out:json][timeout:180];(" + "".join(partes) + ");out center tags;")
         if not d:
+            fallos += 1
             continue
         for e in d.get("elements", []):
             c = e.get("center") or e
@@ -88,7 +99,7 @@ def contexto(puntos, radio_m=200, lote=25):
                 if "building" in t:
                     fuera[ini+j].append("building")
         time.sleep(2)
-    return fuera
+    return fuera, lotes, fallos
 
 
 def main() -> int:
@@ -107,7 +118,21 @@ def main() -> int:
                                delimiter="\t"))
     pts = [(float(r["lon"]), float(r["lat"])) for r in filas]
     print("detecciones: %d" % len(pts), flush=True)
-    ctx = contexto(pts, args.radio_m)
+    ctx, lotes, fallos = contexto(pts, args.radio_m)
+
+    # **Si Overpass no contesto, NO se escribe nada.** Una criba que no pudo
+    # consultar produce `descartado 0` para todo, que es indistinguible de «no
+    # habia nada moderno cerca» y se usaria como tal. Se aborta con codigo `3`
+    # para que una cadena pueda distinguirlo de un resultado legitimo.
+    if lotes and fallos / lotes > 0.25:
+        print(f"\n*** ABORTADO: {fallos} de {lotes} lotes fallaron en Overpass "
+              f"({100*fallos/lotes:.0f}%). No se escribe salida: un fichero con "
+              f"'descartado 0' se leeria como 'nada moderno cerca'. ***",
+              file=sys.stderr)
+        return 3
+    if fallos:
+        print(f"  aviso: {fallos} de {lotes} lotes fallaron; "
+              f"esos puntos van sin contexto OSM", flush=True)
 
     for r, c in zip(filas, ctx):
         edif = sum(1 for x in c if x == "building")
