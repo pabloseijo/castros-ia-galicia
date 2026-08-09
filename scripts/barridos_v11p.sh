@@ -3,6 +3,13 @@
 # VRAM. Es el veredicto de verdad: el liston del preregistro esta en el `F1` de
 # barrido sobre los cuatro bloques, no en la metrica interna.
 #
+# **Los bbox se copian de `cadena_v7.sh`, NO se escriben de memoria.** El
+# 2026-08-09 los de Lugo y Pontevedra se transcribieron mal —`-7.50 42.75` en vez
+# de `-7.375 42.625`— y el barrido cubrio otro sitio: `2.520` celdas con LiDAR de
+# `8.580` en vez de `8.800` de `8.800`. Los `F1 0,278` y `0,115` que salieron de
+# ahi no eran «peores»: eran de otro trozo de Galicia. Si los cuatro bloques no
+# son EXACTAMENTE los de v7, la comparacion no existe.
+#
 # **Por que en serie y no en paralelo.** El nodo tiene `8 GB` y cada barrido pica
 # a `~3,5 GB` con dos obreros. El 2026-08-08 se lanzaron tres a la vez y murieron
 # dos: uno con `CUDA out of memory` y otro con `BrokenProcessPool` cuando el OOM
@@ -15,10 +22,10 @@ say() { echo "[$(date +%F' '%H:%M)] $*" >> "$LOG"; }
 say "### barridos de v11p ###"
 for B in lugo coruna ourense pontevedra; do
   case "$B" in
-    lugo)       BB="-7.50 42.75 -7.25 43.00";;
+    lugo)       BB="-7.375 42.625 -7.125 42.875";;
     coruna)     BB="-8.50 43.00 -8.25 43.25";;
     ourense)    BB="-8.25 42.25 -8.00 42.50";;
-    pontevedra) BB="-8.75 42.25 -8.50 42.50";;
+    pontevedra) BB="-8.875 42.125 -8.625 42.375";;
   esac
   OUT="data/sweep_val_${B}_v11p.tsv"
   if [ -s "$OUT" ] && [ "$(wc -l < "$OUT")" -gt 100 ]; then
@@ -52,10 +59,10 @@ for B in lugo coruna ourense pontevedra; do
   OUT="data/sweep_val_${B}_v11p.tsv"
   [ -s "$OUT" ] && [ "$(wc -l < "$OUT")" -gt 100 ] && continue
   case "$B" in
-    lugo)       BB="-7.50 42.75 -7.25 43.00";;
+    lugo)       BB="-7.375 42.625 -7.125 42.875";;
     coruna)     BB="-8.50 43.00 -8.25 43.25";;
     ourense)    BB="-8.25 42.25 -8.00 42.50";;
-    pontevedra) BB="-8.75 42.25 -8.50 42.50";;
+    pontevedra) BB="-8.875 42.125 -8.625 42.375";;
   esac
   say "=== reintento $B ==="
   CASTROS_VRAM_FRAC=0.45 scripts/lanzar.sh "reintento-$B-v11p" 6000M \

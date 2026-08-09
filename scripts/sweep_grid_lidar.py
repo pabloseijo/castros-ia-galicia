@@ -217,6 +217,7 @@ _CACHE_ORDEN = []
 # máximo y el reúso se agota—, así que ocho es el punto donde deja de rendir.
 # Cuesta `0,31 GB` entre los dos obreros.
 _CACHE_MAX = 8
+_CACHE_STATS = {}
 
 
 def _puntos_de_tesela(tp, laspy):
@@ -237,10 +238,28 @@ def _puntos_de_tesela(tp, laspy):
     Cuatro entradas y no más porque un grupo toca cuatro teselas como máximo
     (medido: mediana `2`, máximo `4`) y cada una son ~`400 MB` en memoria.
     """
+    # **Se cuenta.** La cache existe desde el 2026-08-06 y nadie habia medido si
+    # acierta: el 09 se vio la GPU al `0%` y la CPU al `767%`, que es compatible
+    # tanto con «la cache funciona y descomprimir una vez ya es caro» como con «la
+    # cache no sirve y seguimos en `8,4x`». Sin contador no se distinguen.
+    _CACHE_STATS["total"] = _CACHE_STATS.get("total", 0) + 1
     if tp in _CACHE_TESELA:
+        _CACHE_STATS["aciertos"] = _CACHE_STATS.get("aciertos", 0) + 1
         _CACHE_ORDEN.remove(tp)
         _CACHE_ORDEN.append(tp)
         return _CACHE_TESELA[tp]
+    # **Informa el obrero, no el padre.** Los obreros son procesos aparte y no
+    # comparten memoria con el proceso principal: un contador consultado desde el
+    # padre saldria siempre a cero. Se imprime desde aqui, cada 25 fallos, y el
+    # log recoge la linea de cualquiera de ellos.
+    _CACHE_STATS.setdefault("unicas", set()).add(tp)
+    _f = _CACHE_STATS["total"] - _CACHE_STATS.get("aciertos", 0)
+    if _f % 25 == 0:
+        import os as _os
+        print(f"  [obrero {_os.getpid()}] cache: "
+              f"{_CACHE_STATS.get('aciertos', 0)}/{_CACHE_STATS['total']} aciertos "
+              f"({_CACHE_STATS.get('aciertos', 0)/_CACHE_STATS['total']:.0%}) | "
+              f"{len(_CACHE_STATS['unicas'])} teselas distintas leidas", flush=True)
     xs_l, ys_l, zs_l = [], [], []
     try:
         with laspy.open(tp) as fh:
@@ -554,11 +573,20 @@ def main() -> int:
     # resultado —cada celda se puntúa igual— solo cuándo se lee cada fichero.
     tareas.sort(key=lambda t: tuple(sorted(t[0])))
 
-    nuevo = not args.out.exists()
+    # **La cabecera se escribe si falta, no solo si el fichero es nuevo.** El
+    # 2026-08-09 un barrido murio por memoria y al relanzarse encontro el fichero
+    # existente pero vacio: no escribio cabecera, y `detection_eval.py` —que lee
+    # por nombre de columna— reporto `0 predicciones` sobre un fichero con `848`
+    # filas buenas. El dato estaba entero; lo ilegible era el encabezado.
+    falta_cabecera = True
+    if args.out.exists() and args.out.stat().st_size > 0:
+        with args.out.open(encoding="utf-8") as _f:
+            falta_cabecera = not (_f.readline() or "").startswith("id\t")
     fh = open(args.out, "a", newline="", encoding="utf-8")
     wr = csv.writer(fh, delimiter="\t")
-    if nuevo:
+    if falta_cabecera:
         wr.writerow(["id", "lon", "lat", "score", "p_fondo", "p_castro", "p_mamoa"])
+        fh.flush()
 
     t0, hechos = time.time(), 0
     with ProcessPoolExecutor(max_workers=args.workers,
