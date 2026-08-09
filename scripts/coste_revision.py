@@ -34,7 +34,7 @@ TOL = 500.0
 ENLACE = 512.0
 
 
-def cola_de(modelo, bloque, suelo=0.30):
+def cola_de(modelo, bloque, suelo=0.30, min_vecinos=1):
     pred = Path(f"data/sweep_val_{bloque}_{modelo}.tsv")
     truth = Path(f"data/{bloque}_fus_truth_limpia.tsv")
     if not pred.exists() or not truth.exists():
@@ -61,7 +61,7 @@ def cola_de(modelo, bloque, suelo=0.30):
 
     # agrupar en sitios y quedarse con la puntuacion maxima de cada uno
     sitios = []
-    for g in agrupar(px, py, ENLACE):
+    for g in agrupar(px, py, ENLACE, min_vecinos):
         cx, cy = float(np.mean(px[g])), float(np.mean(py[g]))
         sc = max(ps[i]["score"] for i in g)
         d = np.hypot(tx - cx, ty - cy)
@@ -73,10 +73,12 @@ def cola_de(modelo, bloque, suelo=0.30):
 def main() -> int:
     modelo = sys.argv[1] if len(sys.argv) > 1 else "v7"
     suelo = float(sys.argv[2]) if len(sys.argv) > 2 else 0.30
+    min_vec = int(sys.argv[3]) if len(sys.argv) > 3 else 1
     print(f"modelo: {modelo} | suelo de agrupado {suelo}   («acierto» = reencontrar un castro catalogado)\n")
+    print(f"  agrupado: min-vecinos {min_vec} ({'enlace simple' if min_vec==1 else 'por densidad'})\n")
     tot_sitios, tot_hall, tot_conocidos = [], 0, 0
     for b in BLOQUES:
-        r = cola_de(modelo, b, suelo)
+        r = cola_de(modelo, b, suelo, min_vec)
         if r is None:
             print(f"{b}: sin barrido"); continue
         sitios, n_truth = r

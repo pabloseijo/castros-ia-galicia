@@ -68,11 +68,35 @@ def a_metros(lon, lat, lat0):
     return x, y
 
 
-def agrupar(x, y, enlace_m):
-    """Une detecciones a menos de `enlace_m` — single linkage por rejilla.
+def agrupar(x, y, enlace_m, min_vecinos=1):
+    """Une detecciones a menos de `enlace_m`. Con `min_vecinos > 1`, por densidad.
 
     Rejilla y no matriz de distancias: un barrido de Galicia son millones de
     celdas y una matriz `n^2` no cabe en ninguna parte.
+
+    ## Por que existe `min_vecinos`
+
+    Con `min_vecinos = 1` esto es **enlace simple**, y el enlace simple
+    **encadena**: basta un reguero de puntos separados por menos de `enlace_m`
+    para soldar dos sitios que no tienen nada que ver. Medido en Lugo el
+    2026-08-09 con un suelo de puntuacion de `0.30`: **un unico grupo se trago
+    `5.325` puntos y `62` de los `63` castros del bloque**. Con la rejilla del
+    barrido a `256 m` y un enlace de `512 m`, cada celda tiene vecinas por
+    construccion, asi que el ruido de fondo suelda la malla entera.
+
+    Se detecto por un sintoma imposible: **subir el suelo mejoraba** el resultado
+    de las `100` primeras fichas, y las `100` mejores por puntuacion no pueden
+    depender de donde este el suelo si el orden no cambia.
+
+    La solucion esta documentada: **DB-NMS** (Yang et al.,
+    `10.1007/s00521-021-06628-w`), *improving non-maximum suppression with
+    density-based clustering*. Un punto solo une a sus vecinos si el mismo es
+    **nucleo**, es decir, si tiene al menos `min_vecinos` a menos de `enlace_m`.
+    Un reguero fino no cumple esa condicion, asi que **deja de encadenar**.
+
+    El valor por defecto es `1` a proposito: reproduce exactamente el
+    comportamiento anterior, de modo que ninguna cifra ya publicada cambia sin
+    pedirlo. `--min-vecinos 3` activa el agrupado por densidad.
     """
     n = len(x)
     padre = list(range(n))
@@ -97,8 +121,16 @@ def agrupar(x, y, enlace_m):
             for dy in (-1, 0, 1):
                 vecinos += celda.get((cx + dx, cy + dy), [])
         for i in idxs:
-            for j in vecinos:
-                if j > i and math.hypot(x[i] - x[j], y[i] - y[j]) <= enlace_m:
+            # **Solo los nucleos unen.** Un punto con menos de `min_vecinos`
+            # vecinos dentro del radio no propaga la union: puede acabar pegado a
+            # un grupo si un nucleo lo alcanza, pero no sirve de puente entre dos.
+            # Es lo que impide que un reguero de ruido suelde dos sitios.
+            cercanos = [j for j in vecinos
+                        if j != i and math.hypot(x[i] - x[j], y[i] - y[j]) <= enlace_m]
+            if min_vecinos > 1 and len(cercanos) < min_vecinos:
+                continue
+            for j in cercanos:
+                if j > i:
                     unir(i, j)
     grupos = {}
     for i in range(n):
@@ -119,7 +151,7 @@ def leer_tsv(path, cols=("lon", "lat")):
 
 
 def evaluar(pred, truth, umbral, enlace_m, min_celdas, margen_m, tol_m, lat0,
-            mascara=None):
+            mascara=None, min_vecinos=1):
     """`mascara` son yacimientos que el modelo vio en entrenamiento.
 
     Una detección que cae sobre uno de ellos no es prospección: es memoria. No
@@ -133,7 +165,7 @@ def evaluar(pred, truth, umbral, enlace_m, min_celdas, margen_m, tol_m, lat0,
                 "fn": len(truth), "precision": 0.0, "recall": 0.0, "f1": 0.0}
 
     px, py = a_metros([p["lon"] for p in sel], [p["lat"] for p in sel], lat0)
-    grupos = agrupar(px, py, enlace_m)
+    grupos = agrupar(px, py, enlace_m, min_vecinos)
 
     # 3. area minima: un grupo de una sola celda no es un castro
     grupos = [g for g in grupos if len(g) >= min_celdas]
@@ -205,6 +237,8 @@ def main() -> int:
     # eligieron `0.70 / 128 / 1` por su cuenta. F1 honesto `0.618` contra `0.590`.
     ap.add_argument("--enlace-m", type=float, default=512.0,
                     help="distancia para unir detecciones vecinas")
+    ap.add_argument("--min-vecinos", type=int, default=1,
+                    help="1 = enlace simple (el de siempre); >1 = agrupado por densidad, que impide que un reguero de ruido suelde dos sitios")
     ap.add_argument("--min-celdas", type=int, default=1,
                     help="un castro puede caer en una sola celda; filtrar por "
                          "tamaño de cúmulo cuesta más recall del que ahorra")
@@ -272,7 +306,8 @@ def main() -> int:
           f"{'prec':>6} {'recall':>7} {'F1':>7} {'VPP@1:475':>10}")
     for u in args.umbrales:
         r = evaluar(pred, truth, u, args.enlace_m, args.min_celdas,
-                    args.margen_m, args.tolerancia_m, lat0, mascara)
+                    args.margen_m, args.tolerancia_m, lat0, mascara,
+                    args.min_vecinos)
         # El VPP se recalcula a la prevalencia real, que es lo unico trasladable.
         espec = 1 - (r["fp"] / max(len(pred), 1))
         r["vpp_tasa_real"] = ppv_from(r["recall"], espec, PREVALENCIA_DESPLIEGUE) \
