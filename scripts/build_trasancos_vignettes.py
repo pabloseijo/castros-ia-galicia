@@ -126,14 +126,35 @@ def load_samples(scope: str = "trasancos", extra_negatives=None):
     neg_files = [HARD_NEG] + [Path(p) for p in (extra_negatives or [])]
     for nf in neg_files:
         if not Path(nf).exists():
+            print(f"  AVISO: no existe el fichero de negativos {nf}", flush=True)
             continue
+        leidas = saltadas = 0
         for r in csv.DictReader(open(nf, encoding="utf-8"), delimiter="\t"):
+            # **Nombres de columna, no uno solo.** El 2026-08-08 este bucle leia
+            # solo `longitude`/`latitude`, y `negativos_puntuados_v3.tsv` trae
+            # `lon`/`lat`: el `except KeyError: continue` descarto sus **10.667
+            # filas en silencio**, sin una linea de aviso. El corpus de v11p salio
+            # con `0` de los `10.742` `random_terrain` que tiene v7, o sea con
+            # otro balance de clases por completo, y solo se detecto al comparar
+            # las composiciones a mano.
+            lon = r.get("longitude") or r.get("lon") or r.get("x")
+            lat = r.get("latitude") or r.get("lat") or r.get("y")
             try:
-                lon, lat = float(r["longitude"]), float(r["latitude"])
-            except (KeyError, TypeError, ValueError):
+                lon, lat = float(lon), float(lat)
+            except (TypeError, ValueError):
+                saltadas += 1
                 continue
-            samples.append({"label": 0, "group": r.get("negative_class", "other"),
+            leidas += 1
+            grupo = (r.get("negative_class") or r.get("group") or "other")
+            samples.append({"label": 0, "group": grupo,
                             "name": r.get("name", ""), "lon": lon, "lat": lat})
+        # **Se cuenta y se dice.** Un fichero que aporta cero filas es un fallo,
+        # no un caso normal, y tiene que verse en el log sin ir a buscarlo.
+        print(f"  negativos de {Path(nf).name}: {leidas} leidas, {saltadas} saltadas",
+              flush=True)
+        if leidas == 0:
+            print(f"  *** {Path(nf).name} NO APORTO NINGUNA FILA: revisa sus "
+                  f"columnas (se esperan longitude/latitude o lon/lat) ***", flush=True)
 
     # Una sola llamada con los arrays completos, no una por muestra.
     if samples:
@@ -145,7 +166,54 @@ def load_samples(scope: str = "trasancos", extra_negatives=None):
         # O Val permanece intocable en ambos alcances: lleva Pena Lopesa, el caso
         # de control historico del proyecto, y nunca debe entrar en entrenamiento.
         smp["split"] = "test_o_val" if in_bbox(smp["lon"], smp["lat"], O_VAL) else "pool"
+
+    # ## Regla 15: el precinto del norte de Portugal
+    #
+    # **Esto no es defensivo, es correctivo.** El 2026-08-09, al ampliar la
+    # descarga de LiDAR, el corpus arrastro **`65` castros del conjunto sellado a
+    # `0 m`** —las mismas coordenadas— hacia `train`. Si entrenan, la unica
+    # estimacion insesgada que el proyecto va a producir nace contaminada, y no
+    # habria forma de saberlo despues: el precinto se rompe en silencio.
+    #
+    # Antes no pasaba porque no habia LiDAR de esa zona descargado. El fallo no
+    # estaba en el codigo: estaba esperando a que llegara el dato.
+    sellados = _leer_precinto()
+    if sellados:
+        fuera = 0
+        for smp in samples:
+            if smp["split"] != "pool":
+                continue
+            for slat, slon in sellados:
+                if abs(slat - smp["lat"]) > 0.01:
+                    continue
+                dlat = (slat - smp["lat"]) * 111320.0
+                dlon = (slon - smp["lon"]) * 111320.0 * math.cos(math.radians(slat))
+                if math.hypot(dlat, dlon) < 300.0:
+                    smp["split"] = "excluido_precinto"
+                    fuera += 1
+                    break
+        print(f"  precinto: {fuera} muestras excluidas por estar a <300 m de los "
+              f"{len(sellados)} castros sellados", flush=True)
+    else:
+        print("  *** AVISO: no se pudo leer la verdad precintada; el corpus puede "
+              "contener castros del conjunto de prueba ***", flush=True)
     return samples
+
+
+def _leer_precinto(ruta="data/portugal-test_truth_limpia.tsv"):
+    """Coordenadas de los castros precintados, o lista vacia si no se puede leer."""
+    p = PROJECT_ROOT / ruta
+    if not p.exists():
+        return []
+    out = []
+    with p.open(encoding="utf-8") as fh:
+        for r in csv.DictReader(fh, delimiter="\t"):
+            try:
+                out.append((float(r.get("lat") or r["latitude"]),
+                            float(r.get("lon") or r["longitude"])))
+            except (TypeError, ValueError, KeyError):
+                pass
+    return out
 
 
 def diezmar_a_densidad(xs, ys, zs, objetivo_pt_m2, semilla=20260806):
@@ -383,6 +451,8 @@ def main():
                          "Cuesta 1,6 s por vinneta y separa un parapeto —que es "
                          "caballon mas foso— de una pista forestal, que solo es "
                          "un corte. Los tres canales actuales no distinguen eso")
+    ap.add_argument("--splits-de", default=None,
+                    help="hereda los splits de otro index.tsv: el examen queda fijo y lo nuevo va a train")
     ap.add_argument("--cuarentena-o-val", action="store_true",
                     help="excluye de train/val los bloques que tocan la caja de O Val")
     ap.add_argument("--val-every", type=int, default=5,
@@ -510,11 +580,46 @@ def main():
         print(f"  AVISO: {n_cuarentena} viñetas comparten bloque con O Val y van "
               f"a train/val (usa --cuarentena-o-val para excluirlas)", flush=True)
 
-    blocks = sorted({r["block"] for r in index if r["split"] == "pool"})
-    val_blocks = set(blocks[::args.val_every])  # 1 de cada N bloques
-    for r in index:
-        if r["split"] == "pool":
-            r["split"] = "val" if r["block"] in val_blocks else "train"
+    # ## Heredar el examen, para que el experimento sea controlado
+    #
+    # Un experimento de dosis varia el conjunto de ENTRENAMIENTO y deja fijo el de
+    # validacion. Si el examen cambia a la vez que los apuntes, la cifra final no
+    # dice si el modelo aprendio mas: dice que le preguntaron otra cosa.
+    #
+    # El 2026-08-09 el corpus de v11p salio con `2.958` viñetas de validacion que
+    # v7 no tiene y `2.879` de v7 que el no tiene. Su `selection_best` no habria
+    # sido comparable con v7, v8 ni v9, y con el se caia tambien la regla de
+    # cribado, que se apoya en que todos comparten examen.
+    #
+    # Con `--splits-de`, cada viñeta que exista en el corpus de referencia hereda
+    # su split; las nuevas van todas a `train`, que es exactamente la dosis.
+    heredados = 0
+    if args.splits_de:
+        ref = {}
+        with open(args.splits_de, encoding="utf-8") as fh:
+            for r in csv.DictReader(fh, delimiter="\t"):
+                ref[r["sid"]] = (r.get("split") or "").strip()
+        for r in index:
+            s = ref.get(r["sid"])
+            if s in ("val", "test_o_val"):
+                r["split"] = s
+                heredados += 1
+            elif s == "train" and r["split"] == "pool":
+                r["split"] = "train"
+                heredados += 1
+        print(f"  splits heredados de {args.splits_de}: {heredados}", flush=True)
+        # lo que no estaba en la referencia y sigue en el pool es dosis nueva:
+        nuevos = sum(1 for r in index if r["split"] == "pool")
+        print(f"  viñetas nuevas que van a train (la dosis): {nuevos}", flush=True)
+        for r in index:
+            if r["split"] == "pool":
+                r["split"] = "train"
+    else:
+        blocks = sorted({r["block"] for r in index if r["split"] == "pool"})
+        val_blocks = set(blocks[::args.val_every])  # 1 de cada N bloques
+        for r in index:
+            if r["split"] == "pool":
+                r["split"] = "val" if r["block"] in val_blocks else "train"
 
     with open(args.out_dir / "index.tsv", "w", newline="", encoding="utf-8") as fh:
         w = csv.DictWriter(fh, delimiter="\t",

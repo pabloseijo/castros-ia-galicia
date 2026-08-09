@@ -23,23 +23,45 @@ cd "$HOME/castros" || exit 1
 LOG=logs/cadena_v11p.log
 say() { echo "[$(date +%F' '%H:%M)] $*" >> "$LOG"; }
 
-esperar_unidad() {
-  say "esperando a que termine $1"
-  while systemctl --user is-active "$1" >/dev/null 2>&1; do sleep 120; done
-  say "$1 ha terminado"
+# **Esperar al PRODUCTO, no al proceso.** Que un ambito termine no significa que
+# haya terminado BIEN: el 2026-08-09 el corte murio por OOM en el grupo `2.925` de
+# `5.340`, el ambito paso a inactivo, y la cadena lo interpreto como «ya esta» y
+# siguio hasta encontrarse sin `index.tsv`. Se espera a que exista el fichero que
+# el trabajo debe producir, y se comprueba que el ambito sigue vivo mientras tanto:
+# si muere sin producirlo, se dice y se aborta, en vez de continuar a ciegas.
+esperar_producto() {
+  unidad=$1; producto=$2
+  say "esperando a $producto (unidad $unidad)"
+  while [ ! -s "$producto" ]; do
+    if ! systemctl --user is-active "$unidad" >/dev/null 2>&1; then
+      say "*** $unidad ha muerto sin producir $producto ***"
+      return 1
+    fi
+    sleep 120
+  done
+  say "$producto listo"
+  return 0
 }
 
 say "### cadena v11p: punto de dosis ###"
-esperar_unidad castros-corpus-v11p.scope
-
 IDX=data/galicia-vignettes-v11p/index.tsv
-if [ ! -s "$IDX" ]; then
-  say "*** el corpus v11p no tiene index.tsv: abortando ***"
+esperar_producto castros-corpus-v11p.scope "$IDX" || exit 1
+# **`gsub(/\r/,"")` no es cosmetico.** El indice se escribe con fin de linea CRLF,
+# asi que `$8` vale `train\r` y la comparacion `$8=="train"` da SIEMPRE falso. La
+# primera version de esta guarda conto `0` positivos en entrenamiento —para v11p
+# y tambien para v7, que tiene `773`— y aborto la cadena por un falso negativo.
+N=$(( $(wc -l < "$IDX") - 1 ))
+POS=$(awk -F'\t' 'NR>1 {gsub(/\r/,""); if ($3 ~ /^castro/) n++} END{print n+0}' "$IDX")
+TRAIN=$(awk -F'\t' 'NR>1 {gsub(/\r/,""); if ($3 ~ /^castro/ && $8 ~ /^train/) n++} END{print n+0}' "$IDX")
+RND=$(awk -F'\t' 'NR>1 {gsub(/\r/,""); if ($3 ~ /^random_terrain/) n++} END{print n+0}' "$IDX")
+say "random_terrain en el corpus: $RND (v7 tiene 10742)"
+# Un corpus sin terreno aleatorio tiene otro balance de clases y no es comparable
+# con v7: el 2026-08-08 salio con `0` porque el lector de negativos buscaba una
+# columna `longitude` que ese fichero no tiene, y descarto 10.667 filas en silencio.
+if [ "$RND" -lt 3000 ]; then
+  say "*** solo $RND random_terrain: el balance de clases no es comparable con v7, abortando ***"
   exit 1
 fi
-N=$(( $(wc -l < "$IDX") - 1 ))
-POS=$(awk -F'\t' 'NR>1 && $3 ~ /^castro/ {n++} END{print n+0}' "$IDX")
-TRAIN=$(awk -F'\t' 'NR>1 && $3 ~ /^castro/ && $8=="train" {n++} END{print n+0}' "$IDX")
 say "corpus v11p: $N vinnetas | $POS castros | $TRAIN en entrenamiento"
 
 # **Control preregistrado**: si los positivos de entrenamiento no superan de
@@ -61,21 +83,36 @@ fi
 # defecto **preexistente e identico en v7**, medido el 2026-08-08 en `1` de los
 # `7` castros de O Val (O Castrillon, a `461 m`), y como afecta igual a los dos
 # lados de la comparacion, no la sesga. Se declara y se sigue.
-say "=== controles del preregistro ==="
-scripts/../.venv-gpu/bin/python scripts/controles_v11.py \
+# **La salida de los controles va a su PROPIO fichero, no al log.** El 2026-08-09
+# esta guarda aborto un entrenamiento correcto porque hacia `grep` sobre el log
+# acumulativo y encontro el fallo del intento ANTERIOR —ya corregido—. Un guardia
+# que lee el historial en vez del presente para todo lo que alguna vez fallo.
+CTRL=logs/controles_v11p_$(date +%H%M%S).txt
+say "=== controles del preregistro -> $CTRL ==="
+.venv-gpu/bin/python scripts/controles_v11.py \
   --nuevo data/galicia-vignettes-v11p \
-  --referencia data/galicia-vignettes-v7 >> "$LOG" 2>&1
-say "controles rc=$? (el codigo 1 puede ser solo la mezcla de bloques, ver arriba)"
+  --referencia data/galicia-vignettes-v7 > "$CTRL" 2>&1
+RC=$?
+cat "$CTRL" >> "$LOG"
+say "controles rc=$RC (el 1 puede ser solo la mezcla de bloques, ver arriba)"
 
-if grep -q "PRECINTO COMPROMETIDO\|precinto: NO se puede comprobar\|FALLA:.*sellados" "$LOG"; then
+# **Solo el precinto aborta.** Es el unico fallo irreversible: entrenar sobre el
+# conjunto de prueba invalida para siempre la unica estimacion insesgada del
+# proyecto, y no se nota despues. Lo demas se declara y se sigue.
+if grep -q "FALLA:.*sellados\|precinto: NO se puede comprobar" "$CTRL"; then
   say "*** PRECINTO COMPROMETIDO: abortando, esto no se entrena ***"
   exit 1
 fi
-if grep -q "selection_best NO es comparable" "$LOG"; then
-  say "*** la validacion no coincide con v7: la dosis no seria comparable, abortando ***"
-  exit 1
+say "precinto verificado cerrado en esta corrida"
+
+# La validacion ya no aborta: con `--splits-de` el examen de v11p es un
+# SUBCONJUNTO del de v7 (`0` viñetas nuevas, algunas de v7 que no se pudieron
+# cortar por falta de LiDAR). No hay contaminacion del examen, pero la cifra no
+# es numericamente comparable hasta reevaluar v7 sobre ese mismo subconjunto.
+if grep -q "selection_best NO es comparable" "$CTRL"; then
+  say "AVISO: el examen es un subconjunto del de v7; hay que reevaluar v7 sobre el"
+  say "       mismo subconjunto antes de comparar selection_best. Se entrena igual."
 fi
-say "controles: nada que impida entrenar (la mezcla de bloques queda declarada)"
 
 # la GPU, justo antes de usarla
 say "esperando GPU libre"
