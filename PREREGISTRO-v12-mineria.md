@@ -35,7 +35,13 @@ Es la palanca mejor documentada para este objeto exacto.
 2. Se **criban por OSM** (`criba_osm.py`) para quedarse con los que tienen causa
    moderna identificable —cantera, polígono, terraplén, urbanización—. Una cantera
    es una cantera y no exige juicio arqueológico.
-3. Se añaden al corpus de v11p como negativos duros **con peso `1`**.
+3. Se añaden **al corpus de v7**, no al de v11p, con peso `1`.
+
+   > **Cambio del `2026-08-09`**: el preregistro decía «al corpus de v11p». v11p
+   > está refutado (`0,390` contra `0,512`) y minar sobre él arrastraría su
+   > defecto de proporción. Se mina sobre **v7, que es la referencia y el mejor
+   > modelo medido**, y los falsos positivos salen de **los barridos de v7**, que
+   > son sus errores reales.
 4. Se entrena v12 y se barren los cuatro bloques.
 
 ## El peso es `1`, y esto es lo que separa v12 de v10
@@ -88,13 +94,30 @@ significa que **algunos de los `364` negativos podrían ser castros inéditos, q
 son exactamente lo que el proyecto busca**, y meterlos como negativos enseñaría al
 modelo a no encontrarlos.
 
-Tres mitigaciones, y ninguna lo elimina:
+> **Enmienda del `2026-08-09`: la primera mitigación está refutada.** Se prometió
+> que la criba de OSM dejaría solo los falsos positivos con causa moderna visible.
+> **Medido: no discrimina.** Aplicada a las `196` detecciones de Pontevedra a
+> umbral `0,50`, quita el `45%` de los falsos positivos **y el `35%` de los
+> verdaderos**, con un cambio de `F1` de `+0,001`.
+>
+> La causa es del terreno, no del código: **en la ría de Vigo uno de cada tres
+> castros catalogados tiene un edificio a menos de `200 m`**. Castros y obra
+> moderna están entremezclados, así que «hay algo moderno cerca» no separa nada.
+>
+> Eso **sube el riesgo declarado** de este experimento: los negativos a minar no se
+> pueden limpiar de posibles castros inéditos con una regla automática.
 
-1. **La criba de OSM** deja solo los que tienen causa moderna visible.
+Las mitigaciones que quedan, y ninguna elimina el riesgo:
+
+1. ~~La criba de OSM~~ — **refutada**, se lleva castros por delante.
 2. A umbral `0,5` la precisión medida es `0,08`–`0,23`, así que la gran mayoría
    son error de verdad.
 3. Los candidatos que la revisión visual marcó como prometedores —Cerceda, PO-2—
    se excluyen explícitamente con `--excluir`.
+4. **NUEVA, y es la que sostiene el experimento**: si v12 gana, se comprueba que
+   **sigue detectando los mismos castros conocidos que v7 detectaba**. Si pierde
+   alguno, ha aprendido a rechazar lo que debía encontrar y el resultado se
+   descarta por bueno que sea el `F1`.
 
 **El riesgo residual queda anotado en el corpus y en el registro, no escondido.**
 Y si v12 gana, hay que comprobar que **no ha dejado de detectar los prometedores
