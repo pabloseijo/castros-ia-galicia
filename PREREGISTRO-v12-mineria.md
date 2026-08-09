@@ -46,17 +46,39 @@ especificidad de los negativos**, no un multiplicador. Si hiciera falta subir el
 peso, sería otro experimento con su preregistro y su escala —`2`, `4`—, nunca un
 valor suelto.
 
-## El listón, definido por regla
+## El listón, reescrito el 2026-08-09 con el veredicto de v11p en la mano
 
-Referencia: **la media de v11p sobre los cuatro bloques**, que aún no se conoce.
+> **Enmienda, y hay que declararla como tal.** Este preregistro se escribió
+> fijando el listón contra «la media de v11p, que aún no se conoce». Ya se conoce:
+> **`0,390`**, contra `0,512` de v7. **v11p está refutada**, así que un listón de
+> `media(v11p) + 0,03 = 0,420` premiaría a v12 por batir a un modelo malo.
+>
+> Cambiar un listón después de ver datos es exactamente lo que un preregistro
+> viene a impedir, así que esto se hace **una sola vez, por escrito y con motivo**:
+> la referencia no cambia porque v12 vaya mal —v12 no existe todavía— sino porque
+> **la referencia elegida resultó ser peor que el modelo en producción**.
 
-- **Éxito**: `F1` medio `≥ media(v11p) + 0,03` **y** recall de castro en
+Referencia: **v7 = `0,512`** de `F1` medio sobre los cuatro bloques, umbral `0,70`.
+
+- **Éxito**: `F1` medio **`≥ 0,542`** (`+0,03` sobre v7) **y** recall de castro en
   validación `≥ 0,70`. Las dos condiciones.
-- **Éxito parcial, y se reporta como tal**: bate a v11p pero no a v7. Significa
-  que la minería funciona pero no compensa el desbalance de origen.
-- **Fracaso**: por debajo de v11p, o recall de castro bajo `0,70`. Si además cae
-  el recall mientras sube la precisión, **es el patrón de v10** y la minería queda
-  refutada también a peso `1`.
+- **Resultado útil aunque no gane**: entre `0,512` y `0,542`. Significa que la
+  minería recupera lo que el desbalance de v11p había perdido —`0,122`— pero no
+  añade nada sobre v7. Se reporta así, sin adornos.
+- **Fracaso**: por debajo de `0,512`, o recall de castro bajo `0,70`. Si además
+  cae el recall mientras sube la precisión, **es el patrón de v10** y la minería
+  queda refutada también a peso `1`.
+
+## Y una pregunta previa que ahora es obligatoria
+
+Con v11p refutada por su proporción de positivos (`26,7%` contra `0,73%` de
+despliegue), **minar sobre su corpus arrastra ese defecto**. Antes de v12 hay que
+saber qué da **v13**, que es el mismo corpus con la proporción de v7 y está
+entrenando.
+
+**Si v13 recupera el nivel de v7, v12 debe minar sobre v13, no sobre v11p.** Y si
+v13 no lo recupera, la proporción no era la causa y v12 hereda un problema sin
+diagnosticar — en ese caso **no se lanza** hasta entenderlo.
 
 ## El riesgo, declarado antes y no después
 
