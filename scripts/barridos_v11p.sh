@@ -28,10 +28,19 @@ for B in lugo coruna ourense pontevedra; do
     pontevedra) BB="-8.875 42.125 -8.625 42.375";;
   esac
   OUT="data/sweep_val_${B}_v11p.tsv"
-  if [ -s "$OUT" ] && [ "$(wc -l < "$OUT")" -gt 100 ]; then
-    say "SALTO $B: ya tiene $(wc -l < "$OUT") filas"
+  # **«Tiene filas» no es «esta completo».** El 2026-08-09 esta guarda salto
+  # Pontevedra con `6.877` de `~8.700` celdas y dio la cola por terminada: un
+  # barrido al `79%` evaluado como si fuera entero. El umbral se compara ahora
+  # contra un barrido conocido del MISMO bloque —el de v7—, que es la unica
+  # referencia fiable de cuantas celdas tiene.
+  REF="data/sweep_val_${B}_v7.tsv"
+  ESPERADAS=$( [ -f "$REF" ] && wc -l < "$REF" || echo 0 )
+  TENGO=$( [ -f "$OUT" ] && wc -l < "$OUT" || echo 0 )
+  if [ "$ESPERADAS" -gt 100 ] && [ "$TENGO" -ge $((ESPERADAS * 97 / 100)) ]; then
+    say "SALTO $B: completo ($TENGO de $ESPERADAS filas)"
     continue
   fi
+  [ "$TENGO" -gt 0 ] && say "$B incompleto: $TENGO de $ESPERADAS, se reanuda"
   say "=== barrido $B ==="
   # **UN obrero, no dos, y tareas de `12` celdas.** Con dos obreros uno solo llego
   # a `4,1 GB` y el conjunto a `6,7 GB` en una maquina de `7,3`: el barrido de
