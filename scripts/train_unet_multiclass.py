@@ -300,6 +300,25 @@ class UNetMulticlass(nn.Module):
               [64, 256, 512, 1024, 2048]
         if head == "cls":
             self.fc = nn.Linear(chs[4], n_classes)
+        elif head == "atencion":
+            # **Agregación por atención (Ilse, Tomczak y Welling, ICML 2018,
+            # `arXiv:1802.04712`, 2.734 citas).** En vez de promediar las 256
+            # celdas del mapa de 16x16 —lo que atenúa 32 veces un castro que
+            # ocupa el 3,1% del área— aprende cuánto pesa cada una:
+            #
+            #     a_k = softmax(wᵀ tanh(V h_k))      z = Σ a_k h_k
+            #
+            # Es estrictamente más expresiva que la media y que el log-sum-exp:
+            # puede aprender a comportarse como cualquiera de las dos. Y el
+            # encaje no es analógico — una viñeta con etiqueta de imagen y sin
+            # máscaras **es** una bolsa de instancias con una sola etiqueta,
+            # que es el problema que ese artículo define.
+            #
+            # Cuesta `512·128 + 128 = 65.664` parámetros contra los `21,3 M`
+            # de la U-Net: ruido en la cuenta.
+            self.att_V = nn.Sequential(nn.Linear(chs[4], 128), nn.Tanh())
+            self.att_w = nn.Linear(128, 1)
+            self.fc = nn.Linear(chs[4], n_classes)
         else:
             self.d4 = DecoderBlock(chs[4], chs[3], 256)
             self.d3 = DecoderBlock(256, chs[2], 128)
@@ -316,6 +335,18 @@ class UNetMulticlass(nn.Module):
 
         if self.head_kind == "cls":
             return self.fc(F.adaptive_avg_pool2d(x4, 1).flatten(1)), None
+
+        if self.head_kind == "atencion":
+            b, c, h, w = x4.shape
+            # (B, HW, C): cada celda del mapa es una instancia de la bolsa
+            hk = x4.flatten(2).transpose(1, 2)
+            a = torch.softmax(self.att_w(self.att_V(hk)), dim=1)   # (B, HW, 1)
+            z = (a * hk).sum(dim=1)                                # (B, C)
+            # El mapa de atención se devuelve como segundo valor, en el mismo
+            # sitio donde `mil` devuelve su mapa de calor. No es una métrica:
+            # es lo que la ficha de revisión de la fase 2 puede enseñar para
+            # decir DÓNDE miró el modelo.
+            return self.fc(z), a.transpose(1, 2).reshape(b, 1, h, w)
 
         m = self.d4(x4, x3)
         m = self.d3(m, x2)
@@ -437,7 +468,8 @@ def main() -> int:
     ap.add_argument("--vig-dir", type=Path, required=True)
     ap.add_argument("--out-dir", type=Path, required=True)
     ap.add_argument("--encoder", default="resnet34")
-    ap.add_argument("--head", default="mil", choices=("mil", "cls"),
+    ap.add_argument("--head", default="mil",
+                    choices=("mil", "cls", "atencion"),
                     help="mil = U-Net entera con pooling log-sum-exp; "
                          "cls = solo codificador + GAP (Landauer)")
     ap.add_argument("--epochs", type=int, default=40)
@@ -562,6 +594,10 @@ def main() -> int:
           flush=True)
 
     ck_last, ck_best = args.out_dir / "last.pt", args.out_dir / "best.pt"
+    # Tercer checkpoint: el mejor en F1 de castro a secas. Ver la nota
+    # larga junto a donde se guarda.
+    ck_castro = args.out_dir / "best_castro.pt"
+    mejor_castro = -1.0
     start, best, history = 0, -1.0, []
     if args.resume and ck_last.exists():
         st = torch.load(ck_last, map_location=device, weights_only=False)
@@ -622,6 +658,32 @@ def main() -> int:
             best = sc
             torch.save(st, ck_best)
             print(f"    -> mejor modelo guardado ({sc:.4f})", flush=True)
+
+        # **Y un segundo checkpoint elegido SOLO por castro.**
+        #
+        # `selection_score` promedia el F1 de castro y el de mámoa. Medido sobre
+        # v7 el 2026-08-10: la época `9` se congeló con `selección 0,4605` y la
+        # `16` se descartó con `0,4492` — pero en castro la `16` era mejor en
+        # todo, `F1 0,564` contra `0,552` y recall `0,844` contra `0,711`. Lo
+        # que decidió fue la mámoa, que con `n = 122` y precisión `0,21`-`0,24`
+        # es la clase más ruidosa del corpus.
+        #
+        # El entregable de este proyecto es una cola de candidatos a **castro**.
+        # Que una clase secundaria y ruidosa elija el modelo es un desajuste
+        # entre la métrica y el objetivo, y cuesta `13` puntos de recall.
+        #
+        # **No se cambia `best.pt`**: se añade otro fichero. Sustituir el
+        # criterio a mitad de proyecto invalidaría la comparación con los nueve
+        # checkpoints ya medidos; tener los dos permite medir la diferencia en
+        # vez de discutirla.
+        b_cas = blk.get("castro", {})
+        r_c, p_c = b_cas.get("recall", 0.0), b_cas.get("precision", 0.0)
+        f1_castro = 2 * r_c * p_c / (r_c + p_c) if (r_c + p_c) > 0 else 0.0
+        if f1_castro > mejor_castro:
+            mejor_castro = f1_castro
+            torch.save(st, ck_castro)
+            print(f"    -> mejor en CASTRO guardado (F1 {f1_castro:.4f})",
+                  flush=True)
 
     if ck_best.exists():
         model.load_state_dict(torch.load(ck_best, map_location=device,

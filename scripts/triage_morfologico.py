@@ -54,8 +54,7 @@ for _v in ("OMP_NUM_THREADS", "OPENBLAS_NUM_THREADS", "MKL_NUM_THREADS"):
 import numpy as np
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from build_trasancos_vignettes import (grid_from_points, group_samples_by_tiles,
-                                       lonlat_to_utm29)
+from build_trasancos_vignettes import grid_from_points, group_samples_by_tiles
 
 GROUND_CLASS = 2
 EXTENT = 512.0
@@ -147,17 +146,20 @@ def main() -> int:
     ap.add_argument("--puntos", type=Path, required=True)
     ap.add_argument("--laz-dir", type=Path, nargs="+", required=True)
     ap.add_argument("--out", type=Path, required=True)
+    ap.add_argument("--crs", default="EPSG:25829")
     ap.add_argument("--workers", type=int, default=3)
     args = ap.parse_args()
 
     filas = list(csv.DictReader(open(args.puntos, encoding="utf-8"), delimiter="\t"))
+    from pyproj import Transformer
+    to_projected = Transformer.from_crs("EPSG:4326", args.crs, always_xy=True)
     for i, r in enumerate(filas):
-        r["id"] = i
-        r["x"], r["y"] = lonlat_to_utm29(float(r["lon"]), float(r["lat"]))
+        r["_triage_id"] = i
+        r["x"], r["y"] = to_projected.transform(float(r["lon"]), float(r["lat"]))
     print(f"puntos: {len(filas)}", flush=True)
 
-    tiles = sorted({str(p) for d in args.laz_dir for p in Path(d).glob("*.laz")})
-    slim = [{k: r[k] for k in ("id", "x", "y")} for r in filas]
+    tiles = sorted({str(p) for d in args.laz_dir for p in Path(d).rglob("*.laz")})
+    slim = [{"id": r["_triage_id"], "x": r["x"], "y": r["y"]} for r in filas]
     grupos, huerf = group_samples_by_tiles(slim, tiles, EXTENT)
     print(f"  con LiDAR: {sum(len(v) for v in grupos.values())} | fuera: {huerf}",
           flush=True)
@@ -174,13 +176,13 @@ def main() -> int:
 
     campos = list(filas[0].keys()) + ["radio_m", "parapeto_m", "dominancia_m",
                                       "cierre", "score_morfo"]
-    campos = [c for c in campos if c not in ("x", "y", "id")]
+    campos = [c for c in campos if c not in ("x", "y", "_triage_id")]
     with open(args.out, "w", newline="", encoding="utf-8") as fh:
         w = csv.DictWriter(fh, fieldnames=campos, delimiter="\t",
                            extrasaction="ignore")
         w.writeheader()
         for r in filas:
-            m = res.get(r["id"])
+            m = res.get(r["_triage_id"])
             if m:
                 r.update({"radio_m": round(m["radio_m"], 1),
                           "parapeto_m": round(m["parapeto_m"], 2),

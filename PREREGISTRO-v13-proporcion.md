@@ -30,13 +30,26 @@ entrenamiento.
 
 **Se submuestrean los positivos del corpus de v11p hasta el `8,9%` de v7**, sin
 tocar el fondo y **sin cortar una sola viñeta nueva**: es un cambio de índice
-sobre arrays que ya existen. Quedan `~1.263` positivos en entrenamiento, contra
-los `773` de v7 y los `2.343` de v11p.
+sobre arrays que ya existen, enlazados desde el corpus de v11p.
 
-Eso separa las dos variables que v11p tenía mezcladas:
+> **Corrección hecha al ejecutarlo, antes de entrenar.** Este preregistro predijo
+> `~1.263` positivos. El número real es **`1.016`**, porque el fondo de v11p
+> (`10.401`) es menor que el de v7 (`11.064`) y la proporción se calcula sobre él.
+> Eso cambia lo que mide el experimento y hay que decirlo:
 
-- **la cantidad** de positivos: `1.263` contra `773`, un `+63%`;
-- **la proporción**: la misma que v7.
+| | positivos en train | fondo | proporción | bloques con positivos |
+| --- | ---: | ---: | ---: | ---: |
+| v7 | `1.072` | `11.064` | `8,9%` | — |
+| **v13** | **`1.016`** | `10.401` | `8,9%` | **`904`** |
+| v11p | `3.795` | `10.401` | `26,7%` | — |
+
+Así que v13 **no tiene más positivos que v7: tiene los mismos y a la misma
+proporción**. Lo que cambia es de dónde salen — se sortean de un fondo `3,5×`
+mayor, estratificados por bloque, y quedan repartidos en `904` bloques.
+
+La variable que queda aislada es entonces **la cobertura geográfica de los
+positivos**, no su cantidad. Sigue siendo un experimento legítimo y con la misma
+lógica —¿era la proporción?— pero mide algo más estrecho de lo que se escribió.
 
 ## El listón
 

@@ -161,8 +161,21 @@ def evaluar(pred, truth, umbral, enlace_m, min_celdas, margen_m, tol_m, lat0,
     """
     sel = [p for p in pred if p["score"] >= umbral]
     if not sel:
-        return {"umbral": umbral, "detecciones": 0, "tp": 0, "fp": 0,
-                "fn": len(truth), "precision": 0.0, "recall": 0.0, "f1": 0.0}
+        # **Las mismas claves que la salida completa, sin excepción.** Esta rama
+        # devolvía siete de las doce, y con ellas `main` reventaba con
+        # `KeyError: 'recall_ci95'` en cuanto *ningún* umbral daba detecciones
+        # —que es justo cuando hace falta el diagnóstico y no una traza—. Pasó
+        # el 2026-08-10 evaluando el barrido truncado de v9 en Pontevedra: el
+        # aviso de cobertura ya estaba impreso y correcto, y la traza lo tapó.
+        # Se construye desde la misma lista de claves para que no puedan volver
+        # a separarse.
+        vacio = dict.fromkeys(
+            ["detecciones", "tp", "fp", "enmascaradas", "duplicadas"], 0)
+        vacio.update({"umbral": umbral, "fn": len(truth), "precision": 0.0,
+                      "recall": 0.0 if truth else float("nan"), "f1": 0.0,
+                      "recall_ci95": list(wilson(0, len(truth))) if truth
+                      else [0, 1]})
+        return vacio
 
     px, py = a_metros([p["lon"] for p in sel], [p["lat"] for p in sel], lat0)
     grupos = agrupar(px, py, enlace_m, min_vecinos)
@@ -184,6 +197,15 @@ def evaluar(pred, truth, umbral, enlace_m, min_celdas, margen_m, tol_m, lat0,
     if mascara:
         mx, my = a_metros([m["lon"] for m in mascara],
                           [m["lat"] for m in mascara], lat0)
+    # **Orden del bucle, auditado el 2026-08-09.** Se comprueba primero la verdad
+    # y se hace `continue`, asi que un yacimiento que este en las DOS listas
+    # cuenta como acierto aunque el modelo lo viera al entrenar. Medido: `1` de
+    # `63` en Lugo, `1` de `75` en A Coruna, `0` en Ourense y Pontevedra — **`2`
+    # de `214`**, un `0,9%`. El efecto maximo sobre cualquier cifra publicada es
+    # de un castro por bloque, asi que no invalida nada, pero **la mascara y la
+    # verdad deberian ser disjuntas por construccion** y hoy no lo son del todo.
+    # Comprobarlo con `scripts/auditar_mascara.py` antes de fiarse de un bloque
+    # nuevo, donde el solape podria ser mayor.
     encontrado = [False] * len(truth)
     tp = 0
     duplicadas = 0

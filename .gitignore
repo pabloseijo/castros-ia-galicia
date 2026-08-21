@@ -13,6 +13,11 @@ venv/
 .idea/
 .vscode/
 
+# Local secrets
+.env
+.env.*
+!.env.example
+
 # Heavy geospatial data
 data/external/**
 !data/external/README.md
@@ -76,3 +81,11 @@ data/triaje_*.tsv
 # Recortes de revision visual: la ortofoto y el relieve de un candidato no
 # verificado revelan su posicion igual que sus coordenadas. Misma politica.
 data/revision-visual-v1/
+
+# Derivados pesados del ingestor de Portugal: fichas PNG, chips y contact sheets.
+# Se regeneran con ficha_candidato.py / portugal_visual_ai_review.py.
+data/revision-portugal/
+data/fichas-test-consejo/
+data/entrada-portugal/
+data/dem-cache-*/
+data/laz-tanda-galicia/

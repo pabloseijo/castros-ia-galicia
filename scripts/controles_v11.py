@@ -1,10 +1,15 @@
 #!/usr/bin/env python3
-"""Los tres controles que el PREREGISTRO-v11 exige ANTES de mirar ningun F1.
+"""Los controles que hay que pasar ANTES de mirar ningun F1.
 
 Se escribe antes de que exista el corpus a proposito. Un control que se programa
 despues de ver el resultado se programa, sin querer, para no molestar.
 
-Los tres, y por que cada uno:
+Eran tres, los del PREREGISTRO-v11. El **cuarto se anadio el 2026-08-09**, y esa
+fecha es la unica parte incomoda de este fichero: llego despues de que tres
+experimentos —v11p, v13 y la descarga entera de `348 GB`— fracasaran por lo que
+ahora mide en un segundo.
+
+Los cuatro, y por que cada uno:
 
 1. **Integridad de la particion espacial.** Los splits de este proyecto son
    bloques geograficos: si un bloque aparece a la vez en `train` y en `val`, el
@@ -19,6 +24,12 @@ Los tres, y por que cada uno:
 3. **Precinto de Portugal.** Regla `15`. El norte de Portugal es el conjunto de
    prueba y no se mira. Cualquier viñeta al sur del paralelo de corte en un
    corpus de entrenamiento es una violacion del precinto.
+
+4. **Confusion espacial.** Ningun positivo debe vivir en un bloque del que no
+   haya nada de fondo. Si un paisaje solo aparece dentro de viñetas de castro, el
+   modelo puede acertar reconociendo el sitio en vez del yacimiento — y ese atajo
+   no existe en el barrido real, donde cada castro compite contra las celdas de
+   su propio bloque.
 
 Sale con codigo distinto de cero si falla cualquiera: asi una cadena puede
 frenar sola en vez de entrenar sobre un corpus roto.
@@ -100,8 +111,18 @@ def control_particion(filas) -> bool:
     return True
 
 
-def control_validacion(nuevas, ref) -> bool:
-    """El conjunto de validacion debe ser el mismo que el de la referencia."""
+def control_validacion(nuevas, ref, a_proposito: str | None = None) -> bool:
+    """El conjunto de validacion debe ser el mismo que el de la referencia.
+
+    Con `a_proposito` se declara que el corpus reparte de otra forma **a
+    sabiendas** —v14 lo hace, porque su razon de ser es sacar del examen la
+    confusion espacial que tenia v11p—. Entonces esto baja de fallo a desviacion
+    declarada: sigue imprimiendose y sigue prohibiendo comparar `selection_best`
+    con versiones anteriores, pero no bloquea el entrenamiento.
+
+    **Sin declararlo sigue siendo un fallo**, que es lo que evita el error
+    facil: cambiar el reparto sin darse cuenta y creer que la nota subio.
+    """
     def val_sids(filas):
         return {r["sid"] for r in filas if r.get("split") == "val"}
     a, b = val_sids(nuevas), val_sids(ref)
@@ -109,9 +130,70 @@ def control_validacion(nuevas, ref) -> bool:
     if a == b:
         print("  OK: mismo conjunto de validacion, la comparacion es limpia")
         return True
+    if a_proposito:
+        print(f"  DESVIACION DECLARADA: {len(a-b)} solo en el nuevo, "
+              f"{len(b-a)} solo en la referencia")
+        print(f"      razon: {a_proposito}")
+        print("      selection_best NO es comparable; lo que vale es el despliegue")
+        return True
     print(f"  *** FALLA: {len(a-b)} solo en el nuevo, {len(b-a)} solo en la referencia ***")
     print("      selection_best NO es comparable con las versiones anteriores")
     return False
+
+
+def control_confusion_espacial(filas, tope=0.10) -> bool:
+    """Ningun positivo debe vivir en un bloque del que no haya nada de fondo.
+
+    **Anadido el 2026-08-09**, y es el control que le faltaba al proyecto. v11p y
+    v13 tenian el `53%` de sus positivos en bloques de los que el modelo no veia
+    ni una viñeta de fondo, y en su conjunto de validacion la cifra era del
+    `72%`. Eso no es una fuga —nada del examen esta en el entrenamiento— pero
+    hace la tarea del examen mas facil que la del despliegue: si un paisaje solo
+    aparece dentro de viñetas de castro, **basta reconocer el sitio para acertar,
+    sin aprender el yacimiento**.
+
+    En el barrido real el atajo desaparece, porque el barrido recorre todas las
+    celdas del bloque, castro incluido. De ahi la contradiccion que costo tres
+    experimentos entender: v11p sacaba mejor validacion que v7 (`0,72`-`0,81`
+    contra `0,46`) y peor despliegue.
+
+    En la taxonomia de Kapoor y Narayanan (`10.1016/j.patter.2023.100804`) es
+    **`L3.2`**: el conjunto de evaluacion no representa la poblacion de
+    despliegue. Sus positivos y sus negativos no salen de la misma poblacion.
+
+    Se mide **por split**, porque el de `val` es el que envenena la metrica. El
+    tope por defecto (`10%`) esta por encima del `3%` de v7 y muy por debajo del
+    `53%` de v11p: separa lo sano de lo roto sin ser quisquilloso.
+
+    La regla que se deriva, para quien construya corpus: **al cortar una viñeta
+    de castro hay que cortar fondo de su mismo bloque.**
+    """
+    print("\n[4] confusion espacial: positivos sin fondo en su propio bloque")
+    ok = True
+    for split in ("train", "val"):
+        pos, neg = Counter(), Counter()
+        for r in filas:
+            if (r.get("split") or "").strip() != split:
+                continue
+            b = (r.get("block") or "").strip()
+            if (r.get("group") or "").startswith("castro"):
+                pos[b] += 1
+            else:
+                neg[b] += 1
+        total = sum(pos.values())
+        if not total:
+            continue
+        huerfanos = sum(pos[b] for b in set(pos) - set(neg))
+        frac = huerfanos / total
+        marca = "OK " if frac <= tope else "***"
+        print(f"  {marca} {split:<6} {huerfanos:>5}/{total:<5} ({100*frac:>3.0f}%)"
+              f"   tope {100*tope:.0f}%")
+        if frac > tope:
+            ok = False
+    if not ok:
+        print("      *** FALLA: el modelo puede acertar reconociendo el paisaje ***")
+        print("      corta fondo de los mismos bloques de donde salen los positivos")
+    return ok
 
 
 def control_precinto(filas, truth: Path, radio=300.0) -> bool:
@@ -167,8 +249,21 @@ def main() -> int:
     ap.add_argument("--nuevo", type=Path, required=True)
     ap.add_argument("--referencia", type=Path,
                     default=Path("data/galicia-vignettes-v7"))
+    ap.add_argument(
+        "--val-distinta-a-proposito", metavar="RAZON", default=None,
+        help="Declara que el corpus reparte la validacion de otra forma A "
+             "PROPOSITO. El control [2] sigue ejecutandose y se imprime, pero "
+             "baja de fallo a desviacion declarada: lo que impide es comparar "
+             "`selection_best` con versiones anteriores, no entrenar. Exige "
+             "escribir la razon, que queda en la salida. Sin esto, una "
+             "validacion distinta sigue siendo un fallo.")
     ap.add_argument("--precinto", type=Path,
                     default=Path("data/portugal-test_truth_limpia.tsv"))
+    ap.add_argument("--tope-confusion", type=float, default=0.10,
+                    help="Fraccion maxima de positivos que puede vivir en un "
+                         "bloque sin nada de fondo, por split. Por defecto "
+                         "`0.10`: por encima del `3%%` de v7 y muy por debajo "
+                         "del `53%%` de v11p.")
     args = ap.parse_args()
 
     nuevas, ref = leer(args.nuevo), leer(args.referencia)
@@ -184,9 +279,13 @@ def main() -> int:
           f"| dosis x{pn/max(pr,1):.2f}")
     print(f"grupos del nuevo: {dict(Counter((r.get('group') or '').split('_')[0] for r in nuevas).most_common(6))}")
 
+    # `all()` con una lista, no con un generador: los cuatro controles tienen que
+    # ejecutarse e imprimirse aunque el primero falle. Con cortocircuito, un fallo
+    # en el `[1]` esconderia el estado del precinto, que es lo que mas importa ver.
     ok = all([control_particion(nuevas),
-              control_validacion(nuevas, ref),
-              control_precinto(nuevas, args.precinto)])
+              control_validacion(nuevas, ref, args.val_distinta_a_proposito),
+              control_precinto(nuevas, args.precinto),
+              control_confusion_espacial(nuevas, args.tope_confusion)])
     print("\n" + ("=" * 60))
     print("TODOS LOS CONTROLES PASAN: se puede entrenar" if ok
           else "HAY CONTROLES QUE FALLAN: NO entrenar hasta arreglarlo")

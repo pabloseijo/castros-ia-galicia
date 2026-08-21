@@ -131,7 +131,13 @@ def cortar_desde_dem(args_tuple):
     Con la caché de `laz_a_dem.py` cada tesela se descomprimió **una vez**, y
     aquí solo se recorta del ráster.
 
-    **No está lista, y el motivo está medido.** Comparada contra la vía del
+    **ACTIVA desde el 2026-08-11.** `verificar_dem.py` da correlación de canales
+    `1,000000` y diferencia absoluta `0,0000` en las `25` celdas comparadas.
+
+    Lo que sigue se conserva porque el diagnóstico costó y la conclusión que se
+    sacó entonces era **la contraria de la verdadera**:
+
+    **Lo que se creía, y era falso.** Comparada contra la vía del
     `.laz` sobre las mismas celdas: la orientación es correcta —correlación
     `0.987` tal cual, frente a `0.16` volteada— pero queda una diferencia media
     de `0,23 m` de cota, y tras `channels_from_dem`, que normaliza por ventana,
@@ -147,6 +153,20 @@ def cortar_desde_dem(args_tuple):
     tocar la caché: así ambos binados caen en la misma retícula y el recorte es
     exacto. Queda pendiente de hacer y de volver a pasar `verificar_dem.py`, que
     es quien cazó esto.
+
+    **Y la causa real, medida el 2026-08-11: era el barrido, no la caché.**
+    Alinear la rejilla subió el peor caso de `0,53` a `0,91` y ahí se quedó.
+    Comparando las dos vías contra el mismo cálculo hecho a mano en `float64`:
+
+    - la **caché** daba correlación `1,000000` y diferencia media `0,000 m`;
+    - la vía del **`.laz`** daba `0,914`-`0,972`.
+
+    Es decir, los números que este guion llevaba desde el `2026-08-06`
+    atribuyéndole a la caché **eran la imprecisión del propio barrido**.
+    `_puntos_de_tesela` casteaba `x` e `y` a `float32`, y a `632.000 m` eso son
+    `6,25 cm` de resolución: **el `3,13%` de los puntos caía en otra celda de
+    `1 m`**. `--dem-dir` llevaba dos meses desactivado **por ser más preciso que
+    su referencia**.
     """
     # Las tareas se arman en un solo sitio y llevan siete elementos; esta via
     # solo usa los cuatro primeros. Se desempaqueta con holgura para no reventar
@@ -160,7 +180,24 @@ def cortar_desde_dem(args_tuple):
             z = np.load(dp)
         except Exception:
             continue
-        trozos.append((z["dem"], z["bounds"], float(z["res"])))
+        # **Se deshace el relleno de la tesela.** El `.npz` guarda el DEM ya
+        # relleno por vecino más próximo **dentro de la tesela**, y también la
+        # máscara `valida` de las celdas con retorno real. Si se usa el DEM tal
+        # cual, `isfinite` es casi todo cierto, el relleno por ventana de más
+        # abajo no tiene nada que hacer, y los huecos se quedan con el vecino de
+        # la tesela en vez del de la ventana.
+        #
+        # Medido el 2026-08-11 y esa era la causa de que `--dem-dir` no
+        # reprodujera el camino del `.laz`: la correlación entre «cuántos huecos
+        # tiene la celda» y «cuánto se parecen las dos vías» es **`-0,899`** —de
+        # `0,991` con un `19,6%` de huecos a `0,933` con un `58,6%`—. Y la
+        # mediana de huecos es del `31,3%`: un tercio de cada celda no tiene ni
+        # un retorno de suelo a `1 m`, así que esto no es un detalle de borde.
+        _dem = np.asarray(z["dem"], dtype=np.float32)
+        if "valida" in z.files:
+            _dem = _dem.copy()
+            _dem[~np.asarray(z["valida"], dtype=bool)] = np.nan
+        trozos.append((_dem, z["bounds"], float(z["res"])))
     if not trozos:
         return []
     salida = []
@@ -219,6 +256,17 @@ _CACHE_ORDEN = []
 _CACHE_MAX = 8
 _CACHE_STATS = {}
 
+# Techo de los resultados en vuelo dentro de un obrero, en bytes. Ver la nota
+# larga junto a `chunk` en `main`: `map(chunksize=N)` retiene los resultados de
+# las `N` tareas antes de devolver la primera, y ahí es donde murió v9.
+#
+# `1,2 GB` y no más porque en `oval-server` el reparto es: `8 GB` de sistema,
+# el barrido corre bajo un `scope` de `6 GB`, y dentro de ese hueco hay que
+# meter torch y su contexto CUDA, la caché de teselas (`8 x 25 MB`) y el propio
+# intérprete en padre y obrero. Es un tope, no un objetivo: cuando el modelo
+# tiene tres canales el reparto entre obreros manda mucho antes que esto.
+PRESUPUESTO_RESULTADOS = 1.2 * 1024**3
+
 
 def _puntos_de_tesela(tp, laspy):
     """Puntos de suelo de una tesela, con caché LRU dentro del obrero.
@@ -267,8 +315,30 @@ def _puntos_de_tesela(tp, laspy):
                 keep = np.asarray(puntos.classification) == GROUND_CLASS
                 if not keep.any():
                     continue
-                xs_l.append(np.asarray(puntos.x)[keep].astype(np.float32))
-                ys_l.append(np.asarray(puntos.y)[keep].astype(np.float32))
+                # **`x` e `y` en `float64`; solo `z` baja a `float32`.**
+                #
+                # Una coordenada UTM ronda los `632.000 m`, y ahí la resolución
+                # de `float32` es de **`6,25 cm`**. Medido el 2026-08-11: eso
+                # mueve el **`3,13%` de los puntos a otra celda de `1 m`**, y es
+                # la causa entera de que la vía del `.laz` no coincidiera con la
+                # caché de DEM. Comparadas contra el mismo cálculo en `float64`:
+                # la caché da correlación **`1,000000`** y la vía del `.laz`,
+                # **`0,914`-`0,972`** — exactamente los números que
+                # `verificar_dem.py` llevaba desde el 2026-08-06 atribuyéndole a
+                # la caché. **El que estaba mal era el barrido**, y `--dem-dir`
+                # llevaba desactivado por ser más preciso que su referencia.
+                #
+                # `z` sí puede quedarse en `float32`: una cota ronda los
+                # `1.000 m` y ahí la resolución es de `0,06 mm`.
+                #
+                # El coste de memoria es despreciable y está medido: `1,7 M`
+                # puntos por tesela, `4` bytes más en dos arrays = `13,6 MB`
+                # por tesela, `109 MB` con la caché de ocho llena. El comentario
+                # que justificaba el `float32` hablaba de «caber en 8 GB» y se
+                # refería a **no cargar teselas enteras**, que es otra cosa y
+                # sigue arreglada por el filtrado al recuadro de más abajo.
+                xs_l.append(np.asarray(puntos.x)[keep])
+                ys_l.append(np.asarray(puntos.y)[keep])
                 zs_l.append(np.asarray(puntos.z)[keep].astype(np.float32))
     except Exception:
         return None
@@ -374,14 +444,18 @@ def main() -> int:
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--laz-dir", type=Path, nargs="+", required=True)
     ap.add_argument("--dem-dir", type=Path, default=None,
-                    help="caché de DEM de laz_a_dem.py. NO USAR TODAVÍA: la "
-                         "rejilla del barrido no está alineada con el ráster y "
-                         "sale un desfase sub-píxel. Ver la nota en "
-                         "`cortar_desde_dem`")
+                    help="caché de DEM de laz_a_dem.py. ACTIVA desde el "
+                         "2026-08-11: verificada equivalente al .laz con "
+                         "correlación 1,000000 y diferencia 0,0000. Ahorra el "
+                         "87,6% del coste del barrido y 72x de almacenamiento")
     ap.add_argument("--checkpoint", type=Path, required=True)
     ap.add_argument("--out", type=Path, required=True)
     ap.add_argument("--bbox", type=float, nargs=4, required=True,
                     metavar=("W", "S", "E", "N"))
+    ap.add_argument("--grid-crs", default="EPSG:25829",
+                    help="CRS de trabajo de la rejilla y de los LAZ. Galicia "
+                         "usa EPSG:25829; el LiDAR portugués de la DGT usa "
+                         "EPSG:3763")
     ap.add_argument("--extent-m", type=float, default=512.0)
     ap.add_argument("--step-m", type=float, default=None,
                     help="por defecto media ventana, como Landauer y Canedo")
@@ -437,8 +511,10 @@ def main() -> int:
 
     # --- rejilla ---
     w, s, e, n = args.bbox
-    x0, y0 = lonlat_to_utm29(w, s)
-    x1, y1 = lonlat_to_utm29(e, n)
+    from pyproj import Transformer
+    to_grid = Transformer.from_crs("EPSG:4326", args.grid_crs, always_xy=True)
+    x0, y0 = to_grid.transform(w, s)
+    x1, y1 = to_grid.transform(e, n)
     # **Alinear la rejilla a metro entero de UTM.** `lonlat_to_utm29` devuelve una
     # coordenada arbitraria, mientras que la caché de DEM bina desde el borde de
     # su tesela redondeado a entero (`np.floor(x.min())`). Con los dos orígenes
@@ -455,8 +531,7 @@ def main() -> int:
     y0 = float(math.floor(y0 / res) * res)
     x1 = float(math.ceil(x1 / res) * res)
     y1 = float(math.ceil(y1 / res) * res)
-    from pyproj import Transformer
-    inv = Transformer.from_crs("EPSG:25829", "EPSG:4326", always_xy=True)
+    inv = Transformer.from_crs(args.grid_crs, "EPSG:4326", always_xy=True)
     celdas = []
     yy = y0
     while yy <= y1:
@@ -496,7 +571,7 @@ def main() -> int:
             grupos.setdefault(toca, []).append(c)
         tiles = [f for f, *_ in cajas]
     else:
-        tiles = sorted({str(p) for d in args.laz_dir for p in Path(d).glob("*.laz")})
+        tiles = sorted({str(p) for d in args.laz_dir for p in Path(d).rglob("*.laz")})
         grupos, huerfanas = group_samples_by_tiles(celdas, tiles, args.extent_m)
     cubiertas = sum(len(v) for v in grupos.values())
     print(f"teselas: {len(tiles)} | celdas con LiDAR: {cubiertas} | "
@@ -628,10 +703,38 @@ def main() -> int:
         # ejecución. Se ve como una mejora pobre —`132 s` a `116 s` en vez del
         # `1,75x` esperado— y no como el fallo que es. Con tres lotes por obrero
         # hay margen para que ninguno acabe antes y quede ocioso.
-        chunk = max(1, min(args.chunk, len(tareas) // (args.workers * 3) or 1))
+        # **Y tampoco puede ser mayor de lo que cabe en memoria.** `map` con
+        # `chunksize=N` hace que el obrero calcule **las N tareas enteras antes
+        # de devolver nada**, así que los resultados de N tareas viven a la vez
+        # en el obrero. El consumidor de abajo es cuidadoso —vacía cada `batch`
+        # celdas— pero eso no ayuda: la acumulación ocurre al otro lado del
+        # tubo, antes de que él vea la primera.
+        #
+        # Mató el barrido de v9 en Pontevedra el 2026-08-10, y la cuenta salió
+        # exacta: `512x512` celdas por `7` canales en `float16` son `3,67 MB`
+        # por celda, por `12` celdas de tarea y `100` tareas de lote = `4,4 GB`.
+        # El `dmesg` registró `anon-rss:4432920kB`. **Con los `3` canales de v7
+        # la misma cuenta da `1,9 GB` y cabía**: por eso este fallo no existía
+        # hasta que un modelo pidió siete canales, y por eso el barrido de v7
+        # sobre este mismo bloque sí terminó. No es un fallo de Pontevedra —sus
+        # teselas pesan lo mismo que las de Lugo, medido— sino del número de
+        # canales.
+        #
+        # El presupuesto es deliberadamente pequeño. La GPU consume lotes de
+        # `batch` celdas, así que un lote grande de tareas no acelera nada por
+        # sí mismo: solo sirve para que las tareas vecinas compartan caché de
+        # teselas, y ese reúso ya se agota mucho antes de `100`.
+        bytes_celda = (args.extent_m / args.res_m) ** 2 * in_ch * 2
+        por_tarea = bytes_celda * args.max_celdas_tarea
+        cabe = max(1, int(PRESUPUESTO_RESULTADOS / (por_tarea * args.workers)))
+        por_reparto = len(tareas) // (args.workers * 3) or 1
+        chunk = max(1, min(args.chunk, por_reparto, cabe))
         if chunk != args.chunk:
-            print(f"  lote ajustado a {chunk} para que los {args.workers} "
-                  f"obreros tengan trabajo ({len(tareas)} tareas)", flush=True)
+            razon = "memoria" if cabe <= por_reparto else "reparto entre obreros"
+            print(f"  lote ajustado a {chunk} por {razon} "
+                  f"({len(tareas)} tareas, {in_ch} canales, "
+                  f"{por_tarea/1048576:.0f} MB por tarea, caben {cabe})",
+                  flush=True)
         resultados = ex.map(cortador, tareas, chunksize=chunk)
         lote_meta, lote_arr = [], []
 
