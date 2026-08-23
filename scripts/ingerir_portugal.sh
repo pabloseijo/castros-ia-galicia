@@ -20,7 +20,7 @@ cd "$(dirname "$0")/.." || exit 1
 ENTRADA=data/entrada-portugal
 LOG=logs/ingerir_portugal.log
 KEEP_INPUT=${PORTUGAL_KEEP_INPUT:-0}
-say() { echo "[$(date +%F\ %H:%M)] $*" | tee -a "$LOG"; }
+say() { echo "[$(date +%F\ %H:%M)] $*" >> "$LOG"; }
 
 [ -d "$ENTRADA" ] || { say "no existe $ENTRADA — nada que ingerir"; exit 0; }
 
@@ -103,8 +103,12 @@ PY
       say "  --- bot morfologico Portugal top 100 ---"
       .venv-gpu/bin/python scripts/triage_morfologico.py \
         --puntos "$OUT" --laz-dir "$D" --crs EPSG:3763 --out "$MORFO" \
-        --workers "${PORTUGAL_MORFO_WORKERS:-3}" >> "$LOG" 2>&1
-      say "  morfo filas=$(wc -l < "$MORFO" 2>/dev/null || echo 0)"
+        --workers "${PORTUGAL_MORFO_WORKERS:-1}" >> "$LOG" 2>&1
+      MF=$(wc -l < "$MORFO" 2>/dev/null || echo 0)
+      say "  morfo filas=$MF"
+      # El triaje murio por OOM en 5 de las 13 primeras ordenes y el guion
+      # seguia como si nada. Que al menos quede gritado en el log.
+      [ "$MF" -le 1 ] && say "  *** AVISO: el triaje morfologico NO produjo nada (probable OOM). La orden sigue siendo valida: el entregable es la fusion. ***"
     else
       say "  --- bot morfologico ya existe ($(wc -l < "$MORFO") filas) ---"
     fi

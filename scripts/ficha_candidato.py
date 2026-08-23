@@ -196,11 +196,52 @@ def pico_del_perfil(rs, perf, rmin_m=25.0):
     return int(j), contraste
 
 
+def puntos_desde_cache(dem_dir, bbox):
+    """(X, Y, Z) de las celdas validas de la cache dentro de bbox.
+
+    Un punto por celda: `grid_from_points` los vuelve a rejillar y sale el mismo
+    DEM, de modo que el resto del guion no cambia.
+    """
+    minx, miny, maxx, maxy = bbox
+    xs, ys, zs = [], [], []
+    for f in sorted(Path(dem_dir).glob("*.npz")):
+        try:
+            d = np.load(f)
+            b = d["bounds"]
+        except Exception:
+            continue
+        if b[2] < minx or b[0] > maxx or b[3] < miny or b[1] > maxy:
+            continue
+        dem = d["dem"]
+        res_c = float(d["res"])
+        h, w = dem.shape
+        gx = b[0] + (np.arange(w) + 0.5) * res_c
+        gy = b[3] - (np.arange(h) + 0.5) * res_c
+        MX, MY = np.meshgrid(gx, gy)
+        val = np.isfinite(dem)
+        if "valida" in d.files:
+            try:
+                val = val & np.asarray(d["valida"], dtype=bool)
+            except Exception:
+                pass
+        m = val & (MX >= minx) & (MX <= maxx) & (MY >= miny) & (MY <= maxy)
+        if not m.any():
+            continue
+        xs.append(MX[m].astype(np.float32))
+        ys.append(MY[m].astype(np.float32))
+        zs.append(dem[m].astype(np.float32))
+    if not xs:
+        return None
+    return np.concatenate(xs), np.concatenate(ys), np.concatenate(zs)
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--candidatos", type=Path, required=True)
-    ap.add_argument("--laz-dir", type=Path, nargs="+", required=True)
+    ap.add_argument("--laz-dir", type=Path, nargs="+", default=[])
+    ap.add_argument("--dem-dir", type=Path, default=None,
+                    help="cache .npz de laz_a_dem.py, alternativa a --laz-dir")
     ap.add_argument("--out", type=Path, required=True)
     ap.add_argument("--lado-m", type=float, default=600.0)
     ap.add_argument("--res-m", type=float, default=1.0)
@@ -254,12 +295,27 @@ def main() -> int:
         x, y = lonlat_to_utm29(float(r["lon"]), float(r["lat"]))
         celdas.append({"id": i, "x": x, "y": y,
                        "lon": float(r["lon"]), "lat": float(r["lat"])})
-    tiles = sorted(str(p) for d in args.laz_dir for p in Path(d).glob("*.laz"))
-    grupos, _ = group_samples_by_tiles(celdas, tiles, L + 40)
+    if args.dem_dir:
+        # un grupo por candidato: la cache se lee por recuadro y es barata
+        grupos = {("__cache__%d" % c["id"],): [c] for c in celdas}
+    else:
+        if not args.laz_dir:
+            raise SystemExit("hace falta --laz-dir o --dem-dir")
+        tiles = sorted(str(p) for d in args.laz_dir for p in Path(d).glob("*.laz"))
+        grupos, _ = group_samples_by_tiles(celdas, tiles, L + 40)
 
     resumen = []
     for tp, cs in grupos.items():
         xs, ys, zs = [], [], []
+        if args.dem_dir:
+            h0 = L / 2.0 + 20
+            c0 = cs[0]
+            got = puntos_desde_cache(
+                args.dem_dir,
+                (c0["x"] - h0, c0["y"] - h0, c0["x"] + h0, c0["y"] + h0))
+            if got is not None:
+                xs, ys, zs = [got[0]], [got[1]], [got[2]]
+            tp = ()
         for t in tp:
             try:
                 with laspy.open(t) as fh:

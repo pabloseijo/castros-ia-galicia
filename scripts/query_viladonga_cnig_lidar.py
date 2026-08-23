@@ -201,7 +201,10 @@ def query_archivos_serie(series_code: str, lon: str, lat: str) -> tuple[str, lis
         "referCatastral": "",
         "orderBy": "",
     }
-    text = get_url(ARCHIVOS_SERIE_URL, params=params).decode("utf-8", "replace")
+    # El CNIG devuelve 403 a GET en este endpoint desde el 2026-08-23; los
+    # mismos parametros por POST devuelven 200 con los 67 KB de siempre.
+    # Medido con curl, mismos params y misma maquina en el mismo instante.
+    text = get_url(ARCHIVOS_SERIE_URL, data=params).decode("utf-8", "replace")
     total_match = re.search(r'id="totalArchivos"\s+name="totalArchivos"\s+value="([^"]*)"', text)
     total = total_match.group(1) if total_match else ""
     files = re.findall(

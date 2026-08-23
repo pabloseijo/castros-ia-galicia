@@ -1,0 +1,126 @@
+{
+  "config": {
+    "pred": "data/sweep_test_portugal_TODO_fusion.tsv",
+    "truth": "data/precinto-portugal-cubiertos.tsv",
+    "tolerancia_m": 500.0,
+    "enlace_m": 512.0,
+    "min_vecinos": 1,
+    "min_celdas": 1,
+    "margen_m": 0.0,
+    "umbrales": [
+      0.053765,
+      0.048087,
+      0.040078,
+      0.031259,
+      0.023214,
+      0.015999
+    ],
+    "romper_precinto": "Tercera lectura, correccion de cobertura: 15 de los 144 castros no tienen ninguna celda barrida a menos de 512 m -huecos de la nube LiDAR o borde de rectangulo- y contarlos como fallo mide la descarga, no el modelo. Aqui la verdad son los 129 que el barrido pudo ver. Sin ningun ajuste del modelo.",
+    "mascara": null,
+    "out_json": "data/precinto-resultado-v3.json"
+  },
+  "resultados": [
+    {
+      "umbral": 0.053765,
+      "detecciones": 89,
+      "tp": 31,
+      "fp": 58,
+      "enmascaradas": 0,
+      "duplicadas": 0,
+      "fn": 98,
+      "precision": 0.34831460674157305,
+      "recall": 0.24031007751937986,
+      "f1": 0.28440366972477066,
+      "recall_ci95": [
+        0.17477325899385898,
+        0.3208666610311934
+      ],
+      "vpp_tasa_real": 0.3074716854042117
+    },
+    {
+      "umbral": 0.048087,
+      "detecciones": 165,
+      "tp": 41,
+      "fp": 124,
+      "enmascaradas": 0,
+      "duplicadas": 0,
+      "fn": 88,
+      "precision": 0.24848484848484848,
+      "recall": 0.3178294573643411,
+      "f1": 0.27891156462585037,
+      "recall_ci95": [
+        0.24373941678304956,
+        0.4024557509957185
+      ],
+      "vpp_tasa_real": 0.21547732117587187
+    },
+    {
+      "umbral": 0.040078,
+      "detecciones": 303,
+      "tp": 54,
+      "fp": 248,
+      "enmascaradas": 0,
+      "duplicadas": 1,
+      "fn": 75,
+      "precision": 0.17880794701986755,
+      "recall": 0.4186046511627907,
+      "f1": 0.25058004640371234,
+      "recall_ci95": [
+        0.33703226754400983,
+        0.5048847223145887
+      ],
+      "vpp_tasa_real": 0.15316955058511006
+    },
+    {
+      "umbral": 0.031259,
+      "detecciones": 543,
+      "tp": 70,
+      "fp": 472,
+      "enmascaradas": 0,
+      "duplicadas": 1,
+      "fn": 59,
+      "precision": 0.12915129151291513,
+      "recall": 0.5426356589147286,
+      "f1": 0.20864381520119227,
+      "recall_ci95": [
+        0.456675986048851,
+        0.6261294002156924
+      ],
+      "vpp_tasa_real": 0.10968193878632586
+    },
+    {
+      "umbral": 0.023214,
+      "detecciones": 940,
+      "tp": 79,
+      "fp": 860,
+      "enmascaradas": 0,
+      "duplicadas": 1,
+      "fn": 50,
+      "precision": 0.08413205537806177,
+      "recall": 0.6124031007751938,
+      "f1": 0.14794007490636704,
+      "recall_ci95": [
+        0.5262377936886841,
+        0.6920673155542038
+      ],
+      "vpp_tasa_real": 0.07089677818894959
+    },
+    {
+      "umbral": 0.015999,
+      "detecciones": 1411,
+      "tp": 84,
+      "fp": 1322,
+      "enmascaradas": 0,
+      "duplicadas": 5,
+      "fn": 45,
+      "precision": 0.059743954480796585,
+      "recall": 0.6511627906976745,
+      "f1": 0.10944625407166124,
+      "recall_ci95": [
+        0.5656250208608535,
+        0.7279577122588923
+      ],
+      "vpp_tasa_real": 0.050135284064933956
+    }
+  ]
+}
