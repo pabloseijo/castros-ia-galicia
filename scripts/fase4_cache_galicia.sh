@@ -36,6 +36,7 @@ TMP_LAZ=data/laz-tanda-galicia
 BLOQUES=data/bloques_galicia.txt
 ESTADO=data/estado-fase4.json
 MIN_DISCO_GB=120        # mas alto que la fase 3: aqui una tanda son ~40 GB
+CONV_WORKERS=6          # lo ajusta la guarda de abajo
 MIN_RAM_MB=2500
 
 say(){ echo "[$(date '+%Y-%m-%d %H:%M')] $*" >> "$LOG"; }
@@ -51,11 +52,28 @@ if [ -f data/.fase4-en-pausa ]; then
 fi
 
 # --- la fase 3 manda ---
-# Cede solo ante un BARRIDO, que es lo que come CPU, GPU y memoria. Una
-# descarga de Portugal solo comparte ancho de banda, y desde que el precinto
-# se rompio el 2026-08-23 no hay razon para que la fase 4 espere por ella.
-if pgrep -f "python.*sweep_grid_lidar.py --laz-dir data/entrada-portugal" >/dev/null; then
-  exit 0
+# La fase 4 ya NO se aparta cuando Portugal barre: son recursos distintos —el
+# barrido usa GPU, la conversion usa CPU— y esperar deja la maquina a medio
+# gas. En vez de cederle el sitio, se hace pequena.
+#
+# La guarda no desaparece porque el riesgo de esta maquina no es la CPU: son
+# los 8 GB. Dos barridos juntos dejaron 167 MB libres y 2,9 GB de swap el
+# 2026-08-19, y el triaje morfologico murio por OOM en 5 de 13 ordenes.
+# Se le pregunta a la GPU, no al listado de procesos: `pgrep -f` da falsos
+# positivos cuando un ancestro lleva el patron en su cmdline —una sesion SSH
+# que lo mencione basta— y eso ya costo tres diagnosticos equivocados.
+# nvidia-smi devuelve quien tiene contexto abierto en la GPU y no puede
+# confundirse consigo mismo. El pgrep queda de respaldo por si nvidia-smi
+# falla o el barrido corriera en CPU.
+GPU_OCUPADA=$(nvidia-smi --query-compute-apps=pid --format=csv,noheader 2>/dev/null | grep -c . || echo 0)
+if [ "${GPU_OCUPADA:-0}" -gt 0 ] \
+   || pgrep -f "python.*sweep_grid_lidar.py --laz-dir data/entrada-portugal" >/dev/null; then
+  CONV_WORKERS=2
+  MIN_RAM_MB=3000        # mas exigente: hay un barrido comiendo memoria
+  say "    (Portugal esta barriendo: 2 obreros y umbral de RAM alto)"
+else
+  CONV_WORKERS=6
+  MIN_RAM_MB=2500
 fi
 
 # --- ¿ha terminado la fase 3? ---
@@ -138,7 +156,7 @@ fi
 
 # --borrar-laz: el LAZ se tira en cuanto su .npz esta escrito
 if .venv-gpu/bin/python scripts/laz_a_dem.py --laz-dir "$TMP_LAZ/$SIG" --out "$CACHE" \
-     --workers 6 --borrar-laz >> "$LOG" 2>&1; then
+     --workers "$CONV_WORKERS" --borrar-laz >> "$LOG" 2>&1; then
   touch "$CACHE/.hecho-$SIG"
   say "    cache OK | teselas totales: $(ls "$CACHE"/*.npz 2>/dev/null | wc -l) | $(du -sh "$CACHE" | cut -f1)"
 else
