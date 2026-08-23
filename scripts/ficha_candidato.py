@@ -235,6 +235,25 @@ def puntos_desde_cache(dem_dir, bbox):
     return np.concatenate(xs), np.concatenate(ys), np.concatenate(zs)
 
 
+_TRANS = {}
+
+
+def _proyecta(lon, lat, crs=None):
+    """Proyecta a un CRS arbitrario, cacheando el transformador.
+
+    Se cachea porque construir un Transformer abre proj.db y cuesta
+    milisegundos; llamado una vez por candidato, a escala de miles se nota.
+    """
+    from pyproj import Transformer
+    crs = crs or _proyecta.crs
+    if crs not in _TRANS:
+        _TRANS[crs] = Transformer.from_crs("EPSG:4326", crs, always_xy=True)
+    return _TRANS[crs].transform(lon, lat)
+
+
+_proyecta.crs = "EPSG:25829"
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
@@ -247,7 +266,12 @@ def main() -> int:
     ap.add_argument("--res-m", type=float, default=1.0)
     ap.add_argument("--max", type=int, default=0)
     ap.add_argument("--sin-orto", action="store_true")
+    ap.add_argument("--crs", default="EPSG:25829",
+                    help="CRS proyectado de los datos. Galicia/PNOA: EPSG:25829. "
+                         "Portugal/DGT: EPSG:3763. La ortofoto del PNOA solo "
+                         "existe en 25829, asi que fuera de Espana usa --sin-orto.")
     args = ap.parse_args()
+    _proyecta.crs = args.crs
     args.out.mkdir(parents=True, exist_ok=True)
 
     import matplotlib
@@ -292,7 +316,10 @@ def main() -> int:
     L, res = args.lado_m, args.res_m
     celdas = []
     for i, r in enumerate(filas):
-        x, y = lonlat_to_utm29(float(r["lon"]), float(r["lat"]))
+        if args.crs.upper().endswith("25829"):
+            x, y = lonlat_to_utm29(float(r["lon"]), float(r["lat"]))
+        else:
+            x, y = _proyecta(float(r["lon"]), float(r["lat"]))
         celdas.append({"id": i, "x": x, "y": y,
                        "lon": float(r["lon"]), "lat": float(r["lat"])})
     if args.dem_dir:
