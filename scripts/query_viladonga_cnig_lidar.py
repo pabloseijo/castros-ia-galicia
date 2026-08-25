@@ -250,7 +250,13 @@ def parse_detail(sec: str) -> dict[str, str]:
 
 def init_download(sec: str) -> str:
     try:
-        payload = get_url(INIT_DESCARGA_URL, params={"secuencial": sec}).decode("utf-8", "replace")
+        # POST, non GET. O CNIG empezou a devolver 403 en `initDescargaDir`
+        # cando se lle pregunta por GET; con POST responde 200 e o JSON
+        # normal. E o mesmo cambio que xa fixera falta en
+        # `query_archivos_serie`: alli arranxouse e aqui quedou sen tocar,
+        # e por iso a cache de Galicia levaba desde o 2026-08-22 marcando
+        # bloques como "mar ou fora de cobertura" sen baixar unha tesela.
+        payload = get_url(INIT_DESCARGA_URL, data={"secuencial": sec}).decode("utf-8", "replace")
         parsed = json.loads(payload)
     except Exception as exc:
         return f"init_error:{exc}"

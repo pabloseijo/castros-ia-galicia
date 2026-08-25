@@ -29,6 +29,29 @@ esperar_descarga(){
   done
 }
 
+# Comproba que hai rede E que o servidor da DGT responde. Devolve 1 se tras
+# agardar segue sen habela.
+#
+# Existe porque o 2026-08-24 un corte de DNS de cinco minutos queimou as dez
+# ordes seguidas: cada unha fallou ao resolver o nome, e a cadena interpretou o
+# cero resultante como "esta orde non ten datos". Un fallo de rede non e un
+# resultado negativo.
+esperar_red(){
+  local n=0
+  while [ $n -lt 30 ]; do
+    if getent hosts cdd.dgterritorio.gov.pt >/dev/null 2>&1 \
+       && curl -s -o /dev/null --max-time 25 https://cdd.dgterritorio.gov.pt/; then
+      [ $n -gt 0 ] && say "    rede recuperada tras $n min"
+      return 0
+    fi
+    [ $n -eq 0 ] && say "    *** sen resolucion DNS ou sen DGT: agardo ***"
+    n=$((n + 1))
+    sleep 60
+  done
+  say "*** 30 min sen rede: deixo esta orde sen tocar ***"
+  return 1
+}
+
 say "=== cadena nocturna arrancada ==="
 # Las 18 primeras eran la mitad MAS DENSA del plan (8,0 castros por orden
 # contra 2,4 de las restantes), asi que su cifra no es extrapolable. Estas
@@ -41,10 +64,30 @@ for N in 22 27 37 38 50 58 59 67 68 75; do
   ESPERADOS=$(awk -v n="$N" -F'\t' '$1==n && $2=="LAZ"' data/cdd-portugal-assets-full.tsv 2>/dev/null | wc -l)
   TENGO=$(ls data/entrada-portugal/$N/LAZ 2>/dev/null | wc -l)
   if [ "$TENGO" -lt "$ESPERADOS" ] || [ "$TENGO" -eq 0 ]; then
-    say "--- descargando orden $N ($TENGO de $ESPERADOS) ---"
-    ./scripts/cdd_portugal_download.py --orders $N --collections LAZ --workers 4 \
-      >> logs/cdd_download_order$N.log 2>&1
-    say "    descarga orden $N rc=$? ($(du -sh data/entrada-portugal/$N 2>/dev/null | cut -f1))"
+    esperar_red || continue
+
+    # Ata tres intentos con espera crecente. Antes bastaba un fallo para dar a
+    # orde por procesada con cero teselas.
+    RC=1
+    for INTENTO in 1 2 3; do
+      say "--- descargando orden $N ($TENGO de $ESPERADOS), intento $INTENTO ---"
+      ./scripts/cdd_portugal_download.py --orders $N --collections LAZ --workers 4 \
+        >> logs/cdd_download_order$N.log 2>&1
+      RC=$?
+      TENGO=$(ls data/entrada-portugal/$N/LAZ 2>/dev/null | wc -l)
+      say "    intento $INTENTO rc=$RC, teselas=$TENGO ($(du -sh data/entrada-portugal/$N 2>/dev/null | cut -f1))"
+      [ "$RC" -eq 0 ] && [ "$TENGO" -gt 0 ] && break
+      say "    agardo $((INTENTO * 5)) min e reintento"
+      sleep $((INTENTO * 300))
+      esperar_red || break
+    done
+
+    # Unha orde que non se descargou NON se inxire: iso e o que producia
+    # "fusion: 0 filas" e daba a falsa impresion de que xa estaba medida.
+    if [ "$TENGO" -eq 0 ]; then
+      say "*** orden $N SEN DESCARGAR tras 3 intentos: non se inxire, queda pendente ***"
+      continue
+    fi
   else
     say "--- orden $N ya descargada ($TENGO teselas) ---"
   fi

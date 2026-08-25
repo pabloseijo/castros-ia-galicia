@@ -149,9 +149,37 @@ if ! .venv-gpu/bin/python scripts/download_trasancos_lidar.py --bbox "$W" "$S" "
 fi
 NL=$(find "$TMP_LAZ/$SIG" -name '*.laz' | wc -l)
 say "    bajadas $NL teselas ($(du -sh "$TMP_LAZ/$SIG" 2>/dev/null | cut -f1))"
+
+# Cero teselas ten DUAS causas distintas e non se poden tratar igual:
+#   a) o CNIG di que aqui non hai nada  -> mar ou fora de cobertura, marcar
+#   b) o CNIG ten teselas pero non se baixou ningunha -> FALLO, non marcar
+#
+# Ata o 2026-08-25 marcabase sempre (a), e por iso 76 bloques de 88 quedaron
+# dados por "mar" mentres o unico que pasaba era un 403 do CNIG. Galicia non e
+# 76/88 mar. O contador `tiles:` do log do descargador distingue os dous casos.
+# La senal correcta esta en los worker-logs del descargador, no en `tiles:`
+# (que es el numero de puntos de la REJILLA a consultar, y siempre es > 0):
+#
+#   "no LIDA3 tile for this point"  -> el CNIG responde: aqui no hay nada
+#   "init refused" / "403"          -> el CNIG no nos deja preguntar
+#   "name resolution"               -> ni siquiera hay red
+#
+# Solo se marca el bloque si TODO fueron respuestas legitimas de "no hay nada".
+WL="$TMP_LAZ/$SIG/worker-logs"
+SIN_DATO=$(grep -rhc "no LIDA3 tile" "$WL" 2>/dev/null | paste -sd+ | bc 2>/dev/null || echo 0)
+ERRORES=$(grep -rhcE "init refused|403|Forbidden|name resolution|Max retries" "$WL" 2>/dev/null | paste -sd+ | bc 2>/dev/null || echo 0)
+
 if [ "$NL" -eq 0 ]; then
-  say "    bloque sin teselas del PNOA (mar o fuera de cobertura): marcado y seguimos"
-  touch "$CACHE/.hecho-$SIG"; exit 0
+  if [ "${ERRORES:-0}" -gt 0 ]; then
+    say "    *** $ERRORES errores de acceso al CNIG: es un FALLO, no es mar. NO se marca ***"
+    exit 0
+  fi
+  if [ "${SIN_DATO:-0}" -gt 0 ]; then
+    say "    el CNIG responde que no hay teselas ($SIN_DATO puntos): mar o fuera de cobertura, marcado"
+    touch "$CACHE/.hecho-$SIG"; exit 0
+  fi
+  say "    *** cero teselas y ninguna razon registrada: NO se marca, se revisara ***"
+  exit 0
 fi
 
 # --borrar-laz: el LAZ se tira en cuanto su .npz esta escrito
