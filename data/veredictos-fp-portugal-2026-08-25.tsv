@@ -1,0 +1,31 @@
+ficha	lat	lon	contraste	veredicto	motivo
+orden-1/cand-001	41.95085	-7.06296	2.64	NO	espolon natural sobre confluencia; sin perimetro cerrado; franjas radiales de artefacto LiDAR
+orden-1/cand-002	41.94848	-7.05683	3.03	NO	infraestructura lineal (camino o canal en curva de nivel) cruzando toda la ventana
+orden-1/cand-003	41.95070	-7.04753	1.36	NO	ladera con carcavas de erosion; contraste por debajo de la mediana de terreno
+orden-1/cand-004	41.94714	-7.16491	1.62	NO	parcelario agricola con bordes rectos y edificaciones
+orden-1/cand-005	41.94183	-7.08472	2.26	NO	ladera erosionada con caminos rurales
+orden-1/cand-006	41.96319	-7.15540	2.11	DUDOSO	meandro encajado: posicion topografica excelente, pero el punto esta descentrado y no se ve perimetro artificial
+orden-1/cand-007	41.95067	-7.04444	1.26	NO	carcavas y arroyo encajado
+orden-1/cand-008	41.96786	-7.16151	1.86	NO	caminos rurales y monte; contraste bajo la mediana de terreno
+orden-1/cand-009	41.94652	-7.09391	1.01	NO	barranco; el contraste mas bajo de las 30
+orden-1/cand-010	41.95398	-7.15554	2.28	DUDOSO	espolon con borde realzado que no cierra; el realce puede ser talud de camino
+orden-1/cand-011	41.96550	-7.15536	1.04	NO	ladera erosionada junto a meandro
+orden-1/cand-012	41.94422	-7.09395	2.43	NO	borde de vaguada con carcavas
+orden-2/cand-001	41.45634	-8.53157	1.23	NO	parcelario agricola y afloramiento rocoso
+orden-2/cand-002	41.45676	-8.38450	2.45	NO+	el punto cae en ladera abierta, pero hay RECINTO OVALADO CON CROA a unos 200 m al NO
+orden-2/cand-003	41.48862	-8.52870	1.25	NO	parcelario agricola; contraste muy bajo
+orden-2/cand-004	41.49098	-8.51338	2.76	NO	forma ovalada de borde uniforme junto a zona urbanizada: probable deposito o plataforma moderna
+orden-2/cand-005	41.55556	-8.49842	2.08	NO	ladera con parcelario y edificaciones; punto en zona sin estructura
+orden-2/cand-006	41.50748	-8.37550	1.75	NO	llanura agricola sin relieve
+orden-2/cand-007	41.44501	-8.47023	2.34	DUDOSO	elevacion ovalada con edificaciones encima a unos 100 m del punto
+orden-2/cand-008	41.53698	-8.54126	1.34	NO	parcelario y loma con vegetacion densa
+orden-2/cand-009	41.47709	-8.52863	1.93	NO	parcelario, autovia y masa de vegetacion
+orden-2/cand-010	41.47959	-8.47041	3.59	DUDOSO	el contraste mas alto de las 30; elevacion con perimetro pero ocupada por caserio que impide leer la morfologia
+orden-2/cand-011	41.43555	-8.54369	1.52	NO	parcelario llano; senal de amplitud diminuta
+orden-2/cand-012	41.53737	-8.41242	1.78	SI	RECINTO OVALADO CON DOBLE ANILLO CONCENTRICO, parapeto perimetral y croa central elevada. Morfologia de castro de manual
+orden-2/cand-013	41.50936	-8.52882	1.86	NO	bancales de cultivo: escalones repetidos y paralelos por toda la ladera
+orden-2/cand-014	41.45182	-8.50396	1.33	NO+	el punto cae en llano, pero hay RECINTO OVALADO CON DOBLE ANILLO a unos 180 m al oeste
+orden-2/cand-015	41.53951	-8.47072	2.30	DUDOSO	forma curva en cima de colina que no cierra; textura de afloramiento
+orden-2/cand-016	41.50046	-8.42146	1.58	NO	terrazas de cultivo escalonadas y parcelario
+orden-2/cand-017	41.53944	-8.49526	1.88	NO	NUDO DE AUTOPISTA: los lazos del trebol son circulos perfectos
+orden-2/cand-018	41.53023	-8.49214	2.47	DUDOSO	plataforma con bordes curvos en cima, muy mezclada con parcelario
