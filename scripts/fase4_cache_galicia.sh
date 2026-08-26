@@ -140,6 +140,15 @@ fi
 
 say "--- bloque $SIG ($((HECHOS+1)) de $TOTAL) bbox=$W $S $E $N2 ---"
 rm -rf "${TMP_LAZ:?}/$SIG"; mkdir -p "$TMP_LAZ/$SIG"
+# Marca de tempo: os worker-logs son acumulativos entre bloques, asi que
+# despois so se contan as liñas mais novas ca este ficheiro.
+# Os worker-logs son ACUMULATIVOS (65.000 liñas desde o 9 de agosto), asi que
+# hai que fotografar o reconto antes e restar despois. Sen isto, o bloque
+# informa dos erros de toda a historia: o 2026-08-26 dixo "40.770 erros"
+# cando nos ultimos cinco minutos houbo cero.
+WL="data/lidar-trasancos-v1/worker-logs"
+ANTES_SIN=$(cat "$WL"/* 2>/dev/null | grep -c "no LIDA3 tile" || echo 0)
+ANTES_ERR=$(cat "$WL"/* 2>/dev/null | grep -cE "init refused|403|Forbidden|name resolution|Max retries" || echo 0)
 
 if ! .venv-gpu/bin/python scripts/download_trasancos_lidar.py --bbox "$W" "$S" "$E" "$N2" \
      --laz-dir "$TMP_LAZ/$SIG" --out-dir "$TMP_LAZ/$SIG" \
@@ -165,9 +174,15 @@ say "    bajadas $NL teselas ($(du -sh "$TMP_LAZ/$SIG" 2>/dev/null | cut -f1))"
 #   "name resolution"               -> ni siquiera hay red
 #
 # Solo se marca el bloque si TODO fueron respuestas legitimas de "no hay nada".
-WL="$TMP_LAZ/$SIG/worker-logs"
-SIN_DATO=$(grep -rhc "no LIDA3 tile" "$WL" 2>/dev/null | paste -sd+ | bc 2>/dev/null || echo 0)
-ERRORES=$(grep -rhcE "init refused|403|Forbidden|name resolution|Max retries" "$WL" 2>/dev/null | paste -sd+ | bc 2>/dev/null || echo 0)
+# `download_trasancos_lidar.py` escribe os worker-logs en DEFAULT_LOG_DIR,
+# unha constante do modulo, NON en `--out-dir`. Buscalos baixo $TMP_LAZ
+# daba sempre cero e o bloque quedaba sen decidir.
+DESPUES_SIN=$(cat "$WL"/* 2>/dev/null | grep -c "no LIDA3 tile" || echo 0)
+DESPUES_ERR=$(cat "$WL"/* 2>/dev/null | grep -cE "init refused|403|Forbidden|name resolution|Max retries" || echo 0)
+SIN_DATO=$(( DESPUES_SIN - ANTES_SIN ))
+ERRORES=$(( DESPUES_ERR - ANTES_ERR ))
+[ "$SIN_DATO" -lt 0 ] && SIN_DATO=0      # por si alguien rota los logs a media faena
+[ "$ERRORES" -lt 0 ] && ERRORES=0
 
 if [ "$NL" -eq 0 ]; then
   if [ "${ERRORES:-0}" -gt 0 ]; then
