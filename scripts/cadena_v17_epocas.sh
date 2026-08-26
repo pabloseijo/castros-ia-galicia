@@ -1,6 +1,6 @@
 #!/bin/sh
 # v17: la misma configuración de v7 con 40 épocas en vez de 16.
-# Preregistro en PREREGISTRO-v17-mas-epocas.md, escrito ANTES de esto.
+# Preregistro en `docs/preregistros/PREREGISTRO-v17-mas-epocas.md`, escrito ANTES de esto.
 #
 # La curva de v7 se cortó mientras aún mejoraba: F1 de castro 0,5517 en la
 # época 9 y 0,5640 en la 16, con la pérdida bajando monótona. No convergió:

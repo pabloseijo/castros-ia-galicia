@@ -675,7 +675,7 @@ def main() -> int:
         # que mató en silencio los barridos del 2026-08-05 y 06 (confirmado por
         # `dmesg`: seis OOM-kill de este mismo proceso, con `anon-rss` subiendo de
         # forma sostenida hasta cortar sobre el 55-75% de cobertura, según cuánto
-        # llevara corriendo). El wrapper (`cadena_v5.sh`/`cadena_v6.sh`) no
+        # llevara corriendo). El wrapper (`ops/cadenas/cadena_v5.sh`/`ops/cadenas/cadena_v6.sh`) no
         # comprobaba el `rc` de este paso —a diferencia del de entrenamiento—, así
         # que el `SIGKILL` no dejaba rastro ni en el log ni en el código de salida
         # que se miraba.

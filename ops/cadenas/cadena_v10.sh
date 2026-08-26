@@ -1,6 +1,6 @@
 #!/bin/bash
 # v10 = v7 con los falsos positivos del barrido minados Y CON PESO.
-# Ver PREREGISTRO-v10.md. Liston: F1 medio >= 0.542.
+# Ver `docs/preregistros/PREREGISTRO-v10.md`. Liston: F1 medio >= 0.542.
 set -u
 cd "$HOME/castros" || exit 1
 LOG=logs/cadena_v10.log

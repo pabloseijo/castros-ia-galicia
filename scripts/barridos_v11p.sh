@@ -3,7 +3,7 @@
 # VRAM. Es el veredicto de verdad: el liston del preregistro esta en el `F1` de
 # barrido sobre los cuatro bloques, no en la metrica interna.
 #
-# **Los bbox se copian de `cadena_v7.sh`, NO se escriben de memoria.** El
+# **Los bbox se copian de `ops/cadenas/cadena_v7.sh`, NO se escriben de memoria.** El
 # 2026-08-09 los de Lugo y Pontevedra se transcribieron mal —`-7.50 42.75` en vez
 # de `-7.375 42.625`— y el barrido cubrio otro sitio: `2.520` celdas con LiDAR de
 # `8.580` en vez de `8.800` de `8.800`. Los `F1 0,278` y `0,115` que salieron de

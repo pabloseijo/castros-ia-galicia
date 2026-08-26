@@ -1,7 +1,7 @@
 #!/bin/sh
 # v14: los mismos datos de v11p, sin la confusion espacial que los inutilizaba.
 #
-# Ver `PREREGISTRO-v14-confusion-espacial.md`. En corto: el `53%` de los positivos
+# Ver `docs/preregistros/PREREGISTRO-v14-confusion-espacial.md`. En corto: el `53%` de los positivos
 # de v11p vivia en bloques de los que el modelo no veia **ni una viñeta de
 # fondo**, y en su examen ese numero subia al `72%`. Eso es un atajo —reconocer
 # el sitio, no el yacimiento— que en el barrido real no existe, porque el barrido

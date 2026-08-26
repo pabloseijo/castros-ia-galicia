@@ -1,202 +1,204 @@
-# Castros IA Galicia
+# Castros IA — Galicia
 
-MVP técnico para explorar detección y priorización de castros en la comarca histórica de Trasancos mediante datos abiertos, revisión QGIS y futura preparación de rasters PNOA/LiDAR.
+Detección de castros bajo vegetación a partir de LiDAR aéreo, con una U-Net sobre
+modelos digitales del terreno.
 
-Repositorio privado: https://github.com/pabloseijo/castros-ia-galicia
+**El objetivo es encontrar castros que no estén en ningún catálogo.** No sustituir
+al arqueólogo: reducirle el terreno que tiene que mirar, de una provincia entera a
+una lista corta.
 
-El objetivo no es declarar nuevos yacimientos por IA. El objetivo defendible es construir un flujo reproducible para:
+> Repositorio **privado**. Contiene coordenadas de yacimientos no verificados —
+> ver [Política de datos](#política-de-datos), que no es una formalidad.
 
-1. reunir castros conocidos y pistas documentadas,
-2. separar fuentes fuertes, débiles, conflictivas y sin coordenadas,
-3. crear capas revisables en QGIS,
-4. preparar ventanas raster y etiquetas humanas,
-5. evaluar si un modelo ayuda a priorizar revisión arqueológica.
+---
 
-## Estado actual
+## Estado, a 26 de agosto de 2026
 
-- Dataset maestro MVP: 125 filas.
-- Puntos con coordenadas WGS84: 99.
-- Buffers provisionales para revisión: 48.
-- Ventanas raster candidatas: 48.
-- Negativos difíciles generados para revisión: 160.
-- Tareas de geocodificación: 26.
-- Workspace editable de anotación: 3 capas y 2 tablas de decisiones.
-- Colas de revisión: P0/P1/P2, O Val y geocodificación.
-- Manifiesto de ventanas raster: 48 tiles candidatos de 512 m.
-- Readiness de entrenamiento: bloqueado hasta tener polígonos/negativos revisados.
-- Mapa web estático de inspección rápida.
-- Workspace QGIS de errores weak-label por carriles: `213` tareas, `177` puntos únicos, `30` puntos únicos P0 y capa `p0_pretriage` de primera pasada autónoma.
+El conjunto de prueba —el norte de Portugal, `282` castros apartados y nunca
+mirados— **se abrió el 23 de agosto de 2026**. Estas son las primeras cifras del
+proyecto que no están contaminadas por decisiones tomadas sobre los mismos datos.
 
-O Val queda como holdout narrativo. No se usa para entrenar en la primera versión.
+| | |
+| --- | --- |
+| verdad efectiva | **`129` castros** que el barrido pudo ver |
+| celdas evaluadas | `50.781`, cuatro modelos, cero truncados |
+| **F1** | **`0,284`** |
+| **precisión en cabecera** (VPP) | **`0,31`** |
 
-Split espacial actual:
+### Contra el estado del arte, contando igual
 
-- `train`: Ferrol, Valdoviño y Neda, 29 positivos candidatos.
-- `val`: San Sadurniño, 5 positivos candidatos.
-- `test`: Narón no-O-Val, 10 positivos candidatos.
-- `test_o_val`: O Val, 4 positivos candidatos.
+Comparado con el trabajo publicado más cercano, sobre **la misma región** y con el
+mismo criterio —contra catálogo, sin ascensos humanos—:
 
-La auditoría metodológica está en `docs/literature-audit-2026-07-31.md`.
+| | este proyecto | Canedo *et al.* (misma región) |
+| --- | ---: | ---: |
+| F1 | `0,284` | `0,310` |
+| precisión | **`0,348`** | `0,184` |
+
+**El `92%` del F1 de referencia, con casi el doble de precisión.**
+
+### Lo que de verdad se aprendió al abrir el precinto
+
+No fue el F1. Fue que al cruzar la frontera **el recall aguanta** (`0,238` frente a
+`0,240` en Galicia) y **la precisión se parte por la mitad** (`0,61` → `0,31`).
+
+El modelo ve lo mismo a los dos lados. Lo que cambia es **cuántas de sus alarmas
+están ya catalogadas**.
+
+Y al revisar `30` de esos falsos positivos uno a uno, y cruzarlos con el catálogo
+oficial portugués (Endovélico), resultó que **no hay una causa, hay dos**:
+
+| zona | candidatos con castro oficial a `<500` m | tasa base (azar) | |
+| --- | ---: | ---: | --- |
+| **Trás-os-Montes** (monte) | **`33%`** | `12%` | catálogo incompleto |
+| **Minho** (tierra de labor) | `6%` | `9%` | confusores reales |
+
+En el monte, el modelo encuentra cosas que el catálogo no tiene. En la tierra de
+labor, se come el parcelario agrícola. Tratar «el norte de Portugal» como una
+región homogénea era el error.
+
+> Con `n = 12` en Trás-os-Montes y corrección por comparaciones múltiples, **el
+> resultado es sugerente y no concluyente**. Está declarado como tal.
+
+### Confusores dominantes, medidos sobre `30` fichas
+
+| | |
+| --- | ---: |
+| parcelario agrícola y bancales | **`37%`** |
+| laderas erosionadas y cárcavas | `20%` |
+| infraestructura (caminos, autovías) | `13%` |
+
+Uno de los falsos positivos era **un nudo de autopista**: los lazos del trébol son
+círculos perfectos.
+
+---
+
+## La configuración congelada
+
+Escrita en [`CONGELADO.md`](CONGELADO.md) el **11 de agosto de 2026**, *antes* de
+mirar un solo dato portugués. Ese es todo su valor: si se pudiera reescribir
+después de ver el resultado, no congelaría nada.
+
+| pieza | valor |
+| --- | --- |
+| método | **fusión por rango (RRF)** de cuatro modelos |
+| miembros | `v7`, `v7last`, `v8`, `v12` |
+| `k` de RRF | `60` (valor estándar, no ajustado) |
+| enlace | `512 m` |
+| celdas retenidas | `100` por bloque |
+| tolerancia de acierto | `500 m` |
+| criba de falsos positivos | **ninguna** |
+| diezmado de densidad | `2,0 pt/m²`, **solo en Portugal** |
+
+---
+
+## El protocolo de conjuntos, que es lo que sostiene las cifras
+
+Tres conjuntos, y el tercero estuvo precintado hasta el 23 de agosto:
+
+- **`train`** y **`validation`** — Galicia. Aquí se ajusta todo: checkpoint,
+  umbral, enlace, criba.
+- **`test`** — norte de Portugal, `282` castros, LiDAR abierto de la DGT.
+
+**Un bloque nunca visto por el modelo no es conjunto de prueba si se usa para
+elegir un umbral.** La configuración también es un parámetro ajustado. Pasó con
+Lugo: su `F1 0,743` está inflado y así queda etiquetado.
+
+`detection_eval.py` **se niega** a evaluar contra una verdad precintada sin
+`--romper-precinto "motivo"`, y al romperlo escribe fecha y motivo en
+[`data/PRECINTO-TEST.md`](data/PRECINTO-TEST.md), que es *append-only* y está en
+git. Ese fichero tiene hoy **tres lecturas anotadas**, cada una con lo que
+corrigió de la anterior.
+
+---
 
 ## Estructura
 
 ```text
-castros-ia-galicia/
-├── configs/
-├── data/
-│   ├── external/          # rasters/LAZ fuera de git
-│   ├── processed/         # outputs ligeros reproducibles
-│   ├── qgis-review/       # paquete QGIS generado para revisión
-│   └── annotations/       # capas editables para revisión humana
+.
+├── CONGELADO.md              la configuración, escrita antes de mirar Portugal
+├── PIPELINE.md               el flujo de extremo a extremo
+├── Makefile                  atajos de las tareas frecuentes
+├── configs/                  parámetros de entrenamiento y barrido
+├── data/                     verdades, catálogos y salidas ligeras
+│   ├── PRECINTO-TEST.md      libro de cuentas del conjunto de prueba
+│   └── CHECKPOINT-CONGELADO  la receta activa
 ├── docs/
-├── notebooks/
-├── qgis/
-├── reports/
-├── scripts/
-└── src/
+│   ├── preregistros/         16 preregistros: qué se esperaba ANTES de medirlo
+│   ├── AGENTS-nodo.md        cómo se opera el nodo de cómputo
+│   └── DESCARGA-PORTUGAL.md  la vía LAZ de la DGT y sus trampas
+├── ops/
+│   └── cadenas/              cadenas de entrenamiento y barrido por versión
+├── scripts/                  el código: descarga, entrenamiento, barrido, evaluación
+├── reports/                  informes publicables, con coordenadas redondeadas
+└── webmap/                   mapa estático de inspección
 ```
 
-## Comandos
+### Los preregistros
+
+`docs/preregistros/` guarda **16 documentos escritos antes de cada experimento**,
+con la hipótesis y el listón de éxito fijados de antemano. Sirven para lo mismo
+que el precinto: impedir que el criterio se ajuste a lo que salió.
+
+Ejemplo: `PREREGISTRO-v10.md` dice *«listón: F1 medio ≥ 0.542»*. Se escribió antes
+de entrenar v10.
+
+---
+
+## Uso
 
 ```bash
-make dataset
-make qgis-review
-make annotations
-make reports
-make raster-prep
-make viladonga-audit
-make viladonga-cnig-lidar-candidates
-make viladonga-wcs-dem
-make viladonga-relief-wcs
-make viladonga-lidar-derivatives
-make viladonga-pnoa-chips
-make viladonga-mask-quality
-make viladonga-shape-baseline
-make viladonga-relief-shape-baseline
-make viladonga-radial-relief-profile
-make viladonga-pilot
-make pba-unlock
-make pba-review
-make training-manifest
-make webmap
-make env-check
-make annotation-backup
-make repo-drift
-make sync-wiki
-make agent-list
-make agent-run
-make weak-label-error-review-workspace
-make verify
+# entorno
+uv venv .venv-gpu && .venv-gpu/bin/pip install -e .
+
+# barrer un territorio con la configuración congelada
+scripts/barrer_galicia_congelada.sh
+
+# evaluar contra una verdad NO precintada
+.venv-gpu/bin/python scripts/detection_eval.py \
+    --pred data/sweep_X.tsv --truth data/X_truth.tsv --tol 500
+
+# fusionar varios modelos por rango
+.venv-gpu/bin/python scripts/fusionar_barridos_rrf.py \
+    --pred a.tsv b.tsv --names v7 v8 --out-top out.tsv --top-k 100 --rrf-k 60
 ```
+
+El trabajo por lotes **no se ejecuta en un portátil**: va a un nodo con GPU. Ver
+[`docs/AGENTS-nodo.md`](docs/AGENTS-nodo.md).
+
+---
 
 ## Política de datos
 
-Los datos pesados PNOA/LiDAR/Sentinel no se versionan aquí. Deben vivir fuera de la wiki, por ejemplo en:
+Esto no es burocracia: **publicar la ubicación de un yacimiento sin verificar
+puede hacer que lo expolien.**
 
-`/Users/pabloseijo/Documents/CastrosIA/data`
+- Las salidas de inferencia con **coordenadas precisas de celdas no revisadas**
+  están en `.gitignore` y **no salen de la máquina**.
+- Lo publicable es `reports/`, donde las coordenadas van **redondeadas a ~1 km**.
+- Nada de lo que hay aquí ha sido verificado por un arqueólogo. Un candidato con
+  puntuación alta **no es un yacimiento**: es un sitio que merece que alguien lo
+  mire.
+- El repositorio es privado, y esa es una decisión, no un descuido.
 
-Las capas generadas aquí son ligeras y reproducibles. Los buffers de 120 m son semillas de revisión, no perímetros arqueológicos.
+---
 
-## Piloto morfológico Viladonga
+## Lo que este proyecto no afirma
 
-La ruta de arranque para detectar forma no depende de Trasancos. Usa el piloto original del TFG en Viladonga:
+- **No ha descubierto ningún castro.** Ha producido candidatos, y uno de ellos
+  —un recinto ovalado de doble anillo con croa central— no aparece ni en el
+  catálogo propio ni en Endovélico. Eso es una pregunta abierta, no un hallazgo.
+- **Ninguna cifra es todavía una estimación insesgada de despliegue**, salvo la
+  del precinto abierto, y solo esa.
+- La revisión visual de candidatos la ha hecho un modelo de lenguaje, no un
+  arqueólogo. Vale como cribado; no vale como dictamen. Y ya se ha medido dónde
+  falla: en tres casos dio «nada» donde el catálogo oficial tiene un castro a
+  menos de `450` m.
 
-```bash
-make viladonga-audit
-make viladonga-cnig-lidar-candidates
-make viladonga-relief-wcs
-make viladonga-lidar-derivatives
-make viladonga-pnoa-chips
-make viladonga-mask-quality
-make viladonga-shape-baseline
-make viladonga-relief-shape-baseline
-make viladonga-radial-relief-profile
-```
+---
 
-Documentación: `docs/viladonga-morphology-pilot.md`.
+## Licencia y fuentes
 
-La finalidad es probar chips, máscaras, derivados de relieve y calidad geométrica básica sobre un castro conocido. No es un dataset suficiente para entrenar un modelo serio.
-
-## Flujo QGIS
-
-Abrir estos dos GeoPackage juntos:
-
-- `data/qgis-review/castros_trasancos_qgis_review.gpkg`: capas generadas para mirar, no editar.
-- `data/annotations/castros_annotations.gpkg`: capas editables para dibujar y decidir.
-
-El siguiente paso real es revisar las tareas P0, ajustar buffers a polígonos reales en `labels_reviewed`, aceptar negativos en `negative_areas_reviewed` y solo después descargar/procesar rasters para ventanas útiles.
-
-`make annotations` conserva el GeoPackage editable si ya existe. Para recrearlo desde cero hay que usar `make annotations-reset`, solo después de respaldar cualquier edición humana.
-
-## Reportes operativos
-
-- `reports/review_status.md`: cola de revisión y bloqueos.
-- `reports/geocoding_blockers.md`: filas que siguen sin coordenada segura.
-- `reports/raster_tile_plan.md`: ventanas raster candidatas.
-- `reports/pba_catalog_unlock.md`: consulta fact-checkeada del PBA/Xunta para desbloquear geocodificación.
-- `reports/remaining_geocoding_source_audit.md`: segunda pasada de fuentes para las 9 filas aún bloqueadas tras PBA.
-- `data/qgis-review/remaining_equivalence_candidates.geojson`: capa visual con las dos equivalencias posibles que requieren decisión humana.
-- `reports/training_readiness.md`: estado de exportación entrenable.
-- `reports/environment_status.md`: herramientas locales disponibles/bloqueantes.
-- `reports/environment_status_raspberry.md`: herramientas disponibles en la Raspberry para agentes remotos.
-- `reports/annotation_backup_status.md`: estado del backup/verificación del GeoPackage editable.
-- `reports/repo_drift_status.md`: estado Git local/remoto sin auto-merge.
-- `reports/pnoa_preview_index.md`: estado del índice de previsualización PNOA.
-- `reports/pnoa_chip_export.md`: estado de exportación de chips PNOA desde anotaciones aceptadas.
-- `reports/viladonga_pilot_readiness.md`: auditoría del piloto morfológico de Viladonga.
-- `reports/viladonga_cnig_lidar_candidates.md`: teselas LiDAR CNIG candidatas para sustituir el MDT5 por LAZ fino oficial.
-- `reports/viladonga_cnig_lidar_downloads.md`: estado de descarga Raspberry de los LAZ CNIG 3ª cobertura, fuera de Git.
-- `reports/viladonga_mdt_wcs.md`: recorte MDT5 por WCS para desbloquear relieve grueso.
-- `reports/viladonga_lidar_derivatives.md`: derivados LiDAR/relieve generados para Viladonga.
-- `reports/viladonga_laz_tile_blocker.md`: teselas LAZ correctas que faltan para relieve LiDAR fino.
-- `reports/viladonga_pnoa_chips.md`: chips PNOA y máscaras de segmentación para Viladonga.
-- `reports/viladonga_mask_quality.md`: auditoría de presencia, binariedad y geometría raster de las máscaras Viladonga.
-- `reports/viladonga_pnoa_shape_baseline.md`: baseline PNOA de señal de borde/textura contra plantilla de forma castrexa.
-- `reports/viladonga_relief_shape_baseline.md`: baseline de forma sobre DEM, slope, hillshade y LRM.
-- `reports/viladonga_radial_relief_profile.md`: perfiles/anillos radiales de relieve para separar señal de talud de topografía general.
-- `reports/weak_label_error_review_workspace_v1.md`: workspace QGIS por carriles `review_lane`.
-- `data/weak-label-error-review-workspace-v1/weak_label_error_review_workspace_v1.gpkg`: capas QGIS `p0_pretriage`, `p0_unique_first_pass`, `lane_mamoa_false_positive`, `lane_mamoa_specialist_positive`, `lane_morphology_rescue`, etc.
-- `data/review-queues/`: colas TSV por prioridad.
-- `data/raster-prep/candidate_raster_tiles.tsv`: manifiesto de tiles.
-- `data/raster-prep/pnoa_preview_urls.tsv`: enlaces WMS PNOA de solo revisión para cada ventana candidata.
-- `data/training/`: manifiestos exportados desde anotaciones aceptadas.
-- `data/training/pnoa_chip_manifest.tsv`: chips PNOA exportados desde etiquetas aceptadas; permanece vacío mientras no haya revisión QGIS aceptada.
-- `data/viladonga-pilot/`: manifiestos ligeros del piloto controlado.
-- `webmap/index.html`: mapa estático con capas embebidas para inspección rápida.
-- `webmap/pnoa_preview_index.html`: tabla HTML con miniaturas WMS PNOA para revisión visual; no crea etiquetas.
-- `docs/raspberry-agents.md`: runner agentico para Raspberry con systemd y reglas de seguridad.
-
-## Mapa web
-
-Abrir:
-
-`webmap/index.html`
-
-La vista web ayuda a detectar errores gruesos de coordenadas y distribución. No sustituye QGIS ni permite crear etiquetas finales.
-
-Para revisar ortofoto PNOA oficial por ventana candidata:
-
-`webmap/pnoa_preview_index.html`
-
-Ese índice solo prepara enlaces/miniaturas WMS. No descarga rasters fuente ni convierte candidatos en entrenamiento.
-
-Para revisar errores weak-label por carriles:
-
-`data/weak-label-error-review-workspace-v1/weak_label_error_review_workspace_v1.gpkg`
-
-Orden práctico dentro del GPKG:
-
-1. `p0_pretriage`
-2. `lane_mamoa_false_positive`
-3. `lane_mamoa_specialist_positive`
-4. `lane_morphology_rescue`
-
-Campos clave: `pretriage_order`, `pretriage_group`, `pretriage_decision`, `review_lane`, `duplicate_count`, `suggested_taxonomy`, `specialist_rank`, `fusion_rank`, `max_safety_rank`.
-
-Cuando existan polígonos aceptados en QGIS, exportar chips PNOA:
-
-```bash
-make pnoa-chips
-```
-
-Este target ignora puntos candidatos y solo usa `labels_reviewed` / `negative_areas_reviewed` con `review_status=accepted`.
+- LiDAR de España: **PNOA**, © Instituto Geográfico Nacional, CC BY 4.0.
+- LiDAR de Portugal: **DGT / Centro de Dados**, datos abiertos.
+- Catálogo arqueológico portugués: **Endovélico**, Património Cultural I.P.

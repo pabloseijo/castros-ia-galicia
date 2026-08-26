@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """v14: v11p sin los positivos que no tienen fondo en su propio bloque.
 
-Ver `PREREGISTRO-v14-confusion-espacial.md`. En una linea: el `53%` de los
+Ver `docs/preregistros/PREREGISTRO-v14-confusion-espacial.md`. En una linea: el `53%` de los
 positivos de v11p vive en bloques de los que el modelo no ve ni una viñeta de
 fondo, y eso es un atajo —reconocer el sitio en vez del yacimiento— que en el
 barrido real no existe.

@@ -6,7 +6,7 @@
 #
 #     ./barrer_bloques_nuevos.sh data/cls-v6-focal/best.pt v6focal
 #
-# Requiere que la descarga haya terminado (descargar_bloques_galicia.sh) y
+# Requiere que la descarga haya terminado (ops/cadenas/descargar_bloques_galicia.sh) y
 # comprueba que hay teselas antes de gastar dos horas de GPU.
 #
 # La verdad de campo ya esta preparada (2026-08-07):

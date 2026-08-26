@@ -1,6 +1,6 @@
 #!/bin/sh
 # ¿La métrica de selección congeló el checkpoint equivocado?
-# Preregistro en PREREGISTRO-checkpoint-por-castro.md, escrito ANTES de esto.
+# Preregistro en `docs/preregistros/PREREGISTRO-checkpoint-por-castro.md`, escrito ANTES de esto.
 #
 # `best.pt` de v7 es la época 9 (F1 castro 0,5518, recall 0,711).
 # `last.pt` es la 16 y es la MEJOR en castro de las dieciséis

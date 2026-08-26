@@ -1,6 +1,6 @@
 #!/bin/sh
 # v15: la agregación espacial, un mecanismo con dos tratamientos.
-# Preregistro en PREREGISTRO-v15-cabeza-mil.md, escrito ANTES de esto.
+# Preregistro en `docs/preregistros/PREREGISTRO-v15-cabeza-mil.md`, escrito ANTES de esto.
 #
 # El control es v7 (media global, F1 0,512). Los dos brazos:
 #   v15a = log-sum-exp  (--head mil)      implementado desde el principio,

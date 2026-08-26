@@ -5,7 +5,7 @@
 se escribe un `index.tsv` nuevo que mueve el exceso de positivos a un split
 inerte. Cero minutos de CPU en cortar.
 
-Hipotesis que prueba (`PREREGISTRO-v13-proporcion.md`): v11p fallo por la
+Hipotesis que prueba (`docs/preregistros/PREREGISTRO-v13-proporcion.md`): v11p fallo por la
 PROPORCION de positivos (`26,7%` contra el `8,9%` de v7, desplegando en `0,73%`),
 no por la cantidad. Si es cierto, con la proporcion de v7 debe recuperar su
 rendimiento usando mas positivos que el.

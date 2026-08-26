@@ -1,7 +1,7 @@
 #!/bin/sh
 # v12: los 524 errores reales de v7 añadidos a su propio corpus, con peso 1.
 #
-# Ver `PREREGISTRO-v12-mineria.md`. En corto: es la palanca de Canedo —que paso de
+# Ver `docs/preregistros/PREREGISTRO-v12-mineria.md`. En corto: es la palanca de Canedo —que paso de
 # `5.678` falsos positivos a `40` minando los fallos del propio modelo— y es lo
 # unico que la literatura demuestra para este objeto exacto.
 #

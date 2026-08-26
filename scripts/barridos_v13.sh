@@ -1,5 +1,5 @@
 #!/bin/sh
-# Los cuatro barridos de v13, uno detras de otro, con los bbox de `cadena_v7.sh`.
+# Los cuatro barridos de v13, uno detras de otro, con los bbox de `ops/cadenas/cadena_v7.sh`.
 #
 # **Los bbox se copian, no se escriben de memoria.** El 2026-08-09 se
 # transcribieron mal los de Lugo y Pontevedra y el barrido cubrio otro sitio:

@@ -1,7 +1,7 @@
 #!/bin/sh
 # Los tres bloques que le faltan a v9. Pontevedra ya está: 6.877 filas, F1 0,304.
 #
-# Preregistro en PREREGISTRO-v9-remedida.md.
+# Preregistro en `docs/preregistros/PREREGISTRO-v9-remedida.md`.
 #
 # **Los bbox se COPIAN de `barridos_v14.sh`, no se calculan.** Esa regla ya
 # existía en este repositorio desde el 2026-08-09 y el 2026-08-10 la salté

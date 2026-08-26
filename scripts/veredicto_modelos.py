@@ -3,9 +3,9 @@
 Lee los `detection_eval` de la cadena de noche y compara cada modelo contra su
 liston, que se escribio ANTES de existir los resultados:
 
-  PREREGISTRO-v7t.md : F1 medio >= 0.542  (v7 = 0.512, liston +0.03)
-  PREREGISTRO-v8.md  : F1 medio >= 0.542
-  PREREGISTRO-v9.md  : +0.03 sobre el mejor de v7 y v8
+  `docs/preregistros/PREREGISTRO-v7t.md` : F1 medio >= 0.542  (v7 = 0.512, liston +0.03)
+  `docs/preregistros/PREREGISTRO-v8.md`  : F1 medio >= 0.542
+  `docs/preregistros/PREREGISTRO-v9.md`  : +0.03 sobre el mejor de v7 y v8
 
 La regla de los preregistros es «sin excepciones por bloque»: con n entre 36 y 75
 castros, un bloque suelto a favor es la forma que tiene el ruido de parecer un
